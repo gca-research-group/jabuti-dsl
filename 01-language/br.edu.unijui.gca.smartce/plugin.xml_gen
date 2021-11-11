@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package
+			uri = "http://gca.unijui.edu.br/smartce/SmartCE"
+			class = "br.edu.unijui.gca.smartce.smartCE.SmartCEPackage"
+			genModel = "model/generated/SmartCE.genmodel" />
+	</extension>
+</plugin>

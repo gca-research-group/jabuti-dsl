@@ -1,0 +1,9 @@
+grammar br.edu.unijui.gca.smartce.SmartCE with org.eclipse.xtext.common.Terminals
+
+import "http://www.edu.br/unijui/gca/smartce/SmartCE"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!!!!';
