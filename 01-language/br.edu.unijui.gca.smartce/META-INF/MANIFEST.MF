@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: br.edu.unijui.gca.smartce
+Bundle-ManifestVersion: 2
+Bundle-Name: br.edu.unijui.gca.smartce
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: br.edu.unijui.gca.smartce; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: br.edu.unijui.gca.smartce.services,
+ br.edu.unijui.gca.smartce.smartCE.impl,
+ br.edu.unijui.gca.smartce.scoping,
+ br.edu.unijui.gca.smartce.parser.antlr,
+ br.edu.unijui.gca.smartce.smartCE,
+ br.edu.unijui.gca.smartce.smartCE.util,
+ br.edu.unijui.gca.smartce.validation,
+ br.edu.unijui.gca.smartce.serializer,
+ br.edu.unijui.gca.smartce.parser.antlr.internal,
+ br.edu.unijui.gca.smartce.generator,
+ br.edu.unijui.gca.smartce
+Import-Package: org.apache.log4j
