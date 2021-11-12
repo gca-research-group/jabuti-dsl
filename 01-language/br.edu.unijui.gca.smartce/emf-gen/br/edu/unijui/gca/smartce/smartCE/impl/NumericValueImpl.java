@@ -3,7 +3,7 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.Greeting;
+import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -11,49 +11,48 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greeting</b></em>'.
+ * An implementation of the model object '<em><b>Numeric Value</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.GreetingImpl#getName <em>Name</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.NumericValueImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
+public class NumericValueImpl extends LiteralValueImpl implements NumericValue
 {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final int VALUE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected int value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GreetingImpl()
+	protected NumericValueImpl()
 	{
 		super();
 	}
@@ -66,7 +65,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	@Override
 	protected EClass eStaticClass()
 	{
-		return SmartCEPackage.Literals.GREETING;
+		return SmartCEPackage.Literals.NUMERIC_VALUE;
 	}
 
 	/**
@@ -75,9 +74,9 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	 * @generated
 	 */
 	@Override
-	public String getName()
+	public int getValue()
 	{
-		return name;
+		return value;
 	}
 
 	/**
@@ -86,12 +85,12 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName)
+	public void setValue(int newValue)
 	{
-		String oldName = name;
-		name = newName;
+		int oldValue = value;
+		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.GREETING__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.NUMERIC_VALUE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -104,8 +103,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.GREETING__NAME:
-				return getName();
+			case SmartCEPackage.NUMERIC_VALUE__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,8 +119,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.GREETING__NAME:
-				setName((String)newValue);
+			case SmartCEPackage.NUMERIC_VALUE__VALUE:
+				setValue((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,8 +136,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.GREETING__NAME:
-				setName(NAME_EDEFAULT);
+			case SmartCEPackage.NUMERIC_VALUE__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -154,8 +153,8 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.GREETING__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case SmartCEPackage.NUMERIC_VALUE__VALUE:
+				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -171,10 +170,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (value: ");
+		result.append(value);
 		result.append(')');
 		return result.toString();
 	}
 
-} //GreetingImpl
+} //NumericValueImpl

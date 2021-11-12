@@ -58,42 +58,14 @@ public interface SmartCEPackage extends EPackage
 	SmartCEPackage eINSTANCE = br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl <em>Model</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl <em>Contract</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getModel()
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getContract()
 	 * @generated
 	 */
-	int MODEL = 0;
-
-	/**
-	 * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL__GREETINGS = 0;
-
-	/**
-	 * The number of structural features of the '<em>Model</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.GreetingImpl <em>Greeting</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.GreetingImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getGreeting()
-	 * @generated
-	 */
-	int GREETING = 1;
+	int CONTRACT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,17 +74,833 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int GREETING__NAME = 0;
+	int CONTRACT__NAME = 0;
 
 	/**
-	 * The number of structural features of the '<em>Greeting</em>' class.
+	 * The feature id for the '<em><b>Begin Date</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GREETING_FEATURE_COUNT = 1;
+	int CONTRACT__BEGIN_DATE = 1;
 
+	/**
+	 * The feature id for the '<em><b>Due Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__DUE_DATE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Excecutions Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__EXCECUTIONS_NUMBER = 3;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__DESCRIPTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__APPLICATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Process</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__PROCESS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Clauses</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__CLAUSES = 7;
+
+	/**
+	 * The number of structural features of the '<em>Contract</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FEATURE_COUNT = 8;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.StatusImpl <em>Status</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.StatusImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getStatus()
+	 * @generated
+	 */
+	int STATUS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Active</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATUS__ACTIVE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Running</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATUS__RUNNING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Current Clause</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATUS__CURRENT_CLAUSE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Remaining Time</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATUS__REMAINING_TIME = 3;
+
+	/**
+	 * The number of structural features of the '<em>Status</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATUS_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl <em>Model</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getModel()
+	 * @generated
+	 */
+	int MODEL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Contracts</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__CONTRACTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__OPERATIONS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__IMPORTS = 2;
+
+	/**
+	 * The number of structural features of the '<em>Model</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.PartyImpl <em>Party</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.PartyImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getParty()
+	 * @generated
+	 */
+	int PARTY = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY__DESCRIPTION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Party</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ApplicationImpl <em>Application</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ApplicationImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getApplication()
+	 * @generated
+	 */
+	int APPLICATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__NAME = PARTY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__DESCRIPTION = PARTY__DESCRIPTION;
+
+	/**
+	 * The number of structural features of the '<em>Application</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_FEATURE_COUNT = PARTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ProcessImpl <em>Process</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ProcessImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getProcess()
+	 * @generated
+	 */
+	int PROCESS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__NAME = PARTY__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__DESCRIPTION = PARTY__DESCRIPTION;
+
+	/**
+	 * The number of structural features of the '<em>Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_FEATURE_COUNT = PARTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl <em>Clause</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getClause()
+	 * @generated
+	 */
+	int CLAUSE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__ID = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__DESCRIPTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Final Status</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__FINAL_STATUS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Fail Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__FAIL_DESCRIPTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Role Player</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__ROLE_PLAYER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__OPERATION = 6;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__CONDITION = 7;
+
+	/**
+	 * The number of structural features of the '<em>Clause</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE_FEATURE_COUNT = 8;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl <em>Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
+	 * @generated
+	 */
+	int OPERATION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ImportImpl <em>Import</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ImportImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getImport()
+	 * @generated
+	 */
+	int IMPORT = 8;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT__IMPORTED_NAMESPACE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ExpressionImpl <em>Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ExpressionImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getExpression()
+	 * @generated
+	 */
+	int EXPRESSION = 9;
+
+	/**
+	 * The number of structural features of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.LiteralValueImpl <em>Literal Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.LiteralValueImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLiteralValue()
+	 * @generated
+	 */
+	int LITERAL_VALUE = 10;
+
+	/**
+	 * The number of structural features of the '<em>Literal Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_VALUE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.NumericValueImpl <em>Numeric Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.NumericValueImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getNumericValue()
+	 * @generated
+	 */
+	int NUMERIC_VALUE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_VALUE__VALUE = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Numeric Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_VALUE_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.StringValueImpl <em>String Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.StringValueImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getStringValue()
+	 * @generated
+	 */
+	int STRING_VALUE = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE__VALUE = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>String Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BinaryOperatorImpl <em>Binary Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.BinaryOperatorImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBinaryOperator()
+	 * @generated
+	 */
+	int BINARY_OPERATOR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__SYMBOL = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Binary Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.UnaryOperatorImpl <em>Unary Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.UnaryOperatorImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnaryOperator()
+	 * @generated
+	 */
+	int UNARY_OPERATOR = 14;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR__SYMBOL = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR__EXPRESSION = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Unary Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableValueImpl <em>Variable Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariableValueImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariableValue()
+	 * @generated
+	 */
+	int VARIABLE_VALUE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_VALUE__VALUE = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Variable Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_VALUE_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.FunctionCallImpl <em>Function Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.FunctionCallImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getFunctionCall()
+	 * @generated
+	 */
+	int FUNCTION_CALL = 16;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__NAME = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__PARAMS = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Function Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 2;
+
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Contract <em>Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contract</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract
+	 * @generated
+	 */
+	EClass getContract();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getName()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EAttribute getContract_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Begin Date</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EAttribute getContract_BeginDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate <em>Due Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Due Date</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EAttribute getContract_DueDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getExcecutionsNumber <em>Excecutions Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Excecutions Number</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getExcecutionsNumber()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EAttribute getContract_ExcecutionsNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getDescription()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EAttribute getContract_Description();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getApplication <em>Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Application</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getApplication()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EReference getContract_Application();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getProcess <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Process</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getProcess()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EReference getContract_Process();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getClauses <em>Clauses</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Clauses</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getClauses()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EReference getContract_Clauses();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Status <em>Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Status</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Status
+	 * @generated
+	 */
+	EClass getStatus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Status#isActive <em>Active</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Active</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Status#isActive()
+	 * @see #getStatus()
+	 * @generated
+	 */
+	EAttribute getStatus_Active();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Status#isRunning <em>Running</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Running</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Status#isRunning()
+	 * @see #getStatus()
+	 * @generated
+	 */
+	EAttribute getStatus_Running();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Status#getCurrentClause <em>Current Clause</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Current Clause</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Status#getCurrentClause()
+	 * @see #getStatus()
+	 * @generated
+	 */
+	EAttribute getStatus_CurrentClause();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Status#getRemainingTime <em>Remaining Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Remaining Time</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Status#getRemainingTime()
+	 * @see #getStatus()
+	 * @generated
+	 */
+	EAttribute getStatus_RemainingTime();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Model <em>Model</em>}'.
@@ -125,36 +913,419 @@ public interface SmartCEPackage extends EPackage
 	EClass getModel();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Model#getGreetings <em>Greetings</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Model#getContracts <em>Contracts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Greetings</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Model#getGreetings()
+	 * @return the meta object for the containment reference list '<em>Contracts</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Model#getContracts()
 	 * @see #getModel()
 	 * @generated
 	 */
-	EReference getModel_Greetings();
+	EReference getModel_Contracts();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Greeting <em>Greeting</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Model#getOperations <em>Operations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Greeting</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Greeting
+	 * @return the meta object for the containment reference list '<em>Operations</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Model#getOperations()
+	 * @see #getModel()
 	 * @generated
 	 */
-	EClass getGreeting();
+	EReference getModel_Operations();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Greeting#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Model#getImports <em>Imports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Imports</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Model#getImports()
+	 * @see #getModel()
+	 * @generated
+	 */
+	EReference getModel_Imports();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Application <em>Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Application</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Application
+	 * @generated
+	 */
+	EClass getApplication();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Process <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Process</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Process
+	 * @generated
+	 */
+	EClass getProcess();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Party <em>Party</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Party</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Party
+	 * @generated
+	 */
+	EClass getParty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Party#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Greeting#getName()
-	 * @see #getGreeting()
+	 * @see br.edu.unijui.gca.smartce.smartCE.Party#getName()
+	 * @see #getParty()
 	 * @generated
 	 */
-	EAttribute getGreeting_Name();
+	EAttribute getParty_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Party#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Party#getDescription()
+	 * @see #getParty()
+	 * @generated
+	 */
+	EAttribute getParty_Description();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Clause <em>Clause</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Clause</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause
+	 * @generated
+	 */
+	EClass getClause();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getId <em>Id</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getId()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_Id();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getName()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getDescription()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFinalStatus <em>Final Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Final Status</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getFinalStatus()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_FinalStatus();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFailDescription <em>Fail Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fail Description</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getFailDescription()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_FailDescription();
+
+	/**
+	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Role Player</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_RolePlayer();
+
+	/**
+	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Operation</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getOperation()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_Operation();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getCondition()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_Condition();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operation</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @generated
+	 */
+	EClass getOperation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Operation#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation#getName()
+	 * @see #getOperation()
+	 * @generated
+	 */
+	EAttribute getOperation_Name();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Import</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Import
+	 * @generated
+	 */
+	EClass getImport();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Import#getImportedNamespace()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EAttribute getImport_ImportedNamespace();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Expression
+	 * @generated
+	 */
+	EClass getExpression();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.LiteralValue <em>Literal Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Literal Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.LiteralValue
+	 * @generated
+	 */
+	EClass getLiteralValue();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.NumericValue <em>Numeric Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Numeric Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.NumericValue
+	 * @generated
+	 */
+	EClass getNumericValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.NumericValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.NumericValue#getValue()
+	 * @see #getNumericValue()
+	 * @generated
+	 */
+	EAttribute getNumericValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.StringValue <em>String Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.StringValue
+	 * @generated
+	 */
+	EClass getStringValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.StringValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.StringValue#getValue()
+	 * @see #getStringValue()
+	 * @generated
+	 */
+	EAttribute getStringValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BinaryOperator <em>Binary Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Binary Operator</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BinaryOperator
+	 * @generated
+	 */
+	EClass getBinaryOperator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.BinaryOperator#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Left</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BinaryOperator#getLeft()
+	 * @see #getBinaryOperator()
+	 * @generated
+	 */
+	EReference getBinaryOperator_Left();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BinaryOperator#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BinaryOperator#getSymbol()
+	 * @see #getBinaryOperator()
+	 * @generated
+	 */
+	EAttribute getBinaryOperator_Symbol();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.BinaryOperator#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Right</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BinaryOperator#getRight()
+	 * @see #getBinaryOperator()
+	 * @generated
+	 */
+	EReference getBinaryOperator_Right();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.UnaryOperator <em>Unary Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unary Operator</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.UnaryOperator
+	 * @generated
+	 */
+	EClass getUnaryOperator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.UnaryOperator#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.UnaryOperator#getSymbol()
+	 * @see #getUnaryOperator()
+	 * @generated
+	 */
+	EAttribute getUnaryOperator_Symbol();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.UnaryOperator#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.UnaryOperator#getExpression()
+	 * @see #getUnaryOperator()
+	 * @generated
+	 */
+	EReference getUnaryOperator_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.VariableValue <em>Variable Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.VariableValue
+	 * @generated
+	 */
+	EClass getVariableValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.VariableValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.VariableValue#getValue()
+	 * @see #getVariableValue()
+	 * @generated
+	 */
+	EAttribute getVariableValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.FunctionCall <em>Function Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Function Call</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.FunctionCall
+	 * @generated
+	 */
+	EClass getFunctionCall();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.FunctionCall#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.FunctionCall#getName()
+	 * @see #getFunctionCall()
+	 * @generated
+	 */
+	EAttribute getFunctionCall_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.FunctionCall#getParams <em>Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Params</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.FunctionCall#getParams()
+	 * @see #getFunctionCall()
+	 * @generated
+	 */
+	EReference getFunctionCall_Params();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -180,6 +1351,122 @@ public interface SmartCEPackage extends EPackage
 	interface Literals
 	{
 		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl <em>Contract</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getContract()
+		 * @generated
+		 */
+		EClass CONTRACT = eINSTANCE.getContract();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT__NAME = eINSTANCE.getContract_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Begin Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT__BEGIN_DATE = eINSTANCE.getContract_BeginDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Due Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT__DUE_DATE = eINSTANCE.getContract_DueDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Excecutions Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT__EXCECUTIONS_NUMBER = eINSTANCE.getContract_ExcecutionsNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT__DESCRIPTION = eINSTANCE.getContract_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Application</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT__APPLICATION = eINSTANCE.getContract_Application();
+
+		/**
+		 * The meta object literal for the '<em><b>Process</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT__PROCESS = eINSTANCE.getContract_Process();
+
+		/**
+		 * The meta object literal for the '<em><b>Clauses</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT__CLAUSES = eINSTANCE.getContract_Clauses();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.StatusImpl <em>Status</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.StatusImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getStatus()
+		 * @generated
+		 */
+		EClass STATUS = eINSTANCE.getStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Active</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATUS__ACTIVE = eINSTANCE.getStatus_Active();
+
+		/**
+		 * The meta object literal for the '<em><b>Running</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATUS__RUNNING = eINSTANCE.getStatus_Running();
+
+		/**
+		 * The meta object literal for the '<em><b>Current Clause</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATUS__CURRENT_CLAUSE = eINSTANCE.getStatus_CurrentClause();
+
+		/**
+		 * The meta object literal for the '<em><b>Remaining Time</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STATUS__REMAINING_TIME = eINSTANCE.getStatus_RemainingTime();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl <em>Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -190,22 +1477,58 @@ public interface SmartCEPackage extends EPackage
 		EClass MODEL = eINSTANCE.getModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Contracts</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+		EReference MODEL__CONTRACTS = eINSTANCE.getModel_Contracts();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.GreetingImpl <em>Greeting</em>}' class.
+		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.GreetingImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getGreeting()
 		 * @generated
 		 */
-		EClass GREETING = eINSTANCE.getGreeting();
+		EReference MODEL__OPERATIONS = eINSTANCE.getModel_Operations();
+
+		/**
+		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MODEL__IMPORTS = eINSTANCE.getModel_Imports();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ApplicationImpl <em>Application</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ApplicationImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getApplication()
+		 * @generated
+		 */
+		EClass APPLICATION = eINSTANCE.getApplication();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ProcessImpl <em>Process</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ProcessImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getProcess()
+		 * @generated
+		 */
+		EClass PROCESS = eINSTANCE.getProcess();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.PartyImpl <em>Party</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.PartyImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getParty()
+		 * @generated
+		 */
+		EClass PARTY = eINSTANCE.getParty();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +1536,285 @@ public interface SmartCEPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+		EAttribute PARTY__NAME = eINSTANCE.getParty_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTY__DESCRIPTION = eINSTANCE.getParty_Description();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl <em>Clause</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getClause()
+		 * @generated
+		 */
+		EClass CLAUSE = eINSTANCE.getClause();
+
+		/**
+		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__ID = eINSTANCE.getClause_Id();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__NAME = eINSTANCE.getClause_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__DESCRIPTION = eINSTANCE.getClause_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Final Status</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__FINAL_STATUS = eINSTANCE.getClause_FinalStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Fail Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__FAIL_DESCRIPTION = eINSTANCE.getClause_FailDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Role Player</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__ROLE_PLAYER = eINSTANCE.getClause_RolePlayer();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__OPERATION = eINSTANCE.getClause_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__CONDITION = eINSTANCE.getClause_Condition();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl <em>Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
+		 * @generated
+		 */
+		EClass OPERATION = eINSTANCE.getOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATION__NAME = eINSTANCE.getOperation_Name();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ImportImpl <em>Import</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ImportImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getImport()
+		 * @generated
+		 */
+		EClass IMPORT = eINSTANCE.getImport();
+
+		/**
+		 * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ExpressionImpl <em>Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ExpressionImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getExpression()
+		 * @generated
+		 */
+		EClass EXPRESSION = eINSTANCE.getExpression();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.LiteralValueImpl <em>Literal Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.LiteralValueImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLiteralValue()
+		 * @generated
+		 */
+		EClass LITERAL_VALUE = eINSTANCE.getLiteralValue();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.NumericValueImpl <em>Numeric Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.NumericValueImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getNumericValue()
+		 * @generated
+		 */
+		EClass NUMERIC_VALUE = eINSTANCE.getNumericValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_VALUE__VALUE = eINSTANCE.getNumericValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.StringValueImpl <em>String Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.StringValueImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getStringValue()
+		 * @generated
+		 */
+		EClass STRING_VALUE = eINSTANCE.getStringValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_VALUE__VALUE = eINSTANCE.getStringValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BinaryOperatorImpl <em>Binary Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.BinaryOperatorImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBinaryOperator()
+		 * @generated
+		 */
+		EClass BINARY_OPERATOR = eINSTANCE.getBinaryOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARY_OPERATOR__LEFT = eINSTANCE.getBinaryOperator_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BINARY_OPERATOR__SYMBOL = eINSTANCE.getBinaryOperator_Symbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARY_OPERATOR__RIGHT = eINSTANCE.getBinaryOperator_Right();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.UnaryOperatorImpl <em>Unary Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.UnaryOperatorImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnaryOperator()
+		 * @generated
+		 */
+		EClass UNARY_OPERATOR = eINSTANCE.getUnaryOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNARY_OPERATOR__SYMBOL = eINSTANCE.getUnaryOperator_Symbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNARY_OPERATOR__EXPRESSION = eINSTANCE.getUnaryOperator_Expression();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableValueImpl <em>Variable Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariableValueImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariableValue()
+		 * @generated
+		 */
+		EClass VARIABLE_VALUE = eINSTANCE.getVariableValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE_VALUE__VALUE = eINSTANCE.getVariableValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.FunctionCallImpl <em>Function Call</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.FunctionCallImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getFunctionCall()
+		 * @generated
+		 */
+		EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION_CALL__NAME = eINSTANCE.getFunctionCall_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTION_CALL__PARAMS = eINSTANCE.getFunctionCall_Params();
 
 	}
 

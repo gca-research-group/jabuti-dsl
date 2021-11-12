@@ -16,7 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Model#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Model#getContracts <em>Contracts</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Model#getOperations <em>Operations</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Model#getImports <em>Imports</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getModel()
@@ -26,15 +28,39 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Greeting}.
+	 * Returns the value of the '<em><b>Contracts</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Contract}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Greetings</em>' containment reference list.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getModel_Greetings()
+	 * @return the value of the '<em>Contracts</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getModel_Contracts()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Greeting> getGreetings();
+	EList<Contract> getContracts();
+
+	/**
+	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operations</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getModel_Operations()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Operation> getOperations();
+
+	/**
+	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Import}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Imports</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getModel_Imports()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Import> getImports();
 
 } // Model

@@ -1,0 +1,8 @@
+//Operations
+
+Operation.PUSH
+Operation.POLL
+Operation.WRITE
+Operation.READ
+Operation.REQUEST
+Operation.RESPONSE

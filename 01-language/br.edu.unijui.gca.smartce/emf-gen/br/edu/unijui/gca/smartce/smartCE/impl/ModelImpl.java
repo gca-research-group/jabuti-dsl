@@ -3,8 +3,10 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.Greeting;
+import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.Model;
+import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
 import java.util.Collection;
@@ -29,7 +31,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl#getContracts <em>Contracts</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl#getOperations <em>Operations</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl#getImports <em>Imports</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +41,34 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
 	/**
-	 * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+	 * The cached value of the '{@link #getContracts() <em>Contracts</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGreetings()
+	 * @see #getContracts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Greeting> greetings;
+	protected EList<Contract> contracts;
+
+	/**
+	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Operation> operations;
+
+	/**
+	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImports()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Import> imports;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,13 +97,43 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	 * @generated
 	 */
 	@Override
-	public EList<Greeting> getGreetings()
+	public EList<Contract> getContracts()
 	{
-		if (greetings == null)
+		if (contracts == null)
 		{
-			greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, SmartCEPackage.MODEL__GREETINGS);
+			contracts = new EObjectContainmentEList<Contract>(Contract.class, this, SmartCEPackage.MODEL__CONTRACTS);
 		}
-		return greetings;
+		return contracts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Operation> getOperations()
+	{
+		if (operations == null)
+		{
+			operations = new EObjectContainmentEList<Operation>(Operation.class, this, SmartCEPackage.MODEL__OPERATIONS);
+		}
+		return operations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Import> getImports()
+	{
+		if (imports == null)
+		{
+			imports = new EObjectContainmentEList<Import>(Import.class, this, SmartCEPackage.MODEL__IMPORTS);
+		}
+		return imports;
 	}
 
 	/**
@@ -92,8 +146,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.MODEL__GREETINGS:
-				return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.MODEL__CONTRACTS:
+				return ((InternalEList<?>)getContracts()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.MODEL__OPERATIONS:
+				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.MODEL__IMPORTS:
+				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -108,8 +166,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.MODEL__GREETINGS:
-				return getGreetings();
+			case SmartCEPackage.MODEL__CONTRACTS:
+				return getContracts();
+			case SmartCEPackage.MODEL__OPERATIONS:
+				return getOperations();
+			case SmartCEPackage.MODEL__IMPORTS:
+				return getImports();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,9 +187,17 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.MODEL__GREETINGS:
-				getGreetings().clear();
-				getGreetings().addAll((Collection<? extends Greeting>)newValue);
+			case SmartCEPackage.MODEL__CONTRACTS:
+				getContracts().clear();
+				getContracts().addAll((Collection<? extends Contract>)newValue);
+				return;
+			case SmartCEPackage.MODEL__OPERATIONS:
+				getOperations().clear();
+				getOperations().addAll((Collection<? extends Operation>)newValue);
+				return;
+			case SmartCEPackage.MODEL__IMPORTS:
+				getImports().clear();
+				getImports().addAll((Collection<? extends Import>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -143,8 +213,14 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.MODEL__GREETINGS:
-				getGreetings().clear();
+			case SmartCEPackage.MODEL__CONTRACTS:
+				getContracts().clear();
+				return;
+			case SmartCEPackage.MODEL__OPERATIONS:
+				getOperations().clear();
+				return;
+			case SmartCEPackage.MODEL__IMPORTS:
+				getImports().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -160,8 +236,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.MODEL__GREETINGS:
-				return greetings != null && !greetings.isEmpty();
+			case SmartCEPackage.MODEL__CONTRACTS:
+				return contracts != null && !contracts.isEmpty();
+			case SmartCEPackage.MODEL__OPERATIONS:
+				return operations != null && !operations.isEmpty();
+			case SmartCEPackage.MODEL__IMPORTS:
+				return imports != null && !imports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

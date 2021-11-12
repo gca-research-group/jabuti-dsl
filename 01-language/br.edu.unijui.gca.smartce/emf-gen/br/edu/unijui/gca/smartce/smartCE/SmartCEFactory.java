@@ -24,6 +24,24 @@ public interface SmartCEFactory extends EFactory
 	SmartCEFactory eINSTANCE = br.edu.unijui.gca.smartce.smartCE.impl.SmartCEFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Contract</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Contract</em>'.
+	 * @generated
+	 */
+	Contract createContract();
+
+	/**
+	 * Returns a new object of class '<em>Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Status</em>'.
+	 * @generated
+	 */
+	Status createStatus();
+
+	/**
 	 * Returns a new object of class '<em>Model</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -33,13 +51,130 @@ public interface SmartCEFactory extends EFactory
 	Model createModel();
 
 	/**
-	 * Returns a new object of class '<em>Greeting</em>'.
+	 * Returns a new object of class '<em>Application</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Greeting</em>'.
+	 * @return a new object of class '<em>Application</em>'.
 	 * @generated
 	 */
-	Greeting createGreeting();
+	Application createApplication();
+
+	/**
+	 * Returns a new object of class '<em>Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Process</em>'.
+	 * @generated
+	 */
+	Process createProcess();
+
+	/**
+	 * Returns a new object of class '<em>Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Party</em>'.
+	 * @generated
+	 */
+	Party createParty();
+
+	/**
+	 * Returns a new object of class '<em>Clause</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Clause</em>'.
+	 * @generated
+	 */
+	Clause createClause();
+
+	/**
+	 * Returns a new object of class '<em>Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operation</em>'.
+	 * @generated
+	 */
+	Operation createOperation();
+
+	/**
+	 * Returns a new object of class '<em>Import</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Import</em>'.
+	 * @generated
+	 */
+	Import createImport();
+
+	/**
+	 * Returns a new object of class '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Expression</em>'.
+	 * @generated
+	 */
+	Expression createExpression();
+
+	/**
+	 * Returns a new object of class '<em>Literal Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Literal Value</em>'.
+	 * @generated
+	 */
+	LiteralValue createLiteralValue();
+
+	/**
+	 * Returns a new object of class '<em>Numeric Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Numeric Value</em>'.
+	 * @generated
+	 */
+	NumericValue createNumericValue();
+
+	/**
+	 * Returns a new object of class '<em>String Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Value</em>'.
+	 * @generated
+	 */
+	StringValue createStringValue();
+
+	/**
+	 * Returns a new object of class '<em>Binary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Binary Operator</em>'.
+	 * @generated
+	 */
+	BinaryOperator createBinaryOperator();
+
+	/**
+	 * Returns a new object of class '<em>Unary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Unary Operator</em>'.
+	 * @generated
+	 */
+	UnaryOperator createUnaryOperator();
+
+	/**
+	 * Returns a new object of class '<em>Variable Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable Value</em>'.
+	 * @generated
+	 */
+	VariableValue createVariableValue();
+
+	/**
+	 * Returns a new object of class '<em>Function Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Function Call</em>'.
+	 * @generated
+	 */
+	FunctionCall createFunctionCall();
 
 	/**
 	 * Returns the package supported by this factory.

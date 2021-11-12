@@ -3,7 +3,23 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.util;
 
-import br.edu.unijui.gca.smartce.smartCE.*;
+import br.edu.unijui.gca.smartce.smartCE.Application;
+import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.Expression;
+import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
+import br.edu.unijui.gca.smartce.smartCE.Import;
+import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
+import br.edu.unijui.gca.smartce.smartCE.Model;
+import br.edu.unijui.gca.smartce.smartCE.NumericValue;
+import br.edu.unijui.gca.smartce.smartCE.Operation;
+import br.edu.unijui.gca.smartce.smartCE.Party;
+import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.Status;
+import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -73,6 +89,20 @@ public class SmartCESwitch<T> extends Switch<T>
 	{
 		switch (classifierID)
 		{
+			case SmartCEPackage.CONTRACT:
+			{
+				Contract contract = (Contract)theEObject;
+				T result = caseContract(contract);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.STATUS:
+			{
+				Status status = (Status)theEObject;
+				T result = caseStatus(status);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case SmartCEPackage.MODEL:
 			{
 				Model model = (Model)theEObject;
@@ -80,15 +110,151 @@ public class SmartCESwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmartCEPackage.GREETING:
+			case SmartCEPackage.APPLICATION:
 			{
-				Greeting greeting = (Greeting)theEObject;
-				T result = caseGreeting(greeting);
+				Application application = (Application)theEObject;
+				T result = caseApplication(application);
+				if (result == null) result = caseParty(application);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.PROCESS:
+			{
+				br.edu.unijui.gca.smartce.smartCE.Process process = (br.edu.unijui.gca.smartce.smartCE.Process)theEObject;
+				T result = caseProcess(process);
+				if (result == null) result = caseParty(process);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.PARTY:
+			{
+				Party party = (Party)theEObject;
+				T result = caseParty(party);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.CLAUSE:
+			{
+				Clause clause = (Clause)theEObject;
+				T result = caseClause(clause);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.OPERATION:
+			{
+				Operation operation = (Operation)theEObject;
+				T result = caseOperation(operation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.IMPORT:
+			{
+				Import import_ = (Import)theEObject;
+				T result = caseImport(import_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.EXPRESSION:
+			{
+				Expression expression = (Expression)theEObject;
+				T result = caseExpression(expression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.LITERAL_VALUE:
+			{
+				LiteralValue literalValue = (LiteralValue)theEObject;
+				T result = caseLiteralValue(literalValue);
+				if (result == null) result = caseExpression(literalValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.NUMERIC_VALUE:
+			{
+				NumericValue numericValue = (NumericValue)theEObject;
+				T result = caseNumericValue(numericValue);
+				if (result == null) result = caseLiteralValue(numericValue);
+				if (result == null) result = caseExpression(numericValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.STRING_VALUE:
+			{
+				StringValue stringValue = (StringValue)theEObject;
+				T result = caseStringValue(stringValue);
+				if (result == null) result = caseLiteralValue(stringValue);
+				if (result == null) result = caseExpression(stringValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.BINARY_OPERATOR:
+			{
+				BinaryOperator binaryOperator = (BinaryOperator)theEObject;
+				T result = caseBinaryOperator(binaryOperator);
+				if (result == null) result = caseExpression(binaryOperator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.UNARY_OPERATOR:
+			{
+				UnaryOperator unaryOperator = (UnaryOperator)theEObject;
+				T result = caseUnaryOperator(unaryOperator);
+				if (result == null) result = caseExpression(unaryOperator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.VARIABLE_VALUE:
+			{
+				VariableValue variableValue = (VariableValue)theEObject;
+				T result = caseVariableValue(variableValue);
+				if (result == null) result = caseLiteralValue(variableValue);
+				if (result == null) result = caseExpression(variableValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.FUNCTION_CALL:
+			{
+				FunctionCall functionCall = (FunctionCall)theEObject;
+				T result = caseFunctionCall(functionCall);
+				if (result == null) result = caseLiteralValue(functionCall);
+				if (result == null) result = caseExpression(functionCall);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			default: return defaultCase(theEObject);
 		}
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contract</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contract</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContract(Contract object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Status</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Status</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStatus(Status object)
+	{
+		return null;
 	}
 
 	/**
@@ -108,17 +274,225 @@ public class SmartCESwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Application</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Application</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGreeting(Greeting object)
+	public T caseApplication(Application object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Process</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcess(br.edu.unijui.gca.smartce.smartCE.Process object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Party</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParty(Party object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Clause</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Clause</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClause(Clause object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOperation(Operation object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Import</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseImport(Import object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Literal Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Literal Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLiteralValue(LiteralValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Numeric Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Numeric Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNumericValue(NumericValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringValue(StringValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Binary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Binary Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBinaryOperator(BinaryOperator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unary Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUnaryOperator(UnaryOperator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariableValue(VariableValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionCall(FunctionCall object)
 	{
 		return null;
 	}

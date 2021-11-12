@@ -4,9 +4,19 @@
 package br.edu.unijui.gca.smartce.serializer;
 
 import br.edu.unijui.gca.smartce.services.SmartCEGrammarAccess;
-import br.edu.unijui.gca.smartce.smartCE.Greeting;
+import br.edu.unijui.gca.smartce.smartCE.Application;
+import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
+import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.Model;
+import br.edu.unijui.gca.smartce.smartCE.NumericValue;
+import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 import com.google.inject.Inject;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -33,11 +43,44 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SmartCEPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SmartCEPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case SmartCEPackage.APPLICATION:
+				sequence_Application(context, (Application) semanticObject); 
+				return; 
+			case SmartCEPackage.BINARY_OPERATOR:
+				sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
+				return; 
+			case SmartCEPackage.CLAUSE:
+				sequence_Clause(context, (Clause) semanticObject); 
+				return; 
+			case SmartCEPackage.CONTRACT:
+				sequence_Contract(context, (Contract) semanticObject); 
+				return; 
+			case SmartCEPackage.FUNCTION_CALL:
+				sequence_FunctionCall(context, (FunctionCall) semanticObject); 
+				return; 
+			case SmartCEPackage.IMPORT:
+				sequence_Import(context, (Import) semanticObject); 
 				return; 
 			case SmartCEPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case SmartCEPackage.NUMERIC_VALUE:
+				sequence_NumericValue(context, (NumericValue) semanticObject); 
+				return; 
+			case SmartCEPackage.OPERATION:
+				sequence_Operation(context, (Operation) semanticObject); 
+				return; 
+			case SmartCEPackage.PROCESS:
+				sequence_Process(context, (br.edu.unijui.gca.smartce.smartCE.Process) semanticObject); 
+				return; 
+			case SmartCEPackage.STRING_VALUE:
+				sequence_StringValue(context, (StringValue) semanticObject); 
+				return; 
+			case SmartCEPackage.UNARY_OPERATOR:
+				sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
+				return; 
+			case SmartCEPackage.VARIABLE_VALUE:
+				sequence_VariableValue(context, (VariableValue) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -46,18 +89,153 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     Party returns Application
+	 *     Application returns Application
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID description=STRING)
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_Application(ISerializationContext context, Application semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.PARTY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.PARTY__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.PARTY__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.PARTY__DESCRIPTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getApplicationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getApplicationAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Clause returns Clause
+	 *
+	 * Constraint:
+	 *     (name=ID description=STRING rolePlayer=[Party|ID] operation=[Operation|QualifiedName] condition=Expression)
+	 */
+	protected void sequence_Clause(ISerializationContext context, Clause semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__DESCRIPTION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__OPERATION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__OPERATION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getClauseAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClauseAccess().getDescriptionSTRINGTerminalRuleCall_5_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getClauseAccess().getRolePlayerPartyIDTerminalRuleCall_7_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER, false));
+		feeder.accept(grammarAccess.getClauseAccess().getOperationOperationQualifiedNameParserRuleCall_9_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__OPERATION, false));
+		feeder.accept(grammarAccess.getClauseAccess().getConditionExpressionParserRuleCall_13_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns BinaryOperator
+	 *     Expression.BinaryOperator_1_0 returns BinaryOperator
+	 *     Negation returns BinaryOperator
+	 *     Comparison returns BinaryOperator
+	 *     Comparison.BinaryOperator_1_0 returns BinaryOperator
+	 *     Plus returns BinaryOperator
+	 *     Plus.BinaryOperator_1_0 returns BinaryOperator
+	 *     Factor returns BinaryOperator
+	 *     Factor.BinaryOperator_1_0 returns BinaryOperator
+	 *     Negative returns BinaryOperator
+	 *     Primary returns BinaryOperator
+	 *
+	 * Constraint:
+	 *     (
+	 *         (left=Expression_BinaryOperator_1_0 (symbol='&&' | symbol='||') right=Negation) | 
+	 *         (
+	 *             left=Comparison_BinaryOperator_1_0 
+	 *             (
+	 *                 symbol='<=' | 
+	 *                 symbol='>=' | 
+	 *                 symbol='>' | 
+	 *                 symbol='<' | 
+	 *                 symbol='!=' | 
+	 *                 symbol='==' | 
+	 *                 symbol='is' | 
+	 *                 symbol='as'
+	 *             ) 
+	 *             right=Plus
+	 *         ) | 
+	 *         (left=Plus_BinaryOperator_1_0 right=Factor) | 
+	 *         (left=Factor_BinaryOperator_1_0 right=Negative)
+	 *     )
+	 */
+	protected void sequence_Comparison_Expression_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Contract returns Contract
+	 *
+	 * Constraint:
+	 *     (
+	 *         name=ID 
+	 *         beginDate=STRING 
+	 *         dueDate=STRING 
+	 *         application=Application 
+	 *         process=Process 
+	 *         clauses+=Clause*
+	 *     )
+	 */
+	protected void sequence_Contract(ISerializationContext context, Contract semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns FunctionCall
+	 *     Expression.BinaryOperator_1_0 returns FunctionCall
+	 *     Negation returns FunctionCall
+	 *     Comparison returns FunctionCall
+	 *     Comparison.BinaryOperator_1_0 returns FunctionCall
+	 *     Plus returns FunctionCall
+	 *     Plus.BinaryOperator_1_0 returns FunctionCall
+	 *     Factor returns FunctionCall
+	 *     Factor.BinaryOperator_1_0 returns FunctionCall
+	 *     Negative returns FunctionCall
+	 *     Primary returns FunctionCall
+	 *     LiteralValue returns FunctionCall
+	 *     FunctionCall returns FunctionCall
+	 *
+	 * Constraint:
+	 *     (name=QualifiedName params+=Expression params+=Expression*)
+	 */
+	protected void sequence_FunctionCall(ISerializationContext context, FunctionCall semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Import returns Import
+	 *
+	 * Constraint:
+	 *     importedNamespace=QualifiedNameWithWildcard
+	 */
+	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	
@@ -67,10 +245,162 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     (imports+=Import* operations+=Operation* contracts+=Contract*)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns UnaryOperator
+	 *     Expression.BinaryOperator_1_0 returns UnaryOperator
+	 *     Negation returns UnaryOperator
+	 *     Comparison returns UnaryOperator
+	 *     Comparison.BinaryOperator_1_0 returns UnaryOperator
+	 *     Plus returns UnaryOperator
+	 *     Plus.BinaryOperator_1_0 returns UnaryOperator
+	 *     Factor returns UnaryOperator
+	 *     Factor.BinaryOperator_1_0 returns UnaryOperator
+	 *     Negative returns UnaryOperator
+	 *     Primary returns UnaryOperator
+	 *
+	 * Constraint:
+	 *     ((symbol='!' expression=Comparison) | expression=Primary)
+	 */
+	protected void sequence_Negation_Negative(ISerializationContext context, UnaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns NumericValue
+	 *     Expression.BinaryOperator_1_0 returns NumericValue
+	 *     Negation returns NumericValue
+	 *     Comparison returns NumericValue
+	 *     Comparison.BinaryOperator_1_0 returns NumericValue
+	 *     Plus returns NumericValue
+	 *     Plus.BinaryOperator_1_0 returns NumericValue
+	 *     Factor returns NumericValue
+	 *     Factor.BinaryOperator_1_0 returns NumericValue
+	 *     Negative returns NumericValue
+	 *     Primary returns NumericValue
+	 *     LiteralValue returns NumericValue
+	 *     NumericValue returns NumericValue
+	 *
+	 * Constraint:
+	 *     value=INT
+	 */
+	protected void sequence_NumericValue(ISerializationContext context, NumericValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.NUMERIC_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.NUMERIC_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNumericValueAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Operation returns Operation
+	 *
+	 * Constraint:
+	 *     name=QualifiedName
+	 */
+	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATION__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperationAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Party returns Process
+	 *     Process returns Process
+	 *
+	 * Constraint:
+	 *     (name=ID description=STRING)
+	 */
+	protected void sequence_Process(ISerializationContext context, br.edu.unijui.gca.smartce.smartCE.Process semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.PARTY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.PARTY__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.PARTY__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.PARTY__DESCRIPTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProcessAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getProcessAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns StringValue
+	 *     Expression.BinaryOperator_1_0 returns StringValue
+	 *     Negation returns StringValue
+	 *     Comparison returns StringValue
+	 *     Comparison.BinaryOperator_1_0 returns StringValue
+	 *     Plus returns StringValue
+	 *     Plus.BinaryOperator_1_0 returns StringValue
+	 *     Factor returns StringValue
+	 *     Factor.BinaryOperator_1_0 returns StringValue
+	 *     Negative returns StringValue
+	 *     Primary returns StringValue
+	 *     LiteralValue returns StringValue
+	 *     StringValue returns StringValue
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 */
+	protected void sequence_StringValue(ISerializationContext context, StringValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.STRING_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.STRING_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Expression returns VariableValue
+	 *     Expression.BinaryOperator_1_0 returns VariableValue
+	 *     Negation returns VariableValue
+	 *     Comparison returns VariableValue
+	 *     Comparison.BinaryOperator_1_0 returns VariableValue
+	 *     Plus returns VariableValue
+	 *     Plus.BinaryOperator_1_0 returns VariableValue
+	 *     Factor returns VariableValue
+	 *     Factor.BinaryOperator_1_0 returns VariableValue
+	 *     Negative returns VariableValue
+	 *     Primary returns VariableValue
+	 *     LiteralValue returns VariableValue
+	 *     VariableValue returns VariableValue
+	 *
+	 * Constraint:
+	 *     value=QualifiedName
+	 */
+	protected void sequence_VariableValue(ISerializationContext context, VariableValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.VARIABLE_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.VARIABLE_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableValueAccess().getValueQualifiedNameParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	

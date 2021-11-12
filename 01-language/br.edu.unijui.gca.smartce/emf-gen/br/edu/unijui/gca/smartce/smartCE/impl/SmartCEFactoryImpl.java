@@ -3,7 +3,24 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.*;
+import br.edu.unijui.gca.smartce.smartCE.Application;
+import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.Expression;
+import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
+import br.edu.unijui.gca.smartce.smartCE.Import;
+import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
+import br.edu.unijui.gca.smartce.smartCE.Model;
+import br.edu.unijui.gca.smartce.smartCE.NumericValue;
+import br.edu.unijui.gca.smartce.smartCE.Operation;
+import br.edu.unijui.gca.smartce.smartCE.Party;
+import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
+import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.Status;
+import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -65,11 +82,50 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		switch (eClass.getClassifierID())
 		{
+			case SmartCEPackage.CONTRACT: return createContract();
+			case SmartCEPackage.STATUS: return createStatus();
 			case SmartCEPackage.MODEL: return createModel();
-			case SmartCEPackage.GREETING: return createGreeting();
+			case SmartCEPackage.APPLICATION: return createApplication();
+			case SmartCEPackage.PROCESS: return createProcess();
+			case SmartCEPackage.PARTY: return createParty();
+			case SmartCEPackage.CLAUSE: return createClause();
+			case SmartCEPackage.OPERATION: return createOperation();
+			case SmartCEPackage.IMPORT: return createImport();
+			case SmartCEPackage.EXPRESSION: return createExpression();
+			case SmartCEPackage.LITERAL_VALUE: return createLiteralValue();
+			case SmartCEPackage.NUMERIC_VALUE: return createNumericValue();
+			case SmartCEPackage.STRING_VALUE: return createStringValue();
+			case SmartCEPackage.BINARY_OPERATOR: return createBinaryOperator();
+			case SmartCEPackage.UNARY_OPERATOR: return createUnaryOperator();
+			case SmartCEPackage.VARIABLE_VALUE: return createVariableValue();
+			case SmartCEPackage.FUNCTION_CALL: return createFunctionCall();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Contract createContract()
+	{
+		ContractImpl contract = new ContractImpl();
+		return contract;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Status createStatus()
+	{
+		StatusImpl status = new StatusImpl();
+		return status;
 	}
 
 	/**
@@ -90,10 +146,166 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	@Override
-	public Greeting createGreeting()
+	public Application createApplication()
 	{
-		GreetingImpl greeting = new GreetingImpl();
-		return greeting;
+		ApplicationImpl application = new ApplicationImpl();
+		return application;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public br.edu.unijui.gca.smartce.smartCE.Process createProcess()
+	{
+		ProcessImpl process = new ProcessImpl();
+		return process;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Party createParty()
+	{
+		PartyImpl party = new PartyImpl();
+		return party;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Clause createClause()
+	{
+		ClauseImpl clause = new ClauseImpl();
+		return clause;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Operation createOperation()
+	{
+		OperationImpl operation = new OperationImpl();
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Import createImport()
+	{
+		ImportImpl import_ = new ImportImpl();
+		return import_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Expression createExpression()
+	{
+		ExpressionImpl expression = new ExpressionImpl();
+		return expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LiteralValue createLiteralValue()
+	{
+		LiteralValueImpl literalValue = new LiteralValueImpl();
+		return literalValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NumericValue createNumericValue()
+	{
+		NumericValueImpl numericValue = new NumericValueImpl();
+		return numericValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StringValue createStringValue()
+	{
+		StringValueImpl stringValue = new StringValueImpl();
+		return stringValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BinaryOperator createBinaryOperator()
+	{
+		BinaryOperatorImpl binaryOperator = new BinaryOperatorImpl();
+		return binaryOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UnaryOperator createUnaryOperator()
+	{
+		UnaryOperatorImpl unaryOperator = new UnaryOperatorImpl();
+		return unaryOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VariableValue createVariableValue()
+	{
+		VariableValueImpl variableValue = new VariableValueImpl();
+		return variableValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FunctionCall createFunctionCall()
+	{
+		FunctionCallImpl functionCall = new FunctionCallImpl();
+		return functionCall;
 	}
 
 	/**

@@ -2,8 +2,107 @@ grammar br.edu.unijui.gca.smartce.SmartCE with org.eclipse.xtext.common.Terminal
 
 import "http://www.edu.br/unijui/gca/smartce/SmartCE"
 
-Model:
-	greetings+=Greeting*;
+Model: 
+	{Model}
+	imports+=Import*
+	operations+=Operation*
+	contracts+=Contract*;
+
+Import:
+     'import' importedNamespace=QualifiedNameWithWildcard
+;
+
+Operation: 
+	name=QualifiedName
+;
+
+Contract: 
+	'Contract' name=ID '{'
+		'beginDate' '=' beginDate=STRING
+		'dueDate' '=' dueDate=STRING
+		'application' '=' application=Application
+		'process' '=' process=Process
+		clauses+=Clause*
+	'}'; 
+
+
+Clause: 
+	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
+		'description' '=' description=STRING
+		'rolePlayer' rolePlayer=[Party]
+		'rolePlayer.perform(' operation=[Operation|QualifiedName] ')'
+		'condition' '{' 
+			condition=Expression
+		'}'
+	 '}' 
+;
+
+Party: 
+	Application | Process
+;
+
+Application: 
+	name=ID':' description=STRING
+;
+
+Process: 
+	name=ID':' description=STRING  
+;
+
+
+Expression:
+	Negation ({BinaryOperator.left=current} (symbol='&&' | symbol="||") right=Negation)*;
+
+Negation returns Expression:
+	Comparison | {UnaryOperator} symbol='!' expression=Comparison;
+
+Comparison returns Expression:
+	Plus ({BinaryOperator.left=current} (symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
+	| symbol='==' | symbol='is' | symbol='as') right=Plus)*;
+
+Plus returns Expression:
+	Factor ({BinaryOperator.left=current} ('+' | '-') right=Factor)*;
+
+Factor returns Expression:
+	Negative ({BinaryOperator.left=current} ('*' | '/') right=Negative)*;
+
+Negative returns Expression:
+	Primary | {UnaryOperator} '-' expression=Primary;
+
+Primary returns Expression:
+	LiteralValue | '(' Expression ')';
 	
-Greeting:
-	'Hello' name=ID '!!!!';
+
+
+LiteralValue:
+	NumericValue | StringValue | VariableValue | FunctionCall;
+
+NumericValue:
+	value=INT;
+
+StringValue:
+	value=STRING;
+
+VariableValue:
+	value=QualifiedName;
+
+FunctionCall:
+	name=QualifiedName '(' params+=Expression (',' params+=Expression)* ')'
+;
+
+QualifiedName:
+	ID ('.' ID)*;
+	
+QualifiedNameWithWildcard:
+	QualifiedName '.*'; 
+
+DATE: YEAR'-'MONTH'-'DAY'T'HOUR':'MIN':'SEC;
+YEAR: INT;
+MONTH: INT;
+DAY: INT;
+HOUR: INT;
+MIN: INT;
+SEC: INT;
+
+
+
