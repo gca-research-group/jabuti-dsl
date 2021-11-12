@@ -3,6 +3,7 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
+import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
@@ -40,6 +41,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getApplication <em>Application</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getClauses <em>Clauses</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getActions <em>Actions</em>}</li>
  * </ul>
  *
  * @generated
@@ -175,6 +177,16 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 	 * @ordered
 	 */
 	protected EList<Clause> clauses;
+
+	/**
+	 * The cached value of the '{@link #getActions() <em>Actions</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getActions()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Action> actions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -443,6 +455,21 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 	 * @generated
 	 */
 	@Override
+	public EList<Action> getActions()
+	{
+		if (actions == null)
+		{
+			actions = new EObjectContainmentEList<Action>(Action.class, this, SmartCEPackage.CONTRACT__ACTIONS);
+		}
+		return actions;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -453,6 +480,8 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return basicSetProcess(null, msgs);
 			case SmartCEPackage.CONTRACT__CLAUSES:
 				return ((InternalEList<?>)getClauses()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.CONTRACT__ACTIONS:
+				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -483,6 +512,8 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return getProcess();
 			case SmartCEPackage.CONTRACT__CLAUSES:
 				return getClauses();
+			case SmartCEPackage.CONTRACT__ACTIONS:
+				return getActions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -523,6 +554,10 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				getClauses().clear();
 				getClauses().addAll((Collection<? extends Clause>)newValue);
 				return;
+			case SmartCEPackage.CONTRACT__ACTIONS:
+				getActions().clear();
+				getActions().addAll((Collection<? extends Action>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -561,6 +596,9 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 			case SmartCEPackage.CONTRACT__CLAUSES:
 				getClauses().clear();
 				return;
+			case SmartCEPackage.CONTRACT__ACTIONS:
+				getActions().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -591,6 +629,8 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return process != null;
 			case SmartCEPackage.CONTRACT__CLAUSES:
 				return clauses != null && !clauses.isEmpty();
+			case SmartCEPackage.CONTRACT__ACTIONS:
+				return actions != null && !actions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

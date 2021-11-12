@@ -17,6 +17,7 @@ import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -44,6 +45,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SmartCEPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case SmartCEPackage.ACTION:
+				sequence_Action(context, (br.edu.unijui.gca.smartce.smartCE.Action) semanticObject); 
+				return; 
 			case SmartCEPackage.APPLICATION:
 				sequence_Application(context, (Application) semanticObject); 
 				return; 
@@ -83,6 +87,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.UNARY_OPERATOR:
 				sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
 				return; 
+			case SmartCEPackage.VARIABLE:
+				sequence_Variable(context, (Variable) semanticObject); 
+				return; 
 			case SmartCEPackage.VARIABLE_VALUE:
 				sequence_VariableValue(context, (VariableValue) semanticObject); 
 				return; 
@@ -90,6 +97,18 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * Contexts:
+	 *     Action returns Action
+	 *
+	 * Constraint:
+	 *     (name=ID parameters+=Variable parameters+=Variable* statements+=Expression)
+	 */
+	protected void sequence_Action(ISerializationContext context, br.edu.unijui.gca.smartce.smartCE.Action semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
 	
 	/**
 	 * Contexts:
@@ -204,7 +223,8 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         dueDate=STRING 
 	 *         application=Application 
 	 *         process=Process 
-	 *         clauses+=Clause*
+	 *         clauses+=Clause* 
+	 *         actions+=Action*
 	 *     )
 	 */
 	protected void sequence_Contract(ISerializationContext context, Contract semanticObject) {
@@ -323,7 +343,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     OnBreach returns OnBreach
 	 *
 	 * Constraint:
-	 *     (action=Expression message=Expression)
+	 *     (action=[Action|ID] message=Expression)
 	 */
 	protected void sequence_OnBreach(ISerializationContext context, OnBreach semanticObject) {
 		if (errorAcceptor != null) {
@@ -333,7 +353,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.ON_BREACH__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOnBreachAccess().getActionExpressionParserRuleCall_1_0(), semanticObject.getAction());
+		feeder.accept(grammarAccess.getOnBreachAccess().getActionActionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SmartCEPackage.Literals.ON_BREACH__ACTION, false));
 		feeder.accept(grammarAccess.getOnBreachAccess().getMessageExpressionParserRuleCall_3_0(), semanticObject.getMessage());
 		feeder.finish();
 	}
@@ -435,6 +455,27 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getVariableValueAccess().getValueQualifiedNameParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Variable returns Variable
+	 *
+	 * Constraint:
+	 *     (name=ID type=ID)
+	 */
+	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.VARIABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.VARIABLE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableAccess().getTypeIDTerminalRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

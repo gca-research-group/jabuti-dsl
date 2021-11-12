@@ -14,8 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction <em>Action</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getMessage <em>Message</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOnBreach()
@@ -24,28 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface OnBreach extends EObject
 {
-	/**
-	 * Returns the value of the '<em><b>Action</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' containment reference.
-	 * @see #setAction(Expression)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOnBreach_Action()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Expression getAction();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction <em>Action</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action</em>' containment reference.
-	 * @see #getAction()
-	 * @generated
-	 */
-	void setAction(Expression value);
-
 	/**
 	 * Returns the value of the '<em><b>Message</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
@@ -67,5 +45,27 @@ public interface OnBreach extends EObject
 	 * @generated
 	 */
 	void setMessage(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Action</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action</em>' reference.
+	 * @see #setAction(Action)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOnBreach_Action()
+	 * @model
+	 * @generated
+	 */
+	Action getAction();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction <em>Action</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Action</em>' reference.
+	 * @see #getAction()
+	 * @generated
+	 */
+	void setAction(Action value);
 
 } // OnBreach

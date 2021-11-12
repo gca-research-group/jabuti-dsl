@@ -23,6 +23,7 @@ Contract:
 		'application' '=' application=Application
 		'process' '=' process=Process
 		clauses+=Clause*
+		actions+=Action*
 	'}'; 
 
 
@@ -51,7 +52,17 @@ Process:
 ;
 
 OnBreach:
-	'(' action=Expression ',' message=Expression ')' 
+	'(' action=[Action] ',' message=Expression ')' 
+;
+
+Action:
+	'Action' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')' '{'
+		statements+=Expression
+	'}'
+;
+
+Variable:
+	name=ID ':' type=ID
 ;
 
 
@@ -77,8 +88,6 @@ Negative returns Expression:
 Primary returns Expression:
 	LiteralValue | '(' Expression ')';
 	
-
-
 LiteralValue:
 	NumericValue | StringValue | VariableValue | FunctionCall;
 

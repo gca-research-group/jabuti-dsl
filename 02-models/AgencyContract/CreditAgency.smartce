@@ -42,4 +42,8 @@ Contract CreditAgency {
 		}
 		onBreach(notifyFailing, "Timeout for replying has been exceeded")	
 	}
+	
+	Action notifyFailing(message : String ){
+		notyfyParies(message)
+	}
 } 

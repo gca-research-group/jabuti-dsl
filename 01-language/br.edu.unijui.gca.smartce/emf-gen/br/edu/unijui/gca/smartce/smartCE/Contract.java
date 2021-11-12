@@ -24,6 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getApplication <em>Application</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getProcess <em>Process</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getClauses <em>Clauses</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getActions <em>Actions</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract()
@@ -197,5 +198,17 @@ public interface Contract extends EObject
 	 * @generated
 	 */
 	EList<Clause> getClauses();
+
+	/**
+	 * Returns the value of the '<em><b>Actions</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Action}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Actions</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_Actions()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Action> getActions();
 
 } // Contract

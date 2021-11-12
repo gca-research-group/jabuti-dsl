@@ -3,6 +3,7 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.util;
 
+import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
@@ -20,6 +21,7 @@ import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 
 import org.eclipse.emf.common.notify.Adapter;
@@ -181,6 +183,16 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseOnBreach(OnBreach object)
 			{
 				return createOnBreachAdapter();
+			}
+			@Override
+			public Adapter caseAction(Action object)
+			{
+				return createActionAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object)
+			{
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -470,6 +482,36 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createOnBreachAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Action
+	 * @generated
+	 */
+	public Adapter createActionAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Variable
+	 * @generated
+	 */
+	public Adapter createVariableAdapter()
 	{
 		return null;
 	}

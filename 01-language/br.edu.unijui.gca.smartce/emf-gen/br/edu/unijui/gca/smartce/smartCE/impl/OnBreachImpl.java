@@ -3,6 +3,7 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
+import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
@@ -24,24 +25,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.OnBreachImpl#getAction <em>Action</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.OnBreachImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.OnBreachImpl#getAction <em>Action</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBreach
 {
-	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAction()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression action;
-
 	/**
 	 * The cached value of the '{@link #getMessage() <em>Message</em>}' containment reference.
 	 * <!-- begin-user-doc -->
@@ -51,6 +42,16 @@ public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBrea
 	 * @ordered
 	 */
 	protected Expression message;
+
+	/**
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected Action action;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,56 +72,6 @@ public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBrea
 	protected EClass eStaticClass()
 	{
 		return SmartCEPackage.Literals.ON_BREACH;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Expression getAction()
-	{
-		return action;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetAction(Expression newAction, NotificationChain msgs)
-	{
-		Expression oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.ON_BREACH__ACTION, oldAction, newAction);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setAction(Expression newAction)
-	{
-		if (newAction != action)
-		{
-			NotificationChain msgs = null;
-			if (action != null)
-				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.ON_BREACH__ACTION, null, msgs);
-			if (newAction != null)
-				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.ON_BREACH__ACTION, null, msgs);
-			msgs = basicSetAction(newAction, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.ON_BREACH__ACTION, newAction, newAction));
 	}
 
 	/**
@@ -179,12 +130,55 @@ public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBrea
 	 * @generated
 	 */
 	@Override
+	public Action getAction()
+	{
+		if (action != null && action.eIsProxy())
+		{
+			InternalEObject oldAction = (InternalEObject)action;
+			action = (Action)eResolveProxy(oldAction);
+			if (action != oldAction)
+			{
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmartCEPackage.ON_BREACH__ACTION, oldAction, action));
+			}
+		}
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Action basicGetAction()
+	{
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAction(Action newAction)
+	{
+		Action oldAction = action;
+		action = newAction;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.ON_BREACH__ACTION, oldAction, action));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.ON_BREACH__ACTION:
-				return basicSetAction(null, msgs);
 			case SmartCEPackage.ON_BREACH__MESSAGE:
 				return basicSetMessage(null, msgs);
 		}
@@ -201,10 +195,11 @@ public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBrea
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.ON_BREACH__ACTION:
-				return getAction();
 			case SmartCEPackage.ON_BREACH__MESSAGE:
 				return getMessage();
+			case SmartCEPackage.ON_BREACH__ACTION:
+				if (resolve) return getAction();
+				return basicGetAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -219,11 +214,11 @@ public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBrea
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.ON_BREACH__ACTION:
-				setAction((Expression)newValue);
-				return;
 			case SmartCEPackage.ON_BREACH__MESSAGE:
 				setMessage((Expression)newValue);
+				return;
+			case SmartCEPackage.ON_BREACH__ACTION:
+				setAction((Action)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,11 +234,11 @@ public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBrea
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.ON_BREACH__ACTION:
-				setAction((Expression)null);
-				return;
 			case SmartCEPackage.ON_BREACH__MESSAGE:
 				setMessage((Expression)null);
+				return;
+			case SmartCEPackage.ON_BREACH__ACTION:
+				setAction((Action)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,10 +254,10 @@ public class OnBreachImpl extends MinimalEObjectImpl.Container implements OnBrea
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.ON_BREACH__ACTION:
-				return action != null;
 			case SmartCEPackage.ON_BREACH__MESSAGE:
 				return message != null;
+			case SmartCEPackage.ON_BREACH__ACTION:
+				return action != null;
 		}
 		return super.eIsSet(featureID);
 	}
