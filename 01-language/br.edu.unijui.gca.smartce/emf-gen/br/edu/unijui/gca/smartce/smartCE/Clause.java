@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause()
@@ -205,5 +206,27 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setCondition(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>On Breach</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>On Breach</em>' containment reference.
+	 * @see #setOnBreach(OnBreach)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_OnBreach()
+	 * @model containment="true"
+	 * @generated
+	 */
+	OnBreach getOnBreach();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Breach</em>' containment reference.
+	 * @see #getOnBreach()
+	 * @generated
+	 */
+	void setOnBreach(OnBreach value);
 
 } // Clause

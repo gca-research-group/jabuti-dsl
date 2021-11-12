@@ -252,7 +252,10 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cConditionAssignment_13 = (Assignment)cGroup.eContents().get(13);
 		private final RuleCall cConditionExpressionParserRuleCall_13_0 = (RuleCall)cConditionAssignment_13.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cOnBreachKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cOnBreachAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cOnBreachOnBreachParserRuleCall_16_0 = (RuleCall)cOnBreachAssignment_16.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//Clause:
 		//    ('Right' | 'Prohibition' | 'Obligation') name=ID '{'
@@ -262,6 +265,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//        'condition' '{'
 		//            condition=Expression
 		//        '}'
+		//        'onBreach' onBreach=OnBreach
 		//     '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -273,6 +277,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    'condition' '{'
 		//        condition=Expression
 		//    '}'
+		//    'onBreach' onBreach=OnBreach
 		// '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -351,8 +356,17 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
 		
+		//'onBreach'
+		public Keyword getOnBreachKeyword_15() { return cOnBreachKeyword_15; }
+		
+		//onBreach=OnBreach
+		public Assignment getOnBreachAssignment_16() { return cOnBreachAssignment_16; }
+		
+		//OnBreach
+		public RuleCall getOnBreachOnBreachParserRuleCall_16_0() { return cOnBreachOnBreachParserRuleCall_16_0; }
+		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
+		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
 	}
 	public class PartyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Party");
@@ -437,6 +451,46 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//STRING
 		public RuleCall getDescriptionSTRINGTerminalRuleCall_2_0() { return cDescriptionSTRINGTerminalRuleCall_2_0; }
+	}
+	public class OnBreachElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.OnBreach");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cActionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cActionExpressionParserRuleCall_1_0 = (RuleCall)cActionAssignment_1.eContents().get(0);
+		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cMessageAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cMessageExpressionParserRuleCall_3_0 = (RuleCall)cMessageAssignment_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//OnBreach:
+		//    '(' action=Expression ',' message=Expression ')'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'(' action=Expression ',' message=Expression ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+		
+		//action=Expression
+		public Assignment getActionAssignment_1() { return cActionAssignment_1; }
+		
+		//Expression
+		public RuleCall getActionExpressionParserRuleCall_1_0() { return cActionExpressionParserRuleCall_1_0; }
+		
+		//','
+		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
+		
+		//message=Expression
+		public Assignment getMessageAssignment_3() { return cMessageAssignment_3; }
+		
+		//Expression
+		public RuleCall getMessageExpressionParserRuleCall_3_0() { return cMessageExpressionParserRuleCall_3_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Expression");
@@ -1077,6 +1131,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final PartyElements pParty;
 	private final ApplicationElements pApplication;
 	private final ProcessElements pProcess;
+	private final OnBreachElements pOnBreach;
 	private final ExpressionElements pExpression;
 	private final NegationElements pNegation;
 	private final ComparisonElements pComparison;
@@ -1116,6 +1171,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pParty = new PartyElements();
 		this.pApplication = new ApplicationElements();
 		this.pProcess = new ProcessElements();
+		this.pOnBreach = new OnBreachElements();
 		this.pExpression = new ExpressionElements();
 		this.pNegation = new NegationElements();
 		this.pComparison = new ComparisonElements();
@@ -1225,6 +1281,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//        'condition' '{'
 	//            condition=Expression
 	//        '}'
+	//        'onBreach' onBreach=OnBreach
 	//     '}'
 	//;
 	public ClauseElements getClauseAccess() {
@@ -1266,6 +1323,17 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getProcessRule() {
 		return getProcessAccess().getRule();
+	}
+	
+	//OnBreach:
+	//    '(' action=Expression ',' message=Expression ')'
+	//;
+	public OnBreachElements getOnBreachAccess() {
+		return pOnBreach;
+	}
+	
+	public ParserRule getOnBreachRule() {
+		return getOnBreachAccess().getRule();
 	}
 	
 	//Expression:

@@ -13,6 +13,7 @@ import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
+import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
@@ -218,6 +219,13 @@ public class SmartCESwitch<T> extends Switch<T>
 				T result = caseFunctionCall(functionCall);
 				if (result == null) result = caseLiteralValue(functionCall);
 				if (result == null) result = caseExpression(functionCall);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.ON_BREACH:
+			{
+				OnBreach onBreach = (OnBreach)theEObject;
+				T result = caseOnBreach(onBreach);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -493,6 +501,22 @@ public class SmartCESwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseFunctionCall(FunctionCall object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>On Breach</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>On Breach</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOnBreach(OnBreach object)
 	{
 		return null;
 	}

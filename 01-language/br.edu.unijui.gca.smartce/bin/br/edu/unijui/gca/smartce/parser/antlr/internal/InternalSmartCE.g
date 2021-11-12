@@ -547,9 +547,32 @@ ruleClause returns [EObject current=null]
 		{
 			newLeafNode(otherlv_16, grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_14());
 		}
-		otherlv_17='}'
+		otherlv_17='onBreach'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_15());
+			newLeafNode(otherlv_17, grammarAccess.getClauseAccess().getOnBreachKeyword_15());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_16_0());
+				}
+				lv_onBreach_18_0=ruleOnBreach
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getClauseRule());
+					}
+					set(
+						$current,
+						"onBreach",
+						lv_onBreach_18_0,
+						"br.edu.unijui.gca.smartce.SmartCE.OnBreach");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_19='}'
+		{
+			newLeafNode(otherlv_19, grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_17());
 		}
 	)
 ;
@@ -669,6 +692,75 @@ ruleProcess returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleOnBreach
+entryRuleOnBreach returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOnBreachRule()); }
+	iv_ruleOnBreach=ruleOnBreach
+	{ $current=$iv_ruleOnBreach.current; }
+	EOF;
+
+// Rule OnBreach
+ruleOnBreach returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='('
+		{
+			newLeafNode(otherlv_0, grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOnBreachAccess().getActionExpressionParserRuleCall_1_0());
+				}
+				lv_action_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOnBreachRule());
+					}
+					set(
+						$current,
+						"action",
+						lv_action_1_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2=','
+		{
+			newLeafNode(otherlv_2, grammarAccess.getOnBreachAccess().getCommaKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOnBreachAccess().getMessageExpressionParserRuleCall_3_0());
+				}
+				lv_message_3_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOnBreachRule());
+					}
+					set(
+						$current,
+						"message",
+						lv_message_3_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_4());
+		}
 	)
 ;
 

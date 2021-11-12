@@ -443,13 +443,22 @@ public interface SmartCEPackage extends EPackage
 	int CLAUSE__CONDITION = 7;
 
 	/**
+	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__ON_BREACH = 8;
+
+	/**
 	 * The number of structural features of the '<em>Clause</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE_FEATURE_COUNT = 8;
+	int CLAUSE_FEATURE_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl <em>Operation</em>}' class.
@@ -748,6 +757,43 @@ public interface SmartCEPackage extends EPackage
 	 * @ordered
 	 */
 	int FUNCTION_CALL_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OnBreachImpl <em>On Breach</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.OnBreachImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOnBreach()
+	 * @generated
+	 */
+	int ON_BREACH = 17;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_BREACH__ACTION = 0;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_BREACH__MESSAGE = 1;
+
+	/**
+	 * The number of structural features of the '<em>On Breach</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_BREACH_FEATURE_COUNT = 2;
 
 
 	/**
@@ -1096,6 +1142,17 @@ public interface SmartCEPackage extends EPackage
 	EReference getClause_Condition();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>On Breach</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_OnBreach();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1326,6 +1383,38 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EReference getFunctionCall_Params();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach <em>On Breach</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>On Breach</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnBreach
+	 * @generated
+	 */
+	EClass getOnBreach();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Action</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction()
+	 * @see #getOnBreach()
+	 * @generated
+	 */
+	EReference getOnBreach_Action();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnBreach#getMessage()
+	 * @see #getOnBreach()
+	 * @generated
+	 */
+	EReference getOnBreach_Message();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1621,6 +1710,14 @@ public interface SmartCEPackage extends EPackage
 		EReference CLAUSE__CONDITION = eINSTANCE.getClause_Condition();
 
 		/**
+		 * The meta object literal for the '<em><b>On Breach</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__ON_BREACH = eINSTANCE.getClause_OnBreach();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl <em>Operation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1815,6 +1912,32 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EReference FUNCTION_CALL__PARAMS = eINSTANCE.getFunctionCall_Params();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OnBreachImpl <em>On Breach</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.OnBreachImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOnBreach()
+		 * @generated
+		 */
+		EClass ON_BREACH = eINSTANCE.getOnBreach();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ON_BREACH__ACTION = eINSTANCE.getOnBreach_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ON_BREACH__MESSAGE = eINSTANCE.getOnBreach_Message();
 
 	}
 

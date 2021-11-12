@@ -177,6 +177,15 @@ public interface SmartCEFactory extends EFactory
 	FunctionCall createFunctionCall();
 
 	/**
+	 * Returns a new object of class '<em>On Breach</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>On Breach</em>'.
+	 * @generated
+	 */
+	OnBreach createOnBreach();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

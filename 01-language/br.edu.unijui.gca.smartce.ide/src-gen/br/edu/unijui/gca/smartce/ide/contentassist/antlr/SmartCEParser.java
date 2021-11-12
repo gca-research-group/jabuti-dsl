@@ -47,6 +47,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getClauseAccess().getGroup(), "rule__Clause__Group__0");
 			builder.put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
 			builder.put(grammarAccess.getProcessAccess().getGroup(), "rule__Process__Group__0");
+			builder.put(grammarAccess.getOnBreachAccess().getGroup(), "rule__OnBreach__Group__0");
 			builder.put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
 			builder.put(grammarAccess.getExpressionAccess().getGroup_1(), "rule__Expression__Group_1__0");
 			builder.put(grammarAccess.getNegationAccess().getGroup_1(), "rule__Negation__Group_1__0");
@@ -80,10 +81,13 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getClauseAccess().getRolePlayerAssignment_7(), "rule__Clause__RolePlayerAssignment_7");
 			builder.put(grammarAccess.getClauseAccess().getOperationAssignment_9(), "rule__Clause__OperationAssignment_9");
 			builder.put(grammarAccess.getClauseAccess().getConditionAssignment_13(), "rule__Clause__ConditionAssignment_13");
+			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_16(), "rule__Clause__OnBreachAssignment_16");
 			builder.put(grammarAccess.getApplicationAccess().getNameAssignment_0(), "rule__Application__NameAssignment_0");
 			builder.put(grammarAccess.getApplicationAccess().getDescriptionAssignment_2(), "rule__Application__DescriptionAssignment_2");
 			builder.put(grammarAccess.getProcessAccess().getNameAssignment_0(), "rule__Process__NameAssignment_0");
 			builder.put(grammarAccess.getProcessAccess().getDescriptionAssignment_2(), "rule__Process__DescriptionAssignment_2");
+			builder.put(grammarAccess.getOnBreachAccess().getActionAssignment_1(), "rule__OnBreach__ActionAssignment_1");
+			builder.put(grammarAccess.getOnBreachAccess().getMessageAssignment_3(), "rule__OnBreach__MessageAssignment_3");
 			builder.put(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_0(), "rule__Expression__SymbolAssignment_1_1_0");
 			builder.put(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_1(), "rule__Expression__SymbolAssignment_1_1_1");
 			builder.put(grammarAccess.getExpressionAccess().getRightAssignment_1_2(), "rule__Expression__RightAssignment_1_2");

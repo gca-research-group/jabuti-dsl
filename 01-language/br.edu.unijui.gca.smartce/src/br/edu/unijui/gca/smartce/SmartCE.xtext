@@ -34,6 +34,7 @@ Clause:
 		'condition' '{' 
 			condition=Expression
 		'}'
+		'onBreach' onBreach=OnBreach 
 	 '}' 
 ;
 
@@ -47,6 +48,10 @@ Application:
 
 Process: 
 	name=ID':' description=STRING  
+;
+
+OnBreach:
+	'(' action=Expression ',' message=Expression ')' 
 ;
 
 

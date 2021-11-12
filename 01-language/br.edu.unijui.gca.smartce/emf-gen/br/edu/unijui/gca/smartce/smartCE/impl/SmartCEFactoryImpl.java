@@ -13,6 +13,7 @@ import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
+import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
@@ -99,6 +100,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.UNARY_OPERATOR: return createUnaryOperator();
 			case SmartCEPackage.VARIABLE_VALUE: return createVariableValue();
 			case SmartCEPackage.FUNCTION_CALL: return createFunctionCall();
+			case SmartCEPackage.ON_BREACH: return createOnBreach();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -306,6 +308,18 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		FunctionCallImpl functionCall = new FunctionCallImpl();
 		return functionCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public OnBreach createOnBreach()
+	{
+		OnBreachImpl onBreach = new OnBreachImpl();
+		return onBreach;
 	}
 
 	/**

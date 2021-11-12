@@ -13,6 +13,7 @@ import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
+import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
@@ -175,6 +176,11 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseFunctionCall(FunctionCall object)
 			{
 				return createFunctionCallAdapter();
+			}
+			@Override
+			public Adapter caseOnBreach(OnBreach object)
+			{
+				return createOnBreachAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -449,6 +455,21 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createFunctionCallAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach <em>On Breach</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnBreach
+	 * @generated
+	 */
+	public Adapter createOnBreachAdapter()
 	{
 		return null;
 	}
