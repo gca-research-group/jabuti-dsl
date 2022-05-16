@@ -4,7 +4,7 @@
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
 import br.edu.unijui.gca.smartce.smartCE.Clause;
-import br.edu.unijui.gca.smartce.smartCE.Expression;
+import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.Party;
@@ -34,8 +34,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getFailDescription <em>Fail Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getRolePlayer <em>Role Player</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getOperation <em>Operation</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getCondition <em>Condition</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getOnBreach <em>On Breach</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -163,16 +163,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	protected Operation operation;
 
 	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getCondition()
-	 * @generated
-	 * @ordered
-	 */
-	protected Expression condition;
-
-	/**
 	 * The cached value of the '{@link #getOnBreach() <em>On Breach</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -181,6 +171,16 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @ordered
 	 */
 	protected OnBreach onBreach;
+
+	/**
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected Condition condition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -424,56 +424,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public Expression getCondition()
-	{
-		return condition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetCondition(Expression newCondition, NotificationChain msgs)
-	{
-		Expression oldCondition = condition;
-		condition = newCondition;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__CONDITION, oldCondition, newCondition);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setCondition(Expression newCondition)
-	{
-		if (newCondition != condition)
-		{
-			NotificationChain msgs = null;
-			if (condition != null)
-				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CLAUSE__CONDITION, null, msgs);
-			if (newCondition != null)
-				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CLAUSE__CONDITION, null, msgs);
-			msgs = basicSetCondition(newCondition, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__CONDITION, newCondition, newCondition));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public OnBreach getOnBreach()
 	{
 		return onBreach;
@@ -524,14 +474,64 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
+	public Condition getCondition()
+	{
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCondition(Condition newCondition, NotificationChain msgs)
+	{
+		Condition oldCondition = condition;
+		condition = newCondition;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__CONDITION, oldCondition, newCondition);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCondition(Condition newCondition)
+	{
+		if (newCondition != condition)
+		{
+			NotificationChain msgs = null;
+			if (condition != null)
+				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CLAUSE__CONDITION, null, msgs);
+			if (newCondition != null)
+				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CLAUSE__CONDITION, null, msgs);
+			msgs = basicSetCondition(newCondition, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__CONDITION, newCondition, newCondition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.CLAUSE__CONDITION:
-				return basicSetCondition(null, msgs);
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				return basicSetOnBreach(null, msgs);
+			case SmartCEPackage.CLAUSE__CONDITION:
+				return basicSetCondition(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -562,10 +562,10 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__OPERATION:
 				if (resolve) return getOperation();
 				return basicGetOperation();
-			case SmartCEPackage.CLAUSE__CONDITION:
-				return getCondition();
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				return getOnBreach();
+			case SmartCEPackage.CLAUSE__CONDITION:
+				return getCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -601,11 +601,11 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__OPERATION:
 				setOperation((Operation)newValue);
 				return;
-			case SmartCEPackage.CLAUSE__CONDITION:
-				setCondition((Expression)newValue);
-				return;
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				setOnBreach((OnBreach)newValue);
+				return;
+			case SmartCEPackage.CLAUSE__CONDITION:
+				setCondition((Condition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -642,11 +642,11 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__OPERATION:
 				setOperation((Operation)null);
 				return;
-			case SmartCEPackage.CLAUSE__CONDITION:
-				setCondition((Expression)null);
-				return;
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				setOnBreach((OnBreach)null);
+				return;
+			case SmartCEPackage.CLAUSE__CONDITION:
+				setCondition((Condition)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -676,10 +676,10 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return rolePlayer != null;
 			case SmartCEPackage.CLAUSE__OPERATION:
 				return operation != null;
-			case SmartCEPackage.CLAUSE__CONDITION:
-				return condition != null;
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				return onBreach != null;
+			case SmartCEPackage.CLAUSE__CONDITION:
+				return condition != null;
 		}
 		return super.eIsSet(featureID);
 	}

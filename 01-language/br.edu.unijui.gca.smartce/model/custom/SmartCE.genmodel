@@ -42,8 +42,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/failDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/rolePlayer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/operation"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/condition"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/onBreach"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/condition"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//Operation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Operation/name"/>
@@ -88,5 +88,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/type"/>
     </genClasses>
+    <genClasses ecoreClass="SmartCE.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Condition/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="SmartCE.ecore#//Timeout"/>
+    <genClasses ecoreClass="SmartCE.ecore#//OperationsLimit"/>
   </genPackages>
 </genmodel:GenModel>

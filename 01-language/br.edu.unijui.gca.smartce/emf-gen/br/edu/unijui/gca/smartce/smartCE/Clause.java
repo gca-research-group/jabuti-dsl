@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFailDescription <em>Fail Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause()
@@ -186,28 +186,6 @@ public interface Clause extends EObject
 	void setOperation(Operation value);
 
 	/**
-	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition</em>' containment reference.
-	 * @see #setCondition(Expression)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Condition()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Expression getCondition();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Condition</em>' containment reference.
-	 * @see #getCondition()
-	 * @generated
-	 */
-	void setCondition(Expression value);
-
-	/**
 	 * Returns the value of the '<em><b>On Breach</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -228,5 +206,27 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setOnBreach(OnBreach value);
+
+	/**
+	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition</em>' containment reference.
+	 * @see #setCondition(Condition)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Condition()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Condition getCondition();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Condition</em>' containment reference.
+	 * @see #getCondition()
+	 * @generated
+	 */
+	void setCondition(Condition value);
 
 } // Clause

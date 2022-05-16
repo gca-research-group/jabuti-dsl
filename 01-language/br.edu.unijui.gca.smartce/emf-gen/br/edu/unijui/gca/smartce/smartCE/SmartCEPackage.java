@@ -443,22 +443,22 @@ public interface SmartCEPackage extends EPackage
 	int CLAUSE__OPERATION = 6;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLAUSE__CONDITION = 7;
-
-	/**
 	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__ON_BREACH = 8;
+	int CLAUSE__ON_BREACH = 7;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__CONDITION = 8;
 
 	/**
 	 * The number of structural features of the '<em>Clause</em>' class.
@@ -887,6 +887,90 @@ public interface SmartCEPackage extends EPackage
 	 */
 	int VARIABLE_FEATURE_COUNT = 2;
 
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionImpl <em>Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ConditionImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCondition()
+	 * @generated
+	 */
+	int CONDITION = 20;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION__EXPRESSION = 0;
+
+	/**
+	 * The number of structural features of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeoutImpl <em>Timeout</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.TimeoutImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeout()
+	 * @generated
+	 */
+	int TIMEOUT = 21;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT__EXPRESSION = CONDITION__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Timeout</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl <em>Operations Limit</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationsLimit()
+	 * @generated
+	 */
+	int OPERATIONS_LIMIT = 22;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONS_LIMIT__EXPRESSION = CONDITION__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Operations Limit</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONS_LIMIT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Contract <em>Contract</em>}'.
@@ -1234,17 +1318,6 @@ public interface SmartCEPackage extends EPackage
 	EReference getClause_Operation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getCondition()
-	 * @see #getClause()
-	 * @generated
-	 */
-	EReference getClause_Condition();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1254,6 +1327,17 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EReference getClause_OnBreach();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getCondition()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_Condition();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}'.
@@ -1595,6 +1679,47 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getVariable_Type();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Condition</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Condition
+	 * @generated
+	 */
+	EClass getCondition();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Condition#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Condition#getExpression()
+	 * @see #getCondition()
+	 * @generated
+	 */
+	EReference getCondition_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Timeout <em>Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Timeout</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Timeout
+	 * @generated
+	 */
+	EClass getTimeout();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit <em>Operations Limit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Operations Limit</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OperationsLimit
+	 * @generated
+	 */
+	EClass getOperationsLimit();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1888,20 +2013,20 @@ public interface SmartCEPackage extends EPackage
 		EReference CLAUSE__OPERATION = eINSTANCE.getClause_Operation();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLAUSE__CONDITION = eINSTANCE.getClause_Condition();
-
-		/**
 		 * The meta object literal for the '<em><b>On Breach</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CLAUSE__ON_BREACH = eINSTANCE.getClause_OnBreach();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__CONDITION = eINSTANCE.getClause_Condition();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl <em>Operation</em>}' class.
@@ -2184,6 +2309,44 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionImpl <em>Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ConditionImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCondition()
+		 * @generated
+		 */
+		EClass CONDITION = eINSTANCE.getCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITION__EXPRESSION = eINSTANCE.getCondition_Expression();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeoutImpl <em>Timeout</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.TimeoutImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeout()
+		 * @generated
+		 */
+		EClass TIMEOUT = eINSTANCE.getTimeout();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl <em>Operations Limit</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationsLimit()
+		 * @generated
+		 */
+		EClass OPERATIONS_LIMIT = eINSTANCE.getOperationsLimit();
 
 	}
 

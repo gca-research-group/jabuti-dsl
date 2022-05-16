@@ -546,9 +546,9 @@ ruleClause returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getClauseAccess().getConditionExpressionParserRuleCall_13_0());
+					newCompositeNode(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_13_0());
 				}
-				lv_condition_15_0=ruleExpression
+				lv_condition_15_0=ruleCondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getClauseRule());
@@ -557,7 +557,7 @@ ruleClause returns [EObject current=null]
 						$current,
 						"condition",
 						lv_condition_15_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+						"br.edu.unijui.gca.smartce.SmartCE.Condition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -594,6 +594,122 @@ ruleClause returns [EObject current=null]
 			newLeafNode(otherlv_19, grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_17());
 		}
 	)
+;
+
+// Entry rule entryRuleCondition
+entryRuleCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConditionRule()); }
+	iv_ruleCondition=ruleCondition
+	{ $current=$iv_ruleCondition.current; }
+	EOF;
+
+// Rule Condition
+ruleCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getTimeoutParserRuleCall_0());
+		}
+		this_Timeout_0=ruleTimeout
+		{
+			$current = $this_Timeout_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		(
+			(
+				{
+					$current = forceCreateModelElement(
+						grammarAccess.getConditionAccess().getConditionAction_1_0(),
+						$current);
+				}
+			)
+			{
+				newCompositeNode(grammarAccess.getConditionAccess().getOperationsLimitParserRuleCall_1_1());
+			}
+			ruleOperationsLimit
+			{
+				afterParserOrEnumRuleCall();
+			}
+		)
+	)
+;
+
+// Entry rule entryRuleTimeout
+entryRuleTimeout returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTimeoutRule()); }
+	iv_ruleTimeout=ruleTimeout
+	{ $current=$iv_ruleTimeout.current; }
+	EOF;
+
+// Rule Timeout
+ruleTimeout returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='timeout'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTimeoutAccess().getTimeoutKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getTimeoutAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTimeoutAccess().getExpressionExpressionParserRuleCall_2_0());
+				}
+				lv_expression_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTimeoutRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_2_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getTimeoutAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleOperationsLimit
+entryRuleOperationsLimit returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getOperationsLimitRule()); }
+	iv_ruleOperationsLimit=ruleOperationsLimit
+	{ $current=$iv_ruleOperationsLimit.current.getText(); }
+	EOF;
+
+// Rule OperationsLimit
+ruleOperationsLimit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='X'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getOperationsLimitAccess().getXKeyword());
+	}
 ;
 
 // Entry rule entryRuleApplication

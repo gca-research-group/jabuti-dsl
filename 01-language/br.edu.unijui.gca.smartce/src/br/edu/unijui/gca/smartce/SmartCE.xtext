@@ -33,10 +33,22 @@ Clause:
 		'rolePlayer' rolePlayer=[Party]
 		'rolePlayer.perform(' operation=[Operation|QualifiedName] ')'
 		'condition' '{' 
-			condition=Expression
+			condition=Condition
 		'}'
 		'onBreach' onBreach=OnBreach 
 	 '}' 
+;
+
+Condition: 
+	Timeout | {Condition} OperationsLimit
+;
+
+Timeout:
+	'timeout' '(' expression=Expression ')'
+;
+
+OperationsLimit:
+	'X'
 ;
 
 Party: 
@@ -64,7 +76,6 @@ Action:
 Variable:
 	name=ID ':' type=ID
 ;
-
 
 Expression:
 	Negation ({BinaryOperator.left=current} (symbol='&&' | symbol="||") right=Negation)*;

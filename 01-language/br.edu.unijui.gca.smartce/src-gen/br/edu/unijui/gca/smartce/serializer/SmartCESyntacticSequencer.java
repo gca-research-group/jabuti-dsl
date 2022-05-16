@@ -39,9 +39,21 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getOperationsLimitRule())
+			return getOperationsLimitToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * OperationsLimit:
+	 * 	'X'
+	 * ;
+	 */
+	protected String getOperationsLimitToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "X";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

@@ -204,6 +204,33 @@ public interface SmartCEFactory extends EFactory
 	Variable createVariable();
 
 	/**
+	 * Returns a new object of class '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Condition</em>'.
+	 * @generated
+	 */
+	Condition createCondition();
+
+	/**
+	 * Returns a new object of class '<em>Timeout</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Timeout</em>'.
+	 * @generated
+	 */
+	Timeout createTimeout();
+
+	/**
+	 * Returns a new object of class '<em>Operations Limit</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Operations Limit</em>'.
+	 * @generated
+	 */
+	OperationsLimit createOperationsLimit();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

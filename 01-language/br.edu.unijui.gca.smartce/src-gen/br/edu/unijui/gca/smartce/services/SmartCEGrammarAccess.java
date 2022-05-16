@@ -260,7 +260,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cConditionKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Keyword cLeftCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		private final Assignment cConditionAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cConditionExpressionParserRuleCall_13_0 = (RuleCall)cConditionAssignment_13.eContents().get(0);
+		private final RuleCall cConditionConditionParserRuleCall_13_0 = (RuleCall)cConditionAssignment_13.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Keyword cOnBreachKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Assignment cOnBreachAssignment_16 = (Assignment)cGroup.eContents().get(16);
@@ -273,7 +273,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//        'rolePlayer' rolePlayer=[Party]
 		//        'rolePlayer.perform(' operation=[Operation|QualifiedName] ')'
 		//        'condition' '{'
-		//            condition=Expression
+		//            condition=Condition
 		//        '}'
 		//        'onBreach' onBreach=OnBreach
 		//     '}'
@@ -285,7 +285,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    'rolePlayer' rolePlayer=[Party]
 		//    'rolePlayer.perform(' operation=[Operation|QualifiedName] ')'
 		//    'condition' '{'
-		//        condition=Expression
+		//        condition=Condition
 		//    '}'
 		//    'onBreach' onBreach=OnBreach
 		// '}'
@@ -357,11 +357,11 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_12() { return cLeftCurlyBracketKeyword_12; }
 		
-		//condition=Expression
+		//condition=Condition
 		public Assignment getConditionAssignment_13() { return cConditionAssignment_13; }
 		
-		//Expression
-		public RuleCall getConditionExpressionParserRuleCall_13_0() { return cConditionExpressionParserRuleCall_13_0; }
+		//Condition
+		public RuleCall getConditionConditionParserRuleCall_13_0() { return cConditionConditionParserRuleCall_13_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_14() { return cRightCurlyBracketKeyword_14; }
@@ -377,6 +377,78 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
+	}
+	public class ConditionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Condition");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cTimeoutParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cConditionAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final RuleCall cOperationsLimitParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		
+		//Condition:
+		//    Timeout | {Condition} OperationsLimit
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Timeout | {Condition} OperationsLimit
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Timeout
+		public RuleCall getTimeoutParserRuleCall_0() { return cTimeoutParserRuleCall_0; }
+		
+		//{Condition} OperationsLimit
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{Condition}
+		public Action getConditionAction_1_0() { return cConditionAction_1_0; }
+		
+		//OperationsLimit
+		public RuleCall getOperationsLimitParserRuleCall_1_1() { return cOperationsLimitParserRuleCall_1_1; }
+	}
+	public class TimeoutElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Timeout");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTimeoutKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Timeout:
+		//    'timeout' '(' expression=Expression ')'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'timeout' '(' expression=Expression ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'timeout'
+		public Keyword getTimeoutKeyword_0() { return cTimeoutKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//expression=Expression
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		
+		//Expression
+		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class OperationsLimitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.OperationsLimit");
+		private final Keyword cXKeyword = (Keyword)rule.eContents().get(1);
+		
+		//OperationsLimit:
+		//    'X'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'X'
+		public Keyword getXKeyword() { return cXKeyword; }
 	}
 	public class PartyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Party");
@@ -1250,6 +1322,9 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final OperationElements pOperation;
 	private final ContractElements pContract;
 	private final ClauseElements pClause;
+	private final ConditionElements pCondition;
+	private final TimeoutElements pTimeout;
+	private final OperationsLimitElements pOperationsLimit;
 	private final PartyElements pParty;
 	private final ApplicationElements pApplication;
 	private final ProcessElements pProcess;
@@ -1292,6 +1367,9 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pOperation = new OperationElements();
 		this.pContract = new ContractElements();
 		this.pClause = new ClauseElements();
+		this.pCondition = new ConditionElements();
+		this.pTimeout = new TimeoutElements();
+		this.pOperationsLimit = new OperationsLimitElements();
 		this.pParty = new PartyElements();
 		this.pApplication = new ApplicationElements();
 		this.pProcess = new ProcessElements();
@@ -1406,7 +1484,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//        'rolePlayer' rolePlayer=[Party]
 	//        'rolePlayer.perform(' operation=[Operation|QualifiedName] ')'
 	//        'condition' '{'
-	//            condition=Expression
+	//            condition=Condition
 	//        '}'
 	//        'onBreach' onBreach=OnBreach
 	//     '}'
@@ -1417,6 +1495,39 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getClauseRule() {
 		return getClauseAccess().getRule();
+	}
+	
+	//Condition:
+	//    Timeout | {Condition} OperationsLimit
+	//;
+	public ConditionElements getConditionAccess() {
+		return pCondition;
+	}
+	
+	public ParserRule getConditionRule() {
+		return getConditionAccess().getRule();
+	}
+	
+	//Timeout:
+	//    'timeout' '(' expression=Expression ')'
+	//;
+	public TimeoutElements getTimeoutAccess() {
+		return pTimeout;
+	}
+	
+	public ParserRule getTimeoutRule() {
+		return getTimeoutAccess().getRule();
+	}
+	
+	//OperationsLimit:
+	//    'X'
+	//;
+	public OperationsLimitElements getOperationsLimitAccess() {
+		return pOperationsLimit;
+	}
+	
+	public ParserRule getOperationsLimitRule() {
+		return getOperationsLimitAccess().getRule();
 	}
 	
 	//Party:

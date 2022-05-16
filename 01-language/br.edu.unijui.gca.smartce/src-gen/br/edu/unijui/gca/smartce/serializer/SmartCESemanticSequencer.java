@@ -7,6 +7,7 @@ import br.edu.unijui.gca.smartce.services.SmartCEGrammarAccess;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
@@ -16,6 +17,7 @@ import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
@@ -57,6 +59,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.CLAUSE:
 				sequence_Clause(context, (Clause) semanticObject); 
 				return; 
+			case SmartCEPackage.CONDITION:
+				sequence_Condition(context, (Condition) semanticObject); 
+				return; 
 			case SmartCEPackage.CONTRACT:
 				sequence_Contract(context, (Contract) semanticObject); 
 				return; 
@@ -83,6 +88,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SmartCEPackage.STRING_VALUE:
 				sequence_StringValue(context, (StringValue) semanticObject); 
+				return; 
+			case SmartCEPackage.TIMEOUT:
+				sequence_Timeout(context, (Timeout) semanticObject); 
 				return; 
 			case SmartCEPackage.UNARY_OPERATOR:
 				sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
@@ -142,7 +150,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         description=STRING 
 	 *         rolePlayer=[Party|ID] 
 	 *         operation=[Operation|QualifiedName] 
-	 *         condition=Expression 
+	 *         condition=Condition 
 	 *         onBreach=OnBreach
 	 *     )
 	 */
@@ -166,7 +174,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getClauseAccess().getDescriptionSTRINGTerminalRuleCall_5_0(), semanticObject.getDescription());
 		feeder.accept(grammarAccess.getClauseAccess().getRolePlayerPartyIDTerminalRuleCall_7_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER, false));
 		feeder.accept(grammarAccess.getClauseAccess().getOperationOperationQualifiedNameParserRuleCall_9_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__OPERATION, false));
-		feeder.accept(grammarAccess.getClauseAccess().getConditionExpressionParserRuleCall_13_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_13_0(), semanticObject.getCondition());
 		feeder.accept(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_16_0(), semanticObject.getOnBreach());
 		feeder.finish();
 	}
@@ -208,6 +216,18 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 */
 	protected void sequence_Comparison_Expression_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns Condition
+	 *
+	 * Constraint:
+	 *     {Condition}
+	 */
+	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -425,6 +445,25 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns Timeout
+	 *     Timeout returns Timeout
+	 *
+	 * Constraint:
+	 *     expression=Expression
+	 */
+	protected void sequence_Timeout(ISerializationContext context, Timeout semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTimeoutAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
