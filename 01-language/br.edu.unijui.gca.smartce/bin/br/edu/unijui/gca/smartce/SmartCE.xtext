@@ -44,23 +44,26 @@ Condition:
 ;
 
 Timeout:
-	'timeout' '(' expression=Expression ')'
+	'Timeout' '(' expression=Expression ')'
 ;
 
 OperationsLimit:
-	('timeInterval' | 'limitOperation' ) '(' expression=Expression ')'
+	'OperationsLimit' '(' expression=Expression ')'
 ;
 
 BusinessDay:
-	'days' '(' expression=Expression
-	;
+	'BusinessDay' '(' start=WeekDays ',' end=WeekDays ')'
+;
 	
+enum WeekDays:
+    MONDAY='Monday' | TUESDAY = 'Tuesday';
+    
 BusinessTime: 
 	('start' | 'end') '(' expression=Expression ')'
 ; 
 
 MessageContent:
-	'query' expression=Expression
+	'MessageContent' '(' expression=Expression ')'
 ;
 
 

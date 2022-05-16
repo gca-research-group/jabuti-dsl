@@ -5,18 +5,70 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.WeekDays;
+
+import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Business Day</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl#getEnd <em>End</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class BusinessDayImpl extends ConditionImpl implements BusinessDay
 {
+	/**
+	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final WeekDays START_EDEFAULT = WeekDays.MONDAY;
+
+	/**
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected WeekDays start = START_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final WeekDays END_EDEFAULT = WeekDays.MONDAY;
+
+	/**
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected WeekDays end = END_EDEFAULT;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,6 +88,151 @@ public class BusinessDayImpl extends ConditionImpl implements BusinessDay
 	protected EClass eStaticClass()
 	{
 		return SmartCEPackage.Literals.BUSINESS_DAY;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WeekDays getStart()
+	{
+		return start;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStart(WeekDays newStart)
+	{
+		WeekDays oldStart = start;
+		start = newStart == null ? START_EDEFAULT : newStart;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_DAY__START, oldStart, start));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public WeekDays getEnd()
+	{
+		return end;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnd(WeekDays newEnd)
+	{
+		WeekDays oldEnd = end;
+		end = newEnd == null ? END_EDEFAULT : newEnd;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_DAY__END, oldEnd, end));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_DAY__START:
+				return getStart();
+			case SmartCEPackage.BUSINESS_DAY__END:
+				return getEnd();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_DAY__START:
+				setStart((WeekDays)newValue);
+				return;
+			case SmartCEPackage.BUSINESS_DAY__END:
+				setEnd((WeekDays)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_DAY__START:
+				setStart(START_EDEFAULT);
+				return;
+			case SmartCEPackage.BUSINESS_DAY__END:
+				setEnd(END_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_DAY__START:
+				return start != START_EDEFAULT;
+			case SmartCEPackage.BUSINESS_DAY__END:
+				return end != END_EDEFAULT;
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (start: ");
+		result.append(start);
+		result.append(", end: ");
+		result.append(end);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BusinessDayImpl

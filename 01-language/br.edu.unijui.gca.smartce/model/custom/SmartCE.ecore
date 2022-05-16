@@ -106,7 +106,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="OperationsLimit" eSuperTypes="#//Condition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessDay" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessDay" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//WeekDays"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//WeekDays"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessTime" eSuperTypes="#//Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="WeekDays">
+    <eLiterals name="MONDAY"/>
+    <eLiterals name="TUESDAY" value="1"/>
+    <eLiterals name="WEDNESDAY" value="2"/>
+  </eClassifiers>
 </ecore:EPackage>

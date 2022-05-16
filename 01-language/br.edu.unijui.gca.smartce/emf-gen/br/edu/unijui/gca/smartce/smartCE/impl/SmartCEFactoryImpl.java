@@ -29,8 +29,10 @@ import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
+import br.edu.unijui.gca.smartce.smartCE.WeekDays;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -117,6 +119,40 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.MESSAGE_CONTENT: return createMessageContent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue)
+	{
+		switch (eDataType.getClassifierID())
+		{
+			case SmartCEPackage.WEEK_DAYS:
+				return createWeekDaysFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue)
+	{
+		switch (eDataType.getClassifierID())
+		{
+			case SmartCEPackage.WEEK_DAYS:
+				return convertWeekDaysToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -418,6 +454,28 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		MessageContentImpl messageContent = new MessageContentImpl();
 		return messageContent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WeekDays createWeekDaysFromString(EDataType eDataType, String initialValue)
+	{
+		WeekDays result = WeekDays.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertWeekDaysToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

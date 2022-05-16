@@ -10,6 +10,8 @@ import org.eclipse.xtext.Action;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.CrossReference;
+import org.eclipse.xtext.EnumLiteralDeclaration;
+import org.eclipse.xtext.EnumRule;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -420,14 +422,14 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Timeout:
-		//    'timeout' '(' expression=Expression ')'
+		//    'Timeout' '(' expression=Expression ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'timeout' '(' expression=Expression ')'
+		//'Timeout' '(' expression=Expression ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'timeout'
+		//'Timeout'
 		public Keyword getTimeoutKeyword_0() { return cTimeoutKeyword_0; }
 		
 		//'('
@@ -445,30 +447,22 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class OperationsLimitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.OperationsLimit");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cTimeIntervalKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cLimitOperationKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cOperationsLimitKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//OperationsLimit:
-		//    ('timeInterval' | 'limitOperation' ) '(' expression=Expression ')'
+		//    'OperationsLimit' '(' expression=Expression ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('timeInterval' | 'limitOperation' ) '(' expression=Expression ')'
+		//'OperationsLimit' '(' expression=Expression ')'
 		public Group getGroup() { return cGroup; }
 		
-		//('timeInterval' | 'limitOperation' )
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//'timeInterval'
-		public Keyword getTimeIntervalKeyword_0_0() { return cTimeIntervalKeyword_0_0; }
-		
-		//'limitOperation'
-		public Keyword getLimitOperationKeyword_0_1() { return cLimitOperationKeyword_0_1; }
+		//'OperationsLimit'
+		public Keyword getOperationsLimitKeyword_0() { return cOperationsLimitKeyword_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
@@ -485,30 +479,46 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class BusinessDayElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.BusinessDay");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cDaysKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cBusinessDayKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Assignment cStartAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStartWeekDaysEnumRuleCall_2_0 = (RuleCall)cStartAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cEndAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cEndWeekDaysEnumRuleCall_4_0 = (RuleCall)cEndAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//BusinessDay:
-		//    'days' '(' expression=Expression
-		//    ;
+		//    'BusinessDay' '(' start=WeekDays ',' end=WeekDays ')'
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'days' '(' expression=Expression
+		//'BusinessDay' '(' start=WeekDays ',' end=WeekDays ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'days'
-		public Keyword getDaysKeyword_0() { return cDaysKeyword_0; }
+		//'BusinessDay'
+		public Keyword getBusinessDayKeyword_0() { return cBusinessDayKeyword_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//expression=Expression
-		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		//start=WeekDays
+		public Assignment getStartAssignment_2() { return cStartAssignment_2; }
 		
-		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
+		//WeekDays
+		public RuleCall getStartWeekDaysEnumRuleCall_2_0() { return cStartWeekDaysEnumRuleCall_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		
+		//end=WeekDays
+		public Assignment getEndAssignment_4() { return cEndAssignment_4; }
+		
+		//WeekDays
+		public RuleCall getEndWeekDaysEnumRuleCall_4_0() { return cEndWeekDaysEnumRuleCall_4_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 	public class BusinessTimeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.BusinessTime");
@@ -553,26 +563,34 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class MessageContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.MessageContent");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cQueryKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cExpressionExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		private final Keyword cMessageContentKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//MessageContent:
-		//    'query' expression=Expression
+		//    'MessageContent' '(' expression=Expression ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'query' expression=Expression
+		//'MessageContent' '(' expression=Expression ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'query'
-		public Keyword getQueryKeyword_0() { return cQueryKeyword_0; }
+		//'MessageContent'
+		public Keyword getMessageContentKeyword_0() { return cMessageContentKeyword_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
 		//expression=Expression
-		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
 		
 		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_1_0() { return cExpressionExpressionParserRuleCall_1_0; }
+		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class PartyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Party");
@@ -1440,6 +1458,33 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		public RuleCall getINTTerminalRuleCall() { return cINTTerminalRuleCall; }
 	}
 	
+	public class WeekDaysElements extends AbstractElementFinder.AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.WeekDays");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMONDAYEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMONDAYMondayKeyword_0_0 = (Keyword)cMONDAYEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cTUESDAYEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cTUESDAYTuesdayKeyword_1_0 = (Keyword)cTUESDAYEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum WeekDays:
+		//    MONDAY='Monday' | TUESDAY = 'Tuesday';
+		public EnumRule getRule() { return rule; }
+		
+		//MONDAY='Monday' | TUESDAY = 'Tuesday'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//MONDAY='Monday'
+		public EnumLiteralDeclaration getMONDAYEnumLiteralDeclaration_0() { return cMONDAYEnumLiteralDeclaration_0; }
+		
+		//'Monday'
+		public Keyword getMONDAYMondayKeyword_0_0() { return cMONDAYMondayKeyword_0_0; }
+		
+		//TUESDAY = 'Tuesday'
+		public EnumLiteralDeclaration getTUESDAYEnumLiteralDeclaration_1() { return cTUESDAYEnumLiteralDeclaration_1; }
+		
+		//'Tuesday'
+		public Keyword getTUESDAYTuesdayKeyword_1_0() { return cTUESDAYTuesdayKeyword_1_0; }
+	}
 	
 	private final ModelElements pModel;
 	private final ImportElements pImport;
@@ -1450,6 +1495,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final TimeoutElements pTimeout;
 	private final OperationsLimitElements pOperationsLimit;
 	private final BusinessDayElements pBusinessDay;
+	private final WeekDaysElements eWeekDays;
 	private final BusinessTimeElements pBusinessTime;
 	private final MessageContentElements pMessageContent;
 	private final PartyElements pParty;
@@ -1498,6 +1544,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pTimeout = new TimeoutElements();
 		this.pOperationsLimit = new OperationsLimitElements();
 		this.pBusinessDay = new BusinessDayElements();
+		this.eWeekDays = new WeekDaysElements();
 		this.pBusinessTime = new BusinessTimeElements();
 		this.pMessageContent = new MessageContentElements();
 		this.pParty = new PartyElements();
@@ -1639,7 +1686,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Timeout:
-	//    'timeout' '(' expression=Expression ')'
+	//    'Timeout' '(' expression=Expression ')'
 	//;
 	public TimeoutElements getTimeoutAccess() {
 		return pTimeout;
@@ -1650,7 +1697,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//OperationsLimit:
-	//    ('timeInterval' | 'limitOperation' ) '(' expression=Expression ')'
+	//    'OperationsLimit' '(' expression=Expression ')'
 	//;
 	public OperationsLimitElements getOperationsLimitAccess() {
 		return pOperationsLimit;
@@ -1661,14 +1708,24 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//BusinessDay:
-	//    'days' '(' expression=Expression
-	//    ;
+	//    'BusinessDay' '(' start=WeekDays ',' end=WeekDays ')'
+	//;
 	public BusinessDayElements getBusinessDayAccess() {
 		return pBusinessDay;
 	}
 	
 	public ParserRule getBusinessDayRule() {
 		return getBusinessDayAccess().getRule();
+	}
+	
+	//enum WeekDays:
+	//    MONDAY='Monday' | TUESDAY = 'Tuesday';
+	public WeekDaysElements getWeekDaysAccess() {
+		return eWeekDays;
+	}
+	
+	public EnumRule getWeekDaysRule() {
+		return getWeekDaysAccess().getRule();
 	}
 	
 	//BusinessTime:
@@ -1683,7 +1740,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//MessageContent:
-	//    'query' expression=Expression
+	//    'MessageContent' '(' expression=Expression ')'
 	//;
 	public MessageContentElements getMessageContentAccess() {
 		return pMessageContent;

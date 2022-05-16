@@ -158,15 +158,18 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     BusinessDay returns BusinessDay
 	 *
 	 * Constraint:
-	 *     expression=Expression
+	 *     (start=WeekDays end=WeekDays)
 	 */
 	protected void sequence_BusinessDay(ISerializationContext context, BusinessDay semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.BUSINESS_DAY__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_DAY__START));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.BUSINESS_DAY__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_DAY__END));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBusinessDayAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getBusinessDayAccess().getStartWeekDaysEnumRuleCall_2_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getBusinessDayAccess().getEndWeekDaysEnumRuleCall_4_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	
@@ -346,7 +349,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

@@ -24,7 +24,6 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_BusinessTime_EndKeyword_0_1_or_StartKeyword_0_0;
 	protected AbstractElementAlias match_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0;
 	protected AbstractElementAlias match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1;
-	protected AbstractElementAlias match_OperationsLimit_LimitOperationKeyword_0_1_or_TimeIntervalKeyword_0_0;
 	protected AbstractElementAlias match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
@@ -35,7 +34,6 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 		match_BusinessTime_EndKeyword_0_1_or_StartKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBusinessTimeAccess().getEndKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getBusinessTimeAccess().getStartKeyword_0_0()));
 		match_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClauseAccess().getObligationKeyword_0_2()), new TokenAlias(false, false, grammarAccess.getClauseAccess().getProhibitionKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getClauseAccess().getRightKeyword_0_0()));
 		match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getAsteriskKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getSolidusKeyword_1_1_1()));
-		match_OperationsLimit_LimitOperationKeyword_0_1_or_TimeIntervalKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getOperationsLimitAccess().getLimitOperationKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getOperationsLimitAccess().getTimeIntervalKeyword_0_0()));
 		match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1()), new TokenAlias(false, false, grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0()));
 		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
@@ -59,8 +57,6 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1.equals(syntax))
 				emit_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_OperationsLimit_LimitOperationKeyword_0_1_or_TimeIntervalKeyword_0_0.equals(syntax))
-				emit_OperationsLimit_LimitOperationKeyword_0_1_or_TimeIntervalKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0.equals(syntax))
 				emit_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_1_0_a.equals(syntax))
@@ -101,17 +97,6 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     {BinaryOperator.left=} (ambiguity) right=Negative
 	 */
 	protected void emit_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Ambiguous syntax:
-	 *     'timeInterval' | 'limitOperation'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '(' expression=Expression
-	 */
-	protected void emit_OperationsLimit_LimitOperationKeyword_0_1_or_TimeIntervalKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

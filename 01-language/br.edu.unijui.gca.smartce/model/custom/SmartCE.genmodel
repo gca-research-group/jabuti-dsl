@@ -6,6 +6,11 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="SmartCE" basePackage="br.edu.unijui.gca.smartce" disposableProviderFactory="true"
       fileExtensions="smartce" ecorePackage="SmartCE.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//WeekDays">
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDays/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDays/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDays/WEDNESDAY"/>
+    </genEnums>
     <genClasses ecoreClass="SmartCE.ecore#//Contract">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/beginDate"/>
@@ -93,7 +98,10 @@
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//Timeout"/>
     <genClasses ecoreClass="SmartCE.ecore#//OperationsLimit"/>
-    <genClasses ecoreClass="SmartCE.ecore#//BusinessDay"/>
+    <genClasses ecoreClass="SmartCE.ecore#//BusinessDay">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessDay/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessDay/end"/>
+    </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//BusinessTime"/>
     <genClasses ecoreClass="SmartCE.ecore#//MessageContent"/>
   </genPackages>

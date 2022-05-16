@@ -33,7 +33,6 @@ public class SmartCEParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SmartCEGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getClauseAccess().getAlternatives_0(), "rule__Clause__Alternatives_0");
 			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
-			builder.put(grammarAccess.getOperationsLimitAccess().getAlternatives_0(), "rule__OperationsLimit__Alternatives_0");
 			builder.put(grammarAccess.getBusinessTimeAccess().getAlternatives_0(), "rule__BusinessTime__Alternatives_0");
 			builder.put(grammarAccess.getPartyAccess().getAlternatives(), "rule__Party__Alternatives");
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives_1_1(), "rule__Expression__Alternatives_1_1");
@@ -44,6 +43,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNegativeAccess().getAlternatives(), "rule__Negative__Alternatives");
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 			builder.put(grammarAccess.getLiteralValueAccess().getAlternatives(), "rule__LiteralValue__Alternatives");
+			builder.put(grammarAccess.getWeekDaysAccess().getAlternatives(), "rule__WeekDays__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 			builder.put(grammarAccess.getContractAccess().getGroup(), "rule__Contract__Group__0");
@@ -96,9 +96,10 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_16(), "rule__Clause__OnBreachAssignment_16");
 			builder.put(grammarAccess.getTimeoutAccess().getExpressionAssignment_2(), "rule__Timeout__ExpressionAssignment_2");
 			builder.put(grammarAccess.getOperationsLimitAccess().getExpressionAssignment_2(), "rule__OperationsLimit__ExpressionAssignment_2");
-			builder.put(grammarAccess.getBusinessDayAccess().getExpressionAssignment_2(), "rule__BusinessDay__ExpressionAssignment_2");
+			builder.put(grammarAccess.getBusinessDayAccess().getStartAssignment_2(), "rule__BusinessDay__StartAssignment_2");
+			builder.put(grammarAccess.getBusinessDayAccess().getEndAssignment_4(), "rule__BusinessDay__EndAssignment_4");
 			builder.put(grammarAccess.getBusinessTimeAccess().getExpressionAssignment_2(), "rule__BusinessTime__ExpressionAssignment_2");
-			builder.put(grammarAccess.getMessageContentAccess().getExpressionAssignment_1(), "rule__MessageContent__ExpressionAssignment_1");
+			builder.put(grammarAccess.getMessageContentAccess().getExpressionAssignment_2(), "rule__MessageContent__ExpressionAssignment_2");
 			builder.put(grammarAccess.getApplicationAccess().getNameAssignment_0(), "rule__Application__NameAssignment_0");
 			builder.put(grammarAccess.getApplicationAccess().getDescriptionAssignment_2(), "rule__Application__DescriptionAssignment_2");
 			builder.put(grammarAccess.getProcessAccess().getNameAssignment_0(), "rule__Process__NameAssignment_0");

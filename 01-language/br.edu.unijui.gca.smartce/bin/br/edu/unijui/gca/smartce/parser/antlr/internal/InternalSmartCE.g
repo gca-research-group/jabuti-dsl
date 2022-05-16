@@ -23,6 +23,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -675,7 +676,7 @@ ruleTimeout returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='timeout'
+		otherlv_0='Timeout'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getTimeoutAccess().getTimeoutKeyword_0());
 		}
@@ -725,27 +726,20 @@ ruleOperationsLimit returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			otherlv_0='timeInterval'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getOperationsLimitAccess().getTimeIntervalKeyword_0_0());
-			}
-			    |
-			otherlv_1='limitOperation'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getOperationsLimitAccess().getLimitOperationKeyword_0_1());
-			}
-		)
-		otherlv_2='('
+		otherlv_0='OperationsLimit'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getOperationsLimitAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getOperationsLimitAccess().getOperationsLimitKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getOperationsLimitAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getOperationsLimitAccess().getExpressionExpressionParserRuleCall_2_0());
 				}
-				lv_expression_3_0=ruleExpression
+				lv_expression_2_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperationsLimitRule());
@@ -753,15 +747,15 @@ ruleOperationsLimit returns [EObject current=null]
 					set(
 						$current,
 						"expression",
-						lv_expression_3_0,
+						lv_expression_2_0,
 						"br.edu.unijui.gca.smartce.SmartCE.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=')'
+		otherlv_3=')'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_3());
 		}
 	)
 ;
@@ -782,9 +776,9 @@ ruleBusinessDay returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='days'
+		otherlv_0='BusinessDay'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getBusinessDayAccess().getDaysKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getBusinessDayAccess().getBusinessDayKeyword_0());
 		}
 		otherlv_1='('
 		{
@@ -793,22 +787,49 @@ ruleBusinessDay returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBusinessDayAccess().getExpressionExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getBusinessDayAccess().getStartWeekDaysEnumRuleCall_2_0());
 				}
-				lv_expression_2_0=ruleExpression
+				lv_start_2_0=ruleWeekDays
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBusinessDayRule());
 					}
 					set(
 						$current,
-						"expression",
-						lv_expression_2_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+						"start",
+						lv_start_2_0,
+						"br.edu.unijui.gca.smartce.SmartCE.WeekDays");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_3=','
+		{
+			newLeafNode(otherlv_3, grammarAccess.getBusinessDayAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBusinessDayAccess().getEndWeekDaysEnumRuleCall_4_0());
+				}
+				lv_end_4_0=ruleWeekDays
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBusinessDayRule());
+					}
+					set(
+						$current,
+						"end",
+						lv_end_4_0,
+						"br.edu.unijui.gca.smartce.SmartCE.WeekDays");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getBusinessDayAccess().getRightParenthesisKeyword_5());
+		}
 	)
 ;
 
@@ -885,16 +906,20 @@ ruleMessageContent returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='query'
+		otherlv_0='MessageContent'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getMessageContentAccess().getQueryKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getMessageContentAccess().getMessageContentKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_2_0());
 				}
-				lv_expression_1_0=ruleExpression
+				lv_expression_2_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMessageContentRule());
@@ -902,12 +927,16 @@ ruleMessageContent returns [EObject current=null]
 					set(
 						$current,
 						"expression",
-						lv_expression_1_0,
+						lv_expression_2_0,
 						"br.edu.unijui.gca.smartce.SmartCE.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_3());
+		}
 	)
 ;
 
@@ -2307,6 +2336,33 @@ ruleSEC returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 	{
 		newLeafNode(this_INT_0, grammarAccess.getSECAccess().getINTTerminalRuleCall());
 	}
+;
+
+// Rule WeekDays
+ruleWeekDays returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='Monday'
+			{
+				$current = grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='Tuesday'
+			{
+				$current = grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1());
+			}
+		)
+	)
 ;
 
 RULE_ID : '^'? ('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

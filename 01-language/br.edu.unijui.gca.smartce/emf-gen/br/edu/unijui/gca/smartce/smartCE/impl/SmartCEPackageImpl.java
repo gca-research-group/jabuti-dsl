@@ -30,9 +30,11 @@ import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
+import br.edu.unijui.gca.smartce.smartCE.WeekDays;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -227,6 +229,13 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EClass messageContentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum weekDaysEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1078,6 +1087,28 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getBusinessDay_Start()
+	{
+		return (EAttribute)businessDayEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getBusinessDay_End()
+	{
+		return (EAttribute)businessDayEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBusinessTime()
 	{
 		return businessTimeEClass;
@@ -1092,6 +1123,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	public EClass getMessageContent()
 	{
 		return messageContentEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getWeekDays()
+	{
+		return weekDaysEEnum;
 	}
 
 	/**
@@ -1219,10 +1261,15 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		operationsLimitEClass = createEClass(OPERATIONS_LIMIT);
 
 		businessDayEClass = createEClass(BUSINESS_DAY);
+		createEAttribute(businessDayEClass, BUSINESS_DAY__START);
+		createEAttribute(businessDayEClass, BUSINESS_DAY__END);
 
 		businessTimeEClass = createEClass(BUSINESS_TIME);
 
 		messageContentEClass = createEClass(MESSAGE_CONTENT);
+
+		// Create enums
+		weekDaysEEnum = createEEnum(WEEK_DAYS);
 	}
 
 	/**
@@ -1364,10 +1411,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEClass(operationsLimitEClass, OperationsLimit.class, "OperationsLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(businessDayEClass, BusinessDay.class, "BusinessDay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBusinessDay_Start(), this.getWeekDays(), "start", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBusinessDay_End(), this.getWeekDays(), "end", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessTimeEClass, BusinessTime.class, "BusinessTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(messageContentEClass, MessageContent.class, "MessageContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
+		initEEnum(weekDaysEEnum, WeekDays.class, "WeekDays");
+		addEEnumLiteral(weekDaysEEnum, WeekDays.MONDAY);
+		addEEnumLiteral(weekDaysEEnum, WeekDays.TUESDAY);
 
 		// Create resource
 		createResource(eNS_URI);

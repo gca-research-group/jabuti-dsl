@@ -5,6 +5,7 @@ package br.edu.unijui.gca.smartce.smartCE;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -991,13 +992,31 @@ public interface SmartCEPackage extends EPackage
 	int BUSINESS_DAY__EXPRESSION = CONDITION__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_DAY__START = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_DAY__END = CONDITION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Business Day</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_DAY_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int BUSINESS_DAY_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl <em>Business Time</em>}' class.
@@ -1054,6 +1073,16 @@ public interface SmartCEPackage extends EPackage
 	 * @ordered
 	 */
 	int MESSAGE_CONTENT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDays()
+	 * @generated
+	 */
+	int WEEK_DAYS = 26;
 
 
 	/**
@@ -1814,6 +1843,28 @@ public interface SmartCEPackage extends EPackage
 	EClass getBusinessDay();
 
 	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessDay#getStart()
+	 * @see #getBusinessDay()
+	 * @generated
+	 */
+	EAttribute getBusinessDay_Start();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay#getEnd <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>End</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessDay#getEnd()
+	 * @see #getBusinessDay()
+	 * @generated
+	 */
+	EAttribute getBusinessDay_End();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime <em>Business Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1832,6 +1883,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EClass getMessageContent();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Week Days</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
+	 * @generated
+	 */
+	EEnum getWeekDays();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2473,6 +2534,22 @@ public interface SmartCEPackage extends EPackage
 		EClass BUSINESS_DAY = eINSTANCE.getBusinessDay();
 
 		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUSINESS_DAY__START = eINSTANCE.getBusinessDay_Start();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUSINESS_DAY__END = eINSTANCE.getBusinessDay_End();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl <em>Business Time</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2491,6 +2568,16 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass MESSAGE_CONTENT = eINSTANCE.getMessageContent();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDays()
+		 * @generated
+		 */
+		EEnum WEEK_DAYS = eINSTANCE.getWeekDays();
 
 	}
 
