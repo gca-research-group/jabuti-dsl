@@ -9,11 +9,39 @@ package br.edu.unijui.gca.smartce.smartCE;
  * A representation of the model object '<em><b>Message Content</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getContent <em>Content</em>}</li>
+ * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent()
  * @model
  * @generated
  */
-public interface MessageContent extends Condition
+public interface MessageContent extends BusinessRule
 {
+	/**
+	 * Returns the value of the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Content</em>' attribute.
+	 * @see #setContent(String)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent_Content()
+	 * @model
+	 * @generated
+	 */
+	String getContent();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getContent <em>Content</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Content</em>' attribute.
+	 * @see #getContent()
+	 * @generated
+	 */
+	void setContent(String value);
+
 } // MessageContent

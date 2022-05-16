@@ -7,6 +7,7 @@ import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
+import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
@@ -263,6 +264,7 @@ public class SmartCESwitch<T> extends Switch<T>
 			{
 				Timeout timeout = (Timeout)theEObject;
 				T result = caseTimeout(timeout);
+				if (result == null) result = caseBusinessRule(timeout);
 				if (result == null) result = caseCondition(timeout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -271,6 +273,7 @@ public class SmartCESwitch<T> extends Switch<T>
 			{
 				OperationsLimit operationsLimit = (OperationsLimit)theEObject;
 				T result = caseOperationsLimit(operationsLimit);
+				if (result == null) result = caseBusinessRule(operationsLimit);
 				if (result == null) result = caseCondition(operationsLimit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -279,6 +282,7 @@ public class SmartCESwitch<T> extends Switch<T>
 			{
 				BusinessDay businessDay = (BusinessDay)theEObject;
 				T result = caseBusinessDay(businessDay);
+				if (result == null) result = caseBusinessRule(businessDay);
 				if (result == null) result = caseCondition(businessDay);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -287,6 +291,7 @@ public class SmartCESwitch<T> extends Switch<T>
 			{
 				BusinessTime businessTime = (BusinessTime)theEObject;
 				T result = caseBusinessTime(businessTime);
+				if (result == null) result = caseBusinessRule(businessTime);
 				if (result == null) result = caseCondition(businessTime);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -295,6 +300,7 @@ public class SmartCESwitch<T> extends Switch<T>
 			{
 				MessageContent messageContent = (MessageContent)theEObject;
 				T result = caseMessageContent(messageContent);
+				if (result == null) result = caseBusinessRule(messageContent);
 				if (result == null) result = caseCondition(messageContent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
@@ -304,6 +310,14 @@ public class SmartCESwitch<T> extends Switch<T>
 				CompositeCondition compositeCondition = (CompositeCondition)theEObject;
 				T result = caseCompositeCondition(compositeCondition);
 				if (result == null) result = caseCondition(compositeCondition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.BUSINESS_RULE:
+			{
+				BusinessRule businessRule = (BusinessRule)theEObject;
+				T result = caseBusinessRule(businessRule);
+				if (result == null) result = caseCondition(businessRule);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -739,6 +753,22 @@ public class SmartCESwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseCompositeCondition(CompositeCondition object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Business Rule</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Business Rule</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBusinessRule(BusinessRule object)
 	{
 		return null;
 	}

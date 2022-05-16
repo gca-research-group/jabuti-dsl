@@ -899,22 +899,32 @@ public interface SmartCEPackage extends EPackage
 	int CONDITION = 20;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITION__EXPRESSION = 0;
-
-	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_FEATURE_COUNT = 1;
+	int CONDITION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessRuleImpl <em>Business Rule</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessRuleImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessRule()
+	 * @generated
+	 */
+	int BUSINESS_RULE = 27;
+
+	/**
+	 * The number of structural features of the '<em>Business Rule</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_RULE_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeoutImpl <em>Timeout</em>}' class.
@@ -927,13 +937,13 @@ public interface SmartCEPackage extends EPackage
 	int TIMEOUT = 21;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEOUT__EXPRESSION = CONDITION__EXPRESSION;
+	int TIMEOUT__VALUE = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Timeout</em>' class.
@@ -942,7 +952,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEOUT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int TIMEOUT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl <em>Operations Limit</em>}' class.
@@ -955,22 +965,13 @@ public interface SmartCEPackage extends EPackage
 	int OPERATIONS_LIMIT = 22;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATIONS_LIMIT__EXPRESSION = CONDITION__EXPRESSION;
-
-	/**
 	 * The feature id for the '<em><b>Operations Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATIONS_LIMIT__OPERATIONS_NUMBER = CONDITION_FEATURE_COUNT + 0;
+	int OPERATIONS_LIMIT__OPERATIONS_NUMBER = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
@@ -979,7 +980,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATIONS_LIMIT__TIME_UNIT = CONDITION_FEATURE_COUNT + 1;
+	int OPERATIONS_LIMIT__TIME_UNIT = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Operations Limit</em>' class.
@@ -988,7 +989,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATIONS_LIMIT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
+	int OPERATIONS_LIMIT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl <em>Business Day</em>}' class.
@@ -1001,22 +1002,13 @@ public interface SmartCEPackage extends EPackage
 	int BUSINESS_DAY = 23;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_DAY__EXPRESSION = CONDITION__EXPRESSION;
-
-	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_DAY__START = CONDITION_FEATURE_COUNT + 0;
+	int BUSINESS_DAY__START = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>End</b></em>' attribute.
@@ -1025,7 +1017,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_DAY__END = CONDITION_FEATURE_COUNT + 1;
+	int BUSINESS_DAY__END = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Business Day</em>' class.
@@ -1034,7 +1026,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_DAY_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
+	int BUSINESS_DAY_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl <em>Business Time</em>}' class.
@@ -1047,31 +1039,22 @@ public interface SmartCEPackage extends EPackage
 	int BUSINESS_TIME = 24;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_TIME__EXPRESSION = CONDITION__EXPRESSION;
+	int BUSINESS_TIME__START = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * The feature id for the '<em><b>End</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_TIME__START = CONDITION_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>End</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_TIME__END = CONDITION_FEATURE_COUNT + 1;
+	int BUSINESS_TIME__END = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Business Time</em>' class.
@@ -1080,7 +1063,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_TIME_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
+	int BUSINESS_TIME_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.
@@ -1093,13 +1076,13 @@ public interface SmartCEPackage extends EPackage
 	int MESSAGE_CONTENT = 25;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT__EXPRESSION = CONDITION__EXPRESSION;
+	int MESSAGE_CONTENT__CONTENT = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Message Content</em>' class.
@@ -1108,7 +1091,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int MESSAGE_CONTENT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
@@ -1121,15 +1104,6 @@ public interface SmartCEPackage extends EPackage
 	int COMPOSITE_CONDITION = 26;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_CONDITION__EXPRESSION = CONDITION__EXPRESSION;
-
-	/**
 	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1139,13 +1113,22 @@ public interface SmartCEPackage extends EPackage
 	int COMPOSITE_CONDITION__CONDITIONS = CONDITION_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Logical Operator</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONDITION__LOGICAL_OPERATOR = CONDITION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Composite Condition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 1;
+	int COMPOSITE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
@@ -1155,7 +1138,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDays()
 	 * @generated
 	 */
-	int WEEK_DAYS = 27;
+	int WEEK_DAYS = 28;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.UnitTime <em>Unit Time</em>}' enum.
@@ -1165,7 +1148,17 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnitTime()
 	 * @generated
 	 */
-	int UNIT_TIME = 28;
+	int UNIT_TIME = 29;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
+	 * @generated
+	 */
+	int LOGICAL_OPERATOR = 30;
 
 
 	/**
@@ -1885,17 +1878,6 @@ public interface SmartCEPackage extends EPackage
 	EClass getCondition();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Condition#getExpression <em>Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Condition#getExpression()
-	 * @see #getCondition()
-	 * @generated
-	 */
-	EReference getCondition_Expression();
-
-	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Timeout <em>Timeout</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1904,6 +1886,17 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EClass getTimeout();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Timeout#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Timeout#getValue()
+	 * @see #getTimeout()
+	 * @generated
+	 */
+	EAttribute getTimeout_Value();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit <em>Operations Limit</em>}'.
@@ -1980,26 +1973,26 @@ public interface SmartCEPackage extends EPackage
 	EClass getBusinessTime();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Start</em>'.
+	 * @return the meta object for the attribute '<em>Start</em>'.
 	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart()
 	 * @see #getBusinessTime()
 	 * @generated
 	 */
-	EReference getBusinessTime_Start();
+	EAttribute getBusinessTime_Start();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>End</em>'.
+	 * @return the meta object for the attribute '<em>End</em>'.
 	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd()
 	 * @see #getBusinessTime()
 	 * @generated
 	 */
-	EReference getBusinessTime_End();
+	EAttribute getBusinessTime_End();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent <em>Message Content</em>}'.
@@ -2010,6 +2003,17 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EClass getMessageContent();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.MessageContent#getContent()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EAttribute getMessageContent_Content();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition <em>Composite Condition</em>}'.
@@ -2033,6 +2037,27 @@ public interface SmartCEPackage extends EPackage
 	EReference getCompositeCondition_Conditions();
 
 	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Logical Operator</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperator()
+	 * @see #getCompositeCondition()
+	 * @generated
+	 */
+	EAttribute getCompositeCondition_LogicalOperator();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessRule <em>Business Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Business Rule</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessRule
+	 * @generated
+	 */
+	EClass getBusinessRule();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2051,6 +2076,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getUnitTime();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Logical Operator</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
+	 * @generated
+	 */
+	EEnum getLogicalOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2654,14 +2689,6 @@ public interface SmartCEPackage extends EPackage
 		EClass CONDITION = eINSTANCE.getCondition();
 
 		/**
-		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITION__EXPRESSION = eINSTANCE.getCondition_Expression();
-
-		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeoutImpl <em>Timeout</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2670,6 +2697,14 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass TIMEOUT = eINSTANCE.getTimeout();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIMEOUT__VALUE = eINSTANCE.getTimeout_Value();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl <em>Operations Limit</em>}' class.
@@ -2734,20 +2769,20 @@ public interface SmartCEPackage extends EPackage
 		EClass BUSINESS_TIME = eINSTANCE.getBusinessTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUSINESS_TIME__START = eINSTANCE.getBusinessTime_Start();
+		EAttribute BUSINESS_TIME__START = eINSTANCE.getBusinessTime_Start();
 
 		/**
-		 * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>End</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BUSINESS_TIME__END = eINSTANCE.getBusinessTime_End();
+		EAttribute BUSINESS_TIME__END = eINSTANCE.getBusinessTime_End();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.
@@ -2758,6 +2793,14 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass MESSAGE_CONTENT = eINSTANCE.getMessageContent();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_CONTENT__CONTENT = eINSTANCE.getMessageContent_Content();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
@@ -2778,6 +2821,24 @@ public interface SmartCEPackage extends EPackage
 		EReference COMPOSITE_CONDITION__CONDITIONS = eINSTANCE.getCompositeCondition_Conditions();
 
 		/**
+		 * The meta object literal for the '<em><b>Logical Operator</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPOSITE_CONDITION__LOGICAL_OPERATOR = eINSTANCE.getCompositeCondition_LogicalOperator();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessRuleImpl <em>Business Rule</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessRuleImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessRule()
+		 * @generated
+		 */
+		EClass BUSINESS_RULE = eINSTANCE.getBusinessRule();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2796,6 +2857,16 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EEnum UNIT_TIME = eINSTANCE.getUnitTime();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
+		 * @generated
+		 */
+		EEnum LOGICAL_OPERATOR = eINSTANCE.getLogicalOperator();
 
 	}
 

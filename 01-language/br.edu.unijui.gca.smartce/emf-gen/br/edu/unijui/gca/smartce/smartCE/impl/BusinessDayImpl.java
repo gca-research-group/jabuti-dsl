@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BusinessDayImpl extends ConditionImpl implements BusinessDay
+public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 {
 	/**
 	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.

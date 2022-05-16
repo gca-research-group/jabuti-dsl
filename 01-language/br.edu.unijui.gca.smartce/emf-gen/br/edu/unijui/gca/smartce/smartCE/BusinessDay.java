@@ -21,7 +21,7 @@ package br.edu.unijui.gca.smartce.smartCE;
  * @model
  * @generated
  */
-public interface BusinessDay extends Condition
+public interface BusinessDay extends BusinessRule
 {
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' attribute.

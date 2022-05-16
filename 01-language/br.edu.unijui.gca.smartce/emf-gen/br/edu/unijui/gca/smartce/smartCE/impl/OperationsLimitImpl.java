@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class OperationsLimitImpl extends ConditionImpl implements OperationsLimit
+public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsLimit
 {
 	/**
 	 * The default value of the '{@link #getOperationsNumber() <em>Operations Number</em>}' attribute.

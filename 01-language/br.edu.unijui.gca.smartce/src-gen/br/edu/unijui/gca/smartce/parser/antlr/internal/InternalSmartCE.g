@@ -614,7 +614,43 @@ ruleCondition returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getConditionAccess().getTimeoutParserRuleCall_0());
+			newCompositeNode(grammarAccess.getConditionAccess().getBusinessRuleParserRuleCall_0());
+		}
+		this_BusinessRule_0=ruleBusinessRule
+		{
+			$current = $this_BusinessRule_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getCompositeConditionParserRuleCall_1());
+		}
+		this_CompositeCondition_1=ruleCompositeCondition
+		{
+			$current = $this_CompositeCondition_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleBusinessRule
+entryRuleBusinessRule returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBusinessRuleRule()); }
+	iv_ruleBusinessRule=ruleBusinessRule
+	{ $current=$iv_ruleBusinessRule.current; }
+	EOF;
+
+// Rule BusinessRule
+ruleBusinessRule returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getBusinessRuleAccess().getTimeoutParserRuleCall_0());
 		}
 		this_Timeout_0=ruleTimeout
 		{
@@ -623,7 +659,7 @@ ruleCondition returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getConditionAccess().getOperationsLimitParserRuleCall_1());
+			newCompositeNode(grammarAccess.getBusinessRuleAccess().getOperationsLimitParserRuleCall_1());
 		}
 		this_OperationsLimit_1=ruleOperationsLimit
 		{
@@ -632,7 +668,7 @@ ruleCondition returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getConditionAccess().getBusinessDayParserRuleCall_2());
+			newCompositeNode(grammarAccess.getBusinessRuleAccess().getBusinessDayParserRuleCall_2());
 		}
 		this_BusinessDay_2=ruleBusinessDay
 		{
@@ -641,7 +677,7 @@ ruleCondition returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getConditionAccess().getBusinessTimeParserRuleCall_3());
+			newCompositeNode(grammarAccess.getBusinessRuleAccess().getBusinessTimeParserRuleCall_3());
 		}
 		this_BusinessTime_3=ruleBusinessTime
 		{
@@ -650,13 +686,89 @@ ruleCondition returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getConditionAccess().getMessageContentParserRuleCall_4());
+			newCompositeNode(grammarAccess.getBusinessRuleAccess().getMessageContentParserRuleCall_4());
 		}
 		this_MessageContent_4=ruleMessageContent
 		{
 			$current = $this_MessageContent_4.current;
 			afterParserOrEnumRuleCall();
 		}
+	)
+;
+
+// Entry rule entryRuleCompositeCondition
+entryRuleCompositeCondition returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getCompositeConditionRule()); }
+	iv_ruleCompositeCondition=ruleCompositeCondition
+	{ $current=$iv_ruleCompositeCondition.current; }
+	EOF;
+
+// Rule CompositeCondition
+ruleCompositeCondition returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_0_0());
+				}
+				lv_conditions_0_0=ruleBusinessRule
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+					}
+					add(
+						$current,
+						"conditions",
+						lv_conditions_0_0,
+						"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorLogicalOperatorEnumRuleCall_1_0());
+				}
+				lv_logicalOperator_1_0=ruleLogicalOperator
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+					}
+					set(
+						$current,
+						"logicalOperator",
+						lv_logicalOperator_1_0,
+						"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_2_0());
+				}
+				lv_conditions_2_0=ruleBusinessRule
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+					}
+					add(
+						$current,
+						"conditions",
+						lv_conditions_2_0,
+						"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
@@ -686,20 +798,19 @@ ruleTimeout returns [EObject current=null]
 		}
 		(
 			(
+				lv_value_2_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getTimeoutAccess().getExpressionExpressionParserRuleCall_2_0());
+					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0());
 				}
-				lv_expression_2_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getTimeoutRule());
+						$current = createModelElement(grammarAccess.getTimeoutRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"expression",
-						lv_expression_2_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Expression");
-					afterParserOrEnumRuleCall();
+						"value",
+						lv_value_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
@@ -881,20 +992,19 @@ ruleBusinessTime returns [EObject current=null]
 		}
 		(
 			(
+				lv_start_2_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getBusinessTimeAccess().getStartExpressionParserRuleCall_2_0());
+					newLeafNode(lv_start_2_0, grammarAccess.getBusinessTimeAccess().getStartSTRINGTerminalRuleCall_2_0());
 				}
-				lv_start_2_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBusinessTimeRule());
+						$current = createModelElement(grammarAccess.getBusinessTimeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"start",
 						lv_start_2_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Expression");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -904,20 +1014,19 @@ ruleBusinessTime returns [EObject current=null]
 		}
 		(
 			(
+				lv_end_4_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getBusinessTimeAccess().getEndExpressionParserRuleCall_4_0());
+					newLeafNode(lv_end_4_0, grammarAccess.getBusinessTimeAccess().getEndSTRINGTerminalRuleCall_4_0());
 				}
-				lv_end_4_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getBusinessTimeRule());
+						$current = createModelElement(grammarAccess.getBusinessTimeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"end",
 						lv_end_4_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Expression");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -954,20 +1063,19 @@ ruleMessageContent returns [EObject current=null]
 		}
 		(
 			(
+				lv_content_2_0=RULE_STRING
 				{
-					newCompositeNode(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_2_0());
+					newLeafNode(lv_content_2_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_2_0());
 				}
-				lv_expression_2_0=ruleExpression
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMessageContentRule());
+						$current = createModelElement(grammarAccess.getMessageContentRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
-						"expression",
-						lv_expression_2_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Expression");
-					afterParserOrEnumRuleCall();
+						"content",
+						lv_content_2_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
@@ -2417,6 +2525,41 @@ ruleUnitTime returns [Enumerator current=null]
 			$current = grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration().getEnumLiteral().getInstance();
 			newLeafNode(enumLiteral_0, grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration());
 		}
+	)
+;
+
+// Rule LogicalOperator
+ruleLogicalOperator returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			enumLiteral_0='AND'
+			{
+				$current = grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_0, grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0());
+			}
+		)
+		    |
+		(
+			enumLiteral_1='OR'
+			{
+				$current = grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_1, grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1());
+			}
+		)
+		    |
+		(
+			enumLiteral_2='NOT'
+			{
+				$current = grammarAccess.getLogicalOperatorAccess().getNOTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+				newLeafNode(enumLiteral_2, grammarAccess.getLogicalOperatorAccess().getNOTEnumLiteralDeclaration_2());
+			}
+		)
 	)
 ;
 

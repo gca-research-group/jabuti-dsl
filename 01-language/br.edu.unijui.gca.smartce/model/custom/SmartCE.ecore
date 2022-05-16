@@ -100,26 +100,25 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//Condition"/>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationsLimit" eSuperTypes="#//Condition">
+  <eClassifiers xsi:type="ecore:EClass" name="OperationsLimit" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationsNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//UnitTime"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessDay" eSuperTypes="#//Condition">
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessDay" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//WeekDays"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//WeekDays"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessTime" eSuperTypes="#//Condition">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="start" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="end" eType="#//Expression"
-        containment="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessTime" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WeekDays">
     <eLiterals name="MONDAY"/>
     <eLiterals name="TUESDAY" value="1"/>
@@ -131,5 +130,12 @@
   <eClassifiers xsi:type="ecore:EClass" name="CompositeCondition" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
         eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOperator" eType="#//LogicalOperator"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessRule" abstract="true" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="LogicalOperator">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
+    <eLiterals name="NOT" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

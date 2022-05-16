@@ -14,6 +14,11 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//UnitTime">
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//UnitTime/SECOND"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//LogicalOperator">
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//LogicalOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//LogicalOperator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//LogicalOperator/NOT"/>
+    </genEnums>
     <genClasses ecoreClass="SmartCE.ecore#//Contract">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/beginDate"/>
@@ -96,10 +101,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/type"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//Condition">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Condition/expression"/>
+    <genClasses ecoreClass="SmartCE.ecore#//Condition"/>
+    <genClasses ecoreClass="SmartCE.ecore#//Timeout">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Timeout/value"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//Timeout"/>
     <genClasses ecoreClass="SmartCE.ecore#//OperationsLimit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationsLimit/operationsNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationsLimit/timeUnit"/>
@@ -109,12 +114,16 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessDay/end"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//BusinessTime">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//BusinessTime/start"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//BusinessTime/end"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessTime/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessTime/end"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//MessageContent"/>
+    <genClasses ecoreClass="SmartCE.ecore#//MessageContent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//MessageContent/content"/>
+    </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//CompositeCondition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//CompositeCondition/conditions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//CompositeCondition/logicalOperator"/>
     </genClasses>
+    <genClasses ecoreClass="SmartCE.ecore#//BusinessRule"/>
   </genPackages>
 </genmodel:GenModel>

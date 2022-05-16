@@ -4,14 +4,11 @@
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
-import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -29,27 +26,47 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
+public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 {
 	/**
-	 * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
+	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression start;
+	protected static final String START_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected String start = START_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getEnd()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression end;
+	protected static final String END_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected String end = END_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -78,7 +95,7 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 	 * @generated
 	 */
 	@Override
-	public Expression getStart()
+	public String getStart()
 	{
 		return start;
 	}
@@ -88,16 +105,13 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetStart(Expression newStart, NotificationChain msgs)
+	@Override
+	public void setStart(String newStart)
 	{
-		Expression oldStart = start;
+		String oldStart = start;
 		start = newStart;
 		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__START, oldStart, newStart);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__START, oldStart, start));
 	}
 
 	/**
@@ -106,29 +120,7 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 	 * @generated
 	 */
 	@Override
-	public void setStart(Expression newStart)
-	{
-		if (newStart != start)
-		{
-			NotificationChain msgs = null;
-			if (start != null)
-				msgs = ((InternalEObject)start).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__START, null, msgs);
-			if (newStart != null)
-				msgs = ((InternalEObject)newStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__START, null, msgs);
-			msgs = basicSetStart(newStart, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__START, newStart, newStart));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Expression getEnd()
+	public String getEnd()
 	{
 		return end;
 	}
@@ -138,56 +130,13 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnd(Expression newEnd, NotificationChain msgs)
+	@Override
+	public void setEnd(String newEnd)
 	{
-		Expression oldEnd = end;
+		String oldEnd = end;
 		end = newEnd;
 		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__END, oldEnd, newEnd);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEnd(Expression newEnd)
-	{
-		if (newEnd != end)
-		{
-			NotificationChain msgs = null;
-			if (end != null)
-				msgs = ((InternalEObject)end).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__END, null, msgs);
-			if (newEnd != null)
-				msgs = ((InternalEObject)newEnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__END, null, msgs);
-			msgs = basicSetEnd(newEnd, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__END, newEnd, newEnd));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-	{
-		switch (featureID)
-		{
-			case SmartCEPackage.BUSINESS_TIME__START:
-				return basicSetStart(null, msgs);
-			case SmartCEPackage.BUSINESS_TIME__END:
-				return basicSetEnd(null, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__END, oldEnd, end));
 	}
 
 	/**
@@ -219,10 +168,10 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 		switch (featureID)
 		{
 			case SmartCEPackage.BUSINESS_TIME__START:
-				setStart((Expression)newValue);
+				setStart((String)newValue);
 				return;
 			case SmartCEPackage.BUSINESS_TIME__END:
-				setEnd((Expression)newValue);
+				setEnd((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -239,10 +188,10 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 		switch (featureID)
 		{
 			case SmartCEPackage.BUSINESS_TIME__START:
-				setStart((Expression)null);
+				setStart(START_EDEFAULT);
 				return;
 			case SmartCEPackage.BUSINESS_TIME__END:
-				setEnd((Expression)null);
+				setEnd(END_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -259,11 +208,30 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 		switch (featureID)
 		{
 			case SmartCEPackage.BUSINESS_TIME__START:
-				return start != null;
+				return START_EDEFAULT == null ? start != null : !START_EDEFAULT.equals(start);
 			case SmartCEPackage.BUSINESS_TIME__END:
-				return end != null;
+				return END_EDEFAULT == null ? end != null : !END_EDEFAULT.equals(end);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (start: ");
+		result.append(start);
+		result.append(", end: ");
+		result.append(end);
+		result.append(')');
+		return result.toString();
 	}
 
 } //BusinessTimeImpl

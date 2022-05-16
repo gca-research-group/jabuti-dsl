@@ -21,7 +21,7 @@ package br.edu.unijui.gca.smartce.smartCE;
  * @model
  * @generated
  */
-public interface OperationsLimit extends Condition
+public interface OperationsLimit extends BusinessRule
 {
 	/**
 	 * Returns the value of the '<em><b>Operations Number</b></em>' attribute.

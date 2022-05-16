@@ -17,12 +17,15 @@
 '=='=46
 '>'=43
 '>='=42
+'AND'=58
 'Action'=37
 'BusinessDay'=33
 'BusinessTime'=34
 'Contract'=12
 'MessageContent'=35
 'Monday'=55
+'NOT'=60
+'OR'=59
 'Obligation'=22
 'OperationsLimit'=31
 'Prohibition'=21
@@ -99,3 +102,6 @@ T__54=54
 T__55=55
 T__56=56
 T__57=57
+T__58=58
+T__59=59
+T__60=60

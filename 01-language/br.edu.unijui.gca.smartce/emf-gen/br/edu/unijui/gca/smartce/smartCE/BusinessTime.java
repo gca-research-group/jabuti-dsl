@@ -21,50 +21,50 @@ package br.edu.unijui.gca.smartce.smartCE;
  * @model
  * @generated
  */
-public interface BusinessTime extends Condition
+public interface BusinessTime extends BusinessRule
 {
 	/**
-	 * Returns the value of the '<em><b>Start</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Start</em>' containment reference.
-	 * @see #setStart(Expression)
+	 * @return the value of the '<em>Start</em>' attribute.
+	 * @see #setStart(String)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getBusinessTime_Start()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	Expression getStart();
+	String getStart();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' containment reference.
+	 * @param value the new value of the '<em>Start</em>' attribute.
 	 * @see #getStart()
 	 * @generated
 	 */
-	void setStart(Expression value);
+	void setStart(String value);
 
 	/**
-	 * Returns the value of the '<em><b>End</b></em>' containment reference.
+	 * Returns the value of the '<em><b>End</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>End</em>' containment reference.
-	 * @see #setEnd(Expression)
+	 * @return the value of the '<em>End</em>' attribute.
+	 * @see #setEnd(String)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getBusinessTime_End()
-	 * @model containment="true"
+	 * @model
 	 * @generated
 	 */
-	Expression getEnd();
+	String getEnd();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End</em>' containment reference.
+	 * @param value the new value of the '<em>End</em>' attribute.
 	 * @see #getEnd()
 	 * @generated
 	 */
-	void setEnd(Expression value);
+	void setEnd(String value);
 
 } // BusinessTime

@@ -15,6 +15,7 @@ import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
+import br.edu.unijui.gca.smartce.smartCE.LogicalOperator;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
@@ -139,6 +140,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return createWeekDaysFromString(eDataType, initialValue);
 			case SmartCEPackage.UNIT_TIME:
 				return createUnitTimeFromString(eDataType, initialValue);
+			case SmartCEPackage.LOGICAL_OPERATOR:
+				return createLogicalOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -158,6 +161,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return convertWeekDaysToString(eDataType, instanceValue);
 			case SmartCEPackage.UNIT_TIME:
 				return convertUnitTimeToString(eDataType, instanceValue);
+			case SmartCEPackage.LOGICAL_OPERATOR:
+				return convertLogicalOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -515,6 +520,28 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	public String convertUnitTimeToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicalOperator createLogicalOperatorFromString(EDataType eDataType, String initialValue)
+	{
+		LogicalOperator result = LogicalOperator.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLogicalOperatorToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

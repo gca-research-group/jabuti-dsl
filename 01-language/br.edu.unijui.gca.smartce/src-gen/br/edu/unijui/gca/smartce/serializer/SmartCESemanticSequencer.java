@@ -9,6 +9,7 @@ import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
@@ -67,6 +68,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SmartCEPackage.CLAUSE:
 				sequence_Clause(context, (Clause) semanticObject); 
+				return; 
+			case SmartCEPackage.COMPOSITE_CONDITION:
+				sequence_CompositeCondition(context, (CompositeCondition) semanticObject); 
 				return; 
 			case SmartCEPackage.CONTRACT:
 				sequence_Contract(context, (Contract) semanticObject); 
@@ -155,6 +159,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Condition returns BusinessDay
+	 *     BusinessRule returns BusinessDay
 	 *     BusinessDay returns BusinessDay
 	 *
 	 * Constraint:
@@ -177,10 +182,11 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Condition returns BusinessTime
+	 *     BusinessRule returns BusinessTime
 	 *     BusinessTime returns BusinessTime
 	 *
 	 * Constraint:
-	 *     (start=Expression end=Expression)
+	 *     (start=STRING end=STRING)
 	 */
 	protected void sequence_BusinessTime(ISerializationContext context, BusinessTime semanticObject) {
 		if (errorAcceptor != null) {
@@ -190,8 +196,8 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__END));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBusinessTimeAccess().getStartExpressionParserRuleCall_2_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getBusinessTimeAccess().getEndExpressionParserRuleCall_4_0(), semanticObject.getEnd());
+		feeder.accept(grammarAccess.getBusinessTimeAccess().getStartSTRINGTerminalRuleCall_2_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getBusinessTimeAccess().getEndSTRINGTerminalRuleCall_4_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	
@@ -278,6 +284,19 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
+	 *     Condition returns CompositeCondition
+	 *     CompositeCondition returns CompositeCondition
+	 *
+	 * Constraint:
+	 *     (conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule)
+	 */
+	protected void sequence_CompositeCondition(ISerializationContext context, CompositeCondition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Contract returns Contract
 	 *
 	 * Constraint:
@@ -341,18 +360,19 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Condition returns MessageContent
+	 *     BusinessRule returns MessageContent
 	 *     MessageContent returns MessageContent
 	 *
 	 * Constraint:
-	 *     expression=Expression
+	 *     content=STRING
 	 */
 	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.MESSAGE_CONTENT__CONTENT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.MESSAGE_CONTENT__CONTENT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_2_0(), semanticObject.getContent());
 		feeder.finish();
 	}
 	
@@ -463,6 +483,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Condition returns OperationsLimit
+	 *     BusinessRule returns OperationsLimit
 	 *     OperationsLimit returns OperationsLimit
 	 *
 	 * Constraint:
@@ -537,18 +558,19 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * Contexts:
 	 *     Condition returns Timeout
+	 *     BusinessRule returns Timeout
 	 *     Timeout returns Timeout
 	 *
 	 * Constraint:
-	 *     expression=Expression
+	 *     value=INT
 	 */
 	protected void sequence_Timeout(ISerializationContext context, Timeout semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.TIMEOUT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.TIMEOUT__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTimeoutAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

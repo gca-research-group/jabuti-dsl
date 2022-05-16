@@ -5,16 +5,20 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
+import br.edu.unijui.gca.smartce.smartCE.LogicalOperator;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -28,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl#getConditions <em>Conditions</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl#getLogicalOperator <em>Logical Operator</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +48,26 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 	 * @ordered
 	 */
 	protected EList<Condition> conditions;
+
+	/**
+	 * The default value of the '{@link #getLogicalOperator() <em>Logical Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogicalOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final LogicalOperator LOGICAL_OPERATOR_EDEFAULT = LogicalOperator.AND;
+
+	/**
+	 * The cached value of the '{@link #getLogicalOperator() <em>Logical Operator</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogicalOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected LogicalOperator logicalOperator = LOGICAL_OPERATOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -86,6 +111,31 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 	 * @generated
 	 */
 	@Override
+	public LogicalOperator getLogicalOperator()
+	{
+		return logicalOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setLogicalOperator(LogicalOperator newLogicalOperator)
+	{
+		LogicalOperator oldLogicalOperator = logicalOperator;
+		logicalOperator = newLogicalOperator == null ? LOGICAL_OPERATOR_EDEFAULT : newLogicalOperator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR, oldLogicalOperator, logicalOperator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -108,6 +158,8 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 		{
 			case SmartCEPackage.COMPOSITE_CONDITION__CONDITIONS:
 				return getConditions();
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
+				return getLogicalOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -127,6 +179,9 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 				getConditions().clear();
 				getConditions().addAll((Collection<? extends Condition>)newValue);
 				return;
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
+				setLogicalOperator((LogicalOperator)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -144,6 +199,9 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 			case SmartCEPackage.COMPOSITE_CONDITION__CONDITIONS:
 				getConditions().clear();
 				return;
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
+				setLogicalOperator(LOGICAL_OPERATOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -160,8 +218,27 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 		{
 			case SmartCEPackage.COMPOSITE_CONDITION__CONDITIONS:
 				return conditions != null && !conditions.isEmpty();
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
+				return logicalOperator != LOGICAL_OPERATOR_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString()
+	{
+		if (eIsProxy()) return super.toString();
+
+		StringBuilder result = new StringBuilder(super.toString());
+		result.append(" (logicalOperator: ");
+		result.append(logicalOperator);
+		result.append(')');
+		return result.toString();
 	}
 
 } //CompositeConditionImpl

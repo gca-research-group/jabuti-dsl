@@ -40,11 +40,19 @@ Clause:
 ;
 
 Condition: 
-	Timeout | OperationsLimit | BusinessDay | BusinessTime | MessageContent
+	BusinessRule | CompositeCondition
+;
+
+BusinessRule:
+	Timeout | OperationsLimit | BusinessDay | BusinessTime | MessageContent	
+;
+
+CompositeCondition:
+	 conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
 ;
 
 Timeout:
-	'Timeout' '(' expression=Expression ')'
+	'Timeout' '(' value=INT ')'
 ;
 
 OperationsLimit:
@@ -61,14 +69,16 @@ enum WeekDays:
 enum UnitTime:
     SECOND='Second';
     
+enum LogicalOperator:
+    AND='AND' | OR='OR' | NOT='NOT';
+    
 BusinessTime: 
-	'BusinessTime' '(' start=Expression ',' end=Expression ')'
+	'BusinessTime' '(' start=STRING ',' end=STRING ')'
 ; 
 
 MessageContent:
-	'MessageContent' '(' expression=Expression ')' /* Add an user help -> This field requires an xpath expression */
+	'MessageContent' '(' content=STRING ')' /* Add an user help -> This field requires an xpath expression */
 ;
-
 
 Party: 
 	Application | Process
