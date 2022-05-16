@@ -971,6 +971,90 @@ public interface SmartCEPackage extends EPackage
 	 */
 	int OPERATIONS_LIMIT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
 
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl <em>Business Day</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessDay()
+	 * @generated
+	 */
+	int BUSINESS_DAY = 23;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_DAY__EXPRESSION = CONDITION__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Business Day</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_DAY_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl <em>Business Time</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessTime()
+	 * @generated
+	 */
+	int BUSINESS_TIME = 24;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_TIME__EXPRESSION = CONDITION__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Business Time</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_TIME_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getMessageContent()
+	 * @generated
+	 */
+	int MESSAGE_CONTENT = 25;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__EXPRESSION = CONDITION__EXPRESSION;
+
+	/**
+	 * The number of structural features of the '<em>Message Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Contract <em>Contract</em>}'.
@@ -1720,6 +1804,36 @@ public interface SmartCEPackage extends EPackage
 	EClass getOperationsLimit();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay <em>Business Day</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Business Day</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessDay
+	 * @generated
+	 */
+	EClass getBusinessDay();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime <em>Business Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Business Time</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime
+	 * @generated
+	 */
+	EClass getBusinessTime();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent <em>Message Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Content</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.MessageContent
+	 * @generated
+	 */
+	EClass getMessageContent();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2347,6 +2461,36 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass OPERATIONS_LIMIT = eINSTANCE.getOperationsLimit();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl <em>Business Day</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessDay()
+		 * @generated
+		 */
+		EClass BUSINESS_DAY = eINSTANCE.getBusinessDay();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl <em>Business Time</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessTime()
+		 * @generated
+		 */
+		EClass BUSINESS_TIME = eINSTANCE.getBusinessTime();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getMessageContent()
+		 * @generated
+		 */
+		EClass MESSAGE_CONTENT = eINSTANCE.getMessageContent();
 
 	}
 

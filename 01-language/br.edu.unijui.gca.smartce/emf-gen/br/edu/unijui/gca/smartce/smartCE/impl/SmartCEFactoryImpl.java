@@ -6,13 +6,15 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
+import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
-import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
+import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
@@ -108,9 +110,11 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.ON_BREACH: return createOnBreach();
 			case SmartCEPackage.ACTION: return createAction();
 			case SmartCEPackage.VARIABLE: return createVariable();
-			case SmartCEPackage.CONDITION: return createCondition();
 			case SmartCEPackage.TIMEOUT: return createTimeout();
 			case SmartCEPackage.OPERATIONS_LIMIT: return createOperationsLimit();
+			case SmartCEPackage.BUSINESS_DAY: return createBusinessDay();
+			case SmartCEPackage.BUSINESS_TIME: return createBusinessTime();
+			case SmartCEPackage.MESSAGE_CONTENT: return createMessageContent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -362,18 +366,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	@Override
-	public Condition createCondition()
-	{
-		ConditionImpl condition = new ConditionImpl();
-		return condition;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Timeout createTimeout()
 	{
 		TimeoutImpl timeout = new TimeoutImpl();
@@ -390,6 +382,42 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		OperationsLimitImpl operationsLimit = new OperationsLimitImpl();
 		return operationsLimit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BusinessDay createBusinessDay()
+	{
+		BusinessDayImpl businessDay = new BusinessDayImpl();
+		return businessDay;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BusinessTime createBusinessTime()
+	{
+		BusinessTimeImpl businessTime = new BusinessTimeImpl();
+		return businessTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public MessageContent createMessageContent()
+	{
+		MessageContentImpl messageContent = new MessageContentImpl();
+		return messageContent;
 	}
 
 	/**

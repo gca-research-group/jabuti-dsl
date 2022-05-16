@@ -6,10 +6,13 @@ package br.edu.unijui.gca.smartce.serializer;
 import br.edu.unijui.gca.smartce.services.SmartCEGrammarAccess;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
+import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
+import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
@@ -56,6 +59,12 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.BINARY_OPERATOR:
 				sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
 				return; 
+			case SmartCEPackage.BUSINESS_DAY:
+				sequence_BusinessDay(context, (BusinessDay) semanticObject); 
+				return; 
+			case SmartCEPackage.BUSINESS_TIME:
+				sequence_BusinessTime(context, (BusinessTime) semanticObject); 
+				return; 
 			case SmartCEPackage.CLAUSE:
 				sequence_Clause(context, (Clause) semanticObject); 
 				return; 
@@ -67,6 +76,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SmartCEPackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
+				return; 
+			case SmartCEPackage.MESSAGE_CONTENT:
+				sequence_MessageContent(context, (MessageContent) semanticObject); 
 				return; 
 			case SmartCEPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -136,6 +148,44 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getApplicationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getApplicationAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns BusinessDay
+	 *     BusinessDay returns BusinessDay
+	 *
+	 * Constraint:
+	 *     expression=Expression
+	 */
+	protected void sequence_BusinessDay(ISerializationContext context, BusinessDay semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBusinessDayAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns BusinessTime
+	 *     BusinessTime returns BusinessTime
+	 *
+	 * Constraint:
+	 *     expression=Expression
+	 */
+	protected void sequence_BusinessTime(ISerializationContext context, BusinessTime semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getBusinessTimeAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -278,6 +328,25 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns MessageContent
+	 *     MessageContent returns MessageContent
+	 *
+	 * Constraint:
+	 *     expression=Expression
+	 */
+	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

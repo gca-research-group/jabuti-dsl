@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
+public abstract class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
 	/**
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.

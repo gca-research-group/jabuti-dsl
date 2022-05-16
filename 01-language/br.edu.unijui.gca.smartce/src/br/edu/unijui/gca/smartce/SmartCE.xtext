@@ -40,7 +40,7 @@ Clause:
 ;
 
 Condition: 
-	Timeout | OperationsLimit
+	Timeout | OperationsLimit | BusinessDay | BusinessTime | MessageContent
 ;
 
 Timeout:
@@ -48,8 +48,21 @@ Timeout:
 ;
 
 OperationsLimit:
-	('timeInterval' | 'limitOperation' | 'maxOperation') '(' expression=Expression ')'
+	('timeInterval' | 'limitOperation' ) '(' expression=Expression ')'
 ;
+
+BusinessDay:
+	'days' '(' expression=Expression
+	;
+	
+BusinessTime: 
+	('start' | 'end') '(' expression=Expression ')'
+; 
+
+MessageContent:
+	'query' expression=Expression
+;
+
 
 Party: 
 	Application | Process

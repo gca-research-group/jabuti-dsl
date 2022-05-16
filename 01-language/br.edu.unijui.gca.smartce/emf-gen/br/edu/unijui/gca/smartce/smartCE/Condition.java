@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getCondition()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Condition extends EObject

@@ -6,6 +6,8 @@ package br.edu.unijui.gca.smartce.smartCE.util;
 import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
+import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
@@ -13,6 +15,7 @@ import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
+import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
@@ -211,6 +214,21 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseOperationsLimit(OperationsLimit object)
 			{
 				return createOperationsLimitAdapter();
+			}
+			@Override
+			public Adapter caseBusinessDay(BusinessDay object)
+			{
+				return createBusinessDayAdapter();
+			}
+			@Override
+			public Adapter caseBusinessTime(BusinessTime object)
+			{
+				return createBusinessTimeAdapter();
+			}
+			@Override
+			public Adapter caseMessageContent(MessageContent object)
+			{
+				return createMessageContentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -575,6 +593,51 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createOperationsLimitAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay <em>Business Day</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessDay
+	 * @generated
+	 */
+	public Adapter createBusinessDayAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime <em>Business Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime
+	 * @generated
+	 */
+	public Adapter createBusinessTimeAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent <em>Message Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.MessageContent
+	 * @generated
+	 */
+	public Adapter createMessageContentAdapter()
 	{
 		return null;
 	}

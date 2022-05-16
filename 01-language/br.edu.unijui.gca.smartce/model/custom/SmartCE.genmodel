@@ -93,5 +93,8 @@
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//Timeout"/>
     <genClasses ecoreClass="SmartCE.ecore#//OperationsLimit"/>
+    <genClasses ecoreClass="SmartCE.ecore#//BusinessDay"/>
+    <genClasses ecoreClass="SmartCE.ecore#//BusinessTime"/>
+    <genClasses ecoreClass="SmartCE.ecore#//MessageContent"/>
   </genPackages>
 </genmodel:GenModel>

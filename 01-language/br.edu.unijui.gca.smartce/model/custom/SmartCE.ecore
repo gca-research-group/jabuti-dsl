@@ -100,10 +100,13 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition">
+  <eClassifiers xsi:type="ecore:EClass" name="Condition" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//Condition"/>
   <eClassifiers xsi:type="ecore:EClass" name="OperationsLimit" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessDay" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessTime" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//Condition"/>
 </ecore:EPackage>

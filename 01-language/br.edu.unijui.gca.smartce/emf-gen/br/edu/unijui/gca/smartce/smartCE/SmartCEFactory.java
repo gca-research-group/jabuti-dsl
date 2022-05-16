@@ -204,15 +204,6 @@ public interface SmartCEFactory extends EFactory
 	Variable createVariable();
 
 	/**
-	 * Returns a new object of class '<em>Condition</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition</em>'.
-	 * @generated
-	 */
-	Condition createCondition();
-
-	/**
 	 * Returns a new object of class '<em>Timeout</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -229,6 +220,33 @@ public interface SmartCEFactory extends EFactory
 	 * @generated
 	 */
 	OperationsLimit createOperationsLimit();
+
+	/**
+	 * Returns a new object of class '<em>Business Day</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Business Day</em>'.
+	 * @generated
+	 */
+	BusinessDay createBusinessDay();
+
+	/**
+	 * Returns a new object of class '<em>Business Time</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Business Time</em>'.
+	 * @generated
+	 */
+	BusinessTime createBusinessTime();
+
+	/**
+	 * Returns a new object of class '<em>Message Content</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Content</em>'.
+	 * @generated
+	 */
+	MessageContent createMessageContent();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -629,6 +629,33 @@ ruleCondition returns [EObject current=null]
 			$current = $this_OperationsLimit_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getBusinessDayParserRuleCall_2());
+		}
+		this_BusinessDay_2=ruleBusinessDay
+		{
+			$current = $this_BusinessDay_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getBusinessTimeParserRuleCall_3());
+		}
+		this_BusinessTime_3=ruleBusinessTime
+		{
+			$current = $this_BusinessTime_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getMessageContentParserRuleCall_4());
+		}
+		this_MessageContent_4=ruleMessageContent
+		{
+			$current = $this_MessageContent_4.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -708,22 +735,17 @@ ruleOperationsLimit returns [EObject current=null]
 			{
 				newLeafNode(otherlv_1, grammarAccess.getOperationsLimitAccess().getLimitOperationKeyword_0_1());
 			}
-			    |
-			otherlv_2='maxOperation'
-			{
-				newLeafNode(otherlv_2, grammarAccess.getOperationsLimitAccess().getMaxOperationKeyword_0_2());
-			}
 		)
-		otherlv_3='('
+		otherlv_2='('
 		{
-			newLeafNode(otherlv_3, grammarAccess.getOperationsLimitAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_2, grammarAccess.getOperationsLimitAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				{
 					newCompositeNode(grammarAccess.getOperationsLimitAccess().getExpressionExpressionParserRuleCall_2_0());
 				}
-				lv_expression_4_0=ruleExpression
+				lv_expression_3_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperationsLimitRule());
@@ -731,16 +753,161 @@ ruleOperationsLimit returns [EObject current=null]
 					set(
 						$current,
 						"expression",
-						lv_expression_4_0,
+						lv_expression_3_0,
 						"br.edu.unijui.gca.smartce.SmartCE.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_5=')'
+		otherlv_4=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_3());
 		}
+	)
+;
+
+// Entry rule entryRuleBusinessDay
+entryRuleBusinessDay returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBusinessDayRule()); }
+	iv_ruleBusinessDay=ruleBusinessDay
+	{ $current=$iv_ruleBusinessDay.current; }
+	EOF;
+
+// Rule BusinessDay
+ruleBusinessDay returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='days'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getBusinessDayAccess().getDaysKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getBusinessDayAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBusinessDayAccess().getExpressionExpressionParserRuleCall_2_0());
+				}
+				lv_expression_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBusinessDayRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_2_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+	)
+;
+
+// Entry rule entryRuleBusinessTime
+entryRuleBusinessTime returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getBusinessTimeRule()); }
+	iv_ruleBusinessTime=ruleBusinessTime
+	{ $current=$iv_ruleBusinessTime.current; }
+	EOF;
+
+// Rule BusinessTime
+ruleBusinessTime returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='start'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getBusinessTimeAccess().getStartKeyword_0_0());
+			}
+			    |
+			otherlv_1='end'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getBusinessTimeAccess().getEndKeyword_0_1());
+			}
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getBusinessTimeAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBusinessTimeAccess().getExpressionExpressionParserRuleCall_2_0());
+				}
+				lv_expression_3_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBusinessTimeRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_3_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleMessageContent
+entryRuleMessageContent returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMessageContentRule()); }
+	iv_ruleMessageContent=ruleMessageContent
+	{ $current=$iv_ruleMessageContent.current; }
+	EOF;
+
+// Rule MessageContent
+ruleMessageContent returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='query'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getMessageContentAccess().getQueryKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_1_0());
+				}
+				lv_expression_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMessageContentRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_1_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 
