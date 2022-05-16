@@ -249,6 +249,15 @@ public interface SmartCEFactory extends EFactory
 	MessageContent createMessageContent();
 
 	/**
+	 * Returns a new object of class '<em>Composite Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Condition</em>'.
+	 * @generated
+	 */
+	CompositeCondition createCompositeCondition();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -94,7 +94,8 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getClauseAccess().getConditionAssignment_13(), "rule__Clause__ConditionAssignment_13");
 			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_16(), "rule__Clause__OnBreachAssignment_16");
 			builder.put(grammarAccess.getTimeoutAccess().getExpressionAssignment_2(), "rule__Timeout__ExpressionAssignment_2");
-			builder.put(grammarAccess.getOperationsLimitAccess().getExpressionAssignment_2(), "rule__OperationsLimit__ExpressionAssignment_2");
+			builder.put(grammarAccess.getOperationsLimitAccess().getOperationsNumberAssignment_2(), "rule__OperationsLimit__OperationsNumberAssignment_2");
+			builder.put(grammarAccess.getOperationsLimitAccess().getTimeUnitAssignment_4(), "rule__OperationsLimit__TimeUnitAssignment_4");
 			builder.put(grammarAccess.getBusinessDayAccess().getStartAssignment_2(), "rule__BusinessDay__StartAssignment_2");
 			builder.put(grammarAccess.getBusinessDayAccess().getEndAssignment_4(), "rule__BusinessDay__EndAssignment_4");
 			builder.put(grammarAccess.getBusinessTimeAccess().getStartAssignment_2(), "rule__BusinessTime__StartAssignment_2");

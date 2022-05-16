@@ -9,6 +9,7 @@ import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
@@ -295,6 +296,14 @@ public class SmartCESwitch<T> extends Switch<T>
 				MessageContent messageContent = (MessageContent)theEObject;
 				T result = caseMessageContent(messageContent);
 				if (result == null) result = caseCondition(messageContent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.COMPOSITE_CONDITION:
+			{
+				CompositeCondition compositeCondition = (CompositeCondition)theEObject;
+				T result = caseCompositeCondition(compositeCondition);
+				if (result == null) result = caseCondition(compositeCondition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -714,6 +723,22 @@ public class SmartCESwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseMessageContent(MessageContent object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeCondition(CompositeCondition object)
 	{
 		return null;
 	}

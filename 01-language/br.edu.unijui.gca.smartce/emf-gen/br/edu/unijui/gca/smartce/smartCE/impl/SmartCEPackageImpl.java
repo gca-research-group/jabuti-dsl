@@ -9,6 +9,7 @@ import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
@@ -28,6 +29,7 @@ import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.UnitTime;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 import br.edu.unijui.gca.smartce.smartCE.WeekDays;
@@ -235,7 +237,21 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass compositeConditionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum weekDaysEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum unitTimeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1076,6 +1092,28 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EAttribute getOperationsLimit_OperationsNumber()
+	{
+		return (EAttribute)operationsLimitEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getOperationsLimit_TimeUnit()
+	{
+		return (EAttribute)operationsLimitEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getBusinessDay()
 	{
 		return businessDayEClass;
@@ -1153,9 +1191,42 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getCompositeCondition()
+	{
+		return compositeConditionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCompositeCondition_Conditions()
+	{
+		return (EReference)compositeConditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWeekDays()
 	{
 		return weekDaysEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getUnitTime()
+	{
+		return unitTimeEEnum;
 	}
 
 	/**
@@ -1281,6 +1352,8 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		timeoutEClass = createEClass(TIMEOUT);
 
 		operationsLimitEClass = createEClass(OPERATIONS_LIMIT);
+		createEAttribute(operationsLimitEClass, OPERATIONS_LIMIT__OPERATIONS_NUMBER);
+		createEAttribute(operationsLimitEClass, OPERATIONS_LIMIT__TIME_UNIT);
 
 		businessDayEClass = createEClass(BUSINESS_DAY);
 		createEAttribute(businessDayEClass, BUSINESS_DAY__START);
@@ -1292,8 +1365,12 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		messageContentEClass = createEClass(MESSAGE_CONTENT);
 
+		compositeConditionEClass = createEClass(COMPOSITE_CONDITION);
+		createEReference(compositeConditionEClass, COMPOSITE_CONDITION__CONDITIONS);
+
 		// Create enums
 		weekDaysEEnum = createEEnum(WEEK_DAYS);
+		unitTimeEEnum = createEEnum(UNIT_TIME);
 	}
 
 	/**
@@ -1339,6 +1416,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		businessDayEClass.getESuperTypes().add(this.getCondition());
 		businessTimeEClass.getESuperTypes().add(this.getCondition());
 		messageContentEClass.getESuperTypes().add(this.getCondition());
+		compositeConditionEClass.getESuperTypes().add(this.getCondition());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contractEClass, Contract.class, "Contract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1433,6 +1511,8 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEClass(timeoutEClass, Timeout.class, "Timeout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(operationsLimitEClass, OperationsLimit.class, "OperationsLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOperationsLimit_OperationsNumber(), ecorePackage.getEInt(), "operationsNumber", null, 0, 1, OperationsLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationsLimit_TimeUnit(), this.getUnitTime(), "timeUnit", null, 0, 1, OperationsLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessDayEClass, BusinessDay.class, "BusinessDay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBusinessDay_Start(), this.getWeekDays(), "start", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1444,11 +1524,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		initEClass(messageContentEClass, MessageContent.class, "MessageContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		initEClass(compositeConditionEClass, CompositeCondition.class, "CompositeCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCompositeCondition_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, CompositeCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(weekDaysEEnum, WeekDays.class, "WeekDays");
 		addEEnumLiteral(weekDaysEEnum, WeekDays.MONDAY);
 		addEEnumLiteral(weekDaysEEnum, WeekDays.TUESDAY);
 		addEEnumLiteral(weekDaysEEnum, WeekDays.WEDNESDAY);
+
+		initEEnum(unitTimeEEnum, UnitTime.class, "UnitTime");
+		addEEnumLiteral(unitTimeEEnum, UnitTime.SECOND);
 
 		// Create resource
 		createResource(eNS_URI);

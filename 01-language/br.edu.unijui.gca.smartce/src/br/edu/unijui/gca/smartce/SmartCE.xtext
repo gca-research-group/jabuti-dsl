@@ -33,7 +33,7 @@ Clause:
 		'rolePlayer' rolePlayer=[Party]
 		'rolePlayer.perform(' operation=[Operation|QualifiedName] ')'
 		'condition' '{' 
-			condition=Condition
+			condition=Condition  
 		'}'
 		'onBreach' onBreach=OnBreach 
 	 '}' 
@@ -48,7 +48,7 @@ Timeout:
 ;
 
 OperationsLimit:
-	'OperationsLimit' '(' expression=Expression ')'
+	'OperationsLimit' '(' operationsNumber=INT ',' timeUnit=UnitTime ')'
 ;
 
 BusinessDay:
@@ -58,12 +58,15 @@ BusinessDay:
 enum WeekDays:
     MONDAY='Monday' | TUESDAY = 'Tuesday';
     
+enum UnitTime:
+    SECOND='Second';
+    
 BusinessTime: 
 	'BusinessTime' '(' start=Expression ',' end=Expression ')'
 ; 
 
 MessageContent:
-	'MessageContent' '(' expression=Expression ')'
+	'MessageContent' '(' expression=Expression ')' /* Add an user help -> This field requires an xpath expression */
 ;
 
 

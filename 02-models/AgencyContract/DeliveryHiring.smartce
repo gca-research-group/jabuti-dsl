@@ -13,7 +13,7 @@ Contract DeliveryHiring {
 		rolePlayer.perform(Operation.REQUEST)
 		
 		condition {
-			MessageContent("Content of the message")
+			OperationsLimit(10, Second)
 		}
 		
 		onBreach(notifyFailing, "Request made outside of allowed hours or distance limit exceeded")

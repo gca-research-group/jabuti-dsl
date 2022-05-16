@@ -9,6 +9,7 @@ import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
@@ -229,6 +230,11 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseMessageContent(MessageContent object)
 			{
 				return createMessageContentAdapter();
+			}
+			@Override
+			public Adapter caseCompositeCondition(CompositeCondition object)
+			{
+				return createCompositeConditionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -638,6 +644,21 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createMessageContentAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition <em>Composite Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.CompositeCondition
+	 * @generated
+	 */
+	public Adapter createCompositeConditionAdapter()
 	{
 		return null;
 	}

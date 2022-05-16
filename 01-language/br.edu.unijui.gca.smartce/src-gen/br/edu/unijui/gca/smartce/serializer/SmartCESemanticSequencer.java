@@ -466,15 +466,18 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     OperationsLimit returns OperationsLimit
 	 *
 	 * Constraint:
-	 *     expression=Expression
+	 *     (operationsNumber=INT timeUnit=UnitTime)
 	 */
 	protected void sequence_OperationsLimit(ISerializationContext context, OperationsLimit semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__OPERATIONS_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__OPERATIONS_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__TIME_UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__TIME_UNIT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperationsLimitAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getOperationsLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0(), semanticObject.getOperationsNumber());
+		feeder.accept(grammarAccess.getOperationsLimitAccess().getTimeUnitUnitTimeEnumRuleCall_4_0(), semanticObject.getTimeUnit());
 		feeder.finish();
 	}
 	

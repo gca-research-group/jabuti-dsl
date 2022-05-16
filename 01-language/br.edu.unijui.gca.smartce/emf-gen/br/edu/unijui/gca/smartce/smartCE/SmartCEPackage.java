@@ -964,13 +964,31 @@ public interface SmartCEPackage extends EPackage
 	int OPERATIONS_LIMIT__EXPRESSION = CONDITION__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Operations Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONS_LIMIT__OPERATIONS_NUMBER = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATIONS_LIMIT__TIME_UNIT = CONDITION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Operations Limit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATIONS_LIMIT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int OPERATIONS_LIMIT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl <em>Business Day</em>}' class.
@@ -1093,6 +1111,43 @@ public interface SmartCEPackage extends EPackage
 	int MESSAGE_CONTENT_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCompositeCondition()
+	 * @generated
+	 */
+	int COMPOSITE_CONDITION = 26;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONDITION__EXPRESSION = CONDITION__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONDITION__CONDITIONS = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Composite Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1100,7 +1155,17 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDays()
 	 * @generated
 	 */
-	int WEEK_DAYS = 26;
+	int WEEK_DAYS = 27;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.UnitTime <em>Unit Time</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnitTime()
+	 * @generated
+	 */
+	int UNIT_TIME = 28;
 
 
 	/**
@@ -1851,6 +1916,28 @@ public interface SmartCEPackage extends EPackage
 	EClass getOperationsLimit();
 
 	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber <em>Operations Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operations Number</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber()
+	 * @see #getOperationsLimit()
+	 * @generated
+	 */
+	EAttribute getOperationsLimit_OperationsNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit()
+	 * @see #getOperationsLimit()
+	 * @generated
+	 */
+	EAttribute getOperationsLimit_TimeUnit();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay <em>Business Day</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1925,6 +2012,27 @@ public interface SmartCEPackage extends EPackage
 	EClass getMessageContent();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition <em>Composite Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Composite Condition</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.CompositeCondition
+	 * @generated
+	 */
+	EClass getCompositeCondition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getConditions <em>Conditions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getConditions()
+	 * @see #getCompositeCondition()
+	 * @generated
+	 */
+	EReference getCompositeCondition_Conditions();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1933,6 +2041,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getWeekDays();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.UnitTime <em>Unit Time</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Unit Time</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
+	 * @generated
+	 */
+	EEnum getUnitTime();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2564,6 +2682,22 @@ public interface SmartCEPackage extends EPackage
 		EClass OPERATIONS_LIMIT = eINSTANCE.getOperationsLimit();
 
 		/**
+		 * The meta object literal for the '<em><b>Operations Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATIONS_LIMIT__OPERATIONS_NUMBER = eINSTANCE.getOperationsLimit_OperationsNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OPERATIONS_LIMIT__TIME_UNIT = eINSTANCE.getOperationsLimit_TimeUnit();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl <em>Business Day</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2626,6 +2760,24 @@ public interface SmartCEPackage extends EPackage
 		EClass MESSAGE_CONTENT = eINSTANCE.getMessageContent();
 
 		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCompositeCondition()
+		 * @generated
+		 */
+		EClass COMPOSITE_CONDITION = eINSTANCE.getCompositeCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_CONDITION__CONDITIONS = eINSTANCE.getCompositeCondition_Conditions();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2634,6 +2786,16 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EEnum WEEK_DAYS = eINSTANCE.getWeekDays();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.UnitTime <em>Unit Time</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnitTime()
+		 * @generated
+		 */
+		EEnum UNIT_TIME = eINSTANCE.getUnitTime();
 
 	}
 

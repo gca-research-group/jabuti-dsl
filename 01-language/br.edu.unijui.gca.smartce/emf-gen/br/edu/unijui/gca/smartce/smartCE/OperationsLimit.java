@@ -9,6 +9,13 @@ package br.edu.unijui.gca.smartce.smartCE;
  * A representation of the model object '<em><b>Operations Limit</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber <em>Operations Number</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit <em>Time Unit</em>}</li>
+ * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationsLimit()
  * @model
@@ -16,4 +23,51 @@ package br.edu.unijui.gca.smartce.smartCE;
  */
 public interface OperationsLimit extends Condition
 {
+	/**
+	 * Returns the value of the '<em><b>Operations Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operations Number</em>' attribute.
+	 * @see #setOperationsNumber(int)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationsLimit_OperationsNumber()
+	 * @model
+	 * @generated
+	 */
+	int getOperationsNumber();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber <em>Operations Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operations Number</em>' attribute.
+	 * @see #getOperationsNumber()
+	 * @generated
+	 */
+	void setOperationsNumber(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Time Unit</b></em>' attribute.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.UnitTime}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Unit</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
+	 * @see #setTimeUnit(UnitTime)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationsLimit_TimeUnit()
+	 * @model
+	 * @generated
+	 */
+	UnitTime getTimeUnit();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit <em>Time Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Unit</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
+	 * @see #getTimeUnit()
+	 * @generated
+	 */
+	void setTimeUnit(UnitTime value);
+
 } // OperationsLimit

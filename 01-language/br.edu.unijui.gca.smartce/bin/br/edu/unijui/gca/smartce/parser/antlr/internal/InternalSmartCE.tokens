@@ -5,7 +5,7 @@
 ')'=26
 '*'=51
 '+'=49
-','=33
+','=32
 '-'=50
 '.'=53
 '.*'=54
@@ -18,7 +18,7 @@
 '>'=43
 '>='=42
 'Action'=37
-'BusinessDay'=32
+'BusinessDay'=33
 'BusinessTime'=34
 'Contract'=12
 'MessageContent'=35
@@ -27,6 +27,7 @@
 'OperationsLimit'=31
 'Prohibition'=21
 'Right'=20
+'Second'=57
 'Timeout'=29
 'Tuesday'=56
 'application'=17
@@ -97,3 +98,4 @@ T__53=53
 T__54=54
 T__55=55
 T__56=56
+T__57=57

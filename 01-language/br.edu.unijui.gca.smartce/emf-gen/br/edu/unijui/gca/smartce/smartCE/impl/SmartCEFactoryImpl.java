@@ -9,6 +9,7 @@ import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
+import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
@@ -27,6 +28,7 @@ import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.UnitTime;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 import br.edu.unijui.gca.smartce.smartCE.WeekDays;
@@ -117,6 +119,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.BUSINESS_DAY: return createBusinessDay();
 			case SmartCEPackage.BUSINESS_TIME: return createBusinessTime();
 			case SmartCEPackage.MESSAGE_CONTENT: return createMessageContent();
+			case SmartCEPackage.COMPOSITE_CONDITION: return createCompositeCondition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -134,6 +137,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 		{
 			case SmartCEPackage.WEEK_DAYS:
 				return createWeekDaysFromString(eDataType, initialValue);
+			case SmartCEPackage.UNIT_TIME:
+				return createUnitTimeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -151,6 +156,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 		{
 			case SmartCEPackage.WEEK_DAYS:
 				return convertWeekDaysToString(eDataType, instanceValue);
+			case SmartCEPackage.UNIT_TIME:
+				return convertUnitTimeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -461,6 +468,18 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public CompositeCondition createCompositeCondition()
+	{
+		CompositeConditionImpl compositeCondition = new CompositeConditionImpl();
+		return compositeCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public WeekDays createWeekDaysFromString(EDataType eDataType, String initialValue)
 	{
 		WeekDays result = WeekDays.get(initialValue);
@@ -474,6 +493,28 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	public String convertWeekDaysToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnitTime createUnitTimeFromString(EDataType eDataType, String initialValue)
+	{
+		UnitTime result = UnitTime.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUnitTimeToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

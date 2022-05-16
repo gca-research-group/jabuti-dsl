@@ -736,26 +736,48 @@ ruleOperationsLimit returns [EObject current=null]
 		}
 		(
 			(
+				lv_operationsNumber_2_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getOperationsLimitAccess().getExpressionExpressionParserRuleCall_2_0());
+					newLeafNode(lv_operationsNumber_2_0, grammarAccess.getOperationsLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0());
 				}
-				lv_expression_2_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getOperationsLimitRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"operationsNumber",
+						lv_operationsNumber_2_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_3=','
+		{
+			newLeafNode(otherlv_3, grammarAccess.getOperationsLimitAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOperationsLimitAccess().getTimeUnitUnitTimeEnumRuleCall_4_0());
+				}
+				lv_timeUnit_4_0=ruleUnitTime
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getOperationsLimitRule());
 					}
 					set(
 						$current,
-						"expression",
-						lv_expression_2_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+						"timeUnit",
+						lv_timeUnit_4_0,
+						"br.edu.unijui.gca.smartce.SmartCE.UnitTime");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_3=')'
+		otherlv_5=')'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -2378,6 +2400,23 @@ ruleWeekDays returns [Enumerator current=null]
 				newLeafNode(enumLiteral_1, grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1());
 			}
 		)
+	)
+;
+
+// Rule UnitTime
+ruleUnitTime returns [Enumerator current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		enumLiteral_0='Second'
+		{
+			$current = grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration().getEnumLiteral().getInstance();
+			newLeafNode(enumLiteral_0, grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration());
+		}
 	)
 ;
 
