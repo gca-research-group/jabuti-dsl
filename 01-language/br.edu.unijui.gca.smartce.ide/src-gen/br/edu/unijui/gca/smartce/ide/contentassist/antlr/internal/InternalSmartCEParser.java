@@ -7910,7 +7910,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2539:1: ( rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1 )
             // InternalSmartCE.g:2540:2: rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_23);
             rule__CompositeCondition__Group__0__Impl();
 
             state._fsp--;
@@ -7939,29 +7939,47 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group__0__Impl"
-    // InternalSmartCE.g:2547:1: rule__CompositeCondition__Group__0__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_0 ) ) ;
+    // InternalSmartCE.g:2547:1: rule__CompositeCondition__Group__0__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_0 )* ) ;
     public final void rule__CompositeCondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2551:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_0 ) ) )
-            // InternalSmartCE.g:2552:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 ) )
+            // InternalSmartCE.g:2551:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_0 )* ) )
+            // InternalSmartCE.g:2552:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 )* )
             {
-            // InternalSmartCE.g:2552:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 ) )
-            // InternalSmartCE.g:2553:2: ( rule__CompositeCondition__ConditionsAssignment_0 )
+            // InternalSmartCE.g:2552:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 )* )
+            // InternalSmartCE.g:2553:2: ( rule__CompositeCondition__ConditionsAssignment_0 )*
             {
              before(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_0()); 
-            // InternalSmartCE.g:2554:2: ( rule__CompositeCondition__ConditionsAssignment_0 )
-            // InternalSmartCE.g:2554:3: rule__CompositeCondition__ConditionsAssignment_0
-            {
-            pushFollow(FOLLOW_2);
-            rule__CompositeCondition__ConditionsAssignment_0();
+            // InternalSmartCE.g:2554:2: ( rule__CompositeCondition__ConditionsAssignment_0 )*
+            loop19:
+            do {
+                int alt19=2;
+                int LA19_0 = input.LA(1);
 
-            state._fsp--;
+                if ( (LA19_0==39||LA19_0==41||(LA19_0>=43 && LA19_0<=45)) ) {
+                    alt19=1;
+                }
 
 
-            }
+                switch (alt19) {
+            	case 1 :
+            	    // InternalSmartCE.g:2554:3: rule__CompositeCondition__ConditionsAssignment_0
+            	    {
+            	    pushFollow(FOLLOW_27);
+            	    rule__CompositeCondition__ConditionsAssignment_0();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop19;
+                }
+            } while (true);
 
              after(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_0()); 
 
@@ -7995,7 +8013,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2566:1: ( rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2 )
             // InternalSmartCE.g:2567:2: rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_28);
             rule__CompositeCondition__Group__1__Impl();
 
             state._fsp--;
@@ -8235,7 +8253,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2647:1: ( rule__Timeout__Group__1__Impl rule__Timeout__Group__2 )
             // InternalSmartCE.g:2648:2: rule__Timeout__Group__1__Impl rule__Timeout__Group__2
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_29);
             rule__Timeout__Group__1__Impl();
 
             state._fsp--;
@@ -8540,7 +8558,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2755:1: ( rule__OperationsLimit__Group__1__Impl rule__OperationsLimit__Group__2 )
             // InternalSmartCE.g:2756:2: rule__OperationsLimit__Group__1__Impl rule__OperationsLimit__Group__2
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_29);
             rule__OperationsLimit__Group__1__Impl();
 
             state._fsp--;
@@ -8615,7 +8633,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2782:1: ( rule__OperationsLimit__Group__2__Impl rule__OperationsLimit__Group__3 )
             // InternalSmartCE.g:2783:2: rule__OperationsLimit__Group__2__Impl rule__OperationsLimit__Group__3
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             rule__OperationsLimit__Group__2__Impl();
 
             state._fsp--;
@@ -8700,7 +8718,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2809:1: ( rule__OperationsLimit__Group__3__Impl rule__OperationsLimit__Group__4 )
             // InternalSmartCE.g:2810:2: rule__OperationsLimit__Group__3__Impl rule__OperationsLimit__Group__4
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_31);
             rule__OperationsLimit__Group__3__Impl();
 
             state._fsp--;
@@ -9005,7 +9023,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2917:1: ( rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2 )
             // InternalSmartCE.g:2918:2: rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_32);
             rule__BusinessDay__Group__1__Impl();
 
             state._fsp--;
@@ -9080,7 +9098,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2944:1: ( rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3 )
             // InternalSmartCE.g:2945:2: rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             rule__BusinessDay__Group__2__Impl();
 
             state._fsp--;
@@ -9165,7 +9183,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:2971:1: ( rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4 )
             // InternalSmartCE.g:2972:2: rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_32);
             rule__BusinessDay__Group__3__Impl();
 
             state._fsp--;
@@ -9545,7 +9563,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3106:1: ( rule__BusinessTime__Group__2__Impl rule__BusinessTime__Group__3 )
             // InternalSmartCE.g:3107:2: rule__BusinessTime__Group__2__Impl rule__BusinessTime__Group__3
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             rule__BusinessTime__Group__2__Impl();
 
             state._fsp--;
@@ -10165,7 +10183,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3322:1: ( rule__Application__Group__0__Impl rule__Application__Group__1 )
             // InternalSmartCE.g:3323:2: rule__Application__Group__0__Impl rule__Application__Group__1
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_33);
             rule__Application__Group__0__Impl();
 
             state._fsp--;
@@ -10405,7 +10423,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3403:1: ( rule__Process__Group__0__Impl rule__Process__Group__1 )
             // InternalSmartCE.g:3404:2: rule__Process__Group__0__Impl rule__Process__Group__1
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_33);
             rule__Process__Group__0__Impl();
 
             state._fsp--;
@@ -10720,7 +10738,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3511:1: ( rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2 )
             // InternalSmartCE.g:3512:2: rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_30);
             rule__OnBreach__Group__1__Impl();
 
             state._fsp--;
@@ -10805,7 +10823,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3538:1: ( rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3 )
             // InternalSmartCE.g:3539:2: rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__OnBreach__Group__2__Impl();
 
             state._fsp--;
@@ -11270,7 +11288,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3700:1: ( rule__Action__Group__3__Impl rule__Action__Group__4 )
             // InternalSmartCE.g:3701:2: rule__Action__Group__3__Impl rule__Action__Group__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__Action__Group__3__Impl();
 
             state._fsp--;
@@ -11355,7 +11373,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3727:1: ( rule__Action__Group__4__Impl rule__Action__Group__5 )
             // InternalSmartCE.g:3728:2: rule__Action__Group__4__Impl rule__Action__Group__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__Action__Group__4__Impl();
 
             state._fsp--;
@@ -11398,21 +11416,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getActionAccess().getGroup_4()); 
             // InternalSmartCE.g:3742:2: ( rule__Action__Group_4__0 )*
-            loop19:
+            loop20:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt20=2;
+                int LA20_0 = input.LA(1);
 
-                if ( (LA19_0==42) ) {
-                    alt19=1;
+                if ( (LA20_0==42) ) {
+                    alt20=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt20) {
             	case 1 :
             	    // InternalSmartCE.g:3742:3: rule__Action__Group_4__0
             	    {
-            	    pushFollow(FOLLOW_35);
+            	    pushFollow(FOLLOW_36);
             	    rule__Action__Group_4__0();
 
             	    state._fsp--;
@@ -11422,7 +11440,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop20;
                 }
             } while (true);
 
@@ -11533,7 +11551,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3781:1: ( rule__Action__Group__6__Impl rule__Action__Group__7 )
             // InternalSmartCE.g:3782:2: rule__Action__Group__6__Impl rule__Action__Group__7
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__Action__Group__6__Impl();
 
             state._fsp--;
@@ -11918,7 +11936,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3916:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
             // InternalSmartCE.g:3917:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_33);
             rule__Variable__Group__0__Impl();
 
             state._fsp--;
@@ -12158,7 +12176,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:3997:1: ( rule__Expression__Group__0__Impl rule__Expression__Group__1 )
             // InternalSmartCE.g:3998:2: rule__Expression__Group__0__Impl rule__Expression__Group__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_37);
             rule__Expression__Group__0__Impl();
 
             state._fsp--;
@@ -12275,21 +12293,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getExpressionAccess().getGroup_1()); 
             // InternalSmartCE.g:4038:2: ( rule__Expression__Group_1__0 )*
-            loop20:
+            loop21:
             do {
-                int alt20=2;
-                int LA20_0 = input.LA(1);
+                int alt21=2;
+                int LA21_0 = input.LA(1);
 
-                if ( ((LA20_0>=50 && LA20_0<=51)) ) {
-                    alt20=1;
+                if ( ((LA21_0>=50 && LA21_0<=51)) ) {
+                    alt21=1;
                 }
 
 
-                switch (alt20) {
+                switch (alt21) {
             	case 1 :
             	    // InternalSmartCE.g:4038:3: rule__Expression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_37);
+            	    pushFollow(FOLLOW_38);
             	    rule__Expression__Group_1__0();
 
             	    state._fsp--;
@@ -12299,7 +12317,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop20;
+            	    break loop21;
                 }
             } while (true);
 
@@ -12335,7 +12353,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4051:1: ( rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 )
             // InternalSmartCE.g:4052:2: rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_37);
             rule__Expression__Group_1__0__Impl();
 
             state._fsp--;
@@ -12410,7 +12428,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4078:1: ( rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2 )
             // InternalSmartCE.g:4079:2: rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__Expression__Group_1__1__Impl();
 
             state._fsp--;
@@ -12575,7 +12593,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4132:1: ( rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1 )
             // InternalSmartCE.g:4133:2: rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__Negation__Group_1__0__Impl();
 
             state._fsp--;
@@ -12650,7 +12668,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4159:1: ( rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2 )
             // InternalSmartCE.g:4160:2: rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_39);
             rule__Negation__Group_1__1__Impl();
 
             state._fsp--;
@@ -12815,7 +12833,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4213:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
             // InternalSmartCE.g:4214:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_40);
             rule__Comparison__Group__0__Impl();
 
             state._fsp--;
@@ -12932,21 +12950,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getComparisonAccess().getGroup_1()); 
             // InternalSmartCE.g:4254:2: ( rule__Comparison__Group_1__0 )*
-            loop21:
+            loop22:
             do {
-                int alt21=2;
-                int LA21_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( ((LA21_0>=53 && LA21_0<=60)) ) {
-                    alt21=1;
+                if ( ((LA22_0>=53 && LA22_0<=60)) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt21) {
+                switch (alt22) {
             	case 1 :
             	    // InternalSmartCE.g:4254:3: rule__Comparison__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_40);
+            	    pushFollow(FOLLOW_41);
             	    rule__Comparison__Group_1__0();
 
             	    state._fsp--;
@@ -12956,7 +12974,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop21;
+            	    break loop22;
                 }
             } while (true);
 
@@ -12992,7 +13010,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4267:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
             // InternalSmartCE.g:4268:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_40);
             rule__Comparison__Group_1__0__Impl();
 
             state._fsp--;
@@ -13067,7 +13085,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4294:1: ( rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 )
             // InternalSmartCE.g:4295:2: rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_39);
             rule__Comparison__Group_1__1__Impl();
 
             state._fsp--;
@@ -13232,7 +13250,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4348:1: ( rule__Plus__Group__0__Impl rule__Plus__Group__1 )
             // InternalSmartCE.g:4349:2: rule__Plus__Group__0__Impl rule__Plus__Group__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_42);
             rule__Plus__Group__0__Impl();
 
             state._fsp--;
@@ -13349,21 +13367,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getPlusAccess().getGroup_1()); 
             // InternalSmartCE.g:4389:2: ( rule__Plus__Group_1__0 )*
-            loop22:
+            loop23:
             do {
-                int alt22=2;
-                int LA22_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( ((LA22_0>=15 && LA22_0<=16)) ) {
-                    alt22=1;
+                if ( ((LA23_0>=15 && LA23_0<=16)) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt22) {
+                switch (alt23) {
             	case 1 :
             	    // InternalSmartCE.g:4389:3: rule__Plus__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_42);
+            	    pushFollow(FOLLOW_43);
             	    rule__Plus__Group_1__0();
 
             	    state._fsp--;
@@ -13373,7 +13391,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop22;
+            	    break loop23;
                 }
             } while (true);
 
@@ -13409,7 +13427,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4402:1: ( rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1 )
             // InternalSmartCE.g:4403:2: rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1
             {
-            pushFollow(FOLLOW_41);
+            pushFollow(FOLLOW_42);
             rule__Plus__Group_1__0__Impl();
 
             state._fsp--;
@@ -13484,7 +13502,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4429:1: ( rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2 )
             // InternalSmartCE.g:4430:2: rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_39);
             rule__Plus__Group_1__1__Impl();
 
             state._fsp--;
@@ -13649,7 +13667,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4483:1: ( rule__Factor__Group__0__Impl rule__Factor__Group__1 )
             // InternalSmartCE.g:4484:2: rule__Factor__Group__0__Impl rule__Factor__Group__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_44);
             rule__Factor__Group__0__Impl();
 
             state._fsp--;
@@ -13766,21 +13784,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getFactorAccess().getGroup_1()); 
             // InternalSmartCE.g:4524:2: ( rule__Factor__Group_1__0 )*
-            loop23:
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( ((LA23_0>=17 && LA23_0<=18)) ) {
-                    alt23=1;
+                if ( ((LA24_0>=17 && LA24_0<=18)) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
             	    // InternalSmartCE.g:4524:3: rule__Factor__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_44);
+            	    pushFollow(FOLLOW_45);
             	    rule__Factor__Group_1__0();
 
             	    state._fsp--;
@@ -13790,7 +13808,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -13826,7 +13844,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4537:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
             // InternalSmartCE.g:4538:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_44);
             rule__Factor__Group_1__0__Impl();
 
             state._fsp--;
@@ -13901,7 +13919,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4564:1: ( rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 )
             // InternalSmartCE.g:4565:2: rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_39);
             rule__Factor__Group_1__1__Impl();
 
             state._fsp--;
@@ -14066,7 +14084,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4618:1: ( rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1 )
             // InternalSmartCE.g:4619:2: rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_39);
             rule__Negative__Group_1__0__Impl();
 
             state._fsp--;
@@ -14141,7 +14159,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4645:1: ( rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2 )
             // InternalSmartCE.g:4646:2: rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_46);
             rule__Negative__Group_1__1__Impl();
 
             state._fsp--;
@@ -14296,7 +14314,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4699:1: ( rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 )
             // InternalSmartCE.g:4700:2: rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__Primary__Group_1__0__Impl();
 
             state._fsp--;
@@ -14605,7 +14623,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4807:1: ( rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 )
             // InternalSmartCE.g:4808:2: rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__FunctionCall__Group__1__Impl();
 
             state._fsp--;
@@ -14680,7 +14698,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4834:1: ( rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 )
             // InternalSmartCE.g:4835:2: rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__FunctionCall__Group__2__Impl();
 
             state._fsp--;
@@ -14765,7 +14783,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4861:1: ( rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4 )
             // InternalSmartCE.g:4862:2: rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_35);
             rule__FunctionCall__Group__3__Impl();
 
             state._fsp--;
@@ -14808,21 +14826,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getFunctionCallAccess().getGroup_3()); 
             // InternalSmartCE.g:4876:2: ( rule__FunctionCall__Group_3__0 )*
-            loop24:
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==42) ) {
-                    alt24=1;
+                if ( (LA25_0==42) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
             	    // InternalSmartCE.g:4876:3: rule__FunctionCall__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_35);
+            	    pushFollow(FOLLOW_36);
             	    rule__FunctionCall__Group_3__0();
 
             	    state._fsp--;
@@ -14832,7 +14850,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
@@ -14938,7 +14956,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4915:1: ( rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1 )
             // InternalSmartCE.g:4916:2: rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_34);
             rule__FunctionCall__Group_3__0__Impl();
 
             state._fsp--;
@@ -15093,7 +15111,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4969:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
             // InternalSmartCE.g:4970:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_46);
+            pushFollow(FOLLOW_47);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
@@ -15206,21 +15224,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
             // InternalSmartCE.g:5010:2: ( rule__QualifiedName__Group_1__0 )*
-            loop25:
+            loop26:
             do {
-                int alt25=2;
-                int LA25_0 = input.LA(1);
+                int alt26=2;
+                int LA26_0 = input.LA(1);
 
-                if ( (LA25_0==48) ) {
-                    alt25=1;
+                if ( (LA26_0==48) ) {
+                    alt26=1;
                 }
 
 
-                switch (alt25) {
+                switch (alt26) {
             	case 1 :
             	    // InternalSmartCE.g:5010:3: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_47);
+            	    pushFollow(FOLLOW_48);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -15230,7 +15248,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop25;
+            	    break loop26;
                 }
             } while (true);
 
@@ -15411,7 +15429,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:5077:1: ( rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 )
             // InternalSmartCE.g:5078:2: rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_49);
             rule__QualifiedNameWithWildcard__Group__0__Impl();
 
             state._fsp--;
@@ -18163,43 +18181,43 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     protected DFA2 dfa2 = new DFA2(this);
     protected DFA11 dfa11 = new DFA11(this);
     static final String dfa_1s = "\37\uffff";
-    static final String dfa_2s = "\21\uffff\1\27\3\uffff\1\27\6\uffff\3\27";
-    static final String dfa_3s = "\1\47\5\50\2\4\1\23\2\6\1\44\4\52\1\44\1\25\1\13\1\23\1\6\1\25\2\uffff\4\44\3\25";
-    static final String dfa_4s = "\1\55\5\50\2\4\1\24\2\6\1\44\4\52\1\44\1\40\1\13\1\24\1\6\1\40\2\uffff\4\44\3\40";
-    static final String dfa_5s = "\26\uffff\1\2\1\1\7\uffff";
+    static final String dfa_2s = "\22\uffff\1\27\3\uffff\1\27\5\uffff\3\27";
+    static final String dfa_3s = "\1\25\5\50\1\uffff\2\4\1\23\2\6\1\44\4\52\1\44\1\25\1\13\1\23\1\6\1\25\1\uffff\4\44\3\25";
+    static final String dfa_4s = "\1\55\5\50\1\uffff\2\4\1\24\2\6\1\44\4\52\1\44\1\55\1\13\1\24\1\6\1\55\1\uffff\4\44\3\55";
+    static final String dfa_5s = "\6\uffff\1\2\20\uffff\1\1\7\uffff";
     static final String dfa_6s = "\37\uffff}>";
     static final String[] dfa_7s = {
-            "\1\1\1\uffff\1\2\1\uffff\1\3\1\4\1\5",
-            "\1\6",
+            "\3\6\17\uffff\1\1\1\uffff\1\2\1\uffff\1\3\1\4\1\5",
             "\1\7",
             "\1\10",
             "\1\11",
             "\1\12",
             "\1\13",
+            "",
             "\1\14",
-            "\1\15\1\16",
-            "\1\17",
+            "\1\15",
+            "\1\16\1\17",
             "\1\20",
             "\1\21",
             "\1\22",
             "\1\23",
-            "\1\23",
+            "\1\24",
             "\1\24",
             "\1\25",
-            "\3\26\10\uffff\1\27",
+            "\1\26",
+            "\3\6\10\uffff\1\27\6\uffff\1\6\1\uffff\1\6\1\uffff\3\6",
             "\1\30",
             "\1\31\1\32",
             "\1\33",
-            "\3\26\10\uffff\1\27",
-            "",
+            "\3\6\10\uffff\1\27\6\uffff\1\6\1\uffff\1\6\1\uffff\3\6",
             "",
             "\1\34",
             "\1\35",
             "\1\35",
             "\1\36",
-            "\3\26\10\uffff\1\27",
-            "\3\26\10\uffff\1\27",
-            "\3\26\10\uffff\1\27"
+            "\3\6\10\uffff\1\27\6\uffff\1\6\1\uffff\1\6\1\uffff\3\6",
+            "\3\6\10\uffff\1\27\6\uffff\1\6\1\uffff\1\6\1\uffff\3\6",
+            "\3\6\10\uffff\1\27\6\uffff\1\6\1\uffff\1\6\1\uffff\3\6"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -18228,20 +18246,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
     }
     static final String dfa_8s = "\10\uffff";
-    static final String dfa_9s = "\3\uffff\1\5\3\uffff\1\5";
+    static final String dfa_9s = "\3\uffff\1\6\3\uffff\1\6";
     static final String dfa_10s = "\1\4\2\uffff\1\17\1\5\2\uffff\1\17";
     static final String dfa_11s = "\1\6\2\uffff\1\74\1\5\2\uffff\1\74";
-    static final String dfa_12s = "\1\uffff\1\1\1\2\2\uffff\1\3\1\4\1\uffff";
+    static final String dfa_12s = "\1\uffff\1\1\1\2\2\uffff\1\4\1\3\1\uffff";
     static final String dfa_13s = "\10\uffff}>";
     static final String[] dfa_14s = {
             "\1\1\1\3\1\2",
             "",
             "",
-            "\4\5\15\uffff\1\5\3\uffff\1\5\3\uffff\1\6\1\uffff\1\5\5\uffff\1\4\1\uffff\2\5\1\uffff\10\5",
+            "\4\6\15\uffff\1\6\3\uffff\1\6\3\uffff\1\5\1\uffff\1\6\5\uffff\1\4\1\uffff\2\6\1\uffff\10\6",
             "\1\7",
             "",
             "",
-            "\4\5\15\uffff\1\5\3\uffff\1\5\3\uffff\1\6\1\uffff\1\5\5\uffff\1\4\1\uffff\2\5\1\uffff\10\5"
+            "\4\6\15\uffff\1\6\3\uffff\1\6\3\uffff\1\5\1\uffff\1\6\5\uffff\1\4\1\uffff\2\6\1\uffff\10\6"
     };
 
     static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
@@ -18293,31 +18311,32 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00003A8000000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00003A8000E00000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000E00000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0010010000010070L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000041000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000040000000002L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x000C000000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x000C000000000002L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000010000010070L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x1FE0000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x1FE0000000000002L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000018000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000018002L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000060000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000060002L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000010000000070L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0001000000000002L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x00003A8000000002L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x00003A8000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0010010000010070L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000041000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000040000000002L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x000C000000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x000C000000000002L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000010000010070L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x1FE0000000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x1FE0000000000002L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000018000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000018002L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000060000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000060002L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000010000000070L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0002000000000000L});
 
 }

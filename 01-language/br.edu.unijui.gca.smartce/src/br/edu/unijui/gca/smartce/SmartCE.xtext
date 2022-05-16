@@ -48,7 +48,8 @@ BusinessRule:
 ;
 
 CompositeCondition:
-	 conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+	//conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+	conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule 
 ;
 
 Timeout:

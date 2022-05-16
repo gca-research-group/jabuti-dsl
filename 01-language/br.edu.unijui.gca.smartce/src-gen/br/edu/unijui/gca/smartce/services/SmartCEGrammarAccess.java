@@ -443,14 +443,17 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cConditionsBusinessRuleParserRuleCall_2_0 = (RuleCall)cConditionsAssignment_2.eContents().get(0);
 		
 		//CompositeCondition:
-		//     conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+		//    //conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+		//    conditions+=BusinessRule* logicalOperator=LogicalOperator conditions+=BusinessRule
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+		////conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+		//conditions+=BusinessRule* logicalOperator=LogicalOperator conditions+=BusinessRule
 		public Group getGroup() { return cGroup; }
 		
-		//conditions+=BusinessRule
+		////conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+		//conditions+=BusinessRule*
 		public Assignment getConditionsAssignment_0() { return cConditionsAssignment_0; }
 		
 		//BusinessRule
@@ -1827,7 +1830,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//CompositeCondition:
-	//     conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+	//    //conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+	//    conditions+=BusinessRule* logicalOperator=LogicalOperator conditions+=BusinessRule
 	//;
 	public CompositeConditionElements getCompositeConditionAccess() {
 		return pCompositeCondition;

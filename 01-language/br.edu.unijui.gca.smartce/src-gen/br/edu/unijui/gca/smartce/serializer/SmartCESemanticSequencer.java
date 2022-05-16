@@ -288,7 +288,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CompositeCondition returns CompositeCondition
 	 *
 	 * Constraint:
-	 *     (conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule)
+	 *     (conditions+=BusinessRule* logicalOperator=LogicalOperator conditions+=BusinessRule)
 	 */
 	protected void sequence_CompositeCondition(ISerializationContext context, CompositeCondition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
