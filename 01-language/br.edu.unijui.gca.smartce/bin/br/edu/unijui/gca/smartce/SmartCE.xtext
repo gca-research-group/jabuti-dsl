@@ -40,7 +40,7 @@ Clause:
 ;
 
 Condition: 
-	Timeout | {Condition} OperationsLimit
+	Timeout | OperationsLimit
 ;
 
 Timeout:
@@ -48,7 +48,7 @@ Timeout:
 ;
 
 OperationsLimit:
-	'X'
+	('timeInterval' | 'limitOperation' | 'maxOperation') '(' expression=Expression ')'
 ;
 
 Party: 

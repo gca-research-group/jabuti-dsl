@@ -7,7 +7,6 @@ import br.edu.unijui.gca.smartce.services.SmartCEGrammarAccess;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
-import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
@@ -15,6 +14,7 @@ import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
+import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
@@ -59,9 +59,6 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.CLAUSE:
 				sequence_Clause(context, (Clause) semanticObject); 
 				return; 
-			case SmartCEPackage.CONDITION:
-				sequence_Condition(context, (Condition) semanticObject); 
-				return; 
 			case SmartCEPackage.CONTRACT:
 				sequence_Contract(context, (Contract) semanticObject); 
 				return; 
@@ -82,6 +79,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SmartCEPackage.OPERATION:
 				sequence_Operation(context, (Operation) semanticObject); 
+				return; 
+			case SmartCEPackage.OPERATIONS_LIMIT:
+				sequence_OperationsLimit(context, (OperationsLimit) semanticObject); 
 				return; 
 			case SmartCEPackage.PROCESS:
 				sequence_Process(context, (br.edu.unijui.gca.smartce.smartCE.Process) semanticObject); 
@@ -216,18 +216,6 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     )
 	 */
 	protected void sequence_Comparison_Expression_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Condition returns Condition
-	 *
-	 * Constraint:
-	 *     {Condition}
-	 */
-	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -393,6 +381,25 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getOperationAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Condition returns OperationsLimit
+	 *     OperationsLimit returns OperationsLimit
+	 *
+	 * Constraint:
+	 *     expression=Expression
+	 */
+	protected void sequence_OperationsLimit(ISerializationContext context, OperationsLimit semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getOperationsLimitAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

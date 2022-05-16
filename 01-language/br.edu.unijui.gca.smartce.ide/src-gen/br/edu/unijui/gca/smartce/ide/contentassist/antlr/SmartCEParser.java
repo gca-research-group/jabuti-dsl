@@ -33,6 +33,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SmartCEGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getClauseAccess().getAlternatives_0(), "rule__Clause__Alternatives_0");
 			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
+			builder.put(grammarAccess.getOperationsLimitAccess().getAlternatives_0(), "rule__OperationsLimit__Alternatives_0");
 			builder.put(grammarAccess.getPartyAccess().getAlternatives(), "rule__Party__Alternatives");
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives_1_1(), "rule__Expression__Alternatives_1_1");
 			builder.put(grammarAccess.getNegationAccess().getAlternatives(), "rule__Negation__Alternatives");
@@ -46,8 +47,8 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 			builder.put(grammarAccess.getContractAccess().getGroup(), "rule__Contract__Group__0");
 			builder.put(grammarAccess.getClauseAccess().getGroup(), "rule__Clause__Group__0");
-			builder.put(grammarAccess.getConditionAccess().getGroup_1(), "rule__Condition__Group_1__0");
 			builder.put(grammarAccess.getTimeoutAccess().getGroup(), "rule__Timeout__Group__0");
+			builder.put(grammarAccess.getOperationsLimitAccess().getGroup(), "rule__OperationsLimit__Group__0");
 			builder.put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
 			builder.put(grammarAccess.getProcessAccess().getGroup(), "rule__Process__Group__0");
 			builder.put(grammarAccess.getOnBreachAccess().getGroup(), "rule__OnBreach__Group__0");
@@ -90,6 +91,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getClauseAccess().getConditionAssignment_13(), "rule__Clause__ConditionAssignment_13");
 			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_16(), "rule__Clause__OnBreachAssignment_16");
 			builder.put(grammarAccess.getTimeoutAccess().getExpressionAssignment_2(), "rule__Timeout__ExpressionAssignment_2");
+			builder.put(grammarAccess.getOperationsLimitAccess().getExpressionAssignment_2(), "rule__OperationsLimit__ExpressionAssignment_2");
 			builder.put(grammarAccess.getApplicationAccess().getNameAssignment_0(), "rule__Application__NameAssignment_0");
 			builder.put(grammarAccess.getApplicationAccess().getDescriptionAssignment_2(), "rule__Application__DescriptionAssignment_2");
 			builder.put(grammarAccess.getProcessAccess().getNameAssignment_0(), "rule__Process__NameAssignment_0");

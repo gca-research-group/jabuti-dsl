@@ -621,22 +621,14 @@ ruleCondition returns [EObject current=null]
 			afterParserOrEnumRuleCall();
 		}
 		    |
-		(
-			(
-				{
-					$current = forceCreateModelElement(
-						grammarAccess.getConditionAccess().getConditionAction_1_0(),
-						$current);
-				}
-			)
-			{
-				newCompositeNode(grammarAccess.getConditionAccess().getOperationsLimitParserRuleCall_1_1());
-			}
-			ruleOperationsLimit
-			{
-				afterParserOrEnumRuleCall();
-			}
-		)
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getOperationsLimitParserRuleCall_1());
+		}
+		this_OperationsLimit_1=ruleOperationsLimit
+		{
+			$current = $this_OperationsLimit_1.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -691,25 +683,65 @@ ruleTimeout returns [EObject current=null]
 ;
 
 // Entry rule entryRuleOperationsLimit
-entryRuleOperationsLimit returns [String current=null]:
+entryRuleOperationsLimit returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getOperationsLimitRule()); }
 	iv_ruleOperationsLimit=ruleOperationsLimit
-	{ $current=$iv_ruleOperationsLimit.current.getText(); }
+	{ $current=$iv_ruleOperationsLimit.current; }
 	EOF;
 
 // Rule OperationsLimit
-ruleOperationsLimit returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+ruleOperationsLimit returns [EObject current=null]
 @init {
 	enterRule();
 }
 @after {
 	leaveRule();
 }:
-	kw='X'
-	{
-		$current.merge(kw);
-		newLeafNode(kw, grammarAccess.getOperationsLimitAccess().getXKeyword());
-	}
+	(
+		(
+			otherlv_0='timeInterval'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getOperationsLimitAccess().getTimeIntervalKeyword_0_0());
+			}
+			    |
+			otherlv_1='limitOperation'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getOperationsLimitAccess().getLimitOperationKeyword_0_1());
+			}
+			    |
+			otherlv_2='maxOperation'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getOperationsLimitAccess().getMaxOperationKeyword_0_2());
+			}
+		)
+		otherlv_3='('
+		{
+			newLeafNode(otherlv_3, grammarAccess.getOperationsLimitAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getOperationsLimitAccess().getExpressionExpressionParserRuleCall_2_0());
+				}
+				lv_expression_4_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOperationsLimitRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_4_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_3());
+		}
+	)
 ;
 
 // Entry rule entryRuleApplication

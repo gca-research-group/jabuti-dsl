@@ -382,29 +382,21 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Condition");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cTimeoutParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cConditionAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final RuleCall cOperationsLimitParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
+		private final RuleCall cOperationsLimitParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Condition:
-		//    Timeout | {Condition} OperationsLimit
+		//    Timeout | OperationsLimit
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Timeout | {Condition} OperationsLimit
+		//Timeout | OperationsLimit
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Timeout
 		public RuleCall getTimeoutParserRuleCall_0() { return cTimeoutParserRuleCall_0; }
 		
-		//{Condition} OperationsLimit
-		public Group getGroup_1() { return cGroup_1; }
-		
-		//{Condition}
-		public Action getConditionAction_1_0() { return cConditionAction_1_0; }
-		
 		//OperationsLimit
-		public RuleCall getOperationsLimitParserRuleCall_1_1() { return cOperationsLimitParserRuleCall_1_1; }
+		public RuleCall getOperationsLimitParserRuleCall_1() { return cOperationsLimitParserRuleCall_1; }
 	}
 	public class TimeoutElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Timeout");
@@ -440,15 +432,47 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	public class OperationsLimitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.OperationsLimit");
-		private final Keyword cXKeyword = (Keyword)rule.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
+		private final Keyword cTimeIntervalKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
+		private final Keyword cLimitOperationKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cMaxOperationKeyword_0_2 = (Keyword)cAlternatives_0.eContents().get(2);
+		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//OperationsLimit:
-		//    'X'
+		//    ('timeInterval' | 'limitOperation' | 'maxOperation') '(' expression=Expression ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'X'
-		public Keyword getXKeyword() { return cXKeyword; }
+		//('timeInterval' | 'limitOperation' | 'maxOperation') '(' expression=Expression ')'
+		public Group getGroup() { return cGroup; }
+		
+		//('timeInterval' | 'limitOperation' | 'maxOperation')
+		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		
+		//'timeInterval'
+		public Keyword getTimeIntervalKeyword_0_0() { return cTimeIntervalKeyword_0_0; }
+		
+		//'limitOperation'
+		public Keyword getLimitOperationKeyword_0_1() { return cLimitOperationKeyword_0_1; }
+		
+		//'maxOperation'
+		public Keyword getMaxOperationKeyword_0_2() { return cMaxOperationKeyword_0_2; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
+		
+		//expression=Expression
+		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		
+		//Expression
+		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
 	}
 	public class PartyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Party");
@@ -1498,7 +1522,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Condition:
-	//    Timeout | {Condition} OperationsLimit
+	//    Timeout | OperationsLimit
 	//;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
@@ -1520,7 +1544,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//OperationsLimit:
-	//    'X'
+	//    ('timeInterval' | 'limitOperation' | 'maxOperation') '(' expression=Expression ')'
 	//;
 	public OperationsLimitElements getOperationsLimitAccess() {
 		return pOperationsLimit;
