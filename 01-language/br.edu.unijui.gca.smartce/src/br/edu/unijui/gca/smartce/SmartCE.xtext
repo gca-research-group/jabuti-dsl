@@ -59,7 +59,7 @@ enum WeekDays:
     MONDAY='Monday' | TUESDAY = 'Tuesday';
     
 BusinessTime: 
-	('start' | 'end') '(' expression=Expression ')'
+	'BusinessTime' '(' start=Expression ',' end=Expression ')'
 ; 
 
 MessageContent:

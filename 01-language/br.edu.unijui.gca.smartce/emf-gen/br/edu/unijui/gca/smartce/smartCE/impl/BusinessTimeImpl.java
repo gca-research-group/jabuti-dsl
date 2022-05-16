@@ -4,19 +4,53 @@
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
+import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Business Time</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl#getEnd <em>End</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 {
+	/**
+	 * The cached value of the '{@link #getStart() <em>Start</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStart()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression start;
+
+	/**
+	 * The cached value of the '{@link #getEnd() <em>End</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEnd()
+	 * @generated
+	 * @ordered
+	 */
+	protected Expression end;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,6 +70,200 @@ public class BusinessTimeImpl extends ConditionImpl implements BusinessTime
 	protected EClass eStaticClass()
 	{
 		return SmartCEPackage.Literals.BUSINESS_TIME;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Expression getStart()
+	{
+		return start;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStart(Expression newStart, NotificationChain msgs)
+	{
+		Expression oldStart = start;
+		start = newStart;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__START, oldStart, newStart);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStart(Expression newStart)
+	{
+		if (newStart != start)
+		{
+			NotificationChain msgs = null;
+			if (start != null)
+				msgs = ((InternalEObject)start).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__START, null, msgs);
+			if (newStart != null)
+				msgs = ((InternalEObject)newStart).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__START, null, msgs);
+			msgs = basicSetStart(newStart, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__START, newStart, newStart));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Expression getEnd()
+	{
+		return end;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetEnd(Expression newEnd, NotificationChain msgs)
+	{
+		Expression oldEnd = end;
+		end = newEnd;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__END, oldEnd, newEnd);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setEnd(Expression newEnd)
+	{
+		if (newEnd != end)
+		{
+			NotificationChain msgs = null;
+			if (end != null)
+				msgs = ((InternalEObject)end).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__END, null, msgs);
+			if (newEnd != null)
+				msgs = ((InternalEObject)newEnd).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.BUSINESS_TIME__END, null, msgs);
+			msgs = basicSetEnd(newEnd, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__END, newEnd, newEnd));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_TIME__START:
+				return basicSetStart(null, msgs);
+			case SmartCEPackage.BUSINESS_TIME__END:
+				return basicSetEnd(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_TIME__START:
+				return getStart();
+			case SmartCEPackage.BUSINESS_TIME__END:
+				return getEnd();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_TIME__START:
+				setStart((Expression)newValue);
+				return;
+			case SmartCEPackage.BUSINESS_TIME__END:
+				setEnd((Expression)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_TIME__START:
+				setStart((Expression)null);
+				return;
+			case SmartCEPackage.BUSINESS_TIME__END:
+				setEnd((Expression)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.BUSINESS_TIME__START:
+				return start != null;
+			case SmartCEPackage.BUSINESS_TIME__END:
+				return end != null;
+		}
+		return super.eIsSet(featureID);
 	}
 
 } //BusinessTimeImpl

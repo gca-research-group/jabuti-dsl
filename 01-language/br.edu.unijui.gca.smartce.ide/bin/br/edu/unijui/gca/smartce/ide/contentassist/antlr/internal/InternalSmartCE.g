@@ -1031,27 +1031,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__BusinessTime__Alternatives_0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getBusinessTimeAccess().getStartKeyword_0_0()); }
-		'start'
-		{ after(grammarAccess.getBusinessTimeAccess().getStartKeyword_0_0()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getBusinessTimeAccess().getEndKeyword_0_1()); }
-		'end'
-		{ after(grammarAccess.getBusinessTimeAccess().getEndKeyword_0_1()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 rule__Expression__Alternatives_1_1
 	@init {
 		int stackSize = keepStackSize();
@@ -2819,9 +2798,9 @@ rule__BusinessTime__Group__0__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBusinessTimeAccess().getAlternatives_0()); }
-	(rule__BusinessTime__Alternatives_0)
-	{ after(grammarAccess.getBusinessTimeAccess().getAlternatives_0()); }
+	{ before(grammarAccess.getBusinessTimeAccess().getBusinessTimeKeyword_0()); }
+	'BusinessTime'
+	{ after(grammarAccess.getBusinessTimeAccess().getBusinessTimeKeyword_0()); }
 )
 ;
 finally {
@@ -2873,9 +2852,9 @@ rule__BusinessTime__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBusinessTimeAccess().getExpressionAssignment_2()); }
-	(rule__BusinessTime__ExpressionAssignment_2)
-	{ after(grammarAccess.getBusinessTimeAccess().getExpressionAssignment_2()); }
+	{ before(grammarAccess.getBusinessTimeAccess().getStartAssignment_2()); }
+	(rule__BusinessTime__StartAssignment_2)
+	{ after(grammarAccess.getBusinessTimeAccess().getStartAssignment_2()); }
 )
 ;
 finally {
@@ -2888,6 +2867,7 @@ rule__BusinessTime__Group__3
 	}
 :
 	rule__BusinessTime__Group__3__Impl
+	rule__BusinessTime__Group__4
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2899,9 +2879,62 @@ rule__BusinessTime__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_3()); }
+	{ before(grammarAccess.getBusinessTimeAccess().getCommaKeyword_3()); }
+	','
+	{ after(grammarAccess.getBusinessTimeAccess().getCommaKeyword_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BusinessTime__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__BusinessTime__Group__4__Impl
+	rule__BusinessTime__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BusinessTime__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getBusinessTimeAccess().getEndAssignment_4()); }
+	(rule__BusinessTime__EndAssignment_4)
+	{ after(grammarAccess.getBusinessTimeAccess().getEndAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BusinessTime__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__BusinessTime__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BusinessTime__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_5()); }
 	')'
-	{ after(grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_3()); }
+	{ after(grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_5()); }
 )
 ;
 finally {
@@ -5164,15 +5197,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__BusinessTime__ExpressionAssignment_2
+rule__BusinessTime__StartAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getBusinessTimeAccess().getExpressionExpressionParserRuleCall_2_0()); }
+		{ before(grammarAccess.getBusinessTimeAccess().getStartExpressionParserRuleCall_2_0()); }
 		ruleExpression
-		{ after(grammarAccess.getBusinessTimeAccess().getExpressionExpressionParserRuleCall_2_0()); }
+		{ after(grammarAccess.getBusinessTimeAccess().getStartExpressionParserRuleCall_2_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__BusinessTime__EndAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getBusinessTimeAccess().getEndExpressionParserRuleCall_4_0()); }
+		ruleExpression
+		{ after(grammarAccess.getBusinessTimeAccess().getEndExpressionParserRuleCall_4_0()); }
 	)
 ;
 finally {

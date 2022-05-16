@@ -13,7 +13,7 @@ Contract DeliveryHiring {
 		rolePlayer.perform(Operation.REQUEST)
 		
 		condition {
-			BusinessDay(Monday, Tuesday)
+			MessageContent("Content of the message")
 		}
 		
 		onBreach(notifyFailing, "Request made outside of allowed hours or distance limit exceeded")

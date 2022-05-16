@@ -180,15 +180,18 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     BusinessTime returns BusinessTime
 	 *
 	 * Constraint:
-	 *     expression=Expression
+	 *     (start=Expression end=Expression)
 	 */
 	protected void sequence_BusinessTime(ISerializationContext context, BusinessTime semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CONDITION__EXPRESSION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__START));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__END));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBusinessTimeAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getBusinessTimeAccess().getStartExpressionParserRuleCall_2_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getBusinessTimeAccess().getEndExpressionParserRuleCall_4_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	

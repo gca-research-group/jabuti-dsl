@@ -38,7 +38,17 @@ public enum WeekDays implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	TUESDAY(1, "TUESDAY", "TUESDAY");
+	TUESDAY(1, "TUESDAY", "TUESDAY"),
+
+	/**
+	 * The '<em><b>WEDNESDAY</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #WEDNESDAY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	WEDNESDAY(2, "WEDNESDAY", "WEDNESDAY");
 
 	/**
 	 * The '<em><b>MONDAY</b></em>' literal value.
@@ -63,6 +73,17 @@ public enum WeekDays implements Enumerator
 	public static final int TUESDAY_VALUE = 1;
 
 	/**
+	 * The '<em><b>WEDNESDAY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #WEDNESDAY
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int WEDNESDAY_VALUE = 2;
+
+	/**
 	 * An array of all the '<em><b>Week Days</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,6 +94,7 @@ public enum WeekDays implements Enumerator
 		{
 			MONDAY,
 			TUESDAY,
+			WEDNESDAY,
 		};
 
 	/**
@@ -139,6 +161,7 @@ public enum WeekDays implements Enumerator
 		{
 			case MONDAY_VALUE: return MONDAY;
 			case TUESDAY_VALUE: return TUESDAY;
+			case WEDNESDAY_VALUE: return WEDNESDAY;
 		}
 		return null;
 	}

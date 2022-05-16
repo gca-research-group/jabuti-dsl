@@ -1038,13 +1038,31 @@ public interface SmartCEPackage extends EPackage
 	int BUSINESS_TIME__EXPRESSION = CONDITION__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Start</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_TIME__START = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_TIME__END = CONDITION_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Business Time</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_TIME_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int BUSINESS_TIME_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.
@@ -1875,6 +1893,28 @@ public interface SmartCEPackage extends EPackage
 	EClass getBusinessTime();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Start</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart()
+	 * @see #getBusinessTime()
+	 * @generated
+	 */
+	EReference getBusinessTime_Start();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>End</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd()
+	 * @see #getBusinessTime()
+	 * @generated
+	 */
+	EReference getBusinessTime_End();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent <em>Message Content</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2558,6 +2598,22 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass BUSINESS_TIME = eINSTANCE.getBusinessTime();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_TIME__START = eINSTANCE.getBusinessTime_Start();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_TIME__END = eINSTANCE.getBusinessTime_End();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.

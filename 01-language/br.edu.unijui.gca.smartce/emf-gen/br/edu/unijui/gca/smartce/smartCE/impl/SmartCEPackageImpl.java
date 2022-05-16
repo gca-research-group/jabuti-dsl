@@ -1120,6 +1120,28 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getBusinessTime_Start()
+	{
+		return (EReference)businessTimeEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getBusinessTime_End()
+	{
+		return (EReference)businessTimeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getMessageContent()
 	{
 		return messageContentEClass;
@@ -1265,6 +1287,8 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEAttribute(businessDayEClass, BUSINESS_DAY__END);
 
 		businessTimeEClass = createEClass(BUSINESS_TIME);
+		createEReference(businessTimeEClass, BUSINESS_TIME__START);
+		createEReference(businessTimeEClass, BUSINESS_TIME__END);
 
 		messageContentEClass = createEClass(MESSAGE_CONTENT);
 
@@ -1415,6 +1439,8 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEAttribute(getBusinessDay_End(), this.getWeekDays(), "end", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessTimeEClass, BusinessTime.class, "BusinessTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getBusinessTime_Start(), this.getExpression(), null, "start", null, 0, 1, BusinessTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBusinessTime_End(), this.getExpression(), null, "end", null, 0, 1, BusinessTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(messageContentEClass, MessageContent.class, "MessageContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1422,6 +1448,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEEnum(weekDaysEEnum, WeekDays.class, "WeekDays");
 		addEEnumLiteral(weekDaysEEnum, WeekDays.MONDAY);
 		addEEnumLiteral(weekDaysEEnum, WeekDays.TUESDAY);
+		addEEnumLiteral(weekDaysEEnum, WeekDays.WEDNESDAY);
 
 		// Create resource
 		createResource(eNS_URI);

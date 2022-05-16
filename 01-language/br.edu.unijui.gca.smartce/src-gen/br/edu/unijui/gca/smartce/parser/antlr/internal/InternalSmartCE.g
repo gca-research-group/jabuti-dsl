@@ -849,43 +849,59 @@ ruleBusinessTime returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		(
-			otherlv_0='start'
-			{
-				newLeafNode(otherlv_0, grammarAccess.getBusinessTimeAccess().getStartKeyword_0_0());
-			}
-			    |
-			otherlv_1='end'
-			{
-				newLeafNode(otherlv_1, grammarAccess.getBusinessTimeAccess().getEndKeyword_0_1());
-			}
-		)
-		otherlv_2='('
+		otherlv_0='BusinessTime'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getBusinessTimeAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_0, grammarAccess.getBusinessTimeAccess().getBusinessTimeKeyword_0());
+		}
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getBusinessTimeAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getBusinessTimeAccess().getExpressionExpressionParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getBusinessTimeAccess().getStartExpressionParserRuleCall_2_0());
 				}
-				lv_expression_3_0=ruleExpression
+				lv_start_2_0=ruleExpression
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getBusinessTimeRule());
 					}
 					set(
 						$current,
-						"expression",
-						lv_expression_3_0,
+						"start",
+						lv_start_2_0,
 						"br.edu.unijui.gca.smartce.SmartCE.Expression");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4=')'
+		otherlv_3=','
 		{
-			newLeafNode(otherlv_4, grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getBusinessTimeAccess().getCommaKeyword_3());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getBusinessTimeAccess().getEndExpressionParserRuleCall_4_0());
+				}
+				lv_end_4_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getBusinessTimeRule());
+					}
+					set(
+						$current,
+						"end",
+						lv_end_4_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;

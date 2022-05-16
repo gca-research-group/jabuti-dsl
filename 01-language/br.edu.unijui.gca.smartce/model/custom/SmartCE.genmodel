@@ -102,7 +102,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessDay/start"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessDay/end"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//BusinessTime"/>
+    <genClasses ecoreClass="SmartCE.ecore#//BusinessTime">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//BusinessTime/start"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//BusinessTime/end"/>
+    </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//MessageContent"/>
   </genPackages>
 </genmodel:GenModel>

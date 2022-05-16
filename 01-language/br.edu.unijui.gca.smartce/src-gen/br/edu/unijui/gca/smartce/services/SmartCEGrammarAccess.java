@@ -523,42 +523,46 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class BusinessTimeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.BusinessTime");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Keyword cStartKeyword_0_0 = (Keyword)cAlternatives_0.eContents().get(0);
-		private final Keyword cEndKeyword_0_1 = (Keyword)cAlternatives_0.eContents().get(1);
+		private final Keyword cBusinessTimeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cExpressionAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cExpressionExpressionParserRuleCall_2_0 = (RuleCall)cExpressionAssignment_2.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cStartAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cStartExpressionParserRuleCall_2_0 = (RuleCall)cStartAssignment_2.eContents().get(0);
+		private final Keyword cCommaKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cEndAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cEndExpressionParserRuleCall_4_0 = (RuleCall)cEndAssignment_4.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//BusinessTime:
-		//    ('start' | 'end') '(' expression=Expression ')'
+		//    'BusinessTime' '(' start=Expression ',' end=Expression ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('start' | 'end') '(' expression=Expression ')'
+		//'BusinessTime' '(' start=Expression ',' end=Expression ')'
 		public Group getGroup() { return cGroup; }
 		
-		//('start' | 'end')
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
-		
-		//'start'
-		public Keyword getStartKeyword_0_0() { return cStartKeyword_0_0; }
-		
-		//'end'
-		public Keyword getEndKeyword_0_1() { return cEndKeyword_0_1; }
+		//'BusinessTime'
+		public Keyword getBusinessTimeKeyword_0() { return cBusinessTimeKeyword_0; }
 		
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//expression=Expression
-		public Assignment getExpressionAssignment_2() { return cExpressionAssignment_2; }
+		//start=Expression
+		public Assignment getStartAssignment_2() { return cStartAssignment_2; }
 		
 		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_2_0() { return cExpressionExpressionParserRuleCall_2_0; }
+		public RuleCall getStartExpressionParserRuleCall_2_0() { return cStartExpressionParserRuleCall_2_0; }
+		
+		//','
+		public Keyword getCommaKeyword_3() { return cCommaKeyword_3; }
+		
+		//end=Expression
+		public Assignment getEndAssignment_4() { return cEndAssignment_4; }
+		
+		//Expression
+		public RuleCall getEndExpressionParserRuleCall_4_0() { return cEndExpressionParserRuleCall_4_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 	public class MessageContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.MessageContent");
@@ -1729,7 +1733,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//BusinessTime:
-	//    ('start' | 'end') '(' expression=Expression ')'
+	//    'BusinessTime' '(' start=Expression ',' end=Expression ')'
 	//;
 	public BusinessTimeElements getBusinessTimeAccess() {
 		return pBusinessTime;
