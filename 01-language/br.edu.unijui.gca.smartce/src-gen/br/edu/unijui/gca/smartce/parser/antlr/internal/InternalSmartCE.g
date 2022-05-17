@@ -730,7 +730,7 @@ ruleCompositeCondition returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)
 		(
 			(
 				{

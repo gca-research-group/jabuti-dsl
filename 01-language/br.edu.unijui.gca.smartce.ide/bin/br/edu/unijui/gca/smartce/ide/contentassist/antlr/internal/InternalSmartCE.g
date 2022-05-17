@@ -2551,7 +2551,7 @@ rule__CompositeCondition__Group__0__Impl
 :
 (
 	{ before(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_0()); }
-	(rule__CompositeCondition__ConditionsAssignment_0)*
+	(rule__CompositeCondition__ConditionsAssignment_0)
 	{ after(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_0()); }
 )
 ;

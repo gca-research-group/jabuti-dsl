@@ -1671,7 +1671,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompositeCondition"
-    // InternalSmartCE.g:707:1: ruleCompositeCondition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleBusinessRule ) )* ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ) ;
+    // InternalSmartCE.g:707:1: ruleCompositeCondition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ) ;
     public final EObject ruleCompositeCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1686,60 +1686,42 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:713:2: ( ( ( (lv_conditions_0_0= ruleBusinessRule ) )* ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ) )
-            // InternalSmartCE.g:714:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) )* ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) )
+            // InternalSmartCE.g:713:2: ( ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ) )
+            // InternalSmartCE.g:714:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) )
             {
-            // InternalSmartCE.g:714:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) )* ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) )
-            // InternalSmartCE.g:715:3: ( (lv_conditions_0_0= ruleBusinessRule ) )* ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) )
+            // InternalSmartCE.g:714:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) )
+            // InternalSmartCE.g:715:3: ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperator_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) )
             {
-            // InternalSmartCE.g:715:3: ( (lv_conditions_0_0= ruleBusinessRule ) )*
-            loop9:
-            do {
-                int alt9=2;
-                int LA9_0 = input.LA(1);
+            // InternalSmartCE.g:715:3: ( (lv_conditions_0_0= ruleBusinessRule ) )
+            // InternalSmartCE.g:716:4: (lv_conditions_0_0= ruleBusinessRule )
+            {
+            // InternalSmartCE.g:716:4: (lv_conditions_0_0= ruleBusinessRule )
+            // InternalSmartCE.g:717:5: lv_conditions_0_0= ruleBusinessRule
+            {
 
-                if ( (LA9_0==29||LA9_0==31||(LA9_0>=33 && LA9_0<=35)) ) {
-                    alt9=1;
-                }
+            					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_0_0());
+            				
+            pushFollow(FOLLOW_25);
+            lv_conditions_0_0=ruleBusinessRule();
 
-
-                switch (alt9) {
-            	case 1 :
-            	    // InternalSmartCE.g:716:4: (lv_conditions_0_0= ruleBusinessRule )
-            	    {
-            	    // InternalSmartCE.g:716:4: (lv_conditions_0_0= ruleBusinessRule )
-            	    // InternalSmartCE.g:717:5: lv_conditions_0_0= ruleBusinessRule
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_0_0());
-            	    				
-            	    pushFollow(FOLLOW_21);
-            	    lv_conditions_0_0=ruleBusinessRule();
-
-            	    state._fsp--;
+            state._fsp--;
 
 
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"conditions",
-            	    						lv_conditions_0_0,
-            	    						"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
-            	    					afterParserOrEnumRuleCall();
-            	    				
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+            					}
+            					add(
+            						current,
+            						"conditions",
+            						lv_conditions_0_0,
+            						"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
+            					afterParserOrEnumRuleCall();
+            				
 
-            	    }
+            }
 
 
-            	    }
-            	    break;
-
-            	default :
-            	    break loop9;
-                }
-            } while (true);
+            }
 
             // InternalSmartCE.g:734:3: ( (lv_logicalOperator_1_0= ruleLogicalOperator ) )
             // InternalSmartCE.g:735:4: (lv_logicalOperator_1_0= ruleLogicalOperator )
@@ -1750,7 +1732,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             					newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorLogicalOperatorEnumRuleCall_1_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_21);
             lv_logicalOperator_1_0=ruleLogicalOperator();
 
             state._fsp--;
@@ -3060,17 +3042,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             }
 
             // InternalSmartCE.g:1331:3: (otherlv_4= ',' ( (lv_parameters_5_0= ruleVariable ) ) )*
-            loop10:
+            loop9:
             do {
-                int alt10=2;
-                int LA10_0 = input.LA(1);
+                int alt9=2;
+                int LA9_0 = input.LA(1);
 
-                if ( (LA10_0==32) ) {
-                    alt10=1;
+                if ( (LA9_0==32) ) {
+                    alt9=1;
                 }
 
 
-                switch (alt10) {
+                switch (alt9) {
             	case 1 :
             	    // InternalSmartCE.g:1332:4: otherlv_4= ',' ( (lv_parameters_5_0= ruleVariable ) )
             	    {
@@ -3114,7 +3096,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop10;
+            	    break loop9;
                 }
             } while (true);
 
@@ -3387,17 +3369,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			afterParserOrEnumRuleCall();
             		
             // InternalSmartCE.g:1473:3: ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )*
-            loop12:
+            loop11:
             do {
-                int alt12=2;
-                int LA12_0 = input.LA(1);
+                int alt11=2;
+                int LA11_0 = input.LA(1);
 
-                if ( ((LA12_0>=38 && LA12_0<=39)) ) {
-                    alt12=1;
+                if ( ((LA11_0>=38 && LA11_0<=39)) ) {
+                    alt11=1;
                 }
 
 
-                switch (alt12) {
+                switch (alt11) {
             	case 1 :
             	    // InternalSmartCE.g:1474:4: () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) )
             	    {
@@ -3413,22 +3395,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // InternalSmartCE.g:1481:4: ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) )
-            	    int alt11=2;
-            	    int LA11_0 = input.LA(1);
+            	    int alt10=2;
+            	    int LA10_0 = input.LA(1);
 
-            	    if ( (LA11_0==38) ) {
-            	        alt11=1;
+            	    if ( (LA10_0==38) ) {
+            	        alt10=1;
             	    }
-            	    else if ( (LA11_0==39) ) {
-            	        alt11=2;
+            	    else if ( (LA10_0==39) ) {
+            	        alt10=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 11, 0, input);
+            	            new NoViableAltException("", 10, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt11) {
+            	    switch (alt10) {
             	        case 1 :
             	            // InternalSmartCE.g:1482:5: ( (lv_symbol_2_0= '&&' ) )
             	            {
@@ -3524,7 +3506,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop12;
+            	    break loop11;
                 }
             } while (true);
 
@@ -3605,22 +3587,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             // InternalSmartCE.g:1550:2: (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) )
             {
             // InternalSmartCE.g:1550:2: (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( ((LA13_0>=RULE_ID && LA13_0<=RULE_INT)||LA13_0==30||LA13_0==50) ) {
-                alt13=1;
+            if ( ((LA12_0>=RULE_ID && LA12_0<=RULE_INT)||LA12_0==30||LA12_0==50) ) {
+                alt12=1;
             }
-            else if ( (LA13_0==40) ) {
-                alt13=2;
+            else if ( (LA12_0==40) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt12) {
                 case 1 :
                     // InternalSmartCE.g:1551:3: this_Comparison_0= ruleComparison
                     {
@@ -3814,17 +3796,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			afterParserOrEnumRuleCall();
             		
             // InternalSmartCE.g:1629:3: ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )*
-            loop15:
+            loop14:
             do {
-                int alt15=2;
-                int LA15_0 = input.LA(1);
+                int alt14=2;
+                int LA14_0 = input.LA(1);
 
-                if ( ((LA15_0>=41 && LA15_0<=48)) ) {
-                    alt15=1;
+                if ( ((LA14_0>=41 && LA14_0<=48)) ) {
+                    alt14=1;
                 }
 
 
-                switch (alt15) {
+                switch (alt14) {
             	case 1 :
             	    // InternalSmartCE.g:1630:4: () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) )
             	    {
@@ -3840,56 +3822,56 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // InternalSmartCE.g:1637:4: ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) )
-            	    int alt14=8;
+            	    int alt13=8;
             	    switch ( input.LA(1) ) {
             	    case 41:
             	        {
-            	        alt14=1;
+            	        alt13=1;
             	        }
             	        break;
             	    case 42:
             	        {
-            	        alt14=2;
+            	        alt13=2;
             	        }
             	        break;
             	    case 43:
             	        {
-            	        alt14=3;
+            	        alt13=3;
             	        }
             	        break;
             	    case 44:
             	        {
-            	        alt14=4;
+            	        alt13=4;
             	        }
             	        break;
             	    case 45:
             	        {
-            	        alt14=5;
+            	        alt13=5;
             	        }
             	        break;
             	    case 46:
             	        {
-            	        alt14=6;
+            	        alt13=6;
             	        }
             	        break;
             	    case 47:
             	        {
-            	        alt14=7;
+            	        alt13=7;
             	        }
             	        break;
             	    case 48:
             	        {
-            	        alt14=8;
+            	        alt13=8;
             	        }
             	        break;
             	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 14, 0, input);
+            	            new NoViableAltException("", 13, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt14) {
+            	    switch (alt13) {
             	        case 1 :
             	            // InternalSmartCE.g:1638:5: ( (lv_symbol_2_0= '<=' ) )
             	            {
@@ -4153,7 +4135,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop15;
+            	    break loop14;
                 }
             } while (true);
 
@@ -4250,17 +4232,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			afterParserOrEnumRuleCall();
             		
             // InternalSmartCE.g:1805:3: ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )*
-            loop17:
+            loop16:
             do {
-                int alt17=2;
-                int LA17_0 = input.LA(1);
+                int alt16=2;
+                int LA16_0 = input.LA(1);
 
-                if ( ((LA17_0>=49 && LA17_0<=50)) ) {
-                    alt17=1;
+                if ( ((LA16_0>=49 && LA16_0<=50)) ) {
+                    alt16=1;
                 }
 
 
-                switch (alt17) {
+                switch (alt16) {
             	case 1 :
             	    // InternalSmartCE.g:1806:4: () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) )
             	    {
@@ -4276,22 +4258,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // InternalSmartCE.g:1813:4: (otherlv_2= '+' | otherlv_3= '-' )
-            	    int alt16=2;
-            	    int LA16_0 = input.LA(1);
+            	    int alt15=2;
+            	    int LA15_0 = input.LA(1);
 
-            	    if ( (LA16_0==49) ) {
-            	        alt16=1;
+            	    if ( (LA15_0==49) ) {
+            	        alt15=1;
             	    }
-            	    else if ( (LA16_0==50) ) {
-            	        alt16=2;
+            	    else if ( (LA15_0==50) ) {
+            	        alt15=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 16, 0, input);
+            	            new NoViableAltException("", 15, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt16) {
+            	    switch (alt15) {
             	        case 1 :
             	            // InternalSmartCE.g:1814:5: otherlv_2= '+'
             	            {
@@ -4351,7 +4333,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop17;
+            	    break loop16;
                 }
             } while (true);
 
@@ -4448,17 +4430,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			afterParserOrEnumRuleCall();
             		
             // InternalSmartCE.g:1871:3: ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )*
-            loop19:
+            loop18:
             do {
-                int alt19=2;
-                int LA19_0 = input.LA(1);
+                int alt18=2;
+                int LA18_0 = input.LA(1);
 
-                if ( ((LA19_0>=51 && LA19_0<=52)) ) {
-                    alt19=1;
+                if ( ((LA18_0>=51 && LA18_0<=52)) ) {
+                    alt18=1;
                 }
 
 
-                switch (alt19) {
+                switch (alt18) {
             	case 1 :
             	    // InternalSmartCE.g:1872:4: () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) )
             	    {
@@ -4474,22 +4456,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    }
 
             	    // InternalSmartCE.g:1879:4: (otherlv_2= '*' | otherlv_3= '/' )
-            	    int alt18=2;
-            	    int LA18_0 = input.LA(1);
+            	    int alt17=2;
+            	    int LA17_0 = input.LA(1);
 
-            	    if ( (LA18_0==51) ) {
-            	        alt18=1;
+            	    if ( (LA17_0==51) ) {
+            	        alt17=1;
             	    }
-            	    else if ( (LA18_0==52) ) {
-            	        alt18=2;
+            	    else if ( (LA17_0==52) ) {
+            	        alt17=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 18, 0, input);
+            	            new NoViableAltException("", 17, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt18) {
+            	    switch (alt17) {
             	        case 1 :
             	            // InternalSmartCE.g:1880:5: otherlv_2= '*'
             	            {
@@ -4549,7 +4531,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop19;
+            	    break loop18;
                 }
             } while (true);
 
@@ -4630,22 +4612,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             // InternalSmartCE.g:1928:2: (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) )
             {
             // InternalSmartCE.g:1928:2: (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) )
-            int alt20=2;
-            int LA20_0 = input.LA(1);
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( ((LA20_0>=RULE_ID && LA20_0<=RULE_INT)||LA20_0==30) ) {
-                alt20=1;
+            if ( ((LA19_0>=RULE_ID && LA19_0<=RULE_INT)||LA19_0==30) ) {
+                alt19=1;
             }
-            else if ( (LA20_0==50) ) {
-                alt20=2;
+            else if ( (LA19_0==50) ) {
+                alt19=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
-            switch (alt20) {
+            switch (alt19) {
                 case 1 :
                     // InternalSmartCE.g:1929:3: this_Primary_0= rulePrimary
                     {
@@ -4800,22 +4782,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             // InternalSmartCE.g:1988:2: (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) )
             {
             // InternalSmartCE.g:1988:2: (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( ((LA21_0>=RULE_ID && LA21_0<=RULE_INT)) ) {
-                alt21=1;
+            if ( ((LA20_0>=RULE_ID && LA20_0<=RULE_INT)) ) {
+                alt20=1;
             }
-            else if ( (LA21_0==30) ) {
-                alt21=2;
+            else if ( (LA20_0==30) ) {
+                alt20=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
-            switch (alt21) {
+            switch (alt20) {
                 case 1 :
                     // InternalSmartCE.g:1989:3: this_LiteralValue_0= ruleLiteralValue
                     {
@@ -4946,9 +4928,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             // InternalSmartCE.g:2034:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )
             {
             // InternalSmartCE.g:2034:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )
-            int alt22=4;
-            alt22 = dfa22.predict(input);
-            switch (alt22) {
+            int alt21=4;
+            alt21 = dfa21.predict(input);
+            switch (alt21) {
                 case 1 :
                     // InternalSmartCE.g:2035:3: this_NumericValue_0= ruleNumericValue
                     {
@@ -5462,17 +5444,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             }
 
             // InternalSmartCE.g:2237:3: (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )*
-            loop23:
+            loop22:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( (LA23_0==32) ) {
-                    alt23=1;
+                if ( (LA22_0==32) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt22) {
             	case 1 :
             	    // InternalSmartCE.g:2238:4: otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) )
             	    {
@@ -5516,7 +5498,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop22;
                 }
             } while (true);
 
@@ -5609,17 +5591,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
             		
             // InternalSmartCE.g:2292:3: (kw= '.' this_ID_2= RULE_ID )*
-            loop24:
+            loop23:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt23=2;
+                int LA23_0 = input.LA(1);
 
-                if ( (LA24_0==53) ) {
-                    alt24=1;
+                if ( (LA23_0==53) ) {
+                    alt23=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt23) {
             	case 1 :
             	    // InternalSmartCE.g:2293:4: kw= '.' this_ID_2= RULE_ID
             	    {
@@ -5640,7 +5622,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop23;
                 }
             } while (true);
 
@@ -6234,22 +6216,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             // InternalSmartCE.g:2495:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) )
             {
             // InternalSmartCE.g:2495:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) )
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            int alt24=2;
+            int LA24_0 = input.LA(1);
 
-            if ( (LA25_0==55) ) {
-                alt25=1;
+            if ( (LA24_0==55) ) {
+                alt24=1;
             }
-            else if ( (LA25_0==56) ) {
-                alt25=2;
+            else if ( (LA24_0==56) ) {
+                alt24=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
-            switch (alt25) {
+            switch (alt24) {
                 case 1 :
                     // InternalSmartCE.g:2496:3: (enumLiteral_0= 'Monday' )
                     {
@@ -6367,31 +6349,31 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             // InternalSmartCE.g:2539:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
             {
             // InternalSmartCE.g:2539:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
-            int alt26=3;
+            int alt25=3;
             switch ( input.LA(1) ) {
             case 58:
                 {
-                alt26=1;
+                alt25=1;
                 }
                 break;
             case 59:
                 {
-                alt26=2;
+                alt25=2;
                 }
                 break;
             case 60:
                 {
-                alt26=3;
+                alt25=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt26) {
+            switch (alt25) {
                 case 1 :
                     // InternalSmartCE.g:2540:3: (enumLiteral_0= 'AND' )
                     {
@@ -6468,45 +6450,45 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     protected DFA7 dfa7 = new DFA7(this);
-    protected DFA22 dfa22 = new DFA22(this);
+    protected DFA21 dfa21 = new DFA21(this);
     static final String dfa_1s = "\37\uffff";
-    static final String dfa_2s = "\22\uffff\1\27\3\uffff\1\27\5\uffff\3\27";
-    static final String dfa_3s = "\1\35\5\36\1\uffff\2\6\1\67\2\5\1\32\4\40\1\32\1\23\1\71\1\67\1\5\1\23\1\uffff\4\32\3\23";
-    static final String dfa_4s = "\1\74\5\36\1\uffff\2\6\1\70\2\5\1\32\4\40\1\32\1\74\1\71\1\70\1\5\1\74\1\uffff\4\32\3\74";
-    static final String dfa_5s = "\6\uffff\1\2\20\uffff\1\1\7\uffff";
+    static final String dfa_2s = "\21\uffff\1\26\3\uffff\1\26\6\uffff\3\26";
+    static final String dfa_3s = "\1\35\5\36\2\6\1\67\2\5\1\32\4\40\1\32\1\23\1\71\1\67\1\5\1\23\2\uffff\4\32\3\23";
+    static final String dfa_4s = "\1\43\5\36\2\6\1\70\2\5\1\32\4\40\1\32\1\74\1\71\1\70\1\5\1\74\2\uffff\4\32\3\74";
+    static final String dfa_5s = "\26\uffff\1\1\1\2\7\uffff";
     static final String dfa_6s = "\37\uffff}>";
     static final String[] dfa_7s = {
-            "\1\1\1\uffff\1\2\1\uffff\1\3\1\4\1\5\26\uffff\3\6",
+            "\1\1\1\uffff\1\2\1\uffff\1\3\1\4\1\5",
+            "\1\6",
             "\1\7",
             "\1\10",
             "\1\11",
             "\1\12",
             "\1\13",
-            "",
             "\1\14",
-            "\1\15",
-            "\1\16\1\17",
+            "\1\15\1\16",
+            "\1\17",
             "\1\20",
             "\1\21",
             "\1\22",
             "\1\23",
-            "\1\24",
+            "\1\23",
             "\1\24",
             "\1\25",
-            "\1\26",
-            "\1\27\11\uffff\1\6\1\uffff\1\6\1\uffff\3\6\26\uffff\3\6",
+            "\1\26\46\uffff\3\27",
             "\1\30",
             "\1\31\1\32",
             "\1\33",
-            "\1\27\11\uffff\1\6\1\uffff\1\6\1\uffff\3\6\26\uffff\3\6",
+            "\1\26\46\uffff\3\27",
+            "",
             "",
             "\1\34",
             "\1\35",
             "\1\35",
             "\1\36",
-            "\1\27\11\uffff\1\6\1\uffff\1\6\1\uffff\3\6\26\uffff\3\6",
-            "\1\27\11\uffff\1\6\1\uffff\1\6\1\uffff\3\6\26\uffff\3\6",
-            "\1\27\11\uffff\1\6\1\uffff\1\6\1\uffff\3\6\26\uffff\3\6"
+            "\1\26\46\uffff\3\27",
+            "\1\26\46\uffff\3\27",
+            "\1\26\46\uffff\3\27"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -6535,20 +6517,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         }
     }
     static final String dfa_8s = "\10\uffff";
-    static final String dfa_9s = "\3\uffff\1\5\3\uffff\1\5";
+    static final String dfa_9s = "\3\uffff\1\6\3\uffff\1\6";
     static final String dfa_10s = "\1\4\2\uffff\1\23\1\4\2\uffff\1\23";
     static final String dfa_11s = "\1\6\2\uffff\1\65\1\4\2\uffff\1\65";
-    static final String dfa_12s = "\1\uffff\1\1\1\2\2\uffff\1\3\1\4\1\uffff";
+    static final String dfa_12s = "\1\uffff\1\1\1\2\2\uffff\1\4\1\3\1\uffff";
     static final String dfa_13s = "\10\uffff}>";
     static final String[] dfa_14s = {
             "\1\3\1\2\1\1",
             "",
             "",
-            "\1\5\6\uffff\1\5\3\uffff\1\6\1\uffff\1\5\5\uffff\2\5\1\uffff\14\5\1\4",
+            "\1\6\6\uffff\1\6\3\uffff\1\5\1\uffff\1\6\5\uffff\2\6\1\uffff\14\6\1\4",
             "\1\7",
             "",
             "",
-            "\1\5\6\uffff\1\5\3\uffff\1\6\1\uffff\1\5\5\uffff\2\5\1\uffff\14\5\1\4"
+            "\1\6\6\uffff\1\6\3\uffff\1\5\1\uffff\1\6\5\uffff\2\6\1\uffff\14\6\1\4"
     };
 
     static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
@@ -6559,11 +6541,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
     static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
 
-    class DFA22 extends DFA {
+    class DFA21 extends DFA {
 
-        public DFA22(BaseRecognizer recognizer) {
+        public DFA21(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 22;
+            this.decisionNumber = 21;
             this.eot = dfa_8;
             this.eof = dfa_9;
             this.min = dfa_10;
@@ -6598,11 +6580,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x1C00000EA0000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000EA0000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000EA0000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x1C00000000000000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0200000000000000L});
