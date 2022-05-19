@@ -1131,24 +1131,24 @@ public interface SmartCEPackage extends EPackage
 	int COMPOSITE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDays()
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDay
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAYS = 28;
+	int WEEK_DAY = 28;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.UnitTime <em>Unit Time</em>}' enum.
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.TimeUnit <em>Time Unit</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnitTime()
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int UNIT_TIME = 29;
+	int TIME_UNIT = 29;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}' enum.
@@ -2058,24 +2058,24 @@ public interface SmartCEPackage extends EPackage
 	EClass getBusinessRule();
 
 	/**
-	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}'.
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Week Days</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
+	 * @return the meta object for enum '<em>Week Day</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDay
 	 * @generated
 	 */
-	EEnum getWeekDays();
+	EEnum getWeekDay();
 
 	/**
-	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.UnitTime <em>Unit Time</em>}'.
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.TimeUnit <em>Time Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Unit Time</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
+	 * @return the meta object for enum '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
 	 * @generated
 	 */
-	EEnum getUnitTime();
+	EEnum getTimeUnit();
 
 	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}'.
@@ -2839,24 +2839,24 @@ public interface SmartCEPackage extends EPackage
 		EClass BUSINESS_RULE = eINSTANCE.getBusinessRule();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDays <em>Week Days</em>}' enum.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDays()
+		 * @see br.edu.unijui.gca.smartce.smartCE.WeekDay
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDay()
 		 * @generated
 		 */
-		EEnum WEEK_DAYS = eINSTANCE.getWeekDays();
+		EEnum WEEK_DAY = eINSTANCE.getWeekDay();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.UnitTime <em>Unit Time</em>}' enum.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.TimeUnit <em>Time Unit</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnitTime()
+		 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeUnit()
 		 * @generated
 		 */
-		EEnum UNIT_TIME = eINSTANCE.getUnitTime();
+		EEnum TIME_UNIT = eINSTANCE.getTimeUnit();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}' enum.

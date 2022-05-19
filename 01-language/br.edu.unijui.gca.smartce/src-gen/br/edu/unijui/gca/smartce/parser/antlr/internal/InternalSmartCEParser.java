@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'application'", "'process'", "'}'", "'Right'", "'Prohibition'", "'Obligation'", "'description'", "'rolePlayer'", "'rolePlayer.perform('", "')'", "'condition'", "'onBreach'", "'Timeout'", "'('", "'OperationsLimit'", "','", "'BusinessDay'", "'BusinessTime'", "'MessageContent'", "':'", "'Action'", "'&&'", "'||'", "'!'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "'.'", "'.*'", "'Monday'", "'Tuesday'", "'Second'", "'AND'", "'OR'", "'NOT'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'application'", "'process'", "'}'", "'Right'", "'Prohibition'", "'Obligation'", "'description'", "'rolePlayer'", "'rolePlayer.perform('", "')'", "'condition'", "'onBreach'", "'Timeout'", "'('", "'OperationsLimit'", "','", "'BusinessDay'", "'BusinessTime'", "'MessageContent'", "':'", "'Action'", "'&&'", "'||'", "'!'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "'.'", "'.*'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'day'", "'week'", "'month'", "'year'", "'AND'", "'OR'", "'NOT'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -44,6 +44,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final int T__53=53;
     public static final int T__54=54;
     public static final int T__60=60;
+    public static final int T__61=61;
     public static final int RULE_ID=4;
     public static final int T__26=26;
     public static final int T__27=27;
@@ -51,12 +52,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
+    public static final int T__66=66;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
+    public static final int T__67=67;
     public static final int T__24=24;
+    public static final int T__68=68;
     public static final int T__25=25;
+    public static final int T__69=69;
+    public static final int T__62=62;
+    public static final int T__63=63;
     public static final int T__20=20;
+    public static final int T__64=64;
     public static final int T__21=21;
+    public static final int T__65=65;
+    public static final int T__70=70;
+    public static final int T__71=71;
     public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
@@ -1960,7 +1971,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationsLimit"
-    // InternalSmartCE.g:832:1: ruleOperationsLimit returns [EObject current=null] : (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleUnitTime ) ) otherlv_5= ')' ) ;
+    // InternalSmartCE.g:832:1: ruleOperationsLimit returns [EObject current=null] : (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) ;
     public final EObject ruleOperationsLimit() throws RecognitionException {
         EObject current = null;
 
@@ -1976,11 +1987,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:838:2: ( (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleUnitTime ) ) otherlv_5= ')' ) )
-            // InternalSmartCE.g:839:2: (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleUnitTime ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:838:2: ( (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) )
+            // InternalSmartCE.g:839:2: (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
             {
-            // InternalSmartCE.g:839:2: (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleUnitTime ) ) otherlv_5= ')' )
-            // InternalSmartCE.g:840:3: otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleUnitTime ) ) otherlv_5= ')'
+            // InternalSmartCE.g:839:2: (otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:840:3: otherlv_0= 'OperationsLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= ',' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,31,FOLLOW_24); 
 
@@ -2020,17 +2031,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getOperationsLimitAccess().getCommaKeyword_3());
             		
-            // InternalSmartCE.g:870:3: ( (lv_timeUnit_4_0= ruleUnitTime ) )
-            // InternalSmartCE.g:871:4: (lv_timeUnit_4_0= ruleUnitTime )
+            // InternalSmartCE.g:870:3: ( (lv_timeUnit_4_0= ruleTimeUnit ) )
+            // InternalSmartCE.g:871:4: (lv_timeUnit_4_0= ruleTimeUnit )
             {
-            // InternalSmartCE.g:871:4: (lv_timeUnit_4_0= ruleUnitTime )
-            // InternalSmartCE.g:872:5: lv_timeUnit_4_0= ruleUnitTime
+            // InternalSmartCE.g:871:4: (lv_timeUnit_4_0= ruleTimeUnit )
+            // InternalSmartCE.g:872:5: lv_timeUnit_4_0= ruleTimeUnit
             {
 
-            					newCompositeNode(grammarAccess.getOperationsLimitAccess().getTimeUnitUnitTimeEnumRuleCall_4_0());
+            					newCompositeNode(grammarAccess.getOperationsLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0());
             				
             pushFollow(FOLLOW_19);
-            lv_timeUnit_4_0=ruleUnitTime();
+            lv_timeUnit_4_0=ruleTimeUnit();
 
             state._fsp--;
 
@@ -2042,7 +2053,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             						current,
             						"timeUnit",
             						lv_timeUnit_4_0,
-            						"br.edu.unijui.gca.smartce.SmartCE.UnitTime");
+            						"br.edu.unijui.gca.smartce.SmartCE.TimeUnit");
             					afterParserOrEnumRuleCall();
             				
 
@@ -2114,7 +2125,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBusinessDay"
-    // InternalSmartCE.g:904:1: ruleBusinessDay returns [EObject current=null] : (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDays ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDays ) ) otherlv_5= ')' ) ;
+    // InternalSmartCE.g:904:1: ruleBusinessDay returns [EObject current=null] : (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) ;
     public final EObject ruleBusinessDay() throws RecognitionException {
         EObject current = null;
 
@@ -2131,11 +2142,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:910:2: ( (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDays ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDays ) ) otherlv_5= ')' ) )
-            // InternalSmartCE.g:911:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDays ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDays ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:910:2: ( (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) )
+            // InternalSmartCE.g:911:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
             {
-            // InternalSmartCE.g:911:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDays ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDays ) ) otherlv_5= ')' )
-            // InternalSmartCE.g:912:3: otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDays ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDays ) ) otherlv_5= ')'
+            // InternalSmartCE.g:911:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:912:3: otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= ',' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,33,FOLLOW_24); 
 
@@ -2145,17 +2156,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getBusinessDayAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSmartCE.g:920:3: ( (lv_start_2_0= ruleWeekDays ) )
-            // InternalSmartCE.g:921:4: (lv_start_2_0= ruleWeekDays )
+            // InternalSmartCE.g:920:3: ( (lv_start_2_0= ruleWeekDay ) )
+            // InternalSmartCE.g:921:4: (lv_start_2_0= ruleWeekDay )
             {
-            // InternalSmartCE.g:921:4: (lv_start_2_0= ruleWeekDays )
-            // InternalSmartCE.g:922:5: lv_start_2_0= ruleWeekDays
+            // InternalSmartCE.g:921:4: (lv_start_2_0= ruleWeekDay )
+            // InternalSmartCE.g:922:5: lv_start_2_0= ruleWeekDay
             {
 
-            					newCompositeNode(grammarAccess.getBusinessDayAccess().getStartWeekDaysEnumRuleCall_2_0());
+            					newCompositeNode(grammarAccess.getBusinessDayAccess().getStartWeekDayEnumRuleCall_2_0());
             				
             pushFollow(FOLLOW_27);
-            lv_start_2_0=ruleWeekDays();
+            lv_start_2_0=ruleWeekDay();
 
             state._fsp--;
 
@@ -2167,7 +2178,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             						current,
             						"start",
             						lv_start_2_0,
-            						"br.edu.unijui.gca.smartce.SmartCE.WeekDays");
+            						"br.edu.unijui.gca.smartce.SmartCE.WeekDay");
             					afterParserOrEnumRuleCall();
             				
 
@@ -2180,17 +2191,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getBusinessDayAccess().getCommaKeyword_3());
             		
-            // InternalSmartCE.g:943:3: ( (lv_end_4_0= ruleWeekDays ) )
-            // InternalSmartCE.g:944:4: (lv_end_4_0= ruleWeekDays )
+            // InternalSmartCE.g:943:3: ( (lv_end_4_0= ruleWeekDay ) )
+            // InternalSmartCE.g:944:4: (lv_end_4_0= ruleWeekDay )
             {
-            // InternalSmartCE.g:944:4: (lv_end_4_0= ruleWeekDays )
-            // InternalSmartCE.g:945:5: lv_end_4_0= ruleWeekDays
+            // InternalSmartCE.g:944:4: (lv_end_4_0= ruleWeekDay )
+            // InternalSmartCE.g:945:5: lv_end_4_0= ruleWeekDay
             {
 
-            					newCompositeNode(grammarAccess.getBusinessDayAccess().getEndWeekDaysEnumRuleCall_4_0());
+            					newCompositeNode(grammarAccess.getBusinessDayAccess().getEndWeekDayEnumRuleCall_4_0());
             				
             pushFollow(FOLLOW_19);
-            lv_end_4_0=ruleWeekDays();
+            lv_end_4_0=ruleWeekDay();
 
             state._fsp--;
 
@@ -2202,7 +2213,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             						current,
             						"end",
             						lv_end_4_0,
-            						"br.edu.unijui.gca.smartce.SmartCE.WeekDays");
+            						"br.edu.unijui.gca.smartce.SmartCE.WeekDay");
             					afterParserOrEnumRuleCall();
             				
 
@@ -6200,48 +6211,82 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSEC"
 
 
-    // $ANTLR start "ruleWeekDays"
-    // InternalSmartCE.g:2488:1: ruleWeekDays returns [Enumerator current=null] : ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) ) ;
-    public final Enumerator ruleWeekDays() throws RecognitionException {
+    // $ANTLR start "ruleWeekDay"
+    // InternalSmartCE.g:2488:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) ;
+    public final Enumerator ruleWeekDay() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
+        Token enumLiteral_4=null;
+        Token enumLiteral_5=null;
+        Token enumLiteral_6=null;
 
 
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2494:2: ( ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) ) )
-            // InternalSmartCE.g:2495:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) )
+            // InternalSmartCE.g:2494:2: ( ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) )
+            // InternalSmartCE.g:2495:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
             {
-            // InternalSmartCE.g:2495:2: ( (enumLiteral_0= 'Monday' ) | (enumLiteral_1= 'Tuesday' ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
-
-            if ( (LA24_0==55) ) {
+            // InternalSmartCE.g:2495:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
+            int alt24=7;
+            switch ( input.LA(1) ) {
+            case 55:
+                {
                 alt24=1;
-            }
-            else if ( (LA24_0==56) ) {
+                }
+                break;
+            case 56:
+                {
                 alt24=2;
-            }
-            else {
+                }
+                break;
+            case 57:
+                {
+                alt24=3;
+                }
+                break;
+            case 58:
+                {
+                alt24=4;
+                }
+                break;
+            case 59:
+                {
+                alt24=5;
+                }
+                break;
+            case 60:
+                {
+                alt24=6;
+                }
+                break;
+            case 61:
+                {
+                alt24=7;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 24, 0, input);
 
                 throw nvae;
             }
+
             switch (alt24) {
                 case 1 :
-                    // InternalSmartCE.g:2496:3: (enumLiteral_0= 'Monday' )
+                    // InternalSmartCE.g:2496:3: (enumLiteral_0= 'Sunday' )
                     {
-                    // InternalSmartCE.g:2496:3: (enumLiteral_0= 'Monday' )
-                    // InternalSmartCE.g:2497:4: enumLiteral_0= 'Monday'
+                    // InternalSmartCE.g:2496:3: (enumLiteral_0= 'Sunday' )
+                    // InternalSmartCE.g:2497:4: enumLiteral_0= 'Sunday'
                     {
                     enumLiteral_0=(Token)match(input,55,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_0, grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0());
+                    				current = grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_0());
                     			
 
                     }
@@ -6250,15 +6295,100 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:2504:3: (enumLiteral_1= 'Tuesday' )
+                    // InternalSmartCE.g:2504:3: (enumLiteral_1= 'Monday' )
                     {
-                    // InternalSmartCE.g:2504:3: (enumLiteral_1= 'Tuesday' )
-                    // InternalSmartCE.g:2505:4: enumLiteral_1= 'Tuesday'
+                    // InternalSmartCE.g:2504:3: (enumLiteral_1= 'Monday' )
+                    // InternalSmartCE.g:2505:4: enumLiteral_1= 'Monday'
                     {
                     enumLiteral_1=(Token)match(input,56,FOLLOW_2); 
 
-                    				current = grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-                    				newLeafNode(enumLiteral_1, grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1());
+                    				current = grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSmartCE.g:2512:3: (enumLiteral_2= 'Tuesday' )
+                    {
+                    // InternalSmartCE.g:2512:3: (enumLiteral_2= 'Tuesday' )
+                    // InternalSmartCE.g:2513:4: enumLiteral_2= 'Tuesday'
+                    {
+                    enumLiteral_2=(Token)match(input,57,FOLLOW_2); 
+
+                    				current = grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSmartCE.g:2520:3: (enumLiteral_3= 'Wednesday' )
+                    {
+                    // InternalSmartCE.g:2520:3: (enumLiteral_3= 'Wednesday' )
+                    // InternalSmartCE.g:2521:4: enumLiteral_3= 'Wednesday'
+                    {
+                    enumLiteral_3=(Token)match(input,58,FOLLOW_2); 
+
+                    				current = grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalSmartCE.g:2528:3: (enumLiteral_4= 'Thursday' )
+                    {
+                    // InternalSmartCE.g:2528:3: (enumLiteral_4= 'Thursday' )
+                    // InternalSmartCE.g:2529:4: enumLiteral_4= 'Thursday'
+                    {
+                    enumLiteral_4=(Token)match(input,59,FOLLOW_2); 
+
+                    				current = grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_4, grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_4());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalSmartCE.g:2536:3: (enumLiteral_5= 'Friday' )
+                    {
+                    // InternalSmartCE.g:2536:3: (enumLiteral_5= 'Friday' )
+                    // InternalSmartCE.g:2537:4: enumLiteral_5= 'Friday'
+                    {
+                    enumLiteral_5=(Token)match(input,60,FOLLOW_2); 
+
+                    				current = grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_5, grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_5());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalSmartCE.g:2544:3: (enumLiteral_6= 'Saturday' )
+                    {
+                    // InternalSmartCE.g:2544:3: (enumLiteral_6= 'Saturday' )
+                    // InternalSmartCE.g:2545:4: enumLiteral_6= 'Saturday'
+                    {
+                    enumLiteral_6=(Token)match(input,61,FOLLOW_2); 
+
+                    				current = grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_6, grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_6());
                     			
 
                     }
@@ -6285,85 +6415,65 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleWeekDays"
+    // $ANTLR end "ruleWeekDay"
 
 
-    // $ANTLR start "ruleUnitTime"
-    // InternalSmartCE.g:2515:1: ruleUnitTime returns [Enumerator current=null] : (enumLiteral_0= 'Second' ) ;
-    public final Enumerator ruleUnitTime() throws RecognitionException {
-        Enumerator current = null;
-
-        Token enumLiteral_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalSmartCE.g:2521:2: ( (enumLiteral_0= 'Second' ) )
-            // InternalSmartCE.g:2522:2: (enumLiteral_0= 'Second' )
-            {
-            // InternalSmartCE.g:2522:2: (enumLiteral_0= 'Second' )
-            // InternalSmartCE.g:2523:3: enumLiteral_0= 'Second'
-            {
-            enumLiteral_0=(Token)match(input,57,FOLLOW_2); 
-
-            			current = grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration().getEnumLiteral().getInstance();
-            			newLeafNode(enumLiteral_0, grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration());
-            		
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleUnitTime"
-
-
-    // $ANTLR start "ruleLogicalOperator"
-    // InternalSmartCE.g:2532:1: ruleLogicalOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) ;
-    public final Enumerator ruleLogicalOperator() throws RecognitionException {
+    // $ANTLR start "ruleTimeUnit"
+    // InternalSmartCE.g:2555:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) ) ;
+    public final Enumerator ruleTimeUnit() throws RecognitionException {
         Enumerator current = null;
 
         Token enumLiteral_0=null;
         Token enumLiteral_1=null;
         Token enumLiteral_2=null;
+        Token enumLiteral_3=null;
+        Token enumLiteral_4=null;
+        Token enumLiteral_5=null;
+        Token enumLiteral_6=null;
 
 
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2538:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) )
-            // InternalSmartCE.g:2539:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
+            // InternalSmartCE.g:2561:2: ( ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) ) )
+            // InternalSmartCE.g:2562:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) )
             {
-            // InternalSmartCE.g:2539:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
-            int alt25=3;
+            // InternalSmartCE.g:2562:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) )
+            int alt25=7;
             switch ( input.LA(1) ) {
-            case 58:
+            case 62:
                 {
                 alt25=1;
                 }
                 break;
-            case 59:
+            case 63:
                 {
                 alt25=2;
                 }
                 break;
-            case 60:
+            case 64:
                 {
                 alt25=3;
+                }
+                break;
+            case 65:
+                {
+                alt25=4;
+                }
+                break;
+            case 66:
+                {
+                alt25=5;
+                }
+                break;
+            case 67:
+                {
+                alt25=6;
+                }
+                break;
+            case 68:
+                {
+                alt25=7;
                 }
                 break;
             default:
@@ -6375,12 +6485,195 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             switch (alt25) {
                 case 1 :
-                    // InternalSmartCE.g:2540:3: (enumLiteral_0= 'AND' )
+                    // InternalSmartCE.g:2563:3: (enumLiteral_0= 'Second' )
                     {
-                    // InternalSmartCE.g:2540:3: (enumLiteral_0= 'AND' )
-                    // InternalSmartCE.g:2541:4: enumLiteral_0= 'AND'
+                    // InternalSmartCE.g:2563:3: (enumLiteral_0= 'Second' )
+                    // InternalSmartCE.g:2564:4: enumLiteral_0= 'Second'
                     {
-                    enumLiteral_0=(Token)match(input,58,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,62,FOLLOW_2); 
+
+                    				current = grammarAccess.getTimeUnitAccess().getSECONDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_0, grammarAccess.getTimeUnitAccess().getSECONDEnumLiteralDeclaration_0());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSmartCE.g:2571:3: (enumLiteral_1= 'Minute' )
+                    {
+                    // InternalSmartCE.g:2571:3: (enumLiteral_1= 'Minute' )
+                    // InternalSmartCE.g:2572:4: enumLiteral_1= 'Minute'
+                    {
+                    enumLiteral_1=(Token)match(input,63,FOLLOW_2); 
+
+                    				current = grammarAccess.getTimeUnitAccess().getMINUTEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_1, grammarAccess.getTimeUnitAccess().getMINUTEEnumLiteralDeclaration_1());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSmartCE.g:2579:3: (enumLiteral_2= 'Hour' )
+                    {
+                    // InternalSmartCE.g:2579:3: (enumLiteral_2= 'Hour' )
+                    // InternalSmartCE.g:2580:4: enumLiteral_2= 'Hour'
+                    {
+                    enumLiteral_2=(Token)match(input,64,FOLLOW_2); 
+
+                    				current = grammarAccess.getTimeUnitAccess().getHOUREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_2, grammarAccess.getTimeUnitAccess().getHOUREnumLiteralDeclaration_2());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSmartCE.g:2587:3: (enumLiteral_3= 'day' )
+                    {
+                    // InternalSmartCE.g:2587:3: (enumLiteral_3= 'day' )
+                    // InternalSmartCE.g:2588:4: enumLiteral_3= 'day'
+                    {
+                    enumLiteral_3=(Token)match(input,65,FOLLOW_2); 
+
+                    				current = grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_3, grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 5 :
+                    // InternalSmartCE.g:2595:3: (enumLiteral_4= 'week' )
+                    {
+                    // InternalSmartCE.g:2595:3: (enumLiteral_4= 'week' )
+                    // InternalSmartCE.g:2596:4: enumLiteral_4= 'week'
+                    {
+                    enumLiteral_4=(Token)match(input,66,FOLLOW_2); 
+
+                    				current = grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_4, grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 6 :
+                    // InternalSmartCE.g:2603:3: (enumLiteral_5= 'month' )
+                    {
+                    // InternalSmartCE.g:2603:3: (enumLiteral_5= 'month' )
+                    // InternalSmartCE.g:2604:4: enumLiteral_5= 'month'
+                    {
+                    enumLiteral_5=(Token)match(input,67,FOLLOW_2); 
+
+                    				current = grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_5, grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+                case 7 :
+                    // InternalSmartCE.g:2611:3: (enumLiteral_6= 'year' )
+                    {
+                    // InternalSmartCE.g:2611:3: (enumLiteral_6= 'year' )
+                    // InternalSmartCE.g:2612:4: enumLiteral_6= 'year'
+                    {
+                    enumLiteral_6=(Token)match(input,68,FOLLOW_2); 
+
+                    				current = grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6().getEnumLiteral().getInstance();
+                    				newLeafNode(enumLiteral_6, grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6());
+                    			
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleTimeUnit"
+
+
+    // $ANTLR start "ruleLogicalOperator"
+    // InternalSmartCE.g:2622:1: ruleLogicalOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) ;
+    public final Enumerator ruleLogicalOperator() throws RecognitionException {
+        Enumerator current = null;
+
+        Token enumLiteral_0=null;
+        Token enumLiteral_1=null;
+        Token enumLiteral_2=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSmartCE.g:2628:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) )
+            // InternalSmartCE.g:2629:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
+            {
+            // InternalSmartCE.g:2629:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
+            int alt26=3;
+            switch ( input.LA(1) ) {
+            case 69:
+                {
+                alt26=1;
+                }
+                break;
+            case 70:
+                {
+                alt26=2;
+                }
+                break;
+            case 71:
+                {
+                alt26=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 26, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt26) {
+                case 1 :
+                    // InternalSmartCE.g:2630:3: (enumLiteral_0= 'AND' )
+                    {
+                    // InternalSmartCE.g:2630:3: (enumLiteral_0= 'AND' )
+                    // InternalSmartCE.g:2631:4: enumLiteral_0= 'AND'
+                    {
+                    enumLiteral_0=(Token)match(input,69,FOLLOW_2); 
 
                     				current = grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0());
@@ -6392,12 +6685,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:2548:3: (enumLiteral_1= 'OR' )
+                    // InternalSmartCE.g:2638:3: (enumLiteral_1= 'OR' )
                     {
-                    // InternalSmartCE.g:2548:3: (enumLiteral_1= 'OR' )
-                    // InternalSmartCE.g:2549:4: enumLiteral_1= 'OR'
+                    // InternalSmartCE.g:2638:3: (enumLiteral_1= 'OR' )
+                    // InternalSmartCE.g:2639:4: enumLiteral_1= 'OR'
                     {
-                    enumLiteral_1=(Token)match(input,59,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,70,FOLLOW_2); 
 
                     				current = grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1());
@@ -6409,12 +6702,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:2556:3: (enumLiteral_2= 'NOT' )
+                    // InternalSmartCE.g:2646:3: (enumLiteral_2= 'NOT' )
                     {
-                    // InternalSmartCE.g:2556:3: (enumLiteral_2= 'NOT' )
-                    // InternalSmartCE.g:2557:4: enumLiteral_2= 'NOT'
+                    // InternalSmartCE.g:2646:3: (enumLiteral_2= 'NOT' )
+                    // InternalSmartCE.g:2647:4: enumLiteral_2= 'NOT'
                     {
-                    enumLiteral_2=(Token)match(input,60,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,71,FOLLOW_2); 
 
                     				current = grammarAccess.getLogicalOperatorAccess().getNOTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getLogicalOperatorAccess().getNOTEnumLiteralDeclaration_2());
@@ -6451,12 +6744,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
     protected DFA7 dfa7 = new DFA7(this);
     protected DFA21 dfa21 = new DFA21(this);
-    static final String dfa_1s = "\37\uffff";
-    static final String dfa_2s = "\21\uffff\1\26\3\uffff\1\26\6\uffff\3\26";
-    static final String dfa_3s = "\1\35\5\36\2\6\1\67\2\5\1\32\4\40\1\32\1\23\1\71\1\67\1\5\1\23\2\uffff\4\32\3\23";
-    static final String dfa_4s = "\1\43\5\36\2\6\1\70\2\5\1\32\4\40\1\32\1\74\1\71\1\70\1\5\1\74\2\uffff\4\32\3\74";
-    static final String dfa_5s = "\26\uffff\1\1\1\2\7\uffff";
-    static final String dfa_6s = "\37\uffff}>";
+    static final String dfa_1s = "\57\uffff";
+    static final String dfa_2s = "\26\uffff\1\33\3\uffff\1\33\21\uffff\3\33";
+    static final String dfa_3s = "\1\35\5\36\2\6\1\67\2\5\1\32\11\40\1\32\1\23\1\76\1\67\1\5\1\23\2\uffff\17\32\3\23";
+    static final String dfa_4s = "\1\43\5\36\2\6\1\75\2\5\1\32\11\40\1\32\1\107\1\104\1\75\1\5\1\107\2\uffff\17\32\3\107";
+    static final String dfa_5s = "\33\uffff\1\1\1\2\22\uffff";
+    static final String dfa_6s = "\57\uffff}>";
     static final String[] dfa_7s = {
             "\1\1\1\uffff\1\2\1\uffff\1\3\1\4\1\5",
             "\1\6",
@@ -6466,29 +6759,45 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\12",
             "\1\13",
             "\1\14",
-            "\1\15\1\16",
-            "\1\17",
-            "\1\20",
-            "\1\21",
-            "\1\22",
-            "\1\23",
-            "\1\23",
+            "\1\15\1\16\1\17\1\20\1\21\1\22\1\23",
             "\1\24",
             "\1\25",
-            "\1\26\46\uffff\3\27",
+            "\1\26",
+            "\1\27",
             "\1\30",
-            "\1\31\1\32",
-            "\1\33",
-            "\1\26\46\uffff\3\27",
+            "\1\30",
+            "\1\30",
+            "\1\30",
+            "\1\30",
+            "\1\30",
+            "\1\30",
+            "\1\31",
+            "\1\32",
+            "\1\33\61\uffff\3\34",
+            "\1\35\1\36\1\37\1\40\1\41\1\42\1\43",
+            "\1\44\1\45\1\46\1\47\1\50\1\51\1\52",
+            "\1\53",
+            "\1\33\61\uffff\3\34",
             "",
             "",
-            "\1\34",
-            "\1\35",
-            "\1\35",
-            "\1\36",
-            "\1\26\46\uffff\3\27",
-            "\1\26\46\uffff\3\27",
-            "\1\26\46\uffff\3\27"
+            "\1\54",
+            "\1\54",
+            "\1\54",
+            "\1\54",
+            "\1\54",
+            "\1\54",
+            "\1\54",
+            "\1\55",
+            "\1\55",
+            "\1\55",
+            "\1\55",
+            "\1\55",
+            "\1\55",
+            "\1\55",
+            "\1\56",
+            "\1\33\61\uffff\3\34",
+            "\1\33\61\uffff\3\34",
+            "\1\33\61\uffff\3\34"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -6584,11 +6893,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000000L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x1C00000000000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000E0L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0180000000000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0xC000000000000000L,0x000000000000001FL});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x3F80000000000000L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0004010040000070L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000104000000L});

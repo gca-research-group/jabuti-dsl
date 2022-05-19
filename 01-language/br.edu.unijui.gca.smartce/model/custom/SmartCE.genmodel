@@ -6,13 +6,23 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="SmartCE" basePackage="br.edu.unijui.gca.smartce" disposableProviderFactory="true"
       fileExtensions="smartce" ecorePackage="SmartCE.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//WeekDays">
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDays/MONDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDays/TUESDAY"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDays/WEDNESDAY"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//WeekDay">
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDay/SUNDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDay/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDay/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDay/WEDNESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDay/THURSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDay/FRIDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//WeekDay/SATURDAY"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//UnitTime">
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//UnitTime/SECOND"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//TimeUnit">
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/SECOND"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/MINUTE"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/HOUR"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/DAY"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/WEEK"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/MONTH"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/YEAR"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//LogicalOperator">
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//LogicalOperator/AND"/>

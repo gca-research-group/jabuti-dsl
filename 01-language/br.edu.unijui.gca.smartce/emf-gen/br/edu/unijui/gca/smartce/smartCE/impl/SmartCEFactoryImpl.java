@@ -27,12 +27,12 @@ import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
-import br.edu.unijui.gca.smartce.smartCE.UnitTime;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
-import br.edu.unijui.gca.smartce.smartCE.WeekDays;
+import br.edu.unijui.gca.smartce.smartCE.WeekDay;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -136,10 +136,10 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		switch (eDataType.getClassifierID())
 		{
-			case SmartCEPackage.WEEK_DAYS:
-				return createWeekDaysFromString(eDataType, initialValue);
-			case SmartCEPackage.UNIT_TIME:
-				return createUnitTimeFromString(eDataType, initialValue);
+			case SmartCEPackage.WEEK_DAY:
+				return createWeekDayFromString(eDataType, initialValue);
+			case SmartCEPackage.TIME_UNIT:
+				return createTimeUnitFromString(eDataType, initialValue);
 			case SmartCEPackage.LOGICAL_OPERATOR:
 				return createLogicalOperatorFromString(eDataType, initialValue);
 			default:
@@ -157,10 +157,10 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		switch (eDataType.getClassifierID())
 		{
-			case SmartCEPackage.WEEK_DAYS:
-				return convertWeekDaysToString(eDataType, instanceValue);
-			case SmartCEPackage.UNIT_TIME:
-				return convertUnitTimeToString(eDataType, instanceValue);
+			case SmartCEPackage.WEEK_DAY:
+				return convertWeekDayToString(eDataType, instanceValue);
+			case SmartCEPackage.TIME_UNIT:
+				return convertTimeUnitToString(eDataType, instanceValue);
 			case SmartCEPackage.LOGICAL_OPERATOR:
 				return convertLogicalOperatorToString(eDataType, instanceValue);
 			default:
@@ -485,9 +485,9 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public WeekDays createWeekDaysFromString(EDataType eDataType, String initialValue)
+	public WeekDay createWeekDayFromString(EDataType eDataType, String initialValue)
 	{
-		WeekDays result = WeekDays.get(initialValue);
+		WeekDay result = WeekDay.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -497,7 +497,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertWeekDaysToString(EDataType eDataType, Object instanceValue)
+	public String convertWeekDayToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}
@@ -507,9 +507,9 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public UnitTime createUnitTimeFromString(EDataType eDataType, String initialValue)
+	public TimeUnit createTimeUnitFromString(EDataType eDataType, String initialValue)
 	{
-		UnitTime result = UnitTime.get(initialValue);
+		TimeUnit result = TimeUnit.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -519,7 +519,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertUnitTimeToString(EDataType eDataType, Object instanceValue)
+	public String convertTimeUnitToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

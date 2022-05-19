@@ -29,12 +29,12 @@ import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
-import br.edu.unijui.gca.smartce.smartCE.UnitTime;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
-import br.edu.unijui.gca.smartce.smartCE.WeekDays;
+import br.edu.unijui.gca.smartce.smartCE.WeekDay;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -253,14 +253,14 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum weekDaysEEnum = null;
+	private EEnum weekDayEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum unitTimeEEnum = null;
+	private EEnum timeUnitEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1262,9 +1262,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getWeekDays()
+	public EEnum getWeekDay()
 	{
-		return weekDaysEEnum;
+		return weekDayEEnum;
 	}
 
 	/**
@@ -1273,9 +1273,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getUnitTime()
+	public EEnum getTimeUnit()
 	{
-		return unitTimeEEnum;
+		return timeUnitEEnum;
 	}
 
 	/**
@@ -1433,8 +1433,8 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		businessRuleEClass = createEClass(BUSINESS_RULE);
 
 		// Create enums
-		weekDaysEEnum = createEEnum(WEEK_DAYS);
-		unitTimeEEnum = createEEnum(UNIT_TIME);
+		weekDayEEnum = createEEnum(WEEK_DAY);
+		timeUnitEEnum = createEEnum(TIME_UNIT);
 		logicalOperatorEEnum = createEEnum(LOGICAL_OPERATOR);
 	}
 
@@ -1578,11 +1578,11 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		initEClass(operationsLimitEClass, OperationsLimit.class, "OperationsLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperationsLimit_OperationsNumber(), ecorePackage.getEInt(), "operationsNumber", null, 0, 1, OperationsLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getOperationsLimit_TimeUnit(), this.getUnitTime(), "timeUnit", null, 0, 1, OperationsLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getOperationsLimit_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, OperationsLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessDayEClass, BusinessDay.class, "BusinessDay", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBusinessDay_Start(), this.getWeekDays(), "start", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getBusinessDay_End(), this.getWeekDays(), "end", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBusinessDay_Start(), this.getWeekDay(), "start", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBusinessDay_End(), this.getWeekDay(), "end", null, 0, 1, BusinessDay.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessTimeEClass, BusinessTime.class, "BusinessTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBusinessTime_Start(), ecorePackage.getEString(), "start", null, 0, 1, BusinessTime.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1598,13 +1598,23 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEClass(businessRuleEClass, BusinessRule.class, "BusinessRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
-		initEEnum(weekDaysEEnum, WeekDays.class, "WeekDays");
-		addEEnumLiteral(weekDaysEEnum, WeekDays.MONDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.TUESDAY);
-		addEEnumLiteral(weekDaysEEnum, WeekDays.WEDNESDAY);
+		initEEnum(weekDayEEnum, WeekDay.class, "WeekDay");
+		addEEnumLiteral(weekDayEEnum, WeekDay.SUNDAY);
+		addEEnumLiteral(weekDayEEnum, WeekDay.MONDAY);
+		addEEnumLiteral(weekDayEEnum, WeekDay.TUESDAY);
+		addEEnumLiteral(weekDayEEnum, WeekDay.WEDNESDAY);
+		addEEnumLiteral(weekDayEEnum, WeekDay.THURSDAY);
+		addEEnumLiteral(weekDayEEnum, WeekDay.FRIDAY);
+		addEEnumLiteral(weekDayEEnum, WeekDay.SATURDAY);
 
-		initEEnum(unitTimeEEnum, UnitTime.class, "UnitTime");
-		addEEnumLiteral(unitTimeEEnum, UnitTime.SECOND);
+		initEEnum(timeUnitEEnum, TimeUnit.class, "TimeUnit");
+		addEEnumLiteral(timeUnitEEnum, TimeUnit.SECOND);
+		addEEnumLiteral(timeUnitEEnum, TimeUnit.MINUTE);
+		addEEnumLiteral(timeUnitEEnum, TimeUnit.HOUR);
+		addEEnumLiteral(timeUnitEEnum, TimeUnit.DAY);
+		addEEnumLiteral(timeUnitEEnum, TimeUnit.WEEK);
+		addEEnumLiteral(timeUnitEEnum, TimeUnit.MONTH);
+		addEEnumLiteral(timeUnitEEnum, TimeUnit.YEAR);
 
 		initEEnum(logicalOperatorEEnum, LogicalOperator.class, "LogicalOperator");
 		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.AND);

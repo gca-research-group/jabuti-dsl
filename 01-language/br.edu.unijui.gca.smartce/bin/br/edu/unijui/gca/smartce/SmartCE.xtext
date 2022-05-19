@@ -56,18 +56,20 @@ Timeout:
 ;
 
 OperationsLimit:
-	'OperationsLimit' '(' operationsNumber=INT ',' timeUnit=UnitTime ')'
+	'OperationsLimit' '(' operationsNumber=INT ',' timeUnit=TimeUnit ')'
 ;
 
 BusinessDay:
-	'BusinessDay' '(' start=WeekDays ',' end=WeekDays ')'
+	'BusinessDay' '(' start=WeekDay ',' end=WeekDay ')'
 ;
 	
-enum WeekDays:
-    MONDAY='Monday' | TUESDAY = 'Tuesday';
+enum WeekDay:
+    SUNDAY='Sunday' | MONDAY='Monday' | TUESDAY='Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY='Thursday' | FRIDAY='Friday' | SATURDAY='Saturday'
+;
     
-enum UnitTime:
-    SECOND='Second';
+enum TimeUnit:
+    SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='day' | WEEK='week' | MONTH='month' | YEAR='year'
+;
     
 enum LogicalOperator:
     AND='AND' | OR='OR' | NOT='NOT';

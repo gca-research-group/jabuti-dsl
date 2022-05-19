@@ -5,7 +5,7 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
-import br.edu.unijui.gca.smartce.smartCE.WeekDays;
+import br.edu.unijui.gca.smartce.smartCE.WeekDay;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -37,7 +37,7 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WeekDays START_EDEFAULT = WeekDays.MONDAY;
+	protected static final WeekDay START_EDEFAULT = WeekDay.SUNDAY;
 
 	/**
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
@@ -47,7 +47,7 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 * @ordered
 	 */
-	protected WeekDays start = START_EDEFAULT;
+	protected WeekDay start = START_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
@@ -57,7 +57,7 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 * @ordered
 	 */
-	protected static final WeekDays END_EDEFAULT = WeekDays.MONDAY;
+	protected static final WeekDay END_EDEFAULT = WeekDay.SUNDAY;
 
 	/**
 	 * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
@@ -67,7 +67,7 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 * @ordered
 	 */
-	protected WeekDays end = END_EDEFAULT;
+	protected WeekDay end = END_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -96,7 +96,7 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 */
 	@Override
-	public WeekDays getStart()
+	public WeekDay getStart()
 	{
 		return start;
 	}
@@ -107,9 +107,9 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 */
 	@Override
-	public void setStart(WeekDays newStart)
+	public void setStart(WeekDay newStart)
 	{
-		WeekDays oldStart = start;
+		WeekDay oldStart = start;
 		start = newStart == null ? START_EDEFAULT : newStart;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_DAY__START, oldStart, start));
@@ -121,7 +121,7 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 */
 	@Override
-	public WeekDays getEnd()
+	public WeekDay getEnd()
 	{
 		return end;
 	}
@@ -132,9 +132,9 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 	 * @generated
 	 */
 	@Override
-	public void setEnd(WeekDays newEnd)
+	public void setEnd(WeekDay newEnd)
 	{
-		WeekDays oldEnd = end;
+		WeekDay oldEnd = end;
 		end = newEnd == null ? END_EDEFAULT : newEnd;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_DAY__END, oldEnd, end));
@@ -169,10 +169,10 @@ public class BusinessDayImpl extends BusinessRuleImpl implements BusinessDay
 		switch (featureID)
 		{
 			case SmartCEPackage.BUSINESS_DAY__START:
-				setStart((WeekDays)newValue);
+				setStart((WeekDay)newValue);
 				return;
 			case SmartCEPackage.BUSINESS_DAY__END:
-				setEnd((WeekDays)newValue);
+				setEnd((WeekDay)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

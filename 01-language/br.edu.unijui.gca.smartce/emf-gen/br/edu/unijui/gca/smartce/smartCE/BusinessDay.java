@@ -25,52 +25,52 @@ public interface BusinessDay extends BusinessRule
 {
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.WeekDays}.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.WeekDay}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
-	 * @see #setStart(WeekDays)
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDay
+	 * @see #setStart(WeekDay)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getBusinessDay_Start()
 	 * @model
 	 * @generated
 	 */
-	WeekDays getStart();
+	WeekDay getStart();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay#getStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Start</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDay
 	 * @see #getStart()
 	 * @generated
 	 */
-	void setStart(WeekDays value);
+	void setStart(WeekDay value);
 
 	/**
 	 * Returns the value of the '<em><b>End</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.WeekDays}.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.WeekDay}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
-	 * @see #setEnd(WeekDays)
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDay
+	 * @see #setEnd(WeekDay)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getBusinessDay_End()
 	 * @model
 	 * @generated
 	 */
-	WeekDays getEnd();
+	WeekDay getEnd();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay#getEnd <em>End</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>End</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDays
+	 * @see br.edu.unijui.gca.smartce.smartCE.WeekDay
 	 * @see #getEnd()
 	 * @generated
 	 */
-	void setEnd(WeekDays value);
+	void setEnd(WeekDay value);
 
 } // BusinessDay

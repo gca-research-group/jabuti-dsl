@@ -11,15 +11,25 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Week Days</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Week Day</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getWeekDays()
+ * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getWeekDay()
  * @model
  * @generated
  */
-public enum WeekDays implements Enumerator
+public enum WeekDay implements Enumerator
 {
+	/**
+	 * The '<em><b>SUNDAY</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SUNDAY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SUNDAY(0, "SUNDAY", "SUNDAY"),
+
 	/**
 	 * The '<em><b>MONDAY</b></em>' literal object.
 	 * <!-- begin-user-doc -->
@@ -28,7 +38,7 @@ public enum WeekDays implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	MONDAY(0, "MONDAY", "MONDAY"),
+	MONDAY(1, "MONDAY", "MONDAY"),
 
 	/**
 	 * The '<em><b>TUESDAY</b></em>' literal object.
@@ -38,7 +48,7 @@ public enum WeekDays implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	TUESDAY(1, "TUESDAY", "TUESDAY"),
+	TUESDAY(2, "TUESDAY", "TUESDAY"),
 
 	/**
 	 * The '<em><b>WEDNESDAY</b></em>' literal object.
@@ -48,7 +58,48 @@ public enum WeekDays implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	WEDNESDAY(2, "WEDNESDAY", "WEDNESDAY");
+	WEDNESDAY(3, "WEDNESDAY", "WEDNESDAY"),
+
+	/**
+	 * The '<em><b>THURSDAY</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #THURSDAY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	THURSDAY(4, "THURSDAY", "THURSDAY"),
+
+	/**
+	 * The '<em><b>FRIDAY</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FRIDAY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FRIDAY(5, "FRIDAY", "FRIDAY"),
+
+	/**
+	 * The '<em><b>SATURDAY</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SATURDAY_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	SATURDAY(6, "SATURDAY", "SATURDAY");
+
+	/**
+	 * The '<em><b>SUNDAY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SUNDAY
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SUNDAY_VALUE = 0;
 
 	/**
 	 * The '<em><b>MONDAY</b></em>' literal value.
@@ -59,7 +110,7 @@ public enum WeekDays implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MONDAY_VALUE = 0;
+	public static final int MONDAY_VALUE = 1;
 
 	/**
 	 * The '<em><b>TUESDAY</b></em>' literal value.
@@ -70,7 +121,7 @@ public enum WeekDays implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	public static final int TUESDAY_VALUE = 1;
+	public static final int TUESDAY_VALUE = 2;
 
 	/**
 	 * The '<em><b>WEDNESDAY</b></em>' literal value.
@@ -81,43 +132,80 @@ public enum WeekDays implements Enumerator
 	 * @generated
 	 * @ordered
 	 */
-	public static final int WEDNESDAY_VALUE = 2;
+	public static final int WEDNESDAY_VALUE = 3;
 
 	/**
-	 * An array of all the '<em><b>Week Days</b></em>' enumerators.
+	 * The '<em><b>THURSDAY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #THURSDAY
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int THURSDAY_VALUE = 4;
+
+	/**
+	 * The '<em><b>FRIDAY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FRIDAY
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FRIDAY_VALUE = 5;
+
+	/**
+	 * The '<em><b>SATURDAY</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #SATURDAY
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int SATURDAY_VALUE = 6;
+
+	/**
+	 * An array of all the '<em><b>Week Day</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final WeekDays[] VALUES_ARRAY =
-		new WeekDays[]
+	private static final WeekDay[] VALUES_ARRAY =
+		new WeekDay[]
 		{
+			SUNDAY,
 			MONDAY,
 			TUESDAY,
 			WEDNESDAY,
+			THURSDAY,
+			FRIDAY,
+			SATURDAY,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Week Days</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Week Day</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<WeekDays> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<WeekDay> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Week Days</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Week Day</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static WeekDays get(String literal)
+	public static WeekDay get(String literal)
 	{
 		for (int i = 0; i < VALUES_ARRAY.length; ++i)
 		{
-			WeekDays result = VALUES_ARRAY[i];
+			WeekDay result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal))
 			{
 				return result;
@@ -127,18 +215,18 @@ public enum WeekDays implements Enumerator
 	}
 
 	/**
-	 * Returns the '<em><b>Week Days</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Week Day</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static WeekDays getByName(String name)
+	public static WeekDay getByName(String name)
 	{
 		for (int i = 0; i < VALUES_ARRAY.length; ++i)
 		{
-			WeekDays result = VALUES_ARRAY[i];
+			WeekDay result = VALUES_ARRAY[i];
 			if (result.getName().equals(name))
 			{
 				return result;
@@ -148,20 +236,24 @@ public enum WeekDays implements Enumerator
 	}
 
 	/**
-	 * Returns the '<em><b>Week Days</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Week Day</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static WeekDays get(int value)
+	public static WeekDay get(int value)
 	{
 		switch (value)
 		{
+			case SUNDAY_VALUE: return SUNDAY;
 			case MONDAY_VALUE: return MONDAY;
 			case TUESDAY_VALUE: return TUESDAY;
 			case WEDNESDAY_VALUE: return WEDNESDAY;
+			case THURSDAY_VALUE: return THURSDAY;
+			case FRIDAY_VALUE: return FRIDAY;
+			case SATURDAY_VALUE: return SATURDAY;
 		}
 		return null;
 	}
@@ -193,7 +285,7 @@ public enum WeekDays implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private WeekDays(int value, String name, String literal)
+	private WeekDay(int value, String name, String literal)
 	{
 		this.value = value;
 		this.name = name;
@@ -245,4 +337,4 @@ public enum WeekDays implements Enumerator
 		return literal;
 	}
 	
-} //WeekDays
+} //WeekDay

@@ -5,7 +5,7 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 
 import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
-import br.edu.unijui.gca.smartce.smartCE.UnitTime;
+import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -57,7 +57,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	 * @generated
 	 * @ordered
 	 */
-	protected static final UnitTime TIME_UNIT_EDEFAULT = UnitTime.SECOND;
+	protected static final TimeUnit TIME_UNIT_EDEFAULT = TimeUnit.SECOND;
 
 	/**
 	 * The cached value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
@@ -67,7 +67,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	 * @generated
 	 * @ordered
 	 */
-	protected UnitTime timeUnit = TIME_UNIT_EDEFAULT;
+	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	 * @generated
 	 */
 	@Override
-	public UnitTime getTimeUnit()
+	public TimeUnit getTimeUnit()
 	{
 		return timeUnit;
 	}
@@ -132,9 +132,9 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	 * @generated
 	 */
 	@Override
-	public void setTimeUnit(UnitTime newTimeUnit)
+	public void setTimeUnit(TimeUnit newTimeUnit)
 	{
-		UnitTime oldTimeUnit = timeUnit;
+		TimeUnit oldTimeUnit = timeUnit;
 		timeUnit = newTimeUnit == null ? TIME_UNIT_EDEFAULT : newTimeUnit;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.OPERATIONS_LIMIT__TIME_UNIT, oldTimeUnit, timeUnit));
@@ -172,7 +172,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 				setOperationsNumber((Integer)newValue);
 				return;
 			case SmartCEPackage.OPERATIONS_LIMIT__TIME_UNIT:
-				setTimeUnit((UnitTime)newValue);
+				setTimeUnit((TimeUnit)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);

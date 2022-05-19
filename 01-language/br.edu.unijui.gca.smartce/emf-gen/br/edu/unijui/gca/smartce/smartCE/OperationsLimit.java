@@ -47,27 +47,27 @@ public interface OperationsLimit extends BusinessRule
 
 	/**
 	 * Returns the value of the '<em><b>Time Unit</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.UnitTime}.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.TimeUnit}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Time Unit</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
-	 * @see #setTimeUnit(UnitTime)
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
+	 * @see #setTimeUnit(TimeUnit)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationsLimit_TimeUnit()
 	 * @model
 	 * @generated
 	 */
-	UnitTime getTimeUnit();
+	TimeUnit getTimeUnit();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit <em>Time Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Time Unit</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.UnitTime
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
 	 * @see #getTimeUnit()
 	 * @generated
 	 */
-	void setTimeUnit(UnitTime value);
+	void setTimeUnit(TimeUnit value);
 
 } // OperationsLimit

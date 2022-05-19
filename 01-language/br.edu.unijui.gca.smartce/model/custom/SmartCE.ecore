@@ -106,11 +106,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OperationsLimit" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationsNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//UnitTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessDay" eSuperTypes="#//BusinessRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//WeekDays"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//WeekDays"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//WeekDay"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//WeekDay"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessTime" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -119,13 +119,23 @@
   <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="WeekDays">
-    <eLiterals name="MONDAY"/>
-    <eLiterals name="TUESDAY" value="1"/>
-    <eLiterals name="WEDNESDAY" value="2"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="WeekDay">
+    <eLiterals name="SUNDAY"/>
+    <eLiterals name="MONDAY" value="1"/>
+    <eLiterals name="TUESDAY" value="2"/>
+    <eLiterals name="WEDNESDAY" value="3"/>
+    <eLiterals name="THURSDAY" value="4"/>
+    <eLiterals name="FRIDAY" value="5"/>
+    <eLiterals name="SATURDAY" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="UnitTime">
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeUnit">
     <eLiterals name="SECOND"/>
+    <eLiterals name="MINUTE" value="1"/>
+    <eLiterals name="HOUR" value="2"/>
+    <eLiterals name="DAY" value="3"/>
+    <eLiterals name="WEEK" value="4"/>
+    <eLiterals name="MONTH" value="5" literal="MONTH"/>
+    <eLiterals name="YEAR" value="6"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CompositeCondition" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
