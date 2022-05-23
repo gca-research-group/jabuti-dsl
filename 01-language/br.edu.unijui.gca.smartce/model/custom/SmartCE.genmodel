@@ -24,11 +24,6 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/MONTH"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/YEAR"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//LogicalOperator">
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//LogicalOperator/AND"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//LogicalOperator/OR"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//LogicalOperator/NOT"/>
-    </genEnums>
     <genClasses ecoreClass="SmartCE.ecore#//Contract">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/beginDate"/>
@@ -132,10 +127,13 @@
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//CompositeCondition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//CompositeCondition/conditions"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//CompositeCondition/logicalOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//CompositeCondition/logicalOperators"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//BusinessRule"/>
     <genClasses ecoreClass="SmartCE.ecore#//BusinessAction"/>
     <genClasses ecoreClass="SmartCE.ecore#//EventLog"/>
+    <genClasses ecoreClass="SmartCE.ecore#//LogicalOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//LogicalOperator/name"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

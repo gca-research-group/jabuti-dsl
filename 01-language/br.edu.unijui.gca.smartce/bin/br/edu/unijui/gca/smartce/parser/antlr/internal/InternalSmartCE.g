@@ -734,17 +734,17 @@ ruleCompositeCondition returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorLogicalOperatorEnumRuleCall_1_0());
+					newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_1_0());
 				}
-				lv_logicalOperator_1_0=ruleLogicalOperator
+				lv_logicalOperators_1_0=ruleLogicalOperator
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
 					}
-					set(
+					add(
 						$current,
-						"logicalOperator",
-						lv_logicalOperator_1_0,
+						"logicalOperators",
+						lv_logicalOperators_1_0,
 						"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
 					afterParserOrEnumRuleCall();
 				}
@@ -766,6 +766,101 @@ ruleCompositeCondition returns [EObject current=null]
 						lv_conditions_2_0,
 						"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
 					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_3_0_0());
+					}
+					lv_logicalOperators_3_0=ruleLogicalOperator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+						}
+						add(
+							$current,
+							"logicalOperators",
+							lv_logicalOperators_3_0,
+							"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_3_1_0());
+					}
+					lv_conditions_4_0=ruleBusinessRule
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+						}
+						add(
+							$current,
+							"conditions",
+							lv_conditions_4_0,
+							"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)*
+	)
+;
+
+// Entry rule entryRuleLogicalOperator
+entryRuleLogicalOperator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getLogicalOperatorRule()); }
+	iv_ruleLogicalOperator=ruleLogicalOperator
+	{ $current=$iv_ruleLogicalOperator.current; }
+	EOF;
+
+// Rule LogicalOperator
+ruleLogicalOperator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				lv_name_0_1='AND'
+				{
+					newLeafNode(lv_name_0_1, grammarAccess.getLogicalOperatorAccess().getNameANDKeyword_0_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLogicalOperatorRule());
+					}
+					setWithLastConsumed($current, "name", lv_name_0_1, null);
+				}
+				    |
+				lv_name_0_2='OR'
+				{
+					newLeafNode(lv_name_0_2, grammarAccess.getLogicalOperatorAccess().getNameORKeyword_0_1());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLogicalOperatorRule());
+					}
+					setWithLastConsumed($current, "name", lv_name_0_2, null);
+				}
+				    |
+				lv_name_0_3='NOT'
+				{
+					newLeafNode(lv_name_0_3, grammarAccess.getLogicalOperatorAccess().getNameNOTKeyword_0_2());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getLogicalOperatorRule());
+					}
+					setWithLastConsumed($current, "name", lv_name_0_3, null);
 				}
 			)
 		)
@@ -2613,41 +2708,6 @@ ruleTimeUnit returns [Enumerator current=null]
 			{
 				$current = grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6().getEnumLiteral().getInstance();
 				newLeafNode(enumLiteral_6, grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6());
-			}
-		)
-	)
-;
-
-// Rule LogicalOperator
-ruleLogicalOperator returns [Enumerator current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			enumLiteral_0='AND'
-			{
-				$current = grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_0, grammarAccess.getLogicalOperatorAccess().getANDEnumLiteralDeclaration_0());
-			}
-		)
-		    |
-		(
-			enumLiteral_1='OR'
-			{
-				$current = grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_1, grammarAccess.getLogicalOperatorAccess().getOREnumLiteralDeclaration_1());
-			}
-		)
-		    |
-		(
-			enumLiteral_2='NOT'
-			{
-				$current = grammarAccess.getLogicalOperatorAccess().getNOTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
-				newLeafNode(enumLiteral_2, grammarAccess.getLogicalOperatorAccess().getNOTEnumLiteralDeclaration_2());
 			}
 		)
 	)

@@ -19,6 +19,7 @@ import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
+import br.edu.unijui.gca.smartce.smartCE.LogicalOperator;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
@@ -253,6 +254,11 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseEventLog(EventLog object)
 			{
 				return createEventLogAdapter();
+			}
+			@Override
+			public Adapter caseLogicalOperator(LogicalOperator object)
+			{
+				return createLogicalOperatorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -722,6 +728,21 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createEventLogAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
+	 * @generated
+	 */
+	public Adapter createLogicalOperatorAdapter()
 	{
 		return null;
 	}

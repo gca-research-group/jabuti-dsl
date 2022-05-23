@@ -48,7 +48,11 @@ BusinessRule:
 ;
 
 CompositeCondition:
-	conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule
+	conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
+;
+
+LogicalOperator:
+	name=('AND' | 'OR' | 'NOT')
 ;
 
 Timeout:
@@ -70,10 +74,7 @@ enum WeekDay:
 enum TimeUnit:
     SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='Day' | WEEK='Week' | MONTH='Month' | YEAR='Year'
 ;
-    
-enum LogicalOperator:
-    AND='AND' | OR='OR' | NOT='NOT';
-    
+      
 BusinessTime: 
 	'BusinessTime' '(' start=STRING ',' end=STRING ')'
 ; 

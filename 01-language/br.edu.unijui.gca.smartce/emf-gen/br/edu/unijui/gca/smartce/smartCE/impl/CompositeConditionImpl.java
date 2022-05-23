@@ -10,15 +10,12 @@ import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -32,7 +29,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl#getConditions <em>Conditions</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl#getLogicalOperator <em>Logical Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl#getLogicalOperators <em>Logical Operators</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +47,14 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 	protected EList<Condition> conditions;
 
 	/**
-	 * The default value of the '{@link #getLogicalOperator() <em>Logical Operator</em>}' attribute.
+	 * The cached value of the '{@link #getLogicalOperators() <em>Logical Operators</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLogicalOperator()
+	 * @see #getLogicalOperators()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final LogicalOperator LOGICAL_OPERATOR_EDEFAULT = LogicalOperator.AND;
-
-	/**
-	 * The cached value of the '{@link #getLogicalOperator() <em>Logical Operator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getLogicalOperator()
-	 * @generated
-	 * @ordered
-	 */
-	protected LogicalOperator logicalOperator = LOGICAL_OPERATOR_EDEFAULT;
+	protected EList<LogicalOperator> logicalOperators;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,23 +98,13 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 	 * @generated
 	 */
 	@Override
-	public LogicalOperator getLogicalOperator()
+	public EList<LogicalOperator> getLogicalOperators()
 	{
-		return logicalOperator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setLogicalOperator(LogicalOperator newLogicalOperator)
-	{
-		LogicalOperator oldLogicalOperator = logicalOperator;
-		logicalOperator = newLogicalOperator == null ? LOGICAL_OPERATOR_EDEFAULT : newLogicalOperator;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR, oldLogicalOperator, logicalOperator));
+		if (logicalOperators == null)
+		{
+			logicalOperators = new EObjectContainmentEList<LogicalOperator>(LogicalOperator.class, this, SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATORS);
+		}
+		return logicalOperators;
 	}
 
 	/**
@@ -142,6 +119,8 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 		{
 			case SmartCEPackage.COMPOSITE_CONDITION__CONDITIONS:
 				return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATORS:
+				return ((InternalEList<?>)getLogicalOperators()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -158,8 +137,8 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 		{
 			case SmartCEPackage.COMPOSITE_CONDITION__CONDITIONS:
 				return getConditions();
-			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
-				return getLogicalOperator();
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATORS:
+				return getLogicalOperators();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,8 +158,9 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 				getConditions().clear();
 				getConditions().addAll((Collection<? extends Condition>)newValue);
 				return;
-			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
-				setLogicalOperator((LogicalOperator)newValue);
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATORS:
+				getLogicalOperators().clear();
+				getLogicalOperators().addAll((Collection<? extends LogicalOperator>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -199,8 +179,8 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 			case SmartCEPackage.COMPOSITE_CONDITION__CONDITIONS:
 				getConditions().clear();
 				return;
-			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
-				setLogicalOperator(LOGICAL_OPERATOR_EDEFAULT);
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATORS:
+				getLogicalOperators().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -218,27 +198,10 @@ public class CompositeConditionImpl extends ConditionImpl implements CompositeCo
 		{
 			case SmartCEPackage.COMPOSITE_CONDITION__CONDITIONS:
 				return conditions != null && !conditions.isEmpty();
-			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATOR:
-				return logicalOperator != LOGICAL_OPERATOR_EDEFAULT;
+			case SmartCEPackage.COMPOSITE_CONDITION__LOGICAL_OPERATORS:
+				return logicalOperators != null && !logicalOperators.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString()
-	{
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (logicalOperator: ");
-		result.append(logicalOperator);
-		result.append(')');
-		return result.toString();
 	}
 
 } //CompositeConditionImpl

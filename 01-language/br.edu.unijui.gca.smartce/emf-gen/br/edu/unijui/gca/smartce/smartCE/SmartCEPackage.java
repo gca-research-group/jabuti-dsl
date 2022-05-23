@@ -1113,13 +1113,13 @@ public interface SmartCEPackage extends EPackage
 	int COMPOSITE_CONDITION__CONDITIONS = CONDITION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Logical Operator</b></em>' attribute.
+	 * The feature id for the '<em><b>Logical Operators</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_CONDITION__LOGICAL_OPERATOR = CONDITION_FEATURE_COUNT + 1;
+	int COMPOSITE_CONDITION__LOGICAL_OPERATORS = CONDITION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Composite Condition</em>' class.
@@ -1223,6 +1223,34 @@ public interface SmartCEPackage extends EPackage
 	int EVENT_LOG_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.LogicalOperatorImpl <em>Logical Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.LogicalOperatorImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
+	 * @generated
+	 */
+	int LOGICAL_OPERATOR = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_OPERATOR__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Logical Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_OPERATOR_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1230,7 +1258,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAY = 30;
+	int WEEK_DAY = 31;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.TimeUnit <em>Time Unit</em>}' enum.
@@ -1240,17 +1268,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 31;
-
-	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
-	 * @generated
-	 */
-	int LOGICAL_OPERATOR = 32;
+	int TIME_UNIT = 32;
 
 
 	/**
@@ -2129,15 +2147,15 @@ public interface SmartCEPackage extends EPackage
 	EReference getCompositeCondition_Conditions();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperator <em>Logical Operator</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperators <em>Logical Operators</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Logical Operator</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperator()
+	 * @return the meta object for the containment reference list '<em>Logical Operators</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperators()
 	 * @see #getCompositeCondition()
 	 * @generated
 	 */
-	EAttribute getCompositeCondition_LogicalOperator();
+	EReference getCompositeCondition_LogicalOperators();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessRule <em>Business Rule</em>}'.
@@ -2170,6 +2188,27 @@ public interface SmartCEPackage extends EPackage
 	EClass getEventLog();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logical Operator</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
+	 * @generated
+	 */
+	EClass getLogicalOperator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator#getName()
+	 * @see #getLogicalOperator()
+	 * @generated
+	 */
+	EAttribute getLogicalOperator_Name();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2188,16 +2227,6 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getTimeUnit();
-
-	/**
-	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Logical Operator</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
-	 * @generated
-	 */
-	EEnum getLogicalOperator();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2933,12 +2962,12 @@ public interface SmartCEPackage extends EPackage
 		EReference COMPOSITE_CONDITION__CONDITIONS = eINSTANCE.getCompositeCondition_Conditions();
 
 		/**
-		 * The meta object literal for the '<em><b>Logical Operator</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Logical Operators</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPOSITE_CONDITION__LOGICAL_OPERATOR = eINSTANCE.getCompositeCondition_LogicalOperator();
+		EReference COMPOSITE_CONDITION__LOGICAL_OPERATORS = eINSTANCE.getCompositeCondition_LogicalOperators();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessRuleImpl <em>Business Rule</em>}' class.
@@ -2971,6 +3000,24 @@ public interface SmartCEPackage extends EPackage
 		EClass EVENT_LOG = eINSTANCE.getEventLog();
 
 		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.LogicalOperatorImpl <em>Logical Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.LogicalOperatorImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
+		 * @generated
+		 */
+		EClass LOGICAL_OPERATOR = eINSTANCE.getLogicalOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGICAL_OPERATOR__NAME = eINSTANCE.getLogicalOperator_Name();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2989,16 +3036,6 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EEnum TIME_UNIT = eINSTANCE.getTimeUnit();
-
-		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
-		 * @generated
-		 */
-		EEnum LOGICAL_OPERATOR = eINSTANCE.getLogicalOperator();
 
 	}
 

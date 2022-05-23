@@ -13,6 +13,7 @@ import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
+import br.edu.unijui.gca.smartce.smartCE.LogicalOperator;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
@@ -80,6 +81,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SmartCEPackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
+				return; 
+			case SmartCEPackage.LOGICAL_OPERATOR:
+				sequence_LogicalOperator(context, (LogicalOperator) semanticObject); 
 				return; 
 			case SmartCEPackage.MESSAGE_CONTENT:
 				sequence_MessageContent(context, (MessageContent) semanticObject); 
@@ -301,7 +305,12 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     CompositeCondition returns CompositeCondition
 	 *
 	 * Constraint:
-	 *     (conditions+=BusinessRule logicalOperator=LogicalOperator conditions+=BusinessRule)
+	 *     (
+	 *         conditions+=BusinessRule 
+	 *         logicalOperators+=LogicalOperator 
+	 *         conditions+=BusinessRule 
+	 *         (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_CompositeCondition(ISerializationContext context, CompositeCondition semanticObject) {
@@ -374,6 +383,20 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     LogicalOperator returns LogicalOperator
+	 *
+	 * Constraint:
+	 *     (name='AND' | name='OR' | name='NOT')
+	 * </pre>
+	 */
+	protected void sequence_LogicalOperator(ISerializationContext context, LogicalOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

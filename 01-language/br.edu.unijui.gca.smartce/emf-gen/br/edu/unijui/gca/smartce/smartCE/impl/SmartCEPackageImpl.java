@@ -269,6 +269,13 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass logicalOperatorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum weekDayEEnum = null;
 
 	/**
@@ -277,13 +284,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EEnum timeUnitEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum logicalOperatorEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1256,9 +1256,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getCompositeCondition_LogicalOperator()
+	public EReference getCompositeCondition_LogicalOperators()
 	{
-		return (EAttribute)compositeConditionEClass.getEStructuralFeatures().get(1);
+		return (EReference)compositeConditionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1300,6 +1300,28 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getLogicalOperator()
+	{
+		return logicalOperatorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getLogicalOperator_Name()
+	{
+		return (EAttribute)logicalOperatorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWeekDay()
 	{
 		return weekDayEEnum;
@@ -1314,17 +1336,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	public EEnum getTimeUnit()
 	{
 		return timeUnitEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getLogicalOperator()
-	{
-		return logicalOperatorEEnum;
 	}
 
 	/**
@@ -1466,7 +1477,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		compositeConditionEClass = createEClass(COMPOSITE_CONDITION);
 		createEReference(compositeConditionEClass, COMPOSITE_CONDITION__CONDITIONS);
-		createEAttribute(compositeConditionEClass, COMPOSITE_CONDITION__LOGICAL_OPERATOR);
+		createEReference(compositeConditionEClass, COMPOSITE_CONDITION__LOGICAL_OPERATORS);
 
 		businessRuleEClass = createEClass(BUSINESS_RULE);
 
@@ -1474,10 +1485,12 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		eventLogEClass = createEClass(EVENT_LOG);
 
+		logicalOperatorEClass = createEClass(LOGICAL_OPERATOR);
+		createEAttribute(logicalOperatorEClass, LOGICAL_OPERATOR__NAME);
+
 		// Create enums
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
-		logicalOperatorEEnum = createEEnum(LOGICAL_OPERATOR);
 	}
 
 	/**
@@ -1637,13 +1650,16 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		initEClass(compositeConditionEClass, CompositeCondition.class, "CompositeCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCompositeCondition_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, CompositeCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCompositeCondition_LogicalOperator(), this.getLogicalOperator(), "logicalOperator", null, 0, 1, CompositeCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCompositeCondition_LogicalOperators(), this.getLogicalOperator(), null, "logicalOperators", null, 0, -1, CompositeCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessRuleEClass, BusinessRule.class, "BusinessRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(businessActionEClass, BusinessAction.class, "BusinessAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(eventLogEClass, EventLog.class, "EventLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(logicalOperatorEClass, LogicalOperator.class, "LogicalOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getLogicalOperator_Name(), ecorePackage.getEString(), "name", null, 0, 1, LogicalOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekDayEEnum, WeekDay.class, "WeekDay");
@@ -1663,11 +1679,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		addEEnumLiteral(timeUnitEEnum, TimeUnit.WEEK);
 		addEEnumLiteral(timeUnitEEnum, TimeUnit.MONTH);
 		addEEnumLiteral(timeUnitEEnum, TimeUnit.YEAR);
-
-		initEEnum(logicalOperatorEEnum, LogicalOperator.class, "LogicalOperator");
-		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.AND);
-		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.OR);
-		addEEnumLiteral(logicalOperatorEEnum, LogicalOperator.NOT);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -125,6 +125,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.COMPOSITE_CONDITION: return createCompositeCondition();
 			case SmartCEPackage.BUSINESS_ACTION: return createBusinessAction();
 			case SmartCEPackage.EVENT_LOG: return createEventLog();
+			case SmartCEPackage.LOGICAL_OPERATOR: return createLogicalOperator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -144,8 +145,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return createWeekDayFromString(eDataType, initialValue);
 			case SmartCEPackage.TIME_UNIT:
 				return createTimeUnitFromString(eDataType, initialValue);
-			case SmartCEPackage.LOGICAL_OPERATOR:
-				return createLogicalOperatorFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -165,8 +164,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return convertWeekDayToString(eDataType, instanceValue);
 			case SmartCEPackage.TIME_UNIT:
 				return convertTimeUnitToString(eDataType, instanceValue);
-			case SmartCEPackage.LOGICAL_OPERATOR:
-				return convertLogicalOperatorToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -513,6 +510,18 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public LogicalOperator createLogicalOperator()
+	{
+		LogicalOperatorImpl logicalOperator = new LogicalOperatorImpl();
+		return logicalOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public WeekDay createWeekDayFromString(EDataType eDataType, String initialValue)
 	{
 		WeekDay result = WeekDay.get(initialValue);
@@ -548,28 +557,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	public String convertTimeUnitToString(EDataType eDataType, Object instanceValue)
-	{
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public LogicalOperator createLogicalOperatorFromString(EDataType eDataType, String initialValue)
-	{
-		LogicalOperator result = LogicalOperator.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertLogicalOperatorToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

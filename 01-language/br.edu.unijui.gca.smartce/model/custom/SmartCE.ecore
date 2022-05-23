@@ -140,14 +140,13 @@
   <eClassifiers xsi:type="ecore:EClass" name="CompositeCondition" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
         eType="#//Condition" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="logicalOperator" eType="#//LogicalOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperators" upperBound="-1"
+        eType="#//LogicalOperator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessRule" abstract="true" eSuperTypes="#//Condition"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="LogicalOperator">
-    <eLiterals name="AND"/>
-    <eLiterals name="OR" value="1"/>
-    <eLiterals name="NOT" value="2"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessAction" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventLog" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

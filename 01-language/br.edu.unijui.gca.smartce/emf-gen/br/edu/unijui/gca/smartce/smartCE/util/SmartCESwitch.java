@@ -19,6 +19,7 @@ import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LiteralValue;
+import br.edu.unijui.gca.smartce.smartCE.LogicalOperator;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
@@ -336,6 +337,13 @@ public class SmartCESwitch<T> extends Switch<T>
 				EventLog eventLog = (EventLog)theEObject;
 				T result = caseEventLog(eventLog);
 				if (result == null) result = caseAction(eventLog);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.LOGICAL_OPERATOR:
+			{
+				LogicalOperator logicalOperator = (LogicalOperator)theEObject;
+				T result = caseLogicalOperator(logicalOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -819,6 +827,22 @@ public class SmartCESwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseEventLog(EventLog object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logical Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logical Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogicalOperator(LogicalOperator object)
 	{
 		return null;
 	}

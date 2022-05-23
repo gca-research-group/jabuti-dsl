@@ -15,7 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getConditions <em>Conditions</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperator <em>Logical Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperators <em>Logical Operators</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getCompositeCondition()
@@ -37,28 +37,15 @@ public interface CompositeCondition extends Condition
 	EList<Condition> getConditions();
 
 	/**
-	 * Returns the value of the '<em><b>Logical Operator</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator}.
+	 * Returns the value of the '<em><b>Logical Operators</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Logical Operator</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
-	 * @see #setLogicalOperator(LogicalOperator)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getCompositeCondition_LogicalOperator()
-	 * @model
+	 * @return the value of the '<em>Logical Operators</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getCompositeCondition_LogicalOperators()
+	 * @model containment="true"
 	 * @generated
 	 */
-	LogicalOperator getLogicalOperator();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition#getLogicalOperator <em>Logical Operator</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Logical Operator</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.LogicalOperator
-	 * @see #getLogicalOperator()
-	 * @generated
-	 */
-	void setLogicalOperator(LogicalOperator value);
+	EList<LogicalOperator> getLogicalOperators();
 
 } // CompositeCondition

@@ -276,6 +276,15 @@ public interface SmartCEFactory extends EFactory
 	EventLog createEventLog();
 
 	/**
+	 * Returns a new object of class '<em>Logical Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logical Operator</em>'.
+	 * @generated
+	 */
+	LogicalOperator createLogicalOperator();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
