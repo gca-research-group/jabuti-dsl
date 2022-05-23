@@ -1,0 +1,26 @@
+import operations.* 
+
+Contract DeliveryHiring { 
+	beginDate = "2021-10-10 12:00:00"
+	dueDate = "2021-10-20 10:00:00"
+	
+	application = deliverySystem : "Delivery system"
+	process = integrationProcess : "Integration process"
+	
+	Right requestDelivery {
+		description = "Setting the days and hours to request a delivery and the maximum delivery distance"
+		rolePlayer integrationProcess
+		rolePlayer.perform(Operation.REQUEST)
+		
+		condition {
+			BusinessDay(Monday, Tuesday) AND MessageContent("Content")
+		}
+		
+		onBreach(notifyFailing, "Request made outside of allowed hours or distance limit exceeded")
+	}
+	
+	Action notifyFailing(message : String ){
+		notyfyParies(message)
+	}
+	
+}

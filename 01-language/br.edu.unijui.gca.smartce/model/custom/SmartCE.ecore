@@ -148,4 +148,6 @@
     <eLiterals name="OR" value="1"/>
     <eLiterals name="NOT" value="2"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessAction" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventLog" eSuperTypes="#//Action"/>
 </ecore:EPackage>

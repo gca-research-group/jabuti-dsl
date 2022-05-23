@@ -6,11 +6,13 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
@@ -121,6 +123,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.BUSINESS_TIME: return createBusinessTime();
 			case SmartCEPackage.MESSAGE_CONTENT: return createMessageContent();
 			case SmartCEPackage.COMPOSITE_CONDITION: return createCompositeCondition();
+			case SmartCEPackage.BUSINESS_ACTION: return createBusinessAction();
+			case SmartCEPackage.EVENT_LOG: return createEventLog();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -478,6 +482,30 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		CompositeConditionImpl compositeCondition = new CompositeConditionImpl();
 		return compositeCondition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BusinessAction createBusinessAction()
+	{
+		BusinessActionImpl businessAction = new BusinessActionImpl();
+		return businessAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EventLog createEventLog()
+	{
+		EventLogImpl eventLog = new EventLogImpl();
+		return eventLog;
 	}
 
 	/**

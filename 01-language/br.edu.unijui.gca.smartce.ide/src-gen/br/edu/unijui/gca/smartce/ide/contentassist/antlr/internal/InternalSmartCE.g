@@ -1426,25 +1426,25 @@ rule__TimeUnit__Alternatives
 	|
 	(
 		{ before(grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3()); }
-		('day')
+		('Day')
 		{ after(grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3()); }
 	)
 	|
 	(
 		{ before(grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4()); }
-		('week')
+		('Week')
 		{ after(grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4()); }
 	)
 	|
 	(
 		{ before(grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5()); }
-		('month')
+		('Month')
 		{ after(grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5()); }
 	)
 	|
 	(
 		{ before(grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6()); }
-		('year')
+		('Year')
 		{ after(grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6()); }
 	)
 ;

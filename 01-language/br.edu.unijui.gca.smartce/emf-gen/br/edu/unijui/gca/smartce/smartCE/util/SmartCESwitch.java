@@ -6,6 +6,7 @@ package br.edu.unijui.gca.smartce.smartCE.util;
 import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
@@ -13,6 +14,7 @@ import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
@@ -318,6 +320,22 @@ public class SmartCESwitch<T> extends Switch<T>
 				BusinessRule businessRule = (BusinessRule)theEObject;
 				T result = caseBusinessRule(businessRule);
 				if (result == null) result = caseCondition(businessRule);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.BUSINESS_ACTION:
+			{
+				BusinessAction businessAction = (BusinessAction)theEObject;
+				T result = caseBusinessAction(businessAction);
+				if (result == null) result = caseAction(businessAction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.EVENT_LOG:
+			{
+				EventLog eventLog = (EventLog)theEObject;
+				T result = caseEventLog(eventLog);
+				if (result == null) result = caseAction(eventLog);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -769,6 +787,38 @@ public class SmartCESwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseBusinessRule(BusinessRule object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Business Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Business Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBusinessAction(BusinessAction object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Log</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Log</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventLog(EventLog object)
 	{
 		return null;
 	}

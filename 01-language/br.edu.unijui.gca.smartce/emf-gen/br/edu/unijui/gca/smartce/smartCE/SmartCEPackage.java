@@ -1131,6 +1131,98 @@ public interface SmartCEPackage extends EPackage
 	int COMPOSITE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessActionImpl <em>Business Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessActionImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessAction()
+	 * @generated
+	 */
+	int BUSINESS_ACTION = 28;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_ACTION__NAME = ACTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_ACTION__PARAMETERS = ACTION__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_ACTION__STATEMENTS = ACTION__STATEMENTS;
+
+	/**
+	 * The number of structural features of the '<em>Business Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.EventLogImpl <em>Event Log</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.EventLogImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getEventLog()
+	 * @generated
+	 */
+	int EVENT_LOG = 29;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_LOG__NAME = ACTION__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_LOG__PARAMETERS = ACTION__PARAMETERS;
+
+	/**
+	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_LOG__STATEMENTS = ACTION__STATEMENTS;
+
+	/**
+	 * The number of structural features of the '<em>Event Log</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_LOG_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1138,7 +1230,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAY = 28;
+	int WEEK_DAY = 30;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.TimeUnit <em>Time Unit</em>}' enum.
@@ -1148,7 +1240,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 29;
+	int TIME_UNIT = 31;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.LogicalOperator <em>Logical Operator</em>}' enum.
@@ -1158,7 +1250,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
 	 * @generated
 	 */
-	int LOGICAL_OPERATOR = 30;
+	int LOGICAL_OPERATOR = 32;
 
 
 	/**
@@ -2058,6 +2150,26 @@ public interface SmartCEPackage extends EPackage
 	EClass getBusinessRule();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessAction <em>Business Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Business Action</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessAction
+	 * @generated
+	 */
+	EClass getBusinessAction();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.EventLog <em>Event Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Event Log</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.EventLog
+	 * @generated
+	 */
+	EClass getEventLog();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2837,6 +2949,26 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass BUSINESS_RULE = eINSTANCE.getBusinessRule();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessActionImpl <em>Business Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessActionImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessAction()
+		 * @generated
+		 */
+		EClass BUSINESS_ACTION = eINSTANCE.getBusinessAction();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.EventLogImpl <em>Event Log</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.EventLogImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getEventLog()
+		 * @generated
+		 */
+		EClass EVENT_LOG = eINSTANCE.getEventLog();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
