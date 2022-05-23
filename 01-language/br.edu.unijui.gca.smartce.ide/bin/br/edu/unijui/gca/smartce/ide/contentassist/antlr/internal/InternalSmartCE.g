@@ -999,32 +999,32 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule WeekDays
-ruleWeekDays
+// Rule WeekDay
+ruleWeekDay
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getWeekDaysAccess().getAlternatives()); }
-		(rule__WeekDays__Alternatives)
-		{ after(grammarAccess.getWeekDaysAccess().getAlternatives()); }
+		{ before(grammarAccess.getWeekDayAccess().getAlternatives()); }
+		(rule__WeekDay__Alternatives)
+		{ after(grammarAccess.getWeekDayAccess().getAlternatives()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-// Rule UnitTime
-ruleUnitTime
+// Rule TimeUnit
+ruleTimeUnit
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration()); }
-		('Second')
-		{ after(grammarAccess.getUnitTimeAccess().getSECONDEnumLiteralDeclaration()); }
+		{ before(grammarAccess.getTimeUnitAccess().getAlternatives()); }
+		(rule__TimeUnit__Alternatives)
+		{ after(grammarAccess.getTimeUnitAccess().getAlternatives()); }
 	)
 ;
 finally {
@@ -1350,21 +1350,102 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__WeekDays__Alternatives
+rule__WeekDay__Alternatives
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0()); }
-		('Monday')
-		{ after(grammarAccess.getWeekDaysAccess().getMONDAYEnumLiteralDeclaration_0()); }
+		{ before(grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_0()); }
+		('Sunday')
+		{ after(grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_0()); }
 	)
 	|
 	(
-		{ before(grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1()); }
+		{ before(grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_1()); }
+		('Monday')
+		{ after(grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_2()); }
 		('Tuesday')
-		{ after(grammarAccess.getWeekDaysAccess().getTUESDAYEnumLiteralDeclaration_1()); }
+		{ after(grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_3()); }
+		('Wednesday')
+		{ after(grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_4()); }
+		('Thursday')
+		{ after(grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_4()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_5()); }
+		('Friday')
+		{ after(grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_5()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_6()); }
+		('Saturday')
+		{ after(grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_6()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__TimeUnit__Alternatives
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getTimeUnitAccess().getSECONDEnumLiteralDeclaration_0()); }
+		('Second')
+		{ after(grammarAccess.getTimeUnitAccess().getSECONDEnumLiteralDeclaration_0()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTimeUnitAccess().getMINUTEEnumLiteralDeclaration_1()); }
+		('Minute')
+		{ after(grammarAccess.getTimeUnitAccess().getMINUTEEnumLiteralDeclaration_1()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTimeUnitAccess().getHOUREnumLiteralDeclaration_2()); }
+		('Hour')
+		{ after(grammarAccess.getTimeUnitAccess().getHOUREnumLiteralDeclaration_2()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3()); }
+		('Day')
+		{ after(grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4()); }
+		('Week')
+		{ after(grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5()); }
+		('Month')
+		{ after(grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6()); }
+		('Year')
+		{ after(grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6()); }
 	)
 ;
 finally {
@@ -5483,9 +5564,9 @@ rule__OperationsLimit__TimeUnitAssignment_4
 	}
 :
 	(
-		{ before(grammarAccess.getOperationsLimitAccess().getTimeUnitUnitTimeEnumRuleCall_4_0()); }
-		ruleUnitTime
-		{ after(grammarAccess.getOperationsLimitAccess().getTimeUnitUnitTimeEnumRuleCall_4_0()); }
+		{ before(grammarAccess.getOperationsLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0()); }
+		ruleTimeUnit
+		{ after(grammarAccess.getOperationsLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0()); }
 	)
 ;
 finally {
@@ -5498,9 +5579,9 @@ rule__BusinessDay__StartAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getBusinessDayAccess().getStartWeekDaysEnumRuleCall_2_0()); }
-		ruleWeekDays
-		{ after(grammarAccess.getBusinessDayAccess().getStartWeekDaysEnumRuleCall_2_0()); }
+		{ before(grammarAccess.getBusinessDayAccess().getStartWeekDayEnumRuleCall_2_0()); }
+		ruleWeekDay
+		{ after(grammarAccess.getBusinessDayAccess().getStartWeekDayEnumRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -5513,9 +5594,9 @@ rule__BusinessDay__EndAssignment_4
 	}
 :
 	(
-		{ before(grammarAccess.getBusinessDayAccess().getEndWeekDaysEnumRuleCall_4_0()); }
-		ruleWeekDays
-		{ after(grammarAccess.getBusinessDayAccess().getEndWeekDaysEnumRuleCall_4_0()); }
+		{ before(grammarAccess.getBusinessDayAccess().getEndWeekDayEnumRuleCall_4_0()); }
+		ruleWeekDay
+		{ after(grammarAccess.getBusinessDayAccess().getEndWeekDayEnumRuleCall_4_0()); }
 	)
 ;
 finally {

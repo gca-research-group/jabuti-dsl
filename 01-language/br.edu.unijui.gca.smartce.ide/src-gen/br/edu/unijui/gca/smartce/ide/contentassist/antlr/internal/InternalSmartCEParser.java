@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Right'", "'Prohibition'", "'Obligation'", "'+'", "'-'", "'*'", "'/'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'day'", "'week'", "'month'", "'year'", "'AND'", "'OR'", "'NOT'", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'application'", "'process'", "'}'", "'description'", "'rolePlayer'", "'rolePlayer.perform('", "')'", "'condition'", "'onBreach'", "'Timeout'", "'('", "'OperationsLimit'", "','", "'BusinessDay'", "'BusinessTime'", "'MessageContent'", "':'", "'Action'", "'.'", "'.*'", "'&&'", "'||'", "'!'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'is'", "'as'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Right'", "'Prohibition'", "'Obligation'", "'+'", "'-'", "'*'", "'/'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'", "'AND'", "'OR'", "'NOT'", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'application'", "'process'", "'}'", "'description'", "'rolePlayer'", "'rolePlayer.perform('", "')'", "'condition'", "'onBreach'", "'Timeout'", "'('", "'OperationsLimit'", "','", "'BusinessDay'", "'BusinessTime'", "'MessageContent'", "':'", "'Action'", "'.'", "'.*'", "'&&'", "'||'", "'!'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'is'", "'as'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -4537,13 +4537,13 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeUnit__Alternatives"
-    // InternalSmartCE.g:1404:1: rule__TimeUnit__Alternatives : ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'day' ) ) | ( ( 'week' ) ) | ( ( 'month' ) ) | ( ( 'year' ) ) );
+    // InternalSmartCE.g:1404:1: rule__TimeUnit__Alternatives : ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'Day' ) ) | ( ( 'Week' ) ) | ( ( 'Month' ) ) | ( ( 'Year' ) ) );
     public final void rule__TimeUnit__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1408:1: ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'day' ) ) | ( ( 'week' ) ) | ( ( 'month' ) ) | ( ( 'year' ) ) )
+            // InternalSmartCE.g:1408:1: ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'Day' ) ) | ( ( 'Week' ) ) | ( ( 'Month' ) ) | ( ( 'Year' ) ) )
             int alt13=7;
             switch ( input.LA(1) ) {
             case 25:
@@ -4653,14 +4653,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1427:2: ( ( 'day' ) )
+                    // InternalSmartCE.g:1427:2: ( ( 'Day' ) )
                     {
-                    // InternalSmartCE.g:1427:2: ( ( 'day' ) )
-                    // InternalSmartCE.g:1428:3: ( 'day' )
+                    // InternalSmartCE.g:1427:2: ( ( 'Day' ) )
+                    // InternalSmartCE.g:1428:3: ( 'Day' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3()); 
-                    // InternalSmartCE.g:1429:3: ( 'day' )
-                    // InternalSmartCE.g:1429:4: 'day'
+                    // InternalSmartCE.g:1429:3: ( 'Day' )
+                    // InternalSmartCE.g:1429:4: 'Day'
                     {
                     match(input,28,FOLLOW_2); 
 
@@ -4674,14 +4674,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1433:2: ( ( 'week' ) )
+                    // InternalSmartCE.g:1433:2: ( ( 'Week' ) )
                     {
-                    // InternalSmartCE.g:1433:2: ( ( 'week' ) )
-                    // InternalSmartCE.g:1434:3: ( 'week' )
+                    // InternalSmartCE.g:1433:2: ( ( 'Week' ) )
+                    // InternalSmartCE.g:1434:3: ( 'Week' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4()); 
-                    // InternalSmartCE.g:1435:3: ( 'week' )
-                    // InternalSmartCE.g:1435:4: 'week'
+                    // InternalSmartCE.g:1435:3: ( 'Week' )
+                    // InternalSmartCE.g:1435:4: 'Week'
                     {
                     match(input,29,FOLLOW_2); 
 
@@ -4695,14 +4695,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:1439:2: ( ( 'month' ) )
+                    // InternalSmartCE.g:1439:2: ( ( 'Month' ) )
                     {
-                    // InternalSmartCE.g:1439:2: ( ( 'month' ) )
-                    // InternalSmartCE.g:1440:3: ( 'month' )
+                    // InternalSmartCE.g:1439:2: ( ( 'Month' ) )
+                    // InternalSmartCE.g:1440:3: ( 'Month' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5()); 
-                    // InternalSmartCE.g:1441:3: ( 'month' )
-                    // InternalSmartCE.g:1441:4: 'month'
+                    // InternalSmartCE.g:1441:3: ( 'Month' )
+                    // InternalSmartCE.g:1441:4: 'Month'
                     {
                     match(input,30,FOLLOW_2); 
 
@@ -4716,14 +4716,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCE.g:1445:2: ( ( 'year' ) )
+                    // InternalSmartCE.g:1445:2: ( ( 'Year' ) )
                     {
-                    // InternalSmartCE.g:1445:2: ( ( 'year' ) )
-                    // InternalSmartCE.g:1446:3: ( 'year' )
+                    // InternalSmartCE.g:1445:2: ( ( 'Year' ) )
+                    // InternalSmartCE.g:1446:3: ( 'Year' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6()); 
-                    // InternalSmartCE.g:1447:3: ( 'year' )
-                    // InternalSmartCE.g:1447:4: 'year'
+                    // InternalSmartCE.g:1447:3: ( 'Year' )
+                    // InternalSmartCE.g:1447:4: 'Year'
                     {
                     match(input,31,FOLLOW_2); 
 

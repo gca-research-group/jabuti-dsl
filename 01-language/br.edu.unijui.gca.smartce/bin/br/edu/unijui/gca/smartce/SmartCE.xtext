@@ -68,7 +68,7 @@ enum WeekDay:
 ;
     
 enum TimeUnit:
-    SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='day' | WEEK='week' | MONTH='month' | YEAR='year'
+    SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='Day' | WEEK='Week' | MONTH='Month' | YEAR='Year'
 ;
     
 enum LogicalOperator:

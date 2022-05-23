@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'application'", "'process'", "'}'", "'Right'", "'Prohibition'", "'Obligation'", "'description'", "'rolePlayer'", "'rolePlayer.perform('", "')'", "'condition'", "'onBreach'", "'Timeout'", "'('", "'OperationsLimit'", "','", "'BusinessDay'", "'BusinessTime'", "'MessageContent'", "':'", "'Action'", "'&&'", "'||'", "'!'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "'.'", "'.*'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'day'", "'week'", "'month'", "'year'", "'AND'", "'OR'", "'NOT'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'application'", "'process'", "'}'", "'Right'", "'Prohibition'", "'Obligation'", "'description'", "'rolePlayer'", "'rolePlayer.perform('", "')'", "'condition'", "'onBreach'", "'Timeout'", "'('", "'OperationsLimit'", "','", "'BusinessDay'", "'BusinessTime'", "'MessageContent'", "':'", "'Action'", "'&&'", "'||'", "'!'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "'.'", "'.*'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'", "'AND'", "'OR'", "'NOT'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -6419,7 +6419,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeUnit"
-    // InternalSmartCE.g:2555:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) ) ;
+    // InternalSmartCE.g:2555:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) ;
     public final Enumerator ruleTimeUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -6435,10 +6435,10 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2561:2: ( ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) ) )
-            // InternalSmartCE.g:2562:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) )
+            // InternalSmartCE.g:2561:2: ( ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) )
+            // InternalSmartCE.g:2562:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
             {
-            // InternalSmartCE.g:2562:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'day' ) | (enumLiteral_4= 'week' ) | (enumLiteral_5= 'month' ) | (enumLiteral_6= 'year' ) )
+            // InternalSmartCE.g:2562:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
             int alt25=7;
             switch ( input.LA(1) ) {
             case 62:
@@ -6536,10 +6536,10 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:2587:3: (enumLiteral_3= 'day' )
+                    // InternalSmartCE.g:2587:3: (enumLiteral_3= 'Day' )
                     {
-                    // InternalSmartCE.g:2587:3: (enumLiteral_3= 'day' )
-                    // InternalSmartCE.g:2588:4: enumLiteral_3= 'day'
+                    // InternalSmartCE.g:2587:3: (enumLiteral_3= 'Day' )
+                    // InternalSmartCE.g:2588:4: enumLiteral_3= 'Day'
                     {
                     enumLiteral_3=(Token)match(input,65,FOLLOW_2); 
 
@@ -6553,10 +6553,10 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:2595:3: (enumLiteral_4= 'week' )
+                    // InternalSmartCE.g:2595:3: (enumLiteral_4= 'Week' )
                     {
-                    // InternalSmartCE.g:2595:3: (enumLiteral_4= 'week' )
-                    // InternalSmartCE.g:2596:4: enumLiteral_4= 'week'
+                    // InternalSmartCE.g:2595:3: (enumLiteral_4= 'Week' )
+                    // InternalSmartCE.g:2596:4: enumLiteral_4= 'Week'
                     {
                     enumLiteral_4=(Token)match(input,66,FOLLOW_2); 
 
@@ -6570,10 +6570,10 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:2603:3: (enumLiteral_5= 'month' )
+                    // InternalSmartCE.g:2603:3: (enumLiteral_5= 'Month' )
                     {
-                    // InternalSmartCE.g:2603:3: (enumLiteral_5= 'month' )
-                    // InternalSmartCE.g:2604:4: enumLiteral_5= 'month'
+                    // InternalSmartCE.g:2603:3: (enumLiteral_5= 'Month' )
+                    // InternalSmartCE.g:2604:4: enumLiteral_5= 'Month'
                     {
                     enumLiteral_5=(Token)match(input,67,FOLLOW_2); 
 
@@ -6587,10 +6587,10 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCE.g:2611:3: (enumLiteral_6= 'year' )
+                    // InternalSmartCE.g:2611:3: (enumLiteral_6= 'Year' )
                     {
-                    // InternalSmartCE.g:2611:3: (enumLiteral_6= 'year' )
-                    // InternalSmartCE.g:2612:4: enumLiteral_6= 'year'
+                    // InternalSmartCE.g:2611:3: (enumLiteral_6= 'Year' )
+                    // InternalSmartCE.g:2612:4: enumLiteral_6= 'Year'
                     {
                     enumLiteral_6=(Token)match(input,68,FOLLOW_2); 
 
