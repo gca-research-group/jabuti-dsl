@@ -6,6 +6,7 @@ package br.edu.unijui.gca.smartce.smartCE.util;
 import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
@@ -13,6 +14,7 @@ import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
@@ -241,6 +243,16 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseBusinessRule(BusinessRule object)
 			{
 				return createBusinessRuleAdapter();
+			}
+			@Override
+			public Adapter caseBusinessAction(BusinessAction object)
+			{
+				return createBusinessActionAdapter();
+			}
+			@Override
+			public Adapter caseEventLog(EventLog object)
+			{
+				return createEventLogAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -680,6 +692,36 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createBusinessRuleAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessAction <em>Business Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessAction
+	 * @generated
+	 */
+	public Adapter createBusinessActionAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.EventLog <em>Event Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.EventLog
+	 * @generated
+	 */
+	public Adapter createEventLogAdapter()
 	{
 		return null;
 	}

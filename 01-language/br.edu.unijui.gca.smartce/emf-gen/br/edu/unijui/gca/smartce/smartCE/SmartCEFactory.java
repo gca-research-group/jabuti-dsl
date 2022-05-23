@@ -258,6 +258,24 @@ public interface SmartCEFactory extends EFactory
 	CompositeCondition createCompositeCondition();
 
 	/**
+	 * Returns a new object of class '<em>Business Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Business Action</em>'.
+	 * @generated
+	 */
+	BusinessAction createBusinessAction();
+
+	/**
+	 * Returns a new object of class '<em>Event Log</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Event Log</em>'.
+	 * @generated
+	 */
+	EventLog createEventLog();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

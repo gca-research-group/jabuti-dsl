@@ -6,6 +6,7 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
@@ -13,6 +14,7 @@ import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
@@ -247,6 +249,20 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EClass businessRuleEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass businessActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eventLogEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1262,6 +1278,28 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getBusinessAction()
+	{
+		return businessActionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getEventLog()
+	{
+		return eventLogEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWeekDay()
 	{
 		return weekDayEEnum;
@@ -1432,6 +1470,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		businessRuleEClass = createEClass(BUSINESS_RULE);
 
+		businessActionEClass = createEClass(BUSINESS_ACTION);
+
+		eventLogEClass = createEClass(EVENT_LOG);
+
 		// Create enums
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
@@ -1483,6 +1525,8 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		messageContentEClass.getESuperTypes().add(this.getBusinessRule());
 		compositeConditionEClass.getESuperTypes().add(this.getCondition());
 		businessRuleEClass.getESuperTypes().add(this.getCondition());
+		businessActionEClass.getESuperTypes().add(this.getAction());
+		eventLogEClass.getESuperTypes().add(this.getAction());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contractEClass, Contract.class, "Contract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1596,6 +1640,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEAttribute(getCompositeCondition_LogicalOperator(), this.getLogicalOperator(), "logicalOperator", null, 0, 1, CompositeCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessRuleEClass, BusinessRule.class, "BusinessRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(businessActionEClass, BusinessAction.class, "BusinessAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(eventLogEClass, EventLog.class, "EventLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekDayEEnum, WeekDay.class, "WeekDay");

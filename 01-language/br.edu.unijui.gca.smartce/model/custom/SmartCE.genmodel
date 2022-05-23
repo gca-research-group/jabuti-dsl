@@ -135,5 +135,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//CompositeCondition/logicalOperator"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//BusinessRule"/>
+    <genClasses ecoreClass="SmartCE.ecore#//BusinessAction"/>
+    <genClasses ecoreClass="SmartCE.ecore#//EventLog"/>
   </genPackages>
 </genmodel:GenModel>
