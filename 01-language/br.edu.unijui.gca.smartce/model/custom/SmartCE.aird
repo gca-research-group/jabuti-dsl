@@ -5,7 +5,7 @@
     <semanticResources>SmartCE.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Wl91sEMhEeyC-MZhuBrocA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="d8d09554-0190-410f-bd04-0660e32079a6">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="a94ca20e-7505-4a4f-8bae-929ed2c9a5ec">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="SmartCE.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -469,7 +469,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_PGt1htVTEeyBXfCjMSqKRg"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_PGt1gdVTEeyBXfCjMSqKRg" fontName="Open Sans" fontHeight="8"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PGt1gtVTEeyBXfCjMSqKRg" x="-264" y="456" width="120" height="147"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_PGt1gtVTEeyBXfCjMSqKRg" x="-252" y="444" width="120" height="147"/>
         </children>
         <children xmi:type="notation:Node" xmi:id="_uebfQNVTEeyBXfCjMSqKRg" type="2003" element="_uePSANVTEeyBXfCjMSqKRg">
           <children xmi:type="notation:Node" xmi:id="_uebfQ9VTEeyBXfCjMSqKRg" type="5007"/>
