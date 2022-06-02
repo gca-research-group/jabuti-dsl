@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.6.0 <0.9.0;
-
+import "./UsefulFunctions.sol";
 // ----------------------------------------------------------------------------
 // BokkyPooBah's DateTime Library v1.01
 //
@@ -27,7 +27,7 @@ pragma solidity >=0.6.0 <0.9.0;
 // ----------------------------------------------------------------------------
 
  library DateTimeLibrary { 
-
+    
     uint constant SECONDS_PER_DAY = 24 * 60 * 60;
     uint constant SECONDS_PER_HOUR = 60 * 60;
     uint constant SECONDS_PER_MINUTE = 60;
@@ -41,6 +41,7 @@ pragma solidity >=0.6.0 <0.9.0;
     uint constant DOW_SAT = 6;
     uint constant DOW_SUN = 7;
 
+    
     // ------------------------------------------------------------------------
     // Calculate the number of days from 1970/01/01 to year/month/day using
     // the date conversion algorithm from
@@ -297,5 +298,102 @@ pragma solidity >=0.6.0 <0.9.0;
     function diffSeconds(uint fromTimestamp, uint toTimestamp) internal pure returns (uint _seconds) {
         require(fromTimestamp <= toTimestamp);
         _seconds = toTimestamp - fromTimestamp;
+    }
+   
+   
+   
+   
+   
+   
+   
+   /////////////////// FUNCTIONS TO CONVERT DATETIME FROM STRING TO DATE IN UINT TYPE E TIMESTAMP ////////////////
+    
+    function stringToTimestamp(string memory _dateTime)internal pure returns (uint256){
+        (uint year, uint month, uint day,
+         uint hour, uint minute, uint second) = splitStringDateTimeInto6uint(_dateTime);
+         return timestampFromDateTime(year, month, day, hour, minute, second);
+    }
+
+    function splitStringDateTimeInto6uint(string memory _dateTime) internal pure returns(uint,uint, uint, uint, uint, uint){
+        // 2022-01-01 08:00:00
+         string memory date = UsefulFunctions.getSubstring(_dateTime, 0, 9);     //  2022-01-01
+         string memory time = UsefulFunctions.getSubstring(_dateTime, 11, 18);   //  08:00:00
+
+         (uint year, uint month, uint day) = splitStringDateInto3uint(date);
+         (uint hour, uint min, uint second) = splitStringTimeInto3uint(time);
+        
+         return (year, month, day, hour, min, second);
+
+    }
+
+   function splitStringDateInto3uint(string memory _date) internal pure returns(uint, uint, uint){
+        uint year = getYearFromStringDate(_date);
+        uint month = getMonthFromStringDate(_date);
+        uint day = getDayFromStringDate(_date);
+
+        string memory str_day = UsefulFunctions.uint2String(day);
+        string memory str_month = UsefulFunctions.uint2String(month);
+        if(month == 2) {  
+            // adicionar          
+            require(day<=29, string(abi.encodePacked("*** There is no  day  ",str_day,"st in month ",str_month," ***")));
+        }else if(month==4 || month == 6 || month == 9 || month == 11){
+            require(day<=30, string(abi.encodePacked("*** There is no  day  ",str_day,"st in month ",str_month," ***")));
+        }else{
+            require(day<=31, string(abi.encodePacked("*** There is no  day  ",str_day,"st in month ",str_month," ***")));
+        }
+        
+        return (year, month, day);
+   } 
+
+   function splitStringTimeInto3uint(string memory _time) internal pure returns(uint, uint, uint){
+        uint hour = getHourFromStringTime(_time);
+        uint minute = getMinutesFromStringTime(_time);
+        uint second = getSecondsFromStringTime(_time);
+        return ( hour, minute, second);
+   }
+
+    function getYearFromStringDate(string memory _date)internal  pure returns (uint){
+        (uint year,bool hasError) = UsefulFunctions.stringToUint(UsefulFunctions.getSubstring(_date, 0, 3));
+        require(!hasError, "*** An overflow occurred while getting the substring year ***");
+        return year;
+    }
+
+    function getMonthFromStringDate(string memory _date) internal pure returns (uint){
+        (uint month, bool hasError) = UsefulFunctions.stringToUint(UsefulFunctions.getSubstring(_date,5, 6));
+        require(!hasError, "*** An overflow occurred while getting the substring month ***");
+        string memory str_month = UsefulFunctions.uint2String(month);
+        require(month>0 && month<=12, string(abi.encodePacked("*** The value ",str_month," is not a valide month ***")));
+        return month;
+    }
+    function getDayFromStringDate(string memory _date)internal pure returns (uint){
+        (uint day, bool hasError) = UsefulFunctions.stringToUint(UsefulFunctions.getSubstring(_date, 8, 9));
+        require(!hasError, "*** An overflow occurred while getting the substring day ***");
+        string memory str_day = UsefulFunctions.uint2String(day);
+        require(day>0 && day<=31, string(abi.encodePacked("*** The value ",str_day," is not a valide day ***")));
+        return day;
+    }
+
+    function getHourFromStringTime(string memory _time) internal pure returns(uint){
+        (uint hour, bool hasError) = UsefulFunctions.stringToUint(UsefulFunctions.getSubstring(_time, 0, 1));
+        require(!hasError, "*** An overflow occurred while getting the substring hour ***");
+        string memory str_hour = UsefulFunctions.uint2String(hour);
+        require(hour>=0 && hour<24, string(abi.encodePacked("*** The value ",str_hour," is not a valide hour ***")));
+       return hour; 
+    }
+  
+    function getMinutesFromStringTime(string memory _time) internal pure returns(uint){
+        (uint minute, bool hasError) = UsefulFunctions.stringToUint(UsefulFunctions.getSubstring(_time,3, 4));
+        require(!hasError, "*** An overflow occurred while getting the substring minute ***");
+        string memory str_min=UsefulFunctions.uint2String(minute);
+        require(minute>=0 && minute<60, string(abi.encodePacked("*** The value ",str_min," is not a valide minute ***")));
+        return minute;
+    }
+   
+    function getSecondsFromStringTime(string memory _time) internal pure returns(uint){
+        (uint second, bool hasError) = UsefulFunctions.stringToUint(UsefulFunctions.getSubstring(_time, 6, 7));
+        require(!hasError, "*** An overflow occurred while getting the substring second ***");
+        string memory str_sec=UsefulFunctions.uint2String(second);
+        require(second>=0 && second<60, string(abi.encodePacked("*** The value ",str_sec," is not a valide second ***")));
+        return second;
     }
 }

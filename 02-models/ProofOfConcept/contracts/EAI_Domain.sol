@@ -3,8 +3,9 @@ pragma solidity >= 0.6.0 < 0.9.0;
 pragma experimental 'ABIEncoderV2';
 import "./SafeMath.sol";
 import "./DateTimeLibrary.sol";
+import "./UsefulFunctions.sol";
 
-abstract contract EAI_Domain{
+contract EAI_Domain{
 
 
 uint constant SECOND = 1;
@@ -15,6 +16,14 @@ uint constant WEEK= 5;
 uint constant MONTH= 6;
 uint constant YEAR= 7;
 
+
+uint constant MONDAY=1;
+uint constant TUESDAY=2;
+uint constant WEDNESDAY=3;
+uint constant THURSDAY=4;
+uint constant FRIDAY=5;
+uint constant SATURDAY=6;
+uint constant SUNDAY=7;
 
 ////////////////// Define the necessary structs to compose the contract ////////////
     struct Party{
@@ -28,6 +37,16 @@ uint constant YEAR= 7;
         uint requestsPerformed;
         uint timeout;
     }
+
+    struct DateInterval{
+        uint start;
+        uint end;
+    }
+
+    struct  BusinessDay{
+        uint weekDay_start;
+        uint weekDay_end;
+   } 
 
     struct TimeInterval{ //  use to define a BusinessTime or NoBusinessTime
         uint start_hr;
@@ -43,7 +62,74 @@ uint constant YEAR= 7;
         uint timeout;
     }
 
-/////////////////////////// Funções referentes à struct OperationLimit ///////////////////////////////
+    struct DateTime{
+        uint year;
+        uint month;
+        uint day;
+        uint hour;
+        uint minute;
+        uint second;
+    }
+
+
+
+    
+    ////////////// Modifiers to define the contrains to execute a give function ////////////////
+  
+    modifier onlyByProcess(address _processAddress){
+       require(msg.sender == _processAddress, "Only PROCESS have the permission to execute this operation.");  
+       _;
+    }
+    
+    modifier onlyByApplication(address _applicationAddress){
+       require(msg.sender == _applicationAddress, "Only APPLICATION has the permission to execute this operation.");  
+       _;
+    }
+    
+    ////////////// Events to register the summary of a given function ////////////////
+   
+    event success(string  _logMessage);
+    event fail(string _logMessage);
+
+    
+    /////////////////// Funções referentes a struct BusinessDay /////////////////////////
+
+    function setBusinessDay(uint _start, uint _end)internal pure returns (BusinessDay memory){
+       // verifiar se os dias recebidos por parametros são validos. 
+        return BusinessDay(_start, _end);
+    }
+
+    function isBusinessDay(string memory _accessDateTime, BusinessDay storage businessDay)internal returns(bool){
+        // implementar a logica 
+        return true;
+    }
+
+    //////////////////// Funções referentes à struct TimeInterval ///////////////////
+
+    function  isIntoTimeInterval(string memory _accessDateTime, TimeInterval memory businessTime) internal returns(bool){
+        // implementar a logica
+        return true;
+    }
+
+
+    ///////////////// Funcões referentes à struct DateTime /////////////////////
+    
+    function setDateTime(string memory _dateTime)internal pure returns(DateTime memory){
+        (uint year, uint month, uint day, uint hour, uint minute, uint second) = DateTimeLibrary.splitStringDateTimeInto6uint(_dateTime);
+         DateTime memory dateTime = DateTime(year, month, day, hour, minute, second);
+        //DateTime memory dateTime = DateTime(1, 2, 3 , 4, 5 ,6 );
+       return dateTime;
+    }
+
+//     // comparar datas,( anos, meses, dias) e horas (hora, minutos e segundos)
+
+
+//     /////////////////////////// Funções referentes à struct OperationLimit ///////////////////////////////
+
+    function isOperationLimitExceeded(string memory _accessDateTime, OperationLimit memory operationLimit) internal pure returns(bool){
+        // implementar a logica
+        return false;
+    }
 
     function setOperationLimit(uint _operations, uint _timeUnit) internal pure returns (OperationLimit memory){
         return OperationLimit(_operations, timeInSeconds(_timeUnit), 0, 0);
@@ -74,58 +160,10 @@ uint constant YEAR= 7;
 
 /////////////////////////// Funções referentes à struct TimeInterval ///////////////////////////////
 
-    function stringDateToTimestamp(string memory _dateAndTime) public pure returns(uint){
-        uint dateTime;
-        uint year;
-        bool isValid;
-        ( year, isValid) = stringToUint(string(abi.encodePacked(bytes(_dateAndTime)[0],
-                                                            bytes(_dateAndTime)[1], 
-                                                            bytes(_dateAndTime)[2], 
-                                                            bytes(_dateAndTime)[3])));
-        return dateTime;
-    }
-
-    function setTimeInterval(string memory _start, string memory _end) public pure returns (TimeInterval memory){// testado e funcionado
-        uint hr_start; uint min_start; uint sec_start; uint hr_end; uint min_end; uint sec_end; bool hasError;
-
-        (hr_start,hasError) = stringToUint(string(abi.encodePacked(bytes(_start)[0], bytes(_start)[1])));
-        require(hasError == false && hr_start <24, "Invalid start hour");
-        (min_start,hasError) = stringToUint(string(abi.encodePacked(bytes(_start)[3], bytes(_start)[4])));
-        require(hasError == false && min_start <60, "Invalid start minute");
-        (sec_start,hasError) = stringToUint(string(abi.encodePacked(bytes(_start)[6], bytes(_start)[7])));
-        require(hasError == false && sec_start<60, "Invalid start second");
-        
-        (hr_end, hasError) = stringToUint(string(abi.encodePacked(bytes(_end)[0],bytes(_end)[1])));
-        require(hasError == false && hr_end<60, "Invalid end hour");
-        (min_end,hasError) = stringToUint(string(abi.encodePacked(bytes(_end)[3], bytes(_end)[4])));
-        require(hasError == false && min_end <60, "Invalid end minute");
-        (sec_end,hasError) = stringToUint(string(abi.encodePacked(bytes(_end)[6], bytes(_end)[7])));
-        require(hasError == false && sec_end<60, "Invalid end second");
-        // falta fazer as verificações se horas é menor que 24, minutos e segundos menor que 60 
-        
+    function setTimeInterval(string memory _start, string memory _end) internal pure returns (TimeInterval memory){// testado e funcionado
+        ( uint hr_start, uint min_start, uint sec_start) = DateTimeLibrary.splitStringTimeInto3uint(_start);
+        (uint hr_end, uint min_end, uint sec_end) = DateTimeLibrary.splitStringTimeInto3uint(_end);
         return TimeInterval( hr_start, min_start, sec_start, hr_end, min_end, sec_end);
-    }
-
-    function stringToUint(string memory _s) internal pure returns (uint, bool) { // testado e funcionado
-        bool hasError = false;
-        bytes memory b =  bytes(_s);
-        uint256 result = 0;
-        uint256 oldResult = 0;
-        for (uint i = 0; i < b.length; i++) { // c = b[i] was not needed
-            if (uint8(bytes(b)[i]) >= 48 && uint8(bytes(b)[i]) <= 57) {
-                // store old value so we can check for overflows
-                oldResult = result;
-                result = result * 10 + (uint8(b[i]) - 48); // bytes and int are not compatible with the operator -.
-                // prevent overflows
-                if(oldResult > result ) {
-                    // we can only get here if the result overflowed and is smaller than last stored value
-                    hasError = true;
-                }
-            } else {
-                hasError = true;
-            }
-        }
-        return (result, hasError); 
     }
 
     // função referente a struct TimeInterval, verifica se o _accessTime está de acordo com o intervalo definido
@@ -155,6 +193,7 @@ uint constant YEAR= 7;
             return false;            
         }
     }
-
-
+ 
+  
 }
+

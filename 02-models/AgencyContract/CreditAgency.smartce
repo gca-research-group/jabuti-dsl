@@ -15,7 +15,7 @@ Contract CreditAgency {
 		rolePlayer.perform( Operation.POLL)
 		
 		condition {
-			OperationsLimit(1000, Second) AND MessageContent("count(//CPF)=1")	
+			OperationsLimit(1000 by Second) AND MessageContent("count(//CPF)=1")	
 		}
 		
 		onBreach (notifyFailing, "Request limit by day exceeded or inconsistent message content")
@@ -27,7 +27,7 @@ Contract CreditAgency {
 		rolePlayer.perform(Operation.REQUEST)
 		
 		condition {		
-			BusinessTime("18:30:00", "7:30:00" )
+			BusinessTime("18:30:00" to "7:30:00" )
 		}	
 		onBreach(notifyFailing, "Request made outside of allowed hours")
 	}
@@ -43,7 +43,6 @@ Contract CreditAgency {
 		onBreach(notifyFailing, "Timeout for replying has been exceeded")	
 	}
 	
-	Action notifyFailing(message : String ){
-		notyfyParies(message)
-	}
+	EventLog notifyFailing(message : String )
+	
 } 
