@@ -132,7 +132,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Action returns Action
 	 *
 	 * Constraint:
-	 *     (name=ID parameters+=Variable parameters+=Variable* statements+=Expression)
+	 *     ((name=ID parameters+=Variable parameters+=Variable*) | (name=ID parameters+=Variable parameters+=Variable*))
 	 * </pre>
 	 */
 	protected void sequence_Action(ISerializationContext context, br.edu.unijui.gca.smartce.smartCE.Action semanticObject) {
@@ -249,9 +249,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getClauseAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getClauseAccess().getDescriptionSTRINGTerminalRuleCall_5_0(), semanticObject.getDescription());
 		feeder.accept(grammarAccess.getClauseAccess().getRolePlayerPartyIDTerminalRuleCall_7_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER, false));
-		feeder.accept(grammarAccess.getClauseAccess().getOperationOperationQualifiedNameParserRuleCall_9_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__OPERATION, false));
-		feeder.accept(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_13_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_16_0(), semanticObject.getOnBreach());
+		feeder.accept(grammarAccess.getClauseAccess().getOperationOperationQualifiedNameParserRuleCall_10_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__OPERATION, false));
+		feeder.accept(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_14_0(), semanticObject.getCondition());
+		feeder.accept(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_17_0(), semanticObject.getOnBreach());
 		feeder.finish();
 	}
 	

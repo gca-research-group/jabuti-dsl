@@ -31,7 +31,7 @@ Clause:
 	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
 		'description' '=' description=STRING
 		'rolePlayer' rolePlayer=[Party]
-		'rolePlayer.perform(' operation=[Operation|QualifiedName] ')'
+		'rolePlayer.perform''(' operation=[Operation|QualifiedName] ')'
 		'condition' '{' 
 			condition=Condition  
 		'}'
@@ -60,11 +60,12 @@ Timeout:
 ;
 
 OperationsLimit:
-	'OperationsLimit' '(' operationsNumber=INT ',' timeUnit=TimeUnit ')'
+	'OperationsLimit' '(' operationsNumber=INT 'by' timeUnit=TimeUnit  ')'
 ;
 
 BusinessDay:
-	'BusinessDay' '(' start=WeekDay ',' end=WeekDay ')'
+	('BusinessDay' '(' start=WeekDay 'to' end=WeekDay ')')
+	
 ;
 	
 enum WeekDay:
@@ -76,7 +77,7 @@ enum TimeUnit:
 ;
       
 BusinessTime: 
-	'BusinessTime' '(' start=STRING ',' end=STRING ')'
+	'BusinessTime' '(' start=STRING 'to' end=STRING')'
 ; 
 
 MessageContent:
@@ -96,13 +97,17 @@ Process:
 ;
 
 OnBreach:
-	'(' action=[Action] ',' message=Expression ')' 
+	'(' action=[Action] ',' message=Expression  ')' 
 ;
 
+//Action:
+	//'Action' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')' '{'
+		//statements+=Expression
+	//'}'
+//;
 Action:
-	'Action' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')' '{'
-		statements+=Expression
-	'}'
+	('BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')|
+	('EventLog' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')
 ;
 
 Variable:

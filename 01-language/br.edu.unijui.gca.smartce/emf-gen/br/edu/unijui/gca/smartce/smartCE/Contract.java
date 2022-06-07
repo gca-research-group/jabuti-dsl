@@ -150,7 +150,7 @@ public interface Contract extends EObject
 	 * @return the value of the '<em>Application</em>' containment reference.
 	 * @see #setApplication(Application)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_Application()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Application getApplication();
@@ -172,7 +172,7 @@ public interface Contract extends EObject
 	 * @return the value of the '<em>Process</em>' containment reference.
 	 * @see #setProcess(br.edu.unijui.gca.smartce.smartCE.Process)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_Process()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	br.edu.unijui.gca.smartce.smartCE.Process getProcess();

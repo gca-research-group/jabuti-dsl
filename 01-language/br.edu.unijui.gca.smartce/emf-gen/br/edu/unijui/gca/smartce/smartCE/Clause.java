@@ -170,7 +170,7 @@ public interface Clause extends EObject
 	 * @return the value of the '<em>Operation</em>' reference.
 	 * @see #setOperation(Operation)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Operation()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	Operation getOperation();

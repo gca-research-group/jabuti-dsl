@@ -1,0 +1,29 @@
+//@version - jabuti 0.1.0 
+
+Contract DeliveryHiring { 
+
+	beginDate = "2022-01-01 08:00:00" 
+	dueDate = "2022-12-31 18:00:00"
+	
+	application = deliverySystem : "Delivery system"
+	process  	= integrationProcess : "Integration process"
+	
+	Obligation responseOrder {
+		description = "Setting the time limit for responding to a request"
+		rolePlayer deliverySystem
+		rolePlayer.perform(Operation.RESPONSE)
+		
+		condition {
+			Timeout(60) AND
+			BusinessDay(Monday to Friday) AND
+			BusinessTime("08:30:00" to "18:30:00") AND
+			OperationsLimit(5 by Minute) AND
+			MessageContent("count(//address)=1")						
+		}
+				
+		onBreach(logMessage, "Request made outside of allowed hours or distance limit exceeded")
+	}
+	
+	//BusinessAction sendMessage(_content: String)
+	EventLog logMessage(message : String )
+}
