@@ -1,5 +1,6 @@
 import operations.*
 
+
 Contract CreditAgency {
 	
 	beginDate = "2021-08-22 10:22:00"
@@ -16,6 +17,7 @@ Contract CreditAgency {
 		
 		condition {
 			OperationsLimit(1000 by Second) AND MessageContent("count(//CPF)=1")	
+
 		}
 		
 		onBreach (notifyFailing, "Request limit by day exceeded or inconsistent message content")

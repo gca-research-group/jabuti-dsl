@@ -1,8 +1,8 @@
 //SPDX-License-Identifier: MIT
-pragma solidity >= 0.6.0 < 0.9.0;
+pragma solidity >= 0.6.0 <=0.9.0;
 pragma experimental 'ABIEncoderV2';
 
-import "./EAI_Domain.sol";
+import "./libs/EAI_Domain.sol";
 
 contract DeliveryHiring is EAI_Domain{ 
  
@@ -11,8 +11,8 @@ contract DeliveryHiring is EAI_Domain{
 
     // uint256 beginDate = 1641024000000;
     
-    DateTime public  beginDate = setDateTime("2022-01-01 08:00:00"); // converter string para inteiro e depois converter para timestamp
-    DateTime public dueDate = setDateTime("2022-12-31 18:25:10");
+//    DateTime public  beginDate = setDateTime("2022-01-01 08:00:00"); // converter string para inteiro e depois converter para timestamp
+//    DateTime public dueDate = setDateTime("2022-12-31 18:25:10");
     
     BusinessDay public businessDay = setBusinessDay(MONDAY, FRIDAY);
     OperationLimit public operationLimit = setOperationLimit(5, MINUTE);
