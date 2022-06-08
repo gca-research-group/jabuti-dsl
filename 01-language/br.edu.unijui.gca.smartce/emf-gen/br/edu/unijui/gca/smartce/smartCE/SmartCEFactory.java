@@ -87,15 +87,6 @@ public interface SmartCEFactory extends EFactory
 	Clause createClause();
 
 	/**
-	 * Returns a new object of class '<em>Operation</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operation</em>'.
-	 * @generated
-	 */
-	Operation createOperation();
-
-	/**
 	 * Returns a new object of class '<em>Import</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -283,6 +274,15 @@ public interface SmartCEFactory extends EFactory
 	 * @generated
 	 */
 	LogicalOperator createLogicalOperator();
+
+	/**
+	 * Returns a new object of class '<em>On Success</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>On Success</em>'.
+	 * @generated
+	 */
+	OnSuccess createOnSuccess();
 
 	/**
 	 * Returns the package supported by this factory.

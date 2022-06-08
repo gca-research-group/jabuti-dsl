@@ -24,6 +24,7 @@ import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
+import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
@@ -102,13 +103,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EClass clauseEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass operationEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -276,6 +270,13 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass onSuccessEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum weekDayEEnum = null;
 
 	/**
@@ -284,6 +285,13 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EEnum timeUnitEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum operationEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -541,20 +549,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Operations()
-	{
-		return (EReference)modelEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getModel_Imports()
 	{
-		return (EReference)modelEClass.getEStructuralFeatures().get(2);
+		return (EReference)modelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -695,7 +692,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getClause_Operation()
+	public EReference getClause_OnBreach()
 	{
 		return (EReference)clauseEClass.getEStructuralFeatures().get(6);
 	}
@@ -706,7 +703,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getClause_OnBreach()
+	public EReference getClause_Condition()
 	{
 		return (EReference)clauseEClass.getEStructuralFeatures().get(7);
 	}
@@ -717,9 +714,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getClause_Condition()
+	public EAttribute getClause_Operation()
 	{
-		return (EReference)clauseEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)clauseEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -728,20 +725,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getOperation()
+	public EReference getClause_OnSuccess()
 	{
-		return operationEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getOperation_Name()
-	{
-		return (EAttribute)operationEClass.getEStructuralFeatures().get(0);
+		return (EReference)clauseEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1322,6 +1308,39 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getOnSuccess()
+	{
+		return onSuccessEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getOnSuccess_Message()
+	{
+		return (EReference)onSuccessEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getOnSuccess_Action()
+	{
+		return (EReference)onSuccessEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWeekDay()
 	{
 		return weekDayEEnum;
@@ -1336,6 +1355,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	public EEnum getTimeUnit()
 	{
 		return timeUnitEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getOperation()
+	{
+		return operationEEnum;
 	}
 
 	/**
@@ -1388,7 +1418,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		modelEClass = createEClass(MODEL);
 		createEReference(modelEClass, MODEL__CONTRACTS);
-		createEReference(modelEClass, MODEL__OPERATIONS);
 		createEReference(modelEClass, MODEL__IMPORTS);
 
 		applicationEClass = createEClass(APPLICATION);
@@ -1406,12 +1435,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEAttribute(clauseEClass, CLAUSE__FINAL_STATUS);
 		createEAttribute(clauseEClass, CLAUSE__FAIL_DESCRIPTION);
 		createEReference(clauseEClass, CLAUSE__ROLE_PLAYER);
-		createEReference(clauseEClass, CLAUSE__OPERATION);
 		createEReference(clauseEClass, CLAUSE__ON_BREACH);
 		createEReference(clauseEClass, CLAUSE__CONDITION);
-
-		operationEClass = createEClass(OPERATION);
-		createEAttribute(operationEClass, OPERATION__NAME);
+		createEAttribute(clauseEClass, CLAUSE__OPERATION);
+		createEReference(clauseEClass, CLAUSE__ON_SUCCESS);
 
 		importEClass = createEClass(IMPORT);
 		createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
@@ -1488,9 +1515,14 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		logicalOperatorEClass = createEClass(LOGICAL_OPERATOR);
 		createEAttribute(logicalOperatorEClass, LOGICAL_OPERATOR__NAME);
 
+		onSuccessEClass = createEClass(ON_SUCCESS);
+		createEReference(onSuccessEClass, ON_SUCCESS__MESSAGE);
+		createEReference(onSuccessEClass, ON_SUCCESS__ACTION);
+
 		// Create enums
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
+		operationEEnum = createEEnum(OPERATION);
 	}
 
 	/**
@@ -1561,7 +1593,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getModel_Contracts(), this.getContract(), null, "contracts", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModel_Operations(), this.getOperation(), null, "operations", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_Imports(), this.getImport(), null, "imports", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1579,12 +1610,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEAttribute(getClause_FinalStatus(), ecorePackage.getEString(), "finalStatus", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_FailDescription(), ecorePackage.getEString(), "failDescription", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_RolePlayer(), this.getParty(), null, "rolePlayer", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClause_Operation(), this.getOperation(), null, "operation", null, 1, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_OnBreach(), this.getOnBreach(), null, "onBreach", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_Condition(), this.getCondition(), null, "condition", null, 1, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(operationEClass, Operation.class, "Operation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getOperation_Name(), ecorePackage.getEString(), "name", null, 0, 1, Operation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClause_Operation(), this.getOperation(), "operation", "PUSH", 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClause_OnSuccess(), this.getOnSuccess(), null, "onSuccess", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1661,6 +1690,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEClass(logicalOperatorEClass, LogicalOperator.class, "LogicalOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLogicalOperator_Name(), ecorePackage.getEString(), "name", null, 0, 1, LogicalOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(onSuccessEClass, OnSuccess.class, "OnSuccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOnSuccess_Message(), this.getExpression(), null, "message", null, 0, 1, OnSuccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOnSuccess_Action(), this.getAction(), null, "action", null, 0, 1, OnSuccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(weekDayEEnum, WeekDay.class, "WeekDay");
 		addEEnumLiteral(weekDayEEnum, WeekDay.SUNDAY);
@@ -1679,6 +1712,14 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		addEEnumLiteral(timeUnitEEnum, TimeUnit.WEEK);
 		addEEnumLiteral(timeUnitEEnum, TimeUnit.MONTH);
 		addEEnumLiteral(timeUnitEEnum, TimeUnit.YEAR);
+
+		initEEnum(operationEEnum, Operation.class, "Operation");
+		addEEnumLiteral(operationEEnum, Operation.PUSH);
+		addEEnumLiteral(operationEEnum, Operation.POLL);
+		addEEnumLiteral(operationEEnum, Operation.WRITE);
+		addEEnumLiteral(operationEEnum, Operation.READ);
+		addEEnumLiteral(operationEEnum, Operation.REQUEST);
+		addEEnumLiteral(operationEEnum, Operation.RESPONSE);
 
 		// Create resource
 		createResource(eNS_URI);

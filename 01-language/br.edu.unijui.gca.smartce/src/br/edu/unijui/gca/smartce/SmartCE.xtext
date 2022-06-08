@@ -5,16 +5,21 @@ import "http://www.edu.br/unijui/gca/smartce/SmartCE"
 Model: 
 	{Model}
 	imports+=Import*
-	operations+=Operation*
+//	operations+=Operation*
 	contracts+=Contract*;
 
 Import:
      'import' importedNamespace=QualifiedNameWithWildcard
 ;
 
-Operation: 
-	name=QualifiedName
-;
+//Operation: 
+//	name=QualifiedName
+//;
+
+
+//Operation: 
+//	name=('push' | 'poll' |'write' |'read' |'request'|'response')
+//; 
 
 Contract: 
 	'Contract' name=ID '{'
@@ -22,6 +27,7 @@ Contract:
 		'dueDate' '=' dueDate=STRING
 		'application' '=' application=Application
 		'process' '=' process=Process
+		
 		clauses+=Clause*
 		actions+=Action*
 	'}'; 
@@ -30,12 +36,14 @@ Contract:
 Clause: 
 	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
 		'description' '=' description=STRING
-		'rolePlayer' rolePlayer=[Party]
-		'rolePlayer.perform''(' operation=[Operation|QualifiedName] ')'
+		'rolePlayer' '=' rolePlayer=[Party]
+		'operation' '=' operation=Operation
 		'condition' '{' 
 			condition=Condition  
 		'}'
-		'onBreach' onBreach=OnBreach 
+		(('onSuccess' onSuccess=OnSuccess
+		'onBreach' onBreach=OnBreach )|
+		'onBreach' onBreach=OnBreach )
 	 '}' 
 ;
 
@@ -68,6 +76,10 @@ BusinessDay:
 	
 ;
 	
+enum Operation:
+    PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
+;
+
 enum WeekDay:
     SUNDAY='Sunday' | MONDAY='Monday' | TUESDAY='Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY='Thursday' | FRIDAY='Friday' | SATURDAY='Saturday'
 ;
@@ -94,6 +106,10 @@ Application:
 
 Process: 
 	name=ID':' description=STRING  
+;
+
+OnSuccess:
+	'(' action=[Action] ',' message=Expression  ')' 
 ;
 
 OnBreach:

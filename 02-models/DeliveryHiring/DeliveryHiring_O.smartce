@@ -10,9 +10,8 @@ Contract DeliveryHiring {
 	
 	Obligation responseOrder {
 		description = "Setting the time limit for responding to a request"
-		rolePlayer deliverySystem
-		rolePlayer.perform(Operation.RESPONSE)
-		
+		rolePlayer = deliverySystem
+		operation = response
 		condition {
 			Timeout(60) AND
 			BusinessDay(Monday to Friday) AND
@@ -21,9 +20,9 @@ Contract DeliveryHiring {
 			MessageContent("count(//address)=1")						
 		}
 				
-		onBreach(logMessage, "Request made outside of allowed hours or distance limit exceeded")
+		onBreach(failEvent, "Request made outside of allowed hours or distance limit exceeded")
 	}
 	
 	//BusinessAction sendMessage(_content: String)
-	EventLog logMessage(message : String )
+	EventLog failEvent(message : String )
 }

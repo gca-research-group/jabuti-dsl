@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Model#getContracts <em>Contracts</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Model#getOperations <em>Operations</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Model#getImports <em>Imports</em>}</li>
  * </ul>
  *
@@ -38,18 +37,6 @@ public interface Model extends EObject
 	 * @generated
 	 */
 	EList<Contract> getContracts();
-
-	/**
-	 * Returns the value of the '<em><b>Operations</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Operation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operations</em>' containment reference list.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getModel_Operations()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Operation> getOperations();
 
 	/**
 	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.

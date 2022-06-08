@@ -9,9 +9,10 @@ Contract DeliveryHiring {
 	process  	= integrationProcess : "Integration process"
 	
 	Right requestDelivery {
-		description = "Setting the days and hours to request a delivery, the maximum request operation by minute and number of address by request"
-		rolePlayer integrationProcess
-		rolePlayer.perform(Operation.REQUEST)
+		description = "Setting the days and hours to request a delivery,
+					 the maximum request operation by minute and number of address by request"
+		rolePlayer = integrationProcess
+		operation = read
 		
 		condition {
 			BusinessDay(Monday to Friday) AND
@@ -19,10 +20,11 @@ Contract DeliveryHiring {
 			OperationsLimit(5 by Minute) AND
 			MessageContent("count(//address)=1")						
 		}
-				
-		onBreach(logMessage, "Request operation performed outside of allowed hours or limit operation exceeded")
+		// the onSuccess is optional 
+		onSuccess(successEvent, "Success execution")		
+		onBreach(failEvent, "Request operation performed outside of allowed hours or limit operation exceeded")
 	}
 	
-	//BusinessAction sendMessage(_content: String)
-	EventLog logMessage(message : String )
+	EventLog failEvent(message : String )
+	EventLog successEvent(message :String)
 }

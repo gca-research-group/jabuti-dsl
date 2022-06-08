@@ -233,22 +233,13 @@ public interface SmartCEPackage extends EPackage
 	int MODEL__CONTRACTS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL__OPERATIONS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__IMPORTS = 2;
+	int MODEL__IMPORTS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -257,7 +248,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = 3;
+	int MODEL_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.PartyImpl <em>Party</em>}' class.
@@ -435,22 +426,13 @@ public interface SmartCEPackage extends EPackage
 	int CLAUSE__ROLE_PLAYER = 5;
 
 	/**
-	 * The feature id for the '<em><b>Operation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLAUSE__OPERATION = 6;
-
-	/**
 	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__ON_BREACH = 7;
+	int CLAUSE__ON_BREACH = 6;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -459,7 +441,25 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__CONDITION = 8;
+	int CLAUSE__CONDITION = 7;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__OPERATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>On Success</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__ON_SUCCESS = 9;
 
 	/**
 	 * The number of structural features of the '<em>Clause</em>' class.
@@ -468,35 +468,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE_FEATURE_COUNT = 9;
-
-	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl <em>Operation</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
-	 * @generated
-	 */
-	int OPERATION = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Operation</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OPERATION_FEATURE_COUNT = 1;
+	int CLAUSE_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ImportImpl <em>Import</em>}' class.
@@ -506,7 +478,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getImport()
 	 * @generated
 	 */
-	int IMPORT = 8;
+	int IMPORT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -534,7 +506,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getExpression()
 	 * @generated
 	 */
-	int EXPRESSION = 9;
+	int EXPRESSION = 8;
 
 	/**
 	 * The number of structural features of the '<em>Expression</em>' class.
@@ -553,7 +525,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLiteralValue()
 	 * @generated
 	 */
-	int LITERAL_VALUE = 10;
+	int LITERAL_VALUE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Literal Value</em>' class.
@@ -572,7 +544,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getNumericValue()
 	 * @generated
 	 */
-	int NUMERIC_VALUE = 11;
+	int NUMERIC_VALUE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -600,7 +572,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getStringValue()
 	 * @generated
 	 */
-	int STRING_VALUE = 12;
+	int STRING_VALUE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -628,7 +600,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBinaryOperator()
 	 * @generated
 	 */
-	int BINARY_OPERATOR = 13;
+	int BINARY_OPERATOR = 12;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -674,7 +646,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getUnaryOperator()
 	 * @generated
 	 */
-	int UNARY_OPERATOR = 14;
+	int UNARY_OPERATOR = 13;
 
 	/**
 	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
@@ -711,7 +683,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariableValue()
 	 * @generated
 	 */
-	int VARIABLE_VALUE = 15;
+	int VARIABLE_VALUE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -739,7 +711,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getFunctionCall()
 	 * @generated
 	 */
-	int FUNCTION_CALL = 16;
+	int FUNCTION_CALL = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -776,7 +748,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOnBreach()
 	 * @generated
 	 */
-	int ON_BREACH = 17;
+	int ON_BREACH = 16;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' containment reference.
@@ -813,7 +785,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 18;
+	int ACTION = 17;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -859,7 +831,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VARIABLE = 19;
+	int VARIABLE = 18;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -896,7 +868,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 20;
+	int CONDITION = 19;
 
 	/**
 	 * The number of structural features of the '<em>Condition</em>' class.
@@ -915,7 +887,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessRule()
 	 * @generated
 	 */
-	int BUSINESS_RULE = 27;
+	int BUSINESS_RULE = 26;
 
 	/**
 	 * The number of structural features of the '<em>Business Rule</em>' class.
@@ -934,7 +906,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeout()
 	 * @generated
 	 */
-	int TIMEOUT = 21;
+	int TIMEOUT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -962,7 +934,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationsLimit()
 	 * @generated
 	 */
-	int OPERATIONS_LIMIT = 22;
+	int OPERATIONS_LIMIT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Operations Number</b></em>' attribute.
@@ -999,7 +971,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessDay()
 	 * @generated
 	 */
-	int BUSINESS_DAY = 23;
+	int BUSINESS_DAY = 22;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -1036,7 +1008,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessTime()
 	 * @generated
 	 */
-	int BUSINESS_TIME = 24;
+	int BUSINESS_TIME = 23;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -1073,7 +1045,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getMessageContent()
 	 * @generated
 	 */
-	int MESSAGE_CONTENT = 25;
+	int MESSAGE_CONTENT = 24;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -1101,7 +1073,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCompositeCondition()
 	 * @generated
 	 */
-	int COMPOSITE_CONDITION = 26;
+	int COMPOSITE_CONDITION = 25;
 
 	/**
 	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
@@ -1138,7 +1110,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessAction()
 	 * @generated
 	 */
-	int BUSINESS_ACTION = 28;
+	int BUSINESS_ACTION = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1184,7 +1156,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getEventLog()
 	 * @generated
 	 */
-	int EVENT_LOG = 29;
+	int EVENT_LOG = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1230,7 +1202,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
 	 * @generated
 	 */
-	int LOGICAL_OPERATOR = 30;
+	int LOGICAL_OPERATOR = 29;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1251,6 +1223,43 @@ public interface SmartCEPackage extends EPackage
 	int LOGICAL_OPERATOR_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OnSuccessImpl <em>On Success</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.OnSuccessImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOnSuccess()
+	 * @generated
+	 */
+	int ON_SUCCESS = 30;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_SUCCESS__MESSAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_SUCCESS__ACTION = 1;
+
+	/**
+	 * The number of structural features of the '<em>On Success</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_SUCCESS_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1269,6 +1278,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	int TIME_UNIT = 32;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
+	 * @generated
+	 */
+	int OPERATION = 33;
 
 
 	/**
@@ -1456,17 +1475,6 @@ public interface SmartCEPackage extends EPackage
 	EReference getModel_Contracts();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Model#getOperations <em>Operations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Operations</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Model#getOperations()
-	 * @see #getModel()
-	 * @generated
-	 */
-	EReference getModel_Operations();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Model#getImports <em>Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1606,17 +1614,6 @@ public interface SmartCEPackage extends EPackage
 	EReference getClause_RolePlayer();
 
 	/**
-	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Operation</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getOperation()
-	 * @see #getClause()
-	 * @generated
-	 */
-	EReference getClause_Operation();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1639,25 +1636,26 @@ public interface SmartCEPackage extends EPackage
 	EReference getClause_Condition();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operation</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @return the meta object for the attribute '<em>Operation</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getOperation()
+	 * @see #getClause()
 	 * @generated
 	 */
-	EClass getOperation();
+	EAttribute getClause_Operation();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Operation#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnSuccess <em>On Success</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Operation#getName()
-	 * @see #getOperation()
+	 * @return the meta object for the containment reference '<em>On Success</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getOnSuccess()
+	 * @see #getClause()
 	 * @generated
 	 */
-	EAttribute getOperation_Name();
+	EReference getClause_OnSuccess();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Import <em>Import</em>}'.
@@ -2209,6 +2207,38 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getLogicalOperator_Name();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess <em>On Success</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>On Success</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnSuccess
+	 * @generated
+	 */
+	EClass getOnSuccess();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Message</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnSuccess#getMessage()
+	 * @see #getOnSuccess()
+	 * @generated
+	 */
+	EReference getOnSuccess_Message();
+
+	/**
+	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Action</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnSuccess#getAction()
+	 * @see #getOnSuccess()
+	 * @generated
+	 */
+	EReference getOnSuccess_Action();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2227,6 +2257,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getTimeUnit();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Operation</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @generated
+	 */
+	EEnum getOperation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2394,14 +2434,6 @@ public interface SmartCEPackage extends EPackage
 		EReference MODEL__CONTRACTS = eINSTANCE.getModel_Contracts();
 
 		/**
-		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL__OPERATIONS = eINSTANCE.getModel_Operations();
-
-		/**
 		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2514,14 +2546,6 @@ public interface SmartCEPackage extends EPackage
 		EReference CLAUSE__ROLE_PLAYER = eINSTANCE.getClause_RolePlayer();
 
 		/**
-		 * The meta object literal for the '<em><b>Operation</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CLAUSE__OPERATION = eINSTANCE.getClause_Operation();
-
-		/**
 		 * The meta object literal for the '<em><b>On Breach</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2538,22 +2562,20 @@ public interface SmartCEPackage extends EPackage
 		EReference CLAUSE__CONDITION = eINSTANCE.getClause_Condition();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl <em>Operation</em>}' class.
+		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
 		 * @generated
 		 */
-		EClass OPERATION = eINSTANCE.getOperation();
+		EAttribute CLAUSE__OPERATION = eINSTANCE.getClause_Operation();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>On Success</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OPERATION__NAME = eINSTANCE.getOperation_Name();
+		EReference CLAUSE__ON_SUCCESS = eINSTANCE.getClause_OnSuccess();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ImportImpl <em>Import</em>}' class.
@@ -3018,6 +3040,32 @@ public interface SmartCEPackage extends EPackage
 		EAttribute LOGICAL_OPERATOR__NAME = eINSTANCE.getLogicalOperator_Name();
 
 		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OnSuccessImpl <em>On Success</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.OnSuccessImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOnSuccess()
+		 * @generated
+		 */
+		EClass ON_SUCCESS = eINSTANCE.getOnSuccess();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ON_SUCCESS__MESSAGE = eINSTANCE.getOnSuccess_Message();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ON_SUCCESS__ACTION = eINSTANCE.getOnSuccess_Action();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3036,6 +3084,16 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EEnum TIME_UNIT = eINSTANCE.getTimeUnit();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
+		 * @generated
+		 */
+		EEnum OPERATION = eINSTANCE.getOperation();
 
 	}
 

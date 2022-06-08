@@ -83,11 +83,6 @@ uint constant SUNDAY=7;
     // }
    
     
-    ////////////// EVENTS TO REGISTER THE SUMMARY OF A GIVEN FUNCTION ////////////////
-   
-    event success(string  _logMessage);
-    event fail(string _logMessage);
-
     
     /////////////////// FUNÇÕES REFERENTES A STRUCT BUSINESSDAY /////////////////////////
 

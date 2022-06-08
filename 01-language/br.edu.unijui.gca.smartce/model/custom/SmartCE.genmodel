@@ -24,6 +24,14 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/MONTH"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//TimeUnit/YEAR"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//Operation">
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/PUSH"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/POLL"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/WRITE"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/READ"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/REQUEST"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/RESPONSE"/>
+    </genEnums>
     <genClasses ecoreClass="SmartCE.ecore#//Contract">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/beginDate"/>
@@ -43,7 +51,6 @@
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Model/contracts"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Model/operations"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Model/imports"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//Application"/>
@@ -59,12 +66,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/finalStatus"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/failDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/rolePlayer"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/operation"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/onBreach"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/condition"/>
-    </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//Operation">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Operation/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/operation"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/onSuccess"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//Import">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Import/importedNamespace"/>
@@ -134,6 +139,10 @@
     <genClasses ecoreClass="SmartCE.ecore#//EventLog"/>
     <genClasses ecoreClass="SmartCE.ecore#//LogicalOperator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//LogicalOperator/name"/>
+    </genClasses>
+    <genClasses ecoreClass="SmartCE.ecore#//OnSuccess">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//OnSuccess/message"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmartCE.ecore#//OnSuccess/action"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

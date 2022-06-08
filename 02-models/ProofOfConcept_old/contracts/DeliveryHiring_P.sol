@@ -20,6 +20,10 @@ contract DeliveryHiring is EAI_Domain{
 	string fail_description = "Breached condition "; 
     string success_description = "";
 		
+   
+    event success(string  _logMessage);
+    event logMessageFail(string _logMessage);
+
 	constructor(address _applicationWallet, address _processWallet){
 	    deliverySystem = Party("Delivery system", _applicationWallet);
 	    integrationProcess = Party("Integration process", _processWallet);
@@ -58,7 +62,7 @@ contract DeliveryHiring is EAI_Domain{
 	  	
 	  	// se a clausula for violada emite um evento passando a descrção da falha 
 	   	if(isBreached){
-	   	    emit fail(fail_description);
+	   	    emit logMessageFail(fail_description);
 	   	    return false;
 	   	}
 

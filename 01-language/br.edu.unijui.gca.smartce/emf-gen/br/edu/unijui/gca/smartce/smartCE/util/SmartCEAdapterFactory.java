@@ -24,7 +24,7 @@ import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
-import br.edu.unijui.gca.smartce.smartCE.Operation;
+import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
@@ -141,11 +141,6 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 				return createClauseAdapter();
 			}
 			@Override
-			public Adapter caseOperation(Operation object)
-			{
-				return createOperationAdapter();
-			}
-			@Override
 			public Adapter caseImport(Import object)
 			{
 				return createImportAdapter();
@@ -259,6 +254,11 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseLogicalOperator(LogicalOperator object)
 			{
 				return createLogicalOperatorAdapter();
+			}
+			@Override
+			public Adapter caseOnSuccess(OnSuccess object)
+			{
+				return createOnSuccessAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -383,21 +383,6 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createClauseAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
-	 * @generated
-	 */
-	public Adapter createOperationAdapter()
 	{
 		return null;
 	}
@@ -743,6 +728,21 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createLogicalOperatorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess <em>On Success</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OnSuccess
+	 * @generated
+	 */
+	public Adapter createOnSuccessAdapter()
 	{
 		return null;
 	}

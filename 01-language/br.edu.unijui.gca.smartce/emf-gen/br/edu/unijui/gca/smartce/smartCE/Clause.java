@@ -20,9 +20,10 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFinalStatus <em>Final Status</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFailDescription <em>Fail Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnSuccess <em>On Success</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause()
@@ -164,28 +165,6 @@ public interface Clause extends EObject
 	void setRolePlayer(Party value);
 
 	/**
-	 * Returns the value of the '<em><b>Operation</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation</em>' reference.
-	 * @see #setOperation(Operation)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Operation()
-	 * @model required="true"
-	 * @generated
-	 */
-	Operation getOperation();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operation</em>' reference.
-	 * @see #getOperation()
-	 * @generated
-	 */
-	void setOperation(Operation value);
-
-	/**
 	 * Returns the value of the '<em><b>On Breach</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -228,5 +207,53 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setCondition(Condition value);
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
+	 * The default value is <code>"PUSH"</code>.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @see #setOperation(Operation)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Operation()
+	 * @model default="PUSH"
+	 * @generated
+	 */
+	Operation getOperation();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(Operation value);
+
+	/**
+	 * Returns the value of the '<em><b>On Success</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>On Success</em>' containment reference.
+	 * @see #setOnSuccess(OnSuccess)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_OnSuccess()
+	 * @model containment="true"
+	 * @generated
+	 */
+	OnSuccess getOnSuccess();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnSuccess <em>On Success</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Success</em>' containment reference.
+	 * @see #getOnSuccess()
+	 * @generated
+	 */
+	void setOnSuccess(OnSuccess value);
 
 } // Clause
