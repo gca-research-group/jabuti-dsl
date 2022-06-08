@@ -138,6 +138,11 @@ uint constant SUNDAY=7;
 
     }
     
+    function newTimeout(uint32 _dataTime, Timeout _timeout)internal pure returns(Timeout memory){
+       return _timeout.endTime=_dataTime+_timeout.increment; // o timeout inicia zerado, será definido após a primeira chamda 
+
+    }
+
     function isTimeout(uint32 _accessDateTime, uint32 _timeout)internal pure returns (bool) {
        // TODO
        return true;

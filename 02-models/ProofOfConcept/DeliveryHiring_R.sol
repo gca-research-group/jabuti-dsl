@@ -16,8 +16,8 @@ contract DeliveryHiring is EAI_Domain{
 	OperationLimit public operationLimit = OperationLimit(5, MINUTE,0,0);
 	MessageContent messageContent = MessageContent("count(//address)=1");
 	
-    event successEvent(string  _logMessage);
-    event failEvent(string _logMessage);
+    event successEvent(string  message);
+    event failEvent(string message);
 
     
 	constructor(address _applicationWallet, address _processWallet){
@@ -39,7 +39,6 @@ contract DeliveryHiring is EAI_Domain{
 			    emit successEvent("Success execution in clause");
 			    return true;
 		   }	
-	  
 	    
 	   	emit failEvent("Request operation performed outside of allowed hours or limit operation exceeded");
 	   	return false;

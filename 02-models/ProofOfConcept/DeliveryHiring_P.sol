@@ -40,7 +40,7 @@ contract DeliveryHiring is EAI_Domain{
 	   		    return false;
 	    	}
 
-	   	emit successEvent("Success execution in clause ");
+	   	emit successEvent("Success execution");
 	    return true;
     }
 

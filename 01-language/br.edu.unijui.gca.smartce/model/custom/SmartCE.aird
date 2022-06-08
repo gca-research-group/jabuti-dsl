@@ -5,7 +5,7 @@
     <semanticResources>SmartCE.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Wl91sEMhEeyC-MZhuBrocA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="0b2e7b82-c279-4742-8265-326fc278b40e">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="c83bfc3b-163f-4e2e-aa0c-7973a034d7af">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="SmartCE.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -2447,6 +2447,7 @@
         <target xmi:type="ecore:EEnumLiteral" href="SmartCE.ecore#//Operation/PUSH"/>
         <semanticElements xmi:type="ecore:EEnumLiteral" href="SmartCE.ecore#//Operation/PUSH"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_RBk5seasEeyuWt45nKNBXw" labelAlignment="LEFT">
+          <customFeatures>labelColor</customFeatures>
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>

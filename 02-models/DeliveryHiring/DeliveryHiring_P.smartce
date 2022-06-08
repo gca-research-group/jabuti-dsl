@@ -15,9 +15,9 @@ Contract DeliveryHiring {
 		operation = request
 		
 		condition {
-			BusinessDay(Saturday to Sunday) AND
-			BusinessTime("18:30:00" to "08:30:00") AND
-			OperationsLimit(6 by Minute) AND
+			BusinessDay(Saturday to Sunday) OR
+			BusinessTime("18:30:00" to "08:30:00") OR
+			OperationsLimit(6 by Minute) OR
 			MessageContent("count(//address)!=1")						
 		}
 		// the onSuccess is optional 

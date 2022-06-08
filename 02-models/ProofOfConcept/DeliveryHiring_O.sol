@@ -42,7 +42,7 @@ contract DeliveryHiring is EAI_Domain{
 	    	}
 	    
 	   	emit failEvent("Request made outside of allowed hours or distance limit exceeded");
-		return true;
+		return false;
 	    
 	}
 

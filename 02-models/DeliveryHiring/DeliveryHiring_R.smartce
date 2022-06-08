@@ -12,7 +12,7 @@ Contract DeliveryHiring {
 		description = "Setting the days and hours to request a delivery,
 					 the maximum request operation by minute and number of address by request"
 		rolePlayer = integrationProcess
-		operation = read
+		operation = request
 		
 		condition {
 			BusinessDay(Monday to Friday) AND
