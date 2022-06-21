@@ -7,6 +7,13 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import br.edu.unijui.gca.smartce.smartCE.Contract
+import java.sql.Timestamp
+import br.edu.unijui.gca.smartce.smartCE.Timeout
+import br.edu.unijui.gca.smartce.smartCE.Condition
+import br.edu.unijui.gca.smartce.smartCE.BusinessDay
+import br.edu.unijui.gca.smartce.smartCE.OperationsLimit
+import br.edu.unijui.gca.smartce.smartCE.MessageContent
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +23,62 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class SmartCEGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		for (c : resource.allContents.filter(Contract).toIterable) {
+			fsa.generateFile(c.name + '.sol', generateSolCode(c))
+		}
 	}
+
+	def generateSolCode(Contract c) {
+		'''
+			//SPDX-License-Identifier: MIT
+			pragma solidity ^0.8.14;
+			
+			import "./libs/EAI_Domain.sol";
+			
+			contract «c.name» is EAI_Domain{
+				uint32 beginDate = «getTS(c.beginDate)»;
+				uint32 dueDate = «getTS(c.dueDate)»;
+				
+				Party «c.application.name»;
+				Party «c.process.name»;
+				
+				«getConditions(c.clauses.get(0).condition)»
+			}
+			
+			event «c.clauses.get(0).onBreach.action.name»(string _logMessage);
+			
+			constructor(address _applicationWallet, address _processWallet){
+			    «c.application.name» = Party("«c.process.description» ", _applicationWallet);
+			    «c.process.name» = Party("«c.process.description»", _processWallet);
+			}
+			
+			function «c.clauses.get(0).name» (){
+				
+				require(_performer == «c.clauses.get(0).rolePlayer.name».walletAddress, "You have no permission to perform this operation.");
+				
+				bool isBreached=false;
+			}
+		'''
+	}
+
+	def getTS(String date){
+		return (Timestamp.valueOf(date).getTime()/1000);
+	}
+	
+	def getConditions(Condition condition){
+		'''
+			«FOR c: condition.eAllContents.toIterable»
+				«IF(c instanceof Timeout)»
+					Timeout public timeout(«c.value»);
+				«ELSEIF(c instanceof BusinessDay)»
+					BusinessDay public businessDay(«c.start», «c.end»);
+				«ELSEIF(c instanceof OperationsLimit)»
+					OperationLimit public operationLimit = OperationLimit(«c.operationsNumber», «c.timeUnit», 0, 0);
+				«ELSEIF(c instanceof MessageContent)»
+					MessageContent public messageContent = MessageContent("«c.content»");
+				«ENDIF»
+			«ENDFOR»
+		'''
+	}
+		
 }

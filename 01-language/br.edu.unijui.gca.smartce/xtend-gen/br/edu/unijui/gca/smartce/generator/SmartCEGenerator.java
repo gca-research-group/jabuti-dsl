@@ -3,10 +3,23 @@
  */
 package br.edu.unijui.gca.smartce.generator;
 
+import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
+import br.edu.unijui.gca.smartce.smartCE.Condition;
+import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.MessageContent;
+import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
+import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
+import br.edu.unijui.gca.smartce.smartCE.Timeout;
+import br.edu.unijui.gca.smartce.smartCE.WeekDay;
+import com.google.common.collect.Iterators;
+import java.sql.Timestamp;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -17,5 +30,165 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class SmartCEGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    Iterable<Contract> _iterable = IteratorExtensions.<Contract>toIterable(Iterators.<Contract>filter(resource.getAllContents(), Contract.class));
+    for (final Contract c : _iterable) {
+      String _name = c.getName();
+      String _plus = (_name + ".sol");
+      fsa.generateFile(_plus, this.generateSolCode(c));
+    }
+  }
+  
+  public CharSequence generateSolCode(final Contract c) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("//SPDX-License-Identifier: MIT");
+    _builder.newLine();
+    _builder.append("pragma solidity ^0.8.14;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("import \"./libs/EAI_Domain.sol\";");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("contract ");
+    String _name = c.getName();
+    _builder.append(_name);
+    _builder.append(" is EAI_Domain{");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("uint32 beginDate = ");
+    long _tS = this.getTS(c.getBeginDate());
+    _builder.append(_tS, "\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("uint32 dueDate = ");
+    long _tS_1 = this.getTS(c.getDueDate());
+    _builder.append(_tS_1, "\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("Party ");
+    String _name_1 = c.getApplication().getName();
+    _builder.append(_name_1, "\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("Party ");
+    String _name_2 = c.getProcess().getName();
+    _builder.append(_name_2, "\t");
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    CharSequence _conditions = this.getConditions(c.getClauses().get(0).getCondition());
+    _builder.append(_conditions, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("event ");
+    String _name_3 = c.getClauses().get(0).getOnBreach().getAction().getName();
+    _builder.append(_name_3);
+    _builder.append("(string _logMessage);");
+    _builder.newLineIfNotEmpty();
+    _builder.newLine();
+    _builder.append("constructor(address _applicationWallet, address _processWallet){");
+    _builder.newLine();
+    _builder.append("    ");
+    String _name_4 = c.getApplication().getName();
+    _builder.append(_name_4, "    ");
+    _builder.append(" = Party(\"");
+    String _description = c.getProcess().getDescription();
+    _builder.append(_description, "    ");
+    _builder.append(" \", _applicationWallet);");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    String _name_5 = c.getProcess().getName();
+    _builder.append(_name_5, "    ");
+    _builder.append(" = Party(\"");
+    String _description_1 = c.getProcess().getDescription();
+    _builder.append(_description_1, "    ");
+    _builder.append("\", _processWallet);");
+    _builder.newLineIfNotEmpty();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("function ");
+    String _name_6 = c.getClauses().get(0).getName();
+    _builder.append(_name_6);
+    _builder.append(" (){");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("require(_performer == ");
+    String _name_7 = c.getClauses().get(0).getRolePlayer().getName();
+    _builder.append(_name_7, "\t");
+    _builder.append(".walletAddress, \"You have no permission to perform this operation.\");");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("bool isBreached=false;");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  public long getTS(final String date) {
+    long _time = Timestamp.valueOf(date).getTime();
+    return (_time / 1000);
+  }
+  
+  public CharSequence getConditions(final Condition condition) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(condition.eAllContents());
+      for(final EObject c : _iterable) {
+        {
+          if ((c instanceof Timeout)) {
+            _builder.append("Timeout public timeout(");
+            int _value = ((Timeout)c).getValue();
+            _builder.append(_value);
+            _builder.append(");");
+            _builder.newLineIfNotEmpty();
+          } else {
+            if ((c instanceof BusinessDay)) {
+              _builder.append("BusinessDay public businessDay(");
+              WeekDay _start = ((BusinessDay)c).getStart();
+              _builder.append(_start);
+              _builder.append(", ");
+              WeekDay _end = ((BusinessDay)c).getEnd();
+              _builder.append(_end);
+              _builder.append(");");
+              _builder.newLineIfNotEmpty();
+            } else {
+              if ((c instanceof OperationsLimit)) {
+                _builder.append("OperationLimit public operationLimit = OperationLimit(");
+                int _operationsNumber = ((OperationsLimit)c).getOperationsNumber();
+                _builder.append(_operationsNumber);
+                _builder.append(", ");
+                TimeUnit _timeUnit = ((OperationsLimit)c).getTimeUnit();
+                _builder.append(_timeUnit);
+                _builder.append(", 0, 0);");
+                _builder.newLineIfNotEmpty();
+              } else {
+                if ((c instanceof MessageContent)) {
+                  _builder.append("MessageContent public messageContent = MessageContent(\"");
+                  String _content = ((MessageContent)c).getContent();
+                  _builder.append(_content);
+                  _builder.append("\");");
+                  _builder.newLineIfNotEmpty();
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return _builder;
   }
 }
