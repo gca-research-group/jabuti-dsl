@@ -5,21 +5,11 @@ import "http://www.edu.br/unijui/gca/smartce/SmartCE"
 Model: 
 	{Model}
 	imports+=Import*
-//	operations+=Operation*
 	contracts+=Contract*;
 
 Import:
      'import' importedNamespace=QualifiedNameWithWildcard
 ;
-
-//Operation: 
-//	name=QualifiedName
-//;
-
-
-//Operation: 
-//	name=('push' | 'poll' |'write' |'read' |'request'|'response')
-//; 
 
 Contract: 
 	'Contract' name=ID '{'
@@ -32,7 +22,6 @@ Contract:
 		actions+=Action*
 	'}'; 
 
-
 Clause: 
 	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
 		'description' '=' description=STRING
@@ -41,8 +30,8 @@ Clause:
 		'condition' '{' 
 			condition=Condition  
 		'}'
-		(('onSuccess' onSuccess=OnSuccess
-		'onBreach' onBreach=OnBreach )|
+		'onBreach' onBreach=OnBreach |
+		('onSuccess' onSuccess=OnSuccess
 		'onBreach' onBreach=OnBreach )
 	 '}' 
 ;
@@ -116,14 +105,15 @@ OnBreach:
 	'(' action=[Action] ',' message=Expression  ')' 
 ;
 
-//Action:
-	//'Action' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')' '{'
-		//statements+=Expression
-	//'}'
-//;
 Action:
-	('BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')|
-	('EventLog' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')
+	BusinessAction | EventLog;
+
+BusinessAction:
+	'BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')'
+;
+
+EventLog:
+	'EventLog' name=ID	'(' parameters+=Variable (',' parameters+=Variable)* ')'
 ;
 
 Variable:
