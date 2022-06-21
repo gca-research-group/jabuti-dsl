@@ -4,7 +4,6 @@ pragma solidity ^0.8.14;
 import "./libs/EAI_Domain.sol";
 
 contract DeliveryHiring is EAI_Domain{
-	
 	uint32 beginDate = 1641024000;
 	uint32 dueDate = 1672509600;
 	
@@ -33,8 +32,8 @@ contract DeliveryHiring is EAI_Domain{
 	   	bool isBreached=false; 
 	    
 		if(!isTimeout(_accessDateTime, timeout.endTime) &&
-			isBusinessDay(_accessDateTime, businessDay)&&
-			isIntoTimeInterval(_accessDateTime, businessTime)&&
+			isBusinessDay(_accessDateTime, businessDay) &&
+			isIntoTimeInterval(_accessDateTime, businessTime) &&
 			!isOperationLimitReached(_accessDateTime, operationLimit))
 			{
 			    operationLimit.requestsPerformed+=1;// increment the request counter if the response was correctly performed

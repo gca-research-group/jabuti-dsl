@@ -14,6 +14,7 @@ import br.edu.unijui.gca.smartce.smartCE.Condition
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay
 import br.edu.unijui.gca.smartce.smartCE.OperationsLimit
 import br.edu.unijui.gca.smartce.smartCE.MessageContent
+import br.edu.unijui.gca.smartce.smartCE.BusinessTime
 
 /**
  * Generates code from your model files on save.
@@ -43,20 +44,27 @@ class SmartCEGenerator extends AbstractGenerator {
 				Party «c.process.name»;
 				
 				«getConditions(c.clauses.get(0).condition)»
-			}
-			
-			event «c.clauses.get(0).onBreach.action.name»(string _logMessage);
-			
-			constructor(address _applicationWallet, address _processWallet){
-			    «c.application.name» = Party("«c.process.description» ", _applicationWallet);
-			    «c.process.name» = Party("«c.process.description»", _processWallet);
-			}
-			
-			function «c.clauses.get(0).name» (){
 				
-				require(_performer == «c.clauses.get(0).rolePlayer.name».walletAddress, "You have no permission to perform this operation.");
+				event «c.clauses.get(0).onBreach.action.name»(string _logMessage);
 				
-				bool isBreached=false;
+				constructor(address _applicationWallet, address _processWallet){
+			    	«c.application.name» = Party("«c.process.description» ", _applicationWallet);
+				    «c.process.name» = Party("«c.process.description»", _processWallet);
+				}
+				
+				function «c.clauses.get(0).name»(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
+								
+					require(_performer == «c.clauses.get(0).rolePlayer.name».walletAddress, "You have no permission to perform this operation.");
+					bool isBreached=false;
+					
+					if(«getConditionals(c.clauses.get(0).condition)») {
+						operationLimit.requestsPerformed+=1;
+			        	return true;	
+					}
+					
+					emit «c.clauses.get(0).onBreach.action.name» ("Request made outside of allowed hours or distance limit exceeded");
+					return false;
+				}
 			}
 		'''
 	}
@@ -69,9 +77,11 @@ class SmartCEGenerator extends AbstractGenerator {
 		'''
 			«FOR c: condition.eAllContents.toIterable»
 				«IF(c instanceof Timeout)»
-					Timeout public timeout(«c.value»);
+					Timeout public timeout = Timeout(«c.value», 0);
 				«ELSEIF(c instanceof BusinessDay)»
-					BusinessDay public businessDay(«c.start», «c.end»);
+					BusinessDay public businessDay = BusinessDay(«c.start», «c.end»);
+				«ELSEIF(c instanceof BusinessTime)»
+					TimeInterval public businessTime = TimeInterval(«c.start», «c.end»);
 				«ELSEIF(c instanceof OperationsLimit)»
 					OperationLimit public operationLimit = OperationLimit(«c.operationsNumber», «c.timeUnit», 0, 0);
 				«ELSEIF(c instanceof MessageContent)»
@@ -80,5 +90,21 @@ class SmartCEGenerator extends AbstractGenerator {
 			«ENDFOR»
 		'''
 	}
-		
+	
+	def getConditionals(Condition condition){
+		'''	
+		«FOR c: condition.eAllContents.toIterable»
+			«IF(c instanceof Timeout)»
+				!isTimeout(_accessDateTime, timeout.endTime) &&
+			«ELSEIF(c instanceof BusinessDay)»
+				isBusinessDay(_accessDateTime, businessDay) &&
+			«ELSEIF(c instanceof BusinessTime)»
+				isIntoTimeInterval(_accessDateTime, businessTime) &&
+			«ELSEIF(c instanceof OperationsLimit)»
+				!isOperationLimitReached(_accessDateTime, operationLimit) &&
+			«ENDIF»
+		«ENDFOR»
+		'''
+	}
+	
 }

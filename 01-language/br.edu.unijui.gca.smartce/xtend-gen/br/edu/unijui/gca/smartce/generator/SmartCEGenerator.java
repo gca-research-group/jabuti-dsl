@@ -4,6 +4,7 @@
 package br.edu.unijui.gca.smartce.generator;
 
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
+import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
@@ -85,53 +86,87 @@ public class SmartCEGenerator extends AbstractGenerator {
     CharSequence _conditions = this.getConditions(c.getClauses().get(0).getCondition());
     _builder.append(_conditions, "\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("}");
+    _builder.append("\t");
     _builder.newLine();
-    _builder.newLine();
+    _builder.append("\t");
     _builder.append("event ");
     String _name_3 = c.getClauses().get(0).getOnBreach().getAction().getName();
-    _builder.append(_name_3);
+    _builder.append(_name_3, "\t");
     _builder.append("(string _logMessage);");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
     _builder.newLine();
+    _builder.append("\t");
     _builder.append("constructor(address _applicationWallet, address _processWallet){");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.append("    \t");
     String _name_4 = c.getApplication().getName();
-    _builder.append(_name_4, "    ");
+    _builder.append(_name_4, "    \t");
     _builder.append(" = Party(\"");
     String _description = c.getProcess().getDescription();
-    _builder.append(_description, "    ");
+    _builder.append(_description, "    \t");
     _builder.append(" \", _applicationWallet);");
     _builder.newLineIfNotEmpty();
-    _builder.append("    ");
+    _builder.append("\t    ");
     String _name_5 = c.getProcess().getName();
-    _builder.append(_name_5, "    ");
+    _builder.append(_name_5, "\t    ");
     _builder.append(" = Party(\"");
     String _description_1 = c.getProcess().getDescription();
-    _builder.append(_description_1, "    ");
+    _builder.append(_description_1, "\t    ");
     _builder.append("\", _processWallet);");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t");
     _builder.newLine();
+    _builder.append("\t");
     _builder.append("function ");
     String _name_6 = c.getClauses().get(0).getName();
-    _builder.append(_name_6);
-    _builder.append(" (){");
+    _builder.append(_name_6, "\t");
+    _builder.append("(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t\t\t\t");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t\t");
     _builder.append("require(_performer == ");
     String _name_7 = c.getClauses().get(0).getRolePlayer().getName();
-    _builder.append(_name_7, "\t");
+    _builder.append(_name_7, "\t\t");
     _builder.append(".walletAddress, \"You have no permission to perform this operation.\");");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
+    _builder.append("\t\t");
+    _builder.append("bool isBreached=false;");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("if(");
+    CharSequence _conditionals = this.getConditionals(c.getClauses().get(0).getCondition());
+    _builder.append(_conditionals, "\t\t");
+    _builder.append(") {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append("operationLimit.requestsPerformed+=1;");
+    _builder.newLine();
+    _builder.append("        \t");
+    _builder.append("return true;\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("emit ");
+    String _name_8 = c.getClauses().get(0).getOnBreach().getAction().getName();
+    _builder.append(_name_8, "\t\t");
+    _builder.append(" (\"Request made outside of allowed hours or distance limit exceeded\");");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append("return false;");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("bool isBreached=false;");
+    _builder.append("}");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
@@ -150,14 +185,14 @@ public class SmartCEGenerator extends AbstractGenerator {
       for(final EObject c : _iterable) {
         {
           if ((c instanceof Timeout)) {
-            _builder.append("Timeout public timeout(");
+            _builder.append("Timeout public timeout = Timeout(");
             int _value = ((Timeout)c).getValue();
             _builder.append(_value);
-            _builder.append(");");
+            _builder.append(", 0);");
             _builder.newLineIfNotEmpty();
           } else {
             if ((c instanceof BusinessDay)) {
-              _builder.append("BusinessDay public businessDay(");
+              _builder.append("BusinessDay public businessDay = BusinessDay(");
               WeekDay _start = ((BusinessDay)c).getStart();
               _builder.append(_start);
               _builder.append(", ");
@@ -166,22 +201,64 @@ public class SmartCEGenerator extends AbstractGenerator {
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
-              if ((c instanceof OperationsLimit)) {
-                _builder.append("OperationLimit public operationLimit = OperationLimit(");
-                int _operationsNumber = ((OperationsLimit)c).getOperationsNumber();
-                _builder.append(_operationsNumber);
+              if ((c instanceof BusinessTime)) {
+                _builder.append("TimeInterval public businessTime = TimeInterval(");
+                String _start_1 = ((BusinessTime)c).getStart();
+                _builder.append(_start_1);
                 _builder.append(", ");
-                TimeUnit _timeUnit = ((OperationsLimit)c).getTimeUnit();
-                _builder.append(_timeUnit);
-                _builder.append(", 0, 0);");
+                String _end_1 = ((BusinessTime)c).getEnd();
+                _builder.append(_end_1);
+                _builder.append(");");
                 _builder.newLineIfNotEmpty();
               } else {
-                if ((c instanceof MessageContent)) {
-                  _builder.append("MessageContent public messageContent = MessageContent(\"");
-                  String _content = ((MessageContent)c).getContent();
-                  _builder.append(_content);
-                  _builder.append("\");");
+                if ((c instanceof OperationsLimit)) {
+                  _builder.append("OperationLimit public operationLimit = OperationLimit(");
+                  int _operationsNumber = ((OperationsLimit)c).getOperationsNumber();
+                  _builder.append(_operationsNumber);
+                  _builder.append(", ");
+                  TimeUnit _timeUnit = ((OperationsLimit)c).getTimeUnit();
+                  _builder.append(_timeUnit);
+                  _builder.append(", 0, 0);");
                   _builder.newLineIfNotEmpty();
+                } else {
+                  if ((c instanceof MessageContent)) {
+                    _builder.append("MessageContent public messageContent = MessageContent(\"");
+                    String _content = ((MessageContent)c).getContent();
+                    _builder.append(_content);
+                    _builder.append("\");");
+                    _builder.newLineIfNotEmpty();
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence getConditionals(final Condition condition) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(condition.eAllContents());
+      for(final EObject c : _iterable) {
+        {
+          if ((c instanceof Timeout)) {
+            _builder.append("!isTimeout(_accessDateTime, timeout.endTime) &&");
+            _builder.newLine();
+          } else {
+            if ((c instanceof BusinessDay)) {
+              _builder.append("isBusinessDay(_accessDateTime, businessDay) &&");
+              _builder.newLine();
+            } else {
+              if ((c instanceof BusinessTime)) {
+                _builder.append("isIntoTimeInterval(_accessDateTime, businessTime) &&");
+                _builder.newLine();
+              } else {
+                if ((c instanceof OperationsLimit)) {
+                  _builder.append("!isOperationLimitReached(_accessDateTime, operationLimit) &&");
+                  _builder.newLine();
                 }
               }
             }

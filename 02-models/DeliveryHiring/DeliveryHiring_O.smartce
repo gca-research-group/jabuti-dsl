@@ -1,4 +1,4 @@
-//@version - jabuti 0.1.0 
+//@version - jabuti 0.1.0  
 
 Contract DeliveryHiring_O {   
 
@@ -12,7 +12,7 @@ Contract DeliveryHiring_O {
 		description = "Setting the time limit for responding to a request"
 		rolePlayer = deliverySystem
 		operation = response
-		condition {
+		condition { 
 			Timeout(60) AND
 			BusinessDay(Monday to Friday) AND
 			BusinessTime("08:30:00" to "18:31:00") AND
