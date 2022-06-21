@@ -32,6 +32,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SmartCEGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getClauseAccess().getAlternatives_0(), "rule__Clause__Alternatives_0");
+			builder.put(grammarAccess.getClauseAccess().getAlternatives_16(), "rule__Clause__Alternatives_16");
 			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
 			builder.put(grammarAccess.getBusinessRuleAccess().getAlternatives(), "rule__BusinessRule__Alternatives");
 			builder.put(grammarAccess.getLogicalOperatorAccess().getNameAlternatives_0(), "rule__LogicalOperator__NameAlternatives_0");
@@ -45,12 +46,15 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getNegativeAccess().getAlternatives(), "rule__Negative__Alternatives");
 			builder.put(grammarAccess.getPrimaryAccess().getAlternatives(), "rule__Primary__Alternatives");
 			builder.put(grammarAccess.getLiteralValueAccess().getAlternatives(), "rule__LiteralValue__Alternatives");
+			builder.put(grammarAccess.getOperationAccess().getAlternatives(), "rule__Operation__Alternatives");
 			builder.put(grammarAccess.getWeekDayAccess().getAlternatives(), "rule__WeekDay__Alternatives");
 			builder.put(grammarAccess.getTimeUnitAccess().getAlternatives(), "rule__TimeUnit__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 			builder.put(grammarAccess.getContractAccess().getGroup(), "rule__Contract__Group__0");
 			builder.put(grammarAccess.getClauseAccess().getGroup(), "rule__Clause__Group__0");
+			builder.put(grammarAccess.getClauseAccess().getGroup_16_0(), "rule__Clause__Group_16_0__0");
+			builder.put(grammarAccess.getClauseAccess().getGroup_16_1(), "rule__Clause__Group_16_1__0");
 			builder.put(grammarAccess.getCompositeConditionAccess().getGroup(), "rule__CompositeCondition__Group__0");
 			builder.put(grammarAccess.getCompositeConditionAccess().getGroup_3(), "rule__CompositeCondition__Group_3__0");
 			builder.put(grammarAccess.getTimeoutAccess().getGroup(), "rule__Timeout__Group__0");
@@ -60,6 +64,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMessageContentAccess().getGroup(), "rule__MessageContent__Group__0");
 			builder.put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
 			builder.put(grammarAccess.getProcessAccess().getGroup(), "rule__Process__Group__0");
+			builder.put(grammarAccess.getOnSuccessAccess().getGroup(), "rule__OnSuccess__Group__0");
 			builder.put(grammarAccess.getOnBreachAccess().getGroup(), "rule__OnBreach__Group__0");
 			builder.put(grammarAccess.getActionAccess().getGroup_0(), "rule__Action__Group_0__0");
 			builder.put(grammarAccess.getActionAccess().getGroup_0_4(), "rule__Action__Group_0_4__0");
@@ -84,10 +89,8 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
 			builder.put(grammarAccess.getDATEAccess().getGroup(), "rule__DATE__Group__0");
 			builder.put(grammarAccess.getModelAccess().getImportsAssignment_1(), "rule__Model__ImportsAssignment_1");
-			builder.put(grammarAccess.getModelAccess().getOperationsAssignment_2(), "rule__Model__OperationsAssignment_2");
-			builder.put(grammarAccess.getModelAccess().getContractsAssignment_3(), "rule__Model__ContractsAssignment_3");
+			builder.put(grammarAccess.getModelAccess().getContractsAssignment_2(), "rule__Model__ContractsAssignment_2");
 			builder.put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-			builder.put(grammarAccess.getOperationAccess().getNameAssignment(), "rule__Operation__NameAssignment");
 			builder.put(grammarAccess.getContractAccess().getNameAssignment_1(), "rule__Contract__NameAssignment_1");
 			builder.put(grammarAccess.getContractAccess().getBeginDateAssignment_5(), "rule__Contract__BeginDateAssignment_5");
 			builder.put(grammarAccess.getContractAccess().getDueDateAssignment_8(), "rule__Contract__DueDateAssignment_8");
@@ -97,10 +100,12 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getContractAccess().getActionsAssignment_16(), "rule__Contract__ActionsAssignment_16");
 			builder.put(grammarAccess.getClauseAccess().getNameAssignment_1(), "rule__Clause__NameAssignment_1");
 			builder.put(grammarAccess.getClauseAccess().getDescriptionAssignment_5(), "rule__Clause__DescriptionAssignment_5");
-			builder.put(grammarAccess.getClauseAccess().getRolePlayerAssignment_7(), "rule__Clause__RolePlayerAssignment_7");
-			builder.put(grammarAccess.getClauseAccess().getOperationAssignment_10(), "rule__Clause__OperationAssignment_10");
+			builder.put(grammarAccess.getClauseAccess().getRolePlayerAssignment_8(), "rule__Clause__RolePlayerAssignment_8");
+			builder.put(grammarAccess.getClauseAccess().getOperationAssignment_11(), "rule__Clause__OperationAssignment_11");
 			builder.put(grammarAccess.getClauseAccess().getConditionAssignment_14(), "rule__Clause__ConditionAssignment_14");
-			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_17(), "rule__Clause__OnBreachAssignment_17");
+			builder.put(grammarAccess.getClauseAccess().getOnSuccessAssignment_16_0_1(), "rule__Clause__OnSuccessAssignment_16_0_1");
+			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_16_0_3(), "rule__Clause__OnBreachAssignment_16_0_3");
+			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_16_1_1(), "rule__Clause__OnBreachAssignment_16_1_1");
 			builder.put(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_0(), "rule__CompositeCondition__ConditionsAssignment_0");
 			builder.put(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsAssignment_1(), "rule__CompositeCondition__LogicalOperatorsAssignment_1");
 			builder.put(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_2(), "rule__CompositeCondition__ConditionsAssignment_2");
@@ -119,6 +124,8 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getApplicationAccess().getDescriptionAssignment_2(), "rule__Application__DescriptionAssignment_2");
 			builder.put(grammarAccess.getProcessAccess().getNameAssignment_0(), "rule__Process__NameAssignment_0");
 			builder.put(grammarAccess.getProcessAccess().getDescriptionAssignment_2(), "rule__Process__DescriptionAssignment_2");
+			builder.put(grammarAccess.getOnSuccessAccess().getActionAssignment_1(), "rule__OnSuccess__ActionAssignment_1");
+			builder.put(grammarAccess.getOnSuccessAccess().getMessageAssignment_3(), "rule__OnSuccess__MessageAssignment_3");
 			builder.put(grammarAccess.getOnBreachAccess().getActionAssignment_1(), "rule__OnBreach__ActionAssignment_1");
 			builder.put(grammarAccess.getOnBreachAccess().getMessageAssignment_3(), "rule__OnBreach__MessageAssignment_3");
 			builder.put(grammarAccess.getActionAccess().getNameAssignment_0_1(), "rule__Action__NameAssignment_0_1");

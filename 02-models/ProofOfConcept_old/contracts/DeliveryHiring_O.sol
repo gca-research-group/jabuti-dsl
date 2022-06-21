@@ -62,7 +62,7 @@ contract DeliveryHiring is EAI_Domain{
 	  	
 	  	// se a clausula for violada emite um evento passando a descrição da falha 
 	   	if(isBreached){
-	   	    emit fail(fail_description);
+//	   	    emit fail(fail_description);
 	   	    return false;
 	   	}
 

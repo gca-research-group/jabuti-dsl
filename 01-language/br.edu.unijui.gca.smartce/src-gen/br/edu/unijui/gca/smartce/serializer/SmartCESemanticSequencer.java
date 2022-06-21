@@ -18,7 +18,7 @@ import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
-import br.edu.unijui.gca.smartce.smartCE.Operation;
+import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
@@ -97,8 +97,8 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.ON_BREACH:
 				sequence_OnBreach(context, (OnBreach) semanticObject); 
 				return; 
-			case SmartCEPackage.OPERATION:
-				sequence_Operation(context, (Operation) semanticObject); 
+			case SmartCEPackage.ON_SUCCESS:
+				sequence_OnSuccess(context, (OnSuccess) semanticObject); 
 				return; 
 			case SmartCEPackage.OPERATIONS_LIMIT:
 				sequence_OperationsLimit(context, (OperationsLimit) semanticObject); 
@@ -224,35 +224,14 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         name=ID 
 	 *         description=STRING 
 	 *         rolePlayer=[Party|ID] 
-	 *         operation=[Operation|QualifiedName] 
+	 *         operation=Operation 
 	 *         condition=Condition 
-	 *         onBreach=OnBreach
+	 *         ((onSuccess=OnSuccess onBreach=OnBreach) | onBreach=OnBreach)
 	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Clause(ISerializationContext context, Clause semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__NAME));
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__DESCRIPTION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__DESCRIPTION));
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER));
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__OPERATION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__OPERATION));
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__CONDITION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__CONDITION));
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.CLAUSE__ON_BREACH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.CLAUSE__ON_BREACH));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getClauseAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getClauseAccess().getDescriptionSTRINGTerminalRuleCall_5_0(), semanticObject.getDescription());
-		feeder.accept(grammarAccess.getClauseAccess().getRolePlayerPartyIDTerminalRuleCall_7_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__ROLE_PLAYER, false));
-		feeder.accept(grammarAccess.getClauseAccess().getOperationOperationQualifiedNameParserRuleCall_10_0_1(), semanticObject.eGet(SmartCEPackage.Literals.CLAUSE__OPERATION, false));
-		feeder.accept(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_14_0(), semanticObject.getCondition());
-		feeder.accept(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_17_0(), semanticObject.getOnBreach());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -428,7 +407,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (imports+=Import* operations+=Operation* contracts+=Contract*)
+	 *     (imports+=Import* contracts+=Contract*)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
@@ -518,19 +497,22 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Operation returns Operation
+	 *     OnSuccess returns OnSuccess
 	 *
 	 * Constraint:
-	 *     name=QualifiedName
+	 *     (action=[Action|ID] message=Expression)
 	 * </pre>
 	 */
-	protected void sequence_Operation(ISerializationContext context, Operation semanticObject) {
+	protected void sequence_OnSuccess(ISerializationContext context, OnSuccess semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATION__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.ON_SUCCESS__ACTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.ON_SUCCESS__ACTION));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.ON_SUCCESS__MESSAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.ON_SUCCESS__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperationAccess().getNameQualifiedNameParserRuleCall_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getOnSuccessAccess().getActionActionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SmartCEPackage.Literals.ON_SUCCESS__ACTION, false));
+		feeder.accept(grammarAccess.getOnSuccessAccess().getMessageExpressionParserRuleCall_3_0(), semanticObject.getMessage());
 		feeder.finish();
 	}
 	

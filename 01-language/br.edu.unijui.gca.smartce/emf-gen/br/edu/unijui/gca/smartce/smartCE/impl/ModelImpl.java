@@ -6,7 +6,6 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.Model;
-import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
 import java.util.Collection;
@@ -32,7 +31,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl#getContracts <em>Contracts</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl#getOperations <em>Operations</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ModelImpl#getImports <em>Imports</em>}</li>
  * </ul>
  *
@@ -49,16 +47,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	 * @ordered
 	 */
 	protected EList<Contract> contracts;
-
-	/**
-	 * The cached value of the '{@link #getOperations() <em>Operations</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getOperations()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Operation> operations;
 
 	/**
 	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
@@ -112,21 +100,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	 * @generated
 	 */
 	@Override
-	public EList<Operation> getOperations()
-	{
-		if (operations == null)
-		{
-			operations = new EObjectContainmentEList<Operation>(Operation.class, this, SmartCEPackage.MODEL__OPERATIONS);
-		}
-		return operations;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Import> getImports()
 	{
 		if (imports == null)
@@ -148,8 +121,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 		{
 			case SmartCEPackage.MODEL__CONTRACTS:
 				return ((InternalEList<?>)getContracts()).basicRemove(otherEnd, msgs);
-			case SmartCEPackage.MODEL__OPERATIONS:
-				return ((InternalEList<?>)getOperations()).basicRemove(otherEnd, msgs);
 			case SmartCEPackage.MODEL__IMPORTS:
 				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
 		}
@@ -168,8 +139,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 		{
 			case SmartCEPackage.MODEL__CONTRACTS:
 				return getContracts();
-			case SmartCEPackage.MODEL__OPERATIONS:
-				return getOperations();
 			case SmartCEPackage.MODEL__IMPORTS:
 				return getImports();
 		}
@@ -190,10 +159,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 			case SmartCEPackage.MODEL__CONTRACTS:
 				getContracts().clear();
 				getContracts().addAll((Collection<? extends Contract>)newValue);
-				return;
-			case SmartCEPackage.MODEL__OPERATIONS:
-				getOperations().clear();
-				getOperations().addAll((Collection<? extends Operation>)newValue);
 				return;
 			case SmartCEPackage.MODEL__IMPORTS:
 				getImports().clear();
@@ -216,9 +181,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 			case SmartCEPackage.MODEL__CONTRACTS:
 				getContracts().clear();
 				return;
-			case SmartCEPackage.MODEL__OPERATIONS:
-				getOperations().clear();
-				return;
 			case SmartCEPackage.MODEL__IMPORTS:
 				getImports().clear();
 				return;
@@ -238,8 +200,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 		{
 			case SmartCEPackage.MODEL__CONTRACTS:
 				return contracts != null && !contracts.isEmpty();
-			case SmartCEPackage.MODEL__OPERATIONS:
-				return operations != null && !operations.isEmpty();
 			case SmartCEPackage.MODEL__IMPORTS:
 				return imports != null && !imports.isEmpty();
 		}

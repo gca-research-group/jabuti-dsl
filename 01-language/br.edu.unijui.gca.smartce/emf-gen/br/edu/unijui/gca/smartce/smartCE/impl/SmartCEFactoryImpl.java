@@ -22,6 +22,7 @@ import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
+import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
@@ -104,7 +105,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.PROCESS: return createProcess();
 			case SmartCEPackage.PARTY: return createParty();
 			case SmartCEPackage.CLAUSE: return createClause();
-			case SmartCEPackage.OPERATION: return createOperation();
 			case SmartCEPackage.IMPORT: return createImport();
 			case SmartCEPackage.EXPRESSION: return createExpression();
 			case SmartCEPackage.LITERAL_VALUE: return createLiteralValue();
@@ -126,6 +126,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.BUSINESS_ACTION: return createBusinessAction();
 			case SmartCEPackage.EVENT_LOG: return createEventLog();
 			case SmartCEPackage.LOGICAL_OPERATOR: return createLogicalOperator();
+			case SmartCEPackage.ON_SUCCESS: return createOnSuccess();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +146,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return createWeekDayFromString(eDataType, initialValue);
 			case SmartCEPackage.TIME_UNIT:
 				return createTimeUnitFromString(eDataType, initialValue);
+			case SmartCEPackage.OPERATION:
+				return createOperationFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -164,6 +167,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return convertWeekDayToString(eDataType, instanceValue);
 			case SmartCEPackage.TIME_UNIT:
 				return convertTimeUnitToString(eDataType, instanceValue);
+			case SmartCEPackage.OPERATION:
+				return convertOperationToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -251,18 +256,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		ClauseImpl clause = new ClauseImpl();
 		return clause;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Operation createOperation()
-	{
-		OperationImpl operation = new OperationImpl();
-		return operation;
 	}
 
 	/**
@@ -522,6 +515,18 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public OnSuccess createOnSuccess()
+	{
+		OnSuccessImpl onSuccess = new OnSuccessImpl();
+		return onSuccess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public WeekDay createWeekDayFromString(EDataType eDataType, String initialValue)
 	{
 		WeekDay result = WeekDay.get(initialValue);
@@ -557,6 +562,28 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	public String convertTimeUnitToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Operation createOperationFromString(EDataType eDataType, String initialValue)
+	{
+		Operation result = Operation.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertOperationToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

@@ -44,7 +44,7 @@ contract DeliveryHiring is EAI_Domain{
 	    }
 	    
 	    if(isOperationLimitReached(_accessDateTime, operationLimit)){
-			fail_description = string(abi.encodePacked(fail_description,": 'Breached condition: operationLimit reached'"));
+			fail_description = string(abi.encodePacked(fail_description,": 'operationLimit reached'"));
 	        isBreached=true;
 	    }
 	    
@@ -55,13 +55,14 @@ contract DeliveryHiring is EAI_Domain{
 	  	
 	  	// se a clausula for violada emite um evento passando a descrção da falha 
 	   	if(isBreached){
-	   	    emit fail(fail_description);
+//	   	    Request operation performed outside of allowed hours or limit operation exceeded
+//	   	    emit logMessageFail(fail_description);
 	   	    return false;
 	   	}
 
 	    // operationLimit.requestsPerformed+=1;
 	    
-	   	// emit success("Success execution in clause ");
+//	    emit success("Success execution in clause ");
 	    return true;
 	    
 	}

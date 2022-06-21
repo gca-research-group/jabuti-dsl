@@ -3,46 +3,315 @@
  */
 package br.edu.unijui.gca.smartce.smartCE;
 
-import org.eclipse.emf.ecore.EObject;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Operation</b></em>'.
+ * A representation of the literals of the enumeration '<em><b>Operation</b></em>',
+ * and utility methods for working with them.
  * <!-- end-user-doc -->
- *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Operation#getName <em>Name</em>}</li>
- * </ul>
- *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperation()
  * @model
  * @generated
  */
-public interface Operation extends EObject
+public enum Operation implements Enumerator
 {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * The '<em><b>PUSH</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperation_Name()
-	 * @model
+	 * @see #PUSH_VALUE
 	 * @generated
+	 * @ordered
 	 */
-	String getName();
+	PUSH(0, "PUSH", "PUSH"),
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Operation#getName <em>Name</em>}' attribute.
+	 * The '<em><b>POLL</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @see #POLL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	POLL(1, "POLL", "POLL"),
+
+	/**
+	 * The '<em><b>WRITE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #WRITE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	WRITE(2, "WRITE", "WRITE"),
+
+	/**
+	 * The '<em><b>READ</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #READ_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	READ(3, "READ", "READ"),
+
+	/**
+	 * The '<em><b>REQUEST</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #REQUEST_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	REQUEST(4, "REQUEST", "REQUEST"),
+
+	/**
+	 * The '<em><b>RESPONSE</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RESPONSE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	RESPONSE(5, "RESPONSE", "RESPONSE");
+
+	/**
+	 * The '<em><b>PUSH</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #PUSH
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int PUSH_VALUE = 0;
+
+	/**
+	 * The '<em><b>POLL</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #POLL
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int POLL_VALUE = 1;
+
+	/**
+	 * The '<em><b>WRITE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #WRITE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int WRITE_VALUE = 2;
+
+	/**
+	 * The '<em><b>READ</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #READ
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int READ_VALUE = 3;
+
+	/**
+	 * The '<em><b>REQUEST</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #REQUEST
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int REQUEST_VALUE = 4;
+
+	/**
+	 * The '<em><b>RESPONSE</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #RESPONSE
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int RESPONSE_VALUE = 5;
+
+	/**
+	 * An array of all the '<em><b>Operation</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	void setName(String value);
+	private static final Operation[] VALUES_ARRAY =
+		new Operation[]
+		{
+			PUSH,
+			POLL,
+			WRITE,
+			READ,
+			REQUEST,
+			RESPONSE,
+		};
 
-} // Operation
+	/**
+	 * A public read-only list of all the '<em><b>Operation</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final List<Operation> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+
+	/**
+	 * Returns the '<em><b>Operation</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
+	public static Operation get(String literal)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
+			Operation result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal))
+			{
+				return result;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Returns the '<em><b>Operation</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
+	public static Operation getByName(String name)
+	{
+		for (int i = 0; i < VALUES_ARRAY.length; ++i)
+		{
+			Operation result = VALUES_ARRAY[i];
+			if (result.getName().equals(name))
+			{
+				return result;
+			}
+		}
+		return null;
+	}
+
+	/**
+	 * Returns the '<em><b>Operation</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
+	public static Operation get(int value)
+	{
+		switch (value)
+		{
+			case PUSH_VALUE: return PUSH;
+			case POLL_VALUE: return POLL;
+			case WRITE_VALUE: return WRITE;
+			case READ_VALUE: return READ;
+			case REQUEST_VALUE: return REQUEST;
+			case RESPONSE_VALUE: return RESPONSE;
+		}
+		return null;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final int value;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String name;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private final String literal;
+
+	/**
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private Operation(int value, String name, String literal)
+	{
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getValue()
+	{
+	  return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getName()
+	{
+	  return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getLiteral()
+	{
+	  return literal;
+	}
+
+	/**
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString()
+	{
+		return literal;
+	}
+	
+} //Operation
