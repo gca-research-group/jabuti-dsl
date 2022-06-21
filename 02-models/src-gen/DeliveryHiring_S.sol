@@ -3,33 +3,31 @@ pragma solidity ^0.8.14;
 
 import "./libs/EAI_Domain.sol";
 
-contract DeliveryHiring_O is EAI_Domain{
+contract DeliveryHiring_S is EAI_Domain{
 	uint32 beginDate = 1641042000;
 	uint32 dueDate = 1672527600;
 	
-	Party deliverySystem1;
-	Party integrationProcess1;
+	Party deliverySystem;
+	Party integrationProcess;
 	
-	Timeout public timeout = Timeout(180, 0);
 	BusinessDay public businessDay = BusinessDay(MONDAY, FRIDAY);
-	TimeInterval public businessTime = TimeInterval(08:30:00, 18:31:00);
+	TimeInterval public businessTime = TimeInterval(08:30:00, 18:30:00);
 	OperationLimit public operationLimit = OperationLimit(5, MINUTE, 0, 0);
 	MessageContent public messageContent = MessageContent("count(//address)=1");
 	
 	event failEvent(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
-    	deliverySystem1 = Party("Integration process ", _applicationWallet);
-	    integrationProcess1 = Party("Integration process", _processWallet);
+    	deliverySystem = Party("Integration process ", _applicationWallet);
+	    integrationProcess = Party("Integration process", _processWallet);
 	}
 	
-	function responseOrder(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
+	function requestDelivery(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
 					
-		require(_performer == deliverySystem1.walletAddress, "You have no permission to perform this operation.");
+		require(_performer == integrationProcess.walletAddress, "You have no permission to perform this operation.");
 		bool isBreached=false;
 		
-		if(!isTimeout(_accessDateTime, timeout.endTime) &&
-		isBusinessDay(_accessDateTime, businessDay) &&
+		if(isBusinessDay(_accessDateTime, businessDay) &&
 		isIntoTimeInterval(_accessDateTime, businessTime) &&
 		!isOperationLimitReached(_accessDateTime, operationLimit) &&
 		) {
