@@ -17,9 +17,8 @@ Contract:
 		'dueDate' '=' dueDate=STRING
 		'application' '=' application=Application
 		'process' '=' process=Process
-		
-		clauses+=Clause*
 		actions+=Action*
+		clauses+=Clause*
 	'}'; 
 
 Clause: 
@@ -30,9 +29,7 @@ Clause:
 		'condition' '{' 
 			condition=Condition  
 		'}'
-		'onBreach' onBreach=OnBreach |
-		('onSuccess' onSuccess=OnSuccess
-		'onBreach' onBreach=OnBreach )
+		'onBreach' onBreach=OnBreach ('onSuccess' onSuccess=OnSuccess)?
 	 '}' 
 ;
 

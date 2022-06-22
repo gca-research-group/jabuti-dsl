@@ -6,11 +6,13 @@ package br.edu.unijui.gca.smartce.serializer;
 import br.edu.unijui.gca.smartce.services.SmartCEGrammarAccess;
 import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
+import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
 import br.edu.unijui.gca.smartce.smartCE.Import;
 import br.edu.unijui.gca.smartce.smartCE.LogicalOperator;
@@ -52,14 +54,14 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SmartCEPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SmartCEPackage.ACTION:
-				sequence_Action(context, (br.edu.unijui.gca.smartce.smartCE.Action) semanticObject); 
-				return; 
 			case SmartCEPackage.APPLICATION:
 				sequence_Application(context, (Application) semanticObject); 
 				return; 
 			case SmartCEPackage.BINARY_OPERATOR:
 				sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
+				return; 
+			case SmartCEPackage.BUSINESS_ACTION:
+				sequence_BusinessAction(context, (BusinessAction) semanticObject); 
 				return; 
 			case SmartCEPackage.BUSINESS_DAY:
 				sequence_BusinessDay(context, (BusinessDay) semanticObject); 
@@ -75,6 +77,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SmartCEPackage.CONTRACT:
 				sequence_Contract(context, (Contract) semanticObject); 
+				return; 
+			case SmartCEPackage.EVENT_LOG:
+				sequence_EventLog(context, (EventLog) semanticObject); 
 				return; 
 			case SmartCEPackage.FUNCTION_CALL:
 				sequence_FunctionCall(context, (FunctionCall) semanticObject); 
@@ -129,20 +134,6 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Action returns Action
-	 *
-	 * Constraint:
-	 *     ((name=ID parameters+=Variable parameters+=Variable*) | (name=ID parameters+=Variable parameters+=Variable*))
-	 * </pre>
-	 */
-	protected void sequence_Action(ISerializationContext context, br.edu.unijui.gca.smartce.smartCE.Action semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
 	 *     Party returns Application
 	 *     Application returns Application
 	 *
@@ -161,6 +152,21 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getApplicationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getApplicationAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Action returns BusinessAction
+	 *     BusinessAction returns BusinessAction
+	 *
+	 * Constraint:
+	 *     (name=ID parameters+=Variable parameters+=Variable*)
+	 * </pre>
+	 */
+	protected void sequence_BusinessAction(ISerializationContext context, BusinessAction semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -226,7 +232,8 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         rolePlayer=[Party|ID] 
 	 *         operation=Operation 
 	 *         condition=Condition 
-	 *         ((onSuccess=OnSuccess onBreach=OnBreach) | onBreach=OnBreach)
+	 *         onBreach=OnBreach 
+	 *         onSuccess=OnSuccess?
 	 *     )
 	 * </pre>
 	 */
@@ -309,12 +316,27 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         dueDate=STRING 
 	 *         application=Application 
 	 *         process=Process 
-	 *         clauses+=Clause* 
-	 *         actions+=Action*
+	 *         actions+=Action* 
+	 *         clauses+=Clause*
 	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Contract(ISerializationContext context, Contract semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Action returns EventLog
+	 *     EventLog returns EventLog
+	 *
+	 * Constraint:
+	 *     (name=ID parameters+=Variable parameters+=Variable*)
+	 * </pre>
+	 */
+	protected void sequence_EventLog(ISerializationContext context, EventLog semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

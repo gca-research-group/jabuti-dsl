@@ -4,8 +4,8 @@ pragma solidity ^0.8.14;
 import "./libs/EAI_Domain.sol";
 
 contract DeliveryHiring_P is EAI_Domain{
-	uint32 beginDate = 1641034800;
-	uint32 dueDate = 1672520400;
+	uint32 beginDate = 1641042000;
+	uint32 dueDate = 1672527600;
 	
 	Party deliverySystem;
 	Party integrationProcess;

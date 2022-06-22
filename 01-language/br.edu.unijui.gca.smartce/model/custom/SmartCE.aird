@@ -5,7 +5,7 @@
     <semanticResources>SmartCE.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Wl91sEMhEeyC-MZhuBrocA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="bb6c6db7-b19d-4193-99d1-c3dc8738fb06">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="f5d5ef55-898d-4e8a-b4b7-e56e88a2f1ce">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="SmartCE.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -956,7 +956,7 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_Cd2WcENZEeyC-MZhuBrocA" type="4001" element="_CdrXVkNZEeyC-MZhuBrocA" source="_82BdMENWEeyC-MZhuBrocA" target="_7u1gwENYEeyC-MZhuBrocA">
           <children xmi:type="notation:Node" xmi:id="_Cd2WdENZEeyC-MZhuBrocA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cd2WdUNZEeyC-MZhuBrocA" x="-51" y="41"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cd2WdUNZEeyC-MZhuBrocA" x="9" y="-28"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_Cd2WdkNZEeyC-MZhuBrocA" type="6002">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Cd2Wd0NZEeyC-MZhuBrocA" x="-1" y="16"/>

@@ -7,6 +7,9 @@ Contract DeliveryHiring_O {
 	application = deliverySystem1 : "Delivery system"
 	process  	= integrationProcess1 : "Integration process"
 	
+	EventLog failEvent(message : String )
+	EventLog successEvent(message :String)
+	
 	Obligation responseOrder{
 		description = "Setting the time limit for responding to a request"
 		rolePlayer = deliverySystem1
@@ -16,12 +19,9 @@ Contract DeliveryHiring_O {
 			BusinessDay(Monday to Friday) AND
 			BusinessTime("08:30:00" to "18:31:00") AND
 			OperationsLimit(5 by Minute) AND
-			MessageContent("count(//address)=1")						
+			MessageContent("count(//address)=1") 						
 		}
-				
 		onBreach(failEvent, "Request made outside of allowed hours or distance limit exceeded")
+		onSuccess(successEvent, "Success execution")	
 	}
-	
-	//BusinessAction sendMessage(_content: String)
-	EventLog failEvent(message : String )
 }

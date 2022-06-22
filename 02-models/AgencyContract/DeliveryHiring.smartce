@@ -1,26 +1,26 @@
-import operations.* 
+//import operations.* 
 
-Contract DeliveryHiring { 
-	beginDate = "2021-10-10"
-	dueDate = "2021-10-20"
+//Contract DeliveryHiring { 
+//	beginDate = "2021-10-10"
+//	dueDate = "2021-10-20"
 	
-	application = deliverySystem : "Delivery system"
-	process = integrationProcess : "Integration process"
+//	application = deliverySystem : "Delivery system"
+//	process = integrationProcess : "Integration process"
 	
-	Right requestDelivery {
-		description = "Setting the days and hours to request a delivery and the maximum delivery distance"
-		rolePlayer integrationProcess
-		rolePlayer.perform(Operation.REQUEST)
+//Right requestDelivery {
+//		description = "Setting the days and hours to request a delivery and the maximum delivery distance"
+//		rolePlayer integrationProcess
+//		rolePlayer.perform(Operation.REQUEST)
 		
-		condition {
-			BusinessDay(Monday, Tuesday)
-		}
+//		condition {
+//			BusinessDay(Monday, Tuesday)
+//		}
 		
-		onBreach(notifyFailing, "Request made outside of allowed hours or distance limit exceeded")
-	}
+//		onBreach(notifyFailing, "Request made outside of allowed hours or distance limit exceeded")
+//	}
 	
-	Action notifyFailing(message : String ){
-		notyfyParies(message)
-	}
+//	Action notifyFailing(message : String ){
+//		notyfyParies(message)
+//	}
 	
-}
+//}

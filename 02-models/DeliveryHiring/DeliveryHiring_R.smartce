@@ -5,8 +5,11 @@ Contract DeliveryHiring_R {
 	beginDate = "2022-01-01 08:00:00" 
 	dueDate = "2022-12-31 18:00:00"
 	
-	application = deliverySystem : "Delivery system"
+	application = deliverySystem : "Delivery system "
 	process  	= integrationProcess : "Integration process"
+	
+	EventLog failEvent(message : String )
+	EventLog successEvent(message :String)
 	
 	Right requestDelivery {
 		description = "Setting the days and hours to request a delivery,
@@ -21,10 +24,7 @@ Contract DeliveryHiring_R {
 			MessageContent("count(//address)=1")						
 		}
 		// the onSuccess is optional 
-		onSuccess(successEvent, "Success execution")		
 		onBreach(failEvent, "Request operation performed outside of allowed hours or limit operation exceeded")
+		onSuccess(successEvent, "Success execution")				
 	}
-	
-	EventLog failEvent(message : String )
-	EventLog successEvent(message :String)
 }

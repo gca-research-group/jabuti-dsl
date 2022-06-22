@@ -38,14 +38,12 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//Model:
 		//    {Model}
 		//    imports+=Import*
-		////    operations+=Operation*
 		//    contracts+=Contract*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//    {Model}
-		//    imports+=Import*
-		////    operations+=Operation*
-		//    contracts+=Contract*
+		//{Model}
+		//imports+=Import*
+		//contracts+=Contract*
 		public Group getGroup() { return cGroup; }
 		
 		//{Model}
@@ -57,8 +55,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//Import
 		public RuleCall getImportsImportParserRuleCall_1_0() { return cImportsImportParserRuleCall_1_0; }
 		
-		////    operations+=Operation*
-		//    contracts+=Contract*
+		//contracts+=Contract*
 		public Assignment getContractsAssignment_2() { return cContractsAssignment_2; }
 		
 		//Contract
@@ -111,26 +108,20 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cEqualsSignKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		private final Assignment cProcessAssignment_14 = (Assignment)cGroup.eContents().get(14);
 		private final RuleCall cProcessProcessParserRuleCall_14_0 = (RuleCall)cProcessAssignment_14.eContents().get(0);
-		private final Assignment cClausesAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final RuleCall cClausesClauseParserRuleCall_15_0 = (RuleCall)cClausesAssignment_15.eContents().get(0);
-		private final Assignment cActionsAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final RuleCall cActionsActionParserRuleCall_16_0 = (RuleCall)cActionsAssignment_16.eContents().get(0);
+		private final Assignment cActionsAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cActionsActionParserRuleCall_15_0 = (RuleCall)cActionsAssignment_15.eContents().get(0);
+		private final Assignment cClausesAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cClausesClauseParserRuleCall_16_0 = (RuleCall)cClausesAssignment_16.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
-		////Operation:
-		////    name=QualifiedName
-		////;
-		////Operation:
-		////    name=('push' | 'poll' |'write' |'read' |'request'|'response')
-		////;
 		//Contract:
 		//    'Contract' name=ID '{'
 		//        'beginDate' '=' beginDate=STRING
 		//        'dueDate' '=' dueDate=STRING
 		//        'application' '=' application=Application
 		//        'process' '=' process=Process
-		//        clauses+=Clause*
 		//        actions+=Action*
+		//        clauses+=Clause*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -139,8 +130,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    'dueDate' '=' dueDate=STRING
 		//    'application' '=' application=Application
 		//    'process' '=' process=Process
-		//    clauses+=Clause*
 		//    actions+=Action*
+		//    clauses+=Clause*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -204,17 +195,17 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//Process
 		public RuleCall getProcessProcessParserRuleCall_14_0() { return cProcessProcessParserRuleCall_14_0; }
 		
-		//clauses+=Clause*
-		public Assignment getClausesAssignment_15() { return cClausesAssignment_15; }
-		
-		//Clause
-		public RuleCall getClausesClauseParserRuleCall_15_0() { return cClausesClauseParserRuleCall_15_0; }
-		
 		//actions+=Action*
-		public Assignment getActionsAssignment_16() { return cActionsAssignment_16; }
+		public Assignment getActionsAssignment_15() { return cActionsAssignment_15; }
 		
 		//Action
-		public RuleCall getActionsActionParserRuleCall_16_0() { return cActionsActionParserRuleCall_16_0; }
+		public RuleCall getActionsActionParserRuleCall_15_0() { return cActionsActionParserRuleCall_15_0; }
+		
+		//clauses+=Clause*
+		public Assignment getClausesAssignment_16() { return cClausesAssignment_16; }
+		
+		//Clause
+		public RuleCall getClausesClauseParserRuleCall_16_0() { return cClausesClauseParserRuleCall_16_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
@@ -247,19 +238,14 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cConditionAssignment_14 = (Assignment)cGroup.eContents().get(14);
 		private final RuleCall cConditionConditionParserRuleCall_14_0 = (RuleCall)cConditionAssignment_14.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Alternatives cAlternatives_16 = (Alternatives)cGroup.eContents().get(16);
-		private final Group cGroup_16_0 = (Group)cAlternatives_16.eContents().get(0);
-		private final Keyword cOnSuccessKeyword_16_0_0 = (Keyword)cGroup_16_0.eContents().get(0);
-		private final Assignment cOnSuccessAssignment_16_0_1 = (Assignment)cGroup_16_0.eContents().get(1);
-		private final RuleCall cOnSuccessOnSuccessParserRuleCall_16_0_1_0 = (RuleCall)cOnSuccessAssignment_16_0_1.eContents().get(0);
-		private final Keyword cOnBreachKeyword_16_0_2 = (Keyword)cGroup_16_0.eContents().get(2);
-		private final Assignment cOnBreachAssignment_16_0_3 = (Assignment)cGroup_16_0.eContents().get(3);
-		private final RuleCall cOnBreachOnBreachParserRuleCall_16_0_3_0 = (RuleCall)cOnBreachAssignment_16_0_3.eContents().get(0);
-		private final Group cGroup_16_1 = (Group)cAlternatives_16.eContents().get(1);
-		private final Keyword cOnBreachKeyword_16_1_0 = (Keyword)cGroup_16_1.eContents().get(0);
-		private final Assignment cOnBreachAssignment_16_1_1 = (Assignment)cGroup_16_1.eContents().get(1);
-		private final RuleCall cOnBreachOnBreachParserRuleCall_16_1_1_0 = (RuleCall)cOnBreachAssignment_16_1_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Keyword cOnBreachKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Assignment cOnBreachAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cOnBreachOnBreachParserRuleCall_17_0 = (RuleCall)cOnBreachAssignment_17.eContents().get(0);
+		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
+		private final Keyword cOnSuccessKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
+		private final Assignment cOnSuccessAssignment_18_1 = (Assignment)cGroup_18.eContents().get(1);
+		private final RuleCall cOnSuccessOnSuccessParserRuleCall_18_1_0 = (RuleCall)cOnSuccessAssignment_18_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
 		
 		//Clause:
 		//    ('Right' | 'Prohibition' | 'Obligation') name=ID '{'
@@ -269,9 +255,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//        'condition' '{'
 		//            condition=Condition
 		//        '}'
-		//        (('onSuccess' onSuccess=OnSuccess
-		//        'onBreach' onBreach=OnBreach )|
-		//        'onBreach' onBreach=OnBreach )
+		//        'onBreach' onBreach=OnBreach ('onSuccess' onSuccess=OnSuccess)?
 		//     '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
@@ -283,9 +267,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    'condition' '{'
 		//        condition=Condition
 		//    '}'
-		//    (('onSuccess' onSuccess=OnSuccess
-		//    'onBreach' onBreach=OnBreach )|
-		//    'onBreach' onBreach=OnBreach )
+		//    'onBreach' onBreach=OnBreach ('onSuccess' onSuccess=OnSuccess)?
 		// '}'
 		public Group getGroup() { return cGroup; }
 		
@@ -364,47 +346,29 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_15() { return cRightCurlyBracketKeyword_15; }
 		
-		//(('onSuccess' onSuccess=OnSuccess
-		//'onBreach' onBreach=OnBreach )|
-		//'onBreach' onBreach=OnBreach )
-		public Alternatives getAlternatives_16() { return cAlternatives_16; }
+		//'onBreach'
+		public Keyword getOnBreachKeyword_16() { return cOnBreachKeyword_16; }
 		
-		//('onSuccess' onSuccess=OnSuccess
-		//        'onBreach' onBreach=OnBreach )
-		public Group getGroup_16_0() { return cGroup_16_0; }
+		//onBreach=OnBreach
+		public Assignment getOnBreachAssignment_17() { return cOnBreachAssignment_17; }
+		
+		//OnBreach
+		public RuleCall getOnBreachOnBreachParserRuleCall_17_0() { return cOnBreachOnBreachParserRuleCall_17_0; }
+		
+		//('onSuccess' onSuccess=OnSuccess)?
+		public Group getGroup_18() { return cGroup_18; }
 		
 		//'onSuccess'
-		public Keyword getOnSuccessKeyword_16_0_0() { return cOnSuccessKeyword_16_0_0; }
+		public Keyword getOnSuccessKeyword_18_0() { return cOnSuccessKeyword_18_0; }
 		
 		//onSuccess=OnSuccess
-		public Assignment getOnSuccessAssignment_16_0_1() { return cOnSuccessAssignment_16_0_1; }
+		public Assignment getOnSuccessAssignment_18_1() { return cOnSuccessAssignment_18_1; }
 		
 		//OnSuccess
-		public RuleCall getOnSuccessOnSuccessParserRuleCall_16_0_1_0() { return cOnSuccessOnSuccessParserRuleCall_16_0_1_0; }
-		
-		//'onBreach'
-		public Keyword getOnBreachKeyword_16_0_2() { return cOnBreachKeyword_16_0_2; }
-		
-		//onBreach=OnBreach
-		public Assignment getOnBreachAssignment_16_0_3() { return cOnBreachAssignment_16_0_3; }
-		
-		//OnBreach
-		public RuleCall getOnBreachOnBreachParserRuleCall_16_0_3_0() { return cOnBreachOnBreachParserRuleCall_16_0_3_0; }
-		
-		//'onBreach' onBreach=OnBreach
-		public Group getGroup_16_1() { return cGroup_16_1; }
-		
-		//'onBreach'
-		public Keyword getOnBreachKeyword_16_1_0() { return cOnBreachKeyword_16_1_0; }
-		
-		//onBreach=OnBreach
-		public Assignment getOnBreachAssignment_16_1_1() { return cOnBreachAssignment_16_1_1; }
-		
-		//OnBreach
-		public RuleCall getOnBreachOnBreachParserRuleCall_16_1_1_0() { return cOnBreachOnBreachParserRuleCall_16_1_1_0; }
+		public RuleCall getOnSuccessOnSuccessParserRuleCall_18_1_0() { return cOnSuccessOnSuccessParserRuleCall_18_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
+		public Keyword getRightCurlyBracketKeyword_19() { return cRightCurlyBracketKeyword_19; }
 	}
 	public class ConditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Condition");
@@ -913,117 +877,133 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	public class ActionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Action");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
-		private final Keyword cBusinessActionKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
-		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cParametersAssignment_0_3 = (Assignment)cGroup_0.eContents().get(3);
-		private final RuleCall cParametersVariableParserRuleCall_0_3_0 = (RuleCall)cParametersAssignment_0_3.eContents().get(0);
-		private final Group cGroup_0_4 = (Group)cGroup_0.eContents().get(4);
-		private final Keyword cCommaKeyword_0_4_0 = (Keyword)cGroup_0_4.eContents().get(0);
-		private final Assignment cParametersAssignment_0_4_1 = (Assignment)cGroup_0_4.eContents().get(1);
-		private final RuleCall cParametersVariableParserRuleCall_0_4_1_0 = (RuleCall)cParametersAssignment_0_4_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_0_5 = (Keyword)cGroup_0.eContents().get(5);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cEventLogKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
-		private final Keyword cLeftParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cParametersAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
-		private final RuleCall cParametersVariableParserRuleCall_1_3_0 = (RuleCall)cParametersAssignment_1_3.eContents().get(0);
-		private final Group cGroup_1_4 = (Group)cGroup_1.eContents().get(4);
-		private final Keyword cCommaKeyword_1_4_0 = (Keyword)cGroup_1_4.eContents().get(0);
-		private final Assignment cParametersAssignment_1_4_1 = (Assignment)cGroup_1_4.eContents().get(1);
-		private final RuleCall cParametersVariableParserRuleCall_1_4_1_0 = (RuleCall)cParametersAssignment_1_4_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_1_5 = (Keyword)cGroup_1.eContents().get(5);
+		private final RuleCall cBusinessActionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cEventLogParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		////Action:
-		//    //'Action' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')' '{'
-		//        //statements+=Expression
-		//    //'}'
-		////;
 		//Action:
-		//    ('BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')|
-		//    ('EventLog' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')
+		//    BusinessAction | EventLog;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//BusinessAction | EventLog
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//BusinessAction
+		public RuleCall getBusinessActionParserRuleCall_0() { return cBusinessActionParserRuleCall_0; }
+		
+		//EventLog
+		public RuleCall getEventLogParserRuleCall_1() { return cEventLogParserRuleCall_1; }
+	}
+	public class BusinessActionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.BusinessAction");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cBusinessActionKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cParametersAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cParametersVariableParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cParametersAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cParametersVariableParserRuleCall_4_1_0 = (RuleCall)cParametersAssignment_4_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		
+		//BusinessAction:
+		//    'BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')|
-		//('EventLog' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//('BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')
-		public Group getGroup_0() { return cGroup_0; }
+		//'BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')'
+		public Group getGroup() { return cGroup; }
 		
 		//'BusinessAction'
-		public Keyword getBusinessActionKeyword_0_0() { return cBusinessActionKeyword_0_0; }
+		public Keyword getBusinessActionKeyword_0() { return cBusinessActionKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_0_1_0() { return cNameIDTerminalRuleCall_0_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_0_2() { return cLeftParenthesisKeyword_0_2; }
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
 		//parameters+=Variable
-		public Assignment getParametersAssignment_0_3() { return cParametersAssignment_0_3; }
+		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
 		
 		//Variable
-		public RuleCall getParametersVariableParserRuleCall_0_3_0() { return cParametersVariableParserRuleCall_0_3_0; }
+		public RuleCall getParametersVariableParserRuleCall_3_0() { return cParametersVariableParserRuleCall_3_0; }
 		
 		//(',' parameters+=Variable)*
-		public Group getGroup_0_4() { return cGroup_0_4; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//','
-		public Keyword getCommaKeyword_0_4_0() { return cCommaKeyword_0_4_0; }
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//parameters+=Variable
-		public Assignment getParametersAssignment_0_4_1() { return cParametersAssignment_0_4_1; }
+		public Assignment getParametersAssignment_4_1() { return cParametersAssignment_4_1; }
 		
 		//Variable
-		public RuleCall getParametersVariableParserRuleCall_0_4_1_0() { return cParametersVariableParserRuleCall_0_4_1_0; }
+		public RuleCall getParametersVariableParserRuleCall_4_1_0() { return cParametersVariableParserRuleCall_4_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_0_5() { return cRightParenthesisKeyword_0_5; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+	}
+	public class EventLogElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.EventLog");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cEventLogKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cParametersAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cParametersVariableParserRuleCall_3_0 = (RuleCall)cParametersAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cParametersAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cParametersVariableParserRuleCall_4_1_0 = (RuleCall)cParametersAssignment_4_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
-		//('EventLog' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')
-		public Group getGroup_1() { return cGroup_1; }
+		//EventLog:
+		//    'EventLog' name=ID    '(' parameters+=Variable (',' parameters+=Variable)* ')'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'EventLog' name=ID	'(' parameters+=Variable (',' parameters+=Variable)* ')'
+		public Group getGroup() { return cGroup; }
 		
 		//'EventLog'
-		public Keyword getEventLogKeyword_1_0() { return cEventLogKeyword_1_0; }
+		public Keyword getEventLogKeyword_0() { return cEventLogKeyword_0; }
 		
 		//name=ID
-		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_1_0() { return cNameIDTerminalRuleCall_1_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_1_2() { return cLeftParenthesisKeyword_1_2; }
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
 		//parameters+=Variable
-		public Assignment getParametersAssignment_1_3() { return cParametersAssignment_1_3; }
+		public Assignment getParametersAssignment_3() { return cParametersAssignment_3; }
 		
 		//Variable
-		public RuleCall getParametersVariableParserRuleCall_1_3_0() { return cParametersVariableParserRuleCall_1_3_0; }
+		public RuleCall getParametersVariableParserRuleCall_3_0() { return cParametersVariableParserRuleCall_3_0; }
 		
 		//(',' parameters+=Variable)*
-		public Group getGroup_1_4() { return cGroup_1_4; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//','
-		public Keyword getCommaKeyword_1_4_0() { return cCommaKeyword_1_4_0; }
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//parameters+=Variable
-		public Assignment getParametersAssignment_1_4_1() { return cParametersAssignment_1_4_1; }
+		public Assignment getParametersAssignment_4_1() { return cParametersAssignment_4_1; }
 		
 		//Variable
-		public RuleCall getParametersVariableParserRuleCall_1_4_1_0() { return cParametersVariableParserRuleCall_1_4_1_0; }
+		public RuleCall getParametersVariableParserRuleCall_4_1_0() { return cParametersVariableParserRuleCall_4_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_1_5() { return cRightParenthesisKeyword_1_5; }
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Variable");
@@ -1906,6 +1886,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final OnSuccessElements pOnSuccess;
 	private final OnBreachElements pOnBreach;
 	private final ActionElements pAction;
+	private final BusinessActionElements pBusinessAction;
+	private final EventLogElements pEventLog;
 	private final VariableElements pVariable;
 	private final ExpressionElements pExpression;
 	private final NegationElements pNegation;
@@ -1960,6 +1942,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pOnSuccess = new OnSuccessElements();
 		this.pOnBreach = new OnBreachElements();
 		this.pAction = new ActionElements();
+		this.pBusinessAction = new BusinessActionElements();
+		this.pEventLog = new EventLogElements();
 		this.pVariable = new VariableElements();
 		this.pExpression = new ExpressionElements();
 		this.pNegation = new NegationElements();
@@ -2014,7 +1998,6 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//Model:
 	//    {Model}
 	//    imports+=Import*
-	////    operations+=Operation*
 	//    contracts+=Contract*;
 	public ModelElements getModelAccess() {
 		return pModel;
@@ -2035,20 +2018,14 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getImportAccess().getRule();
 	}
 	
-	////Operation:
-	////    name=QualifiedName
-	////;
-	////Operation:
-	////    name=('push' | 'poll' |'write' |'read' |'request'|'response')
-	////;
 	//Contract:
 	//    'Contract' name=ID '{'
 	//        'beginDate' '=' beginDate=STRING
 	//        'dueDate' '=' dueDate=STRING
 	//        'application' '=' application=Application
 	//        'process' '=' process=Process
-	//        clauses+=Clause*
 	//        actions+=Action*
+	//        clauses+=Clause*
 	//    '}';
 	public ContractElements getContractAccess() {
 		return pContract;
@@ -2066,9 +2043,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//        'condition' '{'
 	//            condition=Condition
 	//        '}'
-	//        (('onSuccess' onSuccess=OnSuccess
-	//        'onBreach' onBreach=OnBreach )|
-	//        'onBreach' onBreach=OnBreach )
+	//        'onBreach' onBreach=OnBreach ('onSuccess' onSuccess=OnSuccess)?
 	//     '}'
 	//;
 	public ClauseElements getClauseAccess() {
@@ -2266,21 +2241,36 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getOnBreachAccess().getRule();
 	}
 	
-	////Action:
-	//    //'Action' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')' '{'
-	//        //statements+=Expression
-	//    //'}'
-	////;
 	//Action:
-	//    ('BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')|
-	//    ('EventLog' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')')
-	//;
+	//    BusinessAction | EventLog;
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
 	
 	public ParserRule getActionRule() {
 		return getActionAccess().getRule();
+	}
+	
+	//BusinessAction:
+	//    'BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')'
+	//;
+	public BusinessActionElements getBusinessActionAccess() {
+		return pBusinessAction;
+	}
+	
+	public ParserRule getBusinessActionRule() {
+		return getBusinessActionAccess().getRule();
+	}
+	
+	//EventLog:
+	//    'EventLog' name=ID    '(' parameters+=Variable (',' parameters+=Variable)* ')'
+	//;
+	public EventLogElements getEventLogAccess() {
+		return pEventLog;
+	}
+	
+	public ParserRule getEventLogRule() {
+		return getEventLogAccess().getRule();
 	}
 	
 	//Variable:
