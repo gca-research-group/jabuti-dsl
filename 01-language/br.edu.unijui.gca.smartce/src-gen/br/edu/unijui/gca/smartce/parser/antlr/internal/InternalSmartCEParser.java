@@ -479,7 +479,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContract"
-    // InternalSmartCE.g:178:1: ruleContract returns [EObject current=null] : (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_actions_15_0= ruleAction ) )* ( (lv_clauses_16_0= ruleClause ) )* otherlv_17= '}' ) ;
+    // InternalSmartCE.g:178:1: ruleContract returns [EObject current=null] : (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_clauses_15_0= ruleClause ) )* ( (lv_actions_16_0= ruleAction ) )* otherlv_17= '}' ) ;
     public final EObject ruleContract() throws RecognitionException {
         EObject current = null;
 
@@ -501,20 +501,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
         EObject lv_process_14_0 = null;
 
-        EObject lv_actions_15_0 = null;
+        EObject lv_clauses_15_0 = null;
 
-        EObject lv_clauses_16_0 = null;
+        EObject lv_actions_16_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSmartCE.g:184:2: ( (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_actions_15_0= ruleAction ) )* ( (lv_clauses_16_0= ruleClause ) )* otherlv_17= '}' ) )
-            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_actions_15_0= ruleAction ) )* ( (lv_clauses_16_0= ruleClause ) )* otherlv_17= '}' )
+            // InternalSmartCE.g:184:2: ( (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_clauses_15_0= ruleClause ) )* ( (lv_actions_16_0= ruleAction ) )* otherlv_17= '}' ) )
+            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_clauses_15_0= ruleClause ) )* ( (lv_actions_16_0= ruleAction ) )* otherlv_17= '}' )
             {
-            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_actions_15_0= ruleAction ) )* ( (lv_clauses_16_0= ruleClause ) )* otherlv_17= '}' )
-            // InternalSmartCE.g:186:3: otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_actions_15_0= ruleAction ) )* ( (lv_clauses_16_0= ruleClause ) )* otherlv_17= '}'
+            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_clauses_15_0= ruleClause ) )* ( (lv_actions_16_0= ruleAction ) )* otherlv_17= '}' )
+            // InternalSmartCE.g:186:3: otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= RULE_STRING ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= RULE_STRING ) ) otherlv_9= 'application' otherlv_10= '=' ( (lv_application_11_0= ruleApplication ) ) otherlv_12= 'process' otherlv_13= '=' ( (lv_process_14_0= ruleProcess ) ) ( (lv_clauses_15_0= ruleClause ) )* ( (lv_actions_16_0= ruleAction ) )* otherlv_17= '}'
             {
             otherlv_0=(Token)match(input,12,FOLLOW_5); 
 
@@ -696,29 +696,29 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmartCE.g:318:3: ( (lv_actions_15_0= ruleAction ) )*
+            // InternalSmartCE.g:318:3: ( (lv_clauses_15_0= ruleClause ) )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0>=43 && LA3_0<=44)) ) {
+                if ( ((LA3_0>=20 && LA3_0<=22)) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalSmartCE.g:319:4: (lv_actions_15_0= ruleAction )
+            	    // InternalSmartCE.g:319:4: (lv_clauses_15_0= ruleClause )
             	    {
-            	    // InternalSmartCE.g:319:4: (lv_actions_15_0= ruleAction )
-            	    // InternalSmartCE.g:320:5: lv_actions_15_0= ruleAction
+            	    // InternalSmartCE.g:319:4: (lv_clauses_15_0= ruleClause )
+            	    // InternalSmartCE.g:320:5: lv_clauses_15_0= ruleClause
             	    {
 
-            	    					newCompositeNode(grammarAccess.getContractAccess().getActionsActionParserRuleCall_15_0());
+            	    					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_15_0());
             	    				
             	    pushFollow(FOLLOW_13);
-            	    lv_actions_15_0=ruleAction();
+            	    lv_clauses_15_0=ruleClause();
 
             	    state._fsp--;
 
@@ -728,9 +728,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"actions",
-            	    						lv_actions_15_0,
-            	    						"br.edu.unijui.gca.smartce.SmartCE.Action");
+            	    						"clauses",
+            	    						lv_clauses_15_0,
+            	    						"br.edu.unijui.gca.smartce.SmartCE.Clause");
             	    					afterParserOrEnumRuleCall();
             	    				
 
@@ -745,29 +745,29 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            // InternalSmartCE.g:337:3: ( (lv_clauses_16_0= ruleClause ) )*
+            // InternalSmartCE.g:337:3: ( (lv_actions_16_0= ruleAction ) )*
             loop4:
             do {
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( ((LA4_0>=20 && LA4_0<=22)) ) {
+                if ( ((LA4_0>=43 && LA4_0<=44)) ) {
                     alt4=1;
                 }
 
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalSmartCE.g:338:4: (lv_clauses_16_0= ruleClause )
+            	    // InternalSmartCE.g:338:4: (lv_actions_16_0= ruleAction )
             	    {
-            	    // InternalSmartCE.g:338:4: (lv_clauses_16_0= ruleClause )
-            	    // InternalSmartCE.g:339:5: lv_clauses_16_0= ruleClause
+            	    // InternalSmartCE.g:338:4: (lv_actions_16_0= ruleAction )
+            	    // InternalSmartCE.g:339:5: lv_actions_16_0= ruleAction
             	    {
 
-            	    					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_16_0());
+            	    					newCompositeNode(grammarAccess.getContractAccess().getActionsActionParserRuleCall_16_0());
             	    				
             	    pushFollow(FOLLOW_14);
-            	    lv_clauses_16_0=ruleClause();
+            	    lv_actions_16_0=ruleAction();
 
             	    state._fsp--;
 
@@ -777,9 +777,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    					}
             	    					add(
             	    						current,
-            	    						"clauses",
-            	    						lv_clauses_16_0,
-            	    						"br.edu.unijui.gca.smartce.SmartCE.Clause");
+            	    						"actions",
+            	    						lv_actions_16_0,
+            	    						"br.edu.unijui.gca.smartce.SmartCE.Action");
             	    					afterParserOrEnumRuleCall();
             	    				
 
@@ -7564,7 +7564,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000180000780000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000780000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000180000080000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000000L});

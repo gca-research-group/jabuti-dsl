@@ -7,9 +7,6 @@ Contract DeliveryHiring_O {
 	application = deliverySystem1 : "Delivery system"
 	process  	= integrationProcess1 : "Integration process"
 	
-	EventLog failEvent(message : String )
-	EventLog successEvent(message :String)
-	
 	Obligation responseOrder{
 		description = "Setting the time limit for responding to a request"
 		rolePlayer = deliverySystem1
@@ -24,4 +21,8 @@ Contract DeliveryHiring_O {
 		onBreach(failEvent, "Request made outside of allowed hours or distance limit exceeded")
 		onSuccess(successEvent, "Success execution")	
 	}
+	
+	EventLog failEvent(message : String )
+	EventLog successEvent(message :String)
+	
 }

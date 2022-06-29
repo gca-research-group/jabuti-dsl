@@ -316,8 +316,8 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         dueDate=STRING 
 	 *         application=Application 
 	 *         process=Process 
-	 *         actions+=Action* 
-	 *         clauses+=Clause*
+	 *         clauses+=Clause* 
+	 *         actions+=Action*
 	 *     )
 	 * </pre>
 	 */

@@ -17,8 +17,8 @@ Contract:
 		'dueDate' '=' dueDate=STRING
 		'application' '=' application=Application
 		'process' '=' process=Process
-		actions+=Action*
 		clauses+=Clause*
+		actions+=Action*
 	'}'; 
 
 Clause: 

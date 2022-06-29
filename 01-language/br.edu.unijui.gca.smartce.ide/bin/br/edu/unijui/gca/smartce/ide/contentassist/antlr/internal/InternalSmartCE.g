@@ -2178,9 +2178,9 @@ rule__Contract__Group__15__Impl
 	}
 :
 (
-	{ before(grammarAccess.getContractAccess().getActionsAssignment_15()); }
-	(rule__Contract__ActionsAssignment_15)*
-	{ after(grammarAccess.getContractAccess().getActionsAssignment_15()); }
+	{ before(grammarAccess.getContractAccess().getClausesAssignment_15()); }
+	(rule__Contract__ClausesAssignment_15)*
+	{ after(grammarAccess.getContractAccess().getClausesAssignment_15()); }
 )
 ;
 finally {
@@ -2205,9 +2205,9 @@ rule__Contract__Group__16__Impl
 	}
 :
 (
-	{ before(grammarAccess.getContractAccess().getClausesAssignment_16()); }
-	(rule__Contract__ClausesAssignment_16)*
-	{ after(grammarAccess.getContractAccess().getClausesAssignment_16()); }
+	{ before(grammarAccess.getContractAccess().getActionsAssignment_16()); }
+	(rule__Contract__ActionsAssignment_16)*
+	{ after(grammarAccess.getContractAccess().getActionsAssignment_16()); }
 )
 ;
 finally {
@@ -5898,30 +5898,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Contract__ActionsAssignment_15
+rule__Contract__ClausesAssignment_15
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getContractAccess().getActionsActionParserRuleCall_15_0()); }
-		ruleAction
-		{ after(grammarAccess.getContractAccess().getActionsActionParserRuleCall_15_0()); }
+		{ before(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_15_0()); }
+		ruleClause
+		{ after(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_15_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Contract__ClausesAssignment_16
+rule__Contract__ActionsAssignment_16
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_16_0()); }
-		ruleClause
-		{ after(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_16_0()); }
+		{ before(grammarAccess.getContractAccess().getActionsActionParserRuleCall_16_0()); }
+		ruleAction
+		{ after(grammarAccess.getContractAccess().getActionsActionParserRuleCall_16_0()); }
 	)
 ;
 finally {

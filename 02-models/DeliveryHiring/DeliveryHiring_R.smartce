@@ -8,9 +8,6 @@ Contract DeliveryHiring_R {
 	application = deliverySystem : "Delivery system "
 	process  	= integrationProcess : "Integration process"
 	
-	EventLog failEvent(message : String )
-	EventLog successEvent(message :String)
-	
 	Right requestDelivery {
 		description = "Setting the days and hours to request a delivery,
 					 the maximum request operation by minute and number of address by request"
@@ -25,6 +22,6 @@ Contract DeliveryHiring_R {
 		}
 		// the onSuccess is optional 
 		onBreach(failEvent, "Request operation performed outside of allowed hours or limit operation exceeded")
-		onSuccess(successEvent, "Success execution")				
 	}
+	EventLog failEvent(message : String )
 }

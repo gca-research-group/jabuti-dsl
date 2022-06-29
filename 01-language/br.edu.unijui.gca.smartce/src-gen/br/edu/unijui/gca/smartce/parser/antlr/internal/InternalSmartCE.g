@@ -318,28 +318,9 @@ ruleContract returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getContractAccess().getActionsActionParserRuleCall_15_0());
+					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_15_0());
 				}
-				lv_actions_15_0=ruleAction
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getContractRule());
-					}
-					add(
-						$current,
-						"actions",
-						lv_actions_15_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Action");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_16_0());
-				}
-				lv_clauses_16_0=ruleClause
+				lv_clauses_15_0=ruleClause
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getContractRule());
@@ -347,8 +328,27 @@ ruleContract returns [EObject current=null]
 					add(
 						$current,
 						"clauses",
-						lv_clauses_16_0,
+						lv_clauses_15_0,
 						"br.edu.unijui.gca.smartce.SmartCE.Clause");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getContractAccess().getActionsActionParserRuleCall_16_0());
+				}
+				lv_actions_16_0=ruleAction
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getContractRule());
+					}
+					add(
+						$current,
+						"actions",
+						lv_actions_16_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Action");
 					afterParserOrEnumRuleCall();
 				}
 			)

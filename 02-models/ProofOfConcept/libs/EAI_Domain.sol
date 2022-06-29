@@ -70,7 +70,7 @@ uint constant SUNDAY=7;
 	    string xPathQuery;
 	}
  
-    ////////////// Modifiers to define the contrains to execute a give function ////////////////
+    ////////////// Modifiers to define the constrains to execute a give function ////////////////
   
     // modifier onlyByProcess(address _processAddress){
     //    require(msg.sender == _processAddress, "Only PROCESS have the permission to execute this operation.");  
@@ -82,7 +82,11 @@ uint constant SUNDAY=7;
     //    _;
     // }
    
-    
+    function msgContentEvaluation(string[] memory content, bool[] memory results) internal pure returns (bool){
+        //TODO
+
+        return true; 
+    }
    
     /////////////////// FUNÇÕES REFERENTES A STRUCT BUSINESSDAY /////////////////////////
 
@@ -138,8 +142,8 @@ uint constant SUNDAY=7;
 
     }
     
-    function newTimeout(uint32 _dataTime, Timeout _timeout)internal pure returns(Timeout memory){
-       return _timeout.endTime=_dataTime+_timeout.increment; // o timeout inicia zerado, será definido após a primeira chamda 
+    function setEndTimeInTimeOut(uint32 _dataTime,  uint32  increment)internal pure returns(uint32){
+        return _dataTime+increment; // o timeout inicia zerado, será definido após a primeira chamada
 
     }
 

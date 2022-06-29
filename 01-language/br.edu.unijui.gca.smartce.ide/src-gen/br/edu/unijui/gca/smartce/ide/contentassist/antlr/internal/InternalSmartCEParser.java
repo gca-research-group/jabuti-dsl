@@ -7004,36 +7004,36 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__15__Impl"
-    // InternalSmartCE.g:2175:1: rule__Contract__Group__15__Impl : ( ( rule__Contract__ActionsAssignment_15 )* ) ;
+    // InternalSmartCE.g:2175:1: rule__Contract__Group__15__Impl : ( ( rule__Contract__ClausesAssignment_15 )* ) ;
     public final void rule__Contract__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2179:1: ( ( ( rule__Contract__ActionsAssignment_15 )* ) )
-            // InternalSmartCE.g:2180:1: ( ( rule__Contract__ActionsAssignment_15 )* )
+            // InternalSmartCE.g:2179:1: ( ( ( rule__Contract__ClausesAssignment_15 )* ) )
+            // InternalSmartCE.g:2180:1: ( ( rule__Contract__ClausesAssignment_15 )* )
             {
-            // InternalSmartCE.g:2180:1: ( ( rule__Contract__ActionsAssignment_15 )* )
-            // InternalSmartCE.g:2181:2: ( rule__Contract__ActionsAssignment_15 )*
+            // InternalSmartCE.g:2180:1: ( ( rule__Contract__ClausesAssignment_15 )* )
+            // InternalSmartCE.g:2181:2: ( rule__Contract__ClausesAssignment_15 )*
             {
-             before(grammarAccess.getContractAccess().getActionsAssignment_15()); 
-            // InternalSmartCE.g:2182:2: ( rule__Contract__ActionsAssignment_15 )*
+             before(grammarAccess.getContractAccess().getClausesAssignment_15()); 
+            // InternalSmartCE.g:2182:2: ( rule__Contract__ClausesAssignment_15 )*
             loop19:
             do {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( ((LA19_0>=67 && LA19_0<=68)) ) {
+                if ( ((LA19_0>=11 && LA19_0<=13)) ) {
                     alt19=1;
                 }
 
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalSmartCE.g:2182:3: rule__Contract__ActionsAssignment_15
+            	    // InternalSmartCE.g:2182:3: rule__Contract__ClausesAssignment_15
             	    {
             	    pushFollow(FOLLOW_15);
-            	    rule__Contract__ActionsAssignment_15();
+            	    rule__Contract__ClausesAssignment_15();
 
             	    state._fsp--;
 
@@ -7046,7 +7046,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getContractAccess().getActionsAssignment_15()); 
+             after(grammarAccess.getContractAccess().getClausesAssignment_15()); 
 
             }
 
@@ -7107,36 +7107,36 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__16__Impl"
-    // InternalSmartCE.g:2202:1: rule__Contract__Group__16__Impl : ( ( rule__Contract__ClausesAssignment_16 )* ) ;
+    // InternalSmartCE.g:2202:1: rule__Contract__Group__16__Impl : ( ( rule__Contract__ActionsAssignment_16 )* ) ;
     public final void rule__Contract__Group__16__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2206:1: ( ( ( rule__Contract__ClausesAssignment_16 )* ) )
-            // InternalSmartCE.g:2207:1: ( ( rule__Contract__ClausesAssignment_16 )* )
+            // InternalSmartCE.g:2206:1: ( ( ( rule__Contract__ActionsAssignment_16 )* ) )
+            // InternalSmartCE.g:2207:1: ( ( rule__Contract__ActionsAssignment_16 )* )
             {
-            // InternalSmartCE.g:2207:1: ( ( rule__Contract__ClausesAssignment_16 )* )
-            // InternalSmartCE.g:2208:2: ( rule__Contract__ClausesAssignment_16 )*
+            // InternalSmartCE.g:2207:1: ( ( rule__Contract__ActionsAssignment_16 )* )
+            // InternalSmartCE.g:2208:2: ( rule__Contract__ActionsAssignment_16 )*
             {
-             before(grammarAccess.getContractAccess().getClausesAssignment_16()); 
-            // InternalSmartCE.g:2209:2: ( rule__Contract__ClausesAssignment_16 )*
+             before(grammarAccess.getContractAccess().getActionsAssignment_16()); 
+            // InternalSmartCE.g:2209:2: ( rule__Contract__ActionsAssignment_16 )*
             loop20:
             do {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( ((LA20_0>=11 && LA20_0<=13)) ) {
+                if ( ((LA20_0>=67 && LA20_0<=68)) ) {
                     alt20=1;
                 }
 
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalSmartCE.g:2209:3: rule__Contract__ClausesAssignment_16
+            	    // InternalSmartCE.g:2209:3: rule__Contract__ActionsAssignment_16
             	    {
             	    pushFollow(FOLLOW_16);
-            	    rule__Contract__ClausesAssignment_16();
+            	    rule__Contract__ActionsAssignment_16();
 
             	    state._fsp--;
 
@@ -7149,7 +7149,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                 }
             } while (true);
 
-             after(grammarAccess.getContractAccess().getClausesAssignment_16()); 
+             after(grammarAccess.getContractAccess().getActionsAssignment_16()); 
 
             }
 
@@ -18019,67 +18019,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Contract__ProcessAssignment_14"
 
 
-    // $ANTLR start "rule__Contract__ActionsAssignment_15"
-    // InternalSmartCE.g:5901:1: rule__Contract__ActionsAssignment_15 : ( ruleAction ) ;
-    public final void rule__Contract__ActionsAssignment_15() throws RecognitionException {
+    // $ANTLR start "rule__Contract__ClausesAssignment_15"
+    // InternalSmartCE.g:5901:1: rule__Contract__ClausesAssignment_15 : ( ruleClause ) ;
+    public final void rule__Contract__ClausesAssignment_15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5905:1: ( ( ruleAction ) )
-            // InternalSmartCE.g:5906:2: ( ruleAction )
+            // InternalSmartCE.g:5905:1: ( ( ruleClause ) )
+            // InternalSmartCE.g:5906:2: ( ruleClause )
             {
-            // InternalSmartCE.g:5906:2: ( ruleAction )
-            // InternalSmartCE.g:5907:3: ruleAction
+            // InternalSmartCE.g:5906:2: ( ruleClause )
+            // InternalSmartCE.g:5907:3: ruleClause
             {
-             before(grammarAccess.getContractAccess().getActionsActionParserRuleCall_15_0()); 
-            pushFollow(FOLLOW_2);
-            ruleAction();
-
-            state._fsp--;
-
-             after(grammarAccess.getContractAccess().getActionsActionParserRuleCall_15_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Contract__ActionsAssignment_15"
-
-
-    // $ANTLR start "rule__Contract__ClausesAssignment_16"
-    // InternalSmartCE.g:5916:1: rule__Contract__ClausesAssignment_16 : ( ruleClause ) ;
-    public final void rule__Contract__ClausesAssignment_16() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5920:1: ( ( ruleClause ) )
-            // InternalSmartCE.g:5921:2: ( ruleClause )
-            {
-            // InternalSmartCE.g:5921:2: ( ruleClause )
-            // InternalSmartCE.g:5922:3: ruleClause
-            {
-             before(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_16_0()); 
+             before(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_15_0()); 
             pushFollow(FOLLOW_2);
             ruleClause();
 
             state._fsp--;
 
-             after(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_16_0()); 
+             after(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_15_0()); 
 
             }
 
@@ -18098,7 +18057,48 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__ClausesAssignment_16"
+    // $ANTLR end "rule__Contract__ClausesAssignment_15"
+
+
+    // $ANTLR start "rule__Contract__ActionsAssignment_16"
+    // InternalSmartCE.g:5916:1: rule__Contract__ActionsAssignment_16 : ( ruleAction ) ;
+    public final void rule__Contract__ActionsAssignment_16() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:5920:1: ( ( ruleAction ) )
+            // InternalSmartCE.g:5921:2: ( ruleAction )
+            {
+            // InternalSmartCE.g:5921:2: ( ruleAction )
+            // InternalSmartCE.g:5922:3: ruleAction
+            {
+             before(grammarAccess.getContractAccess().getActionsActionParserRuleCall_16_0()); 
+            pushFollow(FOLLOW_2);
+            ruleAction();
+
+            state._fsp--;
+
+             after(grammarAccess.getContractAccess().getActionsActionParserRuleCall_16_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__ActionsAssignment_16"
 
 
     // $ANTLR start "rule__Clause__NameAssignment_1"
@@ -20698,8 +20698,8 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000800000000000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0001000000000000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0002000000003800L,0x0000000000000018L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000018L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000003802L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000003802L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000018L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0004000000000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0008000000000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0010000000000000L});

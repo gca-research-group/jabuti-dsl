@@ -108,10 +108,10 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cEqualsSignKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		private final Assignment cProcessAssignment_14 = (Assignment)cGroup.eContents().get(14);
 		private final RuleCall cProcessProcessParserRuleCall_14_0 = (RuleCall)cProcessAssignment_14.eContents().get(0);
-		private final Assignment cActionsAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final RuleCall cActionsActionParserRuleCall_15_0 = (RuleCall)cActionsAssignment_15.eContents().get(0);
-		private final Assignment cClausesAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final RuleCall cClausesClauseParserRuleCall_16_0 = (RuleCall)cClausesAssignment_16.eContents().get(0);
+		private final Assignment cClausesAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cClausesClauseParserRuleCall_15_0 = (RuleCall)cClausesAssignment_15.eContents().get(0);
+		private final Assignment cActionsAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cActionsActionParserRuleCall_16_0 = (RuleCall)cActionsAssignment_16.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//Contract:
@@ -120,8 +120,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//        'dueDate' '=' dueDate=STRING
 		//        'application' '=' application=Application
 		//        'process' '=' process=Process
-		//        actions+=Action*
 		//        clauses+=Clause*
+		//        actions+=Action*
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -130,8 +130,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    'dueDate' '=' dueDate=STRING
 		//    'application' '=' application=Application
 		//    'process' '=' process=Process
-		//    actions+=Action*
 		//    clauses+=Clause*
+		//    actions+=Action*
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -195,17 +195,17 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//Process
 		public RuleCall getProcessProcessParserRuleCall_14_0() { return cProcessProcessParserRuleCall_14_0; }
 		
-		//actions+=Action*
-		public Assignment getActionsAssignment_15() { return cActionsAssignment_15; }
-		
-		//Action
-		public RuleCall getActionsActionParserRuleCall_15_0() { return cActionsActionParserRuleCall_15_0; }
-		
 		//clauses+=Clause*
-		public Assignment getClausesAssignment_16() { return cClausesAssignment_16; }
+		public Assignment getClausesAssignment_15() { return cClausesAssignment_15; }
 		
 		//Clause
-		public RuleCall getClausesClauseParserRuleCall_16_0() { return cClausesClauseParserRuleCall_16_0; }
+		public RuleCall getClausesClauseParserRuleCall_15_0() { return cClausesClauseParserRuleCall_15_0; }
+		
+		//actions+=Action*
+		public Assignment getActionsAssignment_16() { return cActionsAssignment_16; }
+		
+		//Action
+		public RuleCall getActionsActionParserRuleCall_16_0() { return cActionsActionParserRuleCall_16_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
@@ -2024,8 +2024,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//        'dueDate' '=' dueDate=STRING
 	//        'application' '=' application=Application
 	//        'process' '=' process=Process
-	//        actions+=Action*
 	//        clauses+=Clause*
+	//        actions+=Action*
 	//    '}';
 	public ContractElements getContractAccess() {
 		return pContract;
