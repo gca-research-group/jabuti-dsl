@@ -8,7 +8,6 @@ import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
-import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
@@ -21,9 +20,10 @@ import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
-import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
+import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
@@ -66,9 +66,6 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.BUSINESS_DAY:
 				sequence_BusinessDay(context, (BusinessDay) semanticObject); 
 				return; 
-			case SmartCEPackage.BUSINESS_TIME:
-				sequence_BusinessTime(context, (BusinessTime) semanticObject); 
-				return; 
 			case SmartCEPackage.CLAUSE:
 				sequence_Clause(context, (Clause) semanticObject); 
 				return; 
@@ -105,14 +102,17 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.ON_SUCCESS:
 				sequence_OnSuccess(context, (OnSuccess) semanticObject); 
 				return; 
-			case SmartCEPackage.OPERATIONS_LIMIT:
-				sequence_OperationsLimit(context, (OperationsLimit) semanticObject); 
+			case SmartCEPackage.OPERATION_LIMIT:
+				sequence_OperationLimit(context, (OperationLimit) semanticObject); 
 				return; 
 			case SmartCEPackage.PROCESS:
 				sequence_Process(context, (br.edu.unijui.gca.smartce.smartCE.Process) semanticObject); 
 				return; 
 			case SmartCEPackage.STRING_VALUE:
 				sequence_StringValue(context, (StringValue) semanticObject); 
+				return; 
+			case SmartCEPackage.TIME_INTERVAL:
+				sequence_TimeInterval(context, (TimeInterval) semanticObject); 
 				return; 
 			case SmartCEPackage.TIMEOUT:
 				sequence_Timeout(context, (Timeout) semanticObject); 
@@ -191,31 +191,6 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getBusinessDayAccess().getStartWeekDayEnumRuleCall_2_0(), semanticObject.getStart());
 		feeder.accept(grammarAccess.getBusinessDayAccess().getEndWeekDayEnumRuleCall_4_0(), semanticObject.getEnd());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Condition returns BusinessTime
-	 *     BusinessRule returns BusinessTime
-	 *     BusinessTime returns BusinessTime
-	 *
-	 * Constraint:
-	 *     (start=STRING end=STRING)
-	 * </pre>
-	 */
-	protected void sequence_BusinessTime(ISerializationContext context, BusinessTime semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__START) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__START));
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__END) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_TIME__END));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBusinessTimeAccess().getStartSTRINGTerminalRuleCall_2_0(), semanticObject.getStart());
-		feeder.accept(grammarAccess.getBusinessTimeAccess().getEndSTRINGTerminalRuleCall_4_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	
@@ -409,17 +384,11 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     MessageContent returns MessageContent
 	 *
 	 * Constraint:
-	 *     content=STRING
+	 *     (content=STRING | (content=STRING timeUnit=TimeUnit))
 	 * </pre>
 	 */
 	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.MESSAGE_CONTENT__CONTENT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.MESSAGE_CONTENT__CONTENT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_2_0(), semanticObject.getContent());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -542,24 +511,24 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns OperationsLimit
-	 *     BusinessRule returns OperationsLimit
-	 *     OperationsLimit returns OperationsLimit
+	 *     Condition returns OperationLimit
+	 *     BusinessRule returns OperationLimit
+	 *     OperationLimit returns OperationLimit
 	 *
 	 * Constraint:
 	 *     (operationsNumber=INT timeUnit=TimeUnit)
 	 * </pre>
 	 */
-	protected void sequence_OperationsLimit(ISerializationContext context, OperationsLimit semanticObject) {
+	protected void sequence_OperationLimit(ISerializationContext context, OperationLimit semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__OPERATIONS_NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__OPERATIONS_NUMBER));
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__TIME_UNIT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATIONS_LIMIT__TIME_UNIT));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATION_LIMIT__OPERATIONS_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATION_LIMIT__OPERATIONS_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.OPERATION_LIMIT__TIME_UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.OPERATION_LIMIT__TIME_UNIT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOperationsLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0(), semanticObject.getOperationsNumber());
-		feeder.accept(grammarAccess.getOperationsLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0(), semanticObject.getTimeUnit());
+		feeder.accept(grammarAccess.getOperationLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0(), semanticObject.getOperationsNumber());
+		feeder.accept(grammarAccess.getOperationLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0(), semanticObject.getTimeUnit());
 		feeder.finish();
 	}
 	
@@ -616,6 +585,31 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Condition returns TimeInterval
+	 *     BusinessRule returns TimeInterval
+	 *     TimeInterval returns TimeInterval
+	 *
+	 * Constraint:
+	 *     (start=STRING end=STRING)
+	 * </pre>
+	 */
+	protected void sequence_TimeInterval(ISerializationContext context, TimeInterval semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.TIME_INTERVAL__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.TIME_INTERVAL__START));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.TIME_INTERVAL__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.TIME_INTERVAL__END));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTimeIntervalAccess().getStartSTRINGTerminalRuleCall_2_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getTimeIntervalAccess().getEndSTRINGTerminalRuleCall_4_0(), semanticObject.getEnd());
 		feeder.finish();
 	}
 	

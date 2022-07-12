@@ -10,20 +10,26 @@ contract DeliveryHiring is EAI_Domain{
 	Party deliverySystem;
 	Party integrationProcess;
 
-	Timeout public timeout  = Timeout(60,0); // Normalmente o timeout é utilizado para definir um tempo de resposta, (em segundos)
-	BusinessDay public businessDay = BusinessDay(MONDAY, FRIDAY);
-	TimeInterval public businessTime = TimeInterval(28800,64800);
-	OperationLimit public operationLimit = OperationLimit(5, MINUTE,0,0);
-	MessageContent public messageContent = MessageContent("count(//address)=1");
+	Timeout[] public timeout; // Normalmente o timeout é utilizado para definir um tempo de resposta, (em segundos)
+	BusinessDay[] public businessDay; 
+	TimeInterval[] public timeInterval; 
+	OperationLimit[] public operationLimit;  
+	MessageContent[] public messageContent;
 	
 	event failEvent(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
 	    deliverySystem = Party("Delivery system", _applicationWallet);
 	    integrationProcess = Party("Integration process", _processWallet);
+
+		timeout.push(Timeout(180,0));
+	    businessDay.push(BusinessDay(MONDAY, FRIDAY));
+		timeInterval.push(TimeInterval(28800,64800));
+		operationLimit.push(OperationLimit(5, DAY,0,0));
+		messageContent.push(MessageContent("//budget/id/text()" != ""));
 	}
 		
-	function responderOrder(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
+	function responderOrder(uint32 _accessDateTime, string[] memory _xPathContent, address _performer) public returns(bool){
 
 	   	// Setting the time limit for responding to a request
  
@@ -31,12 +37,13 @@ contract DeliveryHiring is EAI_Domain{
 	   
 	   	bool isBreached=false; 
 	    
-		if(!isTimeout(_accessDateTime, timeout.endTime) &&
-			isBusinessDay(_accessDateTime, businessDay) &&
-			isIntoTimeInterval(_accessDateTime, businessTime) &&
-			!isOperationLimitReached(_accessDateTime, operationLimit))
+		if(!isTimeout(_accessDateTime, timeout[0].endTime) &&
+			isBusinessDay(_accessDateTime, businessDay[0]) &&
+			isIntoTimeInterval(_accessDateTime, timeInterval[0]) &&
+			!isOperationLimitReached(_accessDateTime, operationLimit[0]) &&
+			evaluateMessageContent(messageContent[0], _xPathContent[0]))
 			{
-			    operationLimit.requestsPerformed+=1;// increment the request counter if the response was correctly performed
+			    operationLimit[0].counter+=1;// increment the request counter if the response was correctly performed
 	        	return true;
 	    	}
 	    

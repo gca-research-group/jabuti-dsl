@@ -9,7 +9,6 @@ import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
-import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
@@ -25,11 +24,12 @@ import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
-import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
+import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
@@ -211,9 +211,9 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 				return createTimeoutAdapter();
 			}
 			@Override
-			public Adapter caseOperationsLimit(OperationsLimit object)
+			public Adapter caseOperationLimit(OperationLimit object)
 			{
-				return createOperationsLimitAdapter();
+				return createOperationLimitAdapter();
 			}
 			@Override
 			public Adapter caseBusinessDay(BusinessDay object)
@@ -221,9 +221,9 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 				return createBusinessDayAdapter();
 			}
 			@Override
-			public Adapter caseBusinessTime(BusinessTime object)
+			public Adapter caseTimeInterval(TimeInterval object)
 			{
-				return createBusinessTimeAdapter();
+				return createTimeIntervalAdapter();
 			}
 			@Override
 			public Adapter caseMessageContent(MessageContent object)
@@ -598,16 +598,16 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit <em>Operations Limit</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit <em>Operation Limit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.smartce.smartCE.OperationsLimit
+	 * @see br.edu.unijui.gca.smartce.smartCE.OperationLimit
 	 * @generated
 	 */
-	public Adapter createOperationsLimitAdapter()
+	public Adapter createOperationLimitAdapter()
 	{
 		return null;
 	}
@@ -628,16 +628,16 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime <em>Business Time</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval <em>Time Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeInterval
 	 * @generated
 	 */
-	public Adapter createBusinessTimeAdapter()
+	public Adapter createTimeIntervalAdapter()
 	{
 		return null;
 	}

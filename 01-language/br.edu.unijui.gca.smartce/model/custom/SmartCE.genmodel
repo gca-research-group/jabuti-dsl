@@ -115,20 +115,21 @@
     <genClasses ecoreClass="SmartCE.ecore#//Timeout">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Timeout/value"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//OperationsLimit">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationsLimit/operationsNumber"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationsLimit/timeUnit"/>
+    <genClasses ecoreClass="SmartCE.ecore#//OperationLimit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationLimit/operationsNumber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationLimit/timeUnit"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//BusinessDay">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessDay/start"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessDay/end"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//BusinessTime">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessTime/start"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessTime/end"/>
+    <genClasses ecoreClass="SmartCE.ecore#//TimeInterval">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//TimeInterval/start"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//TimeInterval/end"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//MessageContent">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//MessageContent/content"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//MessageContent/timeUnit"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//CompositeCondition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//CompositeCondition/conditions"/>

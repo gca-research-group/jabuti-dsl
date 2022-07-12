@@ -636,11 +636,11 @@ ruleBusinessRule returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBusinessRuleAccess().getOperationsLimitParserRuleCall_1());
+			newCompositeNode(grammarAccess.getBusinessRuleAccess().getOperationLimitParserRuleCall_1());
 		}
-		this_OperationsLimit_1=ruleOperationsLimit
+		this_OperationLimit_1=ruleOperationLimit
 		{
-			$current = $this_OperationsLimit_1.current;
+			$current = $this_OperationLimit_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -654,11 +654,11 @@ ruleBusinessRule returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBusinessRuleAccess().getBusinessTimeParserRuleCall_3());
+			newCompositeNode(grammarAccess.getBusinessRuleAccess().getTimeIntervalParserRuleCall_3());
 		}
-		this_BusinessTime_3=ruleBusinessTime
+		this_TimeInterval_3=ruleTimeInterval
 		{
-			$current = $this_BusinessTime_3.current;
+			$current = $this_TimeInterval_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
@@ -893,15 +893,15 @@ ruleTimeout returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleOperationsLimit
-entryRuleOperationsLimit returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getOperationsLimitRule()); }
-	iv_ruleOperationsLimit=ruleOperationsLimit
-	{ $current=$iv_ruleOperationsLimit.current; }
+// Entry rule entryRuleOperationLimit
+entryRuleOperationLimit returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getOperationLimitRule()); }
+	iv_ruleOperationLimit=ruleOperationLimit
+	{ $current=$iv_ruleOperationLimit.current; }
 	EOF;
 
-// Rule OperationsLimit
-ruleOperationsLimit returns [EObject current=null]
+// Rule OperationLimit
+ruleOperationLimit returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -909,23 +909,23 @@ ruleOperationsLimit returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='OperationsLimit'
+		otherlv_0='OperationLimit'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getOperationsLimitAccess().getOperationsLimitKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getOperationLimitAccess().getOperationLimitKeyword_0());
 		}
 		otherlv_1='('
 		{
-			newLeafNode(otherlv_1, grammarAccess.getOperationsLimitAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getOperationLimitAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				lv_operationsNumber_2_0=RULE_INT
 				{
-					newLeafNode(lv_operationsNumber_2_0, grammarAccess.getOperationsLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0());
+					newLeafNode(lv_operationsNumber_2_0, grammarAccess.getOperationLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOperationsLimitRule());
+						$current = createModelElement(grammarAccess.getOperationLimitRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -937,17 +937,17 @@ ruleOperationsLimit returns [EObject current=null]
 		)
 		otherlv_3='by'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getOperationsLimitAccess().getByKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getOperationLimitAccess().getByKeyword_3());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getOperationsLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0());
+					newCompositeNode(grammarAccess.getOperationLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0());
 				}
 				lv_timeUnit_4_0=ruleTimeUnit
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getOperationsLimitRule());
+						$current = createModelElementForParent(grammarAccess.getOperationLimitRule());
 					}
 					set(
 						$current,
@@ -960,7 +960,7 @@ ruleOperationsLimit returns [EObject current=null]
 		)
 		otherlv_5=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getOperationsLimitAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getOperationLimitAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -1038,15 +1038,15 @@ ruleBusinessDay returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleBusinessTime
-entryRuleBusinessTime returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getBusinessTimeRule()); }
-	iv_ruleBusinessTime=ruleBusinessTime
-	{ $current=$iv_ruleBusinessTime.current; }
+// Entry rule entryRuleTimeInterval
+entryRuleTimeInterval returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTimeIntervalRule()); }
+	iv_ruleTimeInterval=ruleTimeInterval
+	{ $current=$iv_ruleTimeInterval.current; }
 	EOF;
 
-// Rule BusinessTime
-ruleBusinessTime returns [EObject current=null]
+// Rule TimeInterval
+ruleTimeInterval returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -1054,23 +1054,23 @@ ruleBusinessTime returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='BusinessTime'
+		otherlv_0='TimeInterval'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getBusinessTimeAccess().getBusinessTimeKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getTimeIntervalAccess().getTimeIntervalKeyword_0());
 		}
 		otherlv_1='('
 		{
-			newLeafNode(otherlv_1, grammarAccess.getBusinessTimeAccess().getLeftParenthesisKeyword_1());
+			newLeafNode(otherlv_1, grammarAccess.getTimeIntervalAccess().getLeftParenthesisKeyword_1());
 		}
 		(
 			(
 				lv_start_2_0=RULE_STRING
 				{
-					newLeafNode(lv_start_2_0, grammarAccess.getBusinessTimeAccess().getStartSTRINGTerminalRuleCall_2_0());
+					newLeafNode(lv_start_2_0, grammarAccess.getTimeIntervalAccess().getStartSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBusinessTimeRule());
+						$current = createModelElement(grammarAccess.getTimeIntervalRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -1082,17 +1082,17 @@ ruleBusinessTime returns [EObject current=null]
 		)
 		otherlv_3='to'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getBusinessTimeAccess().getToKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getTimeIntervalAccess().getToKeyword_3());
 		}
 		(
 			(
 				lv_end_4_0=RULE_STRING
 				{
-					newLeafNode(lv_end_4_0, grammarAccess.getBusinessTimeAccess().getEndSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_end_4_0, grammarAccess.getTimeIntervalAccess().getEndSTRINGTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getBusinessTimeRule());
+						$current = createModelElement(grammarAccess.getTimeIntervalRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -1104,7 +1104,7 @@ ruleBusinessTime returns [EObject current=null]
 		)
 		otherlv_5=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getBusinessTimeAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getTimeIntervalAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -1125,36 +1125,94 @@ ruleMessageContent returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='MessageContent'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getMessageContentAccess().getMessageContentKeyword_0());
-		}
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1());
-		}
 		(
+			otherlv_0='MessageContent'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getMessageContentAccess().getMessageContentKeyword_0_0());
+			}
+			otherlv_1='('
+			{
+				newLeafNode(otherlv_1, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_0_1());
+			}
 			(
-				lv_content_2_0=RULE_STRING
-				{
-					newLeafNode(lv_content_2_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMessageContentRule());
+				(
+					lv_content_2_0=RULE_STRING
+					{
+						newLeafNode(lv_content_2_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_0_2_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"content",
-						lv_content_2_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMessageContentRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"content",
+							lv_content_2_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
 			)
+			otherlv_3=')'
+			{
+				newLeafNode(otherlv_3, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_0_3());
+			}
 		)
-		otherlv_3=')'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_3());
-		}
+		    |
+		(
+			otherlv_4='MessageContent'
+			{
+				newLeafNode(otherlv_4, grammarAccess.getMessageContentAccess().getMessageContentKeyword_1_0());
+			}
+			otherlv_5='('
+			{
+				newLeafNode(otherlv_5, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1_1());
+			}
+			(
+				(
+					lv_content_6_0=RULE_STRING
+					{
+						newLeafNode(lv_content_6_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_1_2_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMessageContentRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"content",
+							lv_content_6_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			otherlv_7='by'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getMessageContentAccess().getByKeyword_1_3());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_1_4_0());
+					}
+					lv_timeUnit_8_0=ruleTimeUnit
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getMessageContentRule());
+						}
+						set(
+							$current,
+							"timeUnit",
+							lv_timeUnit_8_0,
+							"br.edu.unijui.gca.smartce.SmartCE.TimeUnit");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			otherlv_9=')'
+			{
+				newLeafNode(otherlv_9, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_1_5());
+			}
+		)
 	)
 ;
 

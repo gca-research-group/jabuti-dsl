@@ -8,7 +8,6 @@ import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
-import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
@@ -24,12 +23,13 @@ import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
-import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
+import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
@@ -118,9 +118,9 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.ACTION: return createAction();
 			case SmartCEPackage.VARIABLE: return createVariable();
 			case SmartCEPackage.TIMEOUT: return createTimeout();
-			case SmartCEPackage.OPERATIONS_LIMIT: return createOperationsLimit();
+			case SmartCEPackage.OPERATION_LIMIT: return createOperationLimit();
 			case SmartCEPackage.BUSINESS_DAY: return createBusinessDay();
-			case SmartCEPackage.BUSINESS_TIME: return createBusinessTime();
+			case SmartCEPackage.TIME_INTERVAL: return createTimeInterval();
 			case SmartCEPackage.MESSAGE_CONTENT: return createMessageContent();
 			case SmartCEPackage.COMPOSITE_CONDITION: return createCompositeCondition();
 			case SmartCEPackage.BUSINESS_ACTION: return createBusinessAction();
@@ -420,10 +420,10 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	@Override
-	public OperationsLimit createOperationsLimit()
+	public OperationLimit createOperationLimit()
 	{
-		OperationsLimitImpl operationsLimit = new OperationsLimitImpl();
-		return operationsLimit;
+		OperationLimitImpl operationLimit = new OperationLimitImpl();
+		return operationLimit;
 	}
 
 	/**
@@ -444,10 +444,10 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	@Override
-	public BusinessTime createBusinessTime()
+	public TimeInterval createTimeInterval()
 	{
-		BusinessTimeImpl businessTime = new BusinessTimeImpl();
-		return businessTime;
+		TimeIntervalImpl timeInterval = new TimeIntervalImpl();
+		return timeInterval;
 	}
 
 	/**

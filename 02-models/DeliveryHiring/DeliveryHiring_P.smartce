@@ -16,11 +16,11 @@ Contract DeliveryHiring_P  {
 		
 		condition {
 			BusinessDay(Saturday to Sunday) OR
-			BusinessTime("18:30:00" to "08:30:00") OR
-			OperationsLimit(6 by Minute) OR
+			TimeInterval("18:30:00" to "08:30:00") OR
+			OperationLimit(6 by Minute) OR
 			MessageContent("count(//address)!=1")						
 		}
-		// the onSuccess is optional 
+		// the onSuccess is optiona 
 		//onSuccess(successEvent, "Success execution")		
 		onBreach(failEvent, "Request operation performed outside of allowed hours or limit operation exceeded") 
 	}

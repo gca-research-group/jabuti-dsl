@@ -48,7 +48,13 @@
 				"type": "event"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"name": "businessDay",
 				"outputs": [
 					{
@@ -60,24 +66,6 @@
 						"internalType": "uint256",
 						"name": "weekDay_end",
 						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "businessTime",
-				"outputs": [
-					{
-						"internalType": "uint32",
-						"name": "start",
-						"type": "uint32"
-					},
-					{
-						"internalType": "uint32",
-						"name": "end",
-						"type": "uint32"
 					}
 				],
 				"stateMutability": "view",
@@ -97,6 +85,31 @@
 						"internalType": "string",
 						"name": "xPathQuery",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "binaryOperator",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "referenceValue",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "frequencyTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endOfInterval",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "accumulatedValue",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -116,13 +129,44 @@
 						"internalType": "string",
 						"name": "xPathQuery",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "binaryOperator",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "referenceValue",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "frequencyTime",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "endOfInterval",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "accumulatedValue",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"name": "operationLimit",
 				"outputs": [
 					{
@@ -137,12 +181,12 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "requestsPerformed",
+						"name": "timeout",
 						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "timeout",
+						"name": "counter",
 						"type": "uint256"
 					}
 				],
@@ -160,11 +204,6 @@
 						"internalType": "string[]",
 						"name": "_xPathContent",
 						"type": "string[]"
-					},
-					{
-						"internalType": "bool[]",
-						"name": "_xPathResult",
-						"type": "bool[]"
 					},
 					{
 						"internalType": "address",
@@ -218,7 +257,37 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "timeInterval",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "start",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "end",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"name": "timeout",
 				"outputs": [
 					{
@@ -243,7 +312,14 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"requestDelivery(uint32,string[],address)": {
+					"notice": "Setting the days and hours to request a delivery and the maximum delivery distance"
+				},
+				"responderOrder(uint32,string[],bool[],address)": {
+					"notice": "Setting the time limit for responding to a request"
+				}
+			},
 			"version": 1
 		}
 	},
@@ -264,11 +340,11 @@
 	},
 	"sources": {
 		"DeliveryHiringRO.sol": {
-			"keccak256": "0x21c8a6527ded08c2512453a1cc764c397e57f1377b7790585ef4f542f6f63170",
+			"keccak256": "0x971a1d1283bf1bab14c24061d0ee467964785ca8f55e0857d48d1d7e92e541fd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c08c6919969e63978ce6bbde77f63e48293f358f90c2e298a6902ef104d8a596",
-				"dweb:/ipfs/QmcUgConVHHeWR6y63XmptHH9uY3e9XpxHYSVpSw7aCD4m"
+				"bzz-raw://1bd6168c0cb23186d025e1159f42a8bcdfd8c983e029022daf5e7798fe6776f5",
+				"dweb:/ipfs/QmSsbUgtQfDPFperqiHUjL9oShCRFyvDTQtEhKqPUeQQ2M"
 			]
 		},
 		"libs/DateTimeLibrary.sol": {
@@ -280,11 +356,11 @@
 			]
 		},
 		"libs/EAI_Domain.sol": {
-			"keccak256": "0x90049a9ed096b2a18c1f7fc1cf4af690577dde6b33e1ae44511f81263f8ed5da",
+			"keccak256": "0x25b38989555068e081e16e04db2fe67eabded5a89b6288947e581351718fdcec",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d0e0a3dbd00b6df2d560c2af04d1054a7078ce42d6e9db0440b8499927c9a52e",
-				"dweb:/ipfs/QmPdnYW6LCEJF6ySoFP39BT4FxvvbQ2oNe3cksWwezaM9B"
+				"bzz-raw://7c34e3176ddac78b87a3621508834679659c1914538acab6be4bc962d70ad4dd",
+				"dweb:/ipfs/QmPwv6eCKsnQB8g1Ya4kWUKTGuWrTbY2LfWHGcdSwwswmL"
 			]
 		},
 		"libs/SafeMath.sol": {

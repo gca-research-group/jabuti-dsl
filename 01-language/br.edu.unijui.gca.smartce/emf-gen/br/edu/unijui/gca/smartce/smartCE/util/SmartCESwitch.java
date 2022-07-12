@@ -9,7 +9,6 @@ import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
-import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
@@ -25,11 +24,12 @@ import br.edu.unijui.gca.smartce.smartCE.Model;
 import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
-import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
+import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
+import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
@@ -265,12 +265,12 @@ public class SmartCESwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmartCEPackage.OPERATIONS_LIMIT:
+			case SmartCEPackage.OPERATION_LIMIT:
 			{
-				OperationsLimit operationsLimit = (OperationsLimit)theEObject;
-				T result = caseOperationsLimit(operationsLimit);
-				if (result == null) result = caseBusinessRule(operationsLimit);
-				if (result == null) result = caseCondition(operationsLimit);
+				OperationLimit operationLimit = (OperationLimit)theEObject;
+				T result = caseOperationLimit(operationLimit);
+				if (result == null) result = caseBusinessRule(operationLimit);
+				if (result == null) result = caseCondition(operationLimit);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -283,12 +283,12 @@ public class SmartCESwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmartCEPackage.BUSINESS_TIME:
+			case SmartCEPackage.TIME_INTERVAL:
 			{
-				BusinessTime businessTime = (BusinessTime)theEObject;
-				T result = caseBusinessTime(businessTime);
-				if (result == null) result = caseBusinessRule(businessTime);
-				if (result == null) result = caseCondition(businessTime);
+				TimeInterval timeInterval = (TimeInterval)theEObject;
+				T result = caseTimeInterval(timeInterval);
+				if (result == null) result = caseBusinessRule(timeInterval);
+				if (result == null) result = caseCondition(timeInterval);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -688,17 +688,17 @@ public class SmartCESwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Operations Limit</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Operation Limit</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Operations Limit</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Operation Limit</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseOperationsLimit(OperationsLimit object)
+	public T caseOperationLimit(OperationLimit object)
 	{
 		return null;
 	}
@@ -720,17 +720,17 @@ public class SmartCESwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Business Time</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Time Interval</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Business Time</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Time Interval</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBusinessTime(BusinessTime object)
+	public T caseTimeInterval(TimeInterval object)
 	{
 		return null;
 	}

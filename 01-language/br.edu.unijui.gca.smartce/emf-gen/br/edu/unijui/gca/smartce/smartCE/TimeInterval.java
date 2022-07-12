@@ -6,22 +6,22 @@ package br.edu.unijui.gca.smartce.smartCE;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Business Time</b></em>'.
+ * A representation of the model object '<em><b>Time Interval</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval#getStart <em>Start</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval#getEnd <em>End</em>}</li>
  * </ul>
  *
- * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getBusinessTime()
+ * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getTimeInterval()
  * @model
  * @generated
  */
-public interface BusinessTime extends BusinessRule
+public interface TimeInterval extends BusinessRule
 {
 	/**
 	 * Returns the value of the '<em><b>Start</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface BusinessTime extends BusinessRule
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Start</em>' attribute.
 	 * @see #setStart(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getBusinessTime_Start()
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getTimeInterval_Start()
 	 * @model
 	 * @generated
 	 */
 	String getStart();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval#getStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Start</em>' attribute.
@@ -51,14 +51,14 @@ public interface BusinessTime extends BusinessRule
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>End</em>' attribute.
 	 * @see #setEnd(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getBusinessTime_End()
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getTimeInterval_End()
 	 * @model
 	 * @generated
 	 */
 	String getEnd();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval#getEnd <em>End</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>End</em>' attribute.
@@ -67,4 +67,4 @@ public interface BusinessTime extends BusinessRule
 	 */
 	void setEnd(String value);
 
-} // BusinessTime
+} // TimeInterval

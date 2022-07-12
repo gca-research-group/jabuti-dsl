@@ -38,7 +38,7 @@ Condition:
 ;
 
 BusinessRule:
-	Timeout | OperationsLimit | BusinessDay | BusinessTime | MessageContent	
+	Timeout | OperationLimit | BusinessDay |TimeInterval | MessageContent	
 ;
 
 CompositeCondition:
@@ -53,8 +53,8 @@ Timeout:
 	'Timeout' '(' value=INT ')'
 ;
 
-OperationsLimit:
-	'OperationsLimit' '(' operationsNumber=INT 'by' timeUnit=TimeUnit  ')'
+OperationLimit:
+	'OperationLimit' '(' operationsNumber=INT 'by' timeUnit=TimeUnit  ')'
 ;
 
 BusinessDay:
@@ -74,12 +74,13 @@ enum TimeUnit:
     SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='Day' | WEEK='Week' | MONTH='Month' | YEAR='Year'
 ;
       
-BusinessTime: 
-	'BusinessTime' '(' start=STRING 'to' end=STRING')'
+TimeInterval: 
+	'TimeInterval' '(' start=STRING 'to' end=STRING')'
 ; 
 
 MessageContent:
-	'MessageContent' '(' content=STRING ')' /* Add an user help -> This field requires an xpath expression */
+	'MessageContent' '(' content=STRING ')' | /* Add an user help -> This field requires an xpath expression */	
+	'MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')' 
 ;
 
 Party: 

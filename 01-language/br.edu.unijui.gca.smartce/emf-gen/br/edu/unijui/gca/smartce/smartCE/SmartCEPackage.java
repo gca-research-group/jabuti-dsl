@@ -927,14 +927,14 @@ public interface SmartCEPackage extends EPackage
 	int TIMEOUT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl <em>Operations Limit</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl <em>Operation Limit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationsLimit()
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationLimit()
 	 * @generated
 	 */
-	int OPERATIONS_LIMIT = 21;
+	int OPERATION_LIMIT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Operations Number</b></em>' attribute.
@@ -943,7 +943,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATIONS_LIMIT__OPERATIONS_NUMBER = BUSINESS_RULE_FEATURE_COUNT + 0;
+	int OPERATION_LIMIT__OPERATIONS_NUMBER = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
@@ -952,16 +952,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATIONS_LIMIT__TIME_UNIT = BUSINESS_RULE_FEATURE_COUNT + 1;
+	int OPERATION_LIMIT__TIME_UNIT = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Operations Limit</em>' class.
+	 * The number of structural features of the '<em>Operation Limit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OPERATIONS_LIMIT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
+	int OPERATION_LIMIT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl <em>Business Day</em>}' class.
@@ -1001,14 +1001,14 @@ public interface SmartCEPackage extends EPackage
 	int BUSINESS_DAY_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl <em>Business Time</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessTime()
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.TimeIntervalImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeInterval()
 	 * @generated
 	 */
-	int BUSINESS_TIME = 23;
+	int TIME_INTERVAL = 23;
 
 	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
@@ -1017,7 +1017,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_TIME__START = BUSINESS_RULE_FEATURE_COUNT + 0;
+	int TIME_INTERVAL__START = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>End</b></em>' attribute.
@@ -1026,16 +1026,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_TIME__END = BUSINESS_RULE_FEATURE_COUNT + 1;
+	int TIME_INTERVAL__END = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Business Time</em>' class.
+	 * The number of structural features of the '<em>Time Interval</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_TIME_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
+	int TIME_INTERVAL_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.
@@ -1057,13 +1057,31 @@ public interface SmartCEPackage extends EPackage
 	int MESSAGE_CONTENT__CONTENT = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__TIME_UNIT = BUSINESS_RULE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__EXPRESSION = BUSINESS_RULE_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Message Content</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 1;
+	int MESSAGE_CONTENT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
@@ -2007,36 +2025,36 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getTimeout_Value();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit <em>Operations Limit</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit <em>Operation Limit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Operations Limit</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.OperationsLimit
+	 * @return the meta object for class '<em>Operation Limit</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.OperationLimit
 	 * @generated
 	 */
-	EClass getOperationsLimit();
+	EClass getOperationLimit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber <em>Operations Number</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit#getOperationsNumber <em>Operations Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Operations Number</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber()
-	 * @see #getOperationsLimit()
+	 * @see br.edu.unijui.gca.smartce.smartCE.OperationLimit#getOperationsNumber()
+	 * @see #getOperationLimit()
 	 * @generated
 	 */
-	EAttribute getOperationsLimit_OperationsNumber();
+	EAttribute getOperationLimit_OperationsNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit <em>Time Unit</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit#getTimeUnit <em>Time Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Time Unit</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit()
-	 * @see #getOperationsLimit()
+	 * @see br.edu.unijui.gca.smartce.smartCE.OperationLimit#getTimeUnit()
+	 * @see #getOperationLimit()
 	 * @generated
 	 */
-	EAttribute getOperationsLimit_TimeUnit();
+	EAttribute getOperationLimit_TimeUnit();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessDay <em>Business Day</em>}'.
@@ -2071,36 +2089,36 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getBusinessDay_End();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime <em>Business Time</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval <em>Time Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Business Time</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime
+	 * @return the meta object for class '<em>Time Interval</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeInterval
 	 * @generated
 	 */
-	EClass getBusinessTime();
+	EClass getTimeInterval();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart <em>Start</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Start</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime#getStart()
-	 * @see #getBusinessTime()
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeInterval#getStart()
+	 * @see #getTimeInterval()
 	 * @generated
 	 */
-	EAttribute getBusinessTime_Start();
+	EAttribute getTimeInterval_Start();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd <em>End</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.TimeInterval#getEnd <em>End</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>End</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessTime#getEnd()
-	 * @see #getBusinessTime()
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeInterval#getEnd()
+	 * @see #getTimeInterval()
 	 * @generated
 	 */
-	EAttribute getBusinessTime_End();
+	EAttribute getTimeInterval_End();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent <em>Message Content</em>}'.
@@ -2122,6 +2140,28 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getMessageContent_Content();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.MessageContent#getTimeUnit()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EAttribute getMessageContent_TimeUnit();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.MessageContent#getExpression()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EReference getMessageContent_Expression();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition <em>Composite Condition</em>}'.
@@ -2870,14 +2910,14 @@ public interface SmartCEPackage extends EPackage
 		EAttribute TIMEOUT__VALUE = eINSTANCE.getTimeout_Value();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl <em>Operations Limit</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl <em>Operation Limit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationsLimit()
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationLimit()
 		 * @generated
 		 */
-		EClass OPERATIONS_LIMIT = eINSTANCE.getOperationsLimit();
+		EClass OPERATION_LIMIT = eINSTANCE.getOperationLimit();
 
 		/**
 		 * The meta object literal for the '<em><b>Operations Number</b></em>' attribute feature.
@@ -2885,7 +2925,7 @@ public interface SmartCEPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OPERATIONS_LIMIT__OPERATIONS_NUMBER = eINSTANCE.getOperationsLimit_OperationsNumber();
+		EAttribute OPERATION_LIMIT__OPERATIONS_NUMBER = eINSTANCE.getOperationLimit_OperationsNumber();
 
 		/**
 		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
@@ -2893,7 +2933,7 @@ public interface SmartCEPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute OPERATIONS_LIMIT__TIME_UNIT = eINSTANCE.getOperationsLimit_TimeUnit();
+		EAttribute OPERATION_LIMIT__TIME_UNIT = eINSTANCE.getOperationLimit_TimeUnit();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessDayImpl <em>Business Day</em>}' class.
@@ -2922,14 +2962,14 @@ public interface SmartCEPackage extends EPackage
 		EAttribute BUSINESS_DAY__END = eINSTANCE.getBusinessDay_End();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl <em>Business Time</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessTime()
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.TimeIntervalImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeInterval()
 		 * @generated
 		 */
-		EClass BUSINESS_TIME = eINSTANCE.getBusinessTime();
+		EClass TIME_INTERVAL = eINSTANCE.getTimeInterval();
 
 		/**
 		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
@@ -2937,7 +2977,7 @@ public interface SmartCEPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUSINESS_TIME__START = eINSTANCE.getBusinessTime_Start();
+		EAttribute TIME_INTERVAL__START = eINSTANCE.getTimeInterval_Start();
 
 		/**
 		 * The meta object literal for the '<em><b>End</b></em>' attribute feature.
@@ -2945,7 +2985,7 @@ public interface SmartCEPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BUSINESS_TIME__END = eINSTANCE.getBusinessTime_End();
+		EAttribute TIME_INTERVAL__END = eINSTANCE.getTimeInterval_End();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl <em>Message Content</em>}' class.
@@ -2964,6 +3004,22 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute MESSAGE_CONTENT__CONTENT = eINSTANCE.getMessageContent_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_CONTENT__TIME_UNIT = eINSTANCE.getMessageContent_TimeUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_CONTENT__EXPRESSION = eINSTANCE.getMessageContent_Expression();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.

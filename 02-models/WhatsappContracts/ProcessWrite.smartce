@@ -1,0 +1,26 @@
+///@version - jabuti 0.1.0 
+Contract sendMessageWhatsapp {
+
+	beginDate = "2022-01-01 08:00:00" 
+	dueDate = "2022-12-31 18:00:00"
+	
+	application = whatsapp :" API whatsapp business"
+	process = integrationProcess : "Lacen integration process"
+
+	Right sendMessage {
+		description = ""
+		rolePlayer = integrationProcess
+		operation = write
+		condition {
+			 BusinessDay(Monday to Sunday) AND
+			 TimeInterval("00:00:00" to "23:59:59") AND
+			 (OperationLimit(1000 by Month) OR (OperationLimit(1000000 by Month)))
+			 MessageContent("//HEAD/accessKey")
+//			 (MessageContent("//HEAD/conversationID/activatedTime/text() - //HEAD/conversationID/activatedTime/text()) <24 ") AND (0 HORA) ) OR
+//			 (MessageContent("//HEAD/phoneNumberTo/hourResponse") AND ( 24 HORAs) ) 
+//			 AND
+			 
+			 
+		}
+	}
+}

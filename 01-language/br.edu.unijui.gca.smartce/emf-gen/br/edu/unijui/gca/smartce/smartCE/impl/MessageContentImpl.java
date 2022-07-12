@@ -3,14 +3,25 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
+import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
+
+import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,6 +32,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getContent <em>Content</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +59,36 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 	 * @ordered
 	 */
 	protected String content = CONTENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeUnit()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final TimeUnit TIME_UNIT_EDEFAULT = TimeUnit.SECOND;
+
+	/**
+	 * The cached value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeUnit()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Expression> expression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -99,12 +142,72 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 	 * @generated
 	 */
 	@Override
+	public TimeUnit getTimeUnit()
+	{
+		return timeUnit;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTimeUnit(TimeUnit newTimeUnit)
+	{
+		TimeUnit oldTimeUnit = timeUnit;
+		timeUnit = newTimeUnit == null ? TIME_UNIT_EDEFAULT : newTimeUnit;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT, oldTimeUnit, timeUnit));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Expression> getExpression()
+	{
+		if (expression == null)
+		{
+			expression = new EObjectContainmentEList<Expression>(Expression.class, this, SmartCEPackage.MESSAGE_CONTENT__EXPRESSION);
+		}
+		return expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
+				return ((InternalEList<?>)getExpression()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
 		switch (featureID)
 		{
 			case SmartCEPackage.MESSAGE_CONTENT__CONTENT:
 				return getContent();
+			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
+				return getTimeUnit();
+			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
+				return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -114,6 +217,7 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
@@ -121,6 +225,13 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 		{
 			case SmartCEPackage.MESSAGE_CONTENT__CONTENT:
 				setContent((String)newValue);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
+				setTimeUnit((TimeUnit)newValue);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
+				getExpression().clear();
+				getExpression().addAll((Collection<? extends Expression>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -139,6 +250,12 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 			case SmartCEPackage.MESSAGE_CONTENT__CONTENT:
 				setContent(CONTENT_EDEFAULT);
 				return;
+			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
+				setTimeUnit(TIME_UNIT_EDEFAULT);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
+				getExpression().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -155,6 +272,10 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 		{
 			case SmartCEPackage.MESSAGE_CONTENT__CONTENT:
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
+			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
+				return timeUnit != TIME_UNIT_EDEFAULT;
+			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
+				return expression != null && !expression.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -172,6 +293,8 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (content: ");
 		result.append(content);
+		result.append(", timeUnit: ");
+		result.append(timeUnit);
 		result.append(')');
 		return result.toString();
 	}

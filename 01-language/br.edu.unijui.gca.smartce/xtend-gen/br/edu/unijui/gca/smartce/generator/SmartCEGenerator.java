@@ -4,11 +4,11 @@
 package br.edu.unijui.gca.smartce.generator;
 
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
-import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
-import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
+import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
+import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.WeekDay;
@@ -201,22 +201,22 @@ public class SmartCEGenerator extends AbstractGenerator {
               _builder.append(");");
               _builder.newLineIfNotEmpty();
             } else {
-              if ((c instanceof BusinessTime)) {
-                _builder.append("TimeInterval public businessTime = TimeInterval(");
-                String _start_1 = ((BusinessTime)c).getStart();
+              if ((c instanceof TimeInterval)) {
+                _builder.append("TimeInterval public timeInterval = TimeInterval(");
+                String _start_1 = ((TimeInterval)c).getStart();
                 _builder.append(_start_1);
                 _builder.append(", ");
-                String _end_1 = ((BusinessTime)c).getEnd();
+                String _end_1 = ((TimeInterval)c).getEnd();
                 _builder.append(_end_1);
                 _builder.append(");");
                 _builder.newLineIfNotEmpty();
               } else {
-                if ((c instanceof OperationsLimit)) {
+                if ((c instanceof OperationLimit)) {
                   _builder.append("OperationLimit public operationLimit = OperationLimit(");
-                  int _operationsNumber = ((OperationsLimit)c).getOperationsNumber();
+                  int _operationsNumber = ((OperationLimit)c).getOperationsNumber();
                   _builder.append(_operationsNumber);
                   _builder.append(", ");
-                  TimeUnit _timeUnit = ((OperationsLimit)c).getTimeUnit();
+                  TimeUnit _timeUnit = ((OperationLimit)c).getTimeUnit();
                   _builder.append(_timeUnit);
                   _builder.append(", 0, 0);");
                   _builder.newLineIfNotEmpty();
@@ -252,11 +252,11 @@ public class SmartCEGenerator extends AbstractGenerator {
               _builder.append("isBusinessDay(_accessDateTime, businessDay) &&");
               _builder.newLine();
             } else {
-              if ((c instanceof BusinessTime)) {
-                _builder.append("isIntoTimeInterval(_accessDateTime, businessTime) &&");
+              if ((c instanceof TimeInterval)) {
+                _builder.append("isIntoTimeInterval(_accessDateTime, timeInterval) &&");
                 _builder.newLine();
               } else {
-                if ((c instanceof OperationsLimit)) {
+                if ((c instanceof OperationLimit)) {
                   _builder.append("!isOperationLimitReached(_accessDateTime, operationLimit) &&");
                   _builder.newLine();
                 }

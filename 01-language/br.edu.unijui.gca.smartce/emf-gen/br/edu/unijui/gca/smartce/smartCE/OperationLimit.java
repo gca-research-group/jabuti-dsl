@@ -6,22 +6,22 @@ package br.edu.unijui.gca.smartce.smartCE;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Operations Limit</b></em>'.
+ * A representation of the model object '<em><b>Operation Limit</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber <em>Operations Number</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit#getOperationsNumber <em>Operations Number</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit#getTimeUnit <em>Time Unit</em>}</li>
  * </ul>
  *
- * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationsLimit()
+ * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationLimit()
  * @model
  * @generated
  */
-public interface OperationsLimit extends BusinessRule
+public interface OperationLimit extends BusinessRule
 {
 	/**
 	 * Returns the value of the '<em><b>Operations Number</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface OperationsLimit extends BusinessRule
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operations Number</em>' attribute.
 	 * @see #setOperationsNumber(int)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationsLimit_OperationsNumber()
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationLimit_OperationsNumber()
 	 * @model
 	 * @generated
 	 */
 	int getOperationsNumber();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getOperationsNumber <em>Operations Number</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit#getOperationsNumber <em>Operations Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Operations Number</em>' attribute.
@@ -53,14 +53,14 @@ public interface OperationsLimit extends BusinessRule
 	 * @return the value of the '<em>Time Unit</em>' attribute.
 	 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
 	 * @see #setTimeUnit(TimeUnit)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationsLimit_TimeUnit()
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOperationLimit_TimeUnit()
 	 * @model
 	 * @generated
 	 */
 	TimeUnit getTimeUnit();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OperationsLimit#getTimeUnit <em>Time Unit</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit#getTimeUnit <em>Time Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Time Unit</em>' attribute.
@@ -70,4 +70,4 @@ public interface OperationsLimit extends BusinessRule
 	 */
 	void setTimeUnit(TimeUnit value);
 
-} // OperationsLimit
+} // OperationLimit

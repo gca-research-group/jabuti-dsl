@@ -13,13 +13,15 @@ Contract DeliveryHiring_RO {
 					 the maximum request operation by minute and number of address by request"
 		rolePlayer = integrationProcess
 		operation = request
-		
 		condition {
 			BusinessDay(Monday to Friday) AND
-			BusinessTime("08:30:00" to "18:30:00") AND
-			OperationsLimit(5 by Minute) AND
-			MessageContent("count(//address)=1")						
+			TimeInterval("08:30:00" to "18:30:00") AND
+			OperationLimit(5 by Day) AND
+			MessageContent("count(//address)" >= 1) AND
+			MessageContent("count(//address)" <= 3) AND
+			MessageContent("count(//address)" <= 200 by Month)
 		}
+	
 		onBreach(failEvent, "Request operation performed outside of allowed hours or limit operation exceeded") 
 	}
 
@@ -29,11 +31,9 @@ Contract DeliveryHiring_RO {
 		operation = response
 		condition { 
 			Timeout(180) AND
-			MessageContent("//budget/id/text()!=''")AND 						
-			MessageContent("//cost/text()!=''") 						
+			MessageContent("//budget/id/text()" != "") 						
 		}
 		onBreach(failEvent, "Request made outside of allowed hours or distance limit exceeded")
-		onSuccess(successEvent, "Success execution")	
 	}
 
 	EventLog failEvent(message : String )

@@ -3,7 +3,7 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.OperationsLimit;
+import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 
@@ -15,19 +15,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Operations Limit</b></em>'.
+ * An implementation of the model object '<em><b>Operation Limit</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl#getOperationsNumber <em>Operations Number</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationsLimitImpl#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl#getOperationsNumber <em>Operations Number</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl#getTimeUnit <em>Time Unit</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsLimit
+public class OperationLimitImpl extends BusinessRuleImpl implements OperationLimit
 {
 	/**
 	 * The default value of the '{@link #getOperationsNumber() <em>Operations Number</em>}' attribute.
@@ -74,7 +74,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OperationsLimitImpl()
+	protected OperationLimitImpl()
 	{
 		super();
 	}
@@ -87,7 +87,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	@Override
 	protected EClass eStaticClass()
 	{
-		return SmartCEPackage.Literals.OPERATIONS_LIMIT;
+		return SmartCEPackage.Literals.OPERATION_LIMIT;
 	}
 
 	/**
@@ -112,7 +112,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 		int oldOperationsNumber = operationsNumber;
 		operationsNumber = newOperationsNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.OPERATIONS_LIMIT__OPERATIONS_NUMBER, oldOperationsNumber, operationsNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.OPERATION_LIMIT__OPERATIONS_NUMBER, oldOperationsNumber, operationsNumber));
 	}
 
 	/**
@@ -137,7 +137,7 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 		TimeUnit oldTimeUnit = timeUnit;
 		timeUnit = newTimeUnit == null ? TIME_UNIT_EDEFAULT : newTimeUnit;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.OPERATIONS_LIMIT__TIME_UNIT, oldTimeUnit, timeUnit));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.OPERATION_LIMIT__TIME_UNIT, oldTimeUnit, timeUnit));
 	}
 
 	/**
@@ -150,9 +150,9 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.OPERATIONS_LIMIT__OPERATIONS_NUMBER:
+			case SmartCEPackage.OPERATION_LIMIT__OPERATIONS_NUMBER:
 				return getOperationsNumber();
-			case SmartCEPackage.OPERATIONS_LIMIT__TIME_UNIT:
+			case SmartCEPackage.OPERATION_LIMIT__TIME_UNIT:
 				return getTimeUnit();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -168,10 +168,10 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.OPERATIONS_LIMIT__OPERATIONS_NUMBER:
+			case SmartCEPackage.OPERATION_LIMIT__OPERATIONS_NUMBER:
 				setOperationsNumber((Integer)newValue);
 				return;
-			case SmartCEPackage.OPERATIONS_LIMIT__TIME_UNIT:
+			case SmartCEPackage.OPERATION_LIMIT__TIME_UNIT:
 				setTimeUnit((TimeUnit)newValue);
 				return;
 		}
@@ -188,10 +188,10 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.OPERATIONS_LIMIT__OPERATIONS_NUMBER:
+			case SmartCEPackage.OPERATION_LIMIT__OPERATIONS_NUMBER:
 				setOperationsNumber(OPERATIONS_NUMBER_EDEFAULT);
 				return;
-			case SmartCEPackage.OPERATIONS_LIMIT__TIME_UNIT:
+			case SmartCEPackage.OPERATION_LIMIT__TIME_UNIT:
 				setTimeUnit(TIME_UNIT_EDEFAULT);
 				return;
 		}
@@ -208,9 +208,9 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.OPERATIONS_LIMIT__OPERATIONS_NUMBER:
+			case SmartCEPackage.OPERATION_LIMIT__OPERATIONS_NUMBER:
 				return operationsNumber != OPERATIONS_NUMBER_EDEFAULT;
-			case SmartCEPackage.OPERATIONS_LIMIT__TIME_UNIT:
+			case SmartCEPackage.OPERATION_LIMIT__TIME_UNIT:
 				return timeUnit != TIME_UNIT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -235,4 +235,4 @@ public class OperationsLimitImpl extends BusinessRuleImpl implements OperationsL
 		return result.toString();
 	}
 
-} //OperationsLimitImpl
+} //OperationLimitImpl

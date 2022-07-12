@@ -20,7 +20,6 @@
 'AND'=29
 'BusinessAction'=43
 'BusinessDay'=37
-'BusinessTime'=39
 'Contract'=12
 'Day'=78
 'EventLog'=44
@@ -33,13 +32,14 @@
 'NOT'=31
 'OR'=30
 'Obligation'=22
-'OperationsLimit'=35
+'OperationLimit'=35
 'Prohibition'=21
 'Right'=20
 'Saturday'=74
 'Second'=75
 'Sunday'=68
 'Thursday'=72
+'TimeInterval'=39
 'Timeout'=32
 'Tuesday'=70
 'Wednesday'=71

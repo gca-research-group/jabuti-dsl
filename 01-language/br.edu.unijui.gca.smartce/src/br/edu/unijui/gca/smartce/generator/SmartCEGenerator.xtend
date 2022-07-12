@@ -12,9 +12,9 @@ import java.sql.Timestamp
 import br.edu.unijui.gca.smartce.smartCE.Timeout
 import br.edu.unijui.gca.smartce.smartCE.Condition
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay
-import br.edu.unijui.gca.smartce.smartCE.OperationsLimit
+import br.edu.unijui.gca.smartce.smartCE.OperationLimit
 import br.edu.unijui.gca.smartce.smartCE.MessageContent
-import br.edu.unijui.gca.smartce.smartCE.BusinessTime
+import br.edu.unijui.gca.smartce.smartCE.TimeInterval
 
 /**
  * Generates code from your model files on save.
@@ -80,9 +80,9 @@ class SmartCEGenerator extends AbstractGenerator {
 					Timeout public timeout = Timeout(«c.value», 0);
 				«ELSEIF(c instanceof BusinessDay)»
 					BusinessDay public businessDay = BusinessDay(«c.start», «c.end»);
-				«ELSEIF(c instanceof BusinessTime)»
-					TimeInterval public businessTime = TimeInterval(«c.start», «c.end»);
-				«ELSEIF(c instanceof OperationsLimit)»
+				«ELSEIF(c instanceof TimeInterval)»
+					TimeInterval public timeInterval = TimeInterval(«c.start», «c.end»);
+				«ELSEIF(c instanceof OperationLimit)»
 					OperationLimit public operationLimit = OperationLimit(«c.operationsNumber», «c.timeUnit», 0, 0);
 				«ELSEIF(c instanceof MessageContent)»
 					MessageContent public messageContent = MessageContent("«c.content»");
@@ -98,9 +98,9 @@ class SmartCEGenerator extends AbstractGenerator {
 				!isTimeout(_accessDateTime, timeout.endTime) &&
 			«ELSEIF(c instanceof BusinessDay)»
 				isBusinessDay(_accessDateTime, businessDay) &&
-			«ELSEIF(c instanceof BusinessTime)»
-				isIntoTimeInterval(_accessDateTime, businessTime) &&
-			«ELSEIF(c instanceof OperationsLimit)»
+			«ELSEIF(c instanceof TimeInterval)»
+				isIntoTimeInterval(_accessDateTime, timeInterval) &&
+			«ELSEIF(c instanceof OperationLimit)»
 				!isOperationLimitReached(_accessDateTime, operationLimit) &&
 			«ENDIF»
 		«ENDFOR»

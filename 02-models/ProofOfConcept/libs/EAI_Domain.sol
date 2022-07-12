@@ -34,8 +34,8 @@ uint constant SUNDAY=7;
     struct OperationLimit{
         uint requestsLimit;
         uint frequencyTime;        
-        uint requestsPerformed;
         uint timeout;
+        uint counter;
     }
 
     struct DateInterval{
@@ -51,7 +51,6 @@ uint constant SUNDAY=7;
     struct TimeInterval{ //  use to define a BusinessTime or NoBusinessTime
         uint32 start;
         uint32 end;
-        
     }
 
     struct Timeout{
@@ -59,35 +58,40 @@ uint constant SUNDAY=7;
         uint32 endTime;
     }
 
-	// o messageContent vai armazenar apenas a string xPath, a comparação sera realizada no monitor
-	// o monitor irá realizar a execuções do xPath e enviar para o smart contract, apenas dois valores
-	// um boleano para saber se atendeu ou não as condições e o valor com o qual foi comparado (valor 
-	// extraido da mensagem xml.
-	// Por exemplo: xpath= "count(./address)=1"
-	// caso no xml existir apenas 1 address, o monitor vai enviar para o contrato os valores (true,1)
-	// caso no xml existir 2 address, o monitor vai enviar para o contrato os valores (false,2)
 	struct MessageContent{
 	    string xPathQuery;
+	    string binaryOperator;
+	    string referenceValue;
+ 		uint frequencyTime;
+	    
+	    uint endOfInterval;
+	    uint accumulatedValue;
 	}
  
-    ////////////// Modifiers to define the constrains to execute a give function ////////////////
-  
-    // modifier onlyByProcess(address _processAddress){
-    //    require(msg.sender == _processAddress, "Only PROCESS have the permission to execute this operation.");  
-    //    _;
-    // }
-    
-    // modifier onlyByApplication(address _applicationAddress){
-    //    require(msg.sender == _applicationAddress, "Only APPLICATION has the permission to execute this operation.");  
-    //    _;
-    // }
-   
-    function msgContentEvaluation(string[] memory content, bool[] memory results) internal pure returns (bool){
+    function evaluateMessageContent(MessageContent memory msgContent, string memory value ) internal pure returns (bool){
         //TODO
 
         return true; 
     }
    
+    function evaluateMessageContent(MessageContent memory msgContent, string memory value, uint accessDateTime ) internal pure returns (bool){
+        //TODO
+
+        return true; 
+    }
+
+    function setEndOfInterval(uint startTime, uint timeUnit)internal pure returns(uint){
+		uint increment = timeInSeconds(timeUnit);
+
+       return startTime+increment; // o timeout inicia zerado, será definido após a primeira chamda 
+
+    }
+    
+    function setMessageContentIntervalConstraint(string memory, string memory operator, string memory value, uint startDate, uint32 timeUnit) internal returns(MessageContent memory){
+    	uint endOfTimeInterval = setEndOfInterval(startDate, timeUnit);
+		return MessageContent("count(//address)","<=","100", MONTH, endOfTimeInterval, 0); 
+    }
+    
     /////////////////// FUNÇÕES REFERENTES A STRUCT BUSINESSDAY /////////////////////////
 
     function setBusinessDay(uint32 _start, uint _end)internal pure returns (BusinessDay memory){
@@ -99,7 +103,7 @@ uint constant SUNDAY=7;
       // TODO  
         return true;
     }
-
+    
     ///////////////// FUNÇÕES REFERENTES A DATETIME /////////////////////
     
     function setDateTime(string memory _dateTime)internal pure returns(uint32){
@@ -131,16 +135,12 @@ uint constant SUNDAY=7;
         if(_timeUnit==3){ return 1 hours; }
         if(_timeUnit==4){ return 1 days; }
         if(_timeUnit==5){ return 1 weeks; }
-        if(_timeUnit==6){ return 30 days; }
-        return 365 days; 
+        if(_timeUnit==6){ return 30 days; }// tem que fazer a verificação do mês para obter a quantidade de dias
+        return 365 days; // tem que fazer a verificação do ano para obter o número de dias no ano corrente
     }
 
 
 /////////////////////////// FUNÇÕES REFERENTES A STRUCT TIMEOUT ///////////////////////////////
-    function setTimeout(uint32 time)internal pure returns(Timeout memory){
-       return Timeout(time, 0); // o timeout inicia zerado, será definido após a primeira chamda 
-
-    }
     
     function setEndTimeInTimeOut(uint32 _dataTime,  uint32  increment)internal pure returns(uint32){
         return _dataTime+increment; // o timeout inicia zerado, será definido após a primeira chamada

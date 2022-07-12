@@ -102,7 +102,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OperationsLimit" eSuperTypes="#//BusinessRule">
+  <eClassifiers xsi:type="ecore:EClass" name="OperationLimit" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationsNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
   </eClassifiers>
@@ -110,12 +110,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//WeekDay"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//WeekDay"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessTime" eSuperTypes="#//BusinessRule">
+  <eClassifiers xsi:type="ecore:EClass" name="TimeInterval" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"
+        defaultValueLiteral="SECOND"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WeekDay">
     <eLiterals name="SUNDAY"/>

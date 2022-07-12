@@ -11,7 +11,7 @@ contract DeliveryHiring_P is EAI_Domain{
 	Party integrationProcess;
 	
 	BusinessDay public businessDay = BusinessDay(SATURDAY, SUNDAY);
-	TimeInterval public businessTime = TimeInterval(18:30:00, 08:30:00);
+	TimeInterval public timeInterval = TimeInterval(18:30:00, 08:30:00);
 	OperationLimit public operationLimit = OperationLimit(6, MINUTE, 0, 0);
 	MessageContent public messageContent = MessageContent("count(//address)!=1");
 	
@@ -28,7 +28,7 @@ contract DeliveryHiring_P is EAI_Domain{
 		bool isBreached=false;
 		
 		if(isBusinessDay(_accessDateTime, businessDay) &&
-		isIntoTimeInterval(_accessDateTime, businessTime) &&
+		isIntoTimeInterval(_accessDateTime, timeInterval) &&
 		!isOperationLimitReached(_accessDateTime, operationLimit) &&
 		) {
 			operationLimit.requestsPerformed+=1;

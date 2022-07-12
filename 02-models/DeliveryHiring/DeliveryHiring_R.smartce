@@ -16,11 +16,13 @@ Contract DeliveryHiring_R {
 		
 		condition {
 			BusinessDay(Monday to Friday) AND
-			BusinessTime("08:30:00" to "18:30:00") AND
-			OperationsLimit(5 by Minute) AND
-			MessageContent("count(//address)=1")						
+			TimeInterval("08:30:00" to "18:30:00") AND
+			OperationLimit(5 by Day) AND
+			MessageContent("count(//address)" >= 1) AND
+			MessageContent("count(//address)" <= 3) AND
+			MessageContent("count(//address)" <= 200 by Month)
 		}
-		// the onSuccess is optional 
+		// the onSuccess is optional
 		onBreach(failEvent, "Request operation performed outside of allowed hours or limit operation exceeded")
 	}
 	EventLog failEvent(message : String )

@@ -204,13 +204,13 @@ public interface SmartCEFactory extends EFactory
 	Timeout createTimeout();
 
 	/**
-	 * Returns a new object of class '<em>Operations Limit</em>'.
+	 * Returns a new object of class '<em>Operation Limit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Operations Limit</em>'.
+	 * @return a new object of class '<em>Operation Limit</em>'.
 	 * @generated
 	 */
-	OperationsLimit createOperationsLimit();
+	OperationLimit createOperationLimit();
 
 	/**
 	 * Returns a new object of class '<em>Business Day</em>'.
@@ -222,13 +222,13 @@ public interface SmartCEFactory extends EFactory
 	BusinessDay createBusinessDay();
 
 	/**
-	 * Returns a new object of class '<em>Business Time</em>'.
+	 * Returns a new object of class '<em>Time Interval</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Business Time</em>'.
+	 * @return a new object of class '<em>Time Interval</em>'.
 	 * @generated
 	 */
-	BusinessTime createBusinessTime();
+	TimeInterval createTimeInterval();
 
 	/**
 	 * Returns a new object of class '<em>Message Content</em>'.

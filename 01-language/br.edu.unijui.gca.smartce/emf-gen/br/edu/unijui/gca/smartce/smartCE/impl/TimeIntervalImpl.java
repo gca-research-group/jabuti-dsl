@@ -3,8 +3,8 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.BusinessTime;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,19 +14,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Business Time</b></em>'.
+ * An implementation of the model object '<em><b>Time Interval</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl#getStart <em>Start</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessTimeImpl#getEnd <em>End</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeIntervalImpl#getStart <em>Start</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeIntervalImpl#getEnd <em>End</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
+public class TimeIntervalImpl extends BusinessRuleImpl implements TimeInterval
 {
 	/**
 	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
@@ -73,7 +73,7 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected BusinessTimeImpl()
+	protected TimeIntervalImpl()
 	{
 		super();
 	}
@@ -86,7 +86,7 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 	@Override
 	protected EClass eStaticClass()
 	{
-		return SmartCEPackage.Literals.BUSINESS_TIME;
+		return SmartCEPackage.Literals.TIME_INTERVAL;
 	}
 
 	/**
@@ -111,7 +111,7 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 		String oldStart = start;
 		start = newStart;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__START, oldStart, start));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.TIME_INTERVAL__START, oldStart, start));
 	}
 
 	/**
@@ -136,7 +136,7 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 		String oldEnd = end;
 		end = newEnd;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.BUSINESS_TIME__END, oldEnd, end));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.TIME_INTERVAL__END, oldEnd, end));
 	}
 
 	/**
@@ -149,9 +149,9 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.BUSINESS_TIME__START:
+			case SmartCEPackage.TIME_INTERVAL__START:
 				return getStart();
-			case SmartCEPackage.BUSINESS_TIME__END:
+			case SmartCEPackage.TIME_INTERVAL__END:
 				return getEnd();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -167,10 +167,10 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.BUSINESS_TIME__START:
+			case SmartCEPackage.TIME_INTERVAL__START:
 				setStart((String)newValue);
 				return;
-			case SmartCEPackage.BUSINESS_TIME__END:
+			case SmartCEPackage.TIME_INTERVAL__END:
 				setEnd((String)newValue);
 				return;
 		}
@@ -187,10 +187,10 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.BUSINESS_TIME__START:
+			case SmartCEPackage.TIME_INTERVAL__START:
 				setStart(START_EDEFAULT);
 				return;
-			case SmartCEPackage.BUSINESS_TIME__END:
+			case SmartCEPackage.TIME_INTERVAL__END:
 				setEnd(END_EDEFAULT);
 				return;
 		}
@@ -207,9 +207,9 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.BUSINESS_TIME__START:
+			case SmartCEPackage.TIME_INTERVAL__START:
 				return START_EDEFAULT == null ? start != null : !START_EDEFAULT.equals(start);
-			case SmartCEPackage.BUSINESS_TIME__END:
+			case SmartCEPackage.TIME_INTERVAL__END:
 				return END_EDEFAULT == null ? end != null : !END_EDEFAULT.equals(end);
 		}
 		return super.eIsSet(featureID);
@@ -234,4 +234,4 @@ public class BusinessTimeImpl extends BusinessRuleImpl implements BusinessTime
 		return result.toString();
 	}
 
-} //BusinessTimeImpl
+} //TimeIntervalImpl
