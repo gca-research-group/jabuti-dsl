@@ -16,6 +16,7 @@ Contract sendMessageWhatsapp {
 			 TimeInterval("00:00:00" to "23:59:59") AND
 			 (OperationLimit(1000 by Month) OR (OperationLimit(1000000 by Month)))
 			 MessageContent("//HEAD/accessKey")
+
 //			 (MessageContent("//HEAD/conversationID/activatedTime/text() - //HEAD/conversationID/activatedTime/text()) <24 ") AND (0 HORA) ) OR
 //			 (MessageContent("//HEAD/phoneNumberTo/hourResponse") AND ( 24 HORAs) ) 
 //			 AND

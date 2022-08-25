@@ -48,7 +48,7 @@ contract DeliveryHiring is EAI_Domain{
 		!isOperationLimitReached(_accessDateTime, operationLimit[0])&&
 		evaluateMessageContent(messageContent_request[0], _xPathContent[0])&&
 		evaluateMessageContent(messageContent_request[1], _xPathContent[1])&&
-		evaluateMessageContent(messageContent_request[2], _xPathContent[2]))
+		evaluateMessageContent(messageContent_request[2], _xPathContent[2],_accessDateTime))
 		{
 			timeout[0].endTime = setEndTimeInTimeOut(_accessDateTime, timeout[0].increment);
 		    return true;
