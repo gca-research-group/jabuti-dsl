@@ -8,6 +8,8 @@ import br.edu.unijui.gca.smartce.smartCE.Application;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
+import br.edu.unijui.gca.smartce.smartCE.Variables;
 
 import java.util.Collection;
 
@@ -34,14 +36,15 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getBeginDate <em>Begin Date</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getExcecutionsNumber <em>Excecutions Number</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getApplication <em>Application</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getClauses <em>Clauses</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getActions <em>Actions</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getBeginDate <em>Begin Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ContractImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @generated
@@ -67,46 +70,6 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBeginDate() <em>Begin Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBeginDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BEGIN_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBeginDate() <em>Begin Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBeginDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected String beginDate = BEGIN_DATE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDueDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DUE_DATE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDueDate()
-	 * @generated
-	 * @ordered
-	 */
-	protected String dueDate = DUE_DATE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getExcecutionsNumber() <em>Excecutions Number</em>}' attribute.
@@ -189,6 +152,36 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 	protected EList<Action> actions;
 
 	/**
+	 * The cached value of the '{@link #getBeginDate() <em>Begin Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBeginDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected ValueAndDescription beginDate;
+
+	/**
+	 * The cached value of the '{@link #getDueDate() <em>Due Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDueDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected ValueAndDescription dueDate;
+
+	/**
+	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected Variables variables;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -232,56 +225,6 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getBeginDate()
-	{
-		return beginDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setBeginDate(String newBeginDate)
-	{
-		String oldBeginDate = beginDate;
-		beginDate = newBeginDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__BEGIN_DATE, oldBeginDate, beginDate));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getDueDate()
-	{
-		return dueDate;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDueDate(String newDueDate)
-	{
-		String oldDueDate = dueDate;
-		dueDate = newDueDate;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__DUE_DATE, oldDueDate, dueDate));
 	}
 
 	/**
@@ -470,6 +413,156 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 	 * @generated
 	 */
 	@Override
+	public ValueAndDescription getBeginDate()
+	{
+		return beginDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBeginDate(ValueAndDescription newBeginDate, NotificationChain msgs)
+	{
+		ValueAndDescription oldBeginDate = beginDate;
+		beginDate = newBeginDate;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__BEGIN_DATE, oldBeginDate, newBeginDate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBeginDate(ValueAndDescription newBeginDate)
+	{
+		if (newBeginDate != beginDate)
+		{
+			NotificationChain msgs = null;
+			if (beginDate != null)
+				msgs = ((InternalEObject)beginDate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CONTRACT__BEGIN_DATE, null, msgs);
+			if (newBeginDate != null)
+				msgs = ((InternalEObject)newBeginDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CONTRACT__BEGIN_DATE, null, msgs);
+			msgs = basicSetBeginDate(newBeginDate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__BEGIN_DATE, newBeginDate, newBeginDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ValueAndDescription getDueDate()
+	{
+		return dueDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetDueDate(ValueAndDescription newDueDate, NotificationChain msgs)
+	{
+		ValueAndDescription oldDueDate = dueDate;
+		dueDate = newDueDate;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__DUE_DATE, oldDueDate, newDueDate);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDueDate(ValueAndDescription newDueDate)
+	{
+		if (newDueDate != dueDate)
+		{
+			NotificationChain msgs = null;
+			if (dueDate != null)
+				msgs = ((InternalEObject)dueDate).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CONTRACT__DUE_DATE, null, msgs);
+			if (newDueDate != null)
+				msgs = ((InternalEObject)newDueDate).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CONTRACT__DUE_DATE, null, msgs);
+			msgs = basicSetDueDate(newDueDate, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__DUE_DATE, newDueDate, newDueDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Variables getVariables()
+	{
+		return variables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVariables(Variables newVariables, NotificationChain msgs)
+	{
+		Variables oldVariables = variables;
+		variables = newVariables;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__VARIABLES, oldVariables, newVariables);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVariables(Variables newVariables)
+	{
+		if (newVariables != variables)
+		{
+			NotificationChain msgs = null;
+			if (variables != null)
+				msgs = ((InternalEObject)variables).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CONTRACT__VARIABLES, null, msgs);
+			if (newVariables != null)
+				msgs = ((InternalEObject)newVariables).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.CONTRACT__VARIABLES, null, msgs);
+			msgs = basicSetVariables(newVariables, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CONTRACT__VARIABLES, newVariables, newVariables));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -482,6 +575,12 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return ((InternalEList<?>)getClauses()).basicRemove(otherEnd, msgs);
 			case SmartCEPackage.CONTRACT__ACTIONS:
 				return ((InternalEList<?>)getActions()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.CONTRACT__BEGIN_DATE:
+				return basicSetBeginDate(null, msgs);
+			case SmartCEPackage.CONTRACT__DUE_DATE:
+				return basicSetDueDate(null, msgs);
+			case SmartCEPackage.CONTRACT__VARIABLES:
+				return basicSetVariables(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -498,10 +597,6 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 		{
 			case SmartCEPackage.CONTRACT__NAME:
 				return getName();
-			case SmartCEPackage.CONTRACT__BEGIN_DATE:
-				return getBeginDate();
-			case SmartCEPackage.CONTRACT__DUE_DATE:
-				return getDueDate();
 			case SmartCEPackage.CONTRACT__EXCECUTIONS_NUMBER:
 				return getExcecutionsNumber();
 			case SmartCEPackage.CONTRACT__DESCRIPTION:
@@ -514,6 +609,12 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return getClauses();
 			case SmartCEPackage.CONTRACT__ACTIONS:
 				return getActions();
+			case SmartCEPackage.CONTRACT__BEGIN_DATE:
+				return getBeginDate();
+			case SmartCEPackage.CONTRACT__DUE_DATE:
+				return getDueDate();
+			case SmartCEPackage.CONTRACT__VARIABLES:
+				return getVariables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -531,12 +632,6 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 		{
 			case SmartCEPackage.CONTRACT__NAME:
 				setName((String)newValue);
-				return;
-			case SmartCEPackage.CONTRACT__BEGIN_DATE:
-				setBeginDate((String)newValue);
-				return;
-			case SmartCEPackage.CONTRACT__DUE_DATE:
-				setDueDate((String)newValue);
 				return;
 			case SmartCEPackage.CONTRACT__EXCECUTIONS_NUMBER:
 				setExcecutionsNumber((Integer)newValue);
@@ -558,6 +653,15 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				getActions().clear();
 				getActions().addAll((Collection<? extends Action>)newValue);
 				return;
+			case SmartCEPackage.CONTRACT__BEGIN_DATE:
+				setBeginDate((ValueAndDescription)newValue);
+				return;
+			case SmartCEPackage.CONTRACT__DUE_DATE:
+				setDueDate((ValueAndDescription)newValue);
+				return;
+			case SmartCEPackage.CONTRACT__VARIABLES:
+				setVariables((Variables)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -574,12 +678,6 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 		{
 			case SmartCEPackage.CONTRACT__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case SmartCEPackage.CONTRACT__BEGIN_DATE:
-				setBeginDate(BEGIN_DATE_EDEFAULT);
-				return;
-			case SmartCEPackage.CONTRACT__DUE_DATE:
-				setDueDate(DUE_DATE_EDEFAULT);
 				return;
 			case SmartCEPackage.CONTRACT__EXCECUTIONS_NUMBER:
 				setExcecutionsNumber(EXCECUTIONS_NUMBER_EDEFAULT);
@@ -599,6 +697,15 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 			case SmartCEPackage.CONTRACT__ACTIONS:
 				getActions().clear();
 				return;
+			case SmartCEPackage.CONTRACT__BEGIN_DATE:
+				setBeginDate((ValueAndDescription)null);
+				return;
+			case SmartCEPackage.CONTRACT__DUE_DATE:
+				setDueDate((ValueAndDescription)null);
+				return;
+			case SmartCEPackage.CONTRACT__VARIABLES:
+				setVariables((Variables)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -615,10 +722,6 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 		{
 			case SmartCEPackage.CONTRACT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SmartCEPackage.CONTRACT__BEGIN_DATE:
-				return BEGIN_DATE_EDEFAULT == null ? beginDate != null : !BEGIN_DATE_EDEFAULT.equals(beginDate);
-			case SmartCEPackage.CONTRACT__DUE_DATE:
-				return DUE_DATE_EDEFAULT == null ? dueDate != null : !DUE_DATE_EDEFAULT.equals(dueDate);
 			case SmartCEPackage.CONTRACT__EXCECUTIONS_NUMBER:
 				return excecutionsNumber != EXCECUTIONS_NUMBER_EDEFAULT;
 			case SmartCEPackage.CONTRACT__DESCRIPTION:
@@ -631,6 +734,12 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return clauses != null && !clauses.isEmpty();
 			case SmartCEPackage.CONTRACT__ACTIONS:
 				return actions != null && !actions.isEmpty();
+			case SmartCEPackage.CONTRACT__BEGIN_DATE:
+				return beginDate != null;
+			case SmartCEPackage.CONTRACT__DUE_DATE:
+				return dueDate != null;
+			case SmartCEPackage.CONTRACT__VARIABLES:
+				return variables != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -648,10 +757,6 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", beginDate: ");
-		result.append(beginDate);
-		result.append(", dueDate: ");
-		result.append(dueDate);
 		result.append(", excecutionsNumber: ");
 		result.append(excecutionsNumber);
 		result.append(", description: ");

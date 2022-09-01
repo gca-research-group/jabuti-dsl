@@ -4,12 +4,12 @@ Contract DeliveryHiring_O {
 	beginDate = "2022-01-01 08:00:00" 
 	dueDate = "2022-12-31 18:00:00"
 	
-	application = deliverySystem1 : "Delivery system"
-	process  	= integrationProcess1 : "Integration process"
+	application = "deliverySystem1" : "Delivery system"
+	process  	= "integrationProcess" : "Integration process"
 
 	Obligation responseOrder{
 		description = "Setting the time limit for responding to a request"
-		rolePlayer = deliverySystem1
+		rolePlayer = application
 		operation = response
 		condition { 
 			Timeout(180) AND
@@ -17,6 +17,7 @@ Contract DeliveryHiring_O {
 			TimeInterval("08:30:00" to "18:31:00") AND
 			OperationLimit(5 by Minute) AND
 			MessageContent("//budget/id/text()" != "") 						
+			
 		} 
 		onBreach(failEvent, "Request made outside of allowed hours or distance limit exceeded")
 		onSuccess(successEvent, "Success execution")	

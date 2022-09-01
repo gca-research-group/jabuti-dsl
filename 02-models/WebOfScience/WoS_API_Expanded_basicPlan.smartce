@@ -1,28 +1,29 @@
 ///@version - jabuti 0.1.0 
+
 Contract ApiExpandedBasicPlan {
 	beginDate = "2022-01-01 08:00:00" 
 	dueDate = "2022-12-31 18:00:00"
 	
-	application = webOfScience :"Web of Science API Expanded"
-	process = integrationProcess : "University integration process"
+	application = "webOfScience" :"Web of Science API Expanded"
+	process = "integrationProcess" : "University integration process"
 	
 	Right requestDocuments {
 		description = ""
-		rolePlayer = integrationProcess
+		rolePlayer = process
 		operation = request
 		condition {
 			 BusinessDay(Monday to Sunday) AND
 			 TimeInterval("00:00:00" to "23:59:59") AND
 			 OperationLimit(2 by Second) AND 
-			 MessageContent("count(//body/document)" <= 50000 by Month) AND 
-			 MessageContent("count(//body/document)" <= "100")
+			 MessageContent("count(//body/document)" <= 100) AND
+			 MessageContent("count(//body/document)" <= 50000 by Month) 			 
 		}
 		onBreach(failEvent, "Conditions not meet")
 	}
 	
 	Obligation responseWithDocuments {
 		description = " "	
-		rolePlayer =  webOfScience
+		rolePlayer =  application
 		operation =  response
 		
 		condition{

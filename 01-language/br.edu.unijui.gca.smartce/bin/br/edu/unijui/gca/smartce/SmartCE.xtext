@@ -13,36 +13,61 @@ Import:
 
 Contract: 
 	'Contract' name=ID '{'
-		'beginDate' '=' beginDate=STRING
-		'dueDate' '=' dueDate=STRING
+		'beginDate' '=' beginDate=ValueAndDescription
+		'dueDate' '=' dueDate= ValueAndDescription 
 		'application' '=' application=Application
 		'process' '=' process=Process
+		variables+=Variable*
 		clauses+=Clause*
 		actions+=Action*
 	'}'; 
 
+Variable:
+	name=ID '=' ':' description=STRING 
+;
+
+
 Clause: 
 	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
 		'description' '=' description=STRING
-		'rolePlayer' '=' rolePlayer=[Party]
+		'rolePlayer' '=' rolePlayer = Parties
 		'operation' '=' operation=Operation
 		'condition' '{' 
-			condition=Condition  
+			condition=Condition			
 		'}'
 		'onBreach' onBreach=OnBreach ('onSuccess' onSuccess=OnSuccess)?
 	 '}' 
 ;
 
+
+enum Operation:
+    PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
+;
+
+
 Condition: 
-	BusinessRule | CompositeCondition
+	BusinessRule | CompositeCondition 
 ;
 
 BusinessRule:
-	Timeout | OperationLimit | BusinessDay |TimeInterval | MessageContent	
+	Timeout | OperationLimit | BusinessDay |TimeInterval | MessageContent | SessionInterval	
 ;
 
-CompositeCondition:
+//CompositeCondition:
+//	conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
+//;
+
+// alterando o compositeCondition
+CompositeCondition:	
 	conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
+		(logicalOperators+=LogicalOperator
+		'when' '('  expression+=Expression ')' 'check' '{' 
+			(
+				conditions+=BusinessRule | 
+				(conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
+			)
+		'}'
+	)*	 
 ;
 
 LogicalOperator:
@@ -62,9 +87,6 @@ BusinessDay:
 	
 ;
 	
-enum Operation:
-    PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
-;
 
 enum WeekDay:
     SUNDAY='Sunday' | MONDAY='Monday' | TUESDAY='Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY='Thursday' | FRIDAY='Friday' | SATURDAY='Saturday'
@@ -78,21 +100,46 @@ TimeInterval:
 	'TimeInterval' '(' start=STRING 'to' end=STRING')'
 ; 
 
+SessionInterval: 
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'from' start=STRING 'to' end=STRING ')' )|
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')')
+; 
 MessageContent:
-	'MessageContent' '(' content=STRING ')' | /* Add an user help -> This field requires an xpath expression */	
-	'MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')' 
+	('MessageContent' '(' content=STRING ')') | /* Add an user help -> This field requires an xpath expression */	
+	('MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')') |
+	('MessageContent' '(' content=STRING binaryOperator=BinaryOperator (stringValue=StringValue | variableValue=VariableValue |numericValue=NumericValue)')' )|
+	('MessageContent' '(' content=STRING binaryOperator=BinaryOperator (stringValue=StringValue | variableValue=VariableValue |numericValue=NumericValue) 'by' timeUnit=TimeUnit')' )
 ;
+
+
+// ****************************************************************************
+
+// ---- temporary solution to set the string "application" or "process" to rolePlayer-----
+enum Parties: 	
+	APPLICATION='application'| PROCESS='process'
+;
+
+// ----------------- Add the binary operator -------------------------
+BinaryOperator:
+symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
+	| symbol='==' 
+;
+
+
+// ****************************************************************************
+
+
 
 Party: 
 	Application | Process
 ;
 
 Application: 
-	name=ID':' description=STRING
+	name=STRING ':' description=STRING
 ;
 
 Process: 
-	name=ID':' description=STRING  
+	name=STRING ':' description=STRING  
 ;
 
 OnSuccess:
@@ -114,19 +161,17 @@ EventLog:
 	'EventLog' name=ID	'(' parameters+=Variable (',' parameters+=Variable)* ')'
 ;
 
-Variable:
-	name=ID ':' type=ID
-;
-
 Expression:
 	Negation ({BinaryOperator.left=current} (symbol='&&' | symbol="||") right=Negation)*;
 
 Negation returns Expression:
 	Comparison | {UnaryOperator} symbol='!' expression=Comparison;
 
+
 Comparison returns Expression:
 	Plus ({BinaryOperator.left=current} (symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
 	| symbol='==' | symbol='is' | symbol='as') right=Plus)*;
+
 
 Plus returns Expression:
 	Factor ({BinaryOperator.left=current} ('+' | '-') right=Factor)*;

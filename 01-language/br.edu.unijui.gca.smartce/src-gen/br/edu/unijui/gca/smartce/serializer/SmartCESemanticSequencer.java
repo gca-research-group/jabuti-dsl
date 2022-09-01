@@ -21,13 +21,17 @@ import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
+import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
+import br.edu.unijui.gca.smartce.smartCE.SingleVariable;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
+import br.edu.unijui.gca.smartce.smartCE.Variables;
 import com.google.inject.Inject;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -58,8 +62,25 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				sequence_Application(context, (Application) semanticObject); 
 				return; 
 			case SmartCEPackage.BINARY_OPERATOR:
-				sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getBinaryOperatorRule()) {
+					sequence_BinaryOperator(context, (BinaryOperator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getExpressionRule()
+						|| action == grammarAccess.getExpressionAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getNegationRule()
+						|| rule == grammarAccess.getComparisonRule()
+						|| action == grammarAccess.getComparisonAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getPlusRule()
+						|| action == grammarAccess.getPlusAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getFactorRule()
+						|| action == grammarAccess.getFactorAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getNegativeRule()
+						|| rule == grammarAccess.getPrimaryRule()) {
+					sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
+					return; 
+				}
+				else break;
 			case SmartCEPackage.BUSINESS_ACTION:
 				sequence_BusinessAction(context, (BusinessAction) semanticObject); 
 				return; 
@@ -108,6 +129,12 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.PROCESS:
 				sequence_Process(context, (br.edu.unijui.gca.smartce.smartCE.Process) semanticObject); 
 				return; 
+			case SmartCEPackage.SESSION_INTERVAL:
+				sequence_SessionInterval(context, (SessionInterval) semanticObject); 
+				return; 
+			case SmartCEPackage.SINGLE_VARIABLE:
+				sequence_SingleVariable(context, (SingleVariable) semanticObject); 
+				return; 
 			case SmartCEPackage.STRING_VALUE:
 				sequence_StringValue(context, (StringValue) semanticObject); 
 				return; 
@@ -120,11 +147,17 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 			case SmartCEPackage.UNARY_OPERATOR:
 				sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
 				return; 
+			case SmartCEPackage.VALUE_AND_DESCRIPTION:
+				sequence_ValueAndDescription(context, (ValueAndDescription) semanticObject); 
+				return; 
 			case SmartCEPackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
 				return; 
 			case SmartCEPackage.VARIABLE_VALUE:
 				sequence_VariableValue(context, (VariableValue) semanticObject); 
+				return; 
+			case SmartCEPackage.VARIABLES:
+				sequence_Variables(context, (Variables) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -138,7 +171,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Application returns Application
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING)
+	 *     (name=STRING description=STRING)
 	 * </pre>
 	 */
 	protected void sequence_Application(ISerializationContext context, Application semanticObject) {
@@ -149,9 +182,30 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.PARTY__DESCRIPTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getApplicationAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getApplicationAccess().getNameSTRINGTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getApplicationAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BinaryOperator returns BinaryOperator
+	 *
+	 * Constraint:
+	 *     (
+	 *         symbol='&lt;=' | 
+	 *         symbol='&gt;=' | 
+	 *         symbol='&gt;' | 
+	 *         symbol='&lt;' | 
+	 *         symbol='!=' | 
+	 *         symbol='=='
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_BinaryOperator(ISerializationContext context, BinaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -204,7 +258,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         name=ID 
 	 *         description=STRING 
-	 *         rolePlayer=[Party|ID] 
+	 *         rolePlayer=Parties 
 	 *         operation=Operation 
 	 *         condition=Condition 
 	 *         onBreach=OnBreach 
@@ -270,7 +324,20 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         conditions+=BusinessRule 
 	 *         logicalOperators+=LogicalOperator 
 	 *         conditions+=BusinessRule 
-	 *         (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
+	 *         (logicalOperators+=LogicalOperator conditions+=BusinessRule)* 
+	 *         (
+	 *             logicalOperators+=LogicalOperator 
+	 *             expression+=Expression 
+	 *             (
+	 *                 conditions+=BusinessRule | 
+	 *                 (
+	 *                     conditions+=BusinessRule 
+	 *                     logicalOperators+=LogicalOperator 
+	 *                     conditions+=BusinessRule 
+	 *                     (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
+	 *                 )
+	 *             )
+	 *         )*
 	 *     )
 	 * </pre>
 	 */
@@ -287,10 +354,11 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 * Constraint:
 	 *     (
 	 *         name=ID 
-	 *         beginDate=STRING 
-	 *         dueDate=STRING 
+	 *         beginDate=ValueAndDescription 
+	 *         dueDate=ValueAndDescription 
 	 *         application=Application 
 	 *         process=Process 
+	 *         variables=Variables? 
 	 *         clauses+=Clause* 
 	 *         actions+=Action*
 	 *     )
@@ -384,7 +452,17 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     MessageContent returns MessageContent
 	 *
 	 * Constraint:
-	 *     (content=STRING | (content=STRING timeUnit=TimeUnit))
+	 *     (
+	 *         content=STRING | 
+	 *         (content=STRING timeUnit=TimeUnit) | 
+	 *         (content=STRING binaryOperator=BinaryOperator (stringValue=StringValue | variableValue=VariableValue | numericValue=NumericValue)) | 
+	 *         (
+	 *             content=STRING 
+	 *             binaryOperator=BinaryOperator 
+	 *             (stringValue=StringValue | variableValue=VariableValue | numericValue=NumericValue) 
+	 *             timeUnit=TimeUnit
+	 *         )
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {
@@ -540,7 +618,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Process returns Process
 	 *
 	 * Constraint:
-	 *     (name=ID description=STRING)
+	 *     (name=STRING description=STRING)
 	 * </pre>
 	 */
 	protected void sequence_Process(ISerializationContext context, br.edu.unijui.gca.smartce.smartCE.Process semanticObject) {
@@ -551,8 +629,56 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.PARTY__DESCRIPTION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getProcessAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getProcessAccess().getNameSTRINGTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getProcessAccess().getDescriptionSTRINGTerminalRuleCall_2_0(), semanticObject.getDescription());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Condition returns SessionInterval
+	 *     BusinessRule returns SessionInterval
+	 *     SessionInterval returns SessionInterval
+	 *
+	 * Constraint:
+	 *     (start=STRING end=STRING)
+	 * </pre>
+	 */
+	protected void sequence_SessionInterval(ISerializationContext context, SessionInterval semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.SESSION_INTERVAL__START) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.SESSION_INTERVAL__START));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.SESSION_INTERVAL__END) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.SESSION_INTERVAL__END));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSessionIntervalAccess().getStartSTRINGTerminalRuleCall_2_0(), semanticObject.getStart());
+		feeder.accept(grammarAccess.getSessionIntervalAccess().getEndSTRINGTerminalRuleCall_4_0(), semanticObject.getEnd());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     SingleVariable returns SingleVariable
+	 *
+	 * Constraint:
+	 *     (name=ID valueAndDescription=ValueAndDescription)
+	 * </pre>
+	 */
+	protected void sequence_SingleVariable(ISerializationContext context, SingleVariable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.SINGLE_VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.SINGLE_VARIABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.SINGLE_VARIABLE__VALUE_AND_DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.SINGLE_VARIABLE__VALUE_AND_DESCRIPTION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSingleVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSingleVariableAccess().getValueAndDescriptionValueAndDescriptionParserRuleCall_2_0(), semanticObject.getValueAndDescription());
 		feeder.finish();
 	}
 	
@@ -639,6 +765,20 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ValueAndDescription returns ValueAndDescription
+	 *
+	 * Constraint:
+	 *     (value=STRING description=STRING?)
+	 * </pre>
+	 */
+	protected void sequence_ValueAndDescription(ISerializationContext context, ValueAndDescription semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Expression returns VariableValue
 	 *     Expression.BinaryOperator_1_0 returns VariableValue
 	 *     Negation returns VariableValue
@@ -688,6 +828,20 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
 		feeder.accept(grammarAccess.getVariableAccess().getTypeIDTerminalRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Variables returns Variables
+	 *
+	 * Constraint:
+	 *     variable+=SingleVariable*
+	 * </pre>
+	 */
+	protected void sequence_Variables(ISerializationContext context, Variables semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

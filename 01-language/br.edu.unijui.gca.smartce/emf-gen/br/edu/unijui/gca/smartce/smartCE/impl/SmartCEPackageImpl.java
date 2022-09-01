@@ -26,7 +26,10 @@ import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
+import br.edu.unijui.gca.smartce.smartCE.Parties;
 import br.edu.unijui.gca.smartce.smartCE.Party;
+import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
+import br.edu.unijui.gca.smartce.smartCE.SingleVariable;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
@@ -35,8 +38,10 @@ import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
+import br.edu.unijui.gca.smartce.smartCE.Variables;
 import br.edu.unijui.gca.smartce.smartCE.WeekDay;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -277,6 +282,34 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass valueAndDescriptionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass variablesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass singleVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass sessionIntervalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum weekDayEEnum = null;
 
 	/**
@@ -292,6 +325,13 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EEnum operationEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum partiesEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -384,7 +424,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContract_BeginDate()
+	public EAttribute getContract_ExcecutionsNumber()
 	{
 		return (EAttribute)contractEClass.getEStructuralFeatures().get(1);
 	}
@@ -395,7 +435,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContract_DueDate()
+	public EAttribute getContract_Description()
 	{
 		return (EAttribute)contractEClass.getEStructuralFeatures().get(2);
 	}
@@ -406,31 +446,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContract_ExcecutionsNumber()
-	{
-		return (EAttribute)contractEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getContract_Description()
-	{
-		return (EAttribute)contractEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getContract_Application()
 	{
-		return (EReference)contractEClass.getEStructuralFeatures().get(5);
+		return (EReference)contractEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -441,7 +459,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EReference getContract_Process()
 	{
-		return (EReference)contractEClass.getEStructuralFeatures().get(6);
+		return (EReference)contractEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -452,7 +470,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EReference getContract_Clauses()
 	{
-		return (EReference)contractEClass.getEStructuralFeatures().get(7);
+		return (EReference)contractEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -463,7 +481,40 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EReference getContract_Actions()
 	{
+		return (EReference)contractEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContract_BeginDate()
+	{
+		return (EReference)contractEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContract_DueDate()
+	{
 		return (EReference)contractEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContract_Variables()
+	{
+		return (EReference)contractEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -681,7 +732,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getClause_RolePlayer()
+	public EReference getClause_RolePlayer_0()
 	{
 		return (EReference)clauseEClass.getEStructuralFeatures().get(5);
 	}
@@ -714,9 +765,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getClause_Operation()
+	public EReference getClause_OnSuccess()
 	{
-		return (EAttribute)clauseEClass.getEStructuralFeatures().get(8);
+		return (EReference)clauseEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -725,9 +776,20 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getClause_OnSuccess()
+	public EAttribute getClause_Operation()
 	{
-		return (EReference)clauseEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)clauseEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getClause_RolePlayer()
+	{
+		return (EAttribute)clauseEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
@@ -1077,6 +1139,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getCondition_Expression()
+	{
+		return (EReference)conditionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getTimeout()
 	{
 		return timeoutEClass;
@@ -1231,9 +1304,42 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getMessageContent_Expression()
+	public EReference getMessageContent_BinaryOperator()
 	{
 		return (EReference)messageContentEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessageContent_StringValue()
+	{
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessageContent_NumericValue()
+	{
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessageContent_VariableValue()
+	{
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1363,6 +1469,127 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getValueAndDescription()
+	{
+		return valueAndDescriptionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getValueAndDescription_Value()
+	{
+		return (EAttribute)valueAndDescriptionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getValueAndDescription_Description()
+	{
+		return (EAttribute)valueAndDescriptionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getVariables()
+	{
+		return variablesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getVariables_Variable()
+	{
+		return (EReference)variablesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSingleVariable()
+	{
+		return singleVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSingleVariable_Name()
+	{
+		return (EAttribute)singleVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getSingleVariable_ValueAndDescription()
+	{
+		return (EReference)singleVariableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getSessionInterval()
+	{
+		return sessionIntervalEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSessionInterval_Start()
+	{
+		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSessionInterval_End()
+	{
+		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWeekDay()
 	{
 		return weekDayEEnum;
@@ -1388,6 +1615,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	public EEnum getOperation()
 	{
 		return operationEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getParties()
+	{
+		return partiesEEnum;
 	}
 
 	/**
@@ -1423,14 +1661,15 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		// Create classes and their features
 		contractEClass = createEClass(CONTRACT);
 		createEAttribute(contractEClass, CONTRACT__NAME);
-		createEAttribute(contractEClass, CONTRACT__BEGIN_DATE);
-		createEAttribute(contractEClass, CONTRACT__DUE_DATE);
 		createEAttribute(contractEClass, CONTRACT__EXCECUTIONS_NUMBER);
 		createEAttribute(contractEClass, CONTRACT__DESCRIPTION);
 		createEReference(contractEClass, CONTRACT__APPLICATION);
 		createEReference(contractEClass, CONTRACT__PROCESS);
 		createEReference(contractEClass, CONTRACT__CLAUSES);
 		createEReference(contractEClass, CONTRACT__ACTIONS);
+		createEReference(contractEClass, CONTRACT__BEGIN_DATE);
+		createEReference(contractEClass, CONTRACT__DUE_DATE);
+		createEReference(contractEClass, CONTRACT__VARIABLES);
 
 		statusEClass = createEClass(STATUS);
 		createEAttribute(statusEClass, STATUS__ACTIVE);
@@ -1456,11 +1695,12 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEAttribute(clauseEClass, CLAUSE__DESCRIPTION);
 		createEAttribute(clauseEClass, CLAUSE__FINAL_STATUS);
 		createEAttribute(clauseEClass, CLAUSE__FAIL_DESCRIPTION);
-		createEReference(clauseEClass, CLAUSE__ROLE_PLAYER);
+		createEReference(clauseEClass, CLAUSE__ROLE_PLAYER_0);
 		createEReference(clauseEClass, CLAUSE__ON_BREACH);
 		createEReference(clauseEClass, CLAUSE__CONDITION);
-		createEAttribute(clauseEClass, CLAUSE__OPERATION);
 		createEReference(clauseEClass, CLAUSE__ON_SUCCESS);
+		createEAttribute(clauseEClass, CLAUSE__OPERATION);
+		createEAttribute(clauseEClass, CLAUSE__ROLE_PLAYER);
 
 		importEClass = createEClass(IMPORT);
 		createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
@@ -1505,6 +1745,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEAttribute(variableEClass, VARIABLE__TYPE);
 
 		conditionEClass = createEClass(CONDITION);
+		createEReference(conditionEClass, CONDITION__EXPRESSION);
 
 		timeoutEClass = createEClass(TIMEOUT);
 		createEAttribute(timeoutEClass, TIMEOUT__VALUE);
@@ -1524,7 +1765,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		messageContentEClass = createEClass(MESSAGE_CONTENT);
 		createEAttribute(messageContentEClass, MESSAGE_CONTENT__CONTENT);
 		createEAttribute(messageContentEClass, MESSAGE_CONTENT__TIME_UNIT);
-		createEReference(messageContentEClass, MESSAGE_CONTENT__EXPRESSION);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__BINARY_OPERATOR);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__STRING_VALUE);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__NUMERIC_VALUE);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__VARIABLE_VALUE);
 
 		compositeConditionEClass = createEClass(COMPOSITE_CONDITION);
 		createEReference(compositeConditionEClass, COMPOSITE_CONDITION__CONDITIONS);
@@ -1543,10 +1787,26 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEReference(onSuccessEClass, ON_SUCCESS__MESSAGE);
 		createEReference(onSuccessEClass, ON_SUCCESS__ACTION);
 
+		valueAndDescriptionEClass = createEClass(VALUE_AND_DESCRIPTION);
+		createEAttribute(valueAndDescriptionEClass, VALUE_AND_DESCRIPTION__VALUE);
+		createEAttribute(valueAndDescriptionEClass, VALUE_AND_DESCRIPTION__DESCRIPTION);
+
+		variablesEClass = createEClass(VARIABLES);
+		createEReference(variablesEClass, VARIABLES__VARIABLE);
+
+		singleVariableEClass = createEClass(SINGLE_VARIABLE);
+		createEAttribute(singleVariableEClass, SINGLE_VARIABLE__NAME);
+		createEReference(singleVariableEClass, SINGLE_VARIABLE__VALUE_AND_DESCRIPTION);
+
+		sessionIntervalEClass = createEClass(SESSION_INTERVAL);
+		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__START);
+		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__END);
+
 		// Create enums
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
 		operationEEnum = createEEnum(OPERATION);
+		partiesEEnum = createEEnum(PARTIES);
 	}
 
 	/**
@@ -1596,18 +1856,20 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		businessRuleEClass.getESuperTypes().add(this.getCondition());
 		businessActionEClass.getESuperTypes().add(this.getAction());
 		eventLogEClass.getESuperTypes().add(this.getAction());
+		sessionIntervalEClass.getESuperTypes().add(this.getBusinessRule());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contractEClass, Contract.class, "Contract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getContract_Name(), ecorePackage.getEString(), "name", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContract_BeginDate(), ecorePackage.getEString(), "beginDate", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getContract_DueDate(), ecorePackage.getEString(), "dueDate", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContract_ExcecutionsNumber(), ecorePackage.getEInt(), "excecutionsNumber", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getContract_Description(), ecorePackage.getEString(), "description", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContract_Application(), this.getApplication(), null, "application", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContract_Process(), this.getProcess(), null, "process", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContract_Clauses(), this.getClause(), null, "clauses", null, 0, -1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContract_Actions(), this.getAction(), null, "actions", null, 0, -1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_BeginDate(), this.getValueAndDescription(), null, "beginDate", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_DueDate(), this.getValueAndDescription(), null, "dueDate", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_Variables(), this.getVariables(), null, "variables", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statusEClass, Status.class, "Status", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatus_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, Status.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1633,11 +1895,12 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEAttribute(getClause_Description(), ecorePackage.getEString(), "description", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_FinalStatus(), ecorePackage.getEString(), "finalStatus", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_FailDescription(), ecorePackage.getEString(), "failDescription", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClause_RolePlayer(), this.getParty(), null, "rolePlayer", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClause_RolePlayer_0(), this.getParty(), null, "rolePlayer_0", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_OnBreach(), this.getOnBreach(), null, "onBreach", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_Condition(), this.getCondition(), null, "condition", null, 1, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClause_Operation(), this.getOperation(), "operation", "PUSH", 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_OnSuccess(), this.getOnSuccess(), null, "onSuccess", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClause_Operation(), this.getOperation(), "operation", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClause_RolePlayer(), this.getParties(), "rolePlayer", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1682,6 +1945,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEAttribute(getVariable_Type(), ecorePackage.getEString(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionEClass, Condition.class, "Condition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getCondition_Expression(), this.getExpression(), null, "expression", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeoutEClass, Timeout.class, "Timeout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeout_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Timeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1701,7 +1965,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEClass(messageContentEClass, MessageContent.class, "MessageContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessageContent_Content(), ecorePackage.getEString(), "content", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageContent_TimeUnit(), this.getTimeUnit(), "timeUnit", "SECOND", 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getMessageContent_Expression(), this.getExpression(), null, "expression", null, 0, -1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageContent_BinaryOperator(), this.getBinaryOperator(), null, "binaryOperator", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageContent_StringValue(), this.getStringValue(), null, "stringValue", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageContent_NumericValue(), this.getNumericValue(), null, "numericValue", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageContent_VariableValue(), this.getVariableValue(), null, "variableValue", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(compositeConditionEClass, CompositeCondition.class, "CompositeCondition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCompositeCondition_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, CompositeCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1719,6 +1986,21 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEClass(onSuccessEClass, OnSuccess.class, "OnSuccess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOnSuccess_Message(), this.getExpression(), null, "message", null, 0, 1, OnSuccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOnSuccess_Action(), this.getAction(), null, "action", null, 0, 1, OnSuccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(valueAndDescriptionEClass, ValueAndDescription.class, "ValueAndDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getValueAndDescription_Value(), ecorePackage.getEString(), "value", null, 0, 1, ValueAndDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getValueAndDescription_Description(), ecorePackage.getEString(), "description", null, 0, 1, ValueAndDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(variablesEClass, Variables.class, "Variables", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getVariables_Variable(), this.getSingleVariable(), null, "variable", null, 1, -1, Variables.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(singleVariableEClass, SingleVariable.class, "SingleVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSingleVariable_Name(), ecorePackage.getEString(), "name", "EString", 0, 1, SingleVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSingleVariable_ValueAndDescription(), this.getValueAndDescription(), null, "valueAndDescription", null, 1, 1, SingleVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(sessionIntervalEClass, SessionInterval.class, "SessionInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getSessionInterval_Start(), ecorePackage.getEString(), "start", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSessionInterval_End(), ecorePackage.getEString(), "end", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekDayEEnum, WeekDay.class, "WeekDay");
@@ -1746,6 +2028,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		addEEnumLiteral(operationEEnum, Operation.READ);
 		addEEnumLiteral(operationEEnum, Operation.REQUEST);
 		addEEnumLiteral(operationEEnum, Operation.RESPONSE);
+
+		initEEnum(partiesEEnum, Parties.class, "Parties");
+		addEEnumLiteral(partiesEEnum, Parties.APPLICATION);
+		addEEnumLiteral(partiesEEnum, Parties.PROCESS);
 
 		// Create resource
 		createResource(eNS_URI);

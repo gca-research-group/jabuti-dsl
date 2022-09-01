@@ -1,27 +1,31 @@
-///@version - jabuti 0.1.0 
+//@version - jabuti 0.1.0 
+
 Contract sendMessageWhatsapp {
 
-	beginDate = "2022-01-01 08:00:00" 
-	dueDate = "2022-12-31 18:00:00"
+	beginDate = "2022-01-01 08:00:00" : "Date when contract begins"
+	dueDate = "2022-12-31 18:00:00" : "Date when the contract end"
 	
-	application = whatsapp :" API whatsapp business"
-	process = integrationProcess : "Lacen integration process"
+	application = "whatsapp" : " API whatsapp business"
+	process = "integrationProcess" : " Lacen integration"
 
-	Right sendMessage {
-		description = ""
-		rolePlayer = integrationProcess
-		operation = write
-		condition {
-			 BusinessDay(Monday to Sunday) AND
-			 TimeInterval("00:00:00" to "23:59:59") AND
-			 (OperationLimit(1000 by Month) OR (OperationLimit(1000000 by Month)))
-			 MessageContent("//HEAD/accessKey")
-
-//			 (MessageContent("//HEAD/conversationID/activatedTime/text() - //HEAD/conversationID/activatedTime/text()) <24 ") AND (0 HORA) ) OR
-//			 (MessageContent("//HEAD/phoneNumberTo/hourResponse") AND ( 24 HORAs) ) 
-//			 AND
-			 
-			 
-		}
+	variables{
+		freeConversation = "1000" : " Number of free conversations"
+		business = "Business-initiated"	: "Initiator of the conversation (Business-initiated | User-iniciated)"	
+		conversationSessionTimeout = "24" : "Conversations are measured in fixed 24-hour sessions"
 	}
+	
+	Right sendMessage{
+		description = "description text"
+		rolePlayer = process
+		operation = write		
+		condition {
+			BusinessDay(Monday to Friday)  AND									
+			when(SessionInterval... AND MessageContent("//conversationStarter/text()" is business)) check {
+				SessionInterval(24)							
+				 	OperationLimit(10000 by Month)			 	
+			}			
+		}				
+		onBreach(failEvent, "Request operation performed outside of allowed hours or limit operation exceeded")
+	}
+	EventLog failEvent(message : String )
 }

@@ -3,7 +3,6 @@
  */
 package br.edu.unijui.gca.smartce.smartCE;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,7 +15,10 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getBinaryOperator <em>Binary Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getStringValue <em>String Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getNumericValue <em>Numeric Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent()
@@ -74,15 +76,91 @@ public interface MessageContent extends BusinessRule
 	void setTimeUnit(TimeUnit value);
 
 	/**
-	 * Returns the value of the '<em><b>Expression</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Expression}.
+	 * Returns the value of the '<em><b>Binary Operator</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expression</em>' containment reference list.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent_Expression()
+	 * @return the value of the '<em>Binary Operator</em>' containment reference.
+	 * @see #setBinaryOperator(BinaryOperator)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent_BinaryOperator()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Expression> getExpression();
+	BinaryOperator getBinaryOperator();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getBinaryOperator <em>Binary Operator</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Binary Operator</em>' containment reference.
+	 * @see #getBinaryOperator()
+	 * @generated
+	 */
+	void setBinaryOperator(BinaryOperator value);
+
+	/**
+	 * Returns the value of the '<em><b>String Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>String Value</em>' containment reference.
+	 * @see #setStringValue(StringValue)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent_StringValue()
+	 * @model containment="true"
+	 * @generated
+	 */
+	StringValue getStringValue();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getStringValue <em>String Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>String Value</em>' containment reference.
+	 * @see #getStringValue()
+	 * @generated
+	 */
+	void setStringValue(StringValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Numeric Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Numeric Value</em>' containment reference.
+	 * @see #setNumericValue(NumericValue)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent_NumericValue()
+	 * @model containment="true"
+	 * @generated
+	 */
+	NumericValue getNumericValue();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getNumericValue <em>Numeric Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Numeric Value</em>' containment reference.
+	 * @see #getNumericValue()
+	 * @generated
+	 */
+	void setNumericValue(NumericValue value);
+
+	/**
+	 * Returns the value of the '<em><b>Variable Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variable Value</em>' containment reference.
+	 * @see #setVariableValue(VariableValue)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getMessageContent_VariableValue()
+	 * @model containment="true"
+	 * @generated
+	 */
+	VariableValue getVariableValue();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.MessageContent#getVariableValue <em>Variable Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Variable Value</em>' containment reference.
+	 * @see #getVariableValue()
+	 * @generated
+	 */
+	void setVariableValue(VariableValue value);
 
 } // MessageContent

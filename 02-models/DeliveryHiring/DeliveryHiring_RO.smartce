@@ -5,13 +5,13 @@ Contract DeliveryHiring_RO {
 	beginDate = "2022-01-01 08:00:00" 
 	dueDate = "2022-12-31 18:00:00"
 	
-	application = deliverySystem : "Delivery system"
-	process  	= integrationProcess : "Integration process"
+	application = "deliverySystem" : "Delivery system"
+	process  	= "integrationProcess" : "Integration process"
 	
 	Right requestDelivery {
 		description = "Setting the days and hours to request a delivery,
 					 the maximum request operation by minute and number of address by request"
-		rolePlayer = integrationProcess
+		rolePlayer = process
 		operation = request
 		condition {
 			BusinessDay(Monday to Friday) AND
@@ -27,7 +27,7 @@ Contract DeliveryHiring_RO {
 
 	Obligation responseOrder{
 		description = "Setting the time limit for responding to a request"
-		rolePlayer = deliverySystem
+		rolePlayer = application
 		operation = response
 		condition { 
 			Timeout(180) AND

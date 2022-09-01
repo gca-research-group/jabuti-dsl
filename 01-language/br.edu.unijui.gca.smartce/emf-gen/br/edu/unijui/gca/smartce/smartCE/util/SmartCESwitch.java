@@ -26,14 +26,18 @@ import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
+import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
+import br.edu.unijui.gca.smartce.smartCE.SingleVariable;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
+import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
+import br.edu.unijui.gca.smartce.smartCE.Variables;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -344,6 +348,36 @@ public class SmartCESwitch<T> extends Switch<T>
 			{
 				OnSuccess onSuccess = (OnSuccess)theEObject;
 				T result = caseOnSuccess(onSuccess);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.VALUE_AND_DESCRIPTION:
+			{
+				ValueAndDescription valueAndDescription = (ValueAndDescription)theEObject;
+				T result = caseValueAndDescription(valueAndDescription);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.VARIABLES:
+			{
+				Variables variables = (Variables)theEObject;
+				T result = caseVariables(variables);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.SINGLE_VARIABLE:
+			{
+				SingleVariable singleVariable = (SingleVariable)theEObject;
+				T result = caseSingleVariable(singleVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.SESSION_INTERVAL:
+			{
+				SessionInterval sessionInterval = (SessionInterval)theEObject;
+				T result = caseSessionInterval(sessionInterval);
+				if (result == null) result = caseBusinessRule(sessionInterval);
+				if (result == null) result = caseCondition(sessionInterval);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -843,6 +877,70 @@ public class SmartCESwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseOnSuccess(OnSuccess object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Value And Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Value And Description</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseValueAndDescription(ValueAndDescription object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variables</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variables</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariables(Variables object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Single Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Single Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSingleVariable(SingleVariable object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Session Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Session Interval</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSessionInterval(SessionInterval object)
 	{
 		return null;
 	}

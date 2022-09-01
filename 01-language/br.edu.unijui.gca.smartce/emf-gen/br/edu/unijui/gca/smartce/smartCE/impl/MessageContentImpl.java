@@ -3,25 +3,21 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.Expression;
+import br.edu.unijui.gca.smartce.smartCE.BinaryOperator;
 import br.edu.unijui.gca.smartce.smartCE.MessageContent;
+import br.edu.unijui.gca.smartce.smartCE.NumericValue;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
+import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
-
-import java.util.Collection;
+import br.edu.unijui.gca.smartce.smartCE.VariableValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +29,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getBinaryOperator <em>Binary Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getStringValue <em>String Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getNumericValue <em>Numeric Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.MessageContentImpl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,14 +80,44 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference list.
+	 * The cached value of the '{@link #getBinaryOperator() <em>Binary Operator</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpression()
+	 * @see #getBinaryOperator()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Expression> expression;
+	protected BinaryOperator binaryOperator;
+
+	/**
+	 * The cached value of the '{@link #getStringValue() <em>String Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStringValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected StringValue stringValue;
+
+	/**
+	 * The cached value of the '{@link #getNumericValue() <em>Numeric Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNumericValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected NumericValue numericValue;
+
+	/**
+	 * The cached value of the '{@link #getVariableValue() <em>Variable Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariableValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected VariableValue variableValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -167,13 +196,198 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 	 * @generated
 	 */
 	@Override
-	public EList<Expression> getExpression()
+	public BinaryOperator getBinaryOperator()
 	{
-		if (expression == null)
+		return binaryOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBinaryOperator(BinaryOperator newBinaryOperator, NotificationChain msgs)
+	{
+		BinaryOperator oldBinaryOperator = binaryOperator;
+		binaryOperator = newBinaryOperator;
+		if (eNotificationRequired())
 		{
-			expression = new EObjectContainmentEList<Expression>(Expression.class, this, SmartCEPackage.MESSAGE_CONTENT__EXPRESSION);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR, oldBinaryOperator, newBinaryOperator);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return expression;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBinaryOperator(BinaryOperator newBinaryOperator)
+	{
+		if (newBinaryOperator != binaryOperator)
+		{
+			NotificationChain msgs = null;
+			if (binaryOperator != null)
+				msgs = ((InternalEObject)binaryOperator).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR, null, msgs);
+			if (newBinaryOperator != null)
+				msgs = ((InternalEObject)newBinaryOperator).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR, null, msgs);
+			msgs = basicSetBinaryOperator(newBinaryOperator, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR, newBinaryOperator, newBinaryOperator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StringValue getStringValue()
+	{
+		return stringValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetStringValue(StringValue newStringValue, NotificationChain msgs)
+	{
+		StringValue oldStringValue = stringValue;
+		stringValue = newStringValue;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE, oldStringValue, newStringValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setStringValue(StringValue newStringValue)
+	{
+		if (newStringValue != stringValue)
+		{
+			NotificationChain msgs = null;
+			if (stringValue != null)
+				msgs = ((InternalEObject)stringValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE, null, msgs);
+			if (newStringValue != null)
+				msgs = ((InternalEObject)newStringValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE, null, msgs);
+			msgs = basicSetStringValue(newStringValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE, newStringValue, newStringValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NumericValue getNumericValue()
+	{
+		return numericValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetNumericValue(NumericValue newNumericValue, NotificationChain msgs)
+	{
+		NumericValue oldNumericValue = numericValue;
+		numericValue = newNumericValue;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE, oldNumericValue, newNumericValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setNumericValue(NumericValue newNumericValue)
+	{
+		if (newNumericValue != numericValue)
+		{
+			NotificationChain msgs = null;
+			if (numericValue != null)
+				msgs = ((InternalEObject)numericValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE, null, msgs);
+			if (newNumericValue != null)
+				msgs = ((InternalEObject)newNumericValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE, null, msgs);
+			msgs = basicSetNumericValue(newNumericValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE, newNumericValue, newNumericValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VariableValue getVariableValue()
+	{
+		return variableValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVariableValue(VariableValue newVariableValue, NotificationChain msgs)
+	{
+		VariableValue oldVariableValue = variableValue;
+		variableValue = newVariableValue;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE, oldVariableValue, newVariableValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVariableValue(VariableValue newVariableValue)
+	{
+		if (newVariableValue != variableValue)
+		{
+			NotificationChain msgs = null;
+			if (variableValue != null)
+				msgs = ((InternalEObject)variableValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE, null, msgs);
+			if (newVariableValue != null)
+				msgs = ((InternalEObject)newVariableValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE, null, msgs);
+			msgs = basicSetVariableValue(newVariableValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE, newVariableValue, newVariableValue));
 	}
 
 	/**
@@ -186,8 +400,14 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
-				return ((InternalEList<?>)getExpression()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR:
+				return basicSetBinaryOperator(null, msgs);
+			case SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE:
+				return basicSetStringValue(null, msgs);
+			case SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE:
+				return basicSetNumericValue(null, msgs);
+			case SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				return basicSetVariableValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -206,8 +426,14 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 				return getContent();
 			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
 				return getTimeUnit();
-			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
-				return getExpression();
+			case SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR:
+				return getBinaryOperator();
+			case SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE:
+				return getStringValue();
+			case SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE:
+				return getNumericValue();
+			case SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				return getVariableValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,7 +443,6 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
@@ -229,9 +454,17 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
 				setTimeUnit((TimeUnit)newValue);
 				return;
-			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
-				getExpression().clear();
-				getExpression().addAll((Collection<? extends Expression>)newValue);
+			case SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR:
+				setBinaryOperator((BinaryOperator)newValue);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE:
+				setStringValue((StringValue)newValue);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE:
+				setNumericValue((NumericValue)newValue);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				setVariableValue((VariableValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -253,8 +486,17 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
 				setTimeUnit(TIME_UNIT_EDEFAULT);
 				return;
-			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
-				getExpression().clear();
+			case SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR:
+				setBinaryOperator((BinaryOperator)null);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE:
+				setStringValue((StringValue)null);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE:
+				setNumericValue((NumericValue)null);
+				return;
+			case SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				setVariableValue((VariableValue)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -274,8 +516,14 @@ public class MessageContentImpl extends BusinessRuleImpl implements MessageConte
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 			case SmartCEPackage.MESSAGE_CONTENT__TIME_UNIT:
 				return timeUnit != TIME_UNIT_EDEFAULT;
-			case SmartCEPackage.MESSAGE_CONTENT__EXPRESSION:
-				return expression != null && !expression.isEmpty();
+			case SmartCEPackage.MESSAGE_CONTENT__BINARY_OPERATOR:
+				return binaryOperator != null;
+			case SmartCEPackage.MESSAGE_CONTENT__STRING_VALUE:
+				return stringValue != null;
+			case SmartCEPackage.MESSAGE_CONTENT__NUMERIC_VALUE:
+				return numericValue != null;
+			case SmartCEPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				return variableValue != null;
 		}
 		return super.eIsSet(featureID);
 	}

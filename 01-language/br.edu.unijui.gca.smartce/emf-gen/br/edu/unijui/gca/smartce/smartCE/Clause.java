@@ -19,11 +19,12 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFinalStatus <em>Final Status</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFailDescription <em>Fail Description</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer_0 <em>Role Player 0</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnBreach <em>On Breach</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getCondition <em>Condition</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOnSuccess <em>On Success</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause()
@@ -143,26 +144,26 @@ public interface Clause extends EObject
 	void setFailDescription(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Role Player</b></em>' reference.
+	 * Returns the value of the '<em><b>Role Player 0</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Role Player</em>' reference.
-	 * @see #setRolePlayer(Party)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_RolePlayer()
+	 * @return the value of the '<em>Role Player 0</em>' reference.
+	 * @see #setRolePlayer_0(Party)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_RolePlayer_0()
 	 * @model
 	 * @generated
 	 */
-	Party getRolePlayer();
+	Party getRolePlayer_0();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}' reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer_0 <em>Role Player 0</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Role Player</em>' reference.
-	 * @see #getRolePlayer()
+	 * @param value the new value of the '<em>Role Player 0</em>' reference.
+	 * @see #getRolePlayer_0()
 	 * @generated
 	 */
-	void setRolePlayer(Party value);
+	void setRolePlayer_0(Party value);
 
 	/**
 	 * Returns the value of the '<em><b>On Breach</b></em>' containment reference.
@@ -209,32 +210,6 @@ public interface Clause extends EObject
 	void setCondition(Condition value);
 
 	/**
-	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
-	 * The default value is <code>"PUSH"</code>.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.Operation}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
-	 * @see #setOperation(Operation)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Operation()
-	 * @model default="PUSH"
-	 * @generated
-	 */
-	Operation getOperation();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operation</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
-	 * @see #getOperation()
-	 * @generated
-	 */
-	void setOperation(Operation value);
-
-	/**
 	 * Returns the value of the '<em><b>On Success</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -255,5 +230,55 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setOnSuccess(OnSuccess value);
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @see #setOperation(Operation)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Operation()
+	 * @model
+	 * @generated
+	 */
+	Operation getOperation();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getOperation <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Operation
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(Operation value);
+
+	/**
+	 * Returns the value of the '<em><b>Role Player</b></em>' attribute.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.Parties}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role Player</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Parties
+	 * @see #setRolePlayer(Parties)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_RolePlayer()
+	 * @model
+	 * @generated
+	 */
+	Parties getRolePlayer();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Role Player</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Parties
+	 * @see #getRolePlayer()
+	 * @generated
+	 */
+	void setRolePlayer(Parties value);
 
 } // Clause

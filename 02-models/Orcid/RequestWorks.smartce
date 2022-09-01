@@ -1,0 +1,37 @@
+//@version - jabuti 0.1.0 
+
+Contract RequestWorks{
+
+	beginDate = "2022-01-01 08:00:00" 
+	dueDate = "2022-12-31 18:00:00"
+	
+	application = "Orcid" : "Ocaneta Researcher e Ccolaborador ID"
+	process  	= "integrationProcess" : "Integration process"
+	
+	Right requestAllWorks {
+		description = " " 
+		rolePlayer = process
+		operation = request
+		condition {
+			BusinessDay(Monday to Sunday) AND
+			TimeInterval ("00:00:00" to "23:59:59") AND
+			OperationLimit (24 by Second)
+		}
+		onBreach (failEvent, "Conditions do not meet")
+	}
+	
+	Obligation responseWorks {
+
+		description =  "Send the requested works"
+		rolePlayer = application
+		operation = response
+		condition {
+			MessageContent("count(//body/request/document)" == "count(//body/response/document)")
+		}
+		onBreach (failEvent, "Conditions do not meet")
+	}
+	
+	EventLog failEvent (message : String)
+
+}
+	

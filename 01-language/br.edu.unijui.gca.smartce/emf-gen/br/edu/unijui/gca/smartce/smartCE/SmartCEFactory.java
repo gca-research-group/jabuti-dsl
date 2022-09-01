@@ -285,6 +285,42 @@ public interface SmartCEFactory extends EFactory
 	OnSuccess createOnSuccess();
 
 	/**
+	 * Returns a new object of class '<em>Value And Description</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Value And Description</em>'.
+	 * @generated
+	 */
+	ValueAndDescription createValueAndDescription();
+
+	/**
+	 * Returns a new object of class '<em>Variables</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variables</em>'.
+	 * @generated
+	 */
+	Variables createVariables();
+
+	/**
+	 * Returns a new object of class '<em>Single Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Single Variable</em>'.
+	 * @generated
+	 */
+	SingleVariable createSingleVariable();
+
+	/**
+	 * Returns a new object of class '<em>Session Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Session Interval</em>'.
+	 * @generated
+	 */
+	SessionInterval createSessionInterval();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

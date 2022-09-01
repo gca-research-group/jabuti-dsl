@@ -5,20 +5,21 @@ Contract DeliveryHiring_P  {
 	beginDate = "2022-01-01 08:00:00" 
 	dueDate = "2022-12-31 18:00:00"
 	
-	application = deliverySystem : "Delivery system"
-	process  	= integrationProcess : "Integration process"
+	application = "deliverySystem" : "Delivery system"
+	process  	= "integrationProcess" : "Integration process"
 	
 	Prohibition requestDelivery {
 		description = "Setting the prohibition regarding to the days and hours to request a delivery,
 						 the maximum request operation by minute and number of address by request"
-		rolePlayer = integrationProcess
+		rolePlayer = process
+		
 		operation = request
 		
 		condition {
 			BusinessDay(Saturday to Sunday) OR
 			TimeInterval("18:30:00" to "08:30:00") OR
 			OperationLimit(6 by Minute) OR
-			MessageContent("count(//address)!=1")						
+			MessageContent("count(//address)"!= 1)		
 		}
 		// the onSuccess is optiona 
 		//onSuccess(successEvent, "Success execution")		

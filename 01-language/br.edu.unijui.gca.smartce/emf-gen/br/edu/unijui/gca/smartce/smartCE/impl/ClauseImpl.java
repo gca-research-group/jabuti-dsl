@@ -8,6 +8,7 @@ import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
+import br.edu.unijui.gca.smartce.smartCE.Parties;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
@@ -33,11 +34,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getFinalStatus <em>Final Status</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getFailDescription <em>Fail Description</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getRolePlayer <em>Role Player</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getRolePlayer_0 <em>Role Player 0</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getOnBreach <em>On Breach</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getCondition <em>Condition</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getOnSuccess <em>On Success</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getRolePlayer <em>Role Player</em>}</li>
  * </ul>
  *
  * @generated
@@ -145,14 +147,14 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	protected String failDescription = FAIL_DESCRIPTION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getRolePlayer() <em>Role Player</em>}' reference.
+	 * The cached value of the '{@link #getRolePlayer_0() <em>Role Player 0</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRolePlayer()
+	 * @see #getRolePlayer_0()
 	 * @generated
 	 * @ordered
 	 */
-	protected Party rolePlayer;
+	protected Party rolePlayer_0;
 
 	/**
 	 * The cached value of the '{@link #getOnBreach() <em>On Breach</em>}' containment reference.
@@ -175,6 +177,16 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	protected Condition condition;
 
 	/**
+	 * The cached value of the '{@link #getOnSuccess() <em>On Success</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOnSuccess()
+	 * @generated
+	 * @ordered
+	 */
+	protected OnSuccess onSuccess;
+
+	/**
 	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,14 +207,24 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	protected Operation operation = OPERATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getOnSuccess() <em>On Success</em>}' containment reference.
+	 * The default value of the '{@link #getRolePlayer() <em>Role Player</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOnSuccess()
+	 * @see #getRolePlayer()
 	 * @generated
 	 * @ordered
 	 */
-	protected OnSuccess onSuccess;
+	protected static final Parties ROLE_PLAYER_EDEFAULT = Parties.APPLICATION;
+
+	/**
+	 * The cached value of the '{@link #getRolePlayer() <em>Role Player</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRolePlayer()
+	 * @generated
+	 * @ordered
+	 */
+	protected Parties rolePlayer = ROLE_PLAYER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -356,19 +378,19 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public Party getRolePlayer()
+	public Party getRolePlayer_0()
 	{
-		if (rolePlayer != null && rolePlayer.eIsProxy())
+		if (rolePlayer_0 != null && rolePlayer_0.eIsProxy())
 		{
-			InternalEObject oldRolePlayer = (InternalEObject)rolePlayer;
-			rolePlayer = (Party)eResolveProxy(oldRolePlayer);
-			if (rolePlayer != oldRolePlayer)
+			InternalEObject oldRolePlayer_0 = (InternalEObject)rolePlayer_0;
+			rolePlayer_0 = (Party)eResolveProxy(oldRolePlayer_0);
+			if (rolePlayer_0 != oldRolePlayer_0)
 			{
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmartCEPackage.CLAUSE__ROLE_PLAYER, oldRolePlayer, rolePlayer));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmartCEPackage.CLAUSE__ROLE_PLAYER_0, oldRolePlayer_0, rolePlayer_0));
 			}
 		}
-		return rolePlayer;
+		return rolePlayer_0;
 	}
 
 	/**
@@ -376,9 +398,9 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Party basicGetRolePlayer()
+	public Party basicGetRolePlayer_0()
 	{
-		return rolePlayer;
+		return rolePlayer_0;
 	}
 
 	/**
@@ -387,12 +409,12 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public void setRolePlayer(Party newRolePlayer)
+	public void setRolePlayer_0(Party newRolePlayer_0)
 	{
-		Party oldRolePlayer = rolePlayer;
-		rolePlayer = newRolePlayer;
+		Party oldRolePlayer_0 = rolePlayer_0;
+		rolePlayer_0 = newRolePlayer_0;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__ROLE_PLAYER, oldRolePlayer, rolePlayer));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__ROLE_PLAYER_0, oldRolePlayer_0, rolePlayer_0));
 	}
 
 	/**
@@ -501,31 +523,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public Operation getOperation()
-	{
-		return operation;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setOperation(Operation newOperation)
-	{
-		Operation oldOperation = operation;
-		operation = newOperation == null ? OPERATION_EDEFAULT : newOperation;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__OPERATION, oldOperation, operation));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public OnSuccess getOnSuccess()
 	{
 		return onSuccess;
@@ -576,6 +573,56 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
+	public Operation getOperation()
+	{
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOperation(Operation newOperation)
+	{
+		Operation oldOperation = operation;
+		operation = newOperation == null ? OPERATION_EDEFAULT : newOperation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__OPERATION, oldOperation, operation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Parties getRolePlayer()
+	{
+		return rolePlayer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRolePlayer(Parties newRolePlayer)
+	{
+		Parties oldRolePlayer = rolePlayer;
+		rolePlayer = newRolePlayer == null ? ROLE_PLAYER_EDEFAULT : newRolePlayer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__ROLE_PLAYER, oldRolePlayer, rolePlayer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -610,17 +657,19 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return getFinalStatus();
 			case SmartCEPackage.CLAUSE__FAIL_DESCRIPTION:
 				return getFailDescription();
-			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
-				if (resolve) return getRolePlayer();
-				return basicGetRolePlayer();
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER_0:
+				if (resolve) return getRolePlayer_0();
+				return basicGetRolePlayer_0();
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				return getOnBreach();
 			case SmartCEPackage.CLAUSE__CONDITION:
 				return getCondition();
-			case SmartCEPackage.CLAUSE__OPERATION:
-				return getOperation();
 			case SmartCEPackage.CLAUSE__ON_SUCCESS:
 				return getOnSuccess();
+			case SmartCEPackage.CLAUSE__OPERATION:
+				return getOperation();
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
+				return getRolePlayer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -650,8 +699,8 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__FAIL_DESCRIPTION:
 				setFailDescription((String)newValue);
 				return;
-			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
-				setRolePlayer((Party)newValue);
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER_0:
+				setRolePlayer_0((Party)newValue);
 				return;
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				setOnBreach((OnBreach)newValue);
@@ -659,11 +708,14 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__CONDITION:
 				setCondition((Condition)newValue);
 				return;
+			case SmartCEPackage.CLAUSE__ON_SUCCESS:
+				setOnSuccess((OnSuccess)newValue);
+				return;
 			case SmartCEPackage.CLAUSE__OPERATION:
 				setOperation((Operation)newValue);
 				return;
-			case SmartCEPackage.CLAUSE__ON_SUCCESS:
-				setOnSuccess((OnSuccess)newValue);
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
+				setRolePlayer((Parties)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -694,8 +746,8 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__FAIL_DESCRIPTION:
 				setFailDescription(FAIL_DESCRIPTION_EDEFAULT);
 				return;
-			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
-				setRolePlayer((Party)null);
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER_0:
+				setRolePlayer_0((Party)null);
 				return;
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				setOnBreach((OnBreach)null);
@@ -703,11 +755,14 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__CONDITION:
 				setCondition((Condition)null);
 				return;
+			case SmartCEPackage.CLAUSE__ON_SUCCESS:
+				setOnSuccess((OnSuccess)null);
+				return;
 			case SmartCEPackage.CLAUSE__OPERATION:
 				setOperation(OPERATION_EDEFAULT);
 				return;
-			case SmartCEPackage.CLAUSE__ON_SUCCESS:
-				setOnSuccess((OnSuccess)null);
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
+				setRolePlayer(ROLE_PLAYER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -733,16 +788,18 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return FINAL_STATUS_EDEFAULT == null ? finalStatus != null : !FINAL_STATUS_EDEFAULT.equals(finalStatus);
 			case SmartCEPackage.CLAUSE__FAIL_DESCRIPTION:
 				return FAIL_DESCRIPTION_EDEFAULT == null ? failDescription != null : !FAIL_DESCRIPTION_EDEFAULT.equals(failDescription);
-			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
-				return rolePlayer != null;
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER_0:
+				return rolePlayer_0 != null;
 			case SmartCEPackage.CLAUSE__ON_BREACH:
 				return onBreach != null;
 			case SmartCEPackage.CLAUSE__CONDITION:
 				return condition != null;
-			case SmartCEPackage.CLAUSE__OPERATION:
-				return operation != OPERATION_EDEFAULT;
 			case SmartCEPackage.CLAUSE__ON_SUCCESS:
 				return onSuccess != null;
+			case SmartCEPackage.CLAUSE__OPERATION:
+				return operation != OPERATION_EDEFAULT;
+			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
+				return rolePlayer != ROLE_PLAYER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -770,6 +827,8 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		result.append(failDescription);
 		result.append(", operation: ");
 		result.append(operation);
+		result.append(", rolePlayer: ");
+		result.append(rolePlayer);
 		result.append(')');
 		return result.toString();
 	}

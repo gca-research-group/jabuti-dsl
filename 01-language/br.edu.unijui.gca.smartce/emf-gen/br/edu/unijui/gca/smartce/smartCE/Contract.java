@@ -17,14 +17,15 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate <em>Due Date</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getExcecutionsNumber <em>Excecutions Number</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getApplication <em>Application</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getProcess <em>Process</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getClauses <em>Clauses</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getActions <em>Actions</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract()
@@ -54,50 +55,6 @@ public interface Contract extends EObject
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Begin Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Begin Date</em>' attribute.
-	 * @see #setBeginDate(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_BeginDate()
-	 * @model
-	 * @generated
-	 */
-	String getBeginDate();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Begin Date</em>' attribute.
-	 * @see #getBeginDate()
-	 * @generated
-	 */
-	void setBeginDate(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Due Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Due Date</em>' attribute.
-	 * @see #setDueDate(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_DueDate()
-	 * @model
-	 * @generated
-	 */
-	String getDueDate();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate <em>Due Date</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Due Date</em>' attribute.
-	 * @see #getDueDate()
-	 * @generated
-	 */
-	void setDueDate(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Excecutions Number</b></em>' attribute.
@@ -210,5 +167,71 @@ public interface Contract extends EObject
 	 * @generated
 	 */
 	EList<Action> getActions();
+
+	/**
+	 * Returns the value of the '<em><b>Begin Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Begin Date</em>' containment reference.
+	 * @see #setBeginDate(ValueAndDescription)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_BeginDate()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	ValueAndDescription getBeginDate();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Begin Date</em>' containment reference.
+	 * @see #getBeginDate()
+	 * @generated
+	 */
+	void setBeginDate(ValueAndDescription value);
+
+	/**
+	 * Returns the value of the '<em><b>Due Date</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Due Date</em>' containment reference.
+	 * @see #setDueDate(ValueAndDescription)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_DueDate()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	ValueAndDescription getDueDate();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate <em>Due Date</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Due Date</em>' containment reference.
+	 * @see #getDueDate()
+	 * @generated
+	 */
+	void setDueDate(ValueAndDescription value);
+
+	/**
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variables</em>' containment reference.
+	 * @see #setVariables(Variables)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_Variables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Variables getVariables();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getVariables <em>Variables</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Variables</em>' containment reference.
+	 * @see #getVariables()
+	 * @generated
+	 */
+	void setVariables(Variables value);
 
 } // Contract
