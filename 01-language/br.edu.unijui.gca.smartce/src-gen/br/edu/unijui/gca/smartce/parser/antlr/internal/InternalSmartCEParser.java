@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'parties'", "'application'", "'process'", "'}'", "'variables'", "'actions'", "'Right'", "'Prohibition'", "'Obligation'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "')'", "'check'", "'AND'", "'OR'", "'NOT'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'from'", "'MessageContent'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "','", "'BusinessAction'", "'EventLog'", "'&&'", "'||'", "'!'", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "'.'", "'.*'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'parties'", "'application'", "'process'", "'}'", "'variables'", "'Right'", "'Prohibition'", "'Obligation'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "')'", "'check'", "'AND'", "'OR'", "'NOT'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'from'", "'MessageContent'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'BusinessAction'", "'EventLog'", "'&&'", "'||'", "'!'", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "','", "'.'", "'.*'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -106,7 +106,6 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final int T__41=41;
     public static final int T__85=85;
     public static final int T__42=42;
-    public static final int T__86=86;
     public static final int T__43=43;
 
     // delegates
@@ -484,7 +483,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContract"
-    // InternalSmartCE.g:178:1: ruleContract returns [EObject current=null] : (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? otherlv_22= 'actions' otherlv_23= '{' ( (lv_actions_24_0= ruleAction ) )* otherlv_25= '}' ( (lv_clauses_26_0= ruleClause ) ) otherlv_27= '}' ) ;
+    // InternalSmartCE.g:178:1: ruleContract returns [EObject current=null] : (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? ( (lv_clauses_22_0= ruleClause ) ) otherlv_23= '}' ) ;
     public final EObject ruleContract() throws RecognitionException {
         EObject current = null;
 
@@ -505,10 +504,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         Token otherlv_18=null;
         Token otherlv_19=null;
         Token otherlv_21=null;
-        Token otherlv_22=null;
         Token otherlv_23=null;
-        Token otherlv_25=null;
-        Token otherlv_27=null;
         EObject lv_beginDate_5_0 = null;
 
         EObject lv_dueDate_8_0 = null;
@@ -519,20 +515,18 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
         EObject lv_variables_20_0 = null;
 
-        EObject lv_actions_24_0 = null;
-
-        EObject lv_clauses_26_0 = null;
+        EObject lv_clauses_22_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSmartCE.g:184:2: ( (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? otherlv_22= 'actions' otherlv_23= '{' ( (lv_actions_24_0= ruleAction ) )* otherlv_25= '}' ( (lv_clauses_26_0= ruleClause ) ) otherlv_27= '}' ) )
-            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? otherlv_22= 'actions' otherlv_23= '{' ( (lv_actions_24_0= ruleAction ) )* otherlv_25= '}' ( (lv_clauses_26_0= ruleClause ) ) otherlv_27= '}' )
+            // InternalSmartCE.g:184:2: ( (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? ( (lv_clauses_22_0= ruleClause ) ) otherlv_23= '}' ) )
+            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? ( (lv_clauses_22_0= ruleClause ) ) otherlv_23= '}' )
             {
-            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? otherlv_22= 'actions' otherlv_23= '{' ( (lv_actions_24_0= ruleAction ) )* otherlv_25= '}' ( (lv_clauses_26_0= ruleClause ) ) otherlv_27= '}' )
-            // InternalSmartCE.g:186:3: otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? otherlv_22= 'actions' otherlv_23= '{' ( (lv_actions_24_0= ruleAction ) )* otherlv_25= '}' ( (lv_clauses_26_0= ruleClause ) ) otherlv_27= '}'
+            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? ( (lv_clauses_22_0= ruleClause ) ) otherlv_23= '}' )
+            // InternalSmartCE.g:186:3: otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'beginDate' otherlv_4= '=' ( (lv_beginDate_5_0= ruleExpression ) ) otherlv_6= 'dueDate' otherlv_7= '=' ( (lv_dueDate_8_0= ruleExpression ) ) otherlv_9= 'parties' otherlv_10= '{' otherlv_11= 'application' otherlv_12= '=' ( (lv_application_13_0= ruleApplication ) ) otherlv_14= 'process' otherlv_15= '=' ( (lv_process_16_0= ruleProcess ) ) otherlv_17= '}' (otherlv_18= 'variables' otherlv_19= '{' ( (lv_variables_20_0= ruleVariable ) )* otherlv_21= '}' )? ( (lv_clauses_22_0= ruleClause ) ) otherlv_23= '}'
             {
             otherlv_0=(Token)match(input,12,FOLLOW_5); 
 
@@ -804,7 +798,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_21=(Token)match(input,20,FOLLOW_18); 
+                    otherlv_21=(Token)match(input,20,FOLLOW_16); 
 
                     				newLeafNode(otherlv_21, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_18_3());
                     			
@@ -814,78 +808,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_22=(Token)match(input,22,FOLLOW_6); 
-
-            			newLeafNode(otherlv_22, grammarAccess.getContractAccess().getActionsKeyword_19());
-            		
-            otherlv_23=(Token)match(input,13,FOLLOW_19); 
-
-            			newLeafNode(otherlv_23, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_20());
-            		
-            // InternalSmartCE.g:373:3: ( (lv_actions_24_0= ruleAction ) )*
-            loop5:
-            do {
-                int alt5=2;
-                int LA5_0 = input.LA(1);
-
-                if ( ((LA5_0>=54 && LA5_0<=55)) ) {
-                    alt5=1;
-                }
-
-
-                switch (alt5) {
-            	case 1 :
-            	    // InternalSmartCE.g:374:4: (lv_actions_24_0= ruleAction )
-            	    {
-            	    // InternalSmartCE.g:374:4: (lv_actions_24_0= ruleAction )
-            	    // InternalSmartCE.g:375:5: lv_actions_24_0= ruleAction
-            	    {
-
-            	    					newCompositeNode(grammarAccess.getContractAccess().getActionsActionParserRuleCall_21_0());
-            	    				
-            	    pushFollow(FOLLOW_19);
-            	    lv_actions_24_0=ruleAction();
-
-            	    state._fsp--;
-
-
-            	    					if (current==null) {
-            	    						current = createModelElementForParent(grammarAccess.getContractRule());
-            	    					}
-            	    					add(
-            	    						current,
-            	    						"actions",
-            	    						lv_actions_24_0,
-            	    						"br.edu.unijui.gca.smartce.SmartCE.Action");
-            	    					afterParserOrEnumRuleCall();
-            	    				
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop5;
-                }
-            } while (true);
-
-            otherlv_25=(Token)match(input,20,FOLLOW_20); 
-
-            			newLeafNode(otherlv_25, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_22());
-            		
-            // InternalSmartCE.g:396:3: ( (lv_clauses_26_0= ruleClause ) )
-            // InternalSmartCE.g:397:4: (lv_clauses_26_0= ruleClause )
+            // InternalSmartCE.g:365:3: ( (lv_clauses_22_0= ruleClause ) )
+            // InternalSmartCE.g:366:4: (lv_clauses_22_0= ruleClause )
             {
-            // InternalSmartCE.g:397:4: (lv_clauses_26_0= ruleClause )
-            // InternalSmartCE.g:398:5: lv_clauses_26_0= ruleClause
+            // InternalSmartCE.g:366:4: (lv_clauses_22_0= ruleClause )
+            // InternalSmartCE.g:367:5: lv_clauses_22_0= ruleClause
             {
 
-            					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_23_0());
+            					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_19_0());
             				
             pushFollow(FOLLOW_15);
-            lv_clauses_26_0=ruleClause();
+            lv_clauses_22_0=ruleClause();
 
             state._fsp--;
 
@@ -896,7 +829,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"clauses",
-            						lv_clauses_26_0,
+            						lv_clauses_22_0,
             						"br.edu.unijui.gca.smartce.SmartCE.Clause");
             					afterParserOrEnumRuleCall();
             				
@@ -906,9 +839,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_27=(Token)match(input,20,FOLLOW_2); 
+            otherlv_23=(Token)match(input,20,FOLLOW_2); 
 
-            			newLeafNode(otherlv_27, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_24());
+            			newLeafNode(otherlv_23, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_20());
             		
 
             }
@@ -933,7 +866,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariable"
-    // InternalSmartCE.g:423:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
+    // InternalSmartCE.g:392:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
     public final EObject entryRuleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -941,8 +874,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:423:49: (iv_ruleVariable= ruleVariable EOF )
-            // InternalSmartCE.g:424:2: iv_ruleVariable= ruleVariable EOF
+            // InternalSmartCE.g:392:49: (iv_ruleVariable= ruleVariable EOF )
+            // InternalSmartCE.g:393:2: iv_ruleVariable= ruleVariable EOF
             {
              newCompositeNode(grammarAccess.getVariableRule()); 
             pushFollow(FOLLOW_1);
@@ -969,7 +902,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariable"
-    // InternalSmartCE.g:430:1: ruleVariable returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) ;
+    // InternalSmartCE.g:399:1: ruleVariable returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -982,17 +915,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:436:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) )
-            // InternalSmartCE.g:437:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
+            // InternalSmartCE.g:405:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) )
+            // InternalSmartCE.g:406:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
             {
-            // InternalSmartCE.g:437:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
-            // InternalSmartCE.g:438:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) )
+            // InternalSmartCE.g:406:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
+            // InternalSmartCE.g:407:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) )
             {
-            // InternalSmartCE.g:438:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalSmartCE.g:439:4: (lv_name_0_0= RULE_ID )
+            // InternalSmartCE.g:407:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalSmartCE.g:408:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalSmartCE.g:439:4: (lv_name_0_0= RULE_ID )
-            // InternalSmartCE.g:440:5: lv_name_0_0= RULE_ID
+            // InternalSmartCE.g:408:4: (lv_name_0_0= RULE_ID )
+            // InternalSmartCE.g:409:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_8); 
 
@@ -1018,11 +951,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getVariableAccess().getEqualsSignKeyword_1());
             		
-            // InternalSmartCE.g:460:3: ( (lv_expression_2_0= ruleExpression ) )
-            // InternalSmartCE.g:461:4: (lv_expression_2_0= ruleExpression )
+            // InternalSmartCE.g:429:3: ( (lv_expression_2_0= ruleExpression ) )
+            // InternalSmartCE.g:430:4: (lv_expression_2_0= ruleExpression )
             {
-            // InternalSmartCE.g:461:4: (lv_expression_2_0= ruleExpression )
-            // InternalSmartCE.g:462:5: lv_expression_2_0= ruleExpression
+            // InternalSmartCE.g:430:4: (lv_expression_2_0= ruleExpression )
+            // InternalSmartCE.g:431:5: lv_expression_2_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0());
@@ -1072,7 +1005,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleClause"
-    // InternalSmartCE.g:483:1: entryRuleClause returns [EObject current=null] : iv_ruleClause= ruleClause EOF ;
+    // InternalSmartCE.g:452:1: entryRuleClause returns [EObject current=null] : iv_ruleClause= ruleClause EOF ;
     public final EObject entryRuleClause() throws RecognitionException {
         EObject current = null;
 
@@ -1080,8 +1013,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:483:47: (iv_ruleClause= ruleClause EOF )
-            // InternalSmartCE.g:484:2: iv_ruleClause= ruleClause EOF
+            // InternalSmartCE.g:452:47: (iv_ruleClause= ruleClause EOF )
+            // InternalSmartCE.g:453:2: iv_ruleClause= ruleClause EOF
             {
              newCompositeNode(grammarAccess.getClauseRule()); 
             pushFollow(FOLLOW_1);
@@ -1108,7 +1041,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClause"
-    // InternalSmartCE.g:490:1: ruleClause returns [EObject current=null] : ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) ;
+    // InternalSmartCE.g:459:1: ruleClause returns [EObject current=null] : ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) ;
     public final EObject ruleClause() throws RecognitionException {
         EObject current = null;
 
@@ -1142,42 +1075,42 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:496:2: ( ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) )
-            // InternalSmartCE.g:497:2: ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
+            // InternalSmartCE.g:465:2: ( ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) )
+            // InternalSmartCE.g:466:2: ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
             {
-            // InternalSmartCE.g:497:2: ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
-            // InternalSmartCE.g:498:3: (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}'
+            // InternalSmartCE.g:466:2: ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
+            // InternalSmartCE.g:467:3: (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}'
             {
-            // InternalSmartCE.g:498:3: (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' )
-            int alt6=3;
+            // InternalSmartCE.g:467:3: (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' )
+            int alt5=3;
             switch ( input.LA(1) ) {
+            case 22:
+                {
+                alt5=1;
+                }
+                break;
             case 23:
                 {
-                alt6=1;
+                alt5=2;
                 }
                 break;
             case 24:
                 {
-                alt6=2;
-                }
-                break;
-            case 25:
-                {
-                alt6=3;
+                alt5=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt6) {
+            switch (alt5) {
                 case 1 :
-                    // InternalSmartCE.g:499:4: otherlv_0= 'Right'
+                    // InternalSmartCE.g:468:4: otherlv_0= 'Right'
                     {
-                    otherlv_0=(Token)match(input,23,FOLLOW_5); 
+                    otherlv_0=(Token)match(input,22,FOLLOW_5); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getClauseAccess().getRightKeyword_0_0());
                     			
@@ -1185,9 +1118,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:504:4: otherlv_1= 'Prohibition'
+                    // InternalSmartCE.g:473:4: otherlv_1= 'Prohibition'
                     {
-                    otherlv_1=(Token)match(input,24,FOLLOW_5); 
+                    otherlv_1=(Token)match(input,23,FOLLOW_5); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getClauseAccess().getProhibitionKeyword_0_1());
                     			
@@ -1195,9 +1128,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:509:4: otherlv_2= 'Obligation'
+                    // InternalSmartCE.g:478:4: otherlv_2= 'Obligation'
                     {
-                    otherlv_2=(Token)match(input,25,FOLLOW_5); 
+                    otherlv_2=(Token)match(input,24,FOLLOW_5); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getClauseAccess().getObligationKeyword_0_2());
                     			
@@ -1207,11 +1140,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmartCE.g:514:3: ( (lv_name_3_0= RULE_ID ) )
-            // InternalSmartCE.g:515:4: (lv_name_3_0= RULE_ID )
+            // InternalSmartCE.g:483:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalSmartCE.g:484:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalSmartCE.g:515:4: (lv_name_3_0= RULE_ID )
-            // InternalSmartCE.g:516:5: lv_name_3_0= RULE_ID
+            // InternalSmartCE.g:484:4: (lv_name_3_0= RULE_ID )
+            // InternalSmartCE.g:485:5: lv_name_3_0= RULE_ID
             {
             lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -1233,39 +1166,39 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,13,FOLLOW_21); 
+            otherlv_4=(Token)match(input,13,FOLLOW_18); 
 
             			newLeafNode(otherlv_4, grammarAccess.getClauseAccess().getLeftCurlyBracketKeyword_2());
             		
-            otherlv_5=(Token)match(input,26,FOLLOW_8); 
+            otherlv_5=(Token)match(input,25,FOLLOW_8); 
 
             			newLeafNode(otherlv_5, grammarAccess.getClauseAccess().getRolePlayerKeyword_3());
             		
-            otherlv_6=(Token)match(input,15,FOLLOW_22); 
+            otherlv_6=(Token)match(input,15,FOLLOW_19); 
 
             			newLeafNode(otherlv_6, grammarAccess.getClauseAccess().getEqualsSignKeyword_4());
             		
-            // InternalSmartCE.g:544:3: (otherlv_7= 'process' | otherlv_8= 'application' )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalSmartCE.g:513:3: (otherlv_7= 'process' | otherlv_8= 'application' )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA7_0==19) ) {
-                alt7=1;
+            if ( (LA6_0==19) ) {
+                alt6=1;
             }
-            else if ( (LA7_0==18) ) {
-                alt7=2;
+            else if ( (LA6_0==18) ) {
+                alt6=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt6) {
                 case 1 :
-                    // InternalSmartCE.g:545:4: otherlv_7= 'process'
+                    // InternalSmartCE.g:514:4: otherlv_7= 'process'
                     {
-                    otherlv_7=(Token)match(input,19,FOLLOW_23); 
+                    otherlv_7=(Token)match(input,19,FOLLOW_20); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getClauseAccess().getProcessKeyword_5_0());
                     			
@@ -1273,9 +1206,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:550:4: otherlv_8= 'application'
+                    // InternalSmartCE.g:519:4: otherlv_8= 'application'
                     {
-                    otherlv_8=(Token)match(input,18,FOLLOW_23); 
+                    otherlv_8=(Token)match(input,18,FOLLOW_20); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getClauseAccess().getApplicationKeyword_5_1());
                     			
@@ -1285,24 +1218,24 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_9=(Token)match(input,27,FOLLOW_8); 
+            otherlv_9=(Token)match(input,26,FOLLOW_8); 
 
             			newLeafNode(otherlv_9, grammarAccess.getClauseAccess().getOperationKeyword_6());
             		
-            otherlv_10=(Token)match(input,15,FOLLOW_24); 
+            otherlv_10=(Token)match(input,15,FOLLOW_21); 
 
             			newLeafNode(otherlv_10, grammarAccess.getClauseAccess().getEqualsSignKeyword_7());
             		
-            // InternalSmartCE.g:563:3: ( (lv_operation_11_0= ruleOperation ) )
-            // InternalSmartCE.g:564:4: (lv_operation_11_0= ruleOperation )
+            // InternalSmartCE.g:532:3: ( (lv_operation_11_0= ruleOperation ) )
+            // InternalSmartCE.g:533:4: (lv_operation_11_0= ruleOperation )
             {
-            // InternalSmartCE.g:564:4: (lv_operation_11_0= ruleOperation )
-            // InternalSmartCE.g:565:5: lv_operation_11_0= ruleOperation
+            // InternalSmartCE.g:533:4: (lv_operation_11_0= ruleOperation )
+            // InternalSmartCE.g:534:5: lv_operation_11_0= ruleOperation
             {
 
             					newCompositeNode(grammarAccess.getClauseAccess().getOperationOperationEnumRuleCall_8_0());
             				
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_22);
             lv_operation_11_0=ruleOperation();
 
             state._fsp--;
@@ -1324,19 +1257,19 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,28,FOLLOW_6); 
+            otherlv_12=(Token)match(input,27,FOLLOW_6); 
 
             			newLeafNode(otherlv_12, grammarAccess.getClauseAccess().getConditionKeyword_9());
             		
-            otherlv_13=(Token)match(input,13,FOLLOW_26); 
+            otherlv_13=(Token)match(input,13,FOLLOW_23); 
 
             			newLeafNode(otherlv_13, grammarAccess.getClauseAccess().getLeftCurlyBracketKeyword_10());
             		
-            // InternalSmartCE.g:590:3: ( (lv_condition_14_0= ruleCondition ) )
-            // InternalSmartCE.g:591:4: (lv_condition_14_0= ruleCondition )
+            // InternalSmartCE.g:559:3: ( (lv_condition_14_0= ruleCondition ) )
+            // InternalSmartCE.g:560:4: (lv_condition_14_0= ruleCondition )
             {
-            // InternalSmartCE.g:591:4: (lv_condition_14_0= ruleCondition )
-            // InternalSmartCE.g:592:5: lv_condition_14_0= ruleCondition
+            // InternalSmartCE.g:560:4: (lv_condition_14_0= ruleCondition )
+            // InternalSmartCE.g:561:5: lv_condition_14_0= ruleCondition
             {
 
             					newCompositeNode(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_11_0());
@@ -1363,24 +1296,24 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_15=(Token)match(input,20,FOLLOW_27); 
+            otherlv_15=(Token)match(input,20,FOLLOW_24); 
 
             			newLeafNode(otherlv_15, grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_12());
             		
-            otherlv_16=(Token)match(input,29,FOLLOW_28); 
+            otherlv_16=(Token)match(input,28,FOLLOW_25); 
 
             			newLeafNode(otherlv_16, grammarAccess.getClauseAccess().getOnBreachKeyword_13());
             		
-            // InternalSmartCE.g:617:3: ( (lv_onBreach_17_0= ruleOnBreach ) )
-            // InternalSmartCE.g:618:4: (lv_onBreach_17_0= ruleOnBreach )
+            // InternalSmartCE.g:586:3: ( (lv_onBreach_17_0= ruleOnBreach ) )
+            // InternalSmartCE.g:587:4: (lv_onBreach_17_0= ruleOnBreach )
             {
-            // InternalSmartCE.g:618:4: (lv_onBreach_17_0= ruleOnBreach )
-            // InternalSmartCE.g:619:5: lv_onBreach_17_0= ruleOnBreach
+            // InternalSmartCE.g:587:4: (lv_onBreach_17_0= ruleOnBreach )
+            // InternalSmartCE.g:588:5: lv_onBreach_17_0= ruleOnBreach
             {
 
             					newCompositeNode(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_14_0());
             				
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_26);
             lv_onBreach_17_0=ruleOnBreach();
 
             state._fsp--;
@@ -1402,26 +1335,26 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmartCE.g:636:3: (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )?
-            int alt8=2;
-            int LA8_0 = input.LA(1);
+            // InternalSmartCE.g:605:3: (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            if ( (LA8_0==30) ) {
-                alt8=1;
+            if ( (LA7_0==29) ) {
+                alt7=1;
             }
-            switch (alt8) {
+            switch (alt7) {
                 case 1 :
-                    // InternalSmartCE.g:637:4: otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) )
+                    // InternalSmartCE.g:606:4: otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) )
                     {
-                    otherlv_18=(Token)match(input,30,FOLLOW_28); 
+                    otherlv_18=(Token)match(input,29,FOLLOW_25); 
 
                     				newLeafNode(otherlv_18, grammarAccess.getClauseAccess().getOnSuccessKeyword_15_0());
                     			
-                    // InternalSmartCE.g:641:4: ( (lv_onSuccess_19_0= ruleOnSuccess ) )
-                    // InternalSmartCE.g:642:5: (lv_onSuccess_19_0= ruleOnSuccess )
+                    // InternalSmartCE.g:610:4: ( (lv_onSuccess_19_0= ruleOnSuccess ) )
+                    // InternalSmartCE.g:611:5: (lv_onSuccess_19_0= ruleOnSuccess )
                     {
-                    // InternalSmartCE.g:642:5: (lv_onSuccess_19_0= ruleOnSuccess )
-                    // InternalSmartCE.g:643:6: lv_onSuccess_19_0= ruleOnSuccess
+                    // InternalSmartCE.g:611:5: (lv_onSuccess_19_0= ruleOnSuccess )
+                    // InternalSmartCE.g:612:6: lv_onSuccess_19_0= ruleOnSuccess
                     {
 
                     						newCompositeNode(grammarAccess.getClauseAccess().getOnSuccessOnSuccessParserRuleCall_15_1_0());
@@ -1481,7 +1414,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCondition"
-    // InternalSmartCE.g:669:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
+    // InternalSmartCE.g:638:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
     public final EObject entryRuleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1489,8 +1422,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:669:50: (iv_ruleCondition= ruleCondition EOF )
-            // InternalSmartCE.g:670:2: iv_ruleCondition= ruleCondition EOF
+            // InternalSmartCE.g:638:50: (iv_ruleCondition= ruleCondition EOF )
+            // InternalSmartCE.g:639:2: iv_ruleCondition= ruleCondition EOF
             {
              newCompositeNode(grammarAccess.getConditionRule()); 
             pushFollow(FOLLOW_1);
@@ -1517,7 +1450,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // InternalSmartCE.g:676:1: ruleCondition returns [EObject current=null] : (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition ) ;
+    // InternalSmartCE.g:645:1: ruleCondition returns [EObject current=null] : (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition ) ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1530,15 +1463,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:682:2: ( (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition ) )
-            // InternalSmartCE.g:683:2: (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition )
+            // InternalSmartCE.g:651:2: ( (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition ) )
+            // InternalSmartCE.g:652:2: (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition )
             {
-            // InternalSmartCE.g:683:2: (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition )
-            int alt9=2;
-            alt9 = dfa9.predict(input);
-            switch (alt9) {
+            // InternalSmartCE.g:652:2: (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition )
+            int alt8=2;
+            alt8 = dfa8.predict(input);
+            switch (alt8) {
                 case 1 :
-                    // InternalSmartCE.g:684:3: this_BusinessRule_0= ruleBusinessRule
+                    // InternalSmartCE.g:653:3: this_BusinessRule_0= ruleBusinessRule
                     {
 
                     			newCompositeNode(grammarAccess.getConditionAccess().getBusinessRuleParserRuleCall_0());
@@ -1556,7 +1489,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:693:3: this_CompositeCondition_1= ruleCompositeCondition
+                    // InternalSmartCE.g:662:3: this_CompositeCondition_1= ruleCompositeCondition
                     {
 
                     			newCompositeNode(grammarAccess.getConditionAccess().getCompositeConditionParserRuleCall_1());
@@ -1596,7 +1529,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBusinessRule"
-    // InternalSmartCE.g:705:1: entryRuleBusinessRule returns [EObject current=null] : iv_ruleBusinessRule= ruleBusinessRule EOF ;
+    // InternalSmartCE.g:674:1: entryRuleBusinessRule returns [EObject current=null] : iv_ruleBusinessRule= ruleBusinessRule EOF ;
     public final EObject entryRuleBusinessRule() throws RecognitionException {
         EObject current = null;
 
@@ -1604,8 +1537,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:705:53: (iv_ruleBusinessRule= ruleBusinessRule EOF )
-            // InternalSmartCE.g:706:2: iv_ruleBusinessRule= ruleBusinessRule EOF
+            // InternalSmartCE.g:674:53: (iv_ruleBusinessRule= ruleBusinessRule EOF )
+            // InternalSmartCE.g:675:2: iv_ruleBusinessRule= ruleBusinessRule EOF
             {
              newCompositeNode(grammarAccess.getBusinessRuleRule()); 
             pushFollow(FOLLOW_1);
@@ -1632,7 +1565,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBusinessRule"
-    // InternalSmartCE.g:712:1: ruleBusinessRule returns [EObject current=null] : (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) ;
+    // InternalSmartCE.g:681:1: ruleBusinessRule returns [EObject current=null] : (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) ;
     public final EObject ruleBusinessRule() throws RecognitionException {
         EObject current = null;
 
@@ -1653,52 +1586,52 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:718:2: ( (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) )
-            // InternalSmartCE.g:719:2: (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
+            // InternalSmartCE.g:687:2: ( (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) )
+            // InternalSmartCE.g:688:2: (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
             {
-            // InternalSmartCE.g:719:2: (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
-            int alt10=6;
+            // InternalSmartCE.g:688:2: (this_Timeout_0= ruleTimeout | this_OperationLimit_1= ruleOperationLimit | this_BusinessDay_2= ruleBusinessDay | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
+            int alt9=6;
             switch ( input.LA(1) ) {
+            case 37:
+                {
+                alt9=1;
+                }
+                break;
             case 38:
                 {
-                alt10=1;
+                alt9=2;
                 }
                 break;
-            case 39:
+            case 40:
                 {
-                alt10=2;
+                alt9=3;
                 }
                 break;
-            case 41:
+            case 42:
                 {
-                alt10=3;
+                alt9=4;
+                }
+                break;
+            case 45:
+                {
+                alt9=5;
                 }
                 break;
             case 43:
                 {
-                alt10=4;
-                }
-                break;
-            case 46:
-                {
-                alt10=5;
-                }
-                break;
-            case 44:
-                {
-                alt10=6;
+                alt9=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt10) {
+            switch (alt9) {
                 case 1 :
-                    // InternalSmartCE.g:720:3: this_Timeout_0= ruleTimeout
+                    // InternalSmartCE.g:689:3: this_Timeout_0= ruleTimeout
                     {
 
                     			newCompositeNode(grammarAccess.getBusinessRuleAccess().getTimeoutParserRuleCall_0());
@@ -1716,7 +1649,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:729:3: this_OperationLimit_1= ruleOperationLimit
+                    // InternalSmartCE.g:698:3: this_OperationLimit_1= ruleOperationLimit
                     {
 
                     			newCompositeNode(grammarAccess.getBusinessRuleAccess().getOperationLimitParserRuleCall_1());
@@ -1734,7 +1667,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:738:3: this_BusinessDay_2= ruleBusinessDay
+                    // InternalSmartCE.g:707:3: this_BusinessDay_2= ruleBusinessDay
                     {
 
                     			newCompositeNode(grammarAccess.getBusinessRuleAccess().getBusinessDayParserRuleCall_2());
@@ -1752,7 +1685,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:747:3: this_TimeInterval_3= ruleTimeInterval
+                    // InternalSmartCE.g:716:3: this_TimeInterval_3= ruleTimeInterval
                     {
 
                     			newCompositeNode(grammarAccess.getBusinessRuleAccess().getTimeIntervalParserRuleCall_3());
@@ -1770,7 +1703,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:756:3: this_MessageContent_4= ruleMessageContent
+                    // InternalSmartCE.g:725:3: this_MessageContent_4= ruleMessageContent
                     {
 
                     			newCompositeNode(grammarAccess.getBusinessRuleAccess().getMessageContentParserRuleCall_4());
@@ -1788,7 +1721,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:765:3: this_SessionInterval_5= ruleSessionInterval
+                    // InternalSmartCE.g:734:3: this_SessionInterval_5= ruleSessionInterval
                     {
 
                     			newCompositeNode(grammarAccess.getBusinessRuleAccess().getSessionIntervalParserRuleCall_5());
@@ -1828,7 +1761,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompositeCondition"
-    // InternalSmartCE.g:777:1: entryRuleCompositeCondition returns [EObject current=null] : iv_ruleCompositeCondition= ruleCompositeCondition EOF ;
+    // InternalSmartCE.g:746:1: entryRuleCompositeCondition returns [EObject current=null] : iv_ruleCompositeCondition= ruleCompositeCondition EOF ;
     public final EObject entryRuleCompositeCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1836,8 +1769,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:777:59: (iv_ruleCompositeCondition= ruleCompositeCondition EOF )
-            // InternalSmartCE.g:778:2: iv_ruleCompositeCondition= ruleCompositeCondition EOF
+            // InternalSmartCE.g:746:59: (iv_ruleCompositeCondition= ruleCompositeCondition EOF )
+            // InternalSmartCE.g:747:2: iv_ruleCompositeCondition= ruleCompositeCondition EOF
             {
              newCompositeNode(grammarAccess.getCompositeConditionRule()); 
             pushFollow(FOLLOW_1);
@@ -1864,7 +1797,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompositeCondition"
-    // InternalSmartCE.g:784:1: ruleCompositeCondition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* ) ;
+    // InternalSmartCE.g:753:1: ruleCompositeCondition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* ) ;
     public final EObject ruleCompositeCondition() throws RecognitionException {
         EObject current = null;
 
@@ -1905,22 +1838,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:790:2: ( ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* ) )
-            // InternalSmartCE.g:791:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* )
+            // InternalSmartCE.g:759:2: ( ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* ) )
+            // InternalSmartCE.g:760:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* )
             {
-            // InternalSmartCE.g:791:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* )
-            // InternalSmartCE.g:792:3: ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )*
+            // InternalSmartCE.g:760:2: ( ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )* )
+            // InternalSmartCE.g:761:3: ( (lv_conditions_0_0= ruleBusinessRule ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( (lv_conditions_2_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )* ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )*
             {
-            // InternalSmartCE.g:792:3: ( (lv_conditions_0_0= ruleBusinessRule ) )
-            // InternalSmartCE.g:793:4: (lv_conditions_0_0= ruleBusinessRule )
+            // InternalSmartCE.g:761:3: ( (lv_conditions_0_0= ruleBusinessRule ) )
+            // InternalSmartCE.g:762:4: (lv_conditions_0_0= ruleBusinessRule )
             {
-            // InternalSmartCE.g:793:4: (lv_conditions_0_0= ruleBusinessRule )
-            // InternalSmartCE.g:794:5: lv_conditions_0_0= ruleBusinessRule
+            // InternalSmartCE.g:762:4: (lv_conditions_0_0= ruleBusinessRule )
+            // InternalSmartCE.g:763:5: lv_conditions_0_0= ruleBusinessRule
             {
 
             					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_27);
             lv_conditions_0_0=ruleBusinessRule();
 
             state._fsp--;
@@ -1942,16 +1875,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmartCE.g:811:3: ( (lv_logicalOperators_1_0= ruleLogicalOperator ) )
-            // InternalSmartCE.g:812:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
+            // InternalSmartCE.g:780:3: ( (lv_logicalOperators_1_0= ruleLogicalOperator ) )
+            // InternalSmartCE.g:781:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
             {
-            // InternalSmartCE.g:812:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
-            // InternalSmartCE.g:813:5: lv_logicalOperators_1_0= ruleLogicalOperator
+            // InternalSmartCE.g:781:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
+            // InternalSmartCE.g:782:5: lv_logicalOperators_1_0= ruleLogicalOperator
             {
 
             					newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_23);
             lv_logicalOperators_1_0=ruleLogicalOperator();
 
             state._fsp--;
@@ -1973,16 +1906,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmartCE.g:830:3: ( (lv_conditions_2_0= ruleBusinessRule ) )
-            // InternalSmartCE.g:831:4: (lv_conditions_2_0= ruleBusinessRule )
+            // InternalSmartCE.g:799:3: ( (lv_conditions_2_0= ruleBusinessRule ) )
+            // InternalSmartCE.g:800:4: (lv_conditions_2_0= ruleBusinessRule )
             {
-            // InternalSmartCE.g:831:4: (lv_conditions_2_0= ruleBusinessRule )
-            // InternalSmartCE.g:832:5: lv_conditions_2_0= ruleBusinessRule
+            // InternalSmartCE.g:800:4: (lv_conditions_2_0= ruleBusinessRule )
+            // InternalSmartCE.g:801:5: lv_conditions_2_0= ruleBusinessRule
             {
 
             					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_28);
             lv_conditions_2_0=ruleBusinessRule();
 
             state._fsp--;
@@ -2004,17 +1937,28 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmartCE.g:849:3: ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )*
-            loop11:
+            // InternalSmartCE.g:818:3: ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) ) )*
+            loop10:
             do {
-                int alt11=2;
+                int alt10=2;
                 switch ( input.LA(1) ) {
+                case 34:
+                    {
+                    int LA10_1 = input.LA(2);
+
+                    if ( ((LA10_1>=37 && LA10_1<=38)||LA10_1==40||(LA10_1>=42 && LA10_1<=43)||LA10_1==45) ) {
+                        alt10=1;
+                    }
+
+
+                    }
+                    break;
                 case 35:
                     {
-                    int LA11_1 = input.LA(2);
+                    int LA10_2 = input.LA(2);
 
-                    if ( ((LA11_1>=38 && LA11_1<=39)||LA11_1==41||(LA11_1>=43 && LA11_1<=44)||LA11_1==46) ) {
-                        alt11=1;
+                    if ( ((LA10_2>=37 && LA10_2<=38)||LA10_2==40||(LA10_2>=42 && LA10_2<=43)||LA10_2==45) ) {
+                        alt10=1;
                     }
 
 
@@ -2022,21 +1966,10 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     break;
                 case 36:
                     {
-                    int LA11_2 = input.LA(2);
+                    int LA10_3 = input.LA(2);
 
-                    if ( ((LA11_2>=38 && LA11_2<=39)||LA11_2==41||(LA11_2>=43 && LA11_2<=44)||LA11_2==46) ) {
-                        alt11=1;
-                    }
-
-
-                    }
-                    break;
-                case 37:
-                    {
-                    int LA11_3 = input.LA(2);
-
-                    if ( ((LA11_3>=38 && LA11_3<=39)||LA11_3==41||(LA11_3>=43 && LA11_3<=44)||LA11_3==46) ) {
-                        alt11=1;
+                    if ( ((LA10_3>=37 && LA10_3<=38)||LA10_3==40||(LA10_3>=42 && LA10_3<=43)||LA10_3==45) ) {
+                        alt10=1;
                     }
 
 
@@ -2045,20 +1978,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                 }
 
-                switch (alt11) {
+                switch (alt10) {
             	case 1 :
-            	    // InternalSmartCE.g:850:4: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) )
+            	    // InternalSmartCE.g:819:4: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleBusinessRule ) )
             	    {
-            	    // InternalSmartCE.g:850:4: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) )
-            	    // InternalSmartCE.g:851:5: (lv_logicalOperators_3_0= ruleLogicalOperator )
+            	    // InternalSmartCE.g:819:4: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) )
+            	    // InternalSmartCE.g:820:5: (lv_logicalOperators_3_0= ruleLogicalOperator )
             	    {
-            	    // InternalSmartCE.g:851:5: (lv_logicalOperators_3_0= ruleLogicalOperator )
-            	    // InternalSmartCE.g:852:6: lv_logicalOperators_3_0= ruleLogicalOperator
+            	    // InternalSmartCE.g:820:5: (lv_logicalOperators_3_0= ruleLogicalOperator )
+            	    // InternalSmartCE.g:821:6: lv_logicalOperators_3_0= ruleLogicalOperator
             	    {
 
             	    						newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_3_0_0());
             	    					
-            	    pushFollow(FOLLOW_26);
+            	    pushFollow(FOLLOW_23);
             	    lv_logicalOperators_3_0=ruleLogicalOperator();
 
             	    state._fsp--;
@@ -2080,16 +2013,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:869:4: ( (lv_conditions_4_0= ruleBusinessRule ) )
-            	    // InternalSmartCE.g:870:5: (lv_conditions_4_0= ruleBusinessRule )
+            	    // InternalSmartCE.g:838:4: ( (lv_conditions_4_0= ruleBusinessRule ) )
+            	    // InternalSmartCE.g:839:5: (lv_conditions_4_0= ruleBusinessRule )
             	    {
-            	    // InternalSmartCE.g:870:5: (lv_conditions_4_0= ruleBusinessRule )
-            	    // InternalSmartCE.g:871:6: lv_conditions_4_0= ruleBusinessRule
+            	    // InternalSmartCE.g:839:5: (lv_conditions_4_0= ruleBusinessRule )
+            	    // InternalSmartCE.g:840:6: lv_conditions_4_0= ruleBusinessRule
             	    {
 
             	    						newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_3_1_0());
             	    					
-            	    pushFollow(FOLLOW_31);
+            	    pushFollow(FOLLOW_28);
             	    lv_conditions_4_0=ruleBusinessRule();
 
             	    state._fsp--;
@@ -2116,35 +2049,35 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop11;
+            	    break loop10;
                 }
             } while (true);
 
-            // InternalSmartCE.g:889:3: ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )*
-            loop14:
+            // InternalSmartCE.g:858:3: ( ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}' )*
+            loop13:
             do {
-                int alt14=2;
-                int LA14_0 = input.LA(1);
+                int alt13=2;
+                int LA13_0 = input.LA(1);
 
-                if ( ((LA14_0>=35 && LA14_0<=37)) ) {
-                    alt14=1;
+                if ( ((LA13_0>=34 && LA13_0<=36)) ) {
+                    alt13=1;
                 }
 
 
-                switch (alt14) {
+                switch (alt13) {
             	case 1 :
-            	    // InternalSmartCE.g:890:4: ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}'
+            	    // InternalSmartCE.g:859:4: ( (lv_logicalOperators_5_0= ruleLogicalOperator ) ) otherlv_6= 'when' otherlv_7= '(' ( (lv_expression_8_0= ruleExpression ) ) otherlv_9= ')' otherlv_10= 'check' otherlv_11= '{' ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) ) otherlv_18= '}'
             	    {
-            	    // InternalSmartCE.g:890:4: ( (lv_logicalOperators_5_0= ruleLogicalOperator ) )
-            	    // InternalSmartCE.g:891:5: (lv_logicalOperators_5_0= ruleLogicalOperator )
+            	    // InternalSmartCE.g:859:4: ( (lv_logicalOperators_5_0= ruleLogicalOperator ) )
+            	    // InternalSmartCE.g:860:5: (lv_logicalOperators_5_0= ruleLogicalOperator )
             	    {
-            	    // InternalSmartCE.g:891:5: (lv_logicalOperators_5_0= ruleLogicalOperator )
-            	    // InternalSmartCE.g:892:6: lv_logicalOperators_5_0= ruleLogicalOperator
+            	    // InternalSmartCE.g:860:5: (lv_logicalOperators_5_0= ruleLogicalOperator )
+            	    // InternalSmartCE.g:861:6: lv_logicalOperators_5_0= ruleLogicalOperator
             	    {
 
             	    						newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_4_0_0());
             	    					
-            	    pushFollow(FOLLOW_32);
+            	    pushFollow(FOLLOW_29);
             	    lv_logicalOperators_5_0=ruleLogicalOperator();
 
             	    state._fsp--;
@@ -2166,24 +2099,24 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_6=(Token)match(input,31,FOLLOW_28); 
+            	    otherlv_6=(Token)match(input,30,FOLLOW_25); 
 
             	    				newLeafNode(otherlv_6, grammarAccess.getCompositeConditionAccess().getWhenKeyword_4_1());
             	    			
-            	    otherlv_7=(Token)match(input,32,FOLLOW_9); 
+            	    otherlv_7=(Token)match(input,31,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_7, grammarAccess.getCompositeConditionAccess().getLeftParenthesisKeyword_4_2());
             	    			
-            	    // InternalSmartCE.g:917:4: ( (lv_expression_8_0= ruleExpression ) )
-            	    // InternalSmartCE.g:918:5: (lv_expression_8_0= ruleExpression )
+            	    // InternalSmartCE.g:886:4: ( (lv_expression_8_0= ruleExpression ) )
+            	    // InternalSmartCE.g:887:5: (lv_expression_8_0= ruleExpression )
             	    {
-            	    // InternalSmartCE.g:918:5: (lv_expression_8_0= ruleExpression )
-            	    // InternalSmartCE.g:919:6: lv_expression_8_0= ruleExpression
+            	    // InternalSmartCE.g:887:5: (lv_expression_8_0= ruleExpression )
+            	    // InternalSmartCE.g:888:6: lv_expression_8_0= ruleExpression
             	    {
 
             	    						newCompositeNode(grammarAccess.getCompositeConditionAccess().getExpressionExpressionParserRuleCall_4_3_0());
             	    					
-            	    pushFollow(FOLLOW_33);
+            	    pushFollow(FOLLOW_30);
             	    lv_expression_8_0=ruleExpression();
 
             	    state._fsp--;
@@ -2205,30 +2138,30 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_9=(Token)match(input,33,FOLLOW_34); 
+            	    otherlv_9=(Token)match(input,32,FOLLOW_31); 
 
             	    				newLeafNode(otherlv_9, grammarAccess.getCompositeConditionAccess().getRightParenthesisKeyword_4_4());
             	    			
-            	    otherlv_10=(Token)match(input,34,FOLLOW_6); 
+            	    otherlv_10=(Token)match(input,33,FOLLOW_6); 
 
             	    				newLeafNode(otherlv_10, grammarAccess.getCompositeConditionAccess().getCheckKeyword_4_5());
             	    			
-            	    otherlv_11=(Token)match(input,13,FOLLOW_26); 
+            	    otherlv_11=(Token)match(input,13,FOLLOW_23); 
 
             	    				newLeafNode(otherlv_11, grammarAccess.getCompositeConditionAccess().getLeftCurlyBracketKeyword_4_6());
             	    			
-            	    // InternalSmartCE.g:948:4: ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) )
-            	    int alt13=2;
-            	    alt13 = dfa13.predict(input);
-            	    switch (alt13) {
+            	    // InternalSmartCE.g:917:4: ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) )
+            	    int alt12=2;
+            	    alt12 = dfa12.predict(input);
+            	    switch (alt12) {
             	        case 1 :
-            	            // InternalSmartCE.g:949:5: ( (lv_conditions_12_0= ruleBusinessRule ) )
+            	            // InternalSmartCE.g:918:5: ( (lv_conditions_12_0= ruleBusinessRule ) )
             	            {
-            	            // InternalSmartCE.g:949:5: ( (lv_conditions_12_0= ruleBusinessRule ) )
-            	            // InternalSmartCE.g:950:6: (lv_conditions_12_0= ruleBusinessRule )
+            	            // InternalSmartCE.g:918:5: ( (lv_conditions_12_0= ruleBusinessRule ) )
+            	            // InternalSmartCE.g:919:6: (lv_conditions_12_0= ruleBusinessRule )
             	            {
-            	            // InternalSmartCE.g:950:6: (lv_conditions_12_0= ruleBusinessRule )
-            	            // InternalSmartCE.g:951:7: lv_conditions_12_0= ruleBusinessRule
+            	            // InternalSmartCE.g:919:6: (lv_conditions_12_0= ruleBusinessRule )
+            	            // InternalSmartCE.g:920:7: lv_conditions_12_0= ruleBusinessRule
             	            {
 
             	            							newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_0_0());
@@ -2259,21 +2192,21 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalSmartCE.g:969:5: ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* )
+            	            // InternalSmartCE.g:938:5: ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* )
             	            {
-            	            // InternalSmartCE.g:969:5: ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* )
-            	            // InternalSmartCE.g:970:6: ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )*
+            	            // InternalSmartCE.g:938:5: ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* )
+            	            // InternalSmartCE.g:939:6: ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )*
             	            {
-            	            // InternalSmartCE.g:970:6: ( (lv_conditions_13_0= ruleBusinessRule ) )
-            	            // InternalSmartCE.g:971:7: (lv_conditions_13_0= ruleBusinessRule )
+            	            // InternalSmartCE.g:939:6: ( (lv_conditions_13_0= ruleBusinessRule ) )
+            	            // InternalSmartCE.g:940:7: (lv_conditions_13_0= ruleBusinessRule )
             	            {
-            	            // InternalSmartCE.g:971:7: (lv_conditions_13_0= ruleBusinessRule )
-            	            // InternalSmartCE.g:972:8: lv_conditions_13_0= ruleBusinessRule
+            	            // InternalSmartCE.g:940:7: (lv_conditions_13_0= ruleBusinessRule )
+            	            // InternalSmartCE.g:941:8: lv_conditions_13_0= ruleBusinessRule
             	            {
 
             	            								newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_1_0_0());
             	            							
-            	            pushFollow(FOLLOW_30);
+            	            pushFollow(FOLLOW_27);
             	            lv_conditions_13_0=ruleBusinessRule();
 
             	            state._fsp--;
@@ -2295,16 +2228,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalSmartCE.g:989:6: ( (lv_logicalOperators_14_0= ruleLogicalOperator ) )
-            	            // InternalSmartCE.g:990:7: (lv_logicalOperators_14_0= ruleLogicalOperator )
+            	            // InternalSmartCE.g:958:6: ( (lv_logicalOperators_14_0= ruleLogicalOperator ) )
+            	            // InternalSmartCE.g:959:7: (lv_logicalOperators_14_0= ruleLogicalOperator )
             	            {
-            	            // InternalSmartCE.g:990:7: (lv_logicalOperators_14_0= ruleLogicalOperator )
-            	            // InternalSmartCE.g:991:8: lv_logicalOperators_14_0= ruleLogicalOperator
+            	            // InternalSmartCE.g:959:7: (lv_logicalOperators_14_0= ruleLogicalOperator )
+            	            // InternalSmartCE.g:960:8: lv_logicalOperators_14_0= ruleLogicalOperator
             	            {
 
             	            								newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_1_0());
             	            							
-            	            pushFollow(FOLLOW_26);
+            	            pushFollow(FOLLOW_23);
             	            lv_logicalOperators_14_0=ruleLogicalOperator();
 
             	            state._fsp--;
@@ -2326,16 +2259,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalSmartCE.g:1008:6: ( (lv_conditions_15_0= ruleBusinessRule ) )
-            	            // InternalSmartCE.g:1009:7: (lv_conditions_15_0= ruleBusinessRule )
+            	            // InternalSmartCE.g:977:6: ( (lv_conditions_15_0= ruleBusinessRule ) )
+            	            // InternalSmartCE.g:978:7: (lv_conditions_15_0= ruleBusinessRule )
             	            {
-            	            // InternalSmartCE.g:1009:7: (lv_conditions_15_0= ruleBusinessRule )
-            	            // InternalSmartCE.g:1010:8: lv_conditions_15_0= ruleBusinessRule
+            	            // InternalSmartCE.g:978:7: (lv_conditions_15_0= ruleBusinessRule )
+            	            // InternalSmartCE.g:979:8: lv_conditions_15_0= ruleBusinessRule
             	            {
 
             	            								newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_1_2_0());
             	            							
-            	            pushFollow(FOLLOW_35);
+            	            pushFollow(FOLLOW_32);
             	            lv_conditions_15_0=ruleBusinessRule();
 
             	            state._fsp--;
@@ -2357,31 +2290,31 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	            }
 
-            	            // InternalSmartCE.g:1027:6: ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )*
-            	            loop12:
+            	            // InternalSmartCE.g:996:6: ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )*
+            	            loop11:
             	            do {
-            	                int alt12=2;
-            	                int LA12_0 = input.LA(1);
+            	                int alt11=2;
+            	                int LA11_0 = input.LA(1);
 
-            	                if ( ((LA12_0>=35 && LA12_0<=37)) ) {
-            	                    alt12=1;
+            	                if ( ((LA11_0>=34 && LA11_0<=36)) ) {
+            	                    alt11=1;
             	                }
 
 
-            	                switch (alt12) {
+            	                switch (alt11) {
             	            	case 1 :
-            	            	    // InternalSmartCE.g:1028:7: ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) )
+            	            	    // InternalSmartCE.g:997:7: ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) )
             	            	    {
-            	            	    // InternalSmartCE.g:1028:7: ( (lv_logicalOperators_16_0= ruleLogicalOperator ) )
-            	            	    // InternalSmartCE.g:1029:8: (lv_logicalOperators_16_0= ruleLogicalOperator )
+            	            	    // InternalSmartCE.g:997:7: ( (lv_logicalOperators_16_0= ruleLogicalOperator ) )
+            	            	    // InternalSmartCE.g:998:8: (lv_logicalOperators_16_0= ruleLogicalOperator )
             	            	    {
-            	            	    // InternalSmartCE.g:1029:8: (lv_logicalOperators_16_0= ruleLogicalOperator )
-            	            	    // InternalSmartCE.g:1030:9: lv_logicalOperators_16_0= ruleLogicalOperator
+            	            	    // InternalSmartCE.g:998:8: (lv_logicalOperators_16_0= ruleLogicalOperator )
+            	            	    // InternalSmartCE.g:999:9: lv_logicalOperators_16_0= ruleLogicalOperator
             	            	    {
 
             	            	    									newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_3_0_0());
             	            	    								
-            	            	    pushFollow(FOLLOW_26);
+            	            	    pushFollow(FOLLOW_23);
             	            	    lv_logicalOperators_16_0=ruleLogicalOperator();
 
             	            	    state._fsp--;
@@ -2403,16 +2336,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	            	    }
 
-            	            	    // InternalSmartCE.g:1047:7: ( (lv_conditions_17_0= ruleBusinessRule ) )
-            	            	    // InternalSmartCE.g:1048:8: (lv_conditions_17_0= ruleBusinessRule )
+            	            	    // InternalSmartCE.g:1016:7: ( (lv_conditions_17_0= ruleBusinessRule ) )
+            	            	    // InternalSmartCE.g:1017:8: (lv_conditions_17_0= ruleBusinessRule )
             	            	    {
-            	            	    // InternalSmartCE.g:1048:8: (lv_conditions_17_0= ruleBusinessRule )
-            	            	    // InternalSmartCE.g:1049:9: lv_conditions_17_0= ruleBusinessRule
+            	            	    // InternalSmartCE.g:1017:8: (lv_conditions_17_0= ruleBusinessRule )
+            	            	    // InternalSmartCE.g:1018:9: lv_conditions_17_0= ruleBusinessRule
             	            	    {
 
             	            	    									newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_1_3_1_0());
             	            	    								
-            	            	    pushFollow(FOLLOW_35);
+            	            	    pushFollow(FOLLOW_32);
             	            	    lv_conditions_17_0=ruleBusinessRule();
 
             	            	    state._fsp--;
@@ -2439,7 +2372,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            	    break;
 
             	            	default :
-            	            	    break loop12;
+            	            	    break loop11;
             	                }
             	            } while (true);
 
@@ -2452,7 +2385,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    otherlv_18=(Token)match(input,20,FOLLOW_31); 
+            	    otherlv_18=(Token)match(input,20,FOLLOW_28); 
 
             	    				newLeafNode(otherlv_18, grammarAccess.getCompositeConditionAccess().getRightCurlyBracketKeyword_4_8());
             	    			
@@ -2461,7 +2394,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop14;
+            	    break loop13;
                 }
             } while (true);
 
@@ -2488,7 +2421,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLogicalOperator"
-    // InternalSmartCE.g:1078:1: entryRuleLogicalOperator returns [EObject current=null] : iv_ruleLogicalOperator= ruleLogicalOperator EOF ;
+    // InternalSmartCE.g:1047:1: entryRuleLogicalOperator returns [EObject current=null] : iv_ruleLogicalOperator= ruleLogicalOperator EOF ;
     public final EObject entryRuleLogicalOperator() throws RecognitionException {
         EObject current = null;
 
@@ -2496,8 +2429,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1078:56: (iv_ruleLogicalOperator= ruleLogicalOperator EOF )
-            // InternalSmartCE.g:1079:2: iv_ruleLogicalOperator= ruleLogicalOperator EOF
+            // InternalSmartCE.g:1047:56: (iv_ruleLogicalOperator= ruleLogicalOperator EOF )
+            // InternalSmartCE.g:1048:2: iv_ruleLogicalOperator= ruleLogicalOperator EOF
             {
              newCompositeNode(grammarAccess.getLogicalOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -2524,7 +2457,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalOperator"
-    // InternalSmartCE.g:1085:1: ruleLogicalOperator returns [EObject current=null] : ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) ) ;
+    // InternalSmartCE.g:1054:1: ruleLogicalOperator returns [EObject current=null] : ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) ) ;
     public final EObject ruleLogicalOperator() throws RecognitionException {
         EObject current = null;
 
@@ -2536,45 +2469,45 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1091:2: ( ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) ) )
-            // InternalSmartCE.g:1092:2: ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) )
+            // InternalSmartCE.g:1060:2: ( ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) ) )
+            // InternalSmartCE.g:1061:2: ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) )
             {
-            // InternalSmartCE.g:1092:2: ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) )
-            // InternalSmartCE.g:1093:3: ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) )
+            // InternalSmartCE.g:1061:2: ( ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) ) )
+            // InternalSmartCE.g:1062:3: ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) )
             {
-            // InternalSmartCE.g:1093:3: ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) )
-            // InternalSmartCE.g:1094:4: (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' )
+            // InternalSmartCE.g:1062:3: ( (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' ) )
+            // InternalSmartCE.g:1063:4: (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' )
             {
-            // InternalSmartCE.g:1094:4: (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' )
-            int alt15=3;
+            // InternalSmartCE.g:1063:4: (lv_name_0_1= 'AND' | lv_name_0_2= 'OR' | lv_name_0_3= 'NOT' )
+            int alt14=3;
             switch ( input.LA(1) ) {
+            case 34:
+                {
+                alt14=1;
+                }
+                break;
             case 35:
                 {
-                alt15=1;
+                alt14=2;
                 }
                 break;
             case 36:
                 {
-                alt15=2;
-                }
-                break;
-            case 37:
-                {
-                alt15=3;
+                alt14=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt15) {
+            switch (alt14) {
                 case 1 :
-                    // InternalSmartCE.g:1095:5: lv_name_0_1= 'AND'
+                    // InternalSmartCE.g:1064:5: lv_name_0_1= 'AND'
                     {
-                    lv_name_0_1=(Token)match(input,35,FOLLOW_2); 
+                    lv_name_0_1=(Token)match(input,34,FOLLOW_2); 
 
                     					newLeafNode(lv_name_0_1, grammarAccess.getLogicalOperatorAccess().getNameANDKeyword_0_0());
                     				
@@ -2588,9 +2521,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1106:5: lv_name_0_2= 'OR'
+                    // InternalSmartCE.g:1075:5: lv_name_0_2= 'OR'
                     {
-                    lv_name_0_2=(Token)match(input,36,FOLLOW_2); 
+                    lv_name_0_2=(Token)match(input,35,FOLLOW_2); 
 
                     					newLeafNode(lv_name_0_2, grammarAccess.getLogicalOperatorAccess().getNameORKeyword_0_1());
                     				
@@ -2604,9 +2537,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1117:5: lv_name_0_3= 'NOT'
+                    // InternalSmartCE.g:1086:5: lv_name_0_3= 'NOT'
                     {
-                    lv_name_0_3=(Token)match(input,37,FOLLOW_2); 
+                    lv_name_0_3=(Token)match(input,36,FOLLOW_2); 
 
                     					newLeafNode(lv_name_0_3, grammarAccess.getLogicalOperatorAccess().getNameNOTKeyword_0_2());
                     				
@@ -2648,7 +2581,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTimeout"
-    // InternalSmartCE.g:1133:1: entryRuleTimeout returns [EObject current=null] : iv_ruleTimeout= ruleTimeout EOF ;
+    // InternalSmartCE.g:1102:1: entryRuleTimeout returns [EObject current=null] : iv_ruleTimeout= ruleTimeout EOF ;
     public final EObject entryRuleTimeout() throws RecognitionException {
         EObject current = null;
 
@@ -2656,8 +2589,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1133:48: (iv_ruleTimeout= ruleTimeout EOF )
-            // InternalSmartCE.g:1134:2: iv_ruleTimeout= ruleTimeout EOF
+            // InternalSmartCE.g:1102:48: (iv_ruleTimeout= ruleTimeout EOF )
+            // InternalSmartCE.g:1103:2: iv_ruleTimeout= ruleTimeout EOF
             {
              newCompositeNode(grammarAccess.getTimeoutRule()); 
             pushFollow(FOLLOW_1);
@@ -2684,7 +2617,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeout"
-    // InternalSmartCE.g:1140:1: ruleTimeout returns [EObject current=null] : (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
+    // InternalSmartCE.g:1109:1: ruleTimeout returns [EObject current=null] : (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
     public final EObject ruleTimeout() throws RecognitionException {
         EObject current = null;
 
@@ -2697,27 +2630,27 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1146:2: ( (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) )
-            // InternalSmartCE.g:1147:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // InternalSmartCE.g:1115:2: ( (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) )
+            // InternalSmartCE.g:1116:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
             {
-            // InternalSmartCE.g:1147:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
-            // InternalSmartCE.g:1148:3: otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')'
+            // InternalSmartCE.g:1116:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // InternalSmartCE.g:1117:3: otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')'
             {
-            otherlv_0=(Token)match(input,38,FOLLOW_28); 
+            otherlv_0=(Token)match(input,37,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTimeoutAccess().getTimeoutKeyword_0());
             		
-            otherlv_1=(Token)match(input,32,FOLLOW_36); 
+            otherlv_1=(Token)match(input,31,FOLLOW_33); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTimeoutAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSmartCE.g:1156:3: ( (lv_value_2_0= RULE_INT ) )
-            // InternalSmartCE.g:1157:4: (lv_value_2_0= RULE_INT )
+            // InternalSmartCE.g:1125:3: ( (lv_value_2_0= RULE_INT ) )
+            // InternalSmartCE.g:1126:4: (lv_value_2_0= RULE_INT )
             {
-            // InternalSmartCE.g:1157:4: (lv_value_2_0= RULE_INT )
-            // InternalSmartCE.g:1158:5: lv_value_2_0= RULE_INT
+            // InternalSmartCE.g:1126:4: (lv_value_2_0= RULE_INT )
+            // InternalSmartCE.g:1127:5: lv_value_2_0= RULE_INT
             {
-            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_33); 
+            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_30); 
 
             					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0());
             				
@@ -2737,7 +2670,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,33,FOLLOW_2); 
+            otherlv_3=(Token)match(input,32,FOLLOW_2); 
 
             			newLeafNode(otherlv_3, grammarAccess.getTimeoutAccess().getRightParenthesisKeyword_3());
             		
@@ -2764,7 +2697,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOperationLimit"
-    // InternalSmartCE.g:1182:1: entryRuleOperationLimit returns [EObject current=null] : iv_ruleOperationLimit= ruleOperationLimit EOF ;
+    // InternalSmartCE.g:1151:1: entryRuleOperationLimit returns [EObject current=null] : iv_ruleOperationLimit= ruleOperationLimit EOF ;
     public final EObject entryRuleOperationLimit() throws RecognitionException {
         EObject current = null;
 
@@ -2772,8 +2705,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1182:55: (iv_ruleOperationLimit= ruleOperationLimit EOF )
-            // InternalSmartCE.g:1183:2: iv_ruleOperationLimit= ruleOperationLimit EOF
+            // InternalSmartCE.g:1151:55: (iv_ruleOperationLimit= ruleOperationLimit EOF )
+            // InternalSmartCE.g:1152:2: iv_ruleOperationLimit= ruleOperationLimit EOF
             {
              newCompositeNode(grammarAccess.getOperationLimitRule()); 
             pushFollow(FOLLOW_1);
@@ -2800,7 +2733,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperationLimit"
-    // InternalSmartCE.g:1189:1: ruleOperationLimit returns [EObject current=null] : (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) ;
+    // InternalSmartCE.g:1158:1: ruleOperationLimit returns [EObject current=null] : (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) ;
     public final EObject ruleOperationLimit() throws RecognitionException {
         EObject current = null;
 
@@ -2816,27 +2749,27 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1195:2: ( (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) )
-            // InternalSmartCE.g:1196:2: (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:1164:2: ( (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) )
+            // InternalSmartCE.g:1165:2: (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
             {
-            // InternalSmartCE.g:1196:2: (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
-            // InternalSmartCE.g:1197:3: otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')'
+            // InternalSmartCE.g:1165:2: (otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:1166:3: otherlv_0= 'OperationLimit' otherlv_1= '(' ( (lv_operationsNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,39,FOLLOW_28); 
+            otherlv_0=(Token)match(input,38,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOperationLimitAccess().getOperationLimitKeyword_0());
             		
-            otherlv_1=(Token)match(input,32,FOLLOW_36); 
+            otherlv_1=(Token)match(input,31,FOLLOW_33); 
 
             			newLeafNode(otherlv_1, grammarAccess.getOperationLimitAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSmartCE.g:1205:3: ( (lv_operationsNumber_2_0= RULE_INT ) )
-            // InternalSmartCE.g:1206:4: (lv_operationsNumber_2_0= RULE_INT )
+            // InternalSmartCE.g:1174:3: ( (lv_operationsNumber_2_0= RULE_INT ) )
+            // InternalSmartCE.g:1175:4: (lv_operationsNumber_2_0= RULE_INT )
             {
-            // InternalSmartCE.g:1206:4: (lv_operationsNumber_2_0= RULE_INT )
-            // InternalSmartCE.g:1207:5: lv_operationsNumber_2_0= RULE_INT
+            // InternalSmartCE.g:1175:4: (lv_operationsNumber_2_0= RULE_INT )
+            // InternalSmartCE.g:1176:5: lv_operationsNumber_2_0= RULE_INT
             {
-            lv_operationsNumber_2_0=(Token)match(input,RULE_INT,FOLLOW_37); 
+            lv_operationsNumber_2_0=(Token)match(input,RULE_INT,FOLLOW_34); 
 
             					newLeafNode(lv_operationsNumber_2_0, grammarAccess.getOperationLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0());
             				
@@ -2856,20 +2789,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,40,FOLLOW_38); 
+            otherlv_3=(Token)match(input,39,FOLLOW_35); 
 
             			newLeafNode(otherlv_3, grammarAccess.getOperationLimitAccess().getByKeyword_3());
             		
-            // InternalSmartCE.g:1227:3: ( (lv_timeUnit_4_0= ruleTimeUnit ) )
-            // InternalSmartCE.g:1228:4: (lv_timeUnit_4_0= ruleTimeUnit )
+            // InternalSmartCE.g:1196:3: ( (lv_timeUnit_4_0= ruleTimeUnit ) )
+            // InternalSmartCE.g:1197:4: (lv_timeUnit_4_0= ruleTimeUnit )
             {
-            // InternalSmartCE.g:1228:4: (lv_timeUnit_4_0= ruleTimeUnit )
-            // InternalSmartCE.g:1229:5: lv_timeUnit_4_0= ruleTimeUnit
+            // InternalSmartCE.g:1197:4: (lv_timeUnit_4_0= ruleTimeUnit )
+            // InternalSmartCE.g:1198:5: lv_timeUnit_4_0= ruleTimeUnit
             {
 
             					newCompositeNode(grammarAccess.getOperationLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0());
             				
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_30);
             lv_timeUnit_4_0=ruleTimeUnit();
 
             state._fsp--;
@@ -2891,7 +2824,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,33,FOLLOW_2); 
+            otherlv_5=(Token)match(input,32,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getOperationLimitAccess().getRightParenthesisKeyword_5());
             		
@@ -2918,7 +2851,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBusinessDay"
-    // InternalSmartCE.g:1254:1: entryRuleBusinessDay returns [EObject current=null] : iv_ruleBusinessDay= ruleBusinessDay EOF ;
+    // InternalSmartCE.g:1223:1: entryRuleBusinessDay returns [EObject current=null] : iv_ruleBusinessDay= ruleBusinessDay EOF ;
     public final EObject entryRuleBusinessDay() throws RecognitionException {
         EObject current = null;
 
@@ -2926,8 +2859,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1254:52: (iv_ruleBusinessDay= ruleBusinessDay EOF )
-            // InternalSmartCE.g:1255:2: iv_ruleBusinessDay= ruleBusinessDay EOF
+            // InternalSmartCE.g:1223:52: (iv_ruleBusinessDay= ruleBusinessDay EOF )
+            // InternalSmartCE.g:1224:2: iv_ruleBusinessDay= ruleBusinessDay EOF
             {
              newCompositeNode(grammarAccess.getBusinessDayRule()); 
             pushFollow(FOLLOW_1);
@@ -2954,7 +2887,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBusinessDay"
-    // InternalSmartCE.g:1261:1: ruleBusinessDay returns [EObject current=null] : (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) ;
+    // InternalSmartCE.g:1230:1: ruleBusinessDay returns [EObject current=null] : (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) ;
     public final EObject ruleBusinessDay() throws RecognitionException {
         EObject current = null;
 
@@ -2971,30 +2904,30 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1267:2: ( (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) )
-            // InternalSmartCE.g:1268:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:1236:2: ( (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) )
+            // InternalSmartCE.g:1237:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
             {
-            // InternalSmartCE.g:1268:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
-            // InternalSmartCE.g:1269:3: otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')'
+            // InternalSmartCE.g:1237:2: (otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:1238:3: otherlv_0= 'BusinessDay' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,41,FOLLOW_28); 
+            otherlv_0=(Token)match(input,40,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBusinessDayAccess().getBusinessDayKeyword_0());
             		
-            otherlv_1=(Token)match(input,32,FOLLOW_39); 
+            otherlv_1=(Token)match(input,31,FOLLOW_36); 
 
             			newLeafNode(otherlv_1, grammarAccess.getBusinessDayAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSmartCE.g:1277:3: ( (lv_start_2_0= ruleWeekDay ) )
-            // InternalSmartCE.g:1278:4: (lv_start_2_0= ruleWeekDay )
+            // InternalSmartCE.g:1246:3: ( (lv_start_2_0= ruleWeekDay ) )
+            // InternalSmartCE.g:1247:4: (lv_start_2_0= ruleWeekDay )
             {
-            // InternalSmartCE.g:1278:4: (lv_start_2_0= ruleWeekDay )
-            // InternalSmartCE.g:1279:5: lv_start_2_0= ruleWeekDay
+            // InternalSmartCE.g:1247:4: (lv_start_2_0= ruleWeekDay )
+            // InternalSmartCE.g:1248:5: lv_start_2_0= ruleWeekDay
             {
 
             					newCompositeNode(grammarAccess.getBusinessDayAccess().getStartWeekDayEnumRuleCall_2_0());
             				
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_37);
             lv_start_2_0=ruleWeekDay();
 
             state._fsp--;
@@ -3016,20 +2949,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,42,FOLLOW_39); 
+            otherlv_3=(Token)match(input,41,FOLLOW_36); 
 
             			newLeafNode(otherlv_3, grammarAccess.getBusinessDayAccess().getToKeyword_3());
             		
-            // InternalSmartCE.g:1300:3: ( (lv_end_4_0= ruleWeekDay ) )
-            // InternalSmartCE.g:1301:4: (lv_end_4_0= ruleWeekDay )
+            // InternalSmartCE.g:1269:3: ( (lv_end_4_0= ruleWeekDay ) )
+            // InternalSmartCE.g:1270:4: (lv_end_4_0= ruleWeekDay )
             {
-            // InternalSmartCE.g:1301:4: (lv_end_4_0= ruleWeekDay )
-            // InternalSmartCE.g:1302:5: lv_end_4_0= ruleWeekDay
+            // InternalSmartCE.g:1270:4: (lv_end_4_0= ruleWeekDay )
+            // InternalSmartCE.g:1271:5: lv_end_4_0= ruleWeekDay
             {
 
             					newCompositeNode(grammarAccess.getBusinessDayAccess().getEndWeekDayEnumRuleCall_4_0());
             				
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_30);
             lv_end_4_0=ruleWeekDay();
 
             state._fsp--;
@@ -3051,7 +2984,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,33,FOLLOW_2); 
+            otherlv_5=(Token)match(input,32,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getBusinessDayAccess().getRightParenthesisKeyword_5());
             		
@@ -3078,7 +3011,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTimeInterval"
-    // InternalSmartCE.g:1327:1: entryRuleTimeInterval returns [EObject current=null] : iv_ruleTimeInterval= ruleTimeInterval EOF ;
+    // InternalSmartCE.g:1296:1: entryRuleTimeInterval returns [EObject current=null] : iv_ruleTimeInterval= ruleTimeInterval EOF ;
     public final EObject entryRuleTimeInterval() throws RecognitionException {
         EObject current = null;
 
@@ -3086,8 +3019,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1327:53: (iv_ruleTimeInterval= ruleTimeInterval EOF )
-            // InternalSmartCE.g:1328:2: iv_ruleTimeInterval= ruleTimeInterval EOF
+            // InternalSmartCE.g:1296:53: (iv_ruleTimeInterval= ruleTimeInterval EOF )
+            // InternalSmartCE.g:1297:2: iv_ruleTimeInterval= ruleTimeInterval EOF
             {
              newCompositeNode(grammarAccess.getTimeIntervalRule()); 
             pushFollow(FOLLOW_1);
@@ -3114,7 +3047,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeInterval"
-    // InternalSmartCE.g:1334:1: ruleTimeInterval returns [EObject current=null] : (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) ;
+    // InternalSmartCE.g:1303:1: ruleTimeInterval returns [EObject current=null] : (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) ;
     public final EObject ruleTimeInterval() throws RecognitionException {
         EObject current = null;
 
@@ -3129,27 +3062,27 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1340:2: ( (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) )
-            // InternalSmartCE.g:1341:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:1309:2: ( (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) )
+            // InternalSmartCE.g:1310:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
             {
-            // InternalSmartCE.g:1341:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
-            // InternalSmartCE.g:1342:3: otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')'
+            // InternalSmartCE.g:1310:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
+            // InternalSmartCE.g:1311:3: otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,43,FOLLOW_28); 
+            otherlv_0=(Token)match(input,42,FOLLOW_25); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTimeIntervalAccess().getTimeIntervalKeyword_0());
             		
-            otherlv_1=(Token)match(input,32,FOLLOW_13); 
+            otherlv_1=(Token)match(input,31,FOLLOW_13); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTimeIntervalAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSmartCE.g:1350:3: ( (lv_start_2_0= RULE_STRING ) )
-            // InternalSmartCE.g:1351:4: (lv_start_2_0= RULE_STRING )
+            // InternalSmartCE.g:1319:3: ( (lv_start_2_0= RULE_STRING ) )
+            // InternalSmartCE.g:1320:4: (lv_start_2_0= RULE_STRING )
             {
-            // InternalSmartCE.g:1351:4: (lv_start_2_0= RULE_STRING )
-            // InternalSmartCE.g:1352:5: lv_start_2_0= RULE_STRING
+            // InternalSmartCE.g:1320:4: (lv_start_2_0= RULE_STRING )
+            // InternalSmartCE.g:1321:5: lv_start_2_0= RULE_STRING
             {
-            lv_start_2_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
+            lv_start_2_0=(Token)match(input,RULE_STRING,FOLLOW_37); 
 
             					newLeafNode(lv_start_2_0, grammarAccess.getTimeIntervalAccess().getStartSTRINGTerminalRuleCall_2_0());
             				
@@ -3169,17 +3102,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,42,FOLLOW_13); 
+            otherlv_3=(Token)match(input,41,FOLLOW_13); 
 
             			newLeafNode(otherlv_3, grammarAccess.getTimeIntervalAccess().getToKeyword_3());
             		
-            // InternalSmartCE.g:1372:3: ( (lv_end_4_0= RULE_STRING ) )
-            // InternalSmartCE.g:1373:4: (lv_end_4_0= RULE_STRING )
+            // InternalSmartCE.g:1341:3: ( (lv_end_4_0= RULE_STRING ) )
+            // InternalSmartCE.g:1342:4: (lv_end_4_0= RULE_STRING )
             {
-            // InternalSmartCE.g:1373:4: (lv_end_4_0= RULE_STRING )
-            // InternalSmartCE.g:1374:5: lv_end_4_0= RULE_STRING
+            // InternalSmartCE.g:1342:4: (lv_end_4_0= RULE_STRING )
+            // InternalSmartCE.g:1343:5: lv_end_4_0= RULE_STRING
             {
-            lv_end_4_0=(Token)match(input,RULE_STRING,FOLLOW_33); 
+            lv_end_4_0=(Token)match(input,RULE_STRING,FOLLOW_30); 
 
             					newLeafNode(lv_end_4_0, grammarAccess.getTimeIntervalAccess().getEndSTRINGTerminalRuleCall_4_0());
             				
@@ -3199,7 +3132,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,33,FOLLOW_2); 
+            otherlv_5=(Token)match(input,32,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getTimeIntervalAccess().getRightParenthesisKeyword_5());
             		
@@ -3226,7 +3159,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSessionInterval"
-    // InternalSmartCE.g:1398:1: entryRuleSessionInterval returns [EObject current=null] : iv_ruleSessionInterval= ruleSessionInterval EOF ;
+    // InternalSmartCE.g:1367:1: entryRuleSessionInterval returns [EObject current=null] : iv_ruleSessionInterval= ruleSessionInterval EOF ;
     public final EObject entryRuleSessionInterval() throws RecognitionException {
         EObject current = null;
 
@@ -3234,8 +3167,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1398:56: (iv_ruleSessionInterval= ruleSessionInterval EOF )
-            // InternalSmartCE.g:1399:2: iv_ruleSessionInterval= ruleSessionInterval EOF
+            // InternalSmartCE.g:1367:56: (iv_ruleSessionInterval= ruleSessionInterval EOF )
+            // InternalSmartCE.g:1368:2: iv_ruleSessionInterval= ruleSessionInterval EOF
             {
              newCompositeNode(grammarAccess.getSessionIntervalRule()); 
             pushFollow(FOLLOW_1);
@@ -3262,7 +3195,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSessionInterval"
-    // InternalSmartCE.g:1405:1: ruleSessionInterval returns [EObject current=null] : ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) ) ;
+    // InternalSmartCE.g:1374:1: ruleSessionInterval returns [EObject current=null] : ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) ) ;
     public final EObject ruleSessionInterval() throws RecognitionException {
         EObject current = null;
 
@@ -3287,34 +3220,34 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1411:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) ) )
-            // InternalSmartCE.g:1412:2: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) )
+            // InternalSmartCE.g:1380:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) ) )
+            // InternalSmartCE.g:1381:2: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) )
             {
-            // InternalSmartCE.g:1412:2: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) )
-            int alt16=2;
-            alt16 = dfa16.predict(input);
-            switch (alt16) {
+            // InternalSmartCE.g:1381:2: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) )
+            int alt15=2;
+            alt15 = dfa15.predict(input);
+            switch (alt15) {
                 case 1 :
-                    // InternalSmartCE.g:1413:3: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' )
+                    // InternalSmartCE.g:1382:3: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' )
                     {
-                    // InternalSmartCE.g:1413:3: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' )
-                    // InternalSmartCE.g:1414:4: otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')'
+                    // InternalSmartCE.g:1382:3: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' )
+                    // InternalSmartCE.g:1383:4: otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')'
                     {
-                    otherlv_0=(Token)match(input,44,FOLLOW_28); 
+                    otherlv_0=(Token)match(input,43,FOLLOW_25); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_0_0());
                     			
-                    otherlv_1=(Token)match(input,32,FOLLOW_36); 
+                    otherlv_1=(Token)match(input,31,FOLLOW_33); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_0_1());
                     			
-                    // InternalSmartCE.g:1422:4: ( (lv_frequency_2_0= RULE_INT ) )
-                    // InternalSmartCE.g:1423:5: (lv_frequency_2_0= RULE_INT )
+                    // InternalSmartCE.g:1391:4: ( (lv_frequency_2_0= RULE_INT ) )
+                    // InternalSmartCE.g:1392:5: (lv_frequency_2_0= RULE_INT )
                     {
-                    // InternalSmartCE.g:1423:5: (lv_frequency_2_0= RULE_INT )
-                    // InternalSmartCE.g:1424:6: lv_frequency_2_0= RULE_INT
+                    // InternalSmartCE.g:1392:5: (lv_frequency_2_0= RULE_INT )
+                    // InternalSmartCE.g:1393:6: lv_frequency_2_0= RULE_INT
                     {
-                    lv_frequency_2_0=(Token)match(input,RULE_INT,FOLLOW_38); 
+                    lv_frequency_2_0=(Token)match(input,RULE_INT,FOLLOW_35); 
 
                     						newLeafNode(lv_frequency_2_0, grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_0_2_0());
                     					
@@ -3334,16 +3267,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:1440:4: ( (lv_timeUnit_3_0= ruleTimeUnit ) )
-                    // InternalSmartCE.g:1441:5: (lv_timeUnit_3_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1409:4: ( (lv_timeUnit_3_0= ruleTimeUnit ) )
+                    // InternalSmartCE.g:1410:5: (lv_timeUnit_3_0= ruleTimeUnit )
                     {
-                    // InternalSmartCE.g:1441:5: (lv_timeUnit_3_0= ruleTimeUnit )
-                    // InternalSmartCE.g:1442:6: lv_timeUnit_3_0= ruleTimeUnit
+                    // InternalSmartCE.g:1410:5: (lv_timeUnit_3_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1411:6: lv_timeUnit_3_0= ruleTimeUnit
                     {
 
                     						newCompositeNode(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_0_3_0());
                     					
-                    pushFollow(FOLLOW_41);
+                    pushFollow(FOLLOW_38);
                     lv_timeUnit_3_0=ruleTimeUnit();
 
                     state._fsp--;
@@ -3365,17 +3298,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_4=(Token)match(input,45,FOLLOW_13); 
+                    otherlv_4=(Token)match(input,44,FOLLOW_13); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getSessionIntervalAccess().getFromKeyword_0_4());
                     			
-                    // InternalSmartCE.g:1463:4: ( (lv_start_5_0= RULE_STRING ) )
-                    // InternalSmartCE.g:1464:5: (lv_start_5_0= RULE_STRING )
+                    // InternalSmartCE.g:1432:4: ( (lv_start_5_0= RULE_STRING ) )
+                    // InternalSmartCE.g:1433:5: (lv_start_5_0= RULE_STRING )
                     {
-                    // InternalSmartCE.g:1464:5: (lv_start_5_0= RULE_STRING )
-                    // InternalSmartCE.g:1465:6: lv_start_5_0= RULE_STRING
+                    // InternalSmartCE.g:1433:5: (lv_start_5_0= RULE_STRING )
+                    // InternalSmartCE.g:1434:6: lv_start_5_0= RULE_STRING
                     {
-                    lv_start_5_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
+                    lv_start_5_0=(Token)match(input,RULE_STRING,FOLLOW_37); 
 
                     						newLeafNode(lv_start_5_0, grammarAccess.getSessionIntervalAccess().getStartSTRINGTerminalRuleCall_0_5_0());
                     					
@@ -3395,17 +3328,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_6=(Token)match(input,42,FOLLOW_13); 
+                    otherlv_6=(Token)match(input,41,FOLLOW_13); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getSessionIntervalAccess().getToKeyword_0_6());
                     			
-                    // InternalSmartCE.g:1485:4: ( (lv_end_7_0= RULE_STRING ) )
-                    // InternalSmartCE.g:1486:5: (lv_end_7_0= RULE_STRING )
+                    // InternalSmartCE.g:1454:4: ( (lv_end_7_0= RULE_STRING ) )
+                    // InternalSmartCE.g:1455:5: (lv_end_7_0= RULE_STRING )
                     {
-                    // InternalSmartCE.g:1486:5: (lv_end_7_0= RULE_STRING )
-                    // InternalSmartCE.g:1487:6: lv_end_7_0= RULE_STRING
+                    // InternalSmartCE.g:1455:5: (lv_end_7_0= RULE_STRING )
+                    // InternalSmartCE.g:1456:6: lv_end_7_0= RULE_STRING
                     {
-                    lv_end_7_0=(Token)match(input,RULE_STRING,FOLLOW_33); 
+                    lv_end_7_0=(Token)match(input,RULE_STRING,FOLLOW_30); 
 
                     						newLeafNode(lv_end_7_0, grammarAccess.getSessionIntervalAccess().getEndSTRINGTerminalRuleCall_0_7_0());
                     					
@@ -3425,7 +3358,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_8=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_8=(Token)match(input,32,FOLLOW_2); 
 
                     				newLeafNode(otherlv_8, grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_0_8());
                     			
@@ -3436,26 +3369,26 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1509:3: (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' )
+                    // InternalSmartCE.g:1478:3: (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' )
                     {
-                    // InternalSmartCE.g:1509:3: (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' )
-                    // InternalSmartCE.g:1510:4: otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')'
+                    // InternalSmartCE.g:1478:3: (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' )
+                    // InternalSmartCE.g:1479:4: otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')'
                     {
-                    otherlv_9=(Token)match(input,44,FOLLOW_28); 
+                    otherlv_9=(Token)match(input,43,FOLLOW_25); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_1_0());
                     			
-                    otherlv_10=(Token)match(input,32,FOLLOW_36); 
+                    otherlv_10=(Token)match(input,31,FOLLOW_33); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_1_1());
                     			
-                    // InternalSmartCE.g:1518:4: ( (lv_frequency_11_0= RULE_INT ) )
-                    // InternalSmartCE.g:1519:5: (lv_frequency_11_0= RULE_INT )
+                    // InternalSmartCE.g:1487:4: ( (lv_frequency_11_0= RULE_INT ) )
+                    // InternalSmartCE.g:1488:5: (lv_frequency_11_0= RULE_INT )
                     {
-                    // InternalSmartCE.g:1519:5: (lv_frequency_11_0= RULE_INT )
-                    // InternalSmartCE.g:1520:6: lv_frequency_11_0= RULE_INT
+                    // InternalSmartCE.g:1488:5: (lv_frequency_11_0= RULE_INT )
+                    // InternalSmartCE.g:1489:6: lv_frequency_11_0= RULE_INT
                     {
-                    lv_frequency_11_0=(Token)match(input,RULE_INT,FOLLOW_38); 
+                    lv_frequency_11_0=(Token)match(input,RULE_INT,FOLLOW_35); 
 
                     						newLeafNode(lv_frequency_11_0, grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_1_2_0());
                     					
@@ -3475,16 +3408,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:1536:4: ( (lv_timeUnit_12_0= ruleTimeUnit ) )
-                    // InternalSmartCE.g:1537:5: (lv_timeUnit_12_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1505:4: ( (lv_timeUnit_12_0= ruleTimeUnit ) )
+                    // InternalSmartCE.g:1506:5: (lv_timeUnit_12_0= ruleTimeUnit )
                     {
-                    // InternalSmartCE.g:1537:5: (lv_timeUnit_12_0= ruleTimeUnit )
-                    // InternalSmartCE.g:1538:6: lv_timeUnit_12_0= ruleTimeUnit
+                    // InternalSmartCE.g:1506:5: (lv_timeUnit_12_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1507:6: lv_timeUnit_12_0= ruleTimeUnit
                     {
 
                     						newCompositeNode(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_1_3_0());
                     					
-                    pushFollow(FOLLOW_33);
+                    pushFollow(FOLLOW_30);
                     lv_timeUnit_12_0=ruleTimeUnit();
 
                     state._fsp--;
@@ -3506,7 +3439,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_13=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_13=(Token)match(input,32,FOLLOW_2); 
 
                     				newLeafNode(otherlv_13, grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_1_4());
                     			
@@ -3539,7 +3472,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMessageContent"
-    // InternalSmartCE.g:1564:1: entryRuleMessageContent returns [EObject current=null] : iv_ruleMessageContent= ruleMessageContent EOF ;
+    // InternalSmartCE.g:1533:1: entryRuleMessageContent returns [EObject current=null] : iv_ruleMessageContent= ruleMessageContent EOF ;
     public final EObject entryRuleMessageContent() throws RecognitionException {
         EObject current = null;
 
@@ -3547,8 +3480,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1564:55: (iv_ruleMessageContent= ruleMessageContent EOF )
-            // InternalSmartCE.g:1565:2: iv_ruleMessageContent= ruleMessageContent EOF
+            // InternalSmartCE.g:1533:55: (iv_ruleMessageContent= ruleMessageContent EOF )
+            // InternalSmartCE.g:1534:2: iv_ruleMessageContent= ruleMessageContent EOF
             {
              newCompositeNode(grammarAccess.getMessageContentRule()); 
             pushFollow(FOLLOW_1);
@@ -3575,7 +3508,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMessageContent"
-    // InternalSmartCE.g:1571:1: ruleMessageContent returns [EObject current=null] : ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) ) ;
+    // InternalSmartCE.g:1540:1: ruleMessageContent returns [EObject current=null] : ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) ) ;
     public final EObject ruleMessageContent() throws RecognitionException {
         EObject current = null;
 
@@ -3622,34 +3555,34 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1577:2: ( ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) ) )
-            // InternalSmartCE.g:1578:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) )
+            // InternalSmartCE.g:1546:2: ( ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) ) )
+            // InternalSmartCE.g:1547:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) )
             {
-            // InternalSmartCE.g:1578:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) )
-            int alt19=4;
-            alt19 = dfa19.predict(input);
-            switch (alt19) {
+            // InternalSmartCE.g:1547:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) )
+            int alt18=4;
+            alt18 = dfa18.predict(input);
+            switch (alt18) {
                 case 1 :
-                    // InternalSmartCE.g:1579:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
+                    // InternalSmartCE.g:1548:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
                     {
-                    // InternalSmartCE.g:1579:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
-                    // InternalSmartCE.g:1580:4: otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')'
+                    // InternalSmartCE.g:1548:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
+                    // InternalSmartCE.g:1549:4: otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')'
                     {
-                    otherlv_0=(Token)match(input,46,FOLLOW_28); 
+                    otherlv_0=(Token)match(input,45,FOLLOW_25); 
 
                     				newLeafNode(otherlv_0, grammarAccess.getMessageContentAccess().getMessageContentKeyword_0_0());
                     			
-                    otherlv_1=(Token)match(input,32,FOLLOW_13); 
+                    otherlv_1=(Token)match(input,31,FOLLOW_13); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_0_1());
                     			
-                    // InternalSmartCE.g:1588:4: ( (lv_content_2_0= RULE_STRING ) )
-                    // InternalSmartCE.g:1589:5: (lv_content_2_0= RULE_STRING )
+                    // InternalSmartCE.g:1557:4: ( (lv_content_2_0= RULE_STRING ) )
+                    // InternalSmartCE.g:1558:5: (lv_content_2_0= RULE_STRING )
                     {
-                    // InternalSmartCE.g:1589:5: (lv_content_2_0= RULE_STRING )
-                    // InternalSmartCE.g:1590:6: lv_content_2_0= RULE_STRING
+                    // InternalSmartCE.g:1558:5: (lv_content_2_0= RULE_STRING )
+                    // InternalSmartCE.g:1559:6: lv_content_2_0= RULE_STRING
                     {
-                    lv_content_2_0=(Token)match(input,RULE_STRING,FOLLOW_33); 
+                    lv_content_2_0=(Token)match(input,RULE_STRING,FOLLOW_30); 
 
                     						newLeafNode(lv_content_2_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_0_2_0());
                     					
@@ -3669,7 +3602,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_3=(Token)match(input,32,FOLLOW_2); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_0_3());
                     			
@@ -3680,26 +3613,26 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1612:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
+                    // InternalSmartCE.g:1581:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
                     {
-                    // InternalSmartCE.g:1612:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
-                    // InternalSmartCE.g:1613:4: otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')'
+                    // InternalSmartCE.g:1581:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
+                    // InternalSmartCE.g:1582:4: otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')'
                     {
-                    otherlv_4=(Token)match(input,46,FOLLOW_28); 
+                    otherlv_4=(Token)match(input,45,FOLLOW_25); 
 
                     				newLeafNode(otherlv_4, grammarAccess.getMessageContentAccess().getMessageContentKeyword_1_0());
                     			
-                    otherlv_5=(Token)match(input,32,FOLLOW_13); 
+                    otherlv_5=(Token)match(input,31,FOLLOW_13); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1_1());
                     			
-                    // InternalSmartCE.g:1621:4: ( (lv_content_6_0= RULE_STRING ) )
-                    // InternalSmartCE.g:1622:5: (lv_content_6_0= RULE_STRING )
+                    // InternalSmartCE.g:1590:4: ( (lv_content_6_0= RULE_STRING ) )
+                    // InternalSmartCE.g:1591:5: (lv_content_6_0= RULE_STRING )
                     {
-                    // InternalSmartCE.g:1622:5: (lv_content_6_0= RULE_STRING )
-                    // InternalSmartCE.g:1623:6: lv_content_6_0= RULE_STRING
+                    // InternalSmartCE.g:1591:5: (lv_content_6_0= RULE_STRING )
+                    // InternalSmartCE.g:1592:6: lv_content_6_0= RULE_STRING
                     {
-                    lv_content_6_0=(Token)match(input,RULE_STRING,FOLLOW_37); 
+                    lv_content_6_0=(Token)match(input,RULE_STRING,FOLLOW_34); 
 
                     						newLeafNode(lv_content_6_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_1_2_0());
                     					
@@ -3719,20 +3652,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_7=(Token)match(input,40,FOLLOW_38); 
+                    otherlv_7=(Token)match(input,39,FOLLOW_35); 
 
                     				newLeafNode(otherlv_7, grammarAccess.getMessageContentAccess().getByKeyword_1_3());
                     			
-                    // InternalSmartCE.g:1643:4: ( (lv_timeUnit_8_0= ruleTimeUnit ) )
-                    // InternalSmartCE.g:1644:5: (lv_timeUnit_8_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1612:4: ( (lv_timeUnit_8_0= ruleTimeUnit ) )
+                    // InternalSmartCE.g:1613:5: (lv_timeUnit_8_0= ruleTimeUnit )
                     {
-                    // InternalSmartCE.g:1644:5: (lv_timeUnit_8_0= ruleTimeUnit )
-                    // InternalSmartCE.g:1645:6: lv_timeUnit_8_0= ruleTimeUnit
+                    // InternalSmartCE.g:1613:5: (lv_timeUnit_8_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1614:6: lv_timeUnit_8_0= ruleTimeUnit
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_1_4_0());
                     					
-                    pushFollow(FOLLOW_33);
+                    pushFollow(FOLLOW_30);
                     lv_timeUnit_8_0=ruleTimeUnit();
 
                     state._fsp--;
@@ -3754,7 +3687,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_9=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_9=(Token)match(input,32,FOLLOW_2); 
 
                     				newLeafNode(otherlv_9, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_1_5());
                     			
@@ -3765,26 +3698,26 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1668:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' )
+                    // InternalSmartCE.g:1637:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' )
                     {
-                    // InternalSmartCE.g:1668:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' )
-                    // InternalSmartCE.g:1669:4: otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')'
+                    // InternalSmartCE.g:1637:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' )
+                    // InternalSmartCE.g:1638:4: otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')'
                     {
-                    otherlv_10=(Token)match(input,46,FOLLOW_28); 
+                    otherlv_10=(Token)match(input,45,FOLLOW_25); 
 
                     				newLeafNode(otherlv_10, grammarAccess.getMessageContentAccess().getMessageContentKeyword_2_0());
                     			
-                    otherlv_11=(Token)match(input,32,FOLLOW_13); 
+                    otherlv_11=(Token)match(input,31,FOLLOW_13); 
 
                     				newLeafNode(otherlv_11, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_2_1());
                     			
-                    // InternalSmartCE.g:1677:4: ( (lv_content_12_0= RULE_STRING ) )
-                    // InternalSmartCE.g:1678:5: (lv_content_12_0= RULE_STRING )
+                    // InternalSmartCE.g:1646:4: ( (lv_content_12_0= RULE_STRING ) )
+                    // InternalSmartCE.g:1647:5: (lv_content_12_0= RULE_STRING )
                     {
-                    // InternalSmartCE.g:1678:5: (lv_content_12_0= RULE_STRING )
-                    // InternalSmartCE.g:1679:6: lv_content_12_0= RULE_STRING
+                    // InternalSmartCE.g:1647:5: (lv_content_12_0= RULE_STRING )
+                    // InternalSmartCE.g:1648:6: lv_content_12_0= RULE_STRING
                     {
-                    lv_content_12_0=(Token)match(input,RULE_STRING,FOLLOW_42); 
+                    lv_content_12_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
 
                     						newLeafNode(lv_content_12_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_2_2_0());
                     					
@@ -3804,16 +3737,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:1695:4: ( (lv_binaryOperator_13_0= ruleBinaryOperator ) )
-                    // InternalSmartCE.g:1696:5: (lv_binaryOperator_13_0= ruleBinaryOperator )
+                    // InternalSmartCE.g:1664:4: ( (lv_binaryOperator_13_0= ruleBinaryOperator ) )
+                    // InternalSmartCE.g:1665:5: (lv_binaryOperator_13_0= ruleBinaryOperator )
                     {
-                    // InternalSmartCE.g:1696:5: (lv_binaryOperator_13_0= ruleBinaryOperator )
-                    // InternalSmartCE.g:1697:6: lv_binaryOperator_13_0= ruleBinaryOperator
+                    // InternalSmartCE.g:1665:5: (lv_binaryOperator_13_0= ruleBinaryOperator )
+                    // InternalSmartCE.g:1666:6: lv_binaryOperator_13_0= ruleBinaryOperator
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getBinaryOperatorBinaryOperatorParserRuleCall_2_3_0());
                     					
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_40);
                     lv_binaryOperator_13_0=ruleBinaryOperator();
 
                     state._fsp--;
@@ -3835,45 +3768,45 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:1714:4: ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) )
-                    int alt17=3;
+                    // InternalSmartCE.g:1683:4: ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) )
+                    int alt16=3;
                     switch ( input.LA(1) ) {
                     case RULE_STRING:
                         {
-                        alt17=1;
+                        alt16=1;
                         }
                         break;
                     case RULE_ID:
                         {
-                        alt17=2;
+                        alt16=2;
                         }
                         break;
                     case RULE_INT:
                         {
-                        alt17=3;
+                        alt16=3;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 17, 0, input);
+                            new NoViableAltException("", 16, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt17) {
+                    switch (alt16) {
                         case 1 :
-                            // InternalSmartCE.g:1715:5: ( (lv_stringValue_14_0= ruleStringValue ) )
+                            // InternalSmartCE.g:1684:5: ( (lv_stringValue_14_0= ruleStringValue ) )
                             {
-                            // InternalSmartCE.g:1715:5: ( (lv_stringValue_14_0= ruleStringValue ) )
-                            // InternalSmartCE.g:1716:6: (lv_stringValue_14_0= ruleStringValue )
+                            // InternalSmartCE.g:1684:5: ( (lv_stringValue_14_0= ruleStringValue ) )
+                            // InternalSmartCE.g:1685:6: (lv_stringValue_14_0= ruleStringValue )
                             {
-                            // InternalSmartCE.g:1716:6: (lv_stringValue_14_0= ruleStringValue )
-                            // InternalSmartCE.g:1717:7: lv_stringValue_14_0= ruleStringValue
+                            // InternalSmartCE.g:1685:6: (lv_stringValue_14_0= ruleStringValue )
+                            // InternalSmartCE.g:1686:7: lv_stringValue_14_0= ruleStringValue
                             {
 
                             							newCompositeNode(grammarAccess.getMessageContentAccess().getStringValueStringValueParserRuleCall_2_4_0_0());
                             						
-                            pushFollow(FOLLOW_33);
+                            pushFollow(FOLLOW_30);
                             lv_stringValue_14_0=ruleStringValue();
 
                             state._fsp--;
@@ -3899,18 +3832,18 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalSmartCE.g:1735:5: ( (lv_variableValue_15_0= ruleVariableValue ) )
+                            // InternalSmartCE.g:1704:5: ( (lv_variableValue_15_0= ruleVariableValue ) )
                             {
-                            // InternalSmartCE.g:1735:5: ( (lv_variableValue_15_0= ruleVariableValue ) )
-                            // InternalSmartCE.g:1736:6: (lv_variableValue_15_0= ruleVariableValue )
+                            // InternalSmartCE.g:1704:5: ( (lv_variableValue_15_0= ruleVariableValue ) )
+                            // InternalSmartCE.g:1705:6: (lv_variableValue_15_0= ruleVariableValue )
                             {
-                            // InternalSmartCE.g:1736:6: (lv_variableValue_15_0= ruleVariableValue )
-                            // InternalSmartCE.g:1737:7: lv_variableValue_15_0= ruleVariableValue
+                            // InternalSmartCE.g:1705:6: (lv_variableValue_15_0= ruleVariableValue )
+                            // InternalSmartCE.g:1706:7: lv_variableValue_15_0= ruleVariableValue
                             {
 
                             							newCompositeNode(grammarAccess.getMessageContentAccess().getVariableValueVariableValueParserRuleCall_2_4_1_0());
                             						
-                            pushFollow(FOLLOW_33);
+                            pushFollow(FOLLOW_30);
                             lv_variableValue_15_0=ruleVariableValue();
 
                             state._fsp--;
@@ -3936,18 +3869,18 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 3 :
-                            // InternalSmartCE.g:1755:5: ( (lv_numericValue_16_0= ruleNumericValue ) )
+                            // InternalSmartCE.g:1724:5: ( (lv_numericValue_16_0= ruleNumericValue ) )
                             {
-                            // InternalSmartCE.g:1755:5: ( (lv_numericValue_16_0= ruleNumericValue ) )
-                            // InternalSmartCE.g:1756:6: (lv_numericValue_16_0= ruleNumericValue )
+                            // InternalSmartCE.g:1724:5: ( (lv_numericValue_16_0= ruleNumericValue ) )
+                            // InternalSmartCE.g:1725:6: (lv_numericValue_16_0= ruleNumericValue )
                             {
-                            // InternalSmartCE.g:1756:6: (lv_numericValue_16_0= ruleNumericValue )
-                            // InternalSmartCE.g:1757:7: lv_numericValue_16_0= ruleNumericValue
+                            // InternalSmartCE.g:1725:6: (lv_numericValue_16_0= ruleNumericValue )
+                            // InternalSmartCE.g:1726:7: lv_numericValue_16_0= ruleNumericValue
                             {
 
                             							newCompositeNode(grammarAccess.getMessageContentAccess().getNumericValueNumericValueParserRuleCall_2_4_2_0());
                             						
-                            pushFollow(FOLLOW_33);
+                            pushFollow(FOLLOW_30);
                             lv_numericValue_16_0=ruleNumericValue();
 
                             state._fsp--;
@@ -3975,7 +3908,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_17=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_17=(Token)match(input,32,FOLLOW_2); 
 
                     				newLeafNode(otherlv_17, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_2_5());
                     			
@@ -3986,26 +3919,26 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1781:3: (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' )
+                    // InternalSmartCE.g:1750:3: (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' )
                     {
-                    // InternalSmartCE.g:1781:3: (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' )
-                    // InternalSmartCE.g:1782:4: otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')'
+                    // InternalSmartCE.g:1750:3: (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' )
+                    // InternalSmartCE.g:1751:4: otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')'
                     {
-                    otherlv_18=(Token)match(input,46,FOLLOW_28); 
+                    otherlv_18=(Token)match(input,45,FOLLOW_25); 
 
                     				newLeafNode(otherlv_18, grammarAccess.getMessageContentAccess().getMessageContentKeyword_3_0());
                     			
-                    otherlv_19=(Token)match(input,32,FOLLOW_13); 
+                    otherlv_19=(Token)match(input,31,FOLLOW_13); 
 
                     				newLeafNode(otherlv_19, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_3_1());
                     			
-                    // InternalSmartCE.g:1790:4: ( (lv_content_20_0= RULE_STRING ) )
-                    // InternalSmartCE.g:1791:5: (lv_content_20_0= RULE_STRING )
+                    // InternalSmartCE.g:1759:4: ( (lv_content_20_0= RULE_STRING ) )
+                    // InternalSmartCE.g:1760:5: (lv_content_20_0= RULE_STRING )
                     {
-                    // InternalSmartCE.g:1791:5: (lv_content_20_0= RULE_STRING )
-                    // InternalSmartCE.g:1792:6: lv_content_20_0= RULE_STRING
+                    // InternalSmartCE.g:1760:5: (lv_content_20_0= RULE_STRING )
+                    // InternalSmartCE.g:1761:6: lv_content_20_0= RULE_STRING
                     {
-                    lv_content_20_0=(Token)match(input,RULE_STRING,FOLLOW_42); 
+                    lv_content_20_0=(Token)match(input,RULE_STRING,FOLLOW_39); 
 
                     						newLeafNode(lv_content_20_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_3_2_0());
                     					
@@ -4025,16 +3958,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:1808:4: ( (lv_binaryOperator_21_0= ruleBinaryOperator ) )
-                    // InternalSmartCE.g:1809:5: (lv_binaryOperator_21_0= ruleBinaryOperator )
+                    // InternalSmartCE.g:1777:4: ( (lv_binaryOperator_21_0= ruleBinaryOperator ) )
+                    // InternalSmartCE.g:1778:5: (lv_binaryOperator_21_0= ruleBinaryOperator )
                     {
-                    // InternalSmartCE.g:1809:5: (lv_binaryOperator_21_0= ruleBinaryOperator )
-                    // InternalSmartCE.g:1810:6: lv_binaryOperator_21_0= ruleBinaryOperator
+                    // InternalSmartCE.g:1778:5: (lv_binaryOperator_21_0= ruleBinaryOperator )
+                    // InternalSmartCE.g:1779:6: lv_binaryOperator_21_0= ruleBinaryOperator
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getBinaryOperatorBinaryOperatorParserRuleCall_3_3_0());
                     					
-                    pushFollow(FOLLOW_43);
+                    pushFollow(FOLLOW_40);
                     lv_binaryOperator_21_0=ruleBinaryOperator();
 
                     state._fsp--;
@@ -4056,45 +3989,45 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:1827:4: ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) )
-                    int alt18=3;
+                    // InternalSmartCE.g:1796:4: ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) )
+                    int alt17=3;
                     switch ( input.LA(1) ) {
                     case RULE_STRING:
                         {
-                        alt18=1;
+                        alt17=1;
                         }
                         break;
                     case RULE_ID:
                         {
-                        alt18=2;
+                        alt17=2;
                         }
                         break;
                     case RULE_INT:
                         {
-                        alt18=3;
+                        alt17=3;
                         }
                         break;
                     default:
                         NoViableAltException nvae =
-                            new NoViableAltException("", 18, 0, input);
+                            new NoViableAltException("", 17, 0, input);
 
                         throw nvae;
                     }
 
-                    switch (alt18) {
+                    switch (alt17) {
                         case 1 :
-                            // InternalSmartCE.g:1828:5: ( (lv_stringValue_22_0= ruleStringValue ) )
+                            // InternalSmartCE.g:1797:5: ( (lv_stringValue_22_0= ruleStringValue ) )
                             {
-                            // InternalSmartCE.g:1828:5: ( (lv_stringValue_22_0= ruleStringValue ) )
-                            // InternalSmartCE.g:1829:6: (lv_stringValue_22_0= ruleStringValue )
+                            // InternalSmartCE.g:1797:5: ( (lv_stringValue_22_0= ruleStringValue ) )
+                            // InternalSmartCE.g:1798:6: (lv_stringValue_22_0= ruleStringValue )
                             {
-                            // InternalSmartCE.g:1829:6: (lv_stringValue_22_0= ruleStringValue )
-                            // InternalSmartCE.g:1830:7: lv_stringValue_22_0= ruleStringValue
+                            // InternalSmartCE.g:1798:6: (lv_stringValue_22_0= ruleStringValue )
+                            // InternalSmartCE.g:1799:7: lv_stringValue_22_0= ruleStringValue
                             {
 
                             							newCompositeNode(grammarAccess.getMessageContentAccess().getStringValueStringValueParserRuleCall_3_4_0_0());
                             						
-                            pushFollow(FOLLOW_37);
+                            pushFollow(FOLLOW_34);
                             lv_stringValue_22_0=ruleStringValue();
 
                             state._fsp--;
@@ -4120,18 +4053,18 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalSmartCE.g:1848:5: ( (lv_variableValue_23_0= ruleVariableValue ) )
+                            // InternalSmartCE.g:1817:5: ( (lv_variableValue_23_0= ruleVariableValue ) )
                             {
-                            // InternalSmartCE.g:1848:5: ( (lv_variableValue_23_0= ruleVariableValue ) )
-                            // InternalSmartCE.g:1849:6: (lv_variableValue_23_0= ruleVariableValue )
+                            // InternalSmartCE.g:1817:5: ( (lv_variableValue_23_0= ruleVariableValue ) )
+                            // InternalSmartCE.g:1818:6: (lv_variableValue_23_0= ruleVariableValue )
                             {
-                            // InternalSmartCE.g:1849:6: (lv_variableValue_23_0= ruleVariableValue )
-                            // InternalSmartCE.g:1850:7: lv_variableValue_23_0= ruleVariableValue
+                            // InternalSmartCE.g:1818:6: (lv_variableValue_23_0= ruleVariableValue )
+                            // InternalSmartCE.g:1819:7: lv_variableValue_23_0= ruleVariableValue
                             {
 
                             							newCompositeNode(grammarAccess.getMessageContentAccess().getVariableValueVariableValueParserRuleCall_3_4_1_0());
                             						
-                            pushFollow(FOLLOW_37);
+                            pushFollow(FOLLOW_34);
                             lv_variableValue_23_0=ruleVariableValue();
 
                             state._fsp--;
@@ -4157,18 +4090,18 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 3 :
-                            // InternalSmartCE.g:1868:5: ( (lv_numericValue_24_0= ruleNumericValue ) )
+                            // InternalSmartCE.g:1837:5: ( (lv_numericValue_24_0= ruleNumericValue ) )
                             {
-                            // InternalSmartCE.g:1868:5: ( (lv_numericValue_24_0= ruleNumericValue ) )
-                            // InternalSmartCE.g:1869:6: (lv_numericValue_24_0= ruleNumericValue )
+                            // InternalSmartCE.g:1837:5: ( (lv_numericValue_24_0= ruleNumericValue ) )
+                            // InternalSmartCE.g:1838:6: (lv_numericValue_24_0= ruleNumericValue )
                             {
-                            // InternalSmartCE.g:1869:6: (lv_numericValue_24_0= ruleNumericValue )
-                            // InternalSmartCE.g:1870:7: lv_numericValue_24_0= ruleNumericValue
+                            // InternalSmartCE.g:1838:6: (lv_numericValue_24_0= ruleNumericValue )
+                            // InternalSmartCE.g:1839:7: lv_numericValue_24_0= ruleNumericValue
                             {
 
                             							newCompositeNode(grammarAccess.getMessageContentAccess().getNumericValueNumericValueParserRuleCall_3_4_2_0());
                             						
-                            pushFollow(FOLLOW_37);
+                            pushFollow(FOLLOW_34);
                             lv_numericValue_24_0=ruleNumericValue();
 
                             state._fsp--;
@@ -4196,20 +4129,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_25=(Token)match(input,40,FOLLOW_38); 
+                    otherlv_25=(Token)match(input,39,FOLLOW_35); 
 
                     				newLeafNode(otherlv_25, grammarAccess.getMessageContentAccess().getByKeyword_3_5());
                     			
-                    // InternalSmartCE.g:1892:4: ( (lv_timeUnit_26_0= ruleTimeUnit ) )
-                    // InternalSmartCE.g:1893:5: (lv_timeUnit_26_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1861:4: ( (lv_timeUnit_26_0= ruleTimeUnit ) )
+                    // InternalSmartCE.g:1862:5: (lv_timeUnit_26_0= ruleTimeUnit )
                     {
-                    // InternalSmartCE.g:1893:5: (lv_timeUnit_26_0= ruleTimeUnit )
-                    // InternalSmartCE.g:1894:6: lv_timeUnit_26_0= ruleTimeUnit
+                    // InternalSmartCE.g:1862:5: (lv_timeUnit_26_0= ruleTimeUnit )
+                    // InternalSmartCE.g:1863:6: lv_timeUnit_26_0= ruleTimeUnit
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_3_6_0());
                     					
-                    pushFollow(FOLLOW_33);
+                    pushFollow(FOLLOW_30);
                     lv_timeUnit_26_0=ruleTimeUnit();
 
                     state._fsp--;
@@ -4231,7 +4164,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_27=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_27=(Token)match(input,32,FOLLOW_2); 
 
                     				newLeafNode(otherlv_27, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_3_7());
                     			
@@ -4264,7 +4197,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBinaryOperator"
-    // InternalSmartCE.g:1920:1: entryRuleBinaryOperator returns [EObject current=null] : iv_ruleBinaryOperator= ruleBinaryOperator EOF ;
+    // InternalSmartCE.g:1889:1: entryRuleBinaryOperator returns [EObject current=null] : iv_ruleBinaryOperator= ruleBinaryOperator EOF ;
     public final EObject entryRuleBinaryOperator() throws RecognitionException {
         EObject current = null;
 
@@ -4272,8 +4205,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:1920:55: (iv_ruleBinaryOperator= ruleBinaryOperator EOF )
-            // InternalSmartCE.g:1921:2: iv_ruleBinaryOperator= ruleBinaryOperator EOF
+            // InternalSmartCE.g:1889:55: (iv_ruleBinaryOperator= ruleBinaryOperator EOF )
+            // InternalSmartCE.g:1890:2: iv_ruleBinaryOperator= ruleBinaryOperator EOF
             {
              newCompositeNode(grammarAccess.getBinaryOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -4300,7 +4233,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBinaryOperator"
-    // InternalSmartCE.g:1927:1: ruleBinaryOperator returns [EObject current=null] : ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) ;
+    // InternalSmartCE.g:1896:1: ruleBinaryOperator returns [EObject current=null] : ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) ;
     public final EObject ruleBinaryOperator() throws RecognitionException {
         EObject current = null;
 
@@ -4315,60 +4248,60 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1933:2: ( ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) )
-            // InternalSmartCE.g:1934:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
+            // InternalSmartCE.g:1902:2: ( ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) )
+            // InternalSmartCE.g:1903:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
             {
-            // InternalSmartCE.g:1934:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
-            int alt20=6;
+            // InternalSmartCE.g:1903:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
+            int alt19=6;
             switch ( input.LA(1) ) {
+            case 46:
+                {
+                alt19=1;
+                }
+                break;
             case 47:
                 {
-                alt20=1;
+                alt19=2;
                 }
                 break;
             case 48:
                 {
-                alt20=2;
+                alt19=3;
                 }
                 break;
             case 49:
                 {
-                alt20=3;
+                alt19=4;
                 }
                 break;
             case 50:
                 {
-                alt20=4;
+                alt19=5;
                 }
                 break;
             case 51:
                 {
-                alt20=5;
-                }
-                break;
-            case 52:
-                {
-                alt20=6;
+                alt19=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt20) {
+            switch (alt19) {
                 case 1 :
-                    // InternalSmartCE.g:1935:3: ( (lv_symbol_0_0= '<=' ) )
+                    // InternalSmartCE.g:1904:3: ( (lv_symbol_0_0= '<=' ) )
                     {
-                    // InternalSmartCE.g:1935:3: ( (lv_symbol_0_0= '<=' ) )
-                    // InternalSmartCE.g:1936:4: (lv_symbol_0_0= '<=' )
+                    // InternalSmartCE.g:1904:3: ( (lv_symbol_0_0= '<=' ) )
+                    // InternalSmartCE.g:1905:4: (lv_symbol_0_0= '<=' )
                     {
-                    // InternalSmartCE.g:1936:4: (lv_symbol_0_0= '<=' )
-                    // InternalSmartCE.g:1937:5: lv_symbol_0_0= '<='
+                    // InternalSmartCE.g:1905:4: (lv_symbol_0_0= '<=' )
+                    // InternalSmartCE.g:1906:5: lv_symbol_0_0= '<='
                     {
-                    lv_symbol_0_0=(Token)match(input,47,FOLLOW_2); 
+                    lv_symbol_0_0=(Token)match(input,46,FOLLOW_2); 
 
                     					newLeafNode(lv_symbol_0_0, grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignEqualsSignKeyword_0_0());
                     				
@@ -4388,15 +4321,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1950:3: ( (lv_symbol_1_0= '>=' ) )
+                    // InternalSmartCE.g:1919:3: ( (lv_symbol_1_0= '>=' ) )
                     {
-                    // InternalSmartCE.g:1950:3: ( (lv_symbol_1_0= '>=' ) )
-                    // InternalSmartCE.g:1951:4: (lv_symbol_1_0= '>=' )
+                    // InternalSmartCE.g:1919:3: ( (lv_symbol_1_0= '>=' ) )
+                    // InternalSmartCE.g:1920:4: (lv_symbol_1_0= '>=' )
                     {
-                    // InternalSmartCE.g:1951:4: (lv_symbol_1_0= '>=' )
-                    // InternalSmartCE.g:1952:5: lv_symbol_1_0= '>='
+                    // InternalSmartCE.g:1920:4: (lv_symbol_1_0= '>=' )
+                    // InternalSmartCE.g:1921:5: lv_symbol_1_0= '>='
                     {
-                    lv_symbol_1_0=(Token)match(input,48,FOLLOW_2); 
+                    lv_symbol_1_0=(Token)match(input,47,FOLLOW_2); 
 
                     					newLeafNode(lv_symbol_1_0, grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_0());
                     				
@@ -4416,15 +4349,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1965:3: ( (lv_symbol_2_0= '>' ) )
+                    // InternalSmartCE.g:1934:3: ( (lv_symbol_2_0= '>' ) )
                     {
-                    // InternalSmartCE.g:1965:3: ( (lv_symbol_2_0= '>' ) )
-                    // InternalSmartCE.g:1966:4: (lv_symbol_2_0= '>' )
+                    // InternalSmartCE.g:1934:3: ( (lv_symbol_2_0= '>' ) )
+                    // InternalSmartCE.g:1935:4: (lv_symbol_2_0= '>' )
                     {
-                    // InternalSmartCE.g:1966:4: (lv_symbol_2_0= '>' )
-                    // InternalSmartCE.g:1967:5: lv_symbol_2_0= '>'
+                    // InternalSmartCE.g:1935:4: (lv_symbol_2_0= '>' )
+                    // InternalSmartCE.g:1936:5: lv_symbol_2_0= '>'
                     {
-                    lv_symbol_2_0=(Token)match(input,49,FOLLOW_2); 
+                    lv_symbol_2_0=(Token)match(input,48,FOLLOW_2); 
 
                     					newLeafNode(lv_symbol_2_0, grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignKeyword_2_0());
                     				
@@ -4444,15 +4377,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1980:3: ( (lv_symbol_3_0= '<' ) )
+                    // InternalSmartCE.g:1949:3: ( (lv_symbol_3_0= '<' ) )
                     {
-                    // InternalSmartCE.g:1980:3: ( (lv_symbol_3_0= '<' ) )
-                    // InternalSmartCE.g:1981:4: (lv_symbol_3_0= '<' )
+                    // InternalSmartCE.g:1949:3: ( (lv_symbol_3_0= '<' ) )
+                    // InternalSmartCE.g:1950:4: (lv_symbol_3_0= '<' )
                     {
-                    // InternalSmartCE.g:1981:4: (lv_symbol_3_0= '<' )
-                    // InternalSmartCE.g:1982:5: lv_symbol_3_0= '<'
+                    // InternalSmartCE.g:1950:4: (lv_symbol_3_0= '<' )
+                    // InternalSmartCE.g:1951:5: lv_symbol_3_0= '<'
                     {
-                    lv_symbol_3_0=(Token)match(input,50,FOLLOW_2); 
+                    lv_symbol_3_0=(Token)match(input,49,FOLLOW_2); 
 
                     					newLeafNode(lv_symbol_3_0, grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignKeyword_3_0());
                     				
@@ -4472,15 +4405,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1995:3: ( (lv_symbol_4_0= '!=' ) )
+                    // InternalSmartCE.g:1964:3: ( (lv_symbol_4_0= '!=' ) )
                     {
-                    // InternalSmartCE.g:1995:3: ( (lv_symbol_4_0= '!=' ) )
-                    // InternalSmartCE.g:1996:4: (lv_symbol_4_0= '!=' )
+                    // InternalSmartCE.g:1964:3: ( (lv_symbol_4_0= '!=' ) )
+                    // InternalSmartCE.g:1965:4: (lv_symbol_4_0= '!=' )
                     {
-                    // InternalSmartCE.g:1996:4: (lv_symbol_4_0= '!=' )
-                    // InternalSmartCE.g:1997:5: lv_symbol_4_0= '!='
+                    // InternalSmartCE.g:1965:4: (lv_symbol_4_0= '!=' )
+                    // InternalSmartCE.g:1966:5: lv_symbol_4_0= '!='
                     {
-                    lv_symbol_4_0=(Token)match(input,51,FOLLOW_2); 
+                    lv_symbol_4_0=(Token)match(input,50,FOLLOW_2); 
 
                     					newLeafNode(lv_symbol_4_0, grammarAccess.getBinaryOperatorAccess().getSymbolExclamationMarkEqualsSignKeyword_4_0());
                     				
@@ -4500,15 +4433,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:2010:3: ( (lv_symbol_5_0= '==' ) )
+                    // InternalSmartCE.g:1979:3: ( (lv_symbol_5_0= '==' ) )
                     {
-                    // InternalSmartCE.g:2010:3: ( (lv_symbol_5_0= '==' ) )
-                    // InternalSmartCE.g:2011:4: (lv_symbol_5_0= '==' )
+                    // InternalSmartCE.g:1979:3: ( (lv_symbol_5_0= '==' ) )
+                    // InternalSmartCE.g:1980:4: (lv_symbol_5_0= '==' )
                     {
-                    // InternalSmartCE.g:2011:4: (lv_symbol_5_0= '==' )
-                    // InternalSmartCE.g:2012:5: lv_symbol_5_0= '=='
+                    // InternalSmartCE.g:1980:4: (lv_symbol_5_0= '==' )
+                    // InternalSmartCE.g:1981:5: lv_symbol_5_0= '=='
                     {
-                    lv_symbol_5_0=(Token)match(input,52,FOLLOW_2); 
+                    lv_symbol_5_0=(Token)match(input,51,FOLLOW_2); 
 
                     					newLeafNode(lv_symbol_5_0, grammarAccess.getBinaryOperatorAccess().getSymbolEqualsSignEqualsSignKeyword_5_0());
                     				
@@ -4550,7 +4483,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleApplication"
-    // InternalSmartCE.g:2028:1: entryRuleApplication returns [EObject current=null] : iv_ruleApplication= ruleApplication EOF ;
+    // InternalSmartCE.g:1997:1: entryRuleApplication returns [EObject current=null] : iv_ruleApplication= ruleApplication EOF ;
     public final EObject entryRuleApplication() throws RecognitionException {
         EObject current = null;
 
@@ -4558,8 +4491,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2028:52: (iv_ruleApplication= ruleApplication EOF )
-            // InternalSmartCE.g:2029:2: iv_ruleApplication= ruleApplication EOF
+            // InternalSmartCE.g:1997:52: (iv_ruleApplication= ruleApplication EOF )
+            // InternalSmartCE.g:1998:2: iv_ruleApplication= ruleApplication EOF
             {
              newCompositeNode(grammarAccess.getApplicationRule()); 
             pushFollow(FOLLOW_1);
@@ -4586,7 +4519,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleApplication"
-    // InternalSmartCE.g:2035:1: ruleApplication returns [EObject current=null] : ( (lv_name_0_0= RULE_STRING ) ) ;
+    // InternalSmartCE.g:2004:1: ruleApplication returns [EObject current=null] : ( (lv_name_0_0= RULE_STRING ) ) ;
     public final EObject ruleApplication() throws RecognitionException {
         EObject current = null;
 
@@ -4596,14 +4529,14 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2041:2: ( ( (lv_name_0_0= RULE_STRING ) ) )
-            // InternalSmartCE.g:2042:2: ( (lv_name_0_0= RULE_STRING ) )
+            // InternalSmartCE.g:2010:2: ( ( (lv_name_0_0= RULE_STRING ) ) )
+            // InternalSmartCE.g:2011:2: ( (lv_name_0_0= RULE_STRING ) )
             {
-            // InternalSmartCE.g:2042:2: ( (lv_name_0_0= RULE_STRING ) )
-            // InternalSmartCE.g:2043:3: (lv_name_0_0= RULE_STRING )
+            // InternalSmartCE.g:2011:2: ( (lv_name_0_0= RULE_STRING ) )
+            // InternalSmartCE.g:2012:3: (lv_name_0_0= RULE_STRING )
             {
-            // InternalSmartCE.g:2043:3: (lv_name_0_0= RULE_STRING )
-            // InternalSmartCE.g:2044:4: lv_name_0_0= RULE_STRING
+            // InternalSmartCE.g:2012:3: (lv_name_0_0= RULE_STRING )
+            // InternalSmartCE.g:2013:4: lv_name_0_0= RULE_STRING
             {
             lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -4645,7 +4578,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleProcess"
-    // InternalSmartCE.g:2063:1: entryRuleProcess returns [EObject current=null] : iv_ruleProcess= ruleProcess EOF ;
+    // InternalSmartCE.g:2032:1: entryRuleProcess returns [EObject current=null] : iv_ruleProcess= ruleProcess EOF ;
     public final EObject entryRuleProcess() throws RecognitionException {
         EObject current = null;
 
@@ -4653,8 +4586,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2063:48: (iv_ruleProcess= ruleProcess EOF )
-            // InternalSmartCE.g:2064:2: iv_ruleProcess= ruleProcess EOF
+            // InternalSmartCE.g:2032:48: (iv_ruleProcess= ruleProcess EOF )
+            // InternalSmartCE.g:2033:2: iv_ruleProcess= ruleProcess EOF
             {
              newCompositeNode(grammarAccess.getProcessRule()); 
             pushFollow(FOLLOW_1);
@@ -4681,7 +4614,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleProcess"
-    // InternalSmartCE.g:2070:1: ruleProcess returns [EObject current=null] : ( (lv_name_0_0= RULE_STRING ) ) ;
+    // InternalSmartCE.g:2039:1: ruleProcess returns [EObject current=null] : ( (lv_name_0_0= RULE_STRING ) ) ;
     public final EObject ruleProcess() throws RecognitionException {
         EObject current = null;
 
@@ -4691,14 +4624,14 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2076:2: ( ( (lv_name_0_0= RULE_STRING ) ) )
-            // InternalSmartCE.g:2077:2: ( (lv_name_0_0= RULE_STRING ) )
+            // InternalSmartCE.g:2045:2: ( ( (lv_name_0_0= RULE_STRING ) ) )
+            // InternalSmartCE.g:2046:2: ( (lv_name_0_0= RULE_STRING ) )
             {
-            // InternalSmartCE.g:2077:2: ( (lv_name_0_0= RULE_STRING ) )
-            // InternalSmartCE.g:2078:3: (lv_name_0_0= RULE_STRING )
+            // InternalSmartCE.g:2046:2: ( (lv_name_0_0= RULE_STRING ) )
+            // InternalSmartCE.g:2047:3: (lv_name_0_0= RULE_STRING )
             {
-            // InternalSmartCE.g:2078:3: (lv_name_0_0= RULE_STRING )
-            // InternalSmartCE.g:2079:4: lv_name_0_0= RULE_STRING
+            // InternalSmartCE.g:2047:3: (lv_name_0_0= RULE_STRING )
+            // InternalSmartCE.g:2048:4: lv_name_0_0= RULE_STRING
             {
             lv_name_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -4740,7 +4673,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOnSuccess"
-    // InternalSmartCE.g:2098:1: entryRuleOnSuccess returns [EObject current=null] : iv_ruleOnSuccess= ruleOnSuccess EOF ;
+    // InternalSmartCE.g:2067:1: entryRuleOnSuccess returns [EObject current=null] : iv_ruleOnSuccess= ruleOnSuccess EOF ;
     public final EObject entryRuleOnSuccess() throws RecognitionException {
         EObject current = null;
 
@@ -4748,8 +4681,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2098:50: (iv_ruleOnSuccess= ruleOnSuccess EOF )
-            // InternalSmartCE.g:2099:2: iv_ruleOnSuccess= ruleOnSuccess EOF
+            // InternalSmartCE.g:2067:50: (iv_ruleOnSuccess= ruleOnSuccess EOF )
+            // InternalSmartCE.g:2068:2: iv_ruleOnSuccess= ruleOnSuccess EOF
             {
              newCompositeNode(grammarAccess.getOnSuccessRule()); 
             pushFollow(FOLLOW_1);
@@ -4776,14 +4709,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOnSuccess"
-    // InternalSmartCE.g:2105:1: ruleOnSuccess returns [EObject current=null] : (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
+    // InternalSmartCE.g:2074:1: ruleOnSuccess returns [EObject current=null] : (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' ) ;
     public final EObject ruleOnSuccess() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
+        Token otherlv_5=null;
+        EObject lv_action_1_0 = null;
+
         EObject lv_message_3_0 = null;
 
 
@@ -4791,30 +4726,40 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2111:2: ( (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' ) )
-            // InternalSmartCE.g:2112:2: (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalSmartCE.g:2080:2: ( (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' ) )
+            // InternalSmartCE.g:2081:2: (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' )
             {
-            // InternalSmartCE.g:2112:2: (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' )
-            // InternalSmartCE.g:2113:3: otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')'
+            // InternalSmartCE.g:2081:2: (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' )
+            // InternalSmartCE.g:2082:3: otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_5); 
+            otherlv_0=(Token)match(input,31,FOLLOW_41); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOnSuccessAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalSmartCE.g:2117:3: ( (otherlv_1= RULE_ID ) )
-            // InternalSmartCE.g:2118:4: (otherlv_1= RULE_ID )
+            // InternalSmartCE.g:2086:3: ( (lv_action_1_0= ruleAction ) )
+            // InternalSmartCE.g:2087:4: (lv_action_1_0= ruleAction )
             {
-            // InternalSmartCE.g:2118:4: (otherlv_1= RULE_ID )
-            // InternalSmartCE.g:2119:5: otherlv_1= RULE_ID
+            // InternalSmartCE.g:2087:4: (lv_action_1_0= ruleAction )
+            // InternalSmartCE.g:2088:5: lv_action_1_0= ruleAction
             {
+
+            					newCompositeNode(grammarAccess.getOnSuccessAccess().getActionActionParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_25);
+            lv_action_1_0=ruleAction();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getOnSuccessRule());
+            						current = createModelElementForParent(grammarAccess.getOnSuccessRule());
             					}
-            				
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_44); 
-
-            					newLeafNode(otherlv_1, grammarAccess.getOnSuccessAccess().getActionActionCrossReference_1_0());
+            					set(
+            						current,
+            						"action",
+            						lv_action_1_0,
+            						"br.edu.unijui.gca.smartce.SmartCE.Action");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -4822,20 +4767,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,53,FOLLOW_9); 
+            otherlv_2=(Token)match(input,31,FOLLOW_9); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getOnSuccessAccess().getCommaKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getOnSuccessAccess().getLeftParenthesisKeyword_2());
             		
-            // InternalSmartCE.g:2134:3: ( (lv_message_3_0= ruleExpression ) )
-            // InternalSmartCE.g:2135:4: (lv_message_3_0= ruleExpression )
+            // InternalSmartCE.g:2109:3: ( (lv_message_3_0= ruleExpression ) )
+            // InternalSmartCE.g:2110:4: (lv_message_3_0= ruleExpression )
             {
-            // InternalSmartCE.g:2135:4: (lv_message_3_0= ruleExpression )
-            // InternalSmartCE.g:2136:5: lv_message_3_0= ruleExpression
+            // InternalSmartCE.g:2110:4: (lv_message_3_0= ruleExpression )
+            // InternalSmartCE.g:2111:5: lv_message_3_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getOnSuccessAccess().getMessageExpressionParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_30);
             lv_message_3_0=ruleExpression();
 
             state._fsp--;
@@ -4857,9 +4802,13 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,33,FOLLOW_2); 
+            otherlv_4=(Token)match(input,32,FOLLOW_30); 
 
             			newLeafNode(otherlv_4, grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_4());
+            		
+            otherlv_5=(Token)match(input,32,FOLLOW_2); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_5());
             		
 
             }
@@ -4884,7 +4833,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleOnBreach"
-    // InternalSmartCE.g:2161:1: entryRuleOnBreach returns [EObject current=null] : iv_ruleOnBreach= ruleOnBreach EOF ;
+    // InternalSmartCE.g:2140:1: entryRuleOnBreach returns [EObject current=null] : iv_ruleOnBreach= ruleOnBreach EOF ;
     public final EObject entryRuleOnBreach() throws RecognitionException {
         EObject current = null;
 
@@ -4892,8 +4841,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2161:49: (iv_ruleOnBreach= ruleOnBreach EOF )
-            // InternalSmartCE.g:2162:2: iv_ruleOnBreach= ruleOnBreach EOF
+            // InternalSmartCE.g:2140:49: (iv_ruleOnBreach= ruleOnBreach EOF )
+            // InternalSmartCE.g:2141:2: iv_ruleOnBreach= ruleOnBreach EOF
             {
              newCompositeNode(grammarAccess.getOnBreachRule()); 
             pushFollow(FOLLOW_1);
@@ -4920,14 +4869,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOnBreach"
-    // InternalSmartCE.g:2168:1: ruleOnBreach returns [EObject current=null] : (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' ) ;
+    // InternalSmartCE.g:2147:1: ruleOnBreach returns [EObject current=null] : (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' ) ;
     public final EObject ruleOnBreach() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
+        Token otherlv_5=null;
+        EObject lv_action_1_0 = null;
+
         EObject lv_message_3_0 = null;
 
 
@@ -4935,30 +4886,40 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2174:2: ( (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' ) )
-            // InternalSmartCE.g:2175:2: (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' )
+            // InternalSmartCE.g:2153:2: ( (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' ) )
+            // InternalSmartCE.g:2154:2: (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' )
             {
-            // InternalSmartCE.g:2175:2: (otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' )
-            // InternalSmartCE.g:2176:3: otherlv_0= '(' ( (otherlv_1= RULE_ID ) ) otherlv_2= ',' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')'
+            // InternalSmartCE.g:2154:2: (otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')' )
+            // InternalSmartCE.g:2155:3: otherlv_0= '(' ( (lv_action_1_0= ruleAction ) ) otherlv_2= '(' ( (lv_message_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= ')'
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_5); 
+            otherlv_0=(Token)match(input,31,FOLLOW_41); 
 
             			newLeafNode(otherlv_0, grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalSmartCE.g:2180:3: ( (otherlv_1= RULE_ID ) )
-            // InternalSmartCE.g:2181:4: (otherlv_1= RULE_ID )
+            // InternalSmartCE.g:2159:3: ( (lv_action_1_0= ruleAction ) )
+            // InternalSmartCE.g:2160:4: (lv_action_1_0= ruleAction )
             {
-            // InternalSmartCE.g:2181:4: (otherlv_1= RULE_ID )
-            // InternalSmartCE.g:2182:5: otherlv_1= RULE_ID
+            // InternalSmartCE.g:2160:4: (lv_action_1_0= ruleAction )
+            // InternalSmartCE.g:2161:5: lv_action_1_0= ruleAction
             {
+
+            					newCompositeNode(grammarAccess.getOnBreachAccess().getActionActionParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_25);
+            lv_action_1_0=ruleAction();
+
+            state._fsp--;
+
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getOnBreachRule());
+            						current = createModelElementForParent(grammarAccess.getOnBreachRule());
             					}
-            				
-            otherlv_1=(Token)match(input,RULE_ID,FOLLOW_44); 
-
-            					newLeafNode(otherlv_1, grammarAccess.getOnBreachAccess().getActionActionCrossReference_1_0());
+            					set(
+            						current,
+            						"action",
+            						lv_action_1_0,
+            						"br.edu.unijui.gca.smartce.SmartCE.Action");
+            					afterParserOrEnumRuleCall();
             				
 
             }
@@ -4966,20 +4927,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,53,FOLLOW_9); 
+            otherlv_2=(Token)match(input,31,FOLLOW_9); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getOnBreachAccess().getCommaKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_2());
             		
-            // InternalSmartCE.g:2197:3: ( (lv_message_3_0= ruleExpression ) )
-            // InternalSmartCE.g:2198:4: (lv_message_3_0= ruleExpression )
+            // InternalSmartCE.g:2182:3: ( (lv_message_3_0= ruleExpression ) )
+            // InternalSmartCE.g:2183:4: (lv_message_3_0= ruleExpression )
             {
-            // InternalSmartCE.g:2198:4: (lv_message_3_0= ruleExpression )
-            // InternalSmartCE.g:2199:5: lv_message_3_0= ruleExpression
+            // InternalSmartCE.g:2183:4: (lv_message_3_0= ruleExpression )
+            // InternalSmartCE.g:2184:5: lv_message_3_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getOnBreachAccess().getMessageExpressionParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_30);
             lv_message_3_0=ruleExpression();
 
             state._fsp--;
@@ -5001,9 +4962,13 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,33,FOLLOW_2); 
+            otherlv_4=(Token)match(input,32,FOLLOW_30); 
 
             			newLeafNode(otherlv_4, grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_4());
+            		
+            otherlv_5=(Token)match(input,32,FOLLOW_2); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_5());
             		
 
             }
@@ -5028,7 +4993,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAction"
-    // InternalSmartCE.g:2224:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
+    // InternalSmartCE.g:2213:1: entryRuleAction returns [EObject current=null] : iv_ruleAction= ruleAction EOF ;
     public final EObject entryRuleAction() throws RecognitionException {
         EObject current = null;
 
@@ -5036,8 +5001,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2224:47: (iv_ruleAction= ruleAction EOF )
-            // InternalSmartCE.g:2225:2: iv_ruleAction= ruleAction EOF
+            // InternalSmartCE.g:2213:47: (iv_ruleAction= ruleAction EOF )
+            // InternalSmartCE.g:2214:2: iv_ruleAction= ruleAction EOF
             {
              newCompositeNode(grammarAccess.getActionRule()); 
             pushFollow(FOLLOW_1);
@@ -5064,7 +5029,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAction"
-    // InternalSmartCE.g:2231:1: ruleAction returns [EObject current=null] : (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog ) ;
+    // InternalSmartCE.g:2220:1: ruleAction returns [EObject current=null] : (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog ) ;
     public final EObject ruleAction() throws RecognitionException {
         EObject current = null;
 
@@ -5077,28 +5042,28 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2237:2: ( (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog ) )
-            // InternalSmartCE.g:2238:2: (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog )
+            // InternalSmartCE.g:2226:2: ( (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog ) )
+            // InternalSmartCE.g:2227:2: (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog )
             {
-            // InternalSmartCE.g:2238:2: (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog )
-            int alt21=2;
-            int LA21_0 = input.LA(1);
+            // InternalSmartCE.g:2227:2: (this_BusinessAction_0= ruleBusinessAction | this_EventLog_1= ruleEventLog )
+            int alt20=2;
+            int LA20_0 = input.LA(1);
 
-            if ( (LA21_0==54) ) {
-                alt21=1;
+            if ( (LA20_0==52) ) {
+                alt20=1;
             }
-            else if ( (LA21_0==55) ) {
-                alt21=2;
+            else if ( (LA20_0==53) ) {
+                alt20=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 20, 0, input);
 
                 throw nvae;
             }
-            switch (alt21) {
+            switch (alt20) {
                 case 1 :
-                    // InternalSmartCE.g:2239:3: this_BusinessAction_0= ruleBusinessAction
+                    // InternalSmartCE.g:2228:3: this_BusinessAction_0= ruleBusinessAction
                     {
 
                     			newCompositeNode(grammarAccess.getActionAccess().getBusinessActionParserRuleCall_0());
@@ -5116,7 +5081,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:2248:3: this_EventLog_1= ruleEventLog
+                    // InternalSmartCE.g:2237:3: this_EventLog_1= ruleEventLog
                     {
 
                     			newCompositeNode(grammarAccess.getActionAccess().getEventLogParserRuleCall_1());
@@ -5156,7 +5121,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBusinessAction"
-    // InternalSmartCE.g:2260:1: entryRuleBusinessAction returns [EObject current=null] : iv_ruleBusinessAction= ruleBusinessAction EOF ;
+    // InternalSmartCE.g:2249:1: entryRuleBusinessAction returns [EObject current=null] : iv_ruleBusinessAction= ruleBusinessAction EOF ;
     public final EObject entryRuleBusinessAction() throws RecognitionException {
         EObject current = null;
 
@@ -5164,8 +5129,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2260:55: (iv_ruleBusinessAction= ruleBusinessAction EOF )
-            // InternalSmartCE.g:2261:2: iv_ruleBusinessAction= ruleBusinessAction EOF
+            // InternalSmartCE.g:2249:55: (iv_ruleBusinessAction= ruleBusinessAction EOF )
+            // InternalSmartCE.g:2250:2: iv_ruleBusinessAction= ruleBusinessAction EOF
             {
              newCompositeNode(grammarAccess.getBusinessActionRule()); 
             pushFollow(FOLLOW_1);
@@ -5192,7 +5157,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBusinessAction"
-    // InternalSmartCE.g:2267:1: ruleBusinessAction returns [EObject current=null] : (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSmartCE.g:2256:1: ruleBusinessAction returns [EObject current=null] : (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleBusinessAction() throws RecognitionException {
         EObject current = null;
 
@@ -5203,21 +5168,21 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2273:2: ( (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSmartCE.g:2274:2: (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSmartCE.g:2262:2: ( (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSmartCE.g:2263:2: (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSmartCE.g:2274:2: (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSmartCE.g:2275:3: otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSmartCE.g:2263:2: (otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSmartCE.g:2264:3: otherlv_0= 'BusinessAction' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,54,FOLLOW_5); 
+            otherlv_0=(Token)match(input,52,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBusinessActionAccess().getBusinessActionKeyword_0());
             		
-            // InternalSmartCE.g:2279:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSmartCE.g:2280:4: (lv_name_1_0= RULE_ID )
+            // InternalSmartCE.g:2268:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSmartCE.g:2269:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSmartCE.g:2280:4: (lv_name_1_0= RULE_ID )
-            // InternalSmartCE.g:2281:5: lv_name_1_0= RULE_ID
+            // InternalSmartCE.g:2269:4: (lv_name_1_0= RULE_ID )
+            // InternalSmartCE.g:2270:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -5262,7 +5227,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEventLog"
-    // InternalSmartCE.g:2301:1: entryRuleEventLog returns [EObject current=null] : iv_ruleEventLog= ruleEventLog EOF ;
+    // InternalSmartCE.g:2290:1: entryRuleEventLog returns [EObject current=null] : iv_ruleEventLog= ruleEventLog EOF ;
     public final EObject entryRuleEventLog() throws RecognitionException {
         EObject current = null;
 
@@ -5270,8 +5235,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2301:49: (iv_ruleEventLog= ruleEventLog EOF )
-            // InternalSmartCE.g:2302:2: iv_ruleEventLog= ruleEventLog EOF
+            // InternalSmartCE.g:2290:49: (iv_ruleEventLog= ruleEventLog EOF )
+            // InternalSmartCE.g:2291:2: iv_ruleEventLog= ruleEventLog EOF
             {
              newCompositeNode(grammarAccess.getEventLogRule()); 
             pushFollow(FOLLOW_1);
@@ -5298,7 +5263,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEventLog"
-    // InternalSmartCE.g:2308:1: ruleEventLog returns [EObject current=null] : (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // InternalSmartCE.g:2297:1: ruleEventLog returns [EObject current=null] : (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleEventLog() throws RecognitionException {
         EObject current = null;
 
@@ -5309,21 +5274,21 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2314:2: ( (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // InternalSmartCE.g:2315:2: (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSmartCE.g:2303:2: ( (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSmartCE.g:2304:2: (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSmartCE.g:2315:2: (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) )
-            // InternalSmartCE.g:2316:3: otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) )
+            // InternalSmartCE.g:2304:2: (otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSmartCE.g:2305:3: otherlv_0= 'EventLog' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,55,FOLLOW_5); 
+            otherlv_0=(Token)match(input,53,FOLLOW_5); 
 
             			newLeafNode(otherlv_0, grammarAccess.getEventLogAccess().getEventLogKeyword_0());
             		
-            // InternalSmartCE.g:2320:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSmartCE.g:2321:4: (lv_name_1_0= RULE_ID )
+            // InternalSmartCE.g:2309:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSmartCE.g:2310:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSmartCE.g:2321:4: (lv_name_1_0= RULE_ID )
-            // InternalSmartCE.g:2322:5: lv_name_1_0= RULE_ID
+            // InternalSmartCE.g:2310:4: (lv_name_1_0= RULE_ID )
+            // InternalSmartCE.g:2311:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -5368,7 +5333,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // InternalSmartCE.g:2342:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalSmartCE.g:2331:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5376,8 +5341,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2342:51: (iv_ruleExpression= ruleExpression EOF )
-            // InternalSmartCE.g:2343:2: iv_ruleExpression= ruleExpression EOF
+            // InternalSmartCE.g:2331:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalSmartCE.g:2332:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -5404,7 +5369,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalSmartCE.g:2349:1: ruleExpression returns [EObject current=null] : (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* ) ;
+    // InternalSmartCE.g:2338:1: ruleExpression returns [EObject current=null] : (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5419,16 +5384,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2355:2: ( (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* ) )
-            // InternalSmartCE.g:2356:2: (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* )
+            // InternalSmartCE.g:2344:2: ( (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* ) )
+            // InternalSmartCE.g:2345:2: (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* )
             {
-            // InternalSmartCE.g:2356:2: (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* )
-            // InternalSmartCE.g:2357:3: this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )*
+            // InternalSmartCE.g:2345:2: (this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )* )
+            // InternalSmartCE.g:2346:3: this_Negation_0= ruleNegation ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getExpressionAccess().getNegationParserRuleCall_0());
             		
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_42);
             this_Negation_0=ruleNegation();
 
             state._fsp--;
@@ -5437,23 +5402,23 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			current = this_Negation_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalSmartCE.g:2365:3: ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )*
-            loop23:
+            // InternalSmartCE.g:2354:3: ( () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) ) )*
+            loop22:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt22=2;
+                int LA22_0 = input.LA(1);
 
-                if ( ((LA23_0>=56 && LA23_0<=57)) ) {
-                    alt23=1;
+                if ( ((LA22_0>=54 && LA22_0<=55)) ) {
+                    alt22=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt22) {
             	case 1 :
-            	    // InternalSmartCE.g:2366:4: () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) )
+            	    // InternalSmartCE.g:2355:4: () ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) ) ( (lv_right_4_0= ruleNegation ) )
             	    {
-            	    // InternalSmartCE.g:2366:4: ()
-            	    // InternalSmartCE.g:2367:5: 
+            	    // InternalSmartCE.g:2355:4: ()
+            	    // InternalSmartCE.g:2356:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -5463,33 +5428,33 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2373:4: ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) )
-            	    int alt22=2;
-            	    int LA22_0 = input.LA(1);
+            	    // InternalSmartCE.g:2362:4: ( ( (lv_symbol_2_0= '&&' ) ) | ( (lv_symbol_3_0= '||' ) ) )
+            	    int alt21=2;
+            	    int LA21_0 = input.LA(1);
 
-            	    if ( (LA22_0==56) ) {
-            	        alt22=1;
+            	    if ( (LA21_0==54) ) {
+            	        alt21=1;
             	    }
-            	    else if ( (LA22_0==57) ) {
-            	        alt22=2;
+            	    else if ( (LA21_0==55) ) {
+            	        alt21=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 22, 0, input);
+            	            new NoViableAltException("", 21, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt22) {
+            	    switch (alt21) {
             	        case 1 :
-            	            // InternalSmartCE.g:2374:5: ( (lv_symbol_2_0= '&&' ) )
+            	            // InternalSmartCE.g:2363:5: ( (lv_symbol_2_0= '&&' ) )
             	            {
-            	            // InternalSmartCE.g:2374:5: ( (lv_symbol_2_0= '&&' ) )
-            	            // InternalSmartCE.g:2375:6: (lv_symbol_2_0= '&&' )
+            	            // InternalSmartCE.g:2363:5: ( (lv_symbol_2_0= '&&' ) )
+            	            // InternalSmartCE.g:2364:6: (lv_symbol_2_0= '&&' )
             	            {
-            	            // InternalSmartCE.g:2375:6: (lv_symbol_2_0= '&&' )
-            	            // InternalSmartCE.g:2376:7: lv_symbol_2_0= '&&'
+            	            // InternalSmartCE.g:2364:6: (lv_symbol_2_0= '&&' )
+            	            // InternalSmartCE.g:2365:7: lv_symbol_2_0= '&&'
             	            {
-            	            lv_symbol_2_0=(Token)match(input,56,FOLLOW_9); 
+            	            lv_symbol_2_0=(Token)match(input,54,FOLLOW_9); 
 
             	            							newLeafNode(lv_symbol_2_0, grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_0_0());
             	            						
@@ -5509,15 +5474,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalSmartCE.g:2389:5: ( (lv_symbol_3_0= '||' ) )
+            	            // InternalSmartCE.g:2378:5: ( (lv_symbol_3_0= '||' ) )
             	            {
-            	            // InternalSmartCE.g:2389:5: ( (lv_symbol_3_0= '||' ) )
-            	            // InternalSmartCE.g:2390:6: (lv_symbol_3_0= '||' )
+            	            // InternalSmartCE.g:2378:5: ( (lv_symbol_3_0= '||' ) )
+            	            // InternalSmartCE.g:2379:6: (lv_symbol_3_0= '||' )
             	            {
-            	            // InternalSmartCE.g:2390:6: (lv_symbol_3_0= '||' )
-            	            // InternalSmartCE.g:2391:7: lv_symbol_3_0= '||'
+            	            // InternalSmartCE.g:2379:6: (lv_symbol_3_0= '||' )
+            	            // InternalSmartCE.g:2380:7: lv_symbol_3_0= '||'
             	            {
-            	            lv_symbol_3_0=(Token)match(input,57,FOLLOW_9); 
+            	            lv_symbol_3_0=(Token)match(input,55,FOLLOW_9); 
 
             	            							newLeafNode(lv_symbol_3_0, grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_1_0());
             	            						
@@ -5539,16 +5504,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2404:4: ( (lv_right_4_0= ruleNegation ) )
-            	    // InternalSmartCE.g:2405:5: (lv_right_4_0= ruleNegation )
+            	    // InternalSmartCE.g:2393:4: ( (lv_right_4_0= ruleNegation ) )
+            	    // InternalSmartCE.g:2394:5: (lv_right_4_0= ruleNegation )
             	    {
-            	    // InternalSmartCE.g:2405:5: (lv_right_4_0= ruleNegation )
-            	    // InternalSmartCE.g:2406:6: lv_right_4_0= ruleNegation
+            	    // InternalSmartCE.g:2394:5: (lv_right_4_0= ruleNegation )
+            	    // InternalSmartCE.g:2395:6: lv_right_4_0= ruleNegation
             	    {
 
             	    						newCompositeNode(grammarAccess.getExpressionAccess().getRightNegationParserRuleCall_1_2_0());
             	    					
-            	    pushFollow(FOLLOW_45);
+            	    pushFollow(FOLLOW_42);
             	    lv_right_4_0=ruleNegation();
 
             	    state._fsp--;
@@ -5575,7 +5540,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop22;
                 }
             } while (true);
 
@@ -5602,7 +5567,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNegation"
-    // InternalSmartCE.g:2428:1: entryRuleNegation returns [EObject current=null] : iv_ruleNegation= ruleNegation EOF ;
+    // InternalSmartCE.g:2417:1: entryRuleNegation returns [EObject current=null] : iv_ruleNegation= ruleNegation EOF ;
     public final EObject entryRuleNegation() throws RecognitionException {
         EObject current = null;
 
@@ -5610,8 +5575,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2428:49: (iv_ruleNegation= ruleNegation EOF )
-            // InternalSmartCE.g:2429:2: iv_ruleNegation= ruleNegation EOF
+            // InternalSmartCE.g:2417:49: (iv_ruleNegation= ruleNegation EOF )
+            // InternalSmartCE.g:2418:2: iv_ruleNegation= ruleNegation EOF
             {
              newCompositeNode(grammarAccess.getNegationRule()); 
             pushFollow(FOLLOW_1);
@@ -5638,7 +5603,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNegation"
-    // InternalSmartCE.g:2435:1: ruleNegation returns [EObject current=null] : (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) ) ;
+    // InternalSmartCE.g:2424:1: ruleNegation returns [EObject current=null] : (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) ) ;
     public final EObject ruleNegation() throws RecognitionException {
         EObject current = null;
 
@@ -5652,28 +5617,28 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2441:2: ( (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) ) )
-            // InternalSmartCE.g:2442:2: (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) )
+            // InternalSmartCE.g:2430:2: ( (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) ) )
+            // InternalSmartCE.g:2431:2: (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) )
             {
-            // InternalSmartCE.g:2442:2: (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) )
-            int alt24=2;
-            int LA24_0 = input.LA(1);
+            // InternalSmartCE.g:2431:2: (this_Comparison_0= ruleComparison | ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) ) )
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            if ( ((LA24_0>=RULE_ID && LA24_0<=RULE_STRING)||LA24_0==32||LA24_0==62) ) {
-                alt24=1;
+            if ( ((LA23_0>=RULE_ID && LA23_0<=RULE_STRING)||LA23_0==31||LA23_0==60) ) {
+                alt23=1;
             }
-            else if ( (LA24_0==58) ) {
-                alt24=2;
+            else if ( (LA23_0==56) ) {
+                alt23=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
-            switch (alt24) {
+            switch (alt23) {
                 case 1 :
-                    // InternalSmartCE.g:2443:3: this_Comparison_0= ruleComparison
+                    // InternalSmartCE.g:2432:3: this_Comparison_0= ruleComparison
                     {
 
                     			newCompositeNode(grammarAccess.getNegationAccess().getComparisonParserRuleCall_0());
@@ -5691,13 +5656,13 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:2452:3: ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) )
+                    // InternalSmartCE.g:2441:3: ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) )
                     {
-                    // InternalSmartCE.g:2452:3: ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) )
-                    // InternalSmartCE.g:2453:4: () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) )
+                    // InternalSmartCE.g:2441:3: ( () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) ) )
+                    // InternalSmartCE.g:2442:4: () ( (lv_symbol_2_0= '!' ) ) ( (lv_expression_3_0= ruleComparison ) )
                     {
-                    // InternalSmartCE.g:2453:4: ()
-                    // InternalSmartCE.g:2454:5: 
+                    // InternalSmartCE.g:2442:4: ()
+                    // InternalSmartCE.g:2443:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -5707,13 +5672,13 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:2460:4: ( (lv_symbol_2_0= '!' ) )
-                    // InternalSmartCE.g:2461:5: (lv_symbol_2_0= '!' )
+                    // InternalSmartCE.g:2449:4: ( (lv_symbol_2_0= '!' ) )
+                    // InternalSmartCE.g:2450:5: (lv_symbol_2_0= '!' )
                     {
-                    // InternalSmartCE.g:2461:5: (lv_symbol_2_0= '!' )
-                    // InternalSmartCE.g:2462:6: lv_symbol_2_0= '!'
+                    // InternalSmartCE.g:2450:5: (lv_symbol_2_0= '!' )
+                    // InternalSmartCE.g:2451:6: lv_symbol_2_0= '!'
                     {
-                    lv_symbol_2_0=(Token)match(input,58,FOLLOW_46); 
+                    lv_symbol_2_0=(Token)match(input,56,FOLLOW_43); 
 
                     						newLeafNode(lv_symbol_2_0, grammarAccess.getNegationAccess().getSymbolExclamationMarkKeyword_1_1_0());
                     					
@@ -5729,11 +5694,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalSmartCE.g:2474:4: ( (lv_expression_3_0= ruleComparison ) )
-                    // InternalSmartCE.g:2475:5: (lv_expression_3_0= ruleComparison )
+                    // InternalSmartCE.g:2463:4: ( (lv_expression_3_0= ruleComparison ) )
+                    // InternalSmartCE.g:2464:5: (lv_expression_3_0= ruleComparison )
                     {
-                    // InternalSmartCE.g:2475:5: (lv_expression_3_0= ruleComparison )
-                    // InternalSmartCE.g:2476:6: lv_expression_3_0= ruleComparison
+                    // InternalSmartCE.g:2464:5: (lv_expression_3_0= ruleComparison )
+                    // InternalSmartCE.g:2465:6: lv_expression_3_0= ruleComparison
                     {
 
                     						newCompositeNode(grammarAccess.getNegationAccess().getExpressionComparisonParserRuleCall_1_2_0());
@@ -5789,7 +5754,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComparison"
-    // InternalSmartCE.g:2498:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
+    // InternalSmartCE.g:2487:1: entryRuleComparison returns [EObject current=null] : iv_ruleComparison= ruleComparison EOF ;
     public final EObject entryRuleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -5797,8 +5762,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2498:51: (iv_ruleComparison= ruleComparison EOF )
-            // InternalSmartCE.g:2499:2: iv_ruleComparison= ruleComparison EOF
+            // InternalSmartCE.g:2487:51: (iv_ruleComparison= ruleComparison EOF )
+            // InternalSmartCE.g:2488:2: iv_ruleComparison= ruleComparison EOF
             {
              newCompositeNode(grammarAccess.getComparisonRule()); 
             pushFollow(FOLLOW_1);
@@ -5825,7 +5790,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparison"
-    // InternalSmartCE.g:2505:1: ruleComparison returns [EObject current=null] : (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* ) ;
+    // InternalSmartCE.g:2494:1: ruleComparison returns [EObject current=null] : (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* ) ;
     public final EObject ruleComparison() throws RecognitionException {
         EObject current = null;
 
@@ -5846,16 +5811,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2511:2: ( (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* ) )
-            // InternalSmartCE.g:2512:2: (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* )
+            // InternalSmartCE.g:2500:2: ( (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* ) )
+            // InternalSmartCE.g:2501:2: (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* )
             {
-            // InternalSmartCE.g:2512:2: (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* )
-            // InternalSmartCE.g:2513:3: this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )*
+            // InternalSmartCE.g:2501:2: (this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )* )
+            // InternalSmartCE.g:2502:3: this_Plus_0= rulePlus ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getComparisonAccess().getPlusParserRuleCall_0());
             		
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_44);
             this_Plus_0=rulePlus();
 
             state._fsp--;
@@ -5864,23 +5829,23 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			current = this_Plus_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalSmartCE.g:2521:3: ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )*
-            loop26:
+            // InternalSmartCE.g:2510:3: ( () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) ) )*
+            loop25:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( ((LA26_0>=47 && LA26_0<=52)||(LA26_0>=59 && LA26_0<=60)) ) {
-                    alt26=1;
+                if ( ((LA25_0>=46 && LA25_0<=51)||(LA25_0>=57 && LA25_0<=58)) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt25) {
             	case 1 :
-            	    // InternalSmartCE.g:2522:4: () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) )
+            	    // InternalSmartCE.g:2511:4: () ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) ) ( (lv_right_10_0= rulePlus ) )
             	    {
-            	    // InternalSmartCE.g:2522:4: ()
-            	    // InternalSmartCE.g:2523:5: 
+            	    // InternalSmartCE.g:2511:4: ()
+            	    // InternalSmartCE.g:2512:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -5890,67 +5855,67 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2529:4: ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) )
-            	    int alt25=8;
+            	    // InternalSmartCE.g:2518:4: ( ( (lv_symbol_2_0= '<=' ) ) | ( (lv_symbol_3_0= '>=' ) ) | ( (lv_symbol_4_0= '>' ) ) | ( (lv_symbol_5_0= '<' ) ) | ( (lv_symbol_6_0= '!=' ) ) | ( (lv_symbol_7_0= '==' ) ) | ( (lv_symbol_8_0= 'is' ) ) | ( (lv_symbol_9_0= 'as' ) ) )
+            	    int alt24=8;
             	    switch ( input.LA(1) ) {
+            	    case 46:
+            	        {
+            	        alt24=1;
+            	        }
+            	        break;
             	    case 47:
             	        {
-            	        alt25=1;
+            	        alt24=2;
             	        }
             	        break;
             	    case 48:
             	        {
-            	        alt25=2;
+            	        alt24=3;
             	        }
             	        break;
             	    case 49:
             	        {
-            	        alt25=3;
+            	        alt24=4;
             	        }
             	        break;
             	    case 50:
             	        {
-            	        alt25=4;
+            	        alt24=5;
             	        }
             	        break;
             	    case 51:
             	        {
-            	        alt25=5;
+            	        alt24=6;
             	        }
             	        break;
-            	    case 52:
+            	    case 57:
             	        {
-            	        alt25=6;
+            	        alt24=7;
             	        }
             	        break;
-            	    case 59:
+            	    case 58:
             	        {
-            	        alt25=7;
-            	        }
-            	        break;
-            	    case 60:
-            	        {
-            	        alt25=8;
+            	        alt24=8;
             	        }
             	        break;
             	    default:
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 25, 0, input);
+            	            new NoViableAltException("", 24, 0, input);
 
             	        throw nvae;
             	    }
 
-            	    switch (alt25) {
+            	    switch (alt24) {
             	        case 1 :
-            	            // InternalSmartCE.g:2530:5: ( (lv_symbol_2_0= '<=' ) )
+            	            // InternalSmartCE.g:2519:5: ( (lv_symbol_2_0= '<=' ) )
             	            {
-            	            // InternalSmartCE.g:2530:5: ( (lv_symbol_2_0= '<=' ) )
-            	            // InternalSmartCE.g:2531:6: (lv_symbol_2_0= '<=' )
+            	            // InternalSmartCE.g:2519:5: ( (lv_symbol_2_0= '<=' ) )
+            	            // InternalSmartCE.g:2520:6: (lv_symbol_2_0= '<=' )
             	            {
-            	            // InternalSmartCE.g:2531:6: (lv_symbol_2_0= '<=' )
-            	            // InternalSmartCE.g:2532:7: lv_symbol_2_0= '<='
+            	            // InternalSmartCE.g:2520:6: (lv_symbol_2_0= '<=' )
+            	            // InternalSmartCE.g:2521:7: lv_symbol_2_0= '<='
             	            {
-            	            lv_symbol_2_0=(Token)match(input,47,FOLLOW_46); 
+            	            lv_symbol_2_0=(Token)match(input,46,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_2_0, grammarAccess.getComparisonAccess().getSymbolLessThanSignEqualsSignKeyword_1_1_0_0());
             	            						
@@ -5970,15 +5935,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalSmartCE.g:2545:5: ( (lv_symbol_3_0= '>=' ) )
+            	            // InternalSmartCE.g:2534:5: ( (lv_symbol_3_0= '>=' ) )
             	            {
-            	            // InternalSmartCE.g:2545:5: ( (lv_symbol_3_0= '>=' ) )
-            	            // InternalSmartCE.g:2546:6: (lv_symbol_3_0= '>=' )
+            	            // InternalSmartCE.g:2534:5: ( (lv_symbol_3_0= '>=' ) )
+            	            // InternalSmartCE.g:2535:6: (lv_symbol_3_0= '>=' )
             	            {
-            	            // InternalSmartCE.g:2546:6: (lv_symbol_3_0= '>=' )
-            	            // InternalSmartCE.g:2547:7: lv_symbol_3_0= '>='
+            	            // InternalSmartCE.g:2535:6: (lv_symbol_3_0= '>=' )
+            	            // InternalSmartCE.g:2536:7: lv_symbol_3_0= '>='
             	            {
-            	            lv_symbol_3_0=(Token)match(input,48,FOLLOW_46); 
+            	            lv_symbol_3_0=(Token)match(input,47,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_3_0, grammarAccess.getComparisonAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_1_1_0());
             	            						
@@ -5998,15 +5963,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 3 :
-            	            // InternalSmartCE.g:2560:5: ( (lv_symbol_4_0= '>' ) )
+            	            // InternalSmartCE.g:2549:5: ( (lv_symbol_4_0= '>' ) )
             	            {
-            	            // InternalSmartCE.g:2560:5: ( (lv_symbol_4_0= '>' ) )
-            	            // InternalSmartCE.g:2561:6: (lv_symbol_4_0= '>' )
+            	            // InternalSmartCE.g:2549:5: ( (lv_symbol_4_0= '>' ) )
+            	            // InternalSmartCE.g:2550:6: (lv_symbol_4_0= '>' )
             	            {
-            	            // InternalSmartCE.g:2561:6: (lv_symbol_4_0= '>' )
-            	            // InternalSmartCE.g:2562:7: lv_symbol_4_0= '>'
+            	            // InternalSmartCE.g:2550:6: (lv_symbol_4_0= '>' )
+            	            // InternalSmartCE.g:2551:7: lv_symbol_4_0= '>'
             	            {
-            	            lv_symbol_4_0=(Token)match(input,49,FOLLOW_46); 
+            	            lv_symbol_4_0=(Token)match(input,48,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_4_0, grammarAccess.getComparisonAccess().getSymbolGreaterThanSignKeyword_1_1_2_0());
             	            						
@@ -6026,15 +5991,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 4 :
-            	            // InternalSmartCE.g:2575:5: ( (lv_symbol_5_0= '<' ) )
+            	            // InternalSmartCE.g:2564:5: ( (lv_symbol_5_0= '<' ) )
             	            {
-            	            // InternalSmartCE.g:2575:5: ( (lv_symbol_5_0= '<' ) )
-            	            // InternalSmartCE.g:2576:6: (lv_symbol_5_0= '<' )
+            	            // InternalSmartCE.g:2564:5: ( (lv_symbol_5_0= '<' ) )
+            	            // InternalSmartCE.g:2565:6: (lv_symbol_5_0= '<' )
             	            {
-            	            // InternalSmartCE.g:2576:6: (lv_symbol_5_0= '<' )
-            	            // InternalSmartCE.g:2577:7: lv_symbol_5_0= '<'
+            	            // InternalSmartCE.g:2565:6: (lv_symbol_5_0= '<' )
+            	            // InternalSmartCE.g:2566:7: lv_symbol_5_0= '<'
             	            {
-            	            lv_symbol_5_0=(Token)match(input,50,FOLLOW_46); 
+            	            lv_symbol_5_0=(Token)match(input,49,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_5_0, grammarAccess.getComparisonAccess().getSymbolLessThanSignKeyword_1_1_3_0());
             	            						
@@ -6054,15 +6019,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 5 :
-            	            // InternalSmartCE.g:2590:5: ( (lv_symbol_6_0= '!=' ) )
+            	            // InternalSmartCE.g:2579:5: ( (lv_symbol_6_0= '!=' ) )
             	            {
-            	            // InternalSmartCE.g:2590:5: ( (lv_symbol_6_0= '!=' ) )
-            	            // InternalSmartCE.g:2591:6: (lv_symbol_6_0= '!=' )
+            	            // InternalSmartCE.g:2579:5: ( (lv_symbol_6_0= '!=' ) )
+            	            // InternalSmartCE.g:2580:6: (lv_symbol_6_0= '!=' )
             	            {
-            	            // InternalSmartCE.g:2591:6: (lv_symbol_6_0= '!=' )
-            	            // InternalSmartCE.g:2592:7: lv_symbol_6_0= '!='
+            	            // InternalSmartCE.g:2580:6: (lv_symbol_6_0= '!=' )
+            	            // InternalSmartCE.g:2581:7: lv_symbol_6_0= '!='
             	            {
-            	            lv_symbol_6_0=(Token)match(input,51,FOLLOW_46); 
+            	            lv_symbol_6_0=(Token)match(input,50,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_6_0, grammarAccess.getComparisonAccess().getSymbolExclamationMarkEqualsSignKeyword_1_1_4_0());
             	            						
@@ -6082,15 +6047,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 6 :
-            	            // InternalSmartCE.g:2605:5: ( (lv_symbol_7_0= '==' ) )
+            	            // InternalSmartCE.g:2594:5: ( (lv_symbol_7_0= '==' ) )
             	            {
-            	            // InternalSmartCE.g:2605:5: ( (lv_symbol_7_0= '==' ) )
-            	            // InternalSmartCE.g:2606:6: (lv_symbol_7_0= '==' )
+            	            // InternalSmartCE.g:2594:5: ( (lv_symbol_7_0= '==' ) )
+            	            // InternalSmartCE.g:2595:6: (lv_symbol_7_0= '==' )
             	            {
-            	            // InternalSmartCE.g:2606:6: (lv_symbol_7_0= '==' )
-            	            // InternalSmartCE.g:2607:7: lv_symbol_7_0= '=='
+            	            // InternalSmartCE.g:2595:6: (lv_symbol_7_0= '==' )
+            	            // InternalSmartCE.g:2596:7: lv_symbol_7_0= '=='
             	            {
-            	            lv_symbol_7_0=(Token)match(input,52,FOLLOW_46); 
+            	            lv_symbol_7_0=(Token)match(input,51,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_7_0, grammarAccess.getComparisonAccess().getSymbolEqualsSignEqualsSignKeyword_1_1_5_0());
             	            						
@@ -6110,15 +6075,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 7 :
-            	            // InternalSmartCE.g:2620:5: ( (lv_symbol_8_0= 'is' ) )
+            	            // InternalSmartCE.g:2609:5: ( (lv_symbol_8_0= 'is' ) )
             	            {
-            	            // InternalSmartCE.g:2620:5: ( (lv_symbol_8_0= 'is' ) )
-            	            // InternalSmartCE.g:2621:6: (lv_symbol_8_0= 'is' )
+            	            // InternalSmartCE.g:2609:5: ( (lv_symbol_8_0= 'is' ) )
+            	            // InternalSmartCE.g:2610:6: (lv_symbol_8_0= 'is' )
             	            {
-            	            // InternalSmartCE.g:2621:6: (lv_symbol_8_0= 'is' )
-            	            // InternalSmartCE.g:2622:7: lv_symbol_8_0= 'is'
+            	            // InternalSmartCE.g:2610:6: (lv_symbol_8_0= 'is' )
+            	            // InternalSmartCE.g:2611:7: lv_symbol_8_0= 'is'
             	            {
-            	            lv_symbol_8_0=(Token)match(input,59,FOLLOW_46); 
+            	            lv_symbol_8_0=(Token)match(input,57,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_8_0, grammarAccess.getComparisonAccess().getSymbolIsKeyword_1_1_6_0());
             	            						
@@ -6138,15 +6103,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 8 :
-            	            // InternalSmartCE.g:2635:5: ( (lv_symbol_9_0= 'as' ) )
+            	            // InternalSmartCE.g:2624:5: ( (lv_symbol_9_0= 'as' ) )
             	            {
-            	            // InternalSmartCE.g:2635:5: ( (lv_symbol_9_0= 'as' ) )
-            	            // InternalSmartCE.g:2636:6: (lv_symbol_9_0= 'as' )
+            	            // InternalSmartCE.g:2624:5: ( (lv_symbol_9_0= 'as' ) )
+            	            // InternalSmartCE.g:2625:6: (lv_symbol_9_0= 'as' )
             	            {
-            	            // InternalSmartCE.g:2636:6: (lv_symbol_9_0= 'as' )
-            	            // InternalSmartCE.g:2637:7: lv_symbol_9_0= 'as'
+            	            // InternalSmartCE.g:2625:6: (lv_symbol_9_0= 'as' )
+            	            // InternalSmartCE.g:2626:7: lv_symbol_9_0= 'as'
             	            {
-            	            lv_symbol_9_0=(Token)match(input,60,FOLLOW_46); 
+            	            lv_symbol_9_0=(Token)match(input,58,FOLLOW_43); 
 
             	            							newLeafNode(lv_symbol_9_0, grammarAccess.getComparisonAccess().getSymbolAsKeyword_1_1_7_0());
             	            						
@@ -6168,16 +6133,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2650:4: ( (lv_right_10_0= rulePlus ) )
-            	    // InternalSmartCE.g:2651:5: (lv_right_10_0= rulePlus )
+            	    // InternalSmartCE.g:2639:4: ( (lv_right_10_0= rulePlus ) )
+            	    // InternalSmartCE.g:2640:5: (lv_right_10_0= rulePlus )
             	    {
-            	    // InternalSmartCE.g:2651:5: (lv_right_10_0= rulePlus )
-            	    // InternalSmartCE.g:2652:6: lv_right_10_0= rulePlus
+            	    // InternalSmartCE.g:2640:5: (lv_right_10_0= rulePlus )
+            	    // InternalSmartCE.g:2641:6: lv_right_10_0= rulePlus
             	    {
 
             	    						newCompositeNode(grammarAccess.getComparisonAccess().getRightPlusParserRuleCall_1_2_0());
             	    					
-            	    pushFollow(FOLLOW_47);
+            	    pushFollow(FOLLOW_44);
             	    lv_right_10_0=rulePlus();
 
             	    state._fsp--;
@@ -6204,7 +6169,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop25;
                 }
             } while (true);
 
@@ -6231,7 +6196,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePlus"
-    // InternalSmartCE.g:2674:1: entryRulePlus returns [EObject current=null] : iv_rulePlus= rulePlus EOF ;
+    // InternalSmartCE.g:2663:1: entryRulePlus returns [EObject current=null] : iv_rulePlus= rulePlus EOF ;
     public final EObject entryRulePlus() throws RecognitionException {
         EObject current = null;
 
@@ -6239,8 +6204,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2674:45: (iv_rulePlus= rulePlus EOF )
-            // InternalSmartCE.g:2675:2: iv_rulePlus= rulePlus EOF
+            // InternalSmartCE.g:2663:45: (iv_rulePlus= rulePlus EOF )
+            // InternalSmartCE.g:2664:2: iv_rulePlus= rulePlus EOF
             {
              newCompositeNode(grammarAccess.getPlusRule()); 
             pushFollow(FOLLOW_1);
@@ -6267,7 +6232,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePlus"
-    // InternalSmartCE.g:2681:1: rulePlus returns [EObject current=null] : (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* ) ;
+    // InternalSmartCE.g:2670:1: rulePlus returns [EObject current=null] : (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* ) ;
     public final EObject rulePlus() throws RecognitionException {
         EObject current = null;
 
@@ -6282,16 +6247,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2687:2: ( (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* ) )
-            // InternalSmartCE.g:2688:2: (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* )
+            // InternalSmartCE.g:2676:2: ( (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* ) )
+            // InternalSmartCE.g:2677:2: (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* )
             {
-            // InternalSmartCE.g:2688:2: (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* )
-            // InternalSmartCE.g:2689:3: this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )*
+            // InternalSmartCE.g:2677:2: (this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )* )
+            // InternalSmartCE.g:2678:3: this_Factor_0= ruleFactor ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getPlusAccess().getFactorParserRuleCall_0());
             		
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_45);
             this_Factor_0=ruleFactor();
 
             state._fsp--;
@@ -6300,23 +6265,23 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			current = this_Factor_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalSmartCE.g:2697:3: ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )*
-            loop28:
+            // InternalSmartCE.g:2686:3: ( () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) ) )*
+            loop27:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( ((LA28_0>=61 && LA28_0<=62)) ) {
-                    alt28=1;
+                if ( ((LA27_0>=59 && LA27_0<=60)) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalSmartCE.g:2698:4: () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) )
+            	    // InternalSmartCE.g:2687:4: () (otherlv_2= '+' | otherlv_3= '-' ) ( (lv_right_4_0= ruleFactor ) )
             	    {
-            	    // InternalSmartCE.g:2698:4: ()
-            	    // InternalSmartCE.g:2699:5: 
+            	    // InternalSmartCE.g:2687:4: ()
+            	    // InternalSmartCE.g:2688:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -6326,27 +6291,27 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2705:4: (otherlv_2= '+' | otherlv_3= '-' )
-            	    int alt27=2;
-            	    int LA27_0 = input.LA(1);
+            	    // InternalSmartCE.g:2694:4: (otherlv_2= '+' | otherlv_3= '-' )
+            	    int alt26=2;
+            	    int LA26_0 = input.LA(1);
 
-            	    if ( (LA27_0==61) ) {
-            	        alt27=1;
+            	    if ( (LA26_0==59) ) {
+            	        alt26=1;
             	    }
-            	    else if ( (LA27_0==62) ) {
-            	        alt27=2;
+            	    else if ( (LA26_0==60) ) {
+            	        alt26=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 27, 0, input);
+            	            new NoViableAltException("", 26, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt27) {
+            	    switch (alt26) {
             	        case 1 :
-            	            // InternalSmartCE.g:2706:5: otherlv_2= '+'
+            	            // InternalSmartCE.g:2695:5: otherlv_2= '+'
             	            {
-            	            otherlv_2=(Token)match(input,61,FOLLOW_46); 
+            	            otherlv_2=(Token)match(input,59,FOLLOW_43); 
 
             	            					newLeafNode(otherlv_2, grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0());
             	            				
@@ -6354,9 +6319,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalSmartCE.g:2711:5: otherlv_3= '-'
+            	            // InternalSmartCE.g:2700:5: otherlv_3= '-'
             	            {
-            	            otherlv_3=(Token)match(input,62,FOLLOW_46); 
+            	            otherlv_3=(Token)match(input,60,FOLLOW_43); 
 
             	            					newLeafNode(otherlv_3, grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1());
             	            				
@@ -6366,16 +6331,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2716:4: ( (lv_right_4_0= ruleFactor ) )
-            	    // InternalSmartCE.g:2717:5: (lv_right_4_0= ruleFactor )
+            	    // InternalSmartCE.g:2705:4: ( (lv_right_4_0= ruleFactor ) )
+            	    // InternalSmartCE.g:2706:5: (lv_right_4_0= ruleFactor )
             	    {
-            	    // InternalSmartCE.g:2717:5: (lv_right_4_0= ruleFactor )
-            	    // InternalSmartCE.g:2718:6: lv_right_4_0= ruleFactor
+            	    // InternalSmartCE.g:2706:5: (lv_right_4_0= ruleFactor )
+            	    // InternalSmartCE.g:2707:6: lv_right_4_0= ruleFactor
             	    {
 
             	    						newCompositeNode(grammarAccess.getPlusAccess().getRightFactorParserRuleCall_1_2_0());
             	    					
-            	    pushFollow(FOLLOW_48);
+            	    pushFollow(FOLLOW_45);
             	    lv_right_4_0=ruleFactor();
 
             	    state._fsp--;
@@ -6402,7 +6367,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop27;
                 }
             } while (true);
 
@@ -6429,7 +6394,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFactor"
-    // InternalSmartCE.g:2740:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
+    // InternalSmartCE.g:2729:1: entryRuleFactor returns [EObject current=null] : iv_ruleFactor= ruleFactor EOF ;
     public final EObject entryRuleFactor() throws RecognitionException {
         EObject current = null;
 
@@ -6437,8 +6402,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2740:47: (iv_ruleFactor= ruleFactor EOF )
-            // InternalSmartCE.g:2741:2: iv_ruleFactor= ruleFactor EOF
+            // InternalSmartCE.g:2729:47: (iv_ruleFactor= ruleFactor EOF )
+            // InternalSmartCE.g:2730:2: iv_ruleFactor= ruleFactor EOF
             {
              newCompositeNode(grammarAccess.getFactorRule()); 
             pushFollow(FOLLOW_1);
@@ -6465,7 +6430,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFactor"
-    // InternalSmartCE.g:2747:1: ruleFactor returns [EObject current=null] : (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* ) ;
+    // InternalSmartCE.g:2736:1: ruleFactor returns [EObject current=null] : (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* ) ;
     public final EObject ruleFactor() throws RecognitionException {
         EObject current = null;
 
@@ -6480,16 +6445,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2753:2: ( (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* ) )
-            // InternalSmartCE.g:2754:2: (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* )
+            // InternalSmartCE.g:2742:2: ( (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* ) )
+            // InternalSmartCE.g:2743:2: (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* )
             {
-            // InternalSmartCE.g:2754:2: (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* )
-            // InternalSmartCE.g:2755:3: this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )*
+            // InternalSmartCE.g:2743:2: (this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )* )
+            // InternalSmartCE.g:2744:3: this_Negative_0= ruleNegative ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )*
             {
 
             			newCompositeNode(grammarAccess.getFactorAccess().getNegativeParserRuleCall_0());
             		
-            pushFollow(FOLLOW_49);
+            pushFollow(FOLLOW_46);
             this_Negative_0=ruleNegative();
 
             state._fsp--;
@@ -6498,23 +6463,23 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             			current = this_Negative_0;
             			afterParserOrEnumRuleCall();
             		
-            // InternalSmartCE.g:2763:3: ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )*
-            loop30:
+            // InternalSmartCE.g:2752:3: ( () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) ) )*
+            loop29:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( ((LA30_0>=63 && LA30_0<=64)) ) {
-                    alt30=1;
+                if ( ((LA29_0>=61 && LA29_0<=62)) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalSmartCE.g:2764:4: () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) )
+            	    // InternalSmartCE.g:2753:4: () (otherlv_2= '*' | otherlv_3= '/' ) ( (lv_right_4_0= ruleNegative ) )
             	    {
-            	    // InternalSmartCE.g:2764:4: ()
-            	    // InternalSmartCE.g:2765:5: 
+            	    // InternalSmartCE.g:2753:4: ()
+            	    // InternalSmartCE.g:2754:5: 
             	    {
 
             	    					current = forceCreateModelElementAndSet(
@@ -6524,27 +6489,27 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2771:4: (otherlv_2= '*' | otherlv_3= '/' )
-            	    int alt29=2;
-            	    int LA29_0 = input.LA(1);
+            	    // InternalSmartCE.g:2760:4: (otherlv_2= '*' | otherlv_3= '/' )
+            	    int alt28=2;
+            	    int LA28_0 = input.LA(1);
 
-            	    if ( (LA29_0==63) ) {
-            	        alt29=1;
+            	    if ( (LA28_0==61) ) {
+            	        alt28=1;
             	    }
-            	    else if ( (LA29_0==64) ) {
-            	        alt29=2;
+            	    else if ( (LA28_0==62) ) {
+            	        alt28=2;
             	    }
             	    else {
             	        NoViableAltException nvae =
-            	            new NoViableAltException("", 29, 0, input);
+            	            new NoViableAltException("", 28, 0, input);
 
             	        throw nvae;
             	    }
-            	    switch (alt29) {
+            	    switch (alt28) {
             	        case 1 :
-            	            // InternalSmartCE.g:2772:5: otherlv_2= '*'
+            	            // InternalSmartCE.g:2761:5: otherlv_2= '*'
             	            {
-            	            otherlv_2=(Token)match(input,63,FOLLOW_46); 
+            	            otherlv_2=(Token)match(input,61,FOLLOW_43); 
 
             	            					newLeafNode(otherlv_2, grammarAccess.getFactorAccess().getAsteriskKeyword_1_1_0());
             	            				
@@ -6552,9 +6517,9 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	            }
             	            break;
             	        case 2 :
-            	            // InternalSmartCE.g:2777:5: otherlv_3= '/'
+            	            // InternalSmartCE.g:2766:5: otherlv_3= '/'
             	            {
-            	            otherlv_3=(Token)match(input,64,FOLLOW_46); 
+            	            otherlv_3=(Token)match(input,62,FOLLOW_43); 
 
             	            					newLeafNode(otherlv_3, grammarAccess.getFactorAccess().getSolidusKeyword_1_1_1());
             	            				
@@ -6564,16 +6529,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalSmartCE.g:2782:4: ( (lv_right_4_0= ruleNegative ) )
-            	    // InternalSmartCE.g:2783:5: (lv_right_4_0= ruleNegative )
+            	    // InternalSmartCE.g:2771:4: ( (lv_right_4_0= ruleNegative ) )
+            	    // InternalSmartCE.g:2772:5: (lv_right_4_0= ruleNegative )
             	    {
-            	    // InternalSmartCE.g:2783:5: (lv_right_4_0= ruleNegative )
-            	    // InternalSmartCE.g:2784:6: lv_right_4_0= ruleNegative
+            	    // InternalSmartCE.g:2772:5: (lv_right_4_0= ruleNegative )
+            	    // InternalSmartCE.g:2773:6: lv_right_4_0= ruleNegative
             	    {
 
             	    						newCompositeNode(grammarAccess.getFactorAccess().getRightNegativeParserRuleCall_1_2_0());
             	    					
-            	    pushFollow(FOLLOW_49);
+            	    pushFollow(FOLLOW_46);
             	    lv_right_4_0=ruleNegative();
 
             	    state._fsp--;
@@ -6600,7 +6565,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop29;
                 }
             } while (true);
 
@@ -6627,7 +6592,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNegative"
-    // InternalSmartCE.g:2806:1: entryRuleNegative returns [EObject current=null] : iv_ruleNegative= ruleNegative EOF ;
+    // InternalSmartCE.g:2795:1: entryRuleNegative returns [EObject current=null] : iv_ruleNegative= ruleNegative EOF ;
     public final EObject entryRuleNegative() throws RecognitionException {
         EObject current = null;
 
@@ -6635,8 +6600,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2806:49: (iv_ruleNegative= ruleNegative EOF )
-            // InternalSmartCE.g:2807:2: iv_ruleNegative= ruleNegative EOF
+            // InternalSmartCE.g:2795:49: (iv_ruleNegative= ruleNegative EOF )
+            // InternalSmartCE.g:2796:2: iv_ruleNegative= ruleNegative EOF
             {
              newCompositeNode(grammarAccess.getNegativeRule()); 
             pushFollow(FOLLOW_1);
@@ -6663,7 +6628,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNegative"
-    // InternalSmartCE.g:2813:1: ruleNegative returns [EObject current=null] : (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) ) ;
+    // InternalSmartCE.g:2802:1: ruleNegative returns [EObject current=null] : (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) ) ;
     public final EObject ruleNegative() throws RecognitionException {
         EObject current = null;
 
@@ -6677,28 +6642,28 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2819:2: ( (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) ) )
-            // InternalSmartCE.g:2820:2: (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) )
+            // InternalSmartCE.g:2808:2: ( (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) ) )
+            // InternalSmartCE.g:2809:2: (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) )
             {
-            // InternalSmartCE.g:2820:2: (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) )
-            int alt31=2;
-            int LA31_0 = input.LA(1);
+            // InternalSmartCE.g:2809:2: (this_Primary_0= rulePrimary | ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) ) )
+            int alt30=2;
+            int LA30_0 = input.LA(1);
 
-            if ( ((LA31_0>=RULE_ID && LA31_0<=RULE_STRING)||LA31_0==32) ) {
-                alt31=1;
+            if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_STRING)||LA30_0==31) ) {
+                alt30=1;
             }
-            else if ( (LA31_0==62) ) {
-                alt31=2;
+            else if ( (LA30_0==60) ) {
+                alt30=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 30, 0, input);
 
                 throw nvae;
             }
-            switch (alt31) {
+            switch (alt30) {
                 case 1 :
-                    // InternalSmartCE.g:2821:3: this_Primary_0= rulePrimary
+                    // InternalSmartCE.g:2810:3: this_Primary_0= rulePrimary
                     {
 
                     			newCompositeNode(grammarAccess.getNegativeAccess().getPrimaryParserRuleCall_0());
@@ -6716,13 +6681,13 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:2830:3: ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) )
+                    // InternalSmartCE.g:2819:3: ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) )
                     {
-                    // InternalSmartCE.g:2830:3: ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) )
-                    // InternalSmartCE.g:2831:4: () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) )
+                    // InternalSmartCE.g:2819:3: ( () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) ) )
+                    // InternalSmartCE.g:2820:4: () otherlv_2= '-' ( (lv_expression_3_0= rulePrimary ) )
                     {
-                    // InternalSmartCE.g:2831:4: ()
-                    // InternalSmartCE.g:2832:5: 
+                    // InternalSmartCE.g:2820:4: ()
+                    // InternalSmartCE.g:2821:5: 
                     {
 
                     					current = forceCreateModelElement(
@@ -6732,15 +6697,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,62,FOLLOW_50); 
+                    otherlv_2=(Token)match(input,60,FOLLOW_47); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getNegativeAccess().getHyphenMinusKeyword_1_1());
                     			
-                    // InternalSmartCE.g:2842:4: ( (lv_expression_3_0= rulePrimary ) )
-                    // InternalSmartCE.g:2843:5: (lv_expression_3_0= rulePrimary )
+                    // InternalSmartCE.g:2831:4: ( (lv_expression_3_0= rulePrimary ) )
+                    // InternalSmartCE.g:2832:5: (lv_expression_3_0= rulePrimary )
                     {
-                    // InternalSmartCE.g:2843:5: (lv_expression_3_0= rulePrimary )
-                    // InternalSmartCE.g:2844:6: lv_expression_3_0= rulePrimary
+                    // InternalSmartCE.g:2832:5: (lv_expression_3_0= rulePrimary )
+                    // InternalSmartCE.g:2833:6: lv_expression_3_0= rulePrimary
                     {
 
                     						newCompositeNode(grammarAccess.getNegativeAccess().getExpressionPrimaryParserRuleCall_1_2_0());
@@ -6796,7 +6761,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePrimary"
-    // InternalSmartCE.g:2866:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
+    // InternalSmartCE.g:2855:1: entryRulePrimary returns [EObject current=null] : iv_rulePrimary= rulePrimary EOF ;
     public final EObject entryRulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -6804,8 +6769,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2866:48: (iv_rulePrimary= rulePrimary EOF )
-            // InternalSmartCE.g:2867:2: iv_rulePrimary= rulePrimary EOF
+            // InternalSmartCE.g:2855:48: (iv_rulePrimary= rulePrimary EOF )
+            // InternalSmartCE.g:2856:2: iv_rulePrimary= rulePrimary EOF
             {
              newCompositeNode(grammarAccess.getPrimaryRule()); 
             pushFollow(FOLLOW_1);
@@ -6832,7 +6797,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePrimary"
-    // InternalSmartCE.g:2873:1: rulePrimary returns [EObject current=null] : (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) ) ;
+    // InternalSmartCE.g:2862:1: rulePrimary returns [EObject current=null] : (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) ) ;
     public final EObject rulePrimary() throws RecognitionException {
         EObject current = null;
 
@@ -6847,28 +6812,28 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2879:2: ( (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) ) )
-            // InternalSmartCE.g:2880:2: (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) )
+            // InternalSmartCE.g:2868:2: ( (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) ) )
+            // InternalSmartCE.g:2869:2: (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) )
             {
-            // InternalSmartCE.g:2880:2: (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) )
-            int alt32=2;
-            int LA32_0 = input.LA(1);
+            // InternalSmartCE.g:2869:2: (this_LiteralValue_0= ruleLiteralValue | (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' ) )
+            int alt31=2;
+            int LA31_0 = input.LA(1);
 
-            if ( ((LA32_0>=RULE_ID && LA32_0<=RULE_STRING)) ) {
-                alt32=1;
+            if ( ((LA31_0>=RULE_ID && LA31_0<=RULE_STRING)) ) {
+                alt31=1;
             }
-            else if ( (LA32_0==32) ) {
-                alt32=2;
+            else if ( (LA31_0==31) ) {
+                alt31=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
-            switch (alt32) {
+            switch (alt31) {
                 case 1 :
-                    // InternalSmartCE.g:2881:3: this_LiteralValue_0= ruleLiteralValue
+                    // InternalSmartCE.g:2870:3: this_LiteralValue_0= ruleLiteralValue
                     {
 
                     			newCompositeNode(grammarAccess.getPrimaryAccess().getLiteralValueParserRuleCall_0());
@@ -6886,19 +6851,19 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:2890:3: (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' )
+                    // InternalSmartCE.g:2879:3: (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' )
                     {
-                    // InternalSmartCE.g:2890:3: (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' )
-                    // InternalSmartCE.g:2891:4: otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')'
+                    // InternalSmartCE.g:2879:3: (otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')' )
+                    // InternalSmartCE.g:2880:4: otherlv_1= '(' this_Expression_2= ruleExpression otherlv_3= ')'
                     {
-                    otherlv_1=(Token)match(input,32,FOLLOW_9); 
+                    otherlv_1=(Token)match(input,31,FOLLOW_9); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
                     			
 
                     				newCompositeNode(grammarAccess.getPrimaryAccess().getExpressionParserRuleCall_1_1());
                     			
-                    pushFollow(FOLLOW_33);
+                    pushFollow(FOLLOW_30);
                     this_Expression_2=ruleExpression();
 
                     state._fsp--;
@@ -6907,7 +6872,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     				current = this_Expression_2;
                     				afterParserOrEnumRuleCall();
                     			
-                    otherlv_3=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_3=(Token)match(input,32,FOLLOW_2); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_1_2());
                     			
@@ -6940,7 +6905,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralValue"
-    // InternalSmartCE.g:2912:1: entryRuleLiteralValue returns [EObject current=null] : iv_ruleLiteralValue= ruleLiteralValue EOF ;
+    // InternalSmartCE.g:2901:1: entryRuleLiteralValue returns [EObject current=null] : iv_ruleLiteralValue= ruleLiteralValue EOF ;
     public final EObject entryRuleLiteralValue() throws RecognitionException {
         EObject current = null;
 
@@ -6948,8 +6913,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2912:53: (iv_ruleLiteralValue= ruleLiteralValue EOF )
-            // InternalSmartCE.g:2913:2: iv_ruleLiteralValue= ruleLiteralValue EOF
+            // InternalSmartCE.g:2901:53: (iv_ruleLiteralValue= ruleLiteralValue EOF )
+            // InternalSmartCE.g:2902:2: iv_ruleLiteralValue= ruleLiteralValue EOF
             {
              newCompositeNode(grammarAccess.getLiteralValueRule()); 
             pushFollow(FOLLOW_1);
@@ -6976,7 +6941,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralValue"
-    // InternalSmartCE.g:2919:1: ruleLiteralValue returns [EObject current=null] : (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall ) ;
+    // InternalSmartCE.g:2908:1: ruleLiteralValue returns [EObject current=null] : (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall ) ;
     public final EObject ruleLiteralValue() throws RecognitionException {
         EObject current = null;
 
@@ -6993,15 +6958,15 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2925:2: ( (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall ) )
-            // InternalSmartCE.g:2926:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )
+            // InternalSmartCE.g:2914:2: ( (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall ) )
+            // InternalSmartCE.g:2915:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )
             {
-            // InternalSmartCE.g:2926:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )
-            int alt33=4;
-            alt33 = dfa33.predict(input);
-            switch (alt33) {
+            // InternalSmartCE.g:2915:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )
+            int alt32=4;
+            alt32 = dfa32.predict(input);
+            switch (alt32) {
                 case 1 :
-                    // InternalSmartCE.g:2927:3: this_NumericValue_0= ruleNumericValue
+                    // InternalSmartCE.g:2916:3: this_NumericValue_0= ruleNumericValue
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralValueAccess().getNumericValueParserRuleCall_0());
@@ -7019,7 +6984,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:2936:3: this_StringValue_1= ruleStringValue
+                    // InternalSmartCE.g:2925:3: this_StringValue_1= ruleStringValue
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralValueAccess().getStringValueParserRuleCall_1());
@@ -7037,7 +7002,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:2945:3: this_VariableValue_2= ruleVariableValue
+                    // InternalSmartCE.g:2934:3: this_VariableValue_2= ruleVariableValue
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralValueAccess().getVariableValueParserRuleCall_2());
@@ -7055,7 +7020,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:2954:3: this_FunctionCall_3= ruleFunctionCall
+                    // InternalSmartCE.g:2943:3: this_FunctionCall_3= ruleFunctionCall
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralValueAccess().getFunctionCallParserRuleCall_3());
@@ -7095,7 +7060,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumericValue"
-    // InternalSmartCE.g:2966:1: entryRuleNumericValue returns [EObject current=null] : iv_ruleNumericValue= ruleNumericValue EOF ;
+    // InternalSmartCE.g:2955:1: entryRuleNumericValue returns [EObject current=null] : iv_ruleNumericValue= ruleNumericValue EOF ;
     public final EObject entryRuleNumericValue() throws RecognitionException {
         EObject current = null;
 
@@ -7103,8 +7068,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:2966:53: (iv_ruleNumericValue= ruleNumericValue EOF )
-            // InternalSmartCE.g:2967:2: iv_ruleNumericValue= ruleNumericValue EOF
+            // InternalSmartCE.g:2955:53: (iv_ruleNumericValue= ruleNumericValue EOF )
+            // InternalSmartCE.g:2956:2: iv_ruleNumericValue= ruleNumericValue EOF
             {
              newCompositeNode(grammarAccess.getNumericValueRule()); 
             pushFollow(FOLLOW_1);
@@ -7131,7 +7096,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumericValue"
-    // InternalSmartCE.g:2973:1: ruleNumericValue returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
+    // InternalSmartCE.g:2962:1: ruleNumericValue returns [EObject current=null] : ( (lv_value_0_0= RULE_INT ) ) ;
     public final EObject ruleNumericValue() throws RecognitionException {
         EObject current = null;
 
@@ -7141,14 +7106,14 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:2979:2: ( ( (lv_value_0_0= RULE_INT ) ) )
-            // InternalSmartCE.g:2980:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalSmartCE.g:2968:2: ( ( (lv_value_0_0= RULE_INT ) ) )
+            // InternalSmartCE.g:2969:2: ( (lv_value_0_0= RULE_INT ) )
             {
-            // InternalSmartCE.g:2980:2: ( (lv_value_0_0= RULE_INT ) )
-            // InternalSmartCE.g:2981:3: (lv_value_0_0= RULE_INT )
+            // InternalSmartCE.g:2969:2: ( (lv_value_0_0= RULE_INT ) )
+            // InternalSmartCE.g:2970:3: (lv_value_0_0= RULE_INT )
             {
-            // InternalSmartCE.g:2981:3: (lv_value_0_0= RULE_INT )
-            // InternalSmartCE.g:2982:4: lv_value_0_0= RULE_INT
+            // InternalSmartCE.g:2970:3: (lv_value_0_0= RULE_INT )
+            // InternalSmartCE.g:2971:4: lv_value_0_0= RULE_INT
             {
             lv_value_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -7190,7 +7155,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringValue"
-    // InternalSmartCE.g:3001:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
+    // InternalSmartCE.g:2990:1: entryRuleStringValue returns [EObject current=null] : iv_ruleStringValue= ruleStringValue EOF ;
     public final EObject entryRuleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -7198,8 +7163,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3001:52: (iv_ruleStringValue= ruleStringValue EOF )
-            // InternalSmartCE.g:3002:2: iv_ruleStringValue= ruleStringValue EOF
+            // InternalSmartCE.g:2990:52: (iv_ruleStringValue= ruleStringValue EOF )
+            // InternalSmartCE.g:2991:2: iv_ruleStringValue= ruleStringValue EOF
             {
              newCompositeNode(grammarAccess.getStringValueRule()); 
             pushFollow(FOLLOW_1);
@@ -7226,7 +7191,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringValue"
-    // InternalSmartCE.g:3008:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
+    // InternalSmartCE.g:2997:1: ruleStringValue returns [EObject current=null] : ( (lv_value_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringValue() throws RecognitionException {
         EObject current = null;
 
@@ -7236,14 +7201,14 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3014:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
-            // InternalSmartCE.g:3015:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalSmartCE.g:3003:2: ( ( (lv_value_0_0= RULE_STRING ) ) )
+            // InternalSmartCE.g:3004:2: ( (lv_value_0_0= RULE_STRING ) )
             {
-            // InternalSmartCE.g:3015:2: ( (lv_value_0_0= RULE_STRING ) )
-            // InternalSmartCE.g:3016:3: (lv_value_0_0= RULE_STRING )
+            // InternalSmartCE.g:3004:2: ( (lv_value_0_0= RULE_STRING ) )
+            // InternalSmartCE.g:3005:3: (lv_value_0_0= RULE_STRING )
             {
-            // InternalSmartCE.g:3016:3: (lv_value_0_0= RULE_STRING )
-            // InternalSmartCE.g:3017:4: lv_value_0_0= RULE_STRING
+            // InternalSmartCE.g:3005:3: (lv_value_0_0= RULE_STRING )
+            // InternalSmartCE.g:3006:4: lv_value_0_0= RULE_STRING
             {
             lv_value_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -7285,7 +7250,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariableValue"
-    // InternalSmartCE.g:3036:1: entryRuleVariableValue returns [EObject current=null] : iv_ruleVariableValue= ruleVariableValue EOF ;
+    // InternalSmartCE.g:3025:1: entryRuleVariableValue returns [EObject current=null] : iv_ruleVariableValue= ruleVariableValue EOF ;
     public final EObject entryRuleVariableValue() throws RecognitionException {
         EObject current = null;
 
@@ -7293,8 +7258,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3036:54: (iv_ruleVariableValue= ruleVariableValue EOF )
-            // InternalSmartCE.g:3037:2: iv_ruleVariableValue= ruleVariableValue EOF
+            // InternalSmartCE.g:3025:54: (iv_ruleVariableValue= ruleVariableValue EOF )
+            // InternalSmartCE.g:3026:2: iv_ruleVariableValue= ruleVariableValue EOF
             {
              newCompositeNode(grammarAccess.getVariableValueRule()); 
             pushFollow(FOLLOW_1);
@@ -7321,7 +7286,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariableValue"
-    // InternalSmartCE.g:3043:1: ruleVariableValue returns [EObject current=null] : ( (lv_value_0_0= ruleQualifiedName ) ) ;
+    // InternalSmartCE.g:3032:1: ruleVariableValue returns [EObject current=null] : ( (lv_value_0_0= ruleQualifiedName ) ) ;
     public final EObject ruleVariableValue() throws RecognitionException {
         EObject current = null;
 
@@ -7332,14 +7297,14 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3049:2: ( ( (lv_value_0_0= ruleQualifiedName ) ) )
-            // InternalSmartCE.g:3050:2: ( (lv_value_0_0= ruleQualifiedName ) )
+            // InternalSmartCE.g:3038:2: ( ( (lv_value_0_0= ruleQualifiedName ) ) )
+            // InternalSmartCE.g:3039:2: ( (lv_value_0_0= ruleQualifiedName ) )
             {
-            // InternalSmartCE.g:3050:2: ( (lv_value_0_0= ruleQualifiedName ) )
-            // InternalSmartCE.g:3051:3: (lv_value_0_0= ruleQualifiedName )
+            // InternalSmartCE.g:3039:2: ( (lv_value_0_0= ruleQualifiedName ) )
+            // InternalSmartCE.g:3040:3: (lv_value_0_0= ruleQualifiedName )
             {
-            // InternalSmartCE.g:3051:3: (lv_value_0_0= ruleQualifiedName )
-            // InternalSmartCE.g:3052:4: lv_value_0_0= ruleQualifiedName
+            // InternalSmartCE.g:3040:3: (lv_value_0_0= ruleQualifiedName )
+            // InternalSmartCE.g:3041:4: lv_value_0_0= ruleQualifiedName
             {
 
             				newCompositeNode(grammarAccess.getVariableValueAccess().getValueQualifiedNameParserRuleCall_0());
@@ -7386,7 +7351,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleFunctionCall"
-    // InternalSmartCE.g:3072:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
+    // InternalSmartCE.g:3061:1: entryRuleFunctionCall returns [EObject current=null] : iv_ruleFunctionCall= ruleFunctionCall EOF ;
     public final EObject entryRuleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -7394,8 +7359,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3072:53: (iv_ruleFunctionCall= ruleFunctionCall EOF )
-            // InternalSmartCE.g:3073:2: iv_ruleFunctionCall= ruleFunctionCall EOF
+            // InternalSmartCE.g:3061:53: (iv_ruleFunctionCall= ruleFunctionCall EOF )
+            // InternalSmartCE.g:3062:2: iv_ruleFunctionCall= ruleFunctionCall EOF
             {
              newCompositeNode(grammarAccess.getFunctionCallRule()); 
             pushFollow(FOLLOW_1);
@@ -7422,7 +7387,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleFunctionCall"
-    // InternalSmartCE.g:3079:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' ) ;
+    // InternalSmartCE.g:3068:1: ruleFunctionCall returns [EObject current=null] : ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' ) ;
     public final EObject ruleFunctionCall() throws RecognitionException {
         EObject current = null;
 
@@ -7440,22 +7405,22 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3085:2: ( ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' ) )
-            // InternalSmartCE.g:3086:2: ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' )
+            // InternalSmartCE.g:3074:2: ( ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' ) )
+            // InternalSmartCE.g:3075:2: ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' )
             {
-            // InternalSmartCE.g:3086:2: ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' )
-            // InternalSmartCE.g:3087:3: ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')'
+            // InternalSmartCE.g:3075:2: ( ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')' )
+            // InternalSmartCE.g:3076:3: ( (lv_name_0_0= ruleQualifiedName ) ) otherlv_1= '(' ( (lv_params_2_0= ruleExpression ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )* otherlv_5= ')'
             {
-            // InternalSmartCE.g:3087:3: ( (lv_name_0_0= ruleQualifiedName ) )
-            // InternalSmartCE.g:3088:4: (lv_name_0_0= ruleQualifiedName )
+            // InternalSmartCE.g:3076:3: ( (lv_name_0_0= ruleQualifiedName ) )
+            // InternalSmartCE.g:3077:4: (lv_name_0_0= ruleQualifiedName )
             {
-            // InternalSmartCE.g:3088:4: (lv_name_0_0= ruleQualifiedName )
-            // InternalSmartCE.g:3089:5: lv_name_0_0= ruleQualifiedName
+            // InternalSmartCE.g:3077:4: (lv_name_0_0= ruleQualifiedName )
+            // InternalSmartCE.g:3078:5: lv_name_0_0= ruleQualifiedName
             {
 
             					newCompositeNode(grammarAccess.getFunctionCallAccess().getNameQualifiedNameParserRuleCall_0_0());
             				
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_25);
             lv_name_0_0=ruleQualifiedName();
 
             state._fsp--;
@@ -7477,20 +7442,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,32,FOLLOW_9); 
+            otherlv_1=(Token)match(input,31,FOLLOW_9); 
 
             			newLeafNode(otherlv_1, grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSmartCE.g:3110:3: ( (lv_params_2_0= ruleExpression ) )
-            // InternalSmartCE.g:3111:4: (lv_params_2_0= ruleExpression )
+            // InternalSmartCE.g:3099:3: ( (lv_params_2_0= ruleExpression ) )
+            // InternalSmartCE.g:3100:4: (lv_params_2_0= ruleExpression )
             {
-            // InternalSmartCE.g:3111:4: (lv_params_2_0= ruleExpression )
-            // InternalSmartCE.g:3112:5: lv_params_2_0= ruleExpression
+            // InternalSmartCE.g:3100:4: (lv_params_2_0= ruleExpression )
+            // InternalSmartCE.g:3101:5: lv_params_2_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getFunctionCallAccess().getParamsExpressionParserRuleCall_2_0());
             				
-            pushFollow(FOLLOW_51);
+            pushFollow(FOLLOW_48);
             lv_params_2_0=ruleExpression();
 
             state._fsp--;
@@ -7512,35 +7477,35 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSmartCE.g:3129:3: (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )*
-            loop34:
+            // InternalSmartCE.g:3118:3: (otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) ) )*
+            loop33:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( (LA34_0==53) ) {
-                    alt34=1;
+                if ( (LA33_0==63) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalSmartCE.g:3130:4: otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) )
+            	    // InternalSmartCE.g:3119:4: otherlv_3= ',' ( (lv_params_4_0= ruleExpression ) )
             	    {
-            	    otherlv_3=(Token)match(input,53,FOLLOW_9); 
+            	    otherlv_3=(Token)match(input,63,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_3, grammarAccess.getFunctionCallAccess().getCommaKeyword_3_0());
             	    			
-            	    // InternalSmartCE.g:3134:4: ( (lv_params_4_0= ruleExpression ) )
-            	    // InternalSmartCE.g:3135:5: (lv_params_4_0= ruleExpression )
+            	    // InternalSmartCE.g:3123:4: ( (lv_params_4_0= ruleExpression ) )
+            	    // InternalSmartCE.g:3124:5: (lv_params_4_0= ruleExpression )
             	    {
-            	    // InternalSmartCE.g:3135:5: (lv_params_4_0= ruleExpression )
-            	    // InternalSmartCE.g:3136:6: lv_params_4_0= ruleExpression
+            	    // InternalSmartCE.g:3124:5: (lv_params_4_0= ruleExpression )
+            	    // InternalSmartCE.g:3125:6: lv_params_4_0= ruleExpression
             	    {
 
             	    						newCompositeNode(grammarAccess.getFunctionCallAccess().getParamsExpressionParserRuleCall_3_1_0());
             	    					
-            	    pushFollow(FOLLOW_51);
+            	    pushFollow(FOLLOW_48);
             	    lv_params_4_0=ruleExpression();
 
             	    state._fsp--;
@@ -7567,11 +7532,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop33;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,33,FOLLOW_2); 
+            otherlv_5=(Token)match(input,32,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_4());
             		
@@ -7598,7 +7563,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // InternalSmartCE.g:3162:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // InternalSmartCE.g:3151:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -7606,8 +7571,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3162:53: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // InternalSmartCE.g:3163:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // InternalSmartCE.g:3151:53: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // InternalSmartCE.g:3152:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             pushFollow(FOLLOW_1);
@@ -7634,7 +7599,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // InternalSmartCE.g:3169:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalSmartCE.g:3158:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7646,40 +7611,40 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3175:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalSmartCE.g:3176:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalSmartCE.g:3164:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalSmartCE.g:3165:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalSmartCE.g:3176:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalSmartCE.g:3177:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalSmartCE.g:3165:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalSmartCE.g:3166:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_52); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_49); 
 
             			current.merge(this_ID_0);
             		
 
             			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
             		
-            // InternalSmartCE.g:3184:3: (kw= '.' this_ID_2= RULE_ID )*
-            loop35:
+            // InternalSmartCE.g:3173:3: (kw= '.' this_ID_2= RULE_ID )*
+            loop34:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( (LA35_0==65) ) {
-                    alt35=1;
+                if ( (LA34_0==64) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt34) {
             	case 1 :
-            	    // InternalSmartCE.g:3185:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalSmartCE.g:3174:4: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,65,FOLLOW_5); 
+            	    kw=(Token)match(input,64,FOLLOW_5); 
 
             	    				current.merge(kw);
             	    				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
             	    			
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_52); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_49); 
 
             	    				current.merge(this_ID_2);
             	    			
@@ -7691,7 +7656,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop35;
+            	    break loop34;
                 }
             } while (true);
 
@@ -7718,7 +7683,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameWithWildcard"
-    // InternalSmartCE.g:3202:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
+    // InternalSmartCE.g:3191:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
     public final String entryRuleQualifiedNameWithWildcard() throws RecognitionException {
         String current = null;
 
@@ -7726,8 +7691,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3202:65: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
-            // InternalSmartCE.g:3203:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
+            // InternalSmartCE.g:3191:65: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
+            // InternalSmartCE.g:3192:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); 
             pushFollow(FOLLOW_1);
@@ -7754,7 +7719,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildcard"
-    // InternalSmartCE.g:3209:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) ;
+    // InternalSmartCE.g:3198:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameWithWildcard() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7766,16 +7731,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3215:2: ( (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) )
-            // InternalSmartCE.g:3216:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
+            // InternalSmartCE.g:3204:2: ( (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) )
+            // InternalSmartCE.g:3205:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
             {
-            // InternalSmartCE.g:3216:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
-            // InternalSmartCE.g:3217:3: this_QualifiedName_0= ruleQualifiedName kw= '.*'
+            // InternalSmartCE.g:3205:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
+            // InternalSmartCE.g:3206:3: this_QualifiedName_0= ruleQualifiedName kw= '.*'
             {
 
             			newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0());
             		
-            pushFollow(FOLLOW_53);
+            pushFollow(FOLLOW_50);
             this_QualifiedName_0=ruleQualifiedName();
 
             state._fsp--;
@@ -7786,7 +7751,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             			afterParserOrEnumRuleCall();
             		
-            kw=(Token)match(input,66,FOLLOW_2); 
+            kw=(Token)match(input,65,FOLLOW_2); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1());
@@ -7814,7 +7779,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleYEAR"
-    // InternalSmartCE.g:3236:1: entryRuleYEAR returns [String current=null] : iv_ruleYEAR= ruleYEAR EOF ;
+    // InternalSmartCE.g:3225:1: entryRuleYEAR returns [String current=null] : iv_ruleYEAR= ruleYEAR EOF ;
     public final String entryRuleYEAR() throws RecognitionException {
         String current = null;
 
@@ -7822,8 +7787,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3236:44: (iv_ruleYEAR= ruleYEAR EOF )
-            // InternalSmartCE.g:3237:2: iv_ruleYEAR= ruleYEAR EOF
+            // InternalSmartCE.g:3225:44: (iv_ruleYEAR= ruleYEAR EOF )
+            // InternalSmartCE.g:3226:2: iv_ruleYEAR= ruleYEAR EOF
             {
              newCompositeNode(grammarAccess.getYEARRule()); 
             pushFollow(FOLLOW_1);
@@ -7850,7 +7815,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleYEAR"
-    // InternalSmartCE.g:3243:1: ruleYEAR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalSmartCE.g:3232:1: ruleYEAR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleYEAR() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7860,8 +7825,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3249:2: (this_INT_0= RULE_INT )
-            // InternalSmartCE.g:3250:2: this_INT_0= RULE_INT
+            // InternalSmartCE.g:3238:2: (this_INT_0= RULE_INT )
+            // InternalSmartCE.g:3239:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -7890,7 +7855,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMONTH"
-    // InternalSmartCE.g:3260:1: entryRuleMONTH returns [String current=null] : iv_ruleMONTH= ruleMONTH EOF ;
+    // InternalSmartCE.g:3249:1: entryRuleMONTH returns [String current=null] : iv_ruleMONTH= ruleMONTH EOF ;
     public final String entryRuleMONTH() throws RecognitionException {
         String current = null;
 
@@ -7898,8 +7863,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3260:45: (iv_ruleMONTH= ruleMONTH EOF )
-            // InternalSmartCE.g:3261:2: iv_ruleMONTH= ruleMONTH EOF
+            // InternalSmartCE.g:3249:45: (iv_ruleMONTH= ruleMONTH EOF )
+            // InternalSmartCE.g:3250:2: iv_ruleMONTH= ruleMONTH EOF
             {
              newCompositeNode(grammarAccess.getMONTHRule()); 
             pushFollow(FOLLOW_1);
@@ -7926,7 +7891,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMONTH"
-    // InternalSmartCE.g:3267:1: ruleMONTH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalSmartCE.g:3256:1: ruleMONTH returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleMONTH() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7936,8 +7901,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3273:2: (this_INT_0= RULE_INT )
-            // InternalSmartCE.g:3274:2: this_INT_0= RULE_INT
+            // InternalSmartCE.g:3262:2: (this_INT_0= RULE_INT )
+            // InternalSmartCE.g:3263:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -7966,7 +7931,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleDAY"
-    // InternalSmartCE.g:3284:1: entryRuleDAY returns [String current=null] : iv_ruleDAY= ruleDAY EOF ;
+    // InternalSmartCE.g:3273:1: entryRuleDAY returns [String current=null] : iv_ruleDAY= ruleDAY EOF ;
     public final String entryRuleDAY() throws RecognitionException {
         String current = null;
 
@@ -7974,8 +7939,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3284:43: (iv_ruleDAY= ruleDAY EOF )
-            // InternalSmartCE.g:3285:2: iv_ruleDAY= ruleDAY EOF
+            // InternalSmartCE.g:3273:43: (iv_ruleDAY= ruleDAY EOF )
+            // InternalSmartCE.g:3274:2: iv_ruleDAY= ruleDAY EOF
             {
              newCompositeNode(grammarAccess.getDAYRule()); 
             pushFollow(FOLLOW_1);
@@ -8002,7 +7967,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleDAY"
-    // InternalSmartCE.g:3291:1: ruleDAY returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalSmartCE.g:3280:1: ruleDAY returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleDAY() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8012,8 +7977,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3297:2: (this_INT_0= RULE_INT )
-            // InternalSmartCE.g:3298:2: this_INT_0= RULE_INT
+            // InternalSmartCE.g:3286:2: (this_INT_0= RULE_INT )
+            // InternalSmartCE.g:3287:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -8042,7 +8007,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleHOUR"
-    // InternalSmartCE.g:3308:1: entryRuleHOUR returns [String current=null] : iv_ruleHOUR= ruleHOUR EOF ;
+    // InternalSmartCE.g:3297:1: entryRuleHOUR returns [String current=null] : iv_ruleHOUR= ruleHOUR EOF ;
     public final String entryRuleHOUR() throws RecognitionException {
         String current = null;
 
@@ -8050,8 +8015,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3308:44: (iv_ruleHOUR= ruleHOUR EOF )
-            // InternalSmartCE.g:3309:2: iv_ruleHOUR= ruleHOUR EOF
+            // InternalSmartCE.g:3297:44: (iv_ruleHOUR= ruleHOUR EOF )
+            // InternalSmartCE.g:3298:2: iv_ruleHOUR= ruleHOUR EOF
             {
              newCompositeNode(grammarAccess.getHOURRule()); 
             pushFollow(FOLLOW_1);
@@ -8078,7 +8043,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleHOUR"
-    // InternalSmartCE.g:3315:1: ruleHOUR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalSmartCE.g:3304:1: ruleHOUR returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleHOUR() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8088,8 +8053,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3321:2: (this_INT_0= RULE_INT )
-            // InternalSmartCE.g:3322:2: this_INT_0= RULE_INT
+            // InternalSmartCE.g:3310:2: (this_INT_0= RULE_INT )
+            // InternalSmartCE.g:3311:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -8118,7 +8083,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMIN"
-    // InternalSmartCE.g:3332:1: entryRuleMIN returns [String current=null] : iv_ruleMIN= ruleMIN EOF ;
+    // InternalSmartCE.g:3321:1: entryRuleMIN returns [String current=null] : iv_ruleMIN= ruleMIN EOF ;
     public final String entryRuleMIN() throws RecognitionException {
         String current = null;
 
@@ -8126,8 +8091,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3332:43: (iv_ruleMIN= ruleMIN EOF )
-            // InternalSmartCE.g:3333:2: iv_ruleMIN= ruleMIN EOF
+            // InternalSmartCE.g:3321:43: (iv_ruleMIN= ruleMIN EOF )
+            // InternalSmartCE.g:3322:2: iv_ruleMIN= ruleMIN EOF
             {
              newCompositeNode(grammarAccess.getMINRule()); 
             pushFollow(FOLLOW_1);
@@ -8154,7 +8119,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMIN"
-    // InternalSmartCE.g:3339:1: ruleMIN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalSmartCE.g:3328:1: ruleMIN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleMIN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8164,8 +8129,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3345:2: (this_INT_0= RULE_INT )
-            // InternalSmartCE.g:3346:2: this_INT_0= RULE_INT
+            // InternalSmartCE.g:3334:2: (this_INT_0= RULE_INT )
+            // InternalSmartCE.g:3335:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -8194,7 +8159,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSEC"
-    // InternalSmartCE.g:3356:1: entryRuleSEC returns [String current=null] : iv_ruleSEC= ruleSEC EOF ;
+    // InternalSmartCE.g:3345:1: entryRuleSEC returns [String current=null] : iv_ruleSEC= ruleSEC EOF ;
     public final String entryRuleSEC() throws RecognitionException {
         String current = null;
 
@@ -8202,8 +8167,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSmartCE.g:3356:43: (iv_ruleSEC= ruleSEC EOF )
-            // InternalSmartCE.g:3357:2: iv_ruleSEC= ruleSEC EOF
+            // InternalSmartCE.g:3345:43: (iv_ruleSEC= ruleSEC EOF )
+            // InternalSmartCE.g:3346:2: iv_ruleSEC= ruleSEC EOF
             {
              newCompositeNode(grammarAccess.getSECRule()); 
             pushFollow(FOLLOW_1);
@@ -8230,7 +8195,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSEC"
-    // InternalSmartCE.g:3363:1: ruleSEC returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
+    // InternalSmartCE.g:3352:1: ruleSEC returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : this_INT_0= RULE_INT ;
     public final AntlrDatatypeRuleToken ruleSEC() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8240,8 +8205,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3369:2: (this_INT_0= RULE_INT )
-            // InternalSmartCE.g:3370:2: this_INT_0= RULE_INT
+            // InternalSmartCE.g:3358:2: (this_INT_0= RULE_INT )
+            // InternalSmartCE.g:3359:2: this_INT_0= RULE_INT
             {
             this_INT_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -8270,7 +8235,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperation"
-    // InternalSmartCE.g:3380:1: ruleOperation returns [Enumerator current=null] : ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) ;
+    // InternalSmartCE.g:3369:1: ruleOperation returns [Enumerator current=null] : ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) ;
     public final Enumerator ruleOperation() throws RecognitionException {
         Enumerator current = null;
 
@@ -8285,57 +8250,57 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3386:2: ( ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) )
-            // InternalSmartCE.g:3387:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
+            // InternalSmartCE.g:3375:2: ( ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) )
+            // InternalSmartCE.g:3376:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
             {
-            // InternalSmartCE.g:3387:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
-            int alt36=6;
+            // InternalSmartCE.g:3376:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
+            int alt35=6;
             switch ( input.LA(1) ) {
+            case 66:
+                {
+                alt35=1;
+                }
+                break;
             case 67:
                 {
-                alt36=1;
+                alt35=2;
                 }
                 break;
             case 68:
                 {
-                alt36=2;
+                alt35=3;
                 }
                 break;
             case 69:
                 {
-                alt36=3;
+                alt35=4;
                 }
                 break;
             case 70:
                 {
-                alt36=4;
+                alt35=5;
                 }
                 break;
             case 71:
                 {
-                alt36=5;
-                }
-                break;
-            case 72:
-                {
-                alt36=6;
+                alt35=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 36, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt36) {
+            switch (alt35) {
                 case 1 :
-                    // InternalSmartCE.g:3388:3: (enumLiteral_0= 'push' )
+                    // InternalSmartCE.g:3377:3: (enumLiteral_0= 'push' )
                     {
-                    // InternalSmartCE.g:3388:3: (enumLiteral_0= 'push' )
-                    // InternalSmartCE.g:3389:4: enumLiteral_0= 'push'
+                    // InternalSmartCE.g:3377:3: (enumLiteral_0= 'push' )
+                    // InternalSmartCE.g:3378:4: enumLiteral_0= 'push'
                     {
-                    enumLiteral_0=(Token)match(input,67,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,66,FOLLOW_2); 
 
                     				current = grammarAccess.getOperationAccess().getPUSHEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getOperationAccess().getPUSHEnumLiteralDeclaration_0());
@@ -8347,12 +8312,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:3396:3: (enumLiteral_1= 'poll' )
+                    // InternalSmartCE.g:3385:3: (enumLiteral_1= 'poll' )
                     {
-                    // InternalSmartCE.g:3396:3: (enumLiteral_1= 'poll' )
-                    // InternalSmartCE.g:3397:4: enumLiteral_1= 'poll'
+                    // InternalSmartCE.g:3385:3: (enumLiteral_1= 'poll' )
+                    // InternalSmartCE.g:3386:4: enumLiteral_1= 'poll'
                     {
-                    enumLiteral_1=(Token)match(input,68,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,67,FOLLOW_2); 
 
                     				current = grammarAccess.getOperationAccess().getPOLLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getOperationAccess().getPOLLEnumLiteralDeclaration_1());
@@ -8364,12 +8329,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:3404:3: (enumLiteral_2= 'write' )
+                    // InternalSmartCE.g:3393:3: (enumLiteral_2= 'write' )
                     {
-                    // InternalSmartCE.g:3404:3: (enumLiteral_2= 'write' )
-                    // InternalSmartCE.g:3405:4: enumLiteral_2= 'write'
+                    // InternalSmartCE.g:3393:3: (enumLiteral_2= 'write' )
+                    // InternalSmartCE.g:3394:4: enumLiteral_2= 'write'
                     {
-                    enumLiteral_2=(Token)match(input,69,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,68,FOLLOW_2); 
 
                     				current = grammarAccess.getOperationAccess().getWRITEEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getOperationAccess().getWRITEEnumLiteralDeclaration_2());
@@ -8381,12 +8346,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:3412:3: (enumLiteral_3= 'read' )
+                    // InternalSmartCE.g:3401:3: (enumLiteral_3= 'read' )
                     {
-                    // InternalSmartCE.g:3412:3: (enumLiteral_3= 'read' )
-                    // InternalSmartCE.g:3413:4: enumLiteral_3= 'read'
+                    // InternalSmartCE.g:3401:3: (enumLiteral_3= 'read' )
+                    // InternalSmartCE.g:3402:4: enumLiteral_3= 'read'
                     {
-                    enumLiteral_3=(Token)match(input,70,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,69,FOLLOW_2); 
 
                     				current = grammarAccess.getOperationAccess().getREADEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getOperationAccess().getREADEnumLiteralDeclaration_3());
@@ -8398,12 +8363,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:3420:3: (enumLiteral_4= 'request' )
+                    // InternalSmartCE.g:3409:3: (enumLiteral_4= 'request' )
                     {
-                    // InternalSmartCE.g:3420:3: (enumLiteral_4= 'request' )
-                    // InternalSmartCE.g:3421:4: enumLiteral_4= 'request'
+                    // InternalSmartCE.g:3409:3: (enumLiteral_4= 'request' )
+                    // InternalSmartCE.g:3410:4: enumLiteral_4= 'request'
                     {
-                    enumLiteral_4=(Token)match(input,71,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,70,FOLLOW_2); 
 
                     				current = grammarAccess.getOperationAccess().getREQUESTEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getOperationAccess().getREQUESTEnumLiteralDeclaration_4());
@@ -8415,12 +8380,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:3428:3: (enumLiteral_5= 'response' )
+                    // InternalSmartCE.g:3417:3: (enumLiteral_5= 'response' )
                     {
-                    // InternalSmartCE.g:3428:3: (enumLiteral_5= 'response' )
-                    // InternalSmartCE.g:3429:4: enumLiteral_5= 'response'
+                    // InternalSmartCE.g:3417:3: (enumLiteral_5= 'response' )
+                    // InternalSmartCE.g:3418:4: enumLiteral_5= 'response'
                     {
-                    enumLiteral_5=(Token)match(input,72,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,71,FOLLOW_2); 
 
                     				current = grammarAccess.getOperationAccess().getRESPONSEEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getOperationAccess().getRESPONSEEnumLiteralDeclaration_5());
@@ -8454,7 +8419,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWeekDay"
-    // InternalSmartCE.g:3439:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) ;
+    // InternalSmartCE.g:3428:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) ;
     public final Enumerator ruleWeekDay() throws RecognitionException {
         Enumerator current = null;
 
@@ -8470,62 +8435,62 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3445:2: ( ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) )
-            // InternalSmartCE.g:3446:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
+            // InternalSmartCE.g:3434:2: ( ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) )
+            // InternalSmartCE.g:3435:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
             {
-            // InternalSmartCE.g:3446:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
-            int alt37=7;
+            // InternalSmartCE.g:3435:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
+            int alt36=7;
             switch ( input.LA(1) ) {
+            case 72:
+                {
+                alt36=1;
+                }
+                break;
             case 73:
                 {
-                alt37=1;
+                alt36=2;
                 }
                 break;
             case 74:
                 {
-                alt37=2;
+                alt36=3;
                 }
                 break;
             case 75:
                 {
-                alt37=3;
+                alt36=4;
                 }
                 break;
             case 76:
                 {
-                alt37=4;
+                alt36=5;
                 }
                 break;
             case 77:
                 {
-                alt37=5;
+                alt36=6;
                 }
                 break;
             case 78:
                 {
-                alt37=6;
-                }
-                break;
-            case 79:
-                {
-                alt37=7;
+                alt36=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 37, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt37) {
+            switch (alt36) {
                 case 1 :
-                    // InternalSmartCE.g:3447:3: (enumLiteral_0= 'Sunday' )
+                    // InternalSmartCE.g:3436:3: (enumLiteral_0= 'Sunday' )
                     {
-                    // InternalSmartCE.g:3447:3: (enumLiteral_0= 'Sunday' )
-                    // InternalSmartCE.g:3448:4: enumLiteral_0= 'Sunday'
+                    // InternalSmartCE.g:3436:3: (enumLiteral_0= 'Sunday' )
+                    // InternalSmartCE.g:3437:4: enumLiteral_0= 'Sunday'
                     {
-                    enumLiteral_0=(Token)match(input,73,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,72,FOLLOW_2); 
 
                     				current = grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_0());
@@ -8537,12 +8502,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:3455:3: (enumLiteral_1= 'Monday' )
+                    // InternalSmartCE.g:3444:3: (enumLiteral_1= 'Monday' )
                     {
-                    // InternalSmartCE.g:3455:3: (enumLiteral_1= 'Monday' )
-                    // InternalSmartCE.g:3456:4: enumLiteral_1= 'Monday'
+                    // InternalSmartCE.g:3444:3: (enumLiteral_1= 'Monday' )
+                    // InternalSmartCE.g:3445:4: enumLiteral_1= 'Monday'
                     {
-                    enumLiteral_1=(Token)match(input,74,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,73,FOLLOW_2); 
 
                     				current = grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_1());
@@ -8554,12 +8519,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:3463:3: (enumLiteral_2= 'Tuesday' )
+                    // InternalSmartCE.g:3452:3: (enumLiteral_2= 'Tuesday' )
                     {
-                    // InternalSmartCE.g:3463:3: (enumLiteral_2= 'Tuesday' )
-                    // InternalSmartCE.g:3464:4: enumLiteral_2= 'Tuesday'
+                    // InternalSmartCE.g:3452:3: (enumLiteral_2= 'Tuesday' )
+                    // InternalSmartCE.g:3453:4: enumLiteral_2= 'Tuesday'
                     {
-                    enumLiteral_2=(Token)match(input,75,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,74,FOLLOW_2); 
 
                     				current = grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_2());
@@ -8571,12 +8536,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:3471:3: (enumLiteral_3= 'Wednesday' )
+                    // InternalSmartCE.g:3460:3: (enumLiteral_3= 'Wednesday' )
                     {
-                    // InternalSmartCE.g:3471:3: (enumLiteral_3= 'Wednesday' )
-                    // InternalSmartCE.g:3472:4: enumLiteral_3= 'Wednesday'
+                    // InternalSmartCE.g:3460:3: (enumLiteral_3= 'Wednesday' )
+                    // InternalSmartCE.g:3461:4: enumLiteral_3= 'Wednesday'
                     {
-                    enumLiteral_3=(Token)match(input,76,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,75,FOLLOW_2); 
 
                     				current = grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_3());
@@ -8588,12 +8553,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:3479:3: (enumLiteral_4= 'Thursday' )
+                    // InternalSmartCE.g:3468:3: (enumLiteral_4= 'Thursday' )
                     {
-                    // InternalSmartCE.g:3479:3: (enumLiteral_4= 'Thursday' )
-                    // InternalSmartCE.g:3480:4: enumLiteral_4= 'Thursday'
+                    // InternalSmartCE.g:3468:3: (enumLiteral_4= 'Thursday' )
+                    // InternalSmartCE.g:3469:4: enumLiteral_4= 'Thursday'
                     {
-                    enumLiteral_4=(Token)match(input,77,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,76,FOLLOW_2); 
 
                     				current = grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_4());
@@ -8605,12 +8570,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:3487:3: (enumLiteral_5= 'Friday' )
+                    // InternalSmartCE.g:3476:3: (enumLiteral_5= 'Friday' )
                     {
-                    // InternalSmartCE.g:3487:3: (enumLiteral_5= 'Friday' )
-                    // InternalSmartCE.g:3488:4: enumLiteral_5= 'Friday'
+                    // InternalSmartCE.g:3476:3: (enumLiteral_5= 'Friday' )
+                    // InternalSmartCE.g:3477:4: enumLiteral_5= 'Friday'
                     {
-                    enumLiteral_5=(Token)match(input,78,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,77,FOLLOW_2); 
 
                     				current = grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_5());
@@ -8622,12 +8587,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCE.g:3495:3: (enumLiteral_6= 'Saturday' )
+                    // InternalSmartCE.g:3484:3: (enumLiteral_6= 'Saturday' )
                     {
-                    // InternalSmartCE.g:3495:3: (enumLiteral_6= 'Saturday' )
-                    // InternalSmartCE.g:3496:4: enumLiteral_6= 'Saturday'
+                    // InternalSmartCE.g:3484:3: (enumLiteral_6= 'Saturday' )
+                    // InternalSmartCE.g:3485:4: enumLiteral_6= 'Saturday'
                     {
-                    enumLiteral_6=(Token)match(input,79,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,78,FOLLOW_2); 
 
                     				current = grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_6());
@@ -8661,7 +8626,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeUnit"
-    // InternalSmartCE.g:3506:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) ;
+    // InternalSmartCE.g:3495:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) ;
     public final Enumerator ruleTimeUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -8677,62 +8642,62 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:3512:2: ( ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) )
-            // InternalSmartCE.g:3513:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
+            // InternalSmartCE.g:3501:2: ( ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) )
+            // InternalSmartCE.g:3502:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
             {
-            // InternalSmartCE.g:3513:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
-            int alt38=7;
+            // InternalSmartCE.g:3502:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
+            int alt37=7;
             switch ( input.LA(1) ) {
+            case 79:
+                {
+                alt37=1;
+                }
+                break;
             case 80:
                 {
-                alt38=1;
+                alt37=2;
                 }
                 break;
             case 81:
                 {
-                alt38=2;
+                alt37=3;
                 }
                 break;
             case 82:
                 {
-                alt38=3;
+                alt37=4;
                 }
                 break;
             case 83:
                 {
-                alt38=4;
+                alt37=5;
                 }
                 break;
             case 84:
                 {
-                alt38=5;
+                alt37=6;
                 }
                 break;
             case 85:
                 {
-                alt38=6;
-                }
-                break;
-            case 86:
-                {
-                alt38=7;
+                alt37=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 38, 0, input);
+                    new NoViableAltException("", 37, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt38) {
+            switch (alt37) {
                 case 1 :
-                    // InternalSmartCE.g:3514:3: (enumLiteral_0= 'Second' )
+                    // InternalSmartCE.g:3503:3: (enumLiteral_0= 'Second' )
                     {
-                    // InternalSmartCE.g:3514:3: (enumLiteral_0= 'Second' )
-                    // InternalSmartCE.g:3515:4: enumLiteral_0= 'Second'
+                    // InternalSmartCE.g:3503:3: (enumLiteral_0= 'Second' )
+                    // InternalSmartCE.g:3504:4: enumLiteral_0= 'Second'
                     {
-                    enumLiteral_0=(Token)match(input,80,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,79,FOLLOW_2); 
 
                     				current = grammarAccess.getTimeUnitAccess().getSECONDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getTimeUnitAccess().getSECONDEnumLiteralDeclaration_0());
@@ -8744,12 +8709,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:3522:3: (enumLiteral_1= 'Minute' )
+                    // InternalSmartCE.g:3511:3: (enumLiteral_1= 'Minute' )
                     {
-                    // InternalSmartCE.g:3522:3: (enumLiteral_1= 'Minute' )
-                    // InternalSmartCE.g:3523:4: enumLiteral_1= 'Minute'
+                    // InternalSmartCE.g:3511:3: (enumLiteral_1= 'Minute' )
+                    // InternalSmartCE.g:3512:4: enumLiteral_1= 'Minute'
                     {
-                    enumLiteral_1=(Token)match(input,81,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,80,FOLLOW_2); 
 
                     				current = grammarAccess.getTimeUnitAccess().getMINUTEEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getTimeUnitAccess().getMINUTEEnumLiteralDeclaration_1());
@@ -8761,12 +8726,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:3530:3: (enumLiteral_2= 'Hour' )
+                    // InternalSmartCE.g:3519:3: (enumLiteral_2= 'Hour' )
                     {
-                    // InternalSmartCE.g:3530:3: (enumLiteral_2= 'Hour' )
-                    // InternalSmartCE.g:3531:4: enumLiteral_2= 'Hour'
+                    // InternalSmartCE.g:3519:3: (enumLiteral_2= 'Hour' )
+                    // InternalSmartCE.g:3520:4: enumLiteral_2= 'Hour'
                     {
-                    enumLiteral_2=(Token)match(input,82,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,81,FOLLOW_2); 
 
                     				current = grammarAccess.getTimeUnitAccess().getHOUREnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getTimeUnitAccess().getHOUREnumLiteralDeclaration_2());
@@ -8778,12 +8743,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:3538:3: (enumLiteral_3= 'Day' )
+                    // InternalSmartCE.g:3527:3: (enumLiteral_3= 'Day' )
                     {
-                    // InternalSmartCE.g:3538:3: (enumLiteral_3= 'Day' )
-                    // InternalSmartCE.g:3539:4: enumLiteral_3= 'Day'
+                    // InternalSmartCE.g:3527:3: (enumLiteral_3= 'Day' )
+                    // InternalSmartCE.g:3528:4: enumLiteral_3= 'Day'
                     {
-                    enumLiteral_3=(Token)match(input,83,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,82,FOLLOW_2); 
 
                     				current = grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3());
@@ -8795,12 +8760,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:3546:3: (enumLiteral_4= 'Week' )
+                    // InternalSmartCE.g:3535:3: (enumLiteral_4= 'Week' )
                     {
-                    // InternalSmartCE.g:3546:3: (enumLiteral_4= 'Week' )
-                    // InternalSmartCE.g:3547:4: enumLiteral_4= 'Week'
+                    // InternalSmartCE.g:3535:3: (enumLiteral_4= 'Week' )
+                    // InternalSmartCE.g:3536:4: enumLiteral_4= 'Week'
                     {
-                    enumLiteral_4=(Token)match(input,84,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,83,FOLLOW_2); 
 
                     				current = grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4());
@@ -8812,12 +8777,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:3554:3: (enumLiteral_5= 'Month' )
+                    // InternalSmartCE.g:3543:3: (enumLiteral_5= 'Month' )
                     {
-                    // InternalSmartCE.g:3554:3: (enumLiteral_5= 'Month' )
-                    // InternalSmartCE.g:3555:4: enumLiteral_5= 'Month'
+                    // InternalSmartCE.g:3543:3: (enumLiteral_5= 'Month' )
+                    // InternalSmartCE.g:3544:4: enumLiteral_5= 'Month'
                     {
-                    enumLiteral_5=(Token)match(input,85,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,84,FOLLOW_2); 
 
                     				current = grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5());
@@ -8829,12 +8794,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCE.g:3562:3: (enumLiteral_6= 'Year' )
+                    // InternalSmartCE.g:3551:3: (enumLiteral_6= 'Year' )
                     {
-                    // InternalSmartCE.g:3562:3: (enumLiteral_6= 'Year' )
-                    // InternalSmartCE.g:3563:4: enumLiteral_6= 'Year'
+                    // InternalSmartCE.g:3551:3: (enumLiteral_6= 'Year' )
+                    // InternalSmartCE.g:3552:4: enumLiteral_6= 'Year'
                     {
-                    enumLiteral_6=(Token)match(input,86,FOLLOW_2); 
+                    enumLiteral_6=(Token)match(input,85,FOLLOW_2); 
 
                     				current = grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_6, grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6());
@@ -8869,16 +8834,16 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA9 dfa9 = new DFA9(this);
-    protected DFA13 dfa13 = new DFA13(this);
-    protected DFA16 dfa16 = new DFA16(this);
-    protected DFA19 dfa19 = new DFA19(this);
-    protected DFA33 dfa33 = new DFA33(this);
+    protected DFA8 dfa8 = new DFA8(this);
+    protected DFA12 dfa12 = new DFA12(this);
+    protected DFA15 dfa15 = new DFA15(this);
+    protected DFA18 dfa18 = new DFA18(this);
+    protected DFA32 dfa32 = new DFA32(this);
     static final String dfa_1s = "\135\uffff";
-    static final String dfa_2s = "\31\uffff\1\54\12\uffff\1\54\42\uffff\1\54\1\uffff\4\54\1\uffff\1\54\13\uffff\1\54\1\uffff\1\54";
-    static final String dfa_3s = "\1\46\6\40\2\5\1\111\2\6\1\5\1\41\1\50\10\52\1\41\1\120\1\24\1\120\1\111\1\6\1\120\6\4\1\24\7\41\2\uffff\31\41\1\24\1\6\4\24\1\120\1\24\1\4\1\52\10\41\1\6\1\24\1\41\1\24";
-    static final String dfa_4s = "\1\56\6\40\2\5\1\117\2\6\1\5\1\41\1\50\10\52\1\64\1\126\1\45\1\126\1\117\1\6\1\126\6\6\1\45\7\55\2\uffff\26\41\1\50\1\101\1\50\1\45\1\6\4\45\1\126\1\45\1\4\1\52\7\41\1\101\1\6\1\45\1\41\1\45";
-    static final String dfa_5s = "\54\uffff\1\1\1\2\57\uffff";
+    static final String dfa_2s = "\31\uffff\1\55\3\uffff\1\55\52\uffff\5\55\2\uffff\1\55\12\uffff\1\55\1\uffff\1\55";
+    static final String dfa_3s = "\1\45\6\37\2\5\1\110\2\6\1\5\1\40\1\47\10\51\1\40\1\117\1\24\1\117\1\110\1\6\1\24\6\4\1\117\7\40\2\uffff\31\40\1\6\5\24\1\117\1\4\1\24\1\51\10\40\1\6\1\24\1\40\1\24";
+    static final String dfa_4s = "\1\55\6\37\2\5\1\116\2\6\1\5\1\40\1\47\10\51\1\63\1\125\1\44\1\125\1\116\1\6\1\44\6\6\1\125\7\54\2\uffff\17\40\1\47\1\100\1\47\7\40\1\6\5\44\1\125\1\4\1\44\1\51\7\40\1\100\1\6\1\44\1\40\1\44";
+    static final String dfa_5s = "\54\uffff\1\2\1\1\57\uffff";
     static final String dfa_6s = "\135\uffff}>";
     static final String[] dfa_7s = {
             "\1\1\1\2\1\uffff\1\3\1\uffff\1\4\1\6\1\uffff\1\5",
@@ -8904,27 +8869,27 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\33",
             "\1\33",
             "\1\34",
-            "\1\44\6\uffff\1\35\6\uffff\1\36\1\37\1\40\1\41\1\42\1\43",
+            "\1\35\6\uffff\1\44\6\uffff\1\36\1\37\1\40\1\41\1\42\1\43",
             "\1\45\1\46\1\47\1\50\1\51\1\52\1\53",
-            "\1\54\16\uffff\3\55",
+            "\1\55\15\uffff\3\54",
             "\1\56\1\57\1\60\1\61\1\62\1\63\1\64",
             "\1\65\1\66\1\67\1\70\1\71\1\72\1\73",
             "\1\74",
-            "\1\75\1\76\1\77\1\100\1\101\1\102\1\103",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\54\16\uffff\3\55",
-            "\1\107\13\uffff\1\110",
-            "\1\107\13\uffff\1\110",
-            "\1\107\13\uffff\1\110",
-            "\1\107\13\uffff\1\110",
-            "\1\107\13\uffff\1\110",
-            "\1\107\13\uffff\1\110",
-            "\1\107\13\uffff\1\110",
+            "\1\55\15\uffff\3\54",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\100\1\101\1\102\1\103\1\104\1\105\1\106",
+            "\1\110\13\uffff\1\107",
+            "\1\110\13\uffff\1\107",
+            "\1\110\13\uffff\1\107",
+            "\1\110\13\uffff\1\107",
+            "\1\110\13\uffff\1\107",
+            "\1\110\13\uffff\1\107",
+            "\1\110\13\uffff\1\107",
             "",
             "",
             "\1\111",
@@ -8942,25 +8907,25 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\112",
             "\1\112",
             "\1\113",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\116\6\uffff\1\115",
-            "\1\116\6\uffff\1\115\30\uffff\1\117",
-            "\1\116\6\uffff\1\115",
-            "\1\54\16\uffff\3\55",
+            "\1\114\6\uffff\1\115",
+            "\1\114\6\uffff\1\115\30\uffff\1\116",
+            "\1\114\6\uffff\1\115",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
             "\1\120",
-            "\1\54\16\uffff\3\55",
-            "\1\54\16\uffff\3\55",
-            "\1\54\16\uffff\3\55",
-            "\1\54\16\uffff\3\55",
+            "\1\55\15\uffff\3\54",
+            "\1\55\15\uffff\3\54",
+            "\1\55\15\uffff\3\54",
+            "\1\55\15\uffff\3\54",
+            "\1\55\15\uffff\3\54",
             "\1\121\1\122\1\123\1\124\1\125\1\126\1\127",
-            "\1\54\16\uffff\3\55",
             "\1\130",
+            "\1\55\15\uffff\3\54",
             "\1\131",
             "\1\132",
             "\1\132",
@@ -8969,11 +8934,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\132",
             "\1\132",
             "\1\132",
-            "\1\116\6\uffff\1\115\30\uffff\1\117",
+            "\1\114\6\uffff\1\115\30\uffff\1\116",
             "\1\133",
-            "\1\54\16\uffff\3\55",
+            "\1\55\15\uffff\3\54",
             "\1\134",
-            "\1\54\16\uffff\3\55"
+            "\1\55\15\uffff\3\54"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -8984,11 +8949,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA9 extends DFA {
+    class DFA8 extends DFA {
 
-        public DFA9(BaseRecognizer recognizer) {
+        public DFA8(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 9;
+            this.decisionNumber = 8;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -8998,11 +8963,13 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "683:2: (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition )";
+            return "652:2: (this_BusinessRule_0= ruleBusinessRule | this_CompositeCondition_1= ruleCompositeCondition )";
         }
     }
-    static final String dfa_8s = "\54\uffff\1\2\1\1\57\uffff";
-    static final String[] dfa_9s = {
+    static final String dfa_8s = "\1\45\6\37\2\5\1\110\2\6\1\5\1\40\1\47\10\51\1\40\1\117\1\24\1\117\1\110\1\6\1\24\6\4\1\117\7\40\2\uffff\31\40\1\24\1\6\3\24\1\117\1\24\1\4\1\24\1\51\10\40\1\6\1\24\1\40\1\24";
+    static final String dfa_9s = "\1\55\6\37\2\5\1\116\2\6\1\5\1\40\1\47\10\51\1\63\1\125\1\44\1\125\1\116\1\6\1\44\6\6\1\125\7\54\2\uffff\17\40\1\47\1\100\1\47\7\40\1\44\1\6\3\44\1\125\1\44\1\4\1\44\1\51\7\40\1\100\1\6\1\44\1\40\1\44";
+    static final String dfa_10s = "\54\uffff\1\1\1\2\57\uffff";
+    static final String[] dfa_11s = {
             "\1\1\1\2\1\uffff\1\3\1\uffff\1\4\1\6\1\uffff\1\5",
             "\1\7",
             "\1\10",
@@ -9026,20 +8993,20 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\33",
             "\1\33",
             "\1\34",
-            "\1\44\6\uffff\1\35\6\uffff\1\36\1\37\1\40\1\41\1\42\1\43",
+            "\1\35\6\uffff\1\44\6\uffff\1\36\1\37\1\40\1\41\1\42\1\43",
             "\1\45\1\46\1\47\1\50\1\51\1\52\1\53",
-            "\1\55\16\uffff\3\54",
+            "\1\54\15\uffff\3\55",
             "\1\56\1\57\1\60\1\61\1\62\1\63\1\64",
             "\1\65\1\66\1\67\1\70\1\71\1\72\1\73",
             "\1\74",
-            "\1\75\1\76\1\77\1\100\1\101\1\102\1\103",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\105\1\106\1\104",
-            "\1\55\16\uffff\3\54",
+            "\1\54\15\uffff\3\55",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\76\1\77\1\75",
+            "\1\100\1\101\1\102\1\103\1\104\1\105\1\106",
             "\1\107\13\uffff\1\110",
             "\1\107\13\uffff\1\110",
             "\1\107\13\uffff\1\110",
@@ -9064,25 +9031,25 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\112",
             "\1\112",
             "\1\113",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\114",
-            "\1\116\6\uffff\1\115",
-            "\1\116\6\uffff\1\115\30\uffff\1\117",
-            "\1\116\6\uffff\1\115",
-            "\1\55\16\uffff\3\54",
+            "\1\115\6\uffff\1\114",
+            "\1\115\6\uffff\1\114\30\uffff\1\116",
+            "\1\115\6\uffff\1\114",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\117",
+            "\1\54\15\uffff\3\55",
             "\1\120",
-            "\1\55\16\uffff\3\54",
-            "\1\55\16\uffff\3\54",
-            "\1\55\16\uffff\3\54",
-            "\1\55\16\uffff\3\54",
+            "\1\54\15\uffff\3\55",
+            "\1\54\15\uffff\3\55",
+            "\1\54\15\uffff\3\55",
             "\1\121\1\122\1\123\1\124\1\125\1\126\1\127",
-            "\1\55\16\uffff\3\54",
+            "\1\54\15\uffff\3\55",
             "\1\130",
+            "\1\54\15\uffff\3\55",
             "\1\131",
             "\1\132",
             "\1\132",
@@ -9091,38 +9058,40 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\132",
             "\1\132",
             "\1\132",
-            "\1\116\6\uffff\1\115\30\uffff\1\117",
+            "\1\115\6\uffff\1\114\30\uffff\1\116",
             "\1\133",
-            "\1\55\16\uffff\3\54",
+            "\1\54\15\uffff\3\55",
             "\1\134",
-            "\1\55\16\uffff\3\54"
+            "\1\54\15\uffff\3\55"
     };
-    static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
-    static final short[][] dfa_9 = unpackEncodedStringArray(dfa_9s);
+    static final char[] dfa_8 = DFA.unpackEncodedStringToUnsignedChars(dfa_8s);
+    static final char[] dfa_9 = DFA.unpackEncodedStringToUnsignedChars(dfa_9s);
+    static final short[] dfa_10 = DFA.unpackEncodedString(dfa_10s);
+    static final short[][] dfa_11 = unpackEncodedStringArray(dfa_11s);
 
-    class DFA13 extends DFA {
+    class DFA12 extends DFA {
 
-        public DFA13(BaseRecognizer recognizer) {
+        public DFA12(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 13;
+            this.decisionNumber = 12;
             this.eot = dfa_1;
             this.eof = dfa_1;
-            this.min = dfa_3;
-            this.max = dfa_4;
-            this.accept = dfa_8;
+            this.min = dfa_8;
+            this.max = dfa_9;
+            this.accept = dfa_10;
             this.special = dfa_6;
-            this.transition = dfa_9;
+            this.transition = dfa_11;
         }
         public String getDescription() {
-            return "948:4: ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) )";
+            return "917:4: ( ( (lv_conditions_12_0= ruleBusinessRule ) ) | ( ( (lv_conditions_13_0= ruleBusinessRule ) ) ( (lv_logicalOperators_14_0= ruleLogicalOperator ) ) ( (lv_conditions_15_0= ruleBusinessRule ) ) ( ( (lv_logicalOperators_16_0= ruleLogicalOperator ) ) ( (lv_conditions_17_0= ruleBusinessRule ) ) )* ) )";
         }
     }
-    static final String dfa_10s = "\15\uffff";
-    static final String dfa_11s = "\1\54\1\40\1\5\1\120\7\41\2\uffff";
-    static final String dfa_12s = "\1\54\1\40\1\5\1\126\7\55\2\uffff";
-    static final String dfa_13s = "\13\uffff\1\1\1\2";
-    static final String dfa_14s = "\15\uffff}>";
-    static final String[] dfa_15s = {
+    static final String dfa_12s = "\15\uffff";
+    static final String dfa_13s = "\1\53\1\37\1\5\1\117\7\40\2\uffff";
+    static final String dfa_14s = "\1\53\1\37\1\5\1\125\7\54\2\uffff";
+    static final String dfa_15s = "\13\uffff\1\1\1\2";
+    static final String dfa_16s = "\15\uffff}>";
+    static final String[] dfa_17s = {
             "\1\1",
             "\1\2",
             "\1\3",
@@ -9138,47 +9107,47 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             ""
     };
 
-    static final short[] dfa_10 = DFA.unpackEncodedString(dfa_10s);
-    static final char[] dfa_11 = DFA.unpackEncodedStringToUnsignedChars(dfa_11s);
-    static final char[] dfa_12 = DFA.unpackEncodedStringToUnsignedChars(dfa_12s);
-    static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
-    static final short[] dfa_14 = DFA.unpackEncodedString(dfa_14s);
-    static final short[][] dfa_15 = unpackEncodedStringArray(dfa_15s);
+    static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
+    static final char[] dfa_13 = DFA.unpackEncodedStringToUnsignedChars(dfa_13s);
+    static final char[] dfa_14 = DFA.unpackEncodedStringToUnsignedChars(dfa_14s);
+    static final short[] dfa_15 = DFA.unpackEncodedString(dfa_15s);
+    static final short[] dfa_16 = DFA.unpackEncodedString(dfa_16s);
+    static final short[][] dfa_17 = unpackEncodedStringArray(dfa_17s);
 
-    class DFA16 extends DFA {
+    class DFA15 extends DFA {
 
-        public DFA16(BaseRecognizer recognizer) {
+        public DFA15(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 16;
-            this.eot = dfa_10;
-            this.eof = dfa_10;
-            this.min = dfa_11;
-            this.max = dfa_12;
-            this.accept = dfa_13;
-            this.special = dfa_14;
-            this.transition = dfa_15;
+            this.decisionNumber = 15;
+            this.eot = dfa_12;
+            this.eof = dfa_12;
+            this.min = dfa_13;
+            this.max = dfa_14;
+            this.accept = dfa_15;
+            this.special = dfa_16;
+            this.transition = dfa_17;
         }
         public String getDescription() {
-            return "1412:2: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) )";
+            return "1381:2: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'from' ( (lv_start_5_0= RULE_STRING ) ) otherlv_6= 'to' ( (lv_end_7_0= RULE_STRING ) ) otherlv_8= ')' ) | (otherlv_9= 'SessionInterval' otherlv_10= '(' ( (lv_frequency_11_0= RULE_INT ) ) ( (lv_timeUnit_12_0= ruleTimeUnit ) ) otherlv_13= ')' ) )";
         }
     }
-    static final String dfa_16s = "\23\uffff";
-    static final String dfa_17s = "\1\56\1\40\1\6\1\41\6\4\2\uffff\3\41\2\uffff\1\4\1\41";
-    static final String dfa_18s = "\1\56\1\40\1\6\1\64\6\6\2\uffff\1\50\1\101\1\50\2\uffff\1\4\1\101";
-    static final String dfa_19s = "\12\uffff\1\1\1\2\3\uffff\1\4\1\3\2\uffff";
-    static final String dfa_20s = "\23\uffff}>";
-    static final String[] dfa_21s = {
+    static final String dfa_18s = "\23\uffff";
+    static final String dfa_19s = "\1\55\1\37\1\6\1\40\1\uffff\6\4\1\uffff\3\40\2\uffff\1\4\1\40";
+    static final String dfa_20s = "\1\55\1\37\1\6\1\63\1\uffff\6\6\1\uffff\1\47\1\100\1\47\2\uffff\1\4\1\100";
+    static final String dfa_21s = "\4\uffff\1\1\6\uffff\1\2\3\uffff\1\4\1\3\2\uffff";
+    static final String dfa_22s = "\23\uffff}>";
+    static final String[] dfa_23s = {
             "\1\1",
             "\1\2",
             "\1\3",
-            "\1\12\6\uffff\1\13\6\uffff\1\4\1\5\1\6\1\7\1\10\1\11",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
+            "\1\4\6\uffff\1\13\6\uffff\1\5\1\6\1\7\1\10\1\11\1\12",
             "",
+            "\1\15\1\16\1\14",
+            "\1\15\1\16\1\14",
+            "\1\15\1\16\1\14",
+            "\1\15\1\16\1\14",
+            "\1\15\1\16\1\14",
+            "\1\15\1\16\1\14",
             "",
             "\1\20\6\uffff\1\17",
             "\1\20\6\uffff\1\17\30\uffff\1\21",
@@ -9189,70 +9158,70 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\20\6\uffff\1\17\30\uffff\1\21"
     };
 
-    static final short[] dfa_16 = DFA.unpackEncodedString(dfa_16s);
-    static final char[] dfa_17 = DFA.unpackEncodedStringToUnsignedChars(dfa_17s);
-    static final char[] dfa_18 = DFA.unpackEncodedStringToUnsignedChars(dfa_18s);
-    static final short[] dfa_19 = DFA.unpackEncodedString(dfa_19s);
-    static final short[] dfa_20 = DFA.unpackEncodedString(dfa_20s);
-    static final short[][] dfa_21 = unpackEncodedStringArray(dfa_21s);
+    static final short[] dfa_18 = DFA.unpackEncodedString(dfa_18s);
+    static final char[] dfa_19 = DFA.unpackEncodedStringToUnsignedChars(dfa_19s);
+    static final char[] dfa_20 = DFA.unpackEncodedStringToUnsignedChars(dfa_20s);
+    static final short[] dfa_21 = DFA.unpackEncodedString(dfa_21s);
+    static final short[] dfa_22 = DFA.unpackEncodedString(dfa_22s);
+    static final short[][] dfa_23 = unpackEncodedStringArray(dfa_23s);
 
-    class DFA19 extends DFA {
+    class DFA18 extends DFA {
 
-        public DFA19(BaseRecognizer recognizer) {
+        public DFA18(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 19;
-            this.eot = dfa_16;
-            this.eof = dfa_16;
-            this.min = dfa_17;
-            this.max = dfa_18;
-            this.accept = dfa_19;
-            this.special = dfa_20;
-            this.transition = dfa_21;
+            this.decisionNumber = 18;
+            this.eot = dfa_18;
+            this.eof = dfa_18;
+            this.min = dfa_19;
+            this.max = dfa_20;
+            this.accept = dfa_21;
+            this.special = dfa_22;
+            this.transition = dfa_23;
         }
         public String getDescription() {
-            return "1578:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) )";
+            return "1547:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_binaryOperator_13_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_14_0= ruleStringValue ) ) | ( (lv_variableValue_15_0= ruleVariableValue ) ) | ( (lv_numericValue_16_0= ruleNumericValue ) ) ) otherlv_17= ')' ) | (otherlv_18= 'MessageContent' otherlv_19= '(' ( (lv_content_20_0= RULE_STRING ) ) ( (lv_binaryOperator_21_0= ruleBinaryOperator ) ) ( ( (lv_stringValue_22_0= ruleStringValue ) ) | ( (lv_variableValue_23_0= ruleVariableValue ) ) | ( (lv_numericValue_24_0= ruleNumericValue ) ) ) otherlv_25= 'by' ( (lv_timeUnit_26_0= ruleTimeUnit ) ) otherlv_27= ')' ) )";
         }
     }
-    static final String dfa_22s = "\10\uffff";
-    static final String dfa_23s = "\3\uffff\1\6\3\uffff\1\6";
-    static final String dfa_24s = "\1\4\2\uffff\2\4\2\uffff\1\4";
-    static final String dfa_25s = "\1\6\2\uffff\1\101\1\4\2\uffff\1\101";
-    static final String dfa_26s = "\1\uffff\1\1\1\2\2\uffff\1\4\1\3\1\uffff";
-    static final String dfa_27s = "\10\uffff}>";
-    static final String[] dfa_28s = {
+    static final String dfa_24s = "\10\uffff";
+    static final String dfa_25s = "\3\uffff\1\5\3\uffff\1\5";
+    static final String dfa_26s = "\1\4\2\uffff\2\4\2\uffff\1\4";
+    static final String dfa_27s = "\1\6\2\uffff\1\100\1\4\2\uffff\1\100";
+    static final String dfa_28s = "\1\uffff\1\1\1\2\2\uffff\1\3\1\4\1\uffff";
+    static final String dfa_29s = "\10\uffff}>";
+    static final String[] dfa_30s = {
             "\1\3\1\1\1\2",
             "",
             "",
-            "\1\6\13\uffff\2\6\2\uffff\1\6\13\uffff\1\5\1\6\15\uffff\7\6\2\uffff\2\6\1\uffff\6\6\1\4",
+            "\1\5\13\uffff\2\5\2\uffff\1\5\12\uffff\1\6\1\5\15\uffff\6\5\2\uffff\2\5\1\uffff\7\5\1\4",
             "\1\7",
             "",
             "",
-            "\1\6\13\uffff\2\6\2\uffff\1\6\13\uffff\1\5\1\6\15\uffff\7\6\2\uffff\2\6\1\uffff\6\6\1\4"
+            "\1\5\13\uffff\2\5\2\uffff\1\5\12\uffff\1\6\1\5\15\uffff\6\5\2\uffff\2\5\1\uffff\7\5\1\4"
     };
 
-    static final short[] dfa_22 = DFA.unpackEncodedString(dfa_22s);
-    static final short[] dfa_23 = DFA.unpackEncodedString(dfa_23s);
-    static final char[] dfa_24 = DFA.unpackEncodedStringToUnsignedChars(dfa_24s);
-    static final char[] dfa_25 = DFA.unpackEncodedStringToUnsignedChars(dfa_25s);
-    static final short[] dfa_26 = DFA.unpackEncodedString(dfa_26s);
-    static final short[] dfa_27 = DFA.unpackEncodedString(dfa_27s);
-    static final short[][] dfa_28 = unpackEncodedStringArray(dfa_28s);
+    static final short[] dfa_24 = DFA.unpackEncodedString(dfa_24s);
+    static final short[] dfa_25 = DFA.unpackEncodedString(dfa_25s);
+    static final char[] dfa_26 = DFA.unpackEncodedStringToUnsignedChars(dfa_26s);
+    static final char[] dfa_27 = DFA.unpackEncodedStringToUnsignedChars(dfa_27s);
+    static final short[] dfa_28 = DFA.unpackEncodedString(dfa_28s);
+    static final short[] dfa_29 = DFA.unpackEncodedString(dfa_29s);
+    static final short[][] dfa_30 = unpackEncodedStringArray(dfa_30s);
 
-    class DFA33 extends DFA {
+    class DFA32 extends DFA {
 
-        public DFA33(BaseRecognizer recognizer) {
+        public DFA32(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 33;
-            this.eot = dfa_22;
-            this.eof = dfa_23;
-            this.min = dfa_24;
-            this.max = dfa_25;
-            this.accept = dfa_26;
-            this.special = dfa_27;
-            this.transition = dfa_28;
+            this.decisionNumber = 32;
+            this.eot = dfa_24;
+            this.eof = dfa_25;
+            this.min = dfa_26;
+            this.max = dfa_27;
+            this.accept = dfa_28;
+            this.special = dfa_29;
+            this.transition = dfa_30;
         }
         public String getDescription() {
-            return "2926:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )";
+            return "2915:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )";
         }
     }
  
@@ -9265,50 +9234,47 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x4400000100000070L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x1100000080000070L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001E00000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000100010L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00C0000000100000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000003800000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000000C0000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000000000L,0x00000000000001F8L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x00005AC000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000040100000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000003800000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000003800000002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000003800100000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x00000000007F0000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x000000000000FE00L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000200000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x001F800000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000070L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0300000000000002L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x4000000100000070L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x181F800000000002L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x6000000000000002L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000100000070L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0020000200000000L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000002L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x00000000000C0000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000000000L,0x00000000000000FCL});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00002D6000000000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000020100000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000001C00000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000001C00000002L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000001C00100000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000000000000L,0x00000000003F8000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000000L,0x0000000000007F00L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000100000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x000FC00000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000070L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0030000000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x00C0000000000002L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x1000000080000070L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x060FC00000000002L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x1800000000000002L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x6000000000000002L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000080000070L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x8000000100000000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
 
 }

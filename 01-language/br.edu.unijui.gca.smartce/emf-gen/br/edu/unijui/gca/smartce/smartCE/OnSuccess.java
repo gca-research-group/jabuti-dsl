@@ -47,22 +47,22 @@ public interface OnSuccess extends EObject
 	void setMessage(Expression value);
 
 	/**
-	 * Returns the value of the '<em><b>Action</b></em>' reference.
+	 * Returns the value of the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Action</em>' reference.
+	 * @return the value of the '<em>Action</em>' containment reference.
 	 * @see #setAction(Action)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getOnSuccess_Action()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	Action getAction();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess#getAction <em>Action</em>}' reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess#getAction <em>Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Action</em>' reference.
+	 * @param value the new value of the '<em>Action</em>' containment reference.
 	 * @see #getAction()
 	 * @generated
 	 */

@@ -362,43 +362,12 @@ ruleContract returns [EObject current=null]
 				newLeafNode(otherlv_21, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_18_3());
 			}
 		)?
-		otherlv_22='actions'
-		{
-			newLeafNode(otherlv_22, grammarAccess.getContractAccess().getActionsKeyword_19());
-		}
-		otherlv_23='{'
-		{
-			newLeafNode(otherlv_23, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_20());
-		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getContractAccess().getActionsActionParserRuleCall_21_0());
+					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_19_0());
 				}
-				lv_actions_24_0=ruleAction
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getContractRule());
-					}
-					add(
-						$current,
-						"actions",
-						lv_actions_24_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Action");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		otherlv_25='}'
-		{
-			newLeafNode(otherlv_25, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_22());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_23_0());
-				}
-				lv_clauses_26_0=ruleClause
+				lv_clauses_22_0=ruleClause
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getContractRule());
@@ -406,15 +375,15 @@ ruleContract returns [EObject current=null]
 					add(
 						$current,
 						"clauses",
-						lv_clauses_26_0,
+						lv_clauses_22_0,
 						"br.edu.unijui.gca.smartce.SmartCE.Clause");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_27='}'
+		otherlv_23='}'
 		{
-			newLeafNode(otherlv_27, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_24());
+			newLeafNode(otherlv_23, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_20());
 		}
 	)
 ;
@@ -2117,19 +2086,25 @@ ruleOnSuccess returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOnSuccessRule());
-					}
+					newCompositeNode(grammarAccess.getOnSuccessAccess().getActionActionParserRuleCall_1_0());
 				}
-				otherlv_1=RULE_ID
+				lv_action_1_0=ruleAction
 				{
-					newLeafNode(otherlv_1, grammarAccess.getOnSuccessAccess().getActionActionCrossReference_1_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOnSuccessRule());
+					}
+					set(
+						$current,
+						"action",
+						lv_action_1_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Action");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2=','
+		otherlv_2='('
 		{
-			newLeafNode(otherlv_2, grammarAccess.getOnSuccessAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getOnSuccessAccess().getLeftParenthesisKeyword_2());
 		}
 		(
 			(
@@ -2153,6 +2128,10 @@ ruleOnSuccess returns [EObject current=null]
 		otherlv_4=')'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_4());
+		}
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;
@@ -2180,19 +2159,25 @@ ruleOnBreach returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getOnBreachRule());
-					}
+					newCompositeNode(grammarAccess.getOnBreachAccess().getActionActionParserRuleCall_1_0());
 				}
-				otherlv_1=RULE_ID
+				lv_action_1_0=ruleAction
 				{
-					newLeafNode(otherlv_1, grammarAccess.getOnBreachAccess().getActionActionCrossReference_1_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getOnBreachRule());
+					}
+					set(
+						$current,
+						"action",
+						lv_action_1_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Action");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_2=','
+		otherlv_2='('
 		{
-			newLeafNode(otherlv_2, grammarAccess.getOnBreachAccess().getCommaKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_2());
 		}
 		(
 			(
@@ -2216,6 +2201,10 @@ ruleOnBreach returns [EObject current=null]
 		otherlv_4=')'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_4());
+		}
+		otherlv_5=')'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_5());
 		}
 	)
 ;

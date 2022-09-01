@@ -342,7 +342,6 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         application=Application 
 	 *         process=Process 
 	 *         variables+=Variable* 
-	 *         actions+=Action* 
 	 *         clauses+=Clause
 	 *     )
 	 * </pre>
@@ -535,7 +534,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     OnBreach returns OnBreach
 	 *
 	 * Constraint:
-	 *     (action=[Action|ID] message=Expression)
+	 *     (action=Action message=Expression)
 	 * </pre>
 	 */
 	protected void sequence_OnBreach(ISerializationContext context, OnBreach semanticObject) {
@@ -546,7 +545,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.ON_BREACH__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOnBreachAccess().getActionActionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SmartCEPackage.Literals.ON_BREACH__ACTION, false));
+		feeder.accept(grammarAccess.getOnBreachAccess().getActionActionParserRuleCall_1_0(), semanticObject.getAction());
 		feeder.accept(grammarAccess.getOnBreachAccess().getMessageExpressionParserRuleCall_3_0(), semanticObject.getMessage());
 		feeder.finish();
 	}
@@ -558,7 +557,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     OnSuccess returns OnSuccess
 	 *
 	 * Constraint:
-	 *     (action=[Action|ID] message=Expression)
+	 *     (action=Action message=Expression)
 	 * </pre>
 	 */
 	protected void sequence_OnSuccess(ISerializationContext context, OnSuccess semanticObject) {
@@ -569,7 +568,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.ON_SUCCESS__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getOnSuccessAccess().getActionActionIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SmartCEPackage.Literals.ON_SUCCESS__ACTION, false));
+		feeder.accept(grammarAccess.getOnSuccessAccess().getActionActionParserRuleCall_1_0(), semanticObject.getAction());
 		feeder.accept(grammarAccess.getOnSuccessAccess().getMessageExpressionParserRuleCall_3_0(), semanticObject.getMessage());
 		feeder.finish();
 	}

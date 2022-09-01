@@ -107,8 +107,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getContractAccess().getApplicationAssignment_13(), "rule__Contract__ApplicationAssignment_13");
 			builder.put(grammarAccess.getContractAccess().getProcessAssignment_16(), "rule__Contract__ProcessAssignment_16");
 			builder.put(grammarAccess.getContractAccess().getVariablesAssignment_18_2(), "rule__Contract__VariablesAssignment_18_2");
-			builder.put(grammarAccess.getContractAccess().getActionsAssignment_21(), "rule__Contract__ActionsAssignment_21");
-			builder.put(grammarAccess.getContractAccess().getClausesAssignment_23(), "rule__Contract__ClausesAssignment_23");
+			builder.put(grammarAccess.getContractAccess().getClausesAssignment_19(), "rule__Contract__ClausesAssignment_19");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getExpressionAssignment_2(), "rule__Variable__ExpressionAssignment_2");
 			builder.put(grammarAccess.getClauseAccess().getNameAssignment_1(), "rule__Clause__NameAssignment_1");

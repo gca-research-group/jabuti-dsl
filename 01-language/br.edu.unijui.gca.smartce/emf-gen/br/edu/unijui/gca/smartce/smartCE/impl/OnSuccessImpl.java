@@ -44,7 +44,7 @@ public class OnSuccessImpl extends MinimalEObjectImpl.Container implements OnSuc
 	protected Expression message;
 
 	/**
-	 * The cached value of the '{@link #getAction() <em>Action</em>}' reference.
+	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getAction()
@@ -132,16 +132,6 @@ public class OnSuccessImpl extends MinimalEObjectImpl.Container implements OnSuc
 	@Override
 	public Action getAction()
 	{
-		if (action != null && action.eIsProxy())
-		{
-			InternalEObject oldAction = (InternalEObject)action;
-			action = (Action)eResolveProxy(oldAction);
-			if (action != oldAction)
-			{
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, SmartCEPackage.ON_SUCCESS__ACTION, oldAction, action));
-			}
-		}
 		return action;
 	}
 
@@ -150,9 +140,16 @@ public class OnSuccessImpl extends MinimalEObjectImpl.Container implements OnSuc
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action basicGetAction()
+	public NotificationChain basicSetAction(Action newAction, NotificationChain msgs)
 	{
-		return action;
+		Action oldAction = action;
+		action = newAction;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.ON_SUCCESS__ACTION, oldAction, newAction);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -163,10 +160,18 @@ public class OnSuccessImpl extends MinimalEObjectImpl.Container implements OnSuc
 	@Override
 	public void setAction(Action newAction)
 	{
-		Action oldAction = action;
-		action = newAction;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.ON_SUCCESS__ACTION, oldAction, action));
+		if (newAction != action)
+		{
+			NotificationChain msgs = null;
+			if (action != null)
+				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.ON_SUCCESS__ACTION, null, msgs);
+			if (newAction != null)
+				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.ON_SUCCESS__ACTION, null, msgs);
+			msgs = basicSetAction(newAction, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.ON_SUCCESS__ACTION, newAction, newAction));
 	}
 
 	/**
@@ -181,6 +186,8 @@ public class OnSuccessImpl extends MinimalEObjectImpl.Container implements OnSuc
 		{
 			case SmartCEPackage.ON_SUCCESS__MESSAGE:
 				return basicSetMessage(null, msgs);
+			case SmartCEPackage.ON_SUCCESS__ACTION:
+				return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -198,8 +205,7 @@ public class OnSuccessImpl extends MinimalEObjectImpl.Container implements OnSuc
 			case SmartCEPackage.ON_SUCCESS__MESSAGE:
 				return getMessage();
 			case SmartCEPackage.ON_SUCCESS__ACTION:
-				if (resolve) return getAction();
-				return basicGetAction();
+				return getAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

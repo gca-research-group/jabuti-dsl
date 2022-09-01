@@ -24,11 +24,7 @@ Contract:
 		('variables' '{'
 			variables+=Variable*
 		'}')?
-		
-		'actions' '{'
-			actions+=Action*
-		'}'
-		
+			
 		clauses+=Clause
 	'}'; 
 
@@ -152,11 +148,11 @@ Process:
 ;
 
 OnSuccess:
-	'(' action=[Action] ',' message=Expression  ')' 
+	'(' action=Action '(' message=Expression ')' ')' 
 ;
 
 OnBreach:
-	'(' action=[Action] ',' message=Expression  ')' 
+	 '(' action=Action '(' message=Expression ')' ')' 
 ;
 
 Action:

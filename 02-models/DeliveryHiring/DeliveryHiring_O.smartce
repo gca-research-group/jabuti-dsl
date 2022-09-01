@@ -9,21 +9,18 @@ Contract DeliveryHiring_O {
 		application = "Name of application"
 		process = "Name of process"	
 	}
-	//
+	
 	variables {
 		excutions = 0 //Number of allowed executions
-	}	
-	actions {
-		BusinessAction actionName
 	}
-	
+		
 	Right right {
 		rolePlayer = application
 		operation = request
 		condition {
 			BusinessDay(Friday to Sunday)
-		}
+		} 
 		
-		onBreach (actionName, "The contract has failed")
+		onBreach (BusinessAction action ("dfdsf"))
 	}
 }

@@ -769,7 +769,7 @@ public interface SmartCEPackage extends EPackage
 	int ON_BREACH__MESSAGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' reference.
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1304,7 +1304,7 @@ public interface SmartCEPackage extends EPackage
 	int ON_SUCCESS__MESSAGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Action</b></em>' reference.
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2102,10 +2102,10 @@ public interface SmartCEPackage extends EPackage
 	EReference getOnBreach_Message();
 
 	/**
-	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction <em>Action</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Action</em>'.
+	 * @return the meta object for the containment reference '<em>Action</em>'.
 	 * @see br.edu.unijui.gca.smartce.smartCE.OnBreach#getAction()
 	 * @see #getOnBreach()
 	 * @generated
@@ -2463,10 +2463,10 @@ public interface SmartCEPackage extends EPackage
 	EReference getOnSuccess_Message();
 
 	/**
-	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess#getAction <em>Action</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.OnSuccess#getAction <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Action</em>'.
+	 * @return the meta object for the containment reference '<em>Action</em>'.
 	 * @see br.edu.unijui.gca.smartce.smartCE.OnSuccess#getAction()
 	 * @see #getOnSuccess()
 	 * @generated
@@ -3145,7 +3145,7 @@ public interface SmartCEPackage extends EPackage
 		EReference ON_BREACH__MESSAGE = eINSTANCE.getOnBreach_Message();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3443,7 +3443,7 @@ public interface SmartCEPackage extends EPackage
 		EReference ON_SUCCESS__MESSAGE = eINSTANCE.getOnSuccess_Message();
 
 		/**
-		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

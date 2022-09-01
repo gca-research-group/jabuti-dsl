@@ -106,8 +106,7 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     ('variables' '{' '}')?
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     process=Process '}' (ambiguity) 'actions' '{' '}' clauses+=Clause
-	 *     process=Process '}' (ambiguity) 'actions' '{' actions+=Action
+	 *     process=Process '}' (ambiguity) clauses+=Clause
 	 
 	 * </pre>
 	 */
