@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Action#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Action#getParameters <em>Parameters</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Action#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -48,18 +47,6 @@ public interface Action extends EObject
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Variable}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parameters</em>' containment reference list.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getAction_Parameters()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Variable> getParameters();
 
 	/**
 	 * Returns the value of the '<em><b>Statements</b></em>' containment reference list.

@@ -27,17 +27,14 @@ import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
-import br.edu.unijui.gca.smartce.smartCE.SingleVariable;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
-import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
-import br.edu.unijui.gca.smartce.smartCE.Variables;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -246,13 +243,6 @@ public class SmartCESwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmartCEPackage.VARIABLE:
-			{
-				Variable variable = (Variable)theEObject;
-				T result = caseVariable(variable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case SmartCEPackage.CONDITION:
 			{
 				Condition condition = (Condition)theEObject;
@@ -351,24 +341,10 @@ public class SmartCESwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case SmartCEPackage.VALUE_AND_DESCRIPTION:
+			case SmartCEPackage.VARIABLE:
 			{
-				ValueAndDescription valueAndDescription = (ValueAndDescription)theEObject;
-				T result = caseValueAndDescription(valueAndDescription);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SmartCEPackage.VARIABLES:
-			{
-				Variables variables = (Variables)theEObject;
-				T result = caseVariables(variables);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case SmartCEPackage.SINGLE_VARIABLE:
-			{
-				SingleVariable singleVariable = (SingleVariable)theEObject;
-				T result = caseSingleVariable(singleVariable);
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -674,22 +650,6 @@ public class SmartCESwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVariable(Variable object)
-	{
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -882,49 +842,17 @@ public class SmartCESwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Value And Description</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Value And Description</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseValueAndDescription(ValueAndDescription object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variables</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variables</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVariables(Variables object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Single Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Single Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseSingleVariable(SingleVariable object)
+	public T caseVariable(Variable object)
 	{
 		return null;
 	}

@@ -3,15 +3,25 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
+import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +32,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getType <em>Type</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getDescription <em>Description</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +61,34 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String TYPE_EDEFAULT = null;
+	protected static final String DESCRIPTION_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getDescription()
 	 * @generated
 	 * @ordered
 	 */
-	protected String type = TYPE_EDEFAULT;
+	protected String description = DESCRIPTION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Expression> expression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,9 +142,9 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @generated
 	 */
 	@Override
-	public String getType()
+	public String getDescription()
 	{
-		return type;
+		return description;
 	}
 
 	/**
@@ -132,12 +153,43 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @generated
 	 */
 	@Override
-	public void setType(String newType)
+	public void setDescription(String newDescription)
 	{
-		String oldType = type;
-		type = newType;
+		String oldDescription = description;
+		description = newDescription;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.VARIABLE__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.VARIABLE__DESCRIPTION, oldDescription, description));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Expression> getExpression()
+	{
+		if (expression == null)
+		{
+			expression = new EObjectContainmentEList<Expression>(Expression.class, this, SmartCEPackage.VARIABLE__EXPRESSION);
+		}
+		return expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.VARIABLE__EXPRESSION:
+				return ((InternalEList<?>)getExpression()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -152,8 +204,10 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 		{
 			case SmartCEPackage.VARIABLE__NAME:
 				return getName();
-			case SmartCEPackage.VARIABLE__TYPE:
-				return getType();
+			case SmartCEPackage.VARIABLE__DESCRIPTION:
+				return getDescription();
+			case SmartCEPackage.VARIABLE__EXPRESSION:
+				return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,6 +217,7 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
@@ -171,8 +226,12 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 			case SmartCEPackage.VARIABLE__NAME:
 				setName((String)newValue);
 				return;
-			case SmartCEPackage.VARIABLE__TYPE:
-				setType((String)newValue);
+			case SmartCEPackage.VARIABLE__DESCRIPTION:
+				setDescription((String)newValue);
+				return;
+			case SmartCEPackage.VARIABLE__EXPRESSION:
+				getExpression().clear();
+				getExpression().addAll((Collection<? extends Expression>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,8 +250,11 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 			case SmartCEPackage.VARIABLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case SmartCEPackage.VARIABLE__TYPE:
-				setType(TYPE_EDEFAULT);
+			case SmartCEPackage.VARIABLE__DESCRIPTION:
+				setDescription(DESCRIPTION_EDEFAULT);
+				return;
+			case SmartCEPackage.VARIABLE__EXPRESSION:
+				getExpression().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -210,8 +272,10 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 		{
 			case SmartCEPackage.VARIABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SmartCEPackage.VARIABLE__TYPE:
-				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+			case SmartCEPackage.VARIABLE__DESCRIPTION:
+				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+			case SmartCEPackage.VARIABLE__EXPRESSION:
+				return expression != null && !expression.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -229,8 +293,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", type: ");
-		result.append(type);
+		result.append(", description: ");
+		result.append(description);
 		result.append(')');
 		return result.toString();
 	}

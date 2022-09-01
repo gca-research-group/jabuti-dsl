@@ -26,8 +26,8 @@ import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Parties;
 import br.edu.unijui.gca.smartce.smartCE.Party;
+import br.edu.unijui.gca.smartce.smartCE.Recurrence;
 import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
-import br.edu.unijui.gca.smartce.smartCE.SingleVariable;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
@@ -36,10 +36,8 @@ import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
-import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
-import br.edu.unijui.gca.smartce.smartCE.Variables;
 import br.edu.unijui.gca.smartce.smartCE.WeekDay;
 
 import org.eclipse.emf.ecore.EClass;
@@ -121,7 +119,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.FUNCTION_CALL: return createFunctionCall();
 			case SmartCEPackage.ON_BREACH: return createOnBreach();
 			case SmartCEPackage.ACTION: return createAction();
-			case SmartCEPackage.VARIABLE: return createVariable();
 			case SmartCEPackage.TIMEOUT: return createTimeout();
 			case SmartCEPackage.OPERATION_LIMIT: return createOperationLimit();
 			case SmartCEPackage.BUSINESS_DAY: return createBusinessDay();
@@ -132,9 +129,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.EVENT_LOG: return createEventLog();
 			case SmartCEPackage.LOGICAL_OPERATOR: return createLogicalOperator();
 			case SmartCEPackage.ON_SUCCESS: return createOnSuccess();
-			case SmartCEPackage.VALUE_AND_DESCRIPTION: return createValueAndDescription();
-			case SmartCEPackage.VARIABLES: return createVariables();
-			case SmartCEPackage.SINGLE_VARIABLE: return createSingleVariable();
+			case SmartCEPackage.VARIABLE: return createVariable();
 			case SmartCEPackage.SESSION_INTERVAL: return createSessionInterval();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -159,6 +154,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return createOperationFromString(eDataType, initialValue);
 			case SmartCEPackage.PARTIES:
 				return createPartiesFromString(eDataType, initialValue);
+			case SmartCEPackage.RECURRENCE:
+				return createRecurrenceFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -182,6 +179,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return convertOperationToString(eDataType, instanceValue);
 			case SmartCEPackage.PARTIES:
 				return convertPartiesToString(eDataType, instanceValue);
+			case SmartCEPackage.RECURRENCE:
+				return convertRecurrenceToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -409,18 +408,6 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	@Override
-	public Variable createVariable()
-	{
-		VariableImpl variable = new VariableImpl();
-		return variable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Timeout createTimeout()
 	{
 		TimeoutImpl timeout = new TimeoutImpl();
@@ -541,34 +528,10 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	@Override
-	public ValueAndDescription createValueAndDescription()
+	public Variable createVariable()
 	{
-		ValueAndDescriptionImpl valueAndDescription = new ValueAndDescriptionImpl();
-		return valueAndDescription;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Variables createVariables()
-	{
-		VariablesImpl variables = new VariablesImpl();
-		return variables;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public SingleVariable createSingleVariable()
-	{
-		SingleVariableImpl singleVariable = new SingleVariableImpl();
-		return singleVariable;
+		VariableImpl variable = new VariableImpl();
+		return variable;
 	}
 
 	/**
@@ -667,6 +630,28 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * @generated
 	 */
 	public String convertPartiesToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Recurrence createRecurrenceFromString(EDataType eDataType, String initialValue)
+	{
+		Recurrence result = Recurrence.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRecurrenceToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

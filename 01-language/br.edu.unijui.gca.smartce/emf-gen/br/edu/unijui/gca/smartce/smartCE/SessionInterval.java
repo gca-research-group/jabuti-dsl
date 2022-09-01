@@ -15,6 +15,9 @@ package br.edu.unijui.gca.smartce.smartCE;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getStart <em>Start</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getEnd <em>End</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence <em>Recurrence</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval()
@@ -66,5 +69,77 @@ public interface SessionInterval extends BusinessRule
 	 * @generated
 	 */
 	void setEnd(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Frequency</em>' attribute.
+	 * @see #setFrequency(int)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval_Frequency()
+	 * @model
+	 * @generated
+	 */
+	int getFrequency();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getFrequency <em>Frequency</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Frequency</em>' attribute.
+	 * @see #getFrequency()
+	 * @generated
+	 */
+	void setFrequency(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Time Unit</b></em>' attribute.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.TimeUnit}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Unit</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
+	 * @see #setTimeUnit(TimeUnit)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval_TimeUnit()
+	 * @model
+	 * @generated
+	 */
+	TimeUnit getTimeUnit();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getTimeUnit <em>Time Unit</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Unit</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.TimeUnit
+	 * @see #getTimeUnit()
+	 * @generated
+	 */
+	void setTimeUnit(TimeUnit value);
+
+	/**
+	 * Returns the value of the '<em><b>Recurrence</b></em>' attribute.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.Recurrence}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Recurrence</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
+	 * @see #setRecurrence(Recurrence)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval_Recurrence()
+	 * @model
+	 * @generated
+	 */
+	Recurrence getRecurrence();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence <em>Recurrence</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Recurrence</em>' attribute.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
+	 * @see #getRecurrence()
+	 * @generated
+	 */
+	void setRecurrence(Recurrence value);
 
 } // SessionInterval

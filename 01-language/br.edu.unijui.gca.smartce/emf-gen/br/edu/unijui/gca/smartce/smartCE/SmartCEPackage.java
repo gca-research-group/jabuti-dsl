@@ -132,13 +132,22 @@ public interface SmartCEPackage extends EPackage
 	int CONTRACT__ACTIONS = 6;
 
 	/**
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__VARIABLES = 7;
+
+	/**
 	 * The feature id for the '<em><b>Begin Date</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT__BEGIN_DATE = 7;
+	int CONTRACT__BEGIN_DATE = 8;
 
 	/**
 	 * The feature id for the '<em><b>Due Date</b></em>' containment reference.
@@ -147,16 +156,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT__DUE_DATE = 8;
-
-	/**
-	 * The feature id for the '<em><b>Variables</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTRACT__VARIABLES = 9;
+	int CONTRACT__DUE_DATE = 9;
 
 	/**
 	 * The number of structural features of the '<em>Contract</em>' class.
@@ -815,22 +815,13 @@ public interface SmartCEPackage extends EPackage
 	int ACTION__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__PARAMETERS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__STATEMENTS = 2;
+	int ACTION__STATEMENTS = 1;
 
 	/**
 	 * The number of structural features of the '<em>Action</em>' class.
@@ -839,44 +830,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 3;
-
-	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl <em>Variable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariable()
-	 * @generated
-	 */
-	int VARIABLE = 18;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE__NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE__TYPE = 1;
-
-	/**
-	 * The number of structural features of the '<em>Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_FEATURE_COUNT = 2;
+	int ACTION_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionImpl <em>Condition</em>}' class.
@@ -886,7 +840,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCondition()
 	 * @generated
 	 */
-	int CONDITION = 19;
+	int CONDITION = 18;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -914,7 +868,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessRule()
 	 * @generated
 	 */
-	int BUSINESS_RULE = 26;
+	int BUSINESS_RULE = 25;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -942,7 +896,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeout()
 	 * @generated
 	 */
-	int TIMEOUT = 20;
+	int TIMEOUT = 19;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -979,7 +933,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperationLimit()
 	 * @generated
 	 */
-	int OPERATION_LIMIT = 21;
+	int OPERATION_LIMIT = 20;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -1025,7 +979,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessDay()
 	 * @generated
 	 */
-	int BUSINESS_DAY = 22;
+	int BUSINESS_DAY = 21;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -1071,7 +1025,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeInterval()
 	 * @generated
 	 */
-	int TIME_INTERVAL = 23;
+	int TIME_INTERVAL = 22;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -1117,7 +1071,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getMessageContent()
 	 * @generated
 	 */
-	int MESSAGE_CONTENT = 24;
+	int MESSAGE_CONTENT = 23;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -1199,7 +1153,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getCompositeCondition()
 	 * @generated
 	 */
-	int COMPOSITE_CONDITION = 25;
+	int COMPOSITE_CONDITION = 24;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -1245,7 +1199,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getBusinessAction()
 	 * @generated
 	 */
-	int BUSINESS_ACTION = 27;
+	int BUSINESS_ACTION = 26;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1255,15 +1209,6 @@ public interface SmartCEPackage extends EPackage
 	 * @ordered
 	 */
 	int BUSINESS_ACTION__NAME = ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BUSINESS_ACTION__PARAMETERS = ACTION__PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -1291,7 +1236,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getEventLog()
 	 * @generated
 	 */
-	int EVENT_LOG = 28;
+	int EVENT_LOG = 27;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1301,15 +1246,6 @@ public interface SmartCEPackage extends EPackage
 	 * @ordered
 	 */
 	int EVENT_LOG__NAME = ACTION__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EVENT_LOG__PARAMETERS = ACTION__PARAMETERS;
 
 	/**
 	 * The feature id for the '<em><b>Statements</b></em>' containment reference list.
@@ -1337,7 +1273,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getLogicalOperator()
 	 * @generated
 	 */
-	int LOGICAL_OPERATOR = 29;
+	int LOGICAL_OPERATOR = 28;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1365,7 +1301,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOnSuccess()
 	 * @generated
 	 */
-	int ON_SUCCESS = 30;
+	int ON_SUCCESS = 29;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' containment reference.
@@ -1395,79 +1331,14 @@ public interface SmartCEPackage extends EPackage
 	int ON_SUCCESS_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ValueAndDescriptionImpl <em>Value And Description</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl <em>Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ValueAndDescriptionImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getValueAndDescription()
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariable()
 	 * @generated
 	 */
-	int VALUE_AND_DESCRIPTION = 31;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_AND_DESCRIPTION__VALUE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_AND_DESCRIPTION__DESCRIPTION = 1;
-
-	/**
-	 * The number of structural features of the '<em>Value And Description</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_AND_DESCRIPTION_FEATURE_COUNT = 2;
-
-	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariablesImpl <em>Variables</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariablesImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariables()
-	 * @generated
-	 */
-	int VARIABLES = 32;
-
-	/**
-	 * The feature id for the '<em><b>Variable</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLES__VARIABLE = 0;
-
-	/**
-	 * The number of structural features of the '<em>Variables</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLES_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.SingleVariableImpl <em>Single Variable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SingleVariableImpl
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getSingleVariable()
-	 * @generated
-	 */
-	int SINGLE_VARIABLE = 33;
+	int VARIABLE = 30;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1476,25 +1347,34 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_VARIABLE__NAME = 0;
+	int VARIABLE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value And Description</b></em>' containment reference.
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_VARIABLE__VALUE_AND_DESCRIPTION = 1;
+	int VARIABLE__DESCRIPTION = 1;
 
 	/**
-	 * The number of structural features of the '<em>Single Variable</em>' class.
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SINGLE_VARIABLE_FEATURE_COUNT = 2;
+	int VARIABLE__EXPRESSION = 2;
+
+	/**
+	 * The number of structural features of the '<em>Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl <em>Session Interval</em>}' class.
@@ -1504,7 +1384,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getSessionInterval()
 	 * @generated
 	 */
-	int SESSION_INTERVAL = 34;
+	int SESSION_INTERVAL = 31;
 
 	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
@@ -1534,13 +1414,40 @@ public interface SmartCEPackage extends EPackage
 	int SESSION_INTERVAL__END = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__FREQUENCY = BUSINESS_RULE_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__TIME_UNIT = BUSINESS_RULE_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Recurrence</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__RECURRENCE = BUSINESS_RULE_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Session Interval</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 2;
+	int SESSION_INTERVAL_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
@@ -1550,7 +1457,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAY = 35;
+	int WEEK_DAY = 32;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.TimeUnit <em>Time Unit</em>}' enum.
@@ -1560,7 +1467,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 36;
+	int TIME_UNIT = 33;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}' enum.
@@ -1570,7 +1477,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 37;
+	int OPERATION = 34;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Parties <em>Parties</em>}' enum.
@@ -1580,7 +1487,17 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getParties()
 	 * @generated
 	 */
-	int PARTIES = 38;
+	int PARTIES = 35;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Recurrence <em>Recurrence</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getRecurrence()
+	 * @generated
+	 */
+	int RECURRENCE = 36;
 
 
 	/**
@@ -1671,6 +1588,17 @@ public interface SmartCEPackage extends EPackage
 	EReference getContract_Actions();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getVariables <em>Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Variables</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getVariables()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EReference getContract_Variables();
+
+	/**
 	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1691,17 +1619,6 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EReference getContract_DueDate();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getVariables <em>Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Variables</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Contract#getVariables()
-	 * @see #getContract()
-	 * @generated
-	 */
-	EReference getContract_Variables();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Status <em>Status</em>}'.
@@ -2237,17 +2154,6 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getAction_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Action#getParameters <em>Parameters</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Action#getParameters()
-	 * @see #getAction()
-	 * @generated
-	 */
-	EReference getAction_Parameters();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Action#getStatements <em>Statements</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2257,38 +2163,6 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EReference getAction_Statements();
-
-	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variable</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Variable
-	 * @generated
-	 */
-	EClass getVariable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Variable#getName()
-	 * @see #getVariable()
-	 * @generated
-	 */
-	EAttribute getVariable_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Variable#getType()
-	 * @see #getVariable()
-	 * @generated
-	 */
-	EAttribute getVariable_Type();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Condition <em>Condition</em>}'.
@@ -2620,89 +2494,47 @@ public interface SmartCEPackage extends EPackage
 	EReference getOnSuccess_Action();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.ValueAndDescription <em>Value And Description</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Value And Description</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.ValueAndDescription
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Variable
 	 * @generated
 	 */
-	EClass getValueAndDescription();
+	EClass getVariable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.ValueAndDescription#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.ValueAndDescription#getValue()
-	 * @see #getValueAndDescription()
-	 * @generated
-	 */
-	EAttribute getValueAndDescription_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.ValueAndDescription#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.ValueAndDescription#getDescription()
-	 * @see #getValueAndDescription()
-	 * @generated
-	 */
-	EAttribute getValueAndDescription_Description();
-
-	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.Variables <em>Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variables</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Variables
-	 * @generated
-	 */
-	EClass getVariables();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Variables#getVariable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Variable</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Variables#getVariable()
-	 * @see #getVariables()
-	 * @generated
-	 */
-	EReference getVariables_Variable();
-
-	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.SingleVariable <em>Single Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Single Variable</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SingleVariable
-	 * @generated
-	 */
-	EClass getSingleVariable();
-
-	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SingleVariable#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SingleVariable#getName()
-	 * @see #getSingleVariable()
+	 * @see br.edu.unijui.gca.smartce.smartCE.Variable#getName()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EAttribute getSingleVariable_Name();
+	EAttribute getVariable_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.SingleVariable#getValueAndDescription <em>Value And Description</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Value And Description</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SingleVariable#getValueAndDescription()
-	 * @see #getSingleVariable()
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Variable#getDescription()
+	 * @see #getVariable()
 	 * @generated
 	 */
-	EReference getSingleVariable_ValueAndDescription();
+	EAttribute getVariable_Description();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Variable#getExpression()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EReference getVariable_Expression();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval <em>Session Interval</em>}'.
@@ -2735,6 +2567,39 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getSessionInterval_End();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getFrequency <em>Frequency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frequency</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SessionInterval#getFrequency()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EAttribute getSessionInterval_Frequency();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SessionInterval#getTimeUnit()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EAttribute getSessionInterval_TimeUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence <em>Recurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Recurrence</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EAttribute getSessionInterval_Recurrence();
 
 	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}'.
@@ -2775,6 +2640,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getParties();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.Recurrence <em>Recurrence</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Recurrence</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
+	 * @generated
+	 */
+	EEnum getRecurrence();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2866,6 +2741,14 @@ public interface SmartCEPackage extends EPackage
 		EReference CONTRACT__ACTIONS = eINSTANCE.getContract_Actions();
 
 		/**
+		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT__VARIABLES = eINSTANCE.getContract_Variables();
+
+		/**
 		 * The meta object literal for the '<em><b>Begin Date</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2880,14 +2763,6 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EReference CONTRACT__DUE_DATE = eINSTANCE.getContract_DueDate();
-
-		/**
-		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONTRACT__VARIABLES = eINSTANCE.getContract_Variables();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.StatusImpl <em>Status</em>}' class.
@@ -3324,46 +3199,12 @@ public interface SmartCEPackage extends EPackage
 		EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTION__PARAMETERS = eINSTANCE.getAction_Parameters();
-
-		/**
 		 * The meta object literal for the '<em><b>Statements</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference ACTION__STATEMENTS = eINSTANCE.getAction_Statements();
-
-		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl <em>Variable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariable()
-		 * @generated
-		 */
-		EClass VARIABLE = eINSTANCE.getVariable();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionImpl <em>Condition</em>}' class.
@@ -3638,58 +3479,14 @@ public interface SmartCEPackage extends EPackage
 		EReference ON_SUCCESS__ACTION = eINSTANCE.getOnSuccess_Action();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ValueAndDescriptionImpl <em>Value And Description</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl <em>Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ValueAndDescriptionImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getValueAndDescription()
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariable()
 		 * @generated
 		 */
-		EClass VALUE_AND_DESCRIPTION = eINSTANCE.getValueAndDescription();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VALUE_AND_DESCRIPTION__VALUE = eINSTANCE.getValueAndDescription_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VALUE_AND_DESCRIPTION__DESCRIPTION = eINSTANCE.getValueAndDescription_Description();
-
-		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.VariablesImpl <em>Variables</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.VariablesImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getVariables()
-		 * @generated
-		 */
-		EClass VARIABLES = eINSTANCE.getVariables();
-
-		/**
-		 * The meta object literal for the '<em><b>Variable</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VARIABLES__VARIABLE = eINSTANCE.getVariables_Variable();
-
-		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.SingleVariableImpl <em>Single Variable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SingleVariableImpl
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getSingleVariable()
-		 * @generated
-		 */
-		EClass SINGLE_VARIABLE = eINSTANCE.getSingleVariable();
+		EClass VARIABLE = eINSTANCE.getVariable();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -3697,15 +3494,23 @@ public interface SmartCEPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SINGLE_VARIABLE__NAME = eINSTANCE.getSingleVariable_Name();
+		EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Value And Description</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SINGLE_VARIABLE__VALUE_AND_DESCRIPTION = eINSTANCE.getSingleVariable_ValueAndDescription();
+		EAttribute VARIABLE__DESCRIPTION = eINSTANCE.getVariable_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE__EXPRESSION = eINSTANCE.getVariable_Expression();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl <em>Session Interval</em>}' class.
@@ -3732,6 +3537,30 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute SESSION_INTERVAL__END = eINSTANCE.getSessionInterval_End();
+
+		/**
+		 * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SESSION_INTERVAL__FREQUENCY = eINSTANCE.getSessionInterval_Frequency();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SESSION_INTERVAL__TIME_UNIT = eINSTANCE.getSessionInterval_TimeUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Recurrence</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SESSION_INTERVAL__RECURRENCE = eINSTANCE.getSessionInterval_Recurrence();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
@@ -3772,6 +3601,16 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EEnum PARTIES = eINSTANCE.getParties();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.Recurrence <em>Recurrence</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getRecurrence()
+		 * @generated
+		 */
+		EEnum RECURRENCE = eINSTANCE.getRecurrence();
 
 	}
 

@@ -37,8 +37,6 @@ class SmartCEGenerator extends AbstractGenerator {
 			import "./libs/EAI_Domain.sol";
 			
 			contract «c.name» is EAI_Domain{
-				uint32 beginDate = «getTS(c.beginDate)»;
-				uint32 dueDate = «getTS(c.dueDate)»;
 				
 				Party «c.application.name»;
 				Party «c.process.name»;
@@ -54,7 +52,7 @@ class SmartCEGenerator extends AbstractGenerator {
 				
 				function «c.clauses.get(0).name»(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
 								
-					require(_performer == «c.clauses.get(0).rolePlayer.name».walletAddress, "You have no permission to perform this operation.");
+					
 					bool isBreached=false;
 					
 					if(«getConditionals(c.clauses.get(0).condition)») {

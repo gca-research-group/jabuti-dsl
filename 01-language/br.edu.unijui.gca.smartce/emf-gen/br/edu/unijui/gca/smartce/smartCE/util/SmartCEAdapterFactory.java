@@ -27,17 +27,14 @@ import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
-import br.edu.unijui.gca.smartce.smartCE.SingleVariable;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
 import br.edu.unijui.gca.smartce.smartCE.StringValue;
 import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
-import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
-import br.edu.unijui.gca.smartce.smartCE.Variables;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -200,11 +197,6 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 				return createActionAdapter();
 			}
 			@Override
-			public Adapter caseVariable(Variable object)
-			{
-				return createVariableAdapter();
-			}
-			@Override
 			public Adapter caseCondition(Condition object)
 			{
 				return createConditionAdapter();
@@ -265,19 +257,9 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 				return createOnSuccessAdapter();
 			}
 			@Override
-			public Adapter caseValueAndDescription(ValueAndDescription object)
+			public Adapter caseVariable(Variable object)
 			{
-				return createValueAndDescriptionAdapter();
-			}
-			@Override
-			public Adapter caseVariables(Variables object)
-			{
-				return createVariablesAdapter();
-			}
-			@Override
-			public Adapter caseSingleVariable(SingleVariable object)
-			{
-				return createSingleVariableAdapter();
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter caseSessionInterval(SessionInterval object)
@@ -577,21 +559,6 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Variable
-	 * @generated
-	 */
-	public Adapter createVariableAdapter()
-	{
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -772,46 +739,16 @@ public class SmartCEAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.ValueAndDescription <em>Value And Description</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.smartce.smartCE.ValueAndDescription
+	 * @see br.edu.unijui.gca.smartce.smartCE.Variable
 	 * @generated
 	 */
-	public Adapter createValueAndDescriptionAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.Variables <em>Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Variables
-	 * @generated
-	 */
-	public Adapter createVariablesAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.smartce.smartCE.SingleVariable <em>Single Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SingleVariable
-	 * @generated
-	 */
-	public Adapter createSingleVariableAdapter()
+	public Adapter createVariableAdapter()
 	{
 		return null;
 	}

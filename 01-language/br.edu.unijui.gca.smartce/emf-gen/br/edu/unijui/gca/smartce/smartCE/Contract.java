@@ -23,9 +23,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getProcess <em>Process</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getClauses <em>Clauses</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getActions <em>Actions</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getVariables <em>Variables</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate <em>Due Date</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Contract#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract()
@@ -169,16 +169,28 @@ public interface Contract extends EObject
 	EList<Action> getActions();
 
 	/**
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Variable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variables</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_Variables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Variable> getVariables();
+
+	/**
 	 * Returns the value of the '<em><b>Begin Date</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Begin Date</em>' containment reference.
-	 * @see #setBeginDate(ValueAndDescription)
+	 * @see #setBeginDate(Expression)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_BeginDate()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	ValueAndDescription getBeginDate();
+	Expression getBeginDate();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getBeginDate <em>Begin Date</em>}' containment reference.
@@ -188,19 +200,19 @@ public interface Contract extends EObject
 	 * @see #getBeginDate()
 	 * @generated
 	 */
-	void setBeginDate(ValueAndDescription value);
+	void setBeginDate(Expression value);
 
 	/**
 	 * Returns the value of the '<em><b>Due Date</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Due Date</em>' containment reference.
-	 * @see #setDueDate(ValueAndDescription)
+	 * @see #setDueDate(Expression)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_DueDate()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	ValueAndDescription getDueDate();
+	Expression getDueDate();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getDueDate <em>Due Date</em>}' containment reference.
@@ -210,28 +222,6 @@ public interface Contract extends EObject
 	 * @see #getDueDate()
 	 * @generated
 	 */
-	void setDueDate(ValueAndDescription value);
-
-	/**
-	 * Returns the value of the '<em><b>Variables</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variables</em>' containment reference.
-	 * @see #setVariables(Variables)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getContract_Variables()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Variables getVariables();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Contract#getVariables <em>Variables</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Variables</em>' containment reference.
-	 * @see #getVariables()
-	 * @generated
-	 */
-	void setVariables(Variables value);
+	void setDueDate(Expression value);
 
 } // Contract

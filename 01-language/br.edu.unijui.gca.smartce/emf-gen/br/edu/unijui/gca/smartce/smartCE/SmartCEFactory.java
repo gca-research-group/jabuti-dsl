@@ -186,15 +186,6 @@ public interface SmartCEFactory extends EFactory
 	Action createAction();
 
 	/**
-	 * Returns a new object of class '<em>Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable</em>'.
-	 * @generated
-	 */
-	Variable createVariable();
-
-	/**
 	 * Returns a new object of class '<em>Timeout</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -285,31 +276,13 @@ public interface SmartCEFactory extends EFactory
 	OnSuccess createOnSuccess();
 
 	/**
-	 * Returns a new object of class '<em>Value And Description</em>'.
+	 * Returns a new object of class '<em>Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Value And Description</em>'.
+	 * @return a new object of class '<em>Variable</em>'.
 	 * @generated
 	 */
-	ValueAndDescription createValueAndDescription();
-
-	/**
-	 * Returns a new object of class '<em>Variables</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variables</em>'.
-	 * @generated
-	 */
-	Variables createVariables();
-
-	/**
-	 * Returns a new object of class '<em>Single Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Single Variable</em>'.
-	 * @generated
-	 */
-	SingleVariable createSingleVariable();
+	Variable createVariable();
 
 	/**
 	 * Returns a new object of class '<em>Session Interval</em>'.

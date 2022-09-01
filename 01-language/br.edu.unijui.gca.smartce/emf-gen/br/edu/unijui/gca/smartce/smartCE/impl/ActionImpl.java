@@ -6,7 +6,6 @@ package br.edu.unijui.gca.smartce.smartCE.impl;
 import br.edu.unijui.gca.smartce.smartCE.Action;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
-import br.edu.unijui.gca.smartce.smartCE.Variable;
 
 import java.util.Collection;
 
@@ -33,7 +32,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ActionImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ActionImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ActionImpl#getStatements <em>Statements</em>}</li>
  * </ul>
  *
@@ -60,16 +58,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParameters()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Variable> parameters;
 
 	/**
 	 * The cached value of the '{@link #getStatements() <em>Statements</em>}' containment reference list.
@@ -133,21 +121,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 	 * @generated
 	 */
 	@Override
-	public EList<Variable> getParameters()
-	{
-		if (parameters == null)
-		{
-			parameters = new EObjectContainmentEList<Variable>(Variable.class, this, SmartCEPackage.ACTION__PARAMETERS);
-		}
-		return parameters;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<Expression> getStatements()
 	{
 		if (statements == null)
@@ -167,8 +140,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.ACTION__PARAMETERS:
-				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 			case SmartCEPackage.ACTION__STATEMENTS:
 				return ((InternalEList<?>)getStatements()).basicRemove(otherEnd, msgs);
 		}
@@ -187,8 +158,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 		{
 			case SmartCEPackage.ACTION__NAME:
 				return getName();
-			case SmartCEPackage.ACTION__PARAMETERS:
-				return getParameters();
 			case SmartCEPackage.ACTION__STATEMENTS:
 				return getStatements();
 		}
@@ -208,10 +177,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 		{
 			case SmartCEPackage.ACTION__NAME:
 				setName((String)newValue);
-				return;
-			case SmartCEPackage.ACTION__PARAMETERS:
-				getParameters().clear();
-				getParameters().addAll((Collection<? extends Variable>)newValue);
 				return;
 			case SmartCEPackage.ACTION__STATEMENTS:
 				getStatements().clear();
@@ -234,9 +199,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 			case SmartCEPackage.ACTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case SmartCEPackage.ACTION__PARAMETERS:
-				getParameters().clear();
-				return;
 			case SmartCEPackage.ACTION__STATEMENTS:
 				getStatements().clear();
 				return;
@@ -256,8 +218,6 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
 		{
 			case SmartCEPackage.ACTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SmartCEPackage.ACTION__PARAMETERS:
-				return parameters != null && !parameters.isEmpty();
 			case SmartCEPackage.ACTION__STATEMENTS:
 				return statements != null && !statements.isEmpty();
 		}

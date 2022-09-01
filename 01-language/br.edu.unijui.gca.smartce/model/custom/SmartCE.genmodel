@@ -49,6 +49,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Contract/clauses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Contract/actions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Contract/variables"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Contract/beginDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Contract/dueDate"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//Status">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Status/active"/>
@@ -157,6 +159,7 @@
     <genClasses ecoreClass="SmartCE.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Variable/expression"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//SessionInterval">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/start"/>

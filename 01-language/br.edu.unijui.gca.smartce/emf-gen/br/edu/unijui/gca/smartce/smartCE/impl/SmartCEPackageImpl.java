@@ -28,8 +28,8 @@ import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
 import br.edu.unijui.gca.smartce.smartCE.Parties;
 import br.edu.unijui.gca.smartce.smartCE.Party;
+import br.edu.unijui.gca.smartce.smartCE.Recurrence;
 import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
-import br.edu.unijui.gca.smartce.smartCE.SingleVariable;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
@@ -38,10 +38,8 @@ import br.edu.unijui.gca.smartce.smartCE.TimeInterval;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 import br.edu.unijui.gca.smartce.smartCE.Timeout;
 import br.edu.unijui.gca.smartce.smartCE.UnaryOperator;
-import br.edu.unijui.gca.smartce.smartCE.ValueAndDescription;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
 import br.edu.unijui.gca.smartce.smartCE.VariableValue;
-import br.edu.unijui.gca.smartce.smartCE.Variables;
 import br.edu.unijui.gca.smartce.smartCE.WeekDay;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -191,13 +189,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass variableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass conditionEClass = null;
 
 	/**
@@ -282,21 +273,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass valueAndDescriptionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass variablesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass singleVariableEClass = null;
+	private EClass variableEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -332,6 +309,13 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EEnum partiesEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum recurrenceEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -490,7 +474,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContract_BeginDate()
+	public EReference getContract_Variables()
 	{
 		return (EReference)contractEClass.getEStructuralFeatures().get(7);
 	}
@@ -501,7 +485,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContract_DueDate()
+	public EReference getContract_BeginDate()
 	{
 		return (EReference)contractEClass.getEStructuralFeatures().get(8);
 	}
@@ -512,7 +496,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getContract_Variables()
+	public EReference getContract_DueDate()
 	{
 		return (EReference)contractEClass.getEStructuralFeatures().get(9);
 	}
@@ -1073,53 +1057,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getAction_Parameters()
-	{
-		return (EReference)actionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getAction_Statements()
 	{
-		return (EReference)actionEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getVariable()
-	{
-		return variableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getVariable_Name()
-	{
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getVariable_Type()
-	{
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+		return (EReference)actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1469,9 +1409,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getValueAndDescription()
+	public EClass getVariable()
 	{
-		return valueAndDescriptionEClass;
+		return variableEClass;
 	}
 
 	/**
@@ -1480,9 +1420,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getValueAndDescription_Value()
+	public EAttribute getVariable_Name()
 	{
-		return (EAttribute)valueAndDescriptionEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1491,9 +1431,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getValueAndDescription_Description()
+	public EAttribute getVariable_Description()
 	{
-		return (EAttribute)valueAndDescriptionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1502,53 +1442,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getVariables()
+	public EReference getVariable_Expression()
 	{
-		return variablesEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getVariables_Variable()
-	{
-		return (EReference)variablesEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getSingleVariable()
-	{
-		return singleVariableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSingleVariable_Name()
-	{
-		return (EAttribute)singleVariableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getSingleVariable_ValueAndDescription()
-	{
-		return (EReference)singleVariableEClass.getEStructuralFeatures().get(1);
+		return (EReference)variableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1582,6 +1478,39 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	public EAttribute getSessionInterval_End()
 	{
 		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSessionInterval_Frequency()
+	{
+		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSessionInterval_TimeUnit()
+	{
+		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getSessionInterval_Recurrence()
+	{
+		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1634,6 +1563,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EEnum getRecurrence()
+	{
+		return recurrenceEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public SmartCEFactory getSmartCEFactory()
 	{
 		return (SmartCEFactory)getEFactoryInstance();
@@ -1667,9 +1607,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEReference(contractEClass, CONTRACT__PROCESS);
 		createEReference(contractEClass, CONTRACT__CLAUSES);
 		createEReference(contractEClass, CONTRACT__ACTIONS);
+		createEReference(contractEClass, CONTRACT__VARIABLES);
 		createEReference(contractEClass, CONTRACT__BEGIN_DATE);
 		createEReference(contractEClass, CONTRACT__DUE_DATE);
-		createEReference(contractEClass, CONTRACT__VARIABLES);
 
 		statusEClass = createEClass(STATUS);
 		createEAttribute(statusEClass, STATUS__ACTIVE);
@@ -1737,12 +1677,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		actionEClass = createEClass(ACTION);
 		createEAttribute(actionEClass, ACTION__NAME);
-		createEReference(actionEClass, ACTION__PARAMETERS);
 		createEReference(actionEClass, ACTION__STATEMENTS);
-
-		variableEClass = createEClass(VARIABLE);
-		createEAttribute(variableEClass, VARIABLE__NAME);
-		createEAttribute(variableEClass, VARIABLE__TYPE);
 
 		conditionEClass = createEClass(CONDITION);
 		createEReference(conditionEClass, CONDITION__EXPRESSION);
@@ -1787,26 +1722,24 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEReference(onSuccessEClass, ON_SUCCESS__MESSAGE);
 		createEReference(onSuccessEClass, ON_SUCCESS__ACTION);
 
-		valueAndDescriptionEClass = createEClass(VALUE_AND_DESCRIPTION);
-		createEAttribute(valueAndDescriptionEClass, VALUE_AND_DESCRIPTION__VALUE);
-		createEAttribute(valueAndDescriptionEClass, VALUE_AND_DESCRIPTION__DESCRIPTION);
-
-		variablesEClass = createEClass(VARIABLES);
-		createEReference(variablesEClass, VARIABLES__VARIABLE);
-
-		singleVariableEClass = createEClass(SINGLE_VARIABLE);
-		createEAttribute(singleVariableEClass, SINGLE_VARIABLE__NAME);
-		createEReference(singleVariableEClass, SINGLE_VARIABLE__VALUE_AND_DESCRIPTION);
+		variableEClass = createEClass(VARIABLE);
+		createEAttribute(variableEClass, VARIABLE__NAME);
+		createEAttribute(variableEClass, VARIABLE__DESCRIPTION);
+		createEReference(variableEClass, VARIABLE__EXPRESSION);
 
 		sessionIntervalEClass = createEClass(SESSION_INTERVAL);
 		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__START);
 		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__END);
+		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__FREQUENCY);
+		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__TIME_UNIT);
+		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__RECURRENCE);
 
 		// Create enums
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
 		operationEEnum = createEEnum(OPERATION);
 		partiesEEnum = createEEnum(PARTIES);
+		recurrenceEEnum = createEEnum(RECURRENCE);
 	}
 
 	/**
@@ -1867,9 +1800,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEReference(getContract_Process(), this.getProcess(), null, "process", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContract_Clauses(), this.getClause(), null, "clauses", null, 0, -1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getContract_Actions(), this.getAction(), null, "actions", null, 0, -1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContract_BeginDate(), this.getValueAndDescription(), null, "beginDate", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContract_DueDate(), this.getValueAndDescription(), null, "dueDate", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getContract_Variables(), this.getVariables(), null, "variables", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_Variables(), this.getVariable(), null, "variables", null, 0, -1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_BeginDate(), this.getExpression(), null, "beginDate", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_DueDate(), this.getExpression(), null, "dueDate", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statusEClass, Status.class, "Status", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStatus_Active(), ecorePackage.getEBoolean(), "active", null, 0, 1, Status.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1937,12 +1870,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAction_Parameters(), this.getVariable(), null, "parameters", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_Statements(), this.getExpression(), null, "statements", null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariable_Type(), ecorePackage.getEString(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionEClass, Condition.class, "Condition", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getCondition_Expression(), this.getExpression(), null, "expression", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1987,20 +1915,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEReference(getOnSuccess_Message(), this.getExpression(), null, "message", null, 0, 1, OnSuccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getOnSuccess_Action(), this.getAction(), null, "action", null, 0, 1, OnSuccess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(valueAndDescriptionEClass, ValueAndDescription.class, "ValueAndDescription", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValueAndDescription_Value(), ecorePackage.getEString(), "value", null, 0, 1, ValueAndDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getValueAndDescription_Description(), ecorePackage.getEString(), "description", null, 0, 1, ValueAndDescription.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(variablesEClass, Variables.class, "Variables", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariables_Variable(), this.getSingleVariable(), null, "variable", null, 1, -1, Variables.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(singleVariableEClass, SingleVariable.class, "SingleVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSingleVariable_Name(), ecorePackage.getEString(), "name", "EString", 0, 1, SingleVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSingleVariable_ValueAndDescription(), this.getValueAndDescription(), null, "valueAndDescription", null, 1, 1, SingleVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariable_Description(), ecorePackage.getEString(), "description", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariable_Expression(), this.getExpression(), null, "expression", null, 0, -1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sessionIntervalEClass, SessionInterval.class, "SessionInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSessionInterval_Start(), ecorePackage.getEString(), "start", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSessionInterval_End(), ecorePackage.getEString(), "end", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSessionInterval_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSessionInterval_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSessionInterval_Recurrence(), this.getRecurrence(), "recurrence", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekDayEEnum, WeekDay.class, "WeekDay");
@@ -2032,6 +1957,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEEnum(partiesEEnum, Parties.class, "Parties");
 		addEEnumLiteral(partiesEEnum, Parties.APPLICATION);
 		addEEnumLiteral(partiesEEnum, Parties.PROCESS);
+
+		initEEnum(recurrenceEEnum, Recurrence.class, "Recurrence");
+		addEEnumLiteral(recurrenceEEnum, Recurrence.RECURRING);
+		addEEnumLiteral(recurrenceEEnum, Recurrence.NON_RECURRING);
 
 		// Create resource
 		createResource(eNS_URI);

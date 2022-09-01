@@ -13,24 +13,30 @@ Import:
 
 Contract: 
 	'Contract' name=ID '{'
-		'beginDate' '=' beginDate=ValueAndDescription
-		'dueDate' '=' dueDate= ValueAndDescription 
-		'application' '=' application=Application
-		'process' '=' process=Process
-		variables+=Variable*
-		clauses+=Clause*
-		actions+=Action*
+		'beginDate' '=' beginDate=Expression
+		'dueDate' '=' dueDate=Expression 
+		
+		'parties' '{'
+			'application' '=' application=Application
+			'process' '=' process=Process
+		'}'
+		
+		'variables' '{'
+			variables+=Variable*
+		'}'
+		/*clauses+=Clause*
+		actions+=Action**/
 	'}'; 
 
 Variable:
-	name=ID '=' ':' description=STRING 
+	name=ID '=' expression+=Expression
 ;
 
 
 Clause: 
 	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
 		'description' '=' description=STRING
-		'rolePlayer' '=' rolePlayer = Parties
+		//'rolePlayer' '=' rolePlayer = Parties
 		'operation' '=' operation=Operation
 		'condition' '{' 
 			condition=Condition			
@@ -115,9 +121,9 @@ MessageContent:
 // ****************************************************************************
 
 // ---- temporary solution to set the string "application" or "process" to rolePlayer-----
-enum Parties: 	
+/*enum Parties: 	
 	APPLICATION='application'| PROCESS='process'
-;
+;*/
 
 // ----------------- Add the binary operator -------------------------
 BinaryOperator:
@@ -135,11 +141,11 @@ Party:
 ;
 
 Application: 
-	name=STRING ':' description=STRING
+	name=STRING
 ;
 
 Process: 
-	name=STRING ':' description=STRING  
+	name=STRING
 ;
 
 OnSuccess:
@@ -154,11 +160,11 @@ Action:
 	BusinessAction | EventLog;
 
 BusinessAction:
-	'BusinessAction' name=ID '(' parameters+=Variable (',' parameters+=Variable)* ')'
+	'BusinessAction' name=ID //'(' parameters+=Variable (',' parameters+=Variable)* ')'
 ;
 
 EventLog:
-	'EventLog' name=ID	'(' parameters+=Variable (',' parameters+=Variable)* ')'
+	'EventLog' name=ID	//'(' parameters+=Variable (',' parameters+=Variable)* ')'
 ;
 
 Expression:

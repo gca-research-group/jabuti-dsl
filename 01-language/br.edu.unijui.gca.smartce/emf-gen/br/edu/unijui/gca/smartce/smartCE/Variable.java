@@ -3,6 +3,8 @@
  */
 package br.edu.unijui.gca.smartce.smartCE;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,7 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getType <em>Type</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getDescription <em>Description</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getVariable()
@@ -47,25 +50,37 @@ public interface Variable extends EObject
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * Returns the value of the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getVariable_Type()
+	 * @return the value of the '<em>Description</em>' attribute.
+	 * @see #setDescription(String)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getVariable_Description()
 	 * @model
 	 * @generated
 	 */
-	String getType();
+	String getDescription();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getType <em>Type</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
+	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * @see #getDescription()
 	 * @generated
 	 */
-	void setType(String value);
+	void setDescription(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Expression</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Expression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Expression</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getVariable_Expression()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Expression> getExpression();
 
 } // Variable
