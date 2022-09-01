@@ -12,6 +12,7 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,7 +22,9 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SmartCEGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Clause_ApplicationKeyword_5_1_or_ProcessKeyword_5_0;
 	protected AbstractElementAlias match_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0;
+	protected AbstractElementAlias match_Contract___VariablesKeyword_18_0_LeftCurlyBracketKeyword_18_1_RightCurlyBracketKeyword_18_3__q;
 	protected AbstractElementAlias match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1;
 	protected AbstractElementAlias match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
@@ -30,7 +33,9 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SmartCEGrammarAccess) access;
+		match_Clause_ApplicationKeyword_5_1_or_ProcessKeyword_5_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClauseAccess().getApplicationKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getClauseAccess().getProcessKeyword_5_0()));
 		match_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getClauseAccess().getObligationKeyword_0_2()), new TokenAlias(false, false, grammarAccess.getClauseAccess().getProhibitionKeyword_0_1()), new TokenAlias(false, false, grammarAccess.getClauseAccess().getRightKeyword_0_0()));
+		match_Contract___VariablesKeyword_18_0_LeftCurlyBracketKeyword_18_1_RightCurlyBracketKeyword_18_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContractAccess().getVariablesKeyword_18_0()), new TokenAlias(false, false, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_18_1()), new TokenAlias(false, false, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_18_3()));
 		match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getAsteriskKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getSolidusKeyword_1_1_1()));
 		match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1()), new TokenAlias(false, false, grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0()));
 		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
@@ -49,8 +54,12 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0.equals(syntax))
+			if (match_Clause_ApplicationKeyword_5_1_or_ProcessKeyword_5_0.equals(syntax))
+				emit_Clause_ApplicationKeyword_5_1_or_ProcessKeyword_5_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0.equals(syntax))
 				emit_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Contract___VariablesKeyword_18_0_LeftCurlyBracketKeyword_18_1_RightCurlyBracketKeyword_18_3__q.equals(syntax))
+				emit_Contract___VariablesKeyword_18_0_LeftCurlyBracketKeyword_18_1_RightCurlyBracketKeyword_18_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1.equals(syntax))
 				emit_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0.equals(syntax))
@@ -66,6 +75,20 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
+	 *     'process' | 'application'
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     name=ID '{' 'rolePlayer' '=' (ambiguity) 'operation' '=' operation=Operation
+	 
+	 * </pre>
+	 */
+	protected void emit_Clause_ApplicationKeyword_5_1_or_ProcessKeyword_5_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
 	 *     'Right' | 'Prohibition' | 'Obligation'
 	 *
 	 * This ambiguous syntax occurs at:
@@ -74,6 +97,21 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Clause_ObligationKeyword_0_2_or_ProhibitionKeyword_0_1_or_RightKeyword_0_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('variables' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     process=Process '}' (ambiguity) 'actions' '{' '}' clauses+=Clause
+	 *     process=Process '}' (ambiguity) 'actions' '{' actions+=Action
+	 
+	 * </pre>
+	 */
+	protected void emit_Contract___VariablesKeyword_18_0_LeftCurlyBracketKeyword_18_1_RightCurlyBracketKeyword_18_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

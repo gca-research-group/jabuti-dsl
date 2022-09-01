@@ -21,11 +21,15 @@ Contract:
 			'process' '=' process=Process
 		'}'
 		
-		'variables' '{'
+		('variables' '{'
 			variables+=Variable*
+		'}')?
+		
+		'actions' '{'
+			actions+=Action*
 		'}'
-		/*clauses+=Clause*
-		actions+=Action**/
+		
+		clauses+=Clause
 	'}'; 
 
 Variable:
@@ -35,8 +39,7 @@ Variable:
 
 Clause: 
 	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
-		'description' '=' description=STRING
-		//'rolePlayer' '=' rolePlayer = Parties
+		'rolePlayer' '=' ('process' | 'application')
 		'operation' '=' operation=Operation
 		'condition' '{' 
 			condition=Condition			

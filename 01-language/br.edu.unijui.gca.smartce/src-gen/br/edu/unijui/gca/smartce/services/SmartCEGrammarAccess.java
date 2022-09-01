@@ -111,12 +111,20 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cProcessAssignment_16 = (Assignment)cGroup.eContents().get(16);
 		private final RuleCall cProcessProcessParserRuleCall_16_0 = (RuleCall)cProcessAssignment_16.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Keyword cVariablesKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Keyword cLeftCurlyBracketKeyword_19 = (Keyword)cGroup.eContents().get(19);
-		private final Assignment cVariablesAssignment_20 = (Assignment)cGroup.eContents().get(20);
-		private final RuleCall cVariablesVariableParserRuleCall_20_0 = (RuleCall)cVariablesAssignment_20.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_21 = (Keyword)cGroup.eContents().get(21);
+		private final Group cGroup_18 = (Group)cGroup.eContents().get(18);
+		private final Keyword cVariablesKeyword_18_0 = (Keyword)cGroup_18.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_18_1 = (Keyword)cGroup_18.eContents().get(1);
+		private final Assignment cVariablesAssignment_18_2 = (Assignment)cGroup_18.eContents().get(2);
+		private final RuleCall cVariablesVariableParserRuleCall_18_2_0 = (RuleCall)cVariablesAssignment_18_2.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_18_3 = (Keyword)cGroup_18.eContents().get(3);
+		private final Keyword cActionsKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cLeftCurlyBracketKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Assignment cActionsAssignment_21 = (Assignment)cGroup.eContents().get(21);
+		private final RuleCall cActionsActionParserRuleCall_21_0 = (RuleCall)cActionsAssignment_21.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Assignment cClausesAssignment_23 = (Assignment)cGroup.eContents().get(23);
+		private final RuleCall cClausesClauseParserRuleCall_23_0 = (RuleCall)cClausesAssignment_23.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_24 = (Keyword)cGroup.eContents().get(24);
 		
 		//Contract:
 		//    'Contract' name=ID '{'
@@ -126,11 +134,13 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//            'application' '=' application=Application
 		//            'process' '=' process=Process
 		//        '}'
-		//        'variables' '{'
+		//        ('variables' '{'
 		//            variables+=Variable*
+		//        '}')?
+		//        'actions' '{'
+		//            actions+=Action*
 		//        '}'
-		//        /*clauses+=Clause*
-		//        actions+=Action**/
+		//        clauses+=Clause
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -141,11 +151,13 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//        'application' '=' application=Application
 		//        'process' '=' process=Process
 		//    '}'
-		//    'variables' '{'
+		//    ('variables' '{'
 		//        variables+=Variable*
+		//    '}')?
+		//    'actions' '{'
+		//        actions+=Action*
 		//    '}'
-		//    /*clauses+=Clause*
-		//    actions+=Action**/
+		//    clauses+=Clause
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -218,25 +230,49 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_17() { return cRightCurlyBracketKeyword_17; }
 		
+		//('variables' '{'
+		//    variables+=Variable*
+		//'}')?
+		public Group getGroup_18() { return cGroup_18; }
+		
 		//'variables'
-		public Keyword getVariablesKeyword_18() { return cVariablesKeyword_18; }
+		public Keyword getVariablesKeyword_18_0() { return cVariablesKeyword_18_0; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_19() { return cLeftCurlyBracketKeyword_19; }
+		public Keyword getLeftCurlyBracketKeyword_18_1() { return cLeftCurlyBracketKeyword_18_1; }
 		
 		//variables+=Variable*
-		public Assignment getVariablesAssignment_20() { return cVariablesAssignment_20; }
+		public Assignment getVariablesAssignment_18_2() { return cVariablesAssignment_18_2; }
 		
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_20_0() { return cVariablesVariableParserRuleCall_20_0; }
+		public RuleCall getVariablesVariableParserRuleCall_18_2_0() { return cVariablesVariableParserRuleCall_18_2_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_21() { return cRightCurlyBracketKeyword_21; }
+		public Keyword getRightCurlyBracketKeyword_18_3() { return cRightCurlyBracketKeyword_18_3; }
 		
-		//    /*clauses+=Clause*
-		//    actions+=Action**/
+		//'actions'
+		public Keyword getActionsKeyword_19() { return cActionsKeyword_19; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_20() { return cLeftCurlyBracketKeyword_20; }
+		
+		//actions+=Action*
+		public Assignment getActionsAssignment_21() { return cActionsAssignment_21; }
+		
+		//Action
+		public RuleCall getActionsActionParserRuleCall_21_0() { return cActionsActionParserRuleCall_21_0; }
+		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_22() { return cRightCurlyBracketKeyword_22; }
+		
+		//clauses+=Clause
+		public Assignment getClausesAssignment_23() { return cClausesAssignment_23; }
+		
+		//Clause
+		public RuleCall getClausesClauseParserRuleCall_23_0() { return cClausesClauseParserRuleCall_23_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_24() { return cRightCurlyBracketKeyword_24; }
 	}
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.Variable");
@@ -280,10 +316,11 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cDescriptionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cRolePlayerKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cDescriptionAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cDescriptionSTRINGTerminalRuleCall_5_0 = (RuleCall)cDescriptionAssignment_5.eContents().get(0);
+		private final Alternatives cAlternatives_5 = (Alternatives)cGroup.eContents().get(5);
+		private final Keyword cProcessKeyword_5_0 = (Keyword)cAlternatives_5.eContents().get(0);
+		private final Keyword cApplicationKeyword_5_1 = (Keyword)cAlternatives_5.eContents().get(1);
 		private final Keyword cOperationKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cEqualsSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		private final Assignment cOperationAssignment_8 = (Assignment)cGroup.eContents().get(8);
@@ -304,8 +341,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//Clause:
 		//    ('Right' | 'Prohibition' | 'Obligation') name=ID '{'
-		//        'description' '=' description=STRING
-		//        //'rolePlayer' '=' rolePlayer = Parties
+		//        'rolePlayer' '=' ('process' | 'application')
 		//        'operation' '=' operation=Operation
 		//        'condition' '{'
 		//            condition=Condition
@@ -316,8 +352,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		@Override public ParserRule getRule() { return rule; }
 		
 		//('Right' | 'Prohibition' | 'Obligation') name=ID '{'
-		//    'description' '=' description=STRING
-		//    //'rolePlayer' '=' rolePlayer = Parties
+		//    'rolePlayer' '=' ('process' | 'application')
 		//    'operation' '=' operation=Operation
 		//    'condition' '{'
 		//        condition=Condition
@@ -347,19 +382,21 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//'description'
-		public Keyword getDescriptionKeyword_3() { return cDescriptionKeyword_3; }
+		//'rolePlayer'
+		public Keyword getRolePlayerKeyword_3() { return cRolePlayerKeyword_3; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
 		
-		//description=STRING
-		public Assignment getDescriptionAssignment_5() { return cDescriptionAssignment_5; }
+		//('process' | 'application')
+		public Alternatives getAlternatives_5() { return cAlternatives_5; }
 		
-		//STRING
-		public RuleCall getDescriptionSTRINGTerminalRuleCall_5_0() { return cDescriptionSTRINGTerminalRuleCall_5_0; }
+		//'process'
+		public Keyword getProcessKeyword_5_0() { return cProcessKeyword_5_0; }
 		
-		////'rolePlayer' '=' rolePlayer = Parties
+		//'application'
+		public Keyword getApplicationKeyword_5_1() { return cApplicationKeyword_5_1; }
+		
 		//'operation'
 		public Keyword getOperationKeyword_6() { return cOperationKeyword_6; }
 		
@@ -2431,11 +2468,13 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//            'application' '=' application=Application
 	//            'process' '=' process=Process
 	//        '}'
-	//        'variables' '{'
+	//        ('variables' '{'
 	//            variables+=Variable*
+	//        '}')?
+	//        'actions' '{'
+	//            actions+=Action*
 	//        '}'
-	//        /*clauses+=Clause*
-	//        actions+=Action**/
+	//        clauses+=Clause
 	//    '}';
 	public ContractElements getContractAccess() {
 		return pContract;
@@ -2458,8 +2497,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//Clause:
 	//    ('Right' | 'Prohibition' | 'Obligation') name=ID '{'
-	//        'description' '=' description=STRING
-	//        //'rolePlayer' '=' rolePlayer = Parties
+	//        'rolePlayer' '=' ('process' | 'application')
 	//        'operation' '=' operation=Operation
 	//        'condition' '{'
 	//            condition=Condition

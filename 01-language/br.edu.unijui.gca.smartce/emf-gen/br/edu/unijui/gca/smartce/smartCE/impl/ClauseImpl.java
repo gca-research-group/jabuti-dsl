@@ -31,7 +31,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getId <em>Id</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getFinalStatus <em>Final Status</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getFailDescription <em>Fail Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.ClauseImpl#getRolePlayer_0 <em>Role Player 0</em>}</li>
@@ -85,26 +84,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String DESCRIPTION_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDescription()
-	 * @generated
-	 * @ordered
-	 */
-	protected String description = DESCRIPTION_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFinalStatus() <em>Final Status</em>}' attribute.
@@ -295,31 +274,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getDescription()
-	{
-		return description;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setDescription(String newDescription)
-	{
-		String oldDescription = description;
-		description = newDescription;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__DESCRIPTION, oldDescription, description));
 	}
 
 	/**
@@ -651,8 +605,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return getId();
 			case SmartCEPackage.CLAUSE__NAME:
 				return getName();
-			case SmartCEPackage.CLAUSE__DESCRIPTION:
-				return getDescription();
 			case SmartCEPackage.CLAUSE__FINAL_STATUS:
 				return getFinalStatus();
 			case SmartCEPackage.CLAUSE__FAIL_DESCRIPTION:
@@ -689,9 +641,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return;
 			case SmartCEPackage.CLAUSE__NAME:
 				setName((String)newValue);
-				return;
-			case SmartCEPackage.CLAUSE__DESCRIPTION:
-				setDescription((String)newValue);
 				return;
 			case SmartCEPackage.CLAUSE__FINAL_STATUS:
 				setFinalStatus((String)newValue);
@@ -737,9 +686,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case SmartCEPackage.CLAUSE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
 			case SmartCEPackage.CLAUSE__FINAL_STATUS:
 				setFinalStatus(FINAL_STATUS_EDEFAULT);
 				return;
@@ -782,8 +728,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return id != ID_EDEFAULT;
 			case SmartCEPackage.CLAUSE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case SmartCEPackage.CLAUSE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SmartCEPackage.CLAUSE__FINAL_STATUS:
 				return FINAL_STATUS_EDEFAULT == null ? finalStatus != null : !FINAL_STATUS_EDEFAULT.equals(finalStatus);
 			case SmartCEPackage.CLAUSE__FAIL_DESCRIPTION:
@@ -819,8 +763,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		result.append(id);
 		result.append(", name: ");
 		result.append(name);
-		result.append(", description: ");
-		result.append(description);
 		result.append(", finalStatus: ");
 		result.append(finalStatus);
 		result.append(", failDescription: ");

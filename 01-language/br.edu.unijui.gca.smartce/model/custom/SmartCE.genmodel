@@ -71,7 +71,6 @@
     <genClasses ecoreClass="SmartCE.ecore#//Clause">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/id"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/finalStatus"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Clause/failDescription"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Clause/rolePlayer_0"/>

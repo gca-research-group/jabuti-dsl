@@ -683,7 +683,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getClause_Description()
+	public EAttribute getClause_FinalStatus()
 	{
 		return (EAttribute)clauseEClass.getEStructuralFeatures().get(2);
 	}
@@ -694,7 +694,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getClause_FinalStatus()
+	public EAttribute getClause_FailDescription()
 	{
 		return (EAttribute)clauseEClass.getEStructuralFeatures().get(3);
 	}
@@ -705,20 +705,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getClause_FailDescription()
-	{
-		return (EAttribute)clauseEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getClause_RolePlayer_0()
 	{
-		return (EReference)clauseEClass.getEStructuralFeatures().get(5);
+		return (EReference)clauseEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -729,7 +718,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EReference getClause_OnBreach()
 	{
-		return (EReference)clauseEClass.getEStructuralFeatures().get(6);
+		return (EReference)clauseEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -740,7 +729,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EReference getClause_Condition()
 	{
-		return (EReference)clauseEClass.getEStructuralFeatures().get(7);
+		return (EReference)clauseEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -751,7 +740,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EReference getClause_OnSuccess()
 	{
-		return (EReference)clauseEClass.getEStructuralFeatures().get(8);
+		return (EReference)clauseEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -762,7 +751,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EAttribute getClause_Operation()
 	{
-		return (EAttribute)clauseEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)clauseEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -773,7 +762,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	@Override
 	public EAttribute getClause_RolePlayer()
 	{
-		return (EAttribute)clauseEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)clauseEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
@@ -1632,7 +1621,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		clauseEClass = createEClass(CLAUSE);
 		createEAttribute(clauseEClass, CLAUSE__ID);
 		createEAttribute(clauseEClass, CLAUSE__NAME);
-		createEAttribute(clauseEClass, CLAUSE__DESCRIPTION);
 		createEAttribute(clauseEClass, CLAUSE__FINAL_STATUS);
 		createEAttribute(clauseEClass, CLAUSE__FAIL_DESCRIPTION);
 		createEReference(clauseEClass, CLAUSE__ROLE_PLAYER_0);
@@ -1825,7 +1813,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEClass(clauseEClass, Clause.class, "Clause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getClause_Id(), ecorePackage.getEInt(), "id", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_Name(), ecorePackage.getEString(), "name", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClause_Description(), ecorePackage.getEString(), "description", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_FinalStatus(), ecorePackage.getEString(), "finalStatus", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_FailDescription(), ecorePackage.getEString(), "failDescription", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_RolePlayer_0(), this.getParty(), null, "rolePlayer_0", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

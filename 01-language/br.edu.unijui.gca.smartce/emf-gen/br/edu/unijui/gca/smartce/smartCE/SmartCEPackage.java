@@ -399,22 +399,13 @@ public interface SmartCEPackage extends EPackage
 	int CLAUSE__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLAUSE__DESCRIPTION = 2;
-
-	/**
 	 * The feature id for the '<em><b>Final Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__FINAL_STATUS = 3;
+	int CLAUSE__FINAL_STATUS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Fail Description</b></em>' attribute.
@@ -423,7 +414,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__FAIL_DESCRIPTION = 4;
+	int CLAUSE__FAIL_DESCRIPTION = 3;
 
 	/**
 	 * The feature id for the '<em><b>Role Player 0</b></em>' reference.
@@ -432,7 +423,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__ROLE_PLAYER_0 = 5;
+	int CLAUSE__ROLE_PLAYER_0 = 4;
 
 	/**
 	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
@@ -441,7 +432,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__ON_BREACH = 6;
+	int CLAUSE__ON_BREACH = 5;
 
 	/**
 	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
@@ -450,7 +441,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__CONDITION = 7;
+	int CLAUSE__CONDITION = 6;
 
 	/**
 	 * The feature id for the '<em><b>On Success</b></em>' containment reference.
@@ -459,7 +450,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__ON_SUCCESS = 8;
+	int CLAUSE__ON_SUCCESS = 7;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -468,7 +459,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__OPERATION = 9;
+	int CLAUSE__OPERATION = 8;
 
 	/**
 	 * The feature id for the '<em><b>Role Player</b></em>' attribute.
@@ -477,7 +468,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__ROLE_PLAYER = 10;
+	int CLAUSE__ROLE_PLAYER = 9;
 
 	/**
 	 * The number of structural features of the '<em>Clause</em>' class.
@@ -486,7 +477,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE_FEATURE_COUNT = 11;
+	int CLAUSE_FEATURE_COUNT = 10;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ImportImpl <em>Import</em>}' class.
@@ -1791,17 +1782,6 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getClause_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getDescription <em>Description</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Description</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Clause#getDescription()
-	 * @see #getClause()
-	 * @generated
-	 */
-	EAttribute getClause_Description();
-
-	/**
 	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFinalStatus <em>Final Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2903,14 +2883,6 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute CLAUSE__NAME = eINSTANCE.getClause_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLAUSE__DESCRIPTION = eINSTANCE.getClause_Description();
 
 		/**
 		 * The meta object literal for the '<em><b>Final Status</b></em>' attribute feature.

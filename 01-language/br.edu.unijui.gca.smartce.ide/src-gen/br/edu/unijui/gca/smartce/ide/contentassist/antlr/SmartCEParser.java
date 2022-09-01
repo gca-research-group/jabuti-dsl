@@ -32,6 +32,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, SmartCEGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getClauseAccess().getAlternatives_0(), "rule__Clause__Alternatives_0");
+			builder.put(grammarAccess.getClauseAccess().getAlternatives_5(), "rule__Clause__Alternatives_5");
 			builder.put(grammarAccess.getConditionAccess().getAlternatives(), "rule__Condition__Alternatives");
 			builder.put(grammarAccess.getBusinessRuleAccess().getAlternatives(), "rule__BusinessRule__Alternatives");
 			builder.put(grammarAccess.getCompositeConditionAccess().getAlternatives_4_7(), "rule__CompositeCondition__Alternatives_4_7");
@@ -57,6 +58,7 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 			builder.put(grammarAccess.getContractAccess().getGroup(), "rule__Contract__Group__0");
+			builder.put(grammarAccess.getContractAccess().getGroup_18(), "rule__Contract__Group_18__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
 			builder.put(grammarAccess.getClauseAccess().getGroup(), "rule__Clause__Group__0");
 			builder.put(grammarAccess.getClauseAccess().getGroup_15(), "rule__Clause__Group_15__0");
@@ -104,11 +106,12 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getContractAccess().getDueDateAssignment_8(), "rule__Contract__DueDateAssignment_8");
 			builder.put(grammarAccess.getContractAccess().getApplicationAssignment_13(), "rule__Contract__ApplicationAssignment_13");
 			builder.put(grammarAccess.getContractAccess().getProcessAssignment_16(), "rule__Contract__ProcessAssignment_16");
-			builder.put(grammarAccess.getContractAccess().getVariablesAssignment_20(), "rule__Contract__VariablesAssignment_20");
+			builder.put(grammarAccess.getContractAccess().getVariablesAssignment_18_2(), "rule__Contract__VariablesAssignment_18_2");
+			builder.put(grammarAccess.getContractAccess().getActionsAssignment_21(), "rule__Contract__ActionsAssignment_21");
+			builder.put(grammarAccess.getContractAccess().getClausesAssignment_23(), "rule__Contract__ClausesAssignment_23");
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getExpressionAssignment_2(), "rule__Variable__ExpressionAssignment_2");
 			builder.put(grammarAccess.getClauseAccess().getNameAssignment_1(), "rule__Clause__NameAssignment_1");
-			builder.put(grammarAccess.getClauseAccess().getDescriptionAssignment_5(), "rule__Clause__DescriptionAssignment_5");
 			builder.put(grammarAccess.getClauseAccess().getOperationAssignment_8(), "rule__Clause__OperationAssignment_8");
 			builder.put(grammarAccess.getClauseAccess().getConditionAssignment_11(), "rule__Clause__ConditionAssignment_11");
 			builder.put(grammarAccess.getClauseAccess().getOnBreachAssignment_14(), "rule__Clause__OnBreachAssignment_14");

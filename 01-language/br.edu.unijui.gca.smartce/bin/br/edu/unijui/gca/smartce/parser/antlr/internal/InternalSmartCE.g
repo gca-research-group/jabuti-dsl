@@ -329,40 +329,92 @@ ruleContract returns [EObject current=null]
 		{
 			newLeafNode(otherlv_17, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_17());
 		}
-		otherlv_18='variables'
+		(
+			otherlv_18='variables'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getContractAccess().getVariablesKeyword_18_0());
+			}
+			otherlv_19='{'
+			{
+				newLeafNode(otherlv_19, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_18_1());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getContractAccess().getVariablesVariableParserRuleCall_18_2_0());
+					}
+					lv_variables_20_0=ruleVariable
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getContractRule());
+						}
+						add(
+							$current,
+							"variables",
+							lv_variables_20_0,
+							"br.edu.unijui.gca.smartce.SmartCE.Variable");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)*
+			otherlv_21='}'
+			{
+				newLeafNode(otherlv_21, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_18_3());
+			}
+		)?
+		otherlv_22='actions'
 		{
-			newLeafNode(otherlv_18, grammarAccess.getContractAccess().getVariablesKeyword_18());
+			newLeafNode(otherlv_22, grammarAccess.getContractAccess().getActionsKeyword_19());
 		}
-		otherlv_19='{'
+		otherlv_23='{'
 		{
-			newLeafNode(otherlv_19, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_19());
+			newLeafNode(otherlv_23, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_20());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getContractAccess().getVariablesVariableParserRuleCall_20_0());
+					newCompositeNode(grammarAccess.getContractAccess().getActionsActionParserRuleCall_21_0());
 				}
-				lv_variables_20_0=ruleVariable
+				lv_actions_24_0=ruleAction
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getContractRule());
 					}
 					add(
 						$current,
-						"variables",
-						lv_variables_20_0,
-						"br.edu.unijui.gca.smartce.SmartCE.Variable");
+						"actions",
+						lv_actions_24_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Action");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)*
-		otherlv_21='}'
+		otherlv_25='}'
 		{
-			newLeafNode(otherlv_21, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_21());
+			newLeafNode(otherlv_25, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_22());
 		}
-		otherlv_22='}'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_23_0());
+				}
+				lv_clauses_26_0=ruleClause
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getContractRule());
+					}
+					add(
+						$current,
+						"clauses",
+						lv_clauses_26_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Clause");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_27='}'
 		{
-			newLeafNode(otherlv_22, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_22());
+			newLeafNode(otherlv_27, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_24());
 		}
 	)
 ;
@@ -424,6 +476,192 @@ ruleVariable returns [EObject current=null]
 				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleClause
+entryRuleClause returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getClauseRule()); }
+	iv_ruleClause=ruleClause
+	{ $current=$iv_ruleClause.current; }
+	EOF;
+
+// Rule Clause
+ruleClause returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			otherlv_0='Right'
+			{
+				newLeafNode(otherlv_0, grammarAccess.getClauseAccess().getRightKeyword_0_0());
+			}
+			    |
+			otherlv_1='Prohibition'
+			{
+				newLeafNode(otherlv_1, grammarAccess.getClauseAccess().getProhibitionKeyword_0_1());
+			}
+			    |
+			otherlv_2='Obligation'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getClauseAccess().getObligationKeyword_0_2());
+			}
+		)
+		(
+			(
+				lv_name_3_0=RULE_ID
+				{
+					newLeafNode(lv_name_3_0, grammarAccess.getClauseAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getClauseRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_3_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_4='{'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getClauseAccess().getLeftCurlyBracketKeyword_2());
+		}
+		otherlv_5='rolePlayer'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getClauseAccess().getRolePlayerKeyword_3());
+		}
+		otherlv_6='='
+		{
+			newLeafNode(otherlv_6, grammarAccess.getClauseAccess().getEqualsSignKeyword_4());
+		}
+		(
+			otherlv_7='process'
+			{
+				newLeafNode(otherlv_7, grammarAccess.getClauseAccess().getProcessKeyword_5_0());
+			}
+			    |
+			otherlv_8='application'
+			{
+				newLeafNode(otherlv_8, grammarAccess.getClauseAccess().getApplicationKeyword_5_1());
+			}
+		)
+		otherlv_9='operation'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getClauseAccess().getOperationKeyword_6());
+		}
+		otherlv_10='='
+		{
+			newLeafNode(otherlv_10, grammarAccess.getClauseAccess().getEqualsSignKeyword_7());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getClauseAccess().getOperationOperationEnumRuleCall_8_0());
+				}
+				lv_operation_11_0=ruleOperation
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getClauseRule());
+					}
+					set(
+						$current,
+						"operation",
+						lv_operation_11_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Operation");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_12='condition'
+		{
+			newLeafNode(otherlv_12, grammarAccess.getClauseAccess().getConditionKeyword_9());
+		}
+		otherlv_13='{'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getClauseAccess().getLeftCurlyBracketKeyword_10());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_11_0());
+				}
+				lv_condition_14_0=ruleCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getClauseRule());
+					}
+					set(
+						$current,
+						"condition",
+						lv_condition_14_0,
+						"br.edu.unijui.gca.smartce.SmartCE.Condition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_15='}'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_12());
+		}
+		otherlv_16='onBreach'
+		{
+			newLeafNode(otherlv_16, grammarAccess.getClauseAccess().getOnBreachKeyword_13());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_14_0());
+				}
+				lv_onBreach_17_0=ruleOnBreach
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getClauseRule());
+					}
+					set(
+						$current,
+						"onBreach",
+						lv_onBreach_17_0,
+						"br.edu.unijui.gca.smartce.SmartCE.OnBreach");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		(
+			otherlv_18='onSuccess'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getClauseAccess().getOnSuccessKeyword_15_0());
+			}
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getClauseAccess().getOnSuccessOnSuccessParserRuleCall_15_1_0());
+					}
+					lv_onSuccess_19_0=ruleOnSuccess
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getClauseRule());
+						}
+						set(
+							$current,
+							"onSuccess",
+							lv_onSuccess_19_0,
+							"br.edu.unijui.gca.smartce.SmartCE.OnSuccess");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+		)?
+		otherlv_20='}'
+		{
+			newLeafNode(otherlv_20, grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_16());
+		}
 	)
 ;
 
@@ -1978,6 +2216,42 @@ ruleOnBreach returns [EObject current=null]
 		otherlv_4=')'
 		{
 			newLeafNode(otherlv_4, grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_4());
+		}
+	)
+;
+
+// Entry rule entryRuleAction
+entryRuleAction returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getActionRule()); }
+	iv_ruleAction=ruleAction
+	{ $current=$iv_ruleAction.current; }
+	EOF;
+
+// Rule Action
+ruleAction returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getBusinessActionParserRuleCall_0());
+		}
+		this_BusinessAction_0=ruleBusinessAction
+		{
+			$current = $this_BusinessAction_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getActionAccess().getEventLogParserRuleCall_1());
+		}
+		this_EventLog_1=ruleEventLog
+		{
+			$current = $this_EventLog_1.current;
+			afterParserOrEnumRuleCall();
 		}
 	)
 ;

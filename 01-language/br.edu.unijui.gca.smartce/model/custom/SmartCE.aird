@@ -5,7 +5,7 @@
     <semanticResources>SmartCE.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Wl91sEMhEeyC-MZhuBrocA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="91ee9d75-f452-4cfb-93bd-07a956410e21">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_XPM_8EMhEeyC-MZhuBrocA" name="smartCE class diagram" repPath="#_XOspoEMhEeyC-MZhuBrocA" changeId="87a61a00-036c-43b1-a18f-ca55c94200bc">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="SmartCE.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -123,10 +123,6 @@
             <children xmi:type="notation:Node" xmi:id="_2sLjMEMsEeyC-MZhuBrocA" type="3010" element="_2sE1gEMsEeyC-MZhuBrocA">
               <styles xmi:type="notation:FontStyle" xmi:id="_2sLjMUMsEeyC-MZhuBrocA" fontColor="2697711" fontName="Open Sans" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_2sLjMkMsEeyC-MZhuBrocA"/>
-            </children>
-            <children xmi:type="notation:Node" xmi:id="_3xas8EMsEeyC-MZhuBrocA" type="3010" element="_3xPt0EMsEeyC-MZhuBrocA">
-              <styles xmi:type="notation:FontStyle" xmi:id="_3xas8UMsEeyC-MZhuBrocA" fontColor="2697711" fontName="Open Sans" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_3xas8kMsEeyC-MZhuBrocA"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_7KkaEEMsEeyC-MZhuBrocA" type="3010" element="_7KYM0EMsEeyC-MZhuBrocA">
               <styles xmi:type="notation:FontStyle" xmi:id="_7KkaEUMsEeyC-MZhuBrocA" fontColor="2697711" fontName="Open Sans" fontHeight="8"/>
@@ -1645,14 +1641,6 @@
         <target xmi:type="ecore:EAttribute" href="SmartCE.ecore#//Clause/name"/>
         <semanticElements xmi:type="ecore:EAttribute" href="SmartCE.ecore#//Clause/name"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_3XE6U0MsEeyC-MZhuBrocA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_3xPt0EMsEeyC-MZhuBrocA" name="description : EString" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="SmartCE.ecore#//Clause/description"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="SmartCE.ecore#//Clause/description"/>
-        <ownedStyle xmi:type="diagram:BundledImage" uid="_4odpskMsEeyC-MZhuBrocA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>

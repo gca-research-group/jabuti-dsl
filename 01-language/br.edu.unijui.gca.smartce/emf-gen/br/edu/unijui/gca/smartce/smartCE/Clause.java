@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getId <em>Id</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFinalStatus <em>Final Status</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getFailDescription <em>Fail Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer_0 <em>Role Player 0</em>}</li>
@@ -76,28 +75,6 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Description</em>' attribute.
-	 * @see #setDescription(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_Description()
-	 * @model
-	 * @generated
-	 */
-	String getDescription();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getDescription <em>Description</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
-	 * @see #getDescription()
-	 * @generated
-	 */
-	void setDescription(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Final Status</b></em>' attribute.

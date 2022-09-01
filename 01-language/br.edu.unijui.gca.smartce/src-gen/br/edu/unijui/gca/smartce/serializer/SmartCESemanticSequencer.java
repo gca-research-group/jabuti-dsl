@@ -246,14 +246,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Clause returns Clause
 	 *
 	 * Constraint:
-	 *     (
-	 *         name=ID 
-	 *         description=STRING 
-	 *         operation=Operation 
-	 *         condition=Condition 
-	 *         onBreach=OnBreach 
-	 *         onSuccess=OnSuccess?
-	 *     )
+	 *     (name=ID operation=Operation condition=Condition onBreach=OnBreach onSuccess=OnSuccess?)
 	 * </pre>
 	 */
 	protected void sequence_Clause(ISerializationContext context, Clause semanticObject) {
@@ -348,7 +341,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         dueDate=Expression 
 	 *         application=Application 
 	 *         process=Process 
-	 *         variables+=Variable*
+	 *         variables+=Variable* 
+	 *         actions+=Action* 
+	 *         clauses+=Clause
 	 *     )
 	 * </pre>
 	 */
