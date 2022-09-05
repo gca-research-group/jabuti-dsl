@@ -51,28 +51,22 @@ enum Operation:
 
 
 Condition: 
-	BusinessRule | CompositeCondition 
+	BusinessRule | CompositeCondition | ConditionalExpression
 ;
 
 BusinessRule:
 	Timeout | OperationLimit | BusinessDay |TimeInterval | MessageContent | SessionInterval	
 ;
 
-//CompositeCondition:
-//	conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-//;
-
-// alterando o compositeCondition
 CompositeCondition:	
-	conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-		(logicalOperators+=LogicalOperator
-		'when' '('  expression+=Expression ')' 'check' '{' 
-			(
-				conditions+=BusinessRule | 
-				(conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
-			)
-		'}'
-	)*	 
+	conditions+=BusinessRule logicalOperators+=LogicalOperator (conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)*
+;
+
+ConditionalExpression: 
+	conditions+=CompositeCondition
+	'when' '(' 'expression' ')' 'check' '{'
+		conditions+=CompositeCondition
+	'}'
 ;
 
 LogicalOperator:

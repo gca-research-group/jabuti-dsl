@@ -1441,6 +1441,52 @@ public interface SmartCEPackage extends EPackage
 	int SESSION_INTERVAL_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 5;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.ConditionalExpressionImpl
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getConditionalExpression()
+	 * @generated
+	 */
+	int CONDITIONAL_EXPRESSION = 32;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__EXPRESSION = CONDITION__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__CONDITIONS = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Logical Operators</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATORS = CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Conditional Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1448,7 +1494,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAY = 32;
+	int WEEK_DAY = 33;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.TimeUnit <em>Time Unit</em>}' enum.
@@ -1458,7 +1504,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 33;
+	int TIME_UNIT = 34;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Operation <em>Operation</em>}' enum.
@@ -1468,7 +1514,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 34;
+	int OPERATION = 35;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Parties <em>Parties</em>}' enum.
@@ -1478,7 +1524,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getParties()
 	 * @generated
 	 */
-	int PARTIES = 35;
+	int PARTIES = 36;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Recurrence <em>Recurrence</em>}' enum.
@@ -1488,7 +1534,7 @@ public interface SmartCEPackage extends EPackage
 	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getRecurrence()
 	 * @generated
 	 */
-	int RECURRENCE = 36;
+	int RECURRENCE = 37;
 
 
 	/**
@@ -2582,6 +2628,38 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getSessionInterval_Recurrence();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.ConditionalExpression <em>Conditional Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conditional Expression</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.ConditionalExpression
+	 * @generated
+	 */
+	EClass getConditionalExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.ConditionalExpression#getConditions <em>Conditions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.ConditionalExpression#getConditions()
+	 * @see #getConditionalExpression()
+	 * @generated
+	 */
+	EReference getConditionalExpression_Conditions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.ConditionalExpression#getLogicalOperators <em>Logical Operators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Logical Operators</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.ConditionalExpression#getLogicalOperators()
+	 * @see #getConditionalExpression()
+	 * @generated
+	 */
+	EReference getConditionalExpression_LogicalOperators();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3533,6 +3611,32 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute SESSION_INTERVAL__RECURRENCE = eINSTANCE.getSessionInterval_Recurrence();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.ConditionalExpressionImpl
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getConditionalExpression()
+		 * @generated
+		 */
+		EClass CONDITIONAL_EXPRESSION = eINSTANCE.getConditionalExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_EXPRESSION__CONDITIONS = eINSTANCE.getConditionalExpression_Conditions();
+
+		/**
+		 * The meta object literal for the '<em><b>Logical Operators</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_EXPRESSION__LOGICAL_OPERATORS = eINSTANCE.getConditionalExpression_LogicalOperators();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.WeekDay <em>Week Day</em>}' enum.

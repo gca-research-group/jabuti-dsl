@@ -10,6 +10,7 @@ import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
+import br.edu.unijui.gca.smartce.smartCE.ConditionalExpression;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.FunctionCall;
@@ -89,6 +90,9 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				return; 
 			case SmartCEPackage.COMPOSITE_CONDITION:
 				sequence_CompositeCondition(context, (CompositeCondition) semanticObject); 
+				return; 
+			case SmartCEPackage.CONDITIONAL_EXPRESSION:
+				sequence_ConditionalExpression(context, (ConditionalExpression) semanticObject); 
 				return; 
 			case SmartCEPackage.CONTRACT:
 				sequence_Contract(context, (Contract) semanticObject); 
@@ -306,25 +310,26 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     (
 	 *         conditions+=BusinessRule 
 	 *         logicalOperators+=LogicalOperator 
-	 *         conditions+=BusinessRule 
-	 *         (logicalOperators+=LogicalOperator conditions+=BusinessRule)* 
-	 *         (
-	 *             logicalOperators+=LogicalOperator 
-	 *             expression+=Expression 
-	 *             (
-	 *                 conditions+=BusinessRule | 
-	 *                 (
-	 *                     conditions+=BusinessRule 
-	 *                     logicalOperators+=LogicalOperator 
-	 *                     conditions+=BusinessRule 
-	 *                     (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-	 *                 )
-	 *             )
-	 *         )*
+	 *         (conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)*
 	 *     )
 	 * </pre>
 	 */
 	protected void sequence_CompositeCondition(ISerializationContext context, CompositeCondition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Condition returns ConditionalExpression
+	 *     ConditionalExpression returns ConditionalExpression
+	 *
+	 * Constraint:
+	 *     (conditions+=CompositeCondition conditions+=CompositeCondition)
+	 * </pre>
+	 */
+	protected void sequence_ConditionalExpression(ISerializationContext context, ConditionalExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

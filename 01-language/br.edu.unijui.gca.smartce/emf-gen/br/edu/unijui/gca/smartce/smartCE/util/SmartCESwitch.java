@@ -12,6 +12,7 @@ import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
+import br.edu.unijui.gca.smartce.smartCE.ConditionalExpression;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
@@ -354,6 +355,14 @@ public class SmartCESwitch<T> extends Switch<T>
 				T result = caseSessionInterval(sessionInterval);
 				if (result == null) result = caseBusinessRule(sessionInterval);
 				if (result == null) result = caseCondition(sessionInterval);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case SmartCEPackage.CONDITIONAL_EXPRESSION:
+			{
+				ConditionalExpression conditionalExpression = (ConditionalExpression)theEObject;
+				T result = caseConditionalExpression(conditionalExpression);
+				if (result == null) result = caseCondition(conditionalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -869,6 +878,22 @@ public class SmartCESwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseSessionInterval(SessionInterval object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditionalExpression(ConditionalExpression object)
 	{
 		return null;
 	}

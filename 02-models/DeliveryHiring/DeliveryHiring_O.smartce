@@ -18,9 +18,11 @@ Contract DeliveryHiring_O {
 		rolePlayer = application
 		operation = request
 		condition {
-			BusinessDay(Friday to Sunday)
+			BusinessDay(Friday to Sunday) AND
+			when ( expression ) check { 
+				SessionInterval(24 Day) AND OperationLimit(1000 by Month)
+			}
 		} 
-		
 		onBreach (BusinessAction action ("dfdsf"))
 	}
 }

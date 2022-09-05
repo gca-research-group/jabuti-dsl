@@ -10,6 +10,7 @@ import br.edu.unijui.gca.smartce.smartCE.BusinessAction;
 import br.edu.unijui.gca.smartce.smartCE.BusinessDay;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
+import br.edu.unijui.gca.smartce.smartCE.ConditionalExpression;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
@@ -131,6 +132,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 			case SmartCEPackage.ON_SUCCESS: return createOnSuccess();
 			case SmartCEPackage.VARIABLE: return createVariable();
 			case SmartCEPackage.SESSION_INTERVAL: return createSessionInterval();
+			case SmartCEPackage.CONDITIONAL_EXPRESSION: return createConditionalExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -544,6 +546,18 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	{
 		SessionIntervalImpl sessionInterval = new SessionIntervalImpl();
 		return sessionInterval;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConditionalExpression createConditionalExpression()
+	{
+		ConditionalExpressionImpl conditionalExpression = new ConditionalExpressionImpl();
+		return conditionalExpression;
 	}
 
 	/**

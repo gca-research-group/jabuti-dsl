@@ -426,13 +426,14 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cBusinessRuleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cCompositeConditionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cConditionalExpressionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Condition:
-		//    BusinessRule | CompositeCondition
+		//    BusinessRule | CompositeCondition | ConditionalExpression
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//BusinessRule | CompositeCondition
+		//BusinessRule | CompositeCondition | ConditionalExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//BusinessRule
@@ -440,6 +441,9 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//CompositeCondition
 		public RuleCall getCompositeConditionParserRuleCall_1() { return cCompositeConditionParserRuleCall_1; }
+		
+		//ConditionalExpression
+		public RuleCall getConditionalExpressionParserRuleCall_2() { return cConditionalExpressionParserRuleCall_2; }
 	}
 	public class BusinessRuleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
@@ -484,66 +488,21 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cConditionsBusinessRuleParserRuleCall_0_0 = (RuleCall)cConditionsAssignment_0.eContents().get(0);
 		private final Assignment cLogicalOperatorsAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cLogicalOperatorsLogicalOperatorParserRuleCall_1_0 = (RuleCall)cLogicalOperatorsAssignment_1.eContents().get(0);
-		private final Assignment cConditionsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cConditionsBusinessRuleParserRuleCall_2_0 = (RuleCall)cConditionsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Assignment cLogicalOperatorsAssignment_3_0 = (Assignment)cGroup_3.eContents().get(0);
-		private final RuleCall cLogicalOperatorsLogicalOperatorParserRuleCall_3_0_0 = (RuleCall)cLogicalOperatorsAssignment_3_0.eContents().get(0);
-		private final Assignment cConditionsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cConditionsBusinessRuleParserRuleCall_3_1_0 = (RuleCall)cConditionsAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cLogicalOperatorsAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cLogicalOperatorsLogicalOperatorParserRuleCall_4_0_0 = (RuleCall)cLogicalOperatorsAssignment_4_0.eContents().get(0);
-		private final Keyword cWhenKeyword_4_1 = (Keyword)cGroup_4.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_4_2 = (Keyword)cGroup_4.eContents().get(2);
-		private final Assignment cExpressionAssignment_4_3 = (Assignment)cGroup_4.eContents().get(3);
-		private final RuleCall cExpressionExpressionParserRuleCall_4_3_0 = (RuleCall)cExpressionAssignment_4_3.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_4_4 = (Keyword)cGroup_4.eContents().get(4);
-		private final Keyword cCheckKeyword_4_5 = (Keyword)cGroup_4.eContents().get(5);
-		private final Keyword cLeftCurlyBracketKeyword_4_6 = (Keyword)cGroup_4.eContents().get(6);
-		private final Alternatives cAlternatives_4_7 = (Alternatives)cGroup_4.eContents().get(7);
-		private final Assignment cConditionsAssignment_4_7_0 = (Assignment)cAlternatives_4_7.eContents().get(0);
-		private final RuleCall cConditionsBusinessRuleParserRuleCall_4_7_0_0 = (RuleCall)cConditionsAssignment_4_7_0.eContents().get(0);
-		private final Group cGroup_4_7_1 = (Group)cAlternatives_4_7.eContents().get(1);
-		private final Assignment cConditionsAssignment_4_7_1_0 = (Assignment)cGroup_4_7_1.eContents().get(0);
-		private final RuleCall cConditionsBusinessRuleParserRuleCall_4_7_1_0_0 = (RuleCall)cConditionsAssignment_4_7_1_0.eContents().get(0);
-		private final Assignment cLogicalOperatorsAssignment_4_7_1_1 = (Assignment)cGroup_4_7_1.eContents().get(1);
-		private final RuleCall cLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_1_0 = (RuleCall)cLogicalOperatorsAssignment_4_7_1_1.eContents().get(0);
-		private final Assignment cConditionsAssignment_4_7_1_2 = (Assignment)cGroup_4_7_1.eContents().get(2);
-		private final RuleCall cConditionsBusinessRuleParserRuleCall_4_7_1_2_0 = (RuleCall)cConditionsAssignment_4_7_1_2.eContents().get(0);
-		private final Group cGroup_4_7_1_3 = (Group)cGroup_4_7_1.eContents().get(3);
-		private final Assignment cLogicalOperatorsAssignment_4_7_1_3_0 = (Assignment)cGroup_4_7_1_3.eContents().get(0);
-		private final RuleCall cLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_3_0_0 = (RuleCall)cLogicalOperatorsAssignment_4_7_1_3_0.eContents().get(0);
-		private final Assignment cConditionsAssignment_4_7_1_3_1 = (Assignment)cGroup_4_7_1_3.eContents().get(1);
-		private final RuleCall cConditionsBusinessRuleParserRuleCall_4_7_1_3_1_0 = (RuleCall)cConditionsAssignment_4_7_1_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4_8 = (Keyword)cGroup_4.eContents().get(8);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Assignment cConditionsAssignment_2_0 = (Assignment)cGroup_2.eContents().get(0);
+		private final RuleCall cConditionsBusinessRuleParserRuleCall_2_0_0 = (RuleCall)cConditionsAssignment_2_0.eContents().get(0);
+		private final Group cGroup_2_1 = (Group)cGroup_2.eContents().get(1);
+		private final Assignment cLogicalOperatorsAssignment_2_1_0 = (Assignment)cGroup_2_1.eContents().get(0);
+		private final RuleCall cLogicalOperatorsLogicalOperatorParserRuleCall_2_1_0_0 = (RuleCall)cLogicalOperatorsAssignment_2_1_0.eContents().get(0);
+		private final Assignment cConditionsAssignment_2_1_1 = (Assignment)cGroup_2_1.eContents().get(1);
+		private final RuleCall cConditionsBusinessRuleParserRuleCall_2_1_1_0 = (RuleCall)cConditionsAssignment_2_1_1.eContents().get(0);
 		
-		////CompositeCondition:
-		////    conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-		////;
-		//// alterando o compositeCondition
 		//CompositeCondition:
-		//    conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-		//        (logicalOperators+=LogicalOperator
-		//        'when' '('  expression+=Expression ')' 'check' '{'
-		//            (
-		//                conditions+=BusinessRule |
-		//                (conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
-		//            )
-		//        '}'
-		//    )*
+		//    conditions+=BusinessRule logicalOperators+=LogicalOperator (conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)*
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-		//    (logicalOperators+=LogicalOperator
-		//    'when' '('  expression+=Expression ')' 'check' '{'
-		//        (
-		//            conditions+=BusinessRule |
-		//            (conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
-		//        )
-		//    '}'
-		//)*
+		//conditions+=BusinessRule logicalOperators+=LogicalOperator (conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)*
 		public Group getGroup() { return cGroup; }
 		
 		//conditions+=BusinessRule
@@ -558,114 +517,91 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//LogicalOperator
 		public RuleCall getLogicalOperatorsLogicalOperatorParserRuleCall_1_0() { return cLogicalOperatorsLogicalOperatorParserRuleCall_1_0; }
 		
+		//(conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)*
+		public Group getGroup_2() { return cGroup_2; }
+		
 		//conditions+=BusinessRule
-		public Assignment getConditionsAssignment_2() { return cConditionsAssignment_2; }
+		public Assignment getConditionsAssignment_2_0() { return cConditionsAssignment_2_0; }
 		
 		//BusinessRule
-		public RuleCall getConditionsBusinessRuleParserRuleCall_2_0() { return cConditionsBusinessRuleParserRuleCall_2_0; }
+		public RuleCall getConditionsBusinessRuleParserRuleCall_2_0_0() { return cConditionsBusinessRuleParserRuleCall_2_0_0; }
 		
 		//(logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-		public Group getGroup_3() { return cGroup_3; }
+		public Group getGroup_2_1() { return cGroup_2_1; }
 		
 		//logicalOperators+=LogicalOperator
-		public Assignment getLogicalOperatorsAssignment_3_0() { return cLogicalOperatorsAssignment_3_0; }
+		public Assignment getLogicalOperatorsAssignment_2_1_0() { return cLogicalOperatorsAssignment_2_1_0; }
 		
 		//LogicalOperator
-		public RuleCall getLogicalOperatorsLogicalOperatorParserRuleCall_3_0_0() { return cLogicalOperatorsLogicalOperatorParserRuleCall_3_0_0; }
+		public RuleCall getLogicalOperatorsLogicalOperatorParserRuleCall_2_1_0_0() { return cLogicalOperatorsLogicalOperatorParserRuleCall_2_1_0_0; }
 		
 		//conditions+=BusinessRule
-		public Assignment getConditionsAssignment_3_1() { return cConditionsAssignment_3_1; }
+		public Assignment getConditionsAssignment_2_1_1() { return cConditionsAssignment_2_1_1; }
 		
 		//BusinessRule
-		public RuleCall getConditionsBusinessRuleParserRuleCall_3_1_0() { return cConditionsBusinessRuleParserRuleCall_3_1_0; }
+		public RuleCall getConditionsBusinessRuleParserRuleCall_2_1_1_0() { return cConditionsBusinessRuleParserRuleCall_2_1_1_0; }
+	}
+	public class ConditionalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.ConditionalExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cConditionsAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cConditionsCompositeConditionParserRuleCall_0_0 = (RuleCall)cConditionsAssignment_0.eContents().get(0);
+		private final Keyword cWhenKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cExpressionKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cCheckKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cConditionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cConditionsCompositeConditionParserRuleCall_7_0 = (RuleCall)cConditionsAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//    (logicalOperators+=LogicalOperator
-		//    'when' '('  expression+=Expression ')' 'check' '{'
-		//        (
-		//            conditions+=BusinessRule |
-		//            (conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
-		//        )
+		//ConditionalExpression:
+		//    conditions+=CompositeCondition
+		//    'when' '(' 'expression' ')' 'check' '{'
+		//        conditions+=CompositeCondition
 		//    '}'
-		//)*
-		public Group getGroup_4() { return cGroup_4; }
+		//;
+		@Override public ParserRule getRule() { return rule; }
 		
-		//logicalOperators+=LogicalOperator
-		public Assignment getLogicalOperatorsAssignment_4_0() { return cLogicalOperatorsAssignment_4_0; }
+		//conditions+=CompositeCondition
+		//'when' '(' 'expression' ')' 'check' '{'
+		//    conditions+=CompositeCondition
+		//'}'
+		public Group getGroup() { return cGroup; }
 		
-		//LogicalOperator
-		public RuleCall getLogicalOperatorsLogicalOperatorParserRuleCall_4_0_0() { return cLogicalOperatorsLogicalOperatorParserRuleCall_4_0_0; }
+		//conditions+=CompositeCondition
+		public Assignment getConditionsAssignment_0() { return cConditionsAssignment_0; }
+		
+		//CompositeCondition
+		public RuleCall getConditionsCompositeConditionParserRuleCall_0_0() { return cConditionsCompositeConditionParserRuleCall_0_0; }
 		
 		//'when'
-		public Keyword getWhenKeyword_4_1() { return cWhenKeyword_4_1; }
+		public Keyword getWhenKeyword_1() { return cWhenKeyword_1; }
 		
 		//'('
-		public Keyword getLeftParenthesisKeyword_4_2() { return cLeftParenthesisKeyword_4_2; }
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//expression+=Expression
-		public Assignment getExpressionAssignment_4_3() { return cExpressionAssignment_4_3; }
-		
-		//Expression
-		public RuleCall getExpressionExpressionParserRuleCall_4_3_0() { return cExpressionExpressionParserRuleCall_4_3_0; }
+		//'expression'
+		public Keyword getExpressionKeyword_3() { return cExpressionKeyword_3; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_4_4() { return cRightParenthesisKeyword_4_4; }
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 		
 		//'check'
-		public Keyword getCheckKeyword_4_5() { return cCheckKeyword_4_5; }
+		public Keyword getCheckKeyword_5() { return cCheckKeyword_5; }
 		
 		//'{'
-		public Keyword getLeftCurlyBracketKeyword_4_6() { return cLeftCurlyBracketKeyword_4_6; }
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 		
-		//(
-		//    conditions+=BusinessRule |
-		//    (conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
-		//)
-		public Alternatives getAlternatives_4_7() { return cAlternatives_4_7; }
+		//conditions+=CompositeCondition
+		public Assignment getConditionsAssignment_7() { return cConditionsAssignment_7; }
 		
-		//conditions+=BusinessRule
-		public Assignment getConditionsAssignment_4_7_0() { return cConditionsAssignment_4_7_0; }
-		
-		//BusinessRule
-		public RuleCall getConditionsBusinessRuleParserRuleCall_4_7_0_0() { return cConditionsBusinessRuleParserRuleCall_4_7_0_0; }
-		
-		//(conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
-		public Group getGroup_4_7_1() { return cGroup_4_7_1; }
-		
-		//conditions+=BusinessRule
-		public Assignment getConditionsAssignment_4_7_1_0() { return cConditionsAssignment_4_7_1_0; }
-		
-		//BusinessRule
-		public RuleCall getConditionsBusinessRuleParserRuleCall_4_7_1_0_0() { return cConditionsBusinessRuleParserRuleCall_4_7_1_0_0; }
-		
-		//logicalOperators+=LogicalOperator
-		public Assignment getLogicalOperatorsAssignment_4_7_1_1() { return cLogicalOperatorsAssignment_4_7_1_1; }
-		
-		//LogicalOperator
-		public RuleCall getLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_1_0() { return cLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_1_0; }
-		
-		//conditions+=BusinessRule
-		public Assignment getConditionsAssignment_4_7_1_2() { return cConditionsAssignment_4_7_1_2; }
-		
-		//BusinessRule
-		public RuleCall getConditionsBusinessRuleParserRuleCall_4_7_1_2_0() { return cConditionsBusinessRuleParserRuleCall_4_7_1_2_0; }
-		
-		//(logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-		public Group getGroup_4_7_1_3() { return cGroup_4_7_1_3; }
-		
-		//logicalOperators+=LogicalOperator
-		public Assignment getLogicalOperatorsAssignment_4_7_1_3_0() { return cLogicalOperatorsAssignment_4_7_1_3_0; }
-		
-		//LogicalOperator
-		public RuleCall getLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_3_0_0() { return cLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_3_0_0; }
-		
-		//conditions+=BusinessRule
-		public Assignment getConditionsAssignment_4_7_1_3_1() { return cConditionsAssignment_4_7_1_3_1; }
-		
-		//BusinessRule
-		public RuleCall getConditionsBusinessRuleParserRuleCall_4_7_1_3_1_0() { return cConditionsBusinessRuleParserRuleCall_4_7_1_3_1_0; }
+		//CompositeCondition
+		public RuleCall getConditionsCompositeConditionParserRuleCall_7_0() { return cConditionsCompositeConditionParserRuleCall_7_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_4_8() { return cRightCurlyBracketKeyword_4_8; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 	public class LogicalOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
@@ -2284,6 +2220,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	private final ConditionElements pCondition;
 	private final BusinessRuleElements pBusinessRule;
 	private final CompositeConditionElements pCompositeCondition;
+	private final ConditionalExpressionElements pConditionalExpression;
 	private final LogicalOperatorElements pLogicalOperator;
 	private final TimeoutElements pTimeout;
 	private final OperationLimitElements pOperationLimit;
@@ -2342,6 +2279,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		this.pCondition = new ConditionElements();
 		this.pBusinessRule = new BusinessRuleElements();
 		this.pCompositeCondition = new CompositeConditionElements();
+		this.pConditionalExpression = new ConditionalExpressionElements();
 		this.pLogicalOperator = new LogicalOperatorElements();
 		this.pTimeout = new TimeoutElements();
 		this.pOperationLimit = new OperationLimitElements();
@@ -2495,7 +2433,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Condition:
-	//    BusinessRule | CompositeCondition
+	//    BusinessRule | CompositeCondition | ConditionalExpression
 	//;
 	public ConditionElements getConditionAccess() {
 		return pCondition;
@@ -2516,20 +2454,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getBusinessRuleAccess().getRule();
 	}
 	
-	////CompositeCondition:
-	////    conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-	////;
-	//// alterando o compositeCondition
 	//CompositeCondition:
-	//    conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*
-	//        (logicalOperators+=LogicalOperator
-	//        'when' '('  expression+=Expression ')' 'check' '{'
-	//            (
-	//                conditions+=BusinessRule |
-	//                (conditions+=BusinessRule logicalOperators+=LogicalOperator conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)
-	//            )
-	//        '}'
-	//    )*
+	//    conditions+=BusinessRule logicalOperators+=LogicalOperator (conditions+=BusinessRule (logicalOperators+=LogicalOperator conditions+=BusinessRule)*)*
 	//;
 	public CompositeConditionElements getCompositeConditionAccess() {
 		return pCompositeCondition;
@@ -2537,6 +2463,20 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	public ParserRule getCompositeConditionRule() {
 		return getCompositeConditionAccess().getRule();
+	}
+	
+	//ConditionalExpression:
+	//    conditions+=CompositeCondition
+	//    'when' '(' 'expression' ')' 'check' '{'
+	//        conditions+=CompositeCondition
+	//    '}'
+	//;
+	public ConditionalExpressionElements getConditionalExpressionAccess() {
+		return pConditionalExpression;
+	}
+	
+	public ParserRule getConditionalExpressionRule() {
+		return getConditionalExpressionAccess().getRule();
 	}
 	
 	//LogicalOperator:

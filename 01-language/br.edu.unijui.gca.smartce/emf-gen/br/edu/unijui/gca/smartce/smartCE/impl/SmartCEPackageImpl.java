@@ -12,6 +12,7 @@ import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
 import br.edu.unijui.gca.smartce.smartCE.Clause;
 import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
 import br.edu.unijui.gca.smartce.smartCE.Condition;
+import br.edu.unijui.gca.smartce.smartCE.ConditionalExpression;
 import br.edu.unijui.gca.smartce.smartCE.Contract;
 import br.edu.unijui.gca.smartce.smartCE.EventLog;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
@@ -281,6 +282,13 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	private EClass sessionIntervalEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass conditionalExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1508,6 +1516,39 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getConditionalExpression()
+	{
+		return conditionalExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConditionalExpression_Conditions()
+	{
+		return (EReference)conditionalExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getConditionalExpression_LogicalOperators()
+	{
+		return (EReference)conditionalExpressionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getWeekDay()
 	{
 		return weekDayEEnum;
@@ -1722,6 +1763,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__TIME_UNIT);
 		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__RECURRENCE);
 
+		conditionalExpressionEClass = createEClass(CONDITIONAL_EXPRESSION);
+		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__CONDITIONS);
+		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__LOGICAL_OPERATORS);
+
 		// Create enums
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
@@ -1778,6 +1823,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		businessActionEClass.getESuperTypes().add(this.getAction());
 		eventLogEClass.getESuperTypes().add(this.getAction());
 		sessionIntervalEClass.getESuperTypes().add(this.getBusinessRule());
+		conditionalExpressionEClass.getESuperTypes().add(this.getCondition());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(contractEClass, Contract.class, "Contract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1913,6 +1959,10 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEAttribute(getSessionInterval_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSessionInterval_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSessionInterval_Recurrence(), this.getRecurrence(), "recurrence", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(conditionalExpressionEClass, ConditionalExpression.class, "ConditionalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConditionalExpression_Conditions(), this.getCompositeCondition(), null, "conditions", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalExpression_LogicalOperators(), this.getLogicalOperator(), null, "logicalOperators", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(weekDayEEnum, WeekDay.class, "WeekDay");

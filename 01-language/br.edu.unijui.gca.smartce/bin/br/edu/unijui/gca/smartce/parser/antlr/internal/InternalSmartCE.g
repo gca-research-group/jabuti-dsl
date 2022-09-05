@@ -667,6 +667,15 @@ ruleCondition returns [EObject current=null]
 			$current = $this_CompositeCondition_1.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getConditionAccess().getConditionalExpressionParserRuleCall_2());
+		}
+		this_ConditionalExpression_2=ruleConditionalExpression
+		{
+			$current = $this_ConditionalExpression_2.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -798,49 +807,11 @@ ruleCompositeCondition returns [EObject current=null]
 		)
 		(
 			(
-				{
-					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_2_0());
-				}
-				lv_conditions_2_0=ruleBusinessRule
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-					}
-					add(
-						$current,
-						"conditions",
-						lv_conditions_2_0,
-						"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		(
-			(
 				(
 					{
-						newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_3_0_0());
+						newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_2_0_0());
 					}
-					lv_logicalOperators_3_0=ruleLogicalOperator
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-						}
-						add(
-							$current,
-							"logicalOperators",
-							lv_logicalOperators_3_0,
-							"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_3_1_0());
-					}
-					lv_conditions_4_0=ruleBusinessRule
+					lv_conditions_2_0=ruleBusinessRule
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
@@ -848,79 +819,38 @@ ruleCompositeCondition returns [EObject current=null]
 						add(
 							$current,
 							"conditions",
-							lv_conditions_4_0,
+							lv_conditions_2_0,
 							"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
 						afterParserOrEnumRuleCall();
 					}
 				)
 			)
-		)*
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_4_0_0());
-					}
-					lv_logicalOperators_5_0=ruleLogicalOperator
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-						}
-						add(
-							$current,
-							"logicalOperators",
-							lv_logicalOperators_5_0,
-							"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_6='when'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getCompositeConditionAccess().getWhenKeyword_4_1());
-			}
-			otherlv_7='('
-			{
-				newLeafNode(otherlv_7, grammarAccess.getCompositeConditionAccess().getLeftParenthesisKeyword_4_2());
-			}
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getCompositeConditionAccess().getExpressionExpressionParserRuleCall_4_3_0());
-					}
-					lv_expression_8_0=ruleExpression
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-						}
-						add(
-							$current,
-							"expression",
-							lv_expression_8_0,
-							"br.edu.unijui.gca.smartce.SmartCE.Expression");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			otherlv_9=')'
-			{
-				newLeafNode(otherlv_9, grammarAccess.getCompositeConditionAccess().getRightParenthesisKeyword_4_4());
-			}
-			otherlv_10='check'
-			{
-				newLeafNode(otherlv_10, grammarAccess.getCompositeConditionAccess().getCheckKeyword_4_5());
-			}
-			otherlv_11='{'
-			{
-				newLeafNode(otherlv_11, grammarAccess.getCompositeConditionAccess().getLeftCurlyBracketKeyword_4_6());
-			}
 			(
 				(
 					(
 						{
-							newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_0_0());
+							newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_2_1_0_0());
 						}
-						lv_conditions_12_0=ruleBusinessRule
+						lv_logicalOperators_3_0=ruleLogicalOperator
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
+							}
+							add(
+								$current,
+								"logicalOperators",
+								lv_logicalOperators_3_0,
+								"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_2_1_1_0());
+						}
+						lv_conditions_4_0=ruleBusinessRule
 						{
 							if ($current==null) {
 								$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
@@ -928,118 +858,99 @@ ruleCompositeCondition returns [EObject current=null]
 							add(
 								$current,
 								"conditions",
-								lv_conditions_12_0,
+								lv_conditions_4_0,
 								"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
 							afterParserOrEnumRuleCall();
 						}
 					)
 				)
-				    |
-				(
-					(
-						(
-							{
-								newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_1_0_0());
-							}
-							lv_conditions_13_0=ruleBusinessRule
-							{
-								if ($current==null) {
-									$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-								}
-								add(
-									$current,
-									"conditions",
-									lv_conditions_13_0,
-									"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
-								afterParserOrEnumRuleCall();
-							}
-						)
-					)
-					(
-						(
-							{
-								newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_1_0());
-							}
-							lv_logicalOperators_14_0=ruleLogicalOperator
-							{
-								if ($current==null) {
-									$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-								}
-								add(
-									$current,
-									"logicalOperators",
-									lv_logicalOperators_14_0,
-									"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
-								afterParserOrEnumRuleCall();
-							}
-						)
-					)
-					(
-						(
-							{
-								newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_1_2_0());
-							}
-							lv_conditions_15_0=ruleBusinessRule
-							{
-								if ($current==null) {
-									$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-								}
-								add(
-									$current,
-									"conditions",
-									lv_conditions_15_0,
-									"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
-								afterParserOrEnumRuleCall();
-							}
-						)
-					)
-					(
-						(
-							(
-								{
-									newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_4_7_1_3_0_0());
-								}
-								lv_logicalOperators_16_0=ruleLogicalOperator
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-									}
-									add(
-										$current,
-										"logicalOperators",
-										lv_logicalOperators_16_0,
-										"br.edu.unijui.gca.smartce.SmartCE.LogicalOperator");
-									afterParserOrEnumRuleCall();
-								}
-							)
-						)
-						(
-							(
-								{
-									newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_4_7_1_3_1_0());
-								}
-								lv_conditions_17_0=ruleBusinessRule
-								{
-									if ($current==null) {
-										$current = createModelElementForParent(grammarAccess.getCompositeConditionRule());
-									}
-									add(
-										$current,
-										"conditions",
-										lv_conditions_17_0,
-										"br.edu.unijui.gca.smartce.SmartCE.BusinessRule");
-									afterParserOrEnumRuleCall();
-								}
-							)
-						)
-					)*
-				)
-			)
-			otherlv_18='}'
-			{
-				newLeafNode(otherlv_18, grammarAccess.getCompositeConditionAccess().getRightCurlyBracketKeyword_4_8());
-			}
+			)*
 		)*
+	)
+;
+
+// Entry rule entryRuleConditionalExpression
+entryRuleConditionalExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConditionalExpressionRule()); }
+	iv_ruleConditionalExpression=ruleConditionalExpression
+	{ $current=$iv_ruleConditionalExpression.current; }
+	EOF;
+
+// Rule ConditionalExpression
+ruleConditionalExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_0_0());
+				}
+				lv_conditions_0_0=ruleCompositeCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+					}
+					add(
+						$current,
+						"conditions",
+						lv_conditions_0_0,
+						"br.edu.unijui.gca.smartce.SmartCE.CompositeCondition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_1='when'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getConditionalExpressionAccess().getWhenKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getConditionalExpressionAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3='expression'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getConditionalExpressionAccess().getExpressionKeyword_3());
+		}
+		otherlv_4=')'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getConditionalExpressionAccess().getRightParenthesisKeyword_4());
+		}
+		otherlv_5='check'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getConditionalExpressionAccess().getCheckKeyword_5());
+		}
+		otherlv_6='{'
+		{
+			newLeafNode(otherlv_6, grammarAccess.getConditionalExpressionAccess().getLeftCurlyBracketKeyword_6());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0());
+				}
+				lv_conditions_7_0=ruleCompositeCondition
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+					}
+					add(
+						$current,
+						"conditions",
+						lv_conditions_7_0,
+						"br.edu.unijui.gca.smartce.SmartCE.CompositeCondition");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_8='}'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getConditionalExpressionAccess().getRightCurlyBracketKeyword_8());
+		}
 	)
 ;
 

@@ -294,6 +294,15 @@ public interface SmartCEFactory extends EFactory
 	SessionInterval createSessionInterval();
 
 	/**
+	 * Returns a new object of class '<em>Conditional Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conditional Expression</em>'.
+	 * @generated
+	 */
+	ConditionalExpression createConditionalExpression();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

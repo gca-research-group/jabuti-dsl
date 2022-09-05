@@ -167,5 +167,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/timeUnit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/recurrence"/>
     </genClasses>
+    <genClasses ecoreClass="SmartCE.ecore#//ConditionalExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//ConditionalExpression/conditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//ConditionalExpression/logicalOperators"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

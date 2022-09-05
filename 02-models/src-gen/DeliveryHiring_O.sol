@@ -8,6 +8,8 @@ contract DeliveryHiring_O is EAI_Domain{
 	Party Name of application;
 	Party Name of process;
 	
+	BusinessDay public businessDay = BusinessDay(FRIDAY, SUNDAY);
+	OperationLimit public operationLimit = OperationLimit(1000, MONTH, 0, 0);
 	
 	event action(string _logMessage);
 	
@@ -21,7 +23,9 @@ contract DeliveryHiring_O is EAI_Domain{
 		
 		bool isBreached=false;
 		
-		if() {
+		if(isBusinessDay(_accessDateTime, businessDay) &&
+		!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		) {
 			operationLimit.requestsPerformed+=1;
         	return true;	
 		}
