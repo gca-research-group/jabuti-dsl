@@ -931,9 +931,9 @@ ruleConditionalExpression returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsConditionParserRuleCall_7_0());
 				}
-				lv_conditions_7_0=ruleCompositeCondition
+				lv_conditions_7_0=ruleCondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
@@ -942,7 +942,7 @@ ruleConditionalExpression returns [EObject current=null]
 						$current,
 						"conditions",
 						lv_conditions_7_0,
-						"br.edu.unijui.gca.smartce.SmartCE.CompositeCondition");
+						"br.edu.unijui.gca.smartce.SmartCE.Condition");
 					afterParserOrEnumRuleCall();
 				}
 			)

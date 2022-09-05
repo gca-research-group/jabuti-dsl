@@ -553,20 +553,20 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cCheckKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cConditionsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cConditionsCompositeConditionParserRuleCall_7_0 = (RuleCall)cConditionsAssignment_7.eContents().get(0);
+		private final RuleCall cConditionsConditionParserRuleCall_7_0 = (RuleCall)cConditionsAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//ConditionalExpression:
 		//    conditions+=CompositeCondition
 		//    'when' '(' 'expression' ')' 'check' '{'
-		//        conditions+=CompositeCondition
+		//        conditions+=Condition
 		//    '}'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//conditions+=CompositeCondition
 		//'when' '(' 'expression' ')' 'check' '{'
-		//    conditions+=CompositeCondition
+		//    conditions+=Condition
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
@@ -594,11 +594,11 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 		
-		//conditions+=CompositeCondition
+		//conditions+=Condition
 		public Assignment getConditionsAssignment_7() { return cConditionsAssignment_7; }
 		
-		//CompositeCondition
-		public RuleCall getConditionsCompositeConditionParserRuleCall_7_0() { return cConditionsCompositeConditionParserRuleCall_7_0; }
+		//Condition
+		public RuleCall getConditionsConditionParserRuleCall_7_0() { return cConditionsConditionParserRuleCall_7_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
@@ -1124,11 +1124,6 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cSymbolAssignment_5 = (Assignment)cAlternatives.eContents().get(5);
 		private final Keyword cSymbolEqualsSignEqualsSignKeyword_5_0 = (Keyword)cSymbolAssignment_5.eContents().get(0);
 		
-		//// ****************************************************************************
-		//// ---- temporary solution to set the string "application" or "process" to rolePlayer-----
-		///*enum Parties:
-		//    APPLICATION='application'| PROCESS='process'
-		//;*/
 		//// ----------------- Add the binary operator -------------------------
 		//BinaryOperator:
 		//symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
@@ -1182,7 +1177,6 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cApplicationParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cProcessParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
-		//// ****************************************************************************
 		//Party:
 		//    Application | Process
 		//;
@@ -1344,7 +1338,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//BusinessAction:
-		//    'BusinessAction' name=ID //'(' parameters+=Variable (',' parameters+=Variable)* ')'
+		//    'BusinessAction' name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1368,7 +1362,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//EventLog:
-		//    'EventLog' name=ID    //'(' parameters+=Variable (',' parameters+=Variable)* ')'
+		//    'EventLog' name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -2468,7 +2462,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	//ConditionalExpression:
 	//    conditions+=CompositeCondition
 	//    'when' '(' 'expression' ')' 'check' '{'
-	//        conditions+=CompositeCondition
+	//        conditions+=Condition
 	//    '}'
 	//;
 	public ConditionalExpressionElements getConditionalExpressionAccess() {
@@ -2582,11 +2576,6 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getMessageContentAccess().getRule();
 	}
 	
-	//// ****************************************************************************
-	//// ---- temporary solution to set the string "application" or "process" to rolePlayer-----
-	///*enum Parties:
-	//    APPLICATION='application'| PROCESS='process'
-	//;*/
 	//// ----------------- Add the binary operator -------------------------
 	//BinaryOperator:
 	//symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
@@ -2600,7 +2589,6 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		return getBinaryOperatorAccess().getRule();
 	}
 	
-	//// ****************************************************************************
 	//Party:
 	//    Application | Process
 	//;
@@ -2667,7 +2655,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//BusinessAction:
-	//    'BusinessAction' name=ID //'(' parameters+=Variable (',' parameters+=Variable)* ')'
+	//    'BusinessAction' name=ID
 	//;
 	public BusinessActionElements getBusinessActionAccess() {
 		return pBusinessAction;
@@ -2678,7 +2666,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//EventLog:
-	//    'EventLog' name=ID    //'(' parameters+=Variable (',' parameters+=Variable)* ')'
+	//    'EventLog' name=ID
 	//;
 	public EventLogElements getEventLogAccess() {
 		return pEventLog;

@@ -7254,9 +7254,9 @@ rule__ConditionalExpression__ConditionsAssignment_7
 	}
 :
 	(
-		{ before(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0()); }
-		ruleCompositeCondition
-		{ after(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0()); }
+		{ before(grammarAccess.getConditionalExpressionAccess().getConditionsConditionParserRuleCall_7_0()); }
+		ruleCondition
+		{ after(grammarAccess.getConditionalExpressionAccess().getConditionsConditionParserRuleCall_7_0()); }
 	)
 ;
 finally {

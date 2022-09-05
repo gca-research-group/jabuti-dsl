@@ -22091,25 +22091,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__ConditionsAssignment_7"
-    // InternalSmartCE.g:7251:1: rule__ConditionalExpression__ConditionsAssignment_7 : ( ruleCompositeCondition ) ;
+    // InternalSmartCE.g:7251:1: rule__ConditionalExpression__ConditionsAssignment_7 : ( ruleCondition ) ;
     public final void rule__ConditionalExpression__ConditionsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7255:1: ( ( ruleCompositeCondition ) )
-            // InternalSmartCE.g:7256:2: ( ruleCompositeCondition )
+            // InternalSmartCE.g:7255:1: ( ( ruleCondition ) )
+            // InternalSmartCE.g:7256:2: ( ruleCondition )
             {
-            // InternalSmartCE.g:7256:2: ( ruleCompositeCondition )
-            // InternalSmartCE.g:7257:3: ruleCompositeCondition
+            // InternalSmartCE.g:7256:2: ( ruleCondition )
+            // InternalSmartCE.g:7257:3: ruleCondition
             {
-             before(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0()); 
+             before(grammarAccess.getConditionalExpressionAccess().getConditionsConditionParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
-            ruleCompositeCondition();
+            ruleCondition();
 
             state._fsp--;
 
-             after(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0()); 
+             after(grammarAccess.getConditionalExpressionAccess().getConditionsConditionParserRuleCall_7_0()); 
 
             }
 

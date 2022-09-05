@@ -326,7 +326,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ConditionalExpression returns ConditionalExpression
 	 *
 	 * Constraint:
-	 *     (conditions+=CompositeCondition conditions+=CompositeCondition)
+	 *     (conditions+=CompositeCondition conditions+=Condition)
 	 * </pre>
 	 */
 	protected void sequence_ConditionalExpression(ISerializationContext context, ConditionalExpression semanticObject) {

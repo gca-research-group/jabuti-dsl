@@ -2105,7 +2105,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionalExpression"
-    // InternalSmartCE.g:880:1: ruleConditionalExpression returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' ) ;
+    // InternalSmartCE.g:880:1: ruleConditionalExpression returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCondition ) ) otherlv_8= '}' ) ;
     public final EObject ruleConditionalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -2125,11 +2125,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:886:2: ( ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' ) )
-            // InternalSmartCE.g:887:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' )
+            // InternalSmartCE.g:886:2: ( ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCondition ) ) otherlv_8= '}' ) )
+            // InternalSmartCE.g:887:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCondition ) ) otherlv_8= '}' )
             {
-            // InternalSmartCE.g:887:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' )
-            // InternalSmartCE.g:888:3: ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}'
+            // InternalSmartCE.g:887:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCondition ) ) otherlv_8= '}' )
+            // InternalSmartCE.g:888:3: ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' otherlv_3= 'expression' otherlv_4= ')' otherlv_5= 'check' otherlv_6= '{' ( (lv_conditions_7_0= ruleCondition ) ) otherlv_8= '}'
             {
             // InternalSmartCE.g:888:3: ( (lv_conditions_0_0= ruleCompositeCondition ) )
             // InternalSmartCE.g:889:4: (lv_conditions_0_0= ruleCompositeCondition )
@@ -2186,17 +2186,17 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getConditionalExpressionAccess().getLeftCurlyBracketKeyword_6());
             		
-            // InternalSmartCE.g:931:3: ( (lv_conditions_7_0= ruleCompositeCondition ) )
-            // InternalSmartCE.g:932:4: (lv_conditions_7_0= ruleCompositeCondition )
+            // InternalSmartCE.g:931:3: ( (lv_conditions_7_0= ruleCondition ) )
+            // InternalSmartCE.g:932:4: (lv_conditions_7_0= ruleCondition )
             {
-            // InternalSmartCE.g:932:4: (lv_conditions_7_0= ruleCompositeCondition )
-            // InternalSmartCE.g:933:5: lv_conditions_7_0= ruleCompositeCondition
+            // InternalSmartCE.g:932:4: (lv_conditions_7_0= ruleCondition )
+            // InternalSmartCE.g:933:5: lv_conditions_7_0= ruleCondition
             {
 
-            					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0());
+            					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsConditionParserRuleCall_7_0());
             				
             pushFollow(FOLLOW_15);
-            lv_conditions_7_0=ruleCompositeCondition();
+            lv_conditions_7_0=ruleCondition();
 
             state._fsp--;
 
@@ -2208,7 +2208,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             						current,
             						"conditions",
             						lv_conditions_7_0,
-            						"br.edu.unijui.gca.smartce.SmartCE.CompositeCondition");
+            						"br.edu.unijui.gca.smartce.SmartCE.Condition");
             					afterParserOrEnumRuleCall();
             				
 

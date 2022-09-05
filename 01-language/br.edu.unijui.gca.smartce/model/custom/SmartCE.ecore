@@ -195,7 +195,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
-        eType="#//CompositeCondition" containment="true"/>
+        eType="#//Condition" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperators" upperBound="-1"
         eType="#//LogicalOperator" containment="true"/>
   </eClassifiers>

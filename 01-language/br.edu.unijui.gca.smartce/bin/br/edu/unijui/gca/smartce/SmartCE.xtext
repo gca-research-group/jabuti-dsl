@@ -44,11 +44,9 @@ Clause:
 	 '}' 
 ;
 
-
 enum Operation:
     PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
 ;
-
 
 Condition: 
 	BusinessRule | CompositeCondition | ConditionalExpression
@@ -65,7 +63,7 @@ CompositeCondition:
 ConditionalExpression: 
 	conditions+=CompositeCondition
 	'when' '(' 'expression' ')' 'check' '{'
-		conditions+=CompositeCondition
+		conditions+=Condition
 	'}'
 ;
 
@@ -85,7 +83,6 @@ BusinessDay:
 	('BusinessDay' '(' start=WeekDay 'to' end=WeekDay ')')
 	
 ;
-	
 
 enum WeekDay:
     SUNDAY='Sunday' | MONDAY='Monday' | TUESDAY='Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY='Thursday' | FRIDAY='Friday' | SATURDAY='Saturday'
@@ -110,24 +107,11 @@ MessageContent:
 	('MessageContent' '(' content=STRING binaryOperator=BinaryOperator (stringValue=StringValue | variableValue=VariableValue |numericValue=NumericValue) 'by' timeUnit=TimeUnit')' )
 ;
 
-
-// ****************************************************************************
-
-// ---- temporary solution to set the string "application" or "process" to rolePlayer-----
-/*enum Parties: 	
-	APPLICATION='application'| PROCESS='process'
-;*/
-
 // ----------------- Add the binary operator -------------------------
 BinaryOperator:
 symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
 	| symbol='==' 
 ;
-
-
-// ****************************************************************************
-
-
 
 Party: 
 	Application | Process
@@ -153,11 +137,11 @@ Action:
 	BusinessAction | EventLog;
 
 BusinessAction:
-	'BusinessAction' name=ID //'(' parameters+=Variable (',' parameters+=Variable)* ')'
+	'BusinessAction' name=ID
 ;
 
 EventLog:
-	'EventLog' name=ID	//'(' parameters+=Variable (',' parameters+=Variable)* ')'
+	'EventLog' name=ID
 ;
 
 Expression:
@@ -213,6 +197,3 @@ DAY: INT;
 HOUR: INT;
 MIN: INT;
 SEC: INT;
-
-
-

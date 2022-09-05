@@ -3,7 +3,7 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.CompositeCondition;
+import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.ConditionalExpression;
 import br.edu.unijui.gca.smartce.smartCE.LogicalOperator;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
@@ -44,7 +44,7 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<CompositeCondition> conditions;
+	protected EList<Condition> conditions;
 
 	/**
 	 * The cached value of the '{@link #getLogicalOperators() <em>Logical Operators</em>}' containment reference list.
@@ -83,11 +83,11 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	 * @generated
 	 */
 	@Override
-	public EList<CompositeCondition> getConditions()
+	public EList<Condition> getConditions()
 	{
 		if (conditions == null)
 		{
-			conditions = new EObjectContainmentEList<CompositeCondition>(CompositeCondition.class, this, SmartCEPackage.CONDITIONAL_EXPRESSION__CONDITIONS);
+			conditions = new EObjectContainmentEList<Condition>(Condition.class, this, SmartCEPackage.CONDITIONAL_EXPRESSION__CONDITIONS);
 		}
 		return conditions;
 	}
@@ -156,7 +156,7 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 		{
 			case SmartCEPackage.CONDITIONAL_EXPRESSION__CONDITIONS:
 				getConditions().clear();
-				getConditions().addAll((Collection<? extends CompositeCondition>)newValue);
+				getConditions().addAll((Collection<? extends Condition>)newValue);
 				return;
 			case SmartCEPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATORS:
 				getLogicalOperators().clear();

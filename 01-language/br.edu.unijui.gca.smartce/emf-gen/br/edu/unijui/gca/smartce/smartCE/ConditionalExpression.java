@@ -26,7 +26,7 @@ public interface ConditionalExpression extends Condition
 {
 	/**
 	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.CompositeCondition}.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.Condition}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Conditions</em>' containment reference list.
@@ -34,7 +34,7 @@ public interface ConditionalExpression extends Condition
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<CompositeCondition> getConditions();
+	EList<Condition> getConditions();
 
 	/**
 	 * Returns the value of the '<em><b>Logical Operators</b></em>' containment reference list.
