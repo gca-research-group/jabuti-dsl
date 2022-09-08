@@ -5,17 +5,16 @@ import "./libs/EAI_Domain.sol";
 
 contract DeliveryHiring_O is EAI_Domain{
 	
-	Party Name of application;
-	Party Name of process;
+	Party deliverySystem;
+	Party integrationProcess;
 	
-	BusinessDay public businessDay = BusinessDay(FRIDAY, SUNDAY);
 	OperationLimit public operationLimit = OperationLimit(1000, MONTH, 0, 0);
 	
-	event action(string _logMessage);
+	event EventLog(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
-    	Name of application = Party(" ", _applicationWallet);
-	    Name of process = Party("", _processWallet);
+    	deliverySystem = Party(" ", _applicationWallet);
+	    integrationProcess = Party("", _processWallet);
 	}
 	
 	function right(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
@@ -23,14 +22,13 @@ contract DeliveryHiring_O is EAI_Domain{
 		
 		bool isBreached=false;
 		
-		if(isBusinessDay(_accessDateTime, businessDay) &&
-		!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		if(!isOperationLimitReached(_accessDateTime, operationLimit) &&
 		) {
 			operationLimit.requestsPerformed+=1;
         	return true;	
 		}
 		
-		emit action ("Request made outside of allowed hours or distance limit exceeded");
+		emit EventLog ("Request made outside of allowed hours or distance limit exceeded");
 		return false;
 	}
 }

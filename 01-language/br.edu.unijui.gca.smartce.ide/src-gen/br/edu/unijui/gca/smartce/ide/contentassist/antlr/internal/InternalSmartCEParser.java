@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Right'", "'Prohibition'", "'Obligation'", "'process'", "'application'", "'AND'", "'OR'", "'NOT'", "'+'", "'-'", "'*'", "'/'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'", "'import'", "'Contract'", "'{'", "'beginDate'", "'='", "'dueDate'", "'parties'", "'}'", "'variables'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "'expression'", "')'", "'check'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'from'", "'MessageContent'", "'BusinessAction'", "'EventLog'", "','", "'.'", "'.*'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'&&'", "'||'", "'!'", "'is'", "'as'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Right'", "'Prohibition'", "'Obligation'", "'process'", "'application'", "'AND'", "'OR'", "'NOT'", "'+'", "'-'", "'*'", "'/'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'", "'import'", "'Contract'", "'{'", "'dates'", "'beginDate'", "'='", "'dueDate'", "'}'", "'parties'", "'clauses'", "'variables'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "')'", "'do'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'MessageContent'", "','", "'.'", "'.*'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'BusinessAction'", "'EventLog'", "'&&'", "'||'", "'!'", "'is'", "'as'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -406,31 +406,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleVariable"
-    // InternalSmartCE.g:137:1: ruleVariable : ( ( rule__Variable__Group__0 ) ) ;
+    // InternalSmartCE.g:137:1: ruleVariable : ( ( rule__Variable__Alternatives ) ) ;
     public final void ruleVariable() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:141:2: ( ( ( rule__Variable__Group__0 ) ) )
-            // InternalSmartCE.g:142:2: ( ( rule__Variable__Group__0 ) )
+            // InternalSmartCE.g:141:2: ( ( ( rule__Variable__Alternatives ) ) )
+            // InternalSmartCE.g:142:2: ( ( rule__Variable__Alternatives ) )
             {
-            // InternalSmartCE.g:142:2: ( ( rule__Variable__Group__0 ) )
-            // InternalSmartCE.g:143:3: ( rule__Variable__Group__0 )
+            // InternalSmartCE.g:142:2: ( ( rule__Variable__Alternatives ) )
+            // InternalSmartCE.g:143:3: ( rule__Variable__Alternatives )
             {
-             before(grammarAccess.getVariableAccess().getGroup()); 
-            // InternalSmartCE.g:144:3: ( rule__Variable__Group__0 )
-            // InternalSmartCE.g:144:4: rule__Variable__Group__0
+             before(grammarAccess.getVariableAccess().getAlternatives()); 
+            // InternalSmartCE.g:144:3: ( rule__Variable__Alternatives )
+            // InternalSmartCE.g:144:4: rule__Variable__Alternatives
             {
             pushFollow(FOLLOW_2);
-            rule__Variable__Group__0();
+            rule__Variable__Alternatives();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVariableAccess().getGroup()); 
+             after(grammarAccess.getVariableAccess().getAlternatives()); 
 
             }
 
@@ -1869,31 +1869,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleBusinessAction"
-    // InternalSmartCE.g:612:1: ruleBusinessAction : ( ( rule__BusinessAction__Group__0 ) ) ;
+    // InternalSmartCE.g:612:1: ruleBusinessAction : ( ( rule__BusinessAction__NameAssignment ) ) ;
     public final void ruleBusinessAction() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:616:2: ( ( ( rule__BusinessAction__Group__0 ) ) )
-            // InternalSmartCE.g:617:2: ( ( rule__BusinessAction__Group__0 ) )
+            // InternalSmartCE.g:616:2: ( ( ( rule__BusinessAction__NameAssignment ) ) )
+            // InternalSmartCE.g:617:2: ( ( rule__BusinessAction__NameAssignment ) )
             {
-            // InternalSmartCE.g:617:2: ( ( rule__BusinessAction__Group__0 ) )
-            // InternalSmartCE.g:618:3: ( rule__BusinessAction__Group__0 )
+            // InternalSmartCE.g:617:2: ( ( rule__BusinessAction__NameAssignment ) )
+            // InternalSmartCE.g:618:3: ( rule__BusinessAction__NameAssignment )
             {
-             before(grammarAccess.getBusinessActionAccess().getGroup()); 
-            // InternalSmartCE.g:619:3: ( rule__BusinessAction__Group__0 )
-            // InternalSmartCE.g:619:4: rule__BusinessAction__Group__0
+             before(grammarAccess.getBusinessActionAccess().getNameAssignment()); 
+            // InternalSmartCE.g:619:3: ( rule__BusinessAction__NameAssignment )
+            // InternalSmartCE.g:619:4: rule__BusinessAction__NameAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__BusinessAction__Group__0();
+            rule__BusinessAction__NameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getBusinessActionAccess().getGroup()); 
+             after(grammarAccess.getBusinessActionAccess().getNameAssignment()); 
 
             }
 
@@ -1946,31 +1946,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleEventLog"
-    // InternalSmartCE.g:637:1: ruleEventLog : ( ( rule__EventLog__Group__0 ) ) ;
+    // InternalSmartCE.g:637:1: ruleEventLog : ( ( rule__EventLog__NameAssignment ) ) ;
     public final void ruleEventLog() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:641:2: ( ( ( rule__EventLog__Group__0 ) ) )
-            // InternalSmartCE.g:642:2: ( ( rule__EventLog__Group__0 ) )
+            // InternalSmartCE.g:641:2: ( ( ( rule__EventLog__NameAssignment ) ) )
+            // InternalSmartCE.g:642:2: ( ( rule__EventLog__NameAssignment ) )
             {
-            // InternalSmartCE.g:642:2: ( ( rule__EventLog__Group__0 ) )
-            // InternalSmartCE.g:643:3: ( rule__EventLog__Group__0 )
+            // InternalSmartCE.g:642:2: ( ( rule__EventLog__NameAssignment ) )
+            // InternalSmartCE.g:643:3: ( rule__EventLog__NameAssignment )
             {
-             before(grammarAccess.getEventLogAccess().getGroup()); 
-            // InternalSmartCE.g:644:3: ( rule__EventLog__Group__0 )
-            // InternalSmartCE.g:644:4: rule__EventLog__Group__0
+             before(grammarAccess.getEventLogAccess().getNameAssignment()); 
+            // InternalSmartCE.g:644:3: ( rule__EventLog__NameAssignment )
+            // InternalSmartCE.g:644:4: rule__EventLog__NameAssignment
             {
             pushFollow(FOLLOW_2);
-            rule__EventLog__Group__0();
+            rule__EventLog__NameAssignment();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getEventLogAccess().getGroup()); 
+             after(grammarAccess.getEventLogAccess().getNameAssignment()); 
 
             }
 
@@ -3613,44 +3613,155 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleTimeUnit"
 
 
-    // $ANTLR start "rule__Clause__Alternatives_0"
-    // InternalSmartCE.g:1200:1: rule__Clause__Alternatives_0 : ( ( 'Right' ) | ( 'Prohibition' ) | ( 'Obligation' ) );
-    public final void rule__Clause__Alternatives_0() throws RecognitionException {
+    // $ANTLR start "rule__Variable__Alternatives"
+    // InternalSmartCE.g:1200:1: rule__Variable__Alternatives : ( ( ( rule__Variable__Group_0__0 ) ) | ( ( rule__Variable__Group_1__0 ) ) );
+    public final void rule__Variable__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1204:1: ( ( 'Right' ) | ( 'Prohibition' ) | ( 'Obligation' ) )
-            int alt1=3;
-            switch ( input.LA(1) ) {
-            case 11:
-                {
-                alt1=1;
+            // InternalSmartCE.g:1204:1: ( ( ( rule__Variable__Group_0__0 ) ) | ( ( rule__Variable__Group_1__0 ) ) )
+            int alt1=2;
+            int LA1_0 = input.LA(1);
+
+            if ( (LA1_0==RULE_ID) ) {
+                int LA1_1 = input.LA(2);
+
+                if ( (LA1_1==48) ) {
+                    int LA1_2 = input.LA(3);
+
+                    if ( ((LA1_2>=63 && LA1_2<=64)||LA1_2==66||(LA1_2>=68 && LA1_2<=70)) ) {
+                        alt1=2;
+                    }
+                    else if ( ((LA1_2>=RULE_INT && LA1_2<=RULE_STRING)||LA1_2==20||LA1_2==60||LA1_2==84) ) {
+                        alt1=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 1, 2, input);
+
+                        throw nvae;
+                    }
                 }
-                break;
-            case 12:
-                {
-                alt1=2;
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 1, 1, input);
+
+                    throw nvae;
                 }
-                break;
-            case 13:
-                {
-                alt1=3;
-                }
-                break;
-            default:
+            }
+            else {
                 NoViableAltException nvae =
                     new NoViableAltException("", 1, 0, input);
 
                 throw nvae;
             }
-
             switch (alt1) {
                 case 1 :
-                    // InternalSmartCE.g:1205:2: ( 'Right' )
+                    // InternalSmartCE.g:1205:2: ( ( rule__Variable__Group_0__0 ) )
                     {
-                    // InternalSmartCE.g:1205:2: ( 'Right' )
-                    // InternalSmartCE.g:1206:3: 'Right'
+                    // InternalSmartCE.g:1205:2: ( ( rule__Variable__Group_0__0 ) )
+                    // InternalSmartCE.g:1206:3: ( rule__Variable__Group_0__0 )
+                    {
+                     before(grammarAccess.getVariableAccess().getGroup_0()); 
+                    // InternalSmartCE.g:1207:3: ( rule__Variable__Group_0__0 )
+                    // InternalSmartCE.g:1207:4: rule__Variable__Group_0__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Variable__Group_0__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getVariableAccess().getGroup_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSmartCE.g:1211:2: ( ( rule__Variable__Group_1__0 ) )
+                    {
+                    // InternalSmartCE.g:1211:2: ( ( rule__Variable__Group_1__0 ) )
+                    // InternalSmartCE.g:1212:3: ( rule__Variable__Group_1__0 )
+                    {
+                     before(grammarAccess.getVariableAccess().getGroup_1()); 
+                    // InternalSmartCE.g:1213:3: ( rule__Variable__Group_1__0 )
+                    // InternalSmartCE.g:1213:4: rule__Variable__Group_1__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Variable__Group_1__0();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getVariableAccess().getGroup_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Alternatives"
+
+
+    // $ANTLR start "rule__Clause__Alternatives_0"
+    // InternalSmartCE.g:1221:1: rule__Clause__Alternatives_0 : ( ( 'Right' ) | ( 'Prohibition' ) | ( 'Obligation' ) );
+    public final void rule__Clause__Alternatives_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:1225:1: ( ( 'Right' ) | ( 'Prohibition' ) | ( 'Obligation' ) )
+            int alt2=3;
+            switch ( input.LA(1) ) {
+            case 11:
+                {
+                alt2=1;
+                }
+                break;
+            case 12:
+                {
+                alt2=2;
+                }
+                break;
+            case 13:
+                {
+                alt2=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt2) {
+                case 1 :
+                    // InternalSmartCE.g:1226:2: ( 'Right' )
+                    {
+                    // InternalSmartCE.g:1226:2: ( 'Right' )
+                    // InternalSmartCE.g:1227:3: 'Right'
                     {
                      before(grammarAccess.getClauseAccess().getRightKeyword_0_0()); 
                     match(input,11,FOLLOW_2); 
@@ -3662,10 +3773,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1211:2: ( 'Prohibition' )
+                    // InternalSmartCE.g:1232:2: ( 'Prohibition' )
                     {
-                    // InternalSmartCE.g:1211:2: ( 'Prohibition' )
-                    // InternalSmartCE.g:1212:3: 'Prohibition'
+                    // InternalSmartCE.g:1232:2: ( 'Prohibition' )
+                    // InternalSmartCE.g:1233:3: 'Prohibition'
                     {
                      before(grammarAccess.getClauseAccess().getProhibitionKeyword_0_1()); 
                     match(input,12,FOLLOW_2); 
@@ -3677,10 +3788,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1217:2: ( 'Obligation' )
+                    // InternalSmartCE.g:1238:2: ( 'Obligation' )
                     {
-                    // InternalSmartCE.g:1217:2: ( 'Obligation' )
-                    // InternalSmartCE.g:1218:3: 'Obligation'
+                    // InternalSmartCE.g:1238:2: ( 'Obligation' )
+                    // InternalSmartCE.g:1239:3: 'Obligation'
                     {
                      before(grammarAccess.getClauseAccess().getObligationKeyword_0_2()); 
                     match(input,13,FOLLOW_2); 
@@ -3709,34 +3820,34 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Alternatives_5"
-    // InternalSmartCE.g:1227:1: rule__Clause__Alternatives_5 : ( ( 'process' ) | ( 'application' ) );
+    // InternalSmartCE.g:1248:1: rule__Clause__Alternatives_5 : ( ( 'process' ) | ( 'application' ) );
     public final void rule__Clause__Alternatives_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1231:1: ( ( 'process' ) | ( 'application' ) )
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // InternalSmartCE.g:1252:1: ( ( 'process' ) | ( 'application' ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
 
-            if ( (LA2_0==14) ) {
-                alt2=1;
+            if ( (LA3_0==14) ) {
+                alt3=1;
             }
-            else if ( (LA2_0==15) ) {
-                alt2=2;
+            else if ( (LA3_0==15) ) {
+                alt3=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
-            switch (alt2) {
+            switch (alt3) {
                 case 1 :
-                    // InternalSmartCE.g:1232:2: ( 'process' )
+                    // InternalSmartCE.g:1253:2: ( 'process' )
                     {
-                    // InternalSmartCE.g:1232:2: ( 'process' )
-                    // InternalSmartCE.g:1233:3: 'process'
+                    // InternalSmartCE.g:1253:2: ( 'process' )
+                    // InternalSmartCE.g:1254:3: 'process'
                     {
                      before(grammarAccess.getClauseAccess().getProcessKeyword_5_0()); 
                     match(input,14,FOLLOW_2); 
@@ -3748,10 +3859,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1238:2: ( 'application' )
+                    // InternalSmartCE.g:1259:2: ( 'application' )
                     {
-                    // InternalSmartCE.g:1238:2: ( 'application' )
-                    // InternalSmartCE.g:1239:3: 'application'
+                    // InternalSmartCE.g:1259:2: ( 'application' )
+                    // InternalSmartCE.g:1260:3: 'application'
                     {
                      before(grammarAccess.getClauseAccess().getApplicationKeyword_5_1()); 
                     match(input,15,FOLLOW_2); 
@@ -3780,21 +3891,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Condition__Alternatives"
-    // InternalSmartCE.g:1248:1: rule__Condition__Alternatives : ( ( ruleBusinessRule ) | ( ruleCompositeCondition ) | ( ruleConditionalExpression ) );
+    // InternalSmartCE.g:1269:1: rule__Condition__Alternatives : ( ( ruleBusinessRule ) | ( ruleCompositeCondition ) | ( ruleConditionalExpression ) );
     public final void rule__Condition__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1252:1: ( ( ruleBusinessRule ) | ( ruleCompositeCondition ) | ( ruleConditionalExpression ) )
-            int alt3=3;
-            alt3 = dfa3.predict(input);
-            switch (alt3) {
+            // InternalSmartCE.g:1273:1: ( ( ruleBusinessRule ) | ( ruleCompositeCondition ) | ( ruleConditionalExpression ) )
+            int alt4=3;
+            alt4 = dfa4.predict(input);
+            switch (alt4) {
                 case 1 :
-                    // InternalSmartCE.g:1253:2: ( ruleBusinessRule )
+                    // InternalSmartCE.g:1274:2: ( ruleBusinessRule )
                     {
-                    // InternalSmartCE.g:1253:2: ( ruleBusinessRule )
-                    // InternalSmartCE.g:1254:3: ruleBusinessRule
+                    // InternalSmartCE.g:1274:2: ( ruleBusinessRule )
+                    // InternalSmartCE.g:1275:3: ruleBusinessRule
                     {
                      before(grammarAccess.getConditionAccess().getBusinessRuleParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3810,10 +3921,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1259:2: ( ruleCompositeCondition )
+                    // InternalSmartCE.g:1280:2: ( ruleCompositeCondition )
                     {
-                    // InternalSmartCE.g:1259:2: ( ruleCompositeCondition )
-                    // InternalSmartCE.g:1260:3: ruleCompositeCondition
+                    // InternalSmartCE.g:1280:2: ( ruleCompositeCondition )
+                    // InternalSmartCE.g:1281:3: ruleCompositeCondition
                     {
                      before(grammarAccess.getConditionAccess().getCompositeConditionParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3829,10 +3940,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1265:2: ( ruleConditionalExpression )
+                    // InternalSmartCE.g:1286:2: ( ruleConditionalExpression )
                     {
-                    // InternalSmartCE.g:1265:2: ( ruleConditionalExpression )
-                    // InternalSmartCE.g:1266:3: ruleConditionalExpression
+                    // InternalSmartCE.g:1286:2: ( ruleConditionalExpression )
+                    // InternalSmartCE.g:1287:3: ruleConditionalExpression
                     {
                      before(grammarAccess.getConditionAccess().getConditionalExpressionParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -3865,58 +3976,58 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessRule__Alternatives"
-    // InternalSmartCE.g:1275:1: rule__BusinessRule__Alternatives : ( ( ruleTimeout ) | ( ruleOperationLimit ) | ( ruleBusinessDay ) | ( ruleTimeInterval ) | ( ruleMessageContent ) | ( ruleSessionInterval ) );
+    // InternalSmartCE.g:1296:1: rule__BusinessRule__Alternatives : ( ( ruleTimeout ) | ( ruleOperationLimit ) | ( ruleBusinessDay ) | ( ruleTimeInterval ) | ( ruleMessageContent ) | ( ruleSessionInterval ) );
     public final void rule__BusinessRule__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1279:1: ( ( ruleTimeout ) | ( ruleOperationLimit ) | ( ruleBusinessDay ) | ( ruleTimeInterval ) | ( ruleMessageContent ) | ( ruleSessionInterval ) )
-            int alt4=6;
+            // InternalSmartCE.g:1300:1: ( ( ruleTimeout ) | ( ruleOperationLimit ) | ( ruleBusinessDay ) | ( ruleTimeInterval ) | ( ruleMessageContent ) | ( ruleSessionInterval ) )
+            int alt5=6;
             switch ( input.LA(1) ) {
-            case 62:
-                {
-                alt4=1;
-                }
-                break;
             case 63:
                 {
-                alt4=2;
+                alt5=1;
                 }
                 break;
-            case 65:
+            case 64:
                 {
-                alt4=3;
+                alt5=2;
                 }
                 break;
-            case 67:
+            case 66:
                 {
-                alt4=4;
-                }
-                break;
-            case 70:
-                {
-                alt4=5;
+                alt5=3;
                 }
                 break;
             case 68:
                 {
-                alt4=6;
+                alt5=4;
+                }
+                break;
+            case 70:
+                {
+                alt5=5;
+                }
+                break;
+            case 69:
+                {
+                alt5=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt4) {
+            switch (alt5) {
                 case 1 :
-                    // InternalSmartCE.g:1280:2: ( ruleTimeout )
+                    // InternalSmartCE.g:1301:2: ( ruleTimeout )
                     {
-                    // InternalSmartCE.g:1280:2: ( ruleTimeout )
-                    // InternalSmartCE.g:1281:3: ruleTimeout
+                    // InternalSmartCE.g:1301:2: ( ruleTimeout )
+                    // InternalSmartCE.g:1302:3: ruleTimeout
                     {
                      before(grammarAccess.getBusinessRuleAccess().getTimeoutParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -3932,10 +4043,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1286:2: ( ruleOperationLimit )
+                    // InternalSmartCE.g:1307:2: ( ruleOperationLimit )
                     {
-                    // InternalSmartCE.g:1286:2: ( ruleOperationLimit )
-                    // InternalSmartCE.g:1287:3: ruleOperationLimit
+                    // InternalSmartCE.g:1307:2: ( ruleOperationLimit )
+                    // InternalSmartCE.g:1308:3: ruleOperationLimit
                     {
                      before(grammarAccess.getBusinessRuleAccess().getOperationLimitParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -3951,10 +4062,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1292:2: ( ruleBusinessDay )
+                    // InternalSmartCE.g:1313:2: ( ruleBusinessDay )
                     {
-                    // InternalSmartCE.g:1292:2: ( ruleBusinessDay )
-                    // InternalSmartCE.g:1293:3: ruleBusinessDay
+                    // InternalSmartCE.g:1313:2: ( ruleBusinessDay )
+                    // InternalSmartCE.g:1314:3: ruleBusinessDay
                     {
                      before(grammarAccess.getBusinessRuleAccess().getBusinessDayParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -3970,10 +4081,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1298:2: ( ruleTimeInterval )
+                    // InternalSmartCE.g:1319:2: ( ruleTimeInterval )
                     {
-                    // InternalSmartCE.g:1298:2: ( ruleTimeInterval )
-                    // InternalSmartCE.g:1299:3: ruleTimeInterval
+                    // InternalSmartCE.g:1319:2: ( ruleTimeInterval )
+                    // InternalSmartCE.g:1320:3: ruleTimeInterval
                     {
                      before(grammarAccess.getBusinessRuleAccess().getTimeIntervalParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -3989,10 +4100,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1304:2: ( ruleMessageContent )
+                    // InternalSmartCE.g:1325:2: ( ruleMessageContent )
                     {
-                    // InternalSmartCE.g:1304:2: ( ruleMessageContent )
-                    // InternalSmartCE.g:1305:3: ruleMessageContent
+                    // InternalSmartCE.g:1325:2: ( ruleMessageContent )
+                    // InternalSmartCE.g:1326:3: ruleMessageContent
                     {
                      before(grammarAccess.getBusinessRuleAccess().getMessageContentParserRuleCall_4()); 
                     pushFollow(FOLLOW_2);
@@ -4008,10 +4119,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:1310:2: ( ruleSessionInterval )
+                    // InternalSmartCE.g:1331:2: ( ruleSessionInterval )
                     {
-                    // InternalSmartCE.g:1310:2: ( ruleSessionInterval )
-                    // InternalSmartCE.g:1311:3: ruleSessionInterval
+                    // InternalSmartCE.g:1331:2: ( ruleSessionInterval )
+                    // InternalSmartCE.g:1332:3: ruleSessionInterval
                     {
                      before(grammarAccess.getBusinessRuleAccess().getSessionIntervalParserRuleCall_5()); 
                     pushFollow(FOLLOW_2);
@@ -4044,43 +4155,43 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LogicalOperator__NameAlternatives_0"
-    // InternalSmartCE.g:1320:1: rule__LogicalOperator__NameAlternatives_0 : ( ( 'AND' ) | ( 'OR' ) | ( 'NOT' ) );
+    // InternalSmartCE.g:1341:1: rule__LogicalOperator__NameAlternatives_0 : ( ( 'AND' ) | ( 'OR' ) | ( 'NOT' ) );
     public final void rule__LogicalOperator__NameAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1324:1: ( ( 'AND' ) | ( 'OR' ) | ( 'NOT' ) )
-            int alt5=3;
+            // InternalSmartCE.g:1345:1: ( ( 'AND' ) | ( 'OR' ) | ( 'NOT' ) )
+            int alt6=3;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt5=1;
+                alt6=1;
                 }
                 break;
             case 17:
                 {
-                alt5=2;
+                alt6=2;
                 }
                 break;
             case 18:
                 {
-                alt5=3;
+                alt6=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 5, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt5) {
+            switch (alt6) {
                 case 1 :
-                    // InternalSmartCE.g:1325:2: ( 'AND' )
+                    // InternalSmartCE.g:1346:2: ( 'AND' )
                     {
-                    // InternalSmartCE.g:1325:2: ( 'AND' )
-                    // InternalSmartCE.g:1326:3: 'AND'
+                    // InternalSmartCE.g:1346:2: ( 'AND' )
+                    // InternalSmartCE.g:1347:3: 'AND'
                     {
                      before(grammarAccess.getLogicalOperatorAccess().getNameANDKeyword_0_0()); 
                     match(input,16,FOLLOW_2); 
@@ -4092,10 +4203,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1331:2: ( 'OR' )
+                    // InternalSmartCE.g:1352:2: ( 'OR' )
                     {
-                    // InternalSmartCE.g:1331:2: ( 'OR' )
-                    // InternalSmartCE.g:1332:3: 'OR'
+                    // InternalSmartCE.g:1352:2: ( 'OR' )
+                    // InternalSmartCE.g:1353:3: 'OR'
                     {
                      before(grammarAccess.getLogicalOperatorAccess().getNameORKeyword_0_1()); 
                     match(input,17,FOLLOW_2); 
@@ -4107,10 +4218,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1337:2: ( 'NOT' )
+                    // InternalSmartCE.g:1358:2: ( 'NOT' )
                     {
-                    // InternalSmartCE.g:1337:2: ( 'NOT' )
-                    // InternalSmartCE.g:1338:3: 'NOT'
+                    // InternalSmartCE.g:1358:2: ( 'NOT' )
+                    // InternalSmartCE.g:1359:3: 'NOT'
                     {
                      before(grammarAccess.getLogicalOperatorAccess().getNameNOTKeyword_0_2()); 
                     match(input,18,FOLLOW_2); 
@@ -4139,25 +4250,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Alternatives"
-    // InternalSmartCE.g:1347:1: rule__SessionInterval__Alternatives : ( ( ( rule__SessionInterval__Group_0__0 ) ) | ( ( rule__SessionInterval__Group_1__0 ) ) );
+    // InternalSmartCE.g:1368:1: rule__SessionInterval__Alternatives : ( ( ( rule__SessionInterval__Group_0__0 ) ) | ( ( rule__SessionInterval__Group_1__0 ) ) );
     public final void rule__SessionInterval__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1351:1: ( ( ( rule__SessionInterval__Group_0__0 ) ) | ( ( rule__SessionInterval__Group_1__0 ) ) )
-            int alt6=2;
-            alt6 = dfa6.predict(input);
-            switch (alt6) {
+            // InternalSmartCE.g:1372:1: ( ( ( rule__SessionInterval__Group_0__0 ) ) | ( ( rule__SessionInterval__Group_1__0 ) ) )
+            int alt7=2;
+            alt7 = dfa7.predict(input);
+            switch (alt7) {
                 case 1 :
-                    // InternalSmartCE.g:1352:2: ( ( rule__SessionInterval__Group_0__0 ) )
+                    // InternalSmartCE.g:1373:2: ( ( rule__SessionInterval__Group_0__0 ) )
                     {
-                    // InternalSmartCE.g:1352:2: ( ( rule__SessionInterval__Group_0__0 ) )
-                    // InternalSmartCE.g:1353:3: ( rule__SessionInterval__Group_0__0 )
+                    // InternalSmartCE.g:1373:2: ( ( rule__SessionInterval__Group_0__0 ) )
+                    // InternalSmartCE.g:1374:3: ( rule__SessionInterval__Group_0__0 )
                     {
                      before(grammarAccess.getSessionIntervalAccess().getGroup_0()); 
-                    // InternalSmartCE.g:1354:3: ( rule__SessionInterval__Group_0__0 )
-                    // InternalSmartCE.g:1354:4: rule__SessionInterval__Group_0__0
+                    // InternalSmartCE.g:1375:3: ( rule__SessionInterval__Group_0__0 )
+                    // InternalSmartCE.g:1375:4: rule__SessionInterval__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__SessionInterval__Group_0__0();
@@ -4175,14 +4286,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1358:2: ( ( rule__SessionInterval__Group_1__0 ) )
+                    // InternalSmartCE.g:1379:2: ( ( rule__SessionInterval__Group_1__0 ) )
                     {
-                    // InternalSmartCE.g:1358:2: ( ( rule__SessionInterval__Group_1__0 ) )
-                    // InternalSmartCE.g:1359:3: ( rule__SessionInterval__Group_1__0 )
+                    // InternalSmartCE.g:1379:2: ( ( rule__SessionInterval__Group_1__0 ) )
+                    // InternalSmartCE.g:1380:3: ( rule__SessionInterval__Group_1__0 )
                     {
                      before(grammarAccess.getSessionIntervalAccess().getGroup_1()); 
-                    // InternalSmartCE.g:1360:3: ( rule__SessionInterval__Group_1__0 )
-                    // InternalSmartCE.g:1360:4: rule__SessionInterval__Group_1__0
+                    // InternalSmartCE.g:1381:3: ( rule__SessionInterval__Group_1__0 )
+                    // InternalSmartCE.g:1381:4: rule__SessionInterval__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__SessionInterval__Group_1__0();
@@ -4217,25 +4328,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Alternatives"
-    // InternalSmartCE.g:1368:1: rule__MessageContent__Alternatives : ( ( ( rule__MessageContent__Group_0__0 ) ) | ( ( rule__MessageContent__Group_1__0 ) ) | ( ( rule__MessageContent__Group_2__0 ) ) | ( ( rule__MessageContent__Group_3__0 ) ) );
+    // InternalSmartCE.g:1389:1: rule__MessageContent__Alternatives : ( ( ( rule__MessageContent__Group_0__0 ) ) | ( ( rule__MessageContent__Group_1__0 ) ) | ( ( rule__MessageContent__Group_2__0 ) ) | ( ( rule__MessageContent__Group_3__0 ) ) );
     public final void rule__MessageContent__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1372:1: ( ( ( rule__MessageContent__Group_0__0 ) ) | ( ( rule__MessageContent__Group_1__0 ) ) | ( ( rule__MessageContent__Group_2__0 ) ) | ( ( rule__MessageContent__Group_3__0 ) ) )
-            int alt7=4;
-            alt7 = dfa7.predict(input);
-            switch (alt7) {
+            // InternalSmartCE.g:1393:1: ( ( ( rule__MessageContent__Group_0__0 ) ) | ( ( rule__MessageContent__Group_1__0 ) ) | ( ( rule__MessageContent__Group_2__0 ) ) | ( ( rule__MessageContent__Group_3__0 ) ) )
+            int alt8=4;
+            alt8 = dfa8.predict(input);
+            switch (alt8) {
                 case 1 :
-                    // InternalSmartCE.g:1373:2: ( ( rule__MessageContent__Group_0__0 ) )
+                    // InternalSmartCE.g:1394:2: ( ( rule__MessageContent__Group_0__0 ) )
                     {
-                    // InternalSmartCE.g:1373:2: ( ( rule__MessageContent__Group_0__0 ) )
-                    // InternalSmartCE.g:1374:3: ( rule__MessageContent__Group_0__0 )
+                    // InternalSmartCE.g:1394:2: ( ( rule__MessageContent__Group_0__0 ) )
+                    // InternalSmartCE.g:1395:3: ( rule__MessageContent__Group_0__0 )
                     {
                      before(grammarAccess.getMessageContentAccess().getGroup_0()); 
-                    // InternalSmartCE.g:1375:3: ( rule__MessageContent__Group_0__0 )
-                    // InternalSmartCE.g:1375:4: rule__MessageContent__Group_0__0
+                    // InternalSmartCE.g:1396:3: ( rule__MessageContent__Group_0__0 )
+                    // InternalSmartCE.g:1396:4: rule__MessageContent__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__Group_0__0();
@@ -4253,14 +4364,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1379:2: ( ( rule__MessageContent__Group_1__0 ) )
+                    // InternalSmartCE.g:1400:2: ( ( rule__MessageContent__Group_1__0 ) )
                     {
-                    // InternalSmartCE.g:1379:2: ( ( rule__MessageContent__Group_1__0 ) )
-                    // InternalSmartCE.g:1380:3: ( rule__MessageContent__Group_1__0 )
+                    // InternalSmartCE.g:1400:2: ( ( rule__MessageContent__Group_1__0 ) )
+                    // InternalSmartCE.g:1401:3: ( rule__MessageContent__Group_1__0 )
                     {
                      before(grammarAccess.getMessageContentAccess().getGroup_1()); 
-                    // InternalSmartCE.g:1381:3: ( rule__MessageContent__Group_1__0 )
-                    // InternalSmartCE.g:1381:4: rule__MessageContent__Group_1__0
+                    // InternalSmartCE.g:1402:3: ( rule__MessageContent__Group_1__0 )
+                    // InternalSmartCE.g:1402:4: rule__MessageContent__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__Group_1__0();
@@ -4278,14 +4389,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1385:2: ( ( rule__MessageContent__Group_2__0 ) )
+                    // InternalSmartCE.g:1406:2: ( ( rule__MessageContent__Group_2__0 ) )
                     {
-                    // InternalSmartCE.g:1385:2: ( ( rule__MessageContent__Group_2__0 ) )
-                    // InternalSmartCE.g:1386:3: ( rule__MessageContent__Group_2__0 )
+                    // InternalSmartCE.g:1406:2: ( ( rule__MessageContent__Group_2__0 ) )
+                    // InternalSmartCE.g:1407:3: ( rule__MessageContent__Group_2__0 )
                     {
                      before(grammarAccess.getMessageContentAccess().getGroup_2()); 
-                    // InternalSmartCE.g:1387:3: ( rule__MessageContent__Group_2__0 )
-                    // InternalSmartCE.g:1387:4: rule__MessageContent__Group_2__0
+                    // InternalSmartCE.g:1408:3: ( rule__MessageContent__Group_2__0 )
+                    // InternalSmartCE.g:1408:4: rule__MessageContent__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__Group_2__0();
@@ -4303,14 +4414,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1391:2: ( ( rule__MessageContent__Group_3__0 ) )
+                    // InternalSmartCE.g:1412:2: ( ( rule__MessageContent__Group_3__0 ) )
                     {
-                    // InternalSmartCE.g:1391:2: ( ( rule__MessageContent__Group_3__0 ) )
-                    // InternalSmartCE.g:1392:3: ( rule__MessageContent__Group_3__0 )
+                    // InternalSmartCE.g:1412:2: ( ( rule__MessageContent__Group_3__0 ) )
+                    // InternalSmartCE.g:1413:3: ( rule__MessageContent__Group_3__0 )
                     {
                      before(grammarAccess.getMessageContentAccess().getGroup_3()); 
-                    // InternalSmartCE.g:1393:3: ( rule__MessageContent__Group_3__0 )
-                    // InternalSmartCE.g:1393:4: rule__MessageContent__Group_3__0
+                    // InternalSmartCE.g:1414:3: ( rule__MessageContent__Group_3__0 )
+                    // InternalSmartCE.g:1414:4: rule__MessageContent__Group_3__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__Group_3__0();
@@ -4345,47 +4456,47 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Alternatives_2_4"
-    // InternalSmartCE.g:1401:1: rule__MessageContent__Alternatives_2_4 : ( ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) ) );
+    // InternalSmartCE.g:1422:1: rule__MessageContent__Alternatives_2_4 : ( ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) ) );
     public final void rule__MessageContent__Alternatives_2_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1405:1: ( ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) ) )
-            int alt8=3;
+            // InternalSmartCE.g:1426:1: ( ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) ) )
+            int alt9=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
                 {
-                alt8=1;
+                alt9=1;
                 }
                 break;
             case RULE_ID:
                 {
-                alt8=2;
+                alt9=2;
                 }
                 break;
             case RULE_INT:
                 {
-                alt8=3;
+                alt9=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalSmartCE.g:1406:2: ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) )
+                    // InternalSmartCE.g:1427:2: ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) )
                     {
-                    // InternalSmartCE.g:1406:2: ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) )
-                    // InternalSmartCE.g:1407:3: ( rule__MessageContent__StringValueAssignment_2_4_0 )
+                    // InternalSmartCE.g:1427:2: ( ( rule__MessageContent__StringValueAssignment_2_4_0 ) )
+                    // InternalSmartCE.g:1428:3: ( rule__MessageContent__StringValueAssignment_2_4_0 )
                     {
                      before(grammarAccess.getMessageContentAccess().getStringValueAssignment_2_4_0()); 
-                    // InternalSmartCE.g:1408:3: ( rule__MessageContent__StringValueAssignment_2_4_0 )
-                    // InternalSmartCE.g:1408:4: rule__MessageContent__StringValueAssignment_2_4_0
+                    // InternalSmartCE.g:1429:3: ( rule__MessageContent__StringValueAssignment_2_4_0 )
+                    // InternalSmartCE.g:1429:4: rule__MessageContent__StringValueAssignment_2_4_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__StringValueAssignment_2_4_0();
@@ -4403,14 +4514,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1412:2: ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) )
+                    // InternalSmartCE.g:1433:2: ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) )
                     {
-                    // InternalSmartCE.g:1412:2: ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) )
-                    // InternalSmartCE.g:1413:3: ( rule__MessageContent__VariableValueAssignment_2_4_1 )
+                    // InternalSmartCE.g:1433:2: ( ( rule__MessageContent__VariableValueAssignment_2_4_1 ) )
+                    // InternalSmartCE.g:1434:3: ( rule__MessageContent__VariableValueAssignment_2_4_1 )
                     {
                      before(grammarAccess.getMessageContentAccess().getVariableValueAssignment_2_4_1()); 
-                    // InternalSmartCE.g:1414:3: ( rule__MessageContent__VariableValueAssignment_2_4_1 )
-                    // InternalSmartCE.g:1414:4: rule__MessageContent__VariableValueAssignment_2_4_1
+                    // InternalSmartCE.g:1435:3: ( rule__MessageContent__VariableValueAssignment_2_4_1 )
+                    // InternalSmartCE.g:1435:4: rule__MessageContent__VariableValueAssignment_2_4_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__VariableValueAssignment_2_4_1();
@@ -4428,14 +4539,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1418:2: ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) )
+                    // InternalSmartCE.g:1439:2: ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) )
                     {
-                    // InternalSmartCE.g:1418:2: ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) )
-                    // InternalSmartCE.g:1419:3: ( rule__MessageContent__NumericValueAssignment_2_4_2 )
+                    // InternalSmartCE.g:1439:2: ( ( rule__MessageContent__NumericValueAssignment_2_4_2 ) )
+                    // InternalSmartCE.g:1440:3: ( rule__MessageContent__NumericValueAssignment_2_4_2 )
                     {
                      before(grammarAccess.getMessageContentAccess().getNumericValueAssignment_2_4_2()); 
-                    // InternalSmartCE.g:1420:3: ( rule__MessageContent__NumericValueAssignment_2_4_2 )
-                    // InternalSmartCE.g:1420:4: rule__MessageContent__NumericValueAssignment_2_4_2
+                    // InternalSmartCE.g:1441:3: ( rule__MessageContent__NumericValueAssignment_2_4_2 )
+                    // InternalSmartCE.g:1441:4: rule__MessageContent__NumericValueAssignment_2_4_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__NumericValueAssignment_2_4_2();
@@ -4470,47 +4581,47 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Alternatives_3_4"
-    // InternalSmartCE.g:1428:1: rule__MessageContent__Alternatives_3_4 : ( ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) ) );
+    // InternalSmartCE.g:1449:1: rule__MessageContent__Alternatives_3_4 : ( ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) ) );
     public final void rule__MessageContent__Alternatives_3_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1432:1: ( ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) ) )
-            int alt9=3;
+            // InternalSmartCE.g:1453:1: ( ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) ) | ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) ) | ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) ) )
+            int alt10=3;
             switch ( input.LA(1) ) {
             case RULE_STRING:
                 {
-                alt9=1;
+                alt10=1;
                 }
                 break;
             case RULE_ID:
                 {
-                alt9=2;
+                alt10=2;
                 }
                 break;
             case RULE_INT:
                 {
-                alt9=3;
+                alt10=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 9, 0, input);
+                    new NoViableAltException("", 10, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalSmartCE.g:1433:2: ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) )
+                    // InternalSmartCE.g:1454:2: ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) )
                     {
-                    // InternalSmartCE.g:1433:2: ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) )
-                    // InternalSmartCE.g:1434:3: ( rule__MessageContent__StringValueAssignment_3_4_0 )
+                    // InternalSmartCE.g:1454:2: ( ( rule__MessageContent__StringValueAssignment_3_4_0 ) )
+                    // InternalSmartCE.g:1455:3: ( rule__MessageContent__StringValueAssignment_3_4_0 )
                     {
                      before(grammarAccess.getMessageContentAccess().getStringValueAssignment_3_4_0()); 
-                    // InternalSmartCE.g:1435:3: ( rule__MessageContent__StringValueAssignment_3_4_0 )
-                    // InternalSmartCE.g:1435:4: rule__MessageContent__StringValueAssignment_3_4_0
+                    // InternalSmartCE.g:1456:3: ( rule__MessageContent__StringValueAssignment_3_4_0 )
+                    // InternalSmartCE.g:1456:4: rule__MessageContent__StringValueAssignment_3_4_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__StringValueAssignment_3_4_0();
@@ -4528,14 +4639,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1439:2: ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) )
+                    // InternalSmartCE.g:1460:2: ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) )
                     {
-                    // InternalSmartCE.g:1439:2: ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) )
-                    // InternalSmartCE.g:1440:3: ( rule__MessageContent__VariableValueAssignment_3_4_1 )
+                    // InternalSmartCE.g:1460:2: ( ( rule__MessageContent__VariableValueAssignment_3_4_1 ) )
+                    // InternalSmartCE.g:1461:3: ( rule__MessageContent__VariableValueAssignment_3_4_1 )
                     {
                      before(grammarAccess.getMessageContentAccess().getVariableValueAssignment_3_4_1()); 
-                    // InternalSmartCE.g:1441:3: ( rule__MessageContent__VariableValueAssignment_3_4_1 )
-                    // InternalSmartCE.g:1441:4: rule__MessageContent__VariableValueAssignment_3_4_1
+                    // InternalSmartCE.g:1462:3: ( rule__MessageContent__VariableValueAssignment_3_4_1 )
+                    // InternalSmartCE.g:1462:4: rule__MessageContent__VariableValueAssignment_3_4_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__VariableValueAssignment_3_4_1();
@@ -4553,14 +4664,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1445:2: ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) )
+                    // InternalSmartCE.g:1466:2: ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) )
                     {
-                    // InternalSmartCE.g:1445:2: ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) )
-                    // InternalSmartCE.g:1446:3: ( rule__MessageContent__NumericValueAssignment_3_4_2 )
+                    // InternalSmartCE.g:1466:2: ( ( rule__MessageContent__NumericValueAssignment_3_4_2 ) )
+                    // InternalSmartCE.g:1467:3: ( rule__MessageContent__NumericValueAssignment_3_4_2 )
                     {
                      before(grammarAccess.getMessageContentAccess().getNumericValueAssignment_3_4_2()); 
-                    // InternalSmartCE.g:1447:3: ( rule__MessageContent__NumericValueAssignment_3_4_2 )
-                    // InternalSmartCE.g:1447:4: rule__MessageContent__NumericValueAssignment_3_4_2
+                    // InternalSmartCE.g:1468:3: ( rule__MessageContent__NumericValueAssignment_3_4_2 )
+                    // InternalSmartCE.g:1468:4: rule__MessageContent__NumericValueAssignment_3_4_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__NumericValueAssignment_3_4_2();
@@ -4595,62 +4706,62 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinaryOperator__Alternatives"
-    // InternalSmartCE.g:1455:1: rule__BinaryOperator__Alternatives : ( ( ( rule__BinaryOperator__SymbolAssignment_0 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_1 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_2 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_3 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_4 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_5 ) ) );
+    // InternalSmartCE.g:1476:1: rule__BinaryOperator__Alternatives : ( ( ( rule__BinaryOperator__SymbolAssignment_0 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_1 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_2 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_3 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_4 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_5 ) ) );
     public final void rule__BinaryOperator__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1459:1: ( ( ( rule__BinaryOperator__SymbolAssignment_0 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_1 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_2 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_3 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_4 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_5 ) ) )
-            int alt10=6;
+            // InternalSmartCE.g:1480:1: ( ( ( rule__BinaryOperator__SymbolAssignment_0 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_1 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_2 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_3 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_4 ) ) | ( ( rule__BinaryOperator__SymbolAssignment_5 ) ) )
+            int alt11=6;
             switch ( input.LA(1) ) {
+            case 74:
+                {
+                alt11=1;
+                }
+                break;
+            case 75:
+                {
+                alt11=2;
+                }
+                break;
             case 76:
                 {
-                alt10=1;
+                alt11=3;
                 }
                 break;
             case 77:
                 {
-                alt10=2;
+                alt11=4;
                 }
                 break;
             case 78:
                 {
-                alt10=3;
+                alt11=5;
                 }
                 break;
             case 79:
                 {
-                alt10=4;
-                }
-                break;
-            case 80:
-                {
-                alt10=5;
-                }
-                break;
-            case 81:
-                {
-                alt10=6;
+                alt11=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 10, 0, input);
+                    new NoViableAltException("", 11, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalSmartCE.g:1460:2: ( ( rule__BinaryOperator__SymbolAssignment_0 ) )
+                    // InternalSmartCE.g:1481:2: ( ( rule__BinaryOperator__SymbolAssignment_0 ) )
                     {
-                    // InternalSmartCE.g:1460:2: ( ( rule__BinaryOperator__SymbolAssignment_0 ) )
-                    // InternalSmartCE.g:1461:3: ( rule__BinaryOperator__SymbolAssignment_0 )
+                    // InternalSmartCE.g:1481:2: ( ( rule__BinaryOperator__SymbolAssignment_0 ) )
+                    // InternalSmartCE.g:1482:3: ( rule__BinaryOperator__SymbolAssignment_0 )
                     {
                      before(grammarAccess.getBinaryOperatorAccess().getSymbolAssignment_0()); 
-                    // InternalSmartCE.g:1462:3: ( rule__BinaryOperator__SymbolAssignment_0 )
-                    // InternalSmartCE.g:1462:4: rule__BinaryOperator__SymbolAssignment_0
+                    // InternalSmartCE.g:1483:3: ( rule__BinaryOperator__SymbolAssignment_0 )
+                    // InternalSmartCE.g:1483:4: rule__BinaryOperator__SymbolAssignment_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__BinaryOperator__SymbolAssignment_0();
@@ -4668,14 +4779,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1466:2: ( ( rule__BinaryOperator__SymbolAssignment_1 ) )
+                    // InternalSmartCE.g:1487:2: ( ( rule__BinaryOperator__SymbolAssignment_1 ) )
                     {
-                    // InternalSmartCE.g:1466:2: ( ( rule__BinaryOperator__SymbolAssignment_1 ) )
-                    // InternalSmartCE.g:1467:3: ( rule__BinaryOperator__SymbolAssignment_1 )
+                    // InternalSmartCE.g:1487:2: ( ( rule__BinaryOperator__SymbolAssignment_1 ) )
+                    // InternalSmartCE.g:1488:3: ( rule__BinaryOperator__SymbolAssignment_1 )
                     {
                      before(grammarAccess.getBinaryOperatorAccess().getSymbolAssignment_1()); 
-                    // InternalSmartCE.g:1468:3: ( rule__BinaryOperator__SymbolAssignment_1 )
-                    // InternalSmartCE.g:1468:4: rule__BinaryOperator__SymbolAssignment_1
+                    // InternalSmartCE.g:1489:3: ( rule__BinaryOperator__SymbolAssignment_1 )
+                    // InternalSmartCE.g:1489:4: rule__BinaryOperator__SymbolAssignment_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__BinaryOperator__SymbolAssignment_1();
@@ -4693,14 +4804,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1472:2: ( ( rule__BinaryOperator__SymbolAssignment_2 ) )
+                    // InternalSmartCE.g:1493:2: ( ( rule__BinaryOperator__SymbolAssignment_2 ) )
                     {
-                    // InternalSmartCE.g:1472:2: ( ( rule__BinaryOperator__SymbolAssignment_2 ) )
-                    // InternalSmartCE.g:1473:3: ( rule__BinaryOperator__SymbolAssignment_2 )
+                    // InternalSmartCE.g:1493:2: ( ( rule__BinaryOperator__SymbolAssignment_2 ) )
+                    // InternalSmartCE.g:1494:3: ( rule__BinaryOperator__SymbolAssignment_2 )
                     {
                      before(grammarAccess.getBinaryOperatorAccess().getSymbolAssignment_2()); 
-                    // InternalSmartCE.g:1474:3: ( rule__BinaryOperator__SymbolAssignment_2 )
-                    // InternalSmartCE.g:1474:4: rule__BinaryOperator__SymbolAssignment_2
+                    // InternalSmartCE.g:1495:3: ( rule__BinaryOperator__SymbolAssignment_2 )
+                    // InternalSmartCE.g:1495:4: rule__BinaryOperator__SymbolAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__BinaryOperator__SymbolAssignment_2();
@@ -4718,14 +4829,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1478:2: ( ( rule__BinaryOperator__SymbolAssignment_3 ) )
+                    // InternalSmartCE.g:1499:2: ( ( rule__BinaryOperator__SymbolAssignment_3 ) )
                     {
-                    // InternalSmartCE.g:1478:2: ( ( rule__BinaryOperator__SymbolAssignment_3 ) )
-                    // InternalSmartCE.g:1479:3: ( rule__BinaryOperator__SymbolAssignment_3 )
+                    // InternalSmartCE.g:1499:2: ( ( rule__BinaryOperator__SymbolAssignment_3 ) )
+                    // InternalSmartCE.g:1500:3: ( rule__BinaryOperator__SymbolAssignment_3 )
                     {
                      before(grammarAccess.getBinaryOperatorAccess().getSymbolAssignment_3()); 
-                    // InternalSmartCE.g:1480:3: ( rule__BinaryOperator__SymbolAssignment_3 )
-                    // InternalSmartCE.g:1480:4: rule__BinaryOperator__SymbolAssignment_3
+                    // InternalSmartCE.g:1501:3: ( rule__BinaryOperator__SymbolAssignment_3 )
+                    // InternalSmartCE.g:1501:4: rule__BinaryOperator__SymbolAssignment_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__BinaryOperator__SymbolAssignment_3();
@@ -4743,14 +4854,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1484:2: ( ( rule__BinaryOperator__SymbolAssignment_4 ) )
+                    // InternalSmartCE.g:1505:2: ( ( rule__BinaryOperator__SymbolAssignment_4 ) )
                     {
-                    // InternalSmartCE.g:1484:2: ( ( rule__BinaryOperator__SymbolAssignment_4 ) )
-                    // InternalSmartCE.g:1485:3: ( rule__BinaryOperator__SymbolAssignment_4 )
+                    // InternalSmartCE.g:1505:2: ( ( rule__BinaryOperator__SymbolAssignment_4 ) )
+                    // InternalSmartCE.g:1506:3: ( rule__BinaryOperator__SymbolAssignment_4 )
                     {
                      before(grammarAccess.getBinaryOperatorAccess().getSymbolAssignment_4()); 
-                    // InternalSmartCE.g:1486:3: ( rule__BinaryOperator__SymbolAssignment_4 )
-                    // InternalSmartCE.g:1486:4: rule__BinaryOperator__SymbolAssignment_4
+                    // InternalSmartCE.g:1507:3: ( rule__BinaryOperator__SymbolAssignment_4 )
+                    // InternalSmartCE.g:1507:4: rule__BinaryOperator__SymbolAssignment_4
                     {
                     pushFollow(FOLLOW_2);
                     rule__BinaryOperator__SymbolAssignment_4();
@@ -4768,14 +4879,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:1490:2: ( ( rule__BinaryOperator__SymbolAssignment_5 ) )
+                    // InternalSmartCE.g:1511:2: ( ( rule__BinaryOperator__SymbolAssignment_5 ) )
                     {
-                    // InternalSmartCE.g:1490:2: ( ( rule__BinaryOperator__SymbolAssignment_5 ) )
-                    // InternalSmartCE.g:1491:3: ( rule__BinaryOperator__SymbolAssignment_5 )
+                    // InternalSmartCE.g:1511:2: ( ( rule__BinaryOperator__SymbolAssignment_5 ) )
+                    // InternalSmartCE.g:1512:3: ( rule__BinaryOperator__SymbolAssignment_5 )
                     {
                      before(grammarAccess.getBinaryOperatorAccess().getSymbolAssignment_5()); 
-                    // InternalSmartCE.g:1492:3: ( rule__BinaryOperator__SymbolAssignment_5 )
-                    // InternalSmartCE.g:1492:4: rule__BinaryOperator__SymbolAssignment_5
+                    // InternalSmartCE.g:1513:3: ( rule__BinaryOperator__SymbolAssignment_5 )
+                    // InternalSmartCE.g:1513:4: rule__BinaryOperator__SymbolAssignment_5
                     {
                     pushFollow(FOLLOW_2);
                     rule__BinaryOperator__SymbolAssignment_5();
@@ -4810,34 +4921,34 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Alternatives"
-    // InternalSmartCE.g:1500:1: rule__Action__Alternatives : ( ( ruleBusinessAction ) | ( ruleEventLog ) );
+    // InternalSmartCE.g:1521:1: rule__Action__Alternatives : ( ( ruleBusinessAction ) | ( ruleEventLog ) );
     public final void rule__Action__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1504:1: ( ( ruleBusinessAction ) | ( ruleEventLog ) )
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalSmartCE.g:1525:1: ( ( ruleBusinessAction ) | ( ruleEventLog ) )
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==71) ) {
-                alt11=1;
+            if ( (LA12_0==80) ) {
+                alt12=1;
             }
-            else if ( (LA11_0==72) ) {
-                alt11=2;
+            else if ( (LA12_0==81) ) {
+                alt12=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 11, 0, input);
+                    new NoViableAltException("", 12, 0, input);
 
                 throw nvae;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalSmartCE.g:1505:2: ( ruleBusinessAction )
+                    // InternalSmartCE.g:1526:2: ( ruleBusinessAction )
                     {
-                    // InternalSmartCE.g:1505:2: ( ruleBusinessAction )
-                    // InternalSmartCE.g:1506:3: ruleBusinessAction
+                    // InternalSmartCE.g:1526:2: ( ruleBusinessAction )
+                    // InternalSmartCE.g:1527:3: ruleBusinessAction
                     {
                      before(grammarAccess.getActionAccess().getBusinessActionParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -4853,10 +4964,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1511:2: ( ruleEventLog )
+                    // InternalSmartCE.g:1532:2: ( ruleEventLog )
                     {
-                    // InternalSmartCE.g:1511:2: ( ruleEventLog )
-                    // InternalSmartCE.g:1512:3: ruleEventLog
+                    // InternalSmartCE.g:1532:2: ( ruleEventLog )
+                    // InternalSmartCE.g:1533:3: ruleEventLog
                     {
                      before(grammarAccess.getActionAccess().getEventLogParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -4889,38 +5000,52 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Alternatives_1_1"
-    // InternalSmartCE.g:1521:1: rule__Expression__Alternatives_1_1 : ( ( ( rule__Expression__SymbolAssignment_1_1_0 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_1 ) ) );
+    // InternalSmartCE.g:1542:1: rule__Expression__Alternatives_1_1 : ( ( ( rule__Expression__SymbolAssignment_1_1_0 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_1 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_2 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_3 ) ) );
     public final void rule__Expression__Alternatives_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1525:1: ( ( ( rule__Expression__SymbolAssignment_1_1_0 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_1 ) ) )
-            int alt12=2;
-            int LA12_0 = input.LA(1);
-
-            if ( (LA12_0==82) ) {
-                alt12=1;
-            }
-            else if ( (LA12_0==83) ) {
-                alt12=2;
-            }
-            else {
+            // InternalSmartCE.g:1546:1: ( ( ( rule__Expression__SymbolAssignment_1_1_0 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_1 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_2 ) ) | ( ( rule__Expression__SymbolAssignment_1_1_3 ) ) )
+            int alt13=4;
+            switch ( input.LA(1) ) {
+            case 16:
+                {
+                alt13=1;
+                }
+                break;
+            case 82:
+                {
+                alt13=2;
+                }
+                break;
+            case 83:
+                {
+                alt13=3;
+                }
+                break;
+            case 17:
+                {
+                alt13=4;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 12, 0, input);
+                    new NoViableAltException("", 13, 0, input);
 
                 throw nvae;
             }
-            switch (alt12) {
+
+            switch (alt13) {
                 case 1 :
-                    // InternalSmartCE.g:1526:2: ( ( rule__Expression__SymbolAssignment_1_1_0 ) )
+                    // InternalSmartCE.g:1547:2: ( ( rule__Expression__SymbolAssignment_1_1_0 ) )
                     {
-                    // InternalSmartCE.g:1526:2: ( ( rule__Expression__SymbolAssignment_1_1_0 ) )
-                    // InternalSmartCE.g:1527:3: ( rule__Expression__SymbolAssignment_1_1_0 )
+                    // InternalSmartCE.g:1547:2: ( ( rule__Expression__SymbolAssignment_1_1_0 ) )
+                    // InternalSmartCE.g:1548:3: ( rule__Expression__SymbolAssignment_1_1_0 )
                     {
                      before(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_0()); 
-                    // InternalSmartCE.g:1528:3: ( rule__Expression__SymbolAssignment_1_1_0 )
-                    // InternalSmartCE.g:1528:4: rule__Expression__SymbolAssignment_1_1_0
+                    // InternalSmartCE.g:1549:3: ( rule__Expression__SymbolAssignment_1_1_0 )
+                    // InternalSmartCE.g:1549:4: rule__Expression__SymbolAssignment_1_1_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Expression__SymbolAssignment_1_1_0();
@@ -4938,14 +5063,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1532:2: ( ( rule__Expression__SymbolAssignment_1_1_1 ) )
+                    // InternalSmartCE.g:1553:2: ( ( rule__Expression__SymbolAssignment_1_1_1 ) )
                     {
-                    // InternalSmartCE.g:1532:2: ( ( rule__Expression__SymbolAssignment_1_1_1 ) )
-                    // InternalSmartCE.g:1533:3: ( rule__Expression__SymbolAssignment_1_1_1 )
+                    // InternalSmartCE.g:1553:2: ( ( rule__Expression__SymbolAssignment_1_1_1 ) )
+                    // InternalSmartCE.g:1554:3: ( rule__Expression__SymbolAssignment_1_1_1 )
                     {
                      before(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_1()); 
-                    // InternalSmartCE.g:1534:3: ( rule__Expression__SymbolAssignment_1_1_1 )
-                    // InternalSmartCE.g:1534:4: rule__Expression__SymbolAssignment_1_1_1
+                    // InternalSmartCE.g:1555:3: ( rule__Expression__SymbolAssignment_1_1_1 )
+                    // InternalSmartCE.g:1555:4: rule__Expression__SymbolAssignment_1_1_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Expression__SymbolAssignment_1_1_1();
@@ -4956,6 +5081,56 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
 
                      after(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_1()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSmartCE.g:1559:2: ( ( rule__Expression__SymbolAssignment_1_1_2 ) )
+                    {
+                    // InternalSmartCE.g:1559:2: ( ( rule__Expression__SymbolAssignment_1_1_2 ) )
+                    // InternalSmartCE.g:1560:3: ( rule__Expression__SymbolAssignment_1_1_2 )
+                    {
+                     before(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_2()); 
+                    // InternalSmartCE.g:1561:3: ( rule__Expression__SymbolAssignment_1_1_2 )
+                    // InternalSmartCE.g:1561:4: rule__Expression__SymbolAssignment_1_1_2
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Expression__SymbolAssignment_1_1_2();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_2()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 4 :
+                    // InternalSmartCE.g:1565:2: ( ( rule__Expression__SymbolAssignment_1_1_3 ) )
+                    {
+                    // InternalSmartCE.g:1565:2: ( ( rule__Expression__SymbolAssignment_1_1_3 ) )
+                    // InternalSmartCE.g:1566:3: ( rule__Expression__SymbolAssignment_1_1_3 )
+                    {
+                     before(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_3()); 
+                    // InternalSmartCE.g:1567:3: ( rule__Expression__SymbolAssignment_1_1_3 )
+                    // InternalSmartCE.g:1567:4: rule__Expression__SymbolAssignment_1_1_3
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Expression__SymbolAssignment_1_1_3();
+
+                    state._fsp--;
+
+
+                    }
+
+                     after(grammarAccess.getExpressionAccess().getSymbolAssignment_1_1_3()); 
 
                     }
 
@@ -4980,34 +5155,34 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__Alternatives"
-    // InternalSmartCE.g:1542:1: rule__Negation__Alternatives : ( ( ruleComparison ) | ( ( rule__Negation__Group_1__0 ) ) );
+    // InternalSmartCE.g:1575:1: rule__Negation__Alternatives : ( ( ruleComparison ) | ( ( rule__Negation__Group_1__0 ) ) );
     public final void rule__Negation__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1546:1: ( ( ruleComparison ) | ( ( rule__Negation__Group_1__0 ) ) )
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalSmartCE.g:1579:1: ( ( ruleComparison ) | ( ( rule__Negation__Group_1__0 ) ) )
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( ((LA13_0>=RULE_INT && LA13_0<=RULE_STRING)||LA13_0==20||LA13_0==58) ) {
-                alt13=1;
+            if ( ((LA14_0>=RULE_INT && LA14_0<=RULE_STRING)||LA14_0==20||LA14_0==60) ) {
+                alt14=1;
             }
-            else if ( (LA13_0==84) ) {
-                alt13=2;
+            else if ( (LA14_0==84) ) {
+                alt14=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 13, 0, input);
+                    new NoViableAltException("", 14, 0, input);
 
                 throw nvae;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalSmartCE.g:1547:2: ( ruleComparison )
+                    // InternalSmartCE.g:1580:2: ( ruleComparison )
                     {
-                    // InternalSmartCE.g:1547:2: ( ruleComparison )
-                    // InternalSmartCE.g:1548:3: ruleComparison
+                    // InternalSmartCE.g:1580:2: ( ruleComparison )
+                    // InternalSmartCE.g:1581:3: ruleComparison
                     {
                      before(grammarAccess.getNegationAccess().getComparisonParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -5023,14 +5198,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1553:2: ( ( rule__Negation__Group_1__0 ) )
+                    // InternalSmartCE.g:1586:2: ( ( rule__Negation__Group_1__0 ) )
                     {
-                    // InternalSmartCE.g:1553:2: ( ( rule__Negation__Group_1__0 ) )
-                    // InternalSmartCE.g:1554:3: ( rule__Negation__Group_1__0 )
+                    // InternalSmartCE.g:1586:2: ( ( rule__Negation__Group_1__0 ) )
+                    // InternalSmartCE.g:1587:3: ( rule__Negation__Group_1__0 )
                     {
                      before(grammarAccess.getNegationAccess().getGroup_1()); 
-                    // InternalSmartCE.g:1555:3: ( rule__Negation__Group_1__0 )
-                    // InternalSmartCE.g:1555:4: rule__Negation__Group_1__0
+                    // InternalSmartCE.g:1588:3: ( rule__Negation__Group_1__0 )
+                    // InternalSmartCE.g:1588:4: rule__Negation__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Negation__Group_1__0();
@@ -5065,72 +5240,72 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Alternatives_1_1"
-    // InternalSmartCE.g:1563:1: rule__Comparison__Alternatives_1_1 : ( ( ( rule__Comparison__SymbolAssignment_1_1_0 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_1 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_2 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_3 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_4 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_5 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_6 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_7 ) ) );
+    // InternalSmartCE.g:1596:1: rule__Comparison__Alternatives_1_1 : ( ( ( rule__Comparison__SymbolAssignment_1_1_0 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_1 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_2 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_3 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_4 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_5 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_6 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_7 ) ) );
     public final void rule__Comparison__Alternatives_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1567:1: ( ( ( rule__Comparison__SymbolAssignment_1_1_0 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_1 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_2 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_3 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_4 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_5 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_6 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_7 ) ) )
-            int alt14=8;
+            // InternalSmartCE.g:1600:1: ( ( ( rule__Comparison__SymbolAssignment_1_1_0 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_1 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_2 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_3 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_4 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_5 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_6 ) ) | ( ( rule__Comparison__SymbolAssignment_1_1_7 ) ) )
+            int alt15=8;
             switch ( input.LA(1) ) {
+            case 74:
+                {
+                alt15=1;
+                }
+                break;
+            case 75:
+                {
+                alt15=2;
+                }
+                break;
             case 76:
                 {
-                alt14=1;
+                alt15=3;
                 }
                 break;
             case 77:
                 {
-                alt14=2;
+                alt15=4;
                 }
                 break;
             case 78:
                 {
-                alt14=3;
+                alt15=5;
                 }
                 break;
             case 79:
                 {
-                alt14=4;
-                }
-                break;
-            case 80:
-                {
-                alt14=5;
-                }
-                break;
-            case 81:
-                {
-                alt14=6;
+                alt15=6;
                 }
                 break;
             case 85:
                 {
-                alt14=7;
+                alt15=7;
                 }
                 break;
             case 86:
                 {
-                alt14=8;
+                alt15=8;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // InternalSmartCE.g:1568:2: ( ( rule__Comparison__SymbolAssignment_1_1_0 ) )
+                    // InternalSmartCE.g:1601:2: ( ( rule__Comparison__SymbolAssignment_1_1_0 ) )
                     {
-                    // InternalSmartCE.g:1568:2: ( ( rule__Comparison__SymbolAssignment_1_1_0 ) )
-                    // InternalSmartCE.g:1569:3: ( rule__Comparison__SymbolAssignment_1_1_0 )
+                    // InternalSmartCE.g:1601:2: ( ( rule__Comparison__SymbolAssignment_1_1_0 ) )
+                    // InternalSmartCE.g:1602:3: ( rule__Comparison__SymbolAssignment_1_1_0 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_0()); 
-                    // InternalSmartCE.g:1570:3: ( rule__Comparison__SymbolAssignment_1_1_0 )
-                    // InternalSmartCE.g:1570:4: rule__Comparison__SymbolAssignment_1_1_0
+                    // InternalSmartCE.g:1603:3: ( rule__Comparison__SymbolAssignment_1_1_0 )
+                    // InternalSmartCE.g:1603:4: rule__Comparison__SymbolAssignment_1_1_0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_0();
@@ -5148,14 +5323,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1574:2: ( ( rule__Comparison__SymbolAssignment_1_1_1 ) )
+                    // InternalSmartCE.g:1607:2: ( ( rule__Comparison__SymbolAssignment_1_1_1 ) )
                     {
-                    // InternalSmartCE.g:1574:2: ( ( rule__Comparison__SymbolAssignment_1_1_1 ) )
-                    // InternalSmartCE.g:1575:3: ( rule__Comparison__SymbolAssignment_1_1_1 )
+                    // InternalSmartCE.g:1607:2: ( ( rule__Comparison__SymbolAssignment_1_1_1 ) )
+                    // InternalSmartCE.g:1608:3: ( rule__Comparison__SymbolAssignment_1_1_1 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_1()); 
-                    // InternalSmartCE.g:1576:3: ( rule__Comparison__SymbolAssignment_1_1_1 )
-                    // InternalSmartCE.g:1576:4: rule__Comparison__SymbolAssignment_1_1_1
+                    // InternalSmartCE.g:1609:3: ( rule__Comparison__SymbolAssignment_1_1_1 )
+                    // InternalSmartCE.g:1609:4: rule__Comparison__SymbolAssignment_1_1_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_1();
@@ -5173,14 +5348,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1580:2: ( ( rule__Comparison__SymbolAssignment_1_1_2 ) )
+                    // InternalSmartCE.g:1613:2: ( ( rule__Comparison__SymbolAssignment_1_1_2 ) )
                     {
-                    // InternalSmartCE.g:1580:2: ( ( rule__Comparison__SymbolAssignment_1_1_2 ) )
-                    // InternalSmartCE.g:1581:3: ( rule__Comparison__SymbolAssignment_1_1_2 )
+                    // InternalSmartCE.g:1613:2: ( ( rule__Comparison__SymbolAssignment_1_1_2 ) )
+                    // InternalSmartCE.g:1614:3: ( rule__Comparison__SymbolAssignment_1_1_2 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_2()); 
-                    // InternalSmartCE.g:1582:3: ( rule__Comparison__SymbolAssignment_1_1_2 )
-                    // InternalSmartCE.g:1582:4: rule__Comparison__SymbolAssignment_1_1_2
+                    // InternalSmartCE.g:1615:3: ( rule__Comparison__SymbolAssignment_1_1_2 )
+                    // InternalSmartCE.g:1615:4: rule__Comparison__SymbolAssignment_1_1_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_2();
@@ -5198,14 +5373,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1586:2: ( ( rule__Comparison__SymbolAssignment_1_1_3 ) )
+                    // InternalSmartCE.g:1619:2: ( ( rule__Comparison__SymbolAssignment_1_1_3 ) )
                     {
-                    // InternalSmartCE.g:1586:2: ( ( rule__Comparison__SymbolAssignment_1_1_3 ) )
-                    // InternalSmartCE.g:1587:3: ( rule__Comparison__SymbolAssignment_1_1_3 )
+                    // InternalSmartCE.g:1619:2: ( ( rule__Comparison__SymbolAssignment_1_1_3 ) )
+                    // InternalSmartCE.g:1620:3: ( rule__Comparison__SymbolAssignment_1_1_3 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_3()); 
-                    // InternalSmartCE.g:1588:3: ( rule__Comparison__SymbolAssignment_1_1_3 )
-                    // InternalSmartCE.g:1588:4: rule__Comparison__SymbolAssignment_1_1_3
+                    // InternalSmartCE.g:1621:3: ( rule__Comparison__SymbolAssignment_1_1_3 )
+                    // InternalSmartCE.g:1621:4: rule__Comparison__SymbolAssignment_1_1_3
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_3();
@@ -5223,14 +5398,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1592:2: ( ( rule__Comparison__SymbolAssignment_1_1_4 ) )
+                    // InternalSmartCE.g:1625:2: ( ( rule__Comparison__SymbolAssignment_1_1_4 ) )
                     {
-                    // InternalSmartCE.g:1592:2: ( ( rule__Comparison__SymbolAssignment_1_1_4 ) )
-                    // InternalSmartCE.g:1593:3: ( rule__Comparison__SymbolAssignment_1_1_4 )
+                    // InternalSmartCE.g:1625:2: ( ( rule__Comparison__SymbolAssignment_1_1_4 ) )
+                    // InternalSmartCE.g:1626:3: ( rule__Comparison__SymbolAssignment_1_1_4 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_4()); 
-                    // InternalSmartCE.g:1594:3: ( rule__Comparison__SymbolAssignment_1_1_4 )
-                    // InternalSmartCE.g:1594:4: rule__Comparison__SymbolAssignment_1_1_4
+                    // InternalSmartCE.g:1627:3: ( rule__Comparison__SymbolAssignment_1_1_4 )
+                    // InternalSmartCE.g:1627:4: rule__Comparison__SymbolAssignment_1_1_4
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_4();
@@ -5248,14 +5423,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:1598:2: ( ( rule__Comparison__SymbolAssignment_1_1_5 ) )
+                    // InternalSmartCE.g:1631:2: ( ( rule__Comparison__SymbolAssignment_1_1_5 ) )
                     {
-                    // InternalSmartCE.g:1598:2: ( ( rule__Comparison__SymbolAssignment_1_1_5 ) )
-                    // InternalSmartCE.g:1599:3: ( rule__Comparison__SymbolAssignment_1_1_5 )
+                    // InternalSmartCE.g:1631:2: ( ( rule__Comparison__SymbolAssignment_1_1_5 ) )
+                    // InternalSmartCE.g:1632:3: ( rule__Comparison__SymbolAssignment_1_1_5 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_5()); 
-                    // InternalSmartCE.g:1600:3: ( rule__Comparison__SymbolAssignment_1_1_5 )
-                    // InternalSmartCE.g:1600:4: rule__Comparison__SymbolAssignment_1_1_5
+                    // InternalSmartCE.g:1633:3: ( rule__Comparison__SymbolAssignment_1_1_5 )
+                    // InternalSmartCE.g:1633:4: rule__Comparison__SymbolAssignment_1_1_5
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_5();
@@ -5273,14 +5448,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCE.g:1604:2: ( ( rule__Comparison__SymbolAssignment_1_1_6 ) )
+                    // InternalSmartCE.g:1637:2: ( ( rule__Comparison__SymbolAssignment_1_1_6 ) )
                     {
-                    // InternalSmartCE.g:1604:2: ( ( rule__Comparison__SymbolAssignment_1_1_6 ) )
-                    // InternalSmartCE.g:1605:3: ( rule__Comparison__SymbolAssignment_1_1_6 )
+                    // InternalSmartCE.g:1637:2: ( ( rule__Comparison__SymbolAssignment_1_1_6 ) )
+                    // InternalSmartCE.g:1638:3: ( rule__Comparison__SymbolAssignment_1_1_6 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_6()); 
-                    // InternalSmartCE.g:1606:3: ( rule__Comparison__SymbolAssignment_1_1_6 )
-                    // InternalSmartCE.g:1606:4: rule__Comparison__SymbolAssignment_1_1_6
+                    // InternalSmartCE.g:1639:3: ( rule__Comparison__SymbolAssignment_1_1_6 )
+                    // InternalSmartCE.g:1639:4: rule__Comparison__SymbolAssignment_1_1_6
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_6();
@@ -5298,14 +5473,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 8 :
-                    // InternalSmartCE.g:1610:2: ( ( rule__Comparison__SymbolAssignment_1_1_7 ) )
+                    // InternalSmartCE.g:1643:2: ( ( rule__Comparison__SymbolAssignment_1_1_7 ) )
                     {
-                    // InternalSmartCE.g:1610:2: ( ( rule__Comparison__SymbolAssignment_1_1_7 ) )
-                    // InternalSmartCE.g:1611:3: ( rule__Comparison__SymbolAssignment_1_1_7 )
+                    // InternalSmartCE.g:1643:2: ( ( rule__Comparison__SymbolAssignment_1_1_7 ) )
+                    // InternalSmartCE.g:1644:3: ( rule__Comparison__SymbolAssignment_1_1_7 )
                     {
                      before(grammarAccess.getComparisonAccess().getSymbolAssignment_1_1_7()); 
-                    // InternalSmartCE.g:1612:3: ( rule__Comparison__SymbolAssignment_1_1_7 )
-                    // InternalSmartCE.g:1612:4: rule__Comparison__SymbolAssignment_1_1_7
+                    // InternalSmartCE.g:1645:3: ( rule__Comparison__SymbolAssignment_1_1_7 )
+                    // InternalSmartCE.g:1645:4: rule__Comparison__SymbolAssignment_1_1_7
                     {
                     pushFollow(FOLLOW_2);
                     rule__Comparison__SymbolAssignment_1_1_7();
@@ -5340,34 +5515,34 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Alternatives_1_1"
-    // InternalSmartCE.g:1620:1: rule__Plus__Alternatives_1_1 : ( ( '+' ) | ( '-' ) );
+    // InternalSmartCE.g:1653:1: rule__Plus__Alternatives_1_1 : ( ( '+' ) | ( '-' ) );
     public final void rule__Plus__Alternatives_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1624:1: ( ( '+' ) | ( '-' ) )
-            int alt15=2;
-            int LA15_0 = input.LA(1);
+            // InternalSmartCE.g:1657:1: ( ( '+' ) | ( '-' ) )
+            int alt16=2;
+            int LA16_0 = input.LA(1);
 
-            if ( (LA15_0==19) ) {
-                alt15=1;
+            if ( (LA16_0==19) ) {
+                alt16=1;
             }
-            else if ( (LA15_0==20) ) {
-                alt15=2;
+            else if ( (LA16_0==20) ) {
+                alt16=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 15, 0, input);
+                    new NoViableAltException("", 16, 0, input);
 
                 throw nvae;
             }
-            switch (alt15) {
+            switch (alt16) {
                 case 1 :
-                    // InternalSmartCE.g:1625:2: ( '+' )
+                    // InternalSmartCE.g:1658:2: ( '+' )
                     {
-                    // InternalSmartCE.g:1625:2: ( '+' )
-                    // InternalSmartCE.g:1626:3: '+'
+                    // InternalSmartCE.g:1658:2: ( '+' )
+                    // InternalSmartCE.g:1659:3: '+'
                     {
                      before(grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0()); 
                     match(input,19,FOLLOW_2); 
@@ -5379,10 +5554,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1631:2: ( '-' )
+                    // InternalSmartCE.g:1664:2: ( '-' )
                     {
-                    // InternalSmartCE.g:1631:2: ( '-' )
-                    // InternalSmartCE.g:1632:3: '-'
+                    // InternalSmartCE.g:1664:2: ( '-' )
+                    // InternalSmartCE.g:1665:3: '-'
                     {
                      before(grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1()); 
                     match(input,20,FOLLOW_2); 
@@ -5411,34 +5586,34 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Alternatives_1_1"
-    // InternalSmartCE.g:1641:1: rule__Factor__Alternatives_1_1 : ( ( '*' ) | ( '/' ) );
+    // InternalSmartCE.g:1674:1: rule__Factor__Alternatives_1_1 : ( ( '*' ) | ( '/' ) );
     public final void rule__Factor__Alternatives_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1645:1: ( ( '*' ) | ( '/' ) )
-            int alt16=2;
-            int LA16_0 = input.LA(1);
+            // InternalSmartCE.g:1678:1: ( ( '*' ) | ( '/' ) )
+            int alt17=2;
+            int LA17_0 = input.LA(1);
 
-            if ( (LA16_0==21) ) {
-                alt16=1;
+            if ( (LA17_0==21) ) {
+                alt17=1;
             }
-            else if ( (LA16_0==22) ) {
-                alt16=2;
+            else if ( (LA17_0==22) ) {
+                alt17=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 16, 0, input);
+                    new NoViableAltException("", 17, 0, input);
 
                 throw nvae;
             }
-            switch (alt16) {
+            switch (alt17) {
                 case 1 :
-                    // InternalSmartCE.g:1646:2: ( '*' )
+                    // InternalSmartCE.g:1679:2: ( '*' )
                     {
-                    // InternalSmartCE.g:1646:2: ( '*' )
-                    // InternalSmartCE.g:1647:3: '*'
+                    // InternalSmartCE.g:1679:2: ( '*' )
+                    // InternalSmartCE.g:1680:3: '*'
                     {
                      before(grammarAccess.getFactorAccess().getAsteriskKeyword_1_1_0()); 
                     match(input,21,FOLLOW_2); 
@@ -5450,10 +5625,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1652:2: ( '/' )
+                    // InternalSmartCE.g:1685:2: ( '/' )
                     {
-                    // InternalSmartCE.g:1652:2: ( '/' )
-                    // InternalSmartCE.g:1653:3: '/'
+                    // InternalSmartCE.g:1685:2: ( '/' )
+                    // InternalSmartCE.g:1686:3: '/'
                     {
                      before(grammarAccess.getFactorAccess().getSolidusKeyword_1_1_1()); 
                     match(input,22,FOLLOW_2); 
@@ -5482,34 +5657,34 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__Alternatives"
-    // InternalSmartCE.g:1662:1: rule__Negative__Alternatives : ( ( rulePrimary ) | ( ( rule__Negative__Group_1__0 ) ) );
+    // InternalSmartCE.g:1695:1: rule__Negative__Alternatives : ( ( rulePrimary ) | ( ( rule__Negative__Group_1__0 ) ) );
     public final void rule__Negative__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1666:1: ( ( rulePrimary ) | ( ( rule__Negative__Group_1__0 ) ) )
-            int alt17=2;
-            int LA17_0 = input.LA(1);
+            // InternalSmartCE.g:1699:1: ( ( rulePrimary ) | ( ( rule__Negative__Group_1__0 ) ) )
+            int alt18=2;
+            int LA18_0 = input.LA(1);
 
-            if ( ((LA17_0>=RULE_INT && LA17_0<=RULE_STRING)||LA17_0==58) ) {
-                alt17=1;
+            if ( ((LA18_0>=RULE_INT && LA18_0<=RULE_STRING)||LA18_0==60) ) {
+                alt18=1;
             }
-            else if ( (LA17_0==20) ) {
-                alt17=2;
+            else if ( (LA18_0==20) ) {
+                alt18=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 17, 0, input);
+                    new NoViableAltException("", 18, 0, input);
 
                 throw nvae;
             }
-            switch (alt17) {
+            switch (alt18) {
                 case 1 :
-                    // InternalSmartCE.g:1667:2: ( rulePrimary )
+                    // InternalSmartCE.g:1700:2: ( rulePrimary )
                     {
-                    // InternalSmartCE.g:1667:2: ( rulePrimary )
-                    // InternalSmartCE.g:1668:3: rulePrimary
+                    // InternalSmartCE.g:1700:2: ( rulePrimary )
+                    // InternalSmartCE.g:1701:3: rulePrimary
                     {
                      before(grammarAccess.getNegativeAccess().getPrimaryParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -5525,14 +5700,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1673:2: ( ( rule__Negative__Group_1__0 ) )
+                    // InternalSmartCE.g:1706:2: ( ( rule__Negative__Group_1__0 ) )
                     {
-                    // InternalSmartCE.g:1673:2: ( ( rule__Negative__Group_1__0 ) )
-                    // InternalSmartCE.g:1674:3: ( rule__Negative__Group_1__0 )
+                    // InternalSmartCE.g:1706:2: ( ( rule__Negative__Group_1__0 ) )
+                    // InternalSmartCE.g:1707:3: ( rule__Negative__Group_1__0 )
                     {
                      before(grammarAccess.getNegativeAccess().getGroup_1()); 
-                    // InternalSmartCE.g:1675:3: ( rule__Negative__Group_1__0 )
-                    // InternalSmartCE.g:1675:4: rule__Negative__Group_1__0
+                    // InternalSmartCE.g:1708:3: ( rule__Negative__Group_1__0 )
+                    // InternalSmartCE.g:1708:4: rule__Negative__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Negative__Group_1__0();
@@ -5567,34 +5742,34 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Alternatives"
-    // InternalSmartCE.g:1683:1: rule__Primary__Alternatives : ( ( ruleLiteralValue ) | ( ( rule__Primary__Group_1__0 ) ) );
+    // InternalSmartCE.g:1716:1: rule__Primary__Alternatives : ( ( ruleLiteralValue ) | ( ( rule__Primary__Group_1__0 ) ) );
     public final void rule__Primary__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1687:1: ( ( ruleLiteralValue ) | ( ( rule__Primary__Group_1__0 ) ) )
-            int alt18=2;
-            int LA18_0 = input.LA(1);
+            // InternalSmartCE.g:1720:1: ( ( ruleLiteralValue ) | ( ( rule__Primary__Group_1__0 ) ) )
+            int alt19=2;
+            int LA19_0 = input.LA(1);
 
-            if ( ((LA18_0>=RULE_INT && LA18_0<=RULE_STRING)) ) {
-                alt18=1;
+            if ( ((LA19_0>=RULE_INT && LA19_0<=RULE_STRING)) ) {
+                alt19=1;
             }
-            else if ( (LA18_0==58) ) {
-                alt18=2;
+            else if ( (LA19_0==60) ) {
+                alt19=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 18, 0, input);
+                    new NoViableAltException("", 19, 0, input);
 
                 throw nvae;
             }
-            switch (alt18) {
+            switch (alt19) {
                 case 1 :
-                    // InternalSmartCE.g:1688:2: ( ruleLiteralValue )
+                    // InternalSmartCE.g:1721:2: ( ruleLiteralValue )
                     {
-                    // InternalSmartCE.g:1688:2: ( ruleLiteralValue )
-                    // InternalSmartCE.g:1689:3: ruleLiteralValue
+                    // InternalSmartCE.g:1721:2: ( ruleLiteralValue )
+                    // InternalSmartCE.g:1722:3: ruleLiteralValue
                     {
                      before(grammarAccess.getPrimaryAccess().getLiteralValueParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -5610,14 +5785,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1694:2: ( ( rule__Primary__Group_1__0 ) )
+                    // InternalSmartCE.g:1727:2: ( ( rule__Primary__Group_1__0 ) )
                     {
-                    // InternalSmartCE.g:1694:2: ( ( rule__Primary__Group_1__0 ) )
-                    // InternalSmartCE.g:1695:3: ( rule__Primary__Group_1__0 )
+                    // InternalSmartCE.g:1727:2: ( ( rule__Primary__Group_1__0 ) )
+                    // InternalSmartCE.g:1728:3: ( rule__Primary__Group_1__0 )
                     {
                      before(grammarAccess.getPrimaryAccess().getGroup_1()); 
-                    // InternalSmartCE.g:1696:3: ( rule__Primary__Group_1__0 )
-                    // InternalSmartCE.g:1696:4: rule__Primary__Group_1__0
+                    // InternalSmartCE.g:1729:3: ( rule__Primary__Group_1__0 )
+                    // InternalSmartCE.g:1729:4: rule__Primary__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Primary__Group_1__0();
@@ -5652,21 +5827,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LiteralValue__Alternatives"
-    // InternalSmartCE.g:1704:1: rule__LiteralValue__Alternatives : ( ( ruleNumericValue ) | ( ruleStringValue ) | ( ruleVariableValue ) | ( ruleFunctionCall ) );
+    // InternalSmartCE.g:1737:1: rule__LiteralValue__Alternatives : ( ( ruleNumericValue ) | ( ruleStringValue ) | ( ruleVariableValue ) | ( ruleFunctionCall ) );
     public final void rule__LiteralValue__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1708:1: ( ( ruleNumericValue ) | ( ruleStringValue ) | ( ruleVariableValue ) | ( ruleFunctionCall ) )
-            int alt19=4;
-            alt19 = dfa19.predict(input);
-            switch (alt19) {
+            // InternalSmartCE.g:1741:1: ( ( ruleNumericValue ) | ( ruleStringValue ) | ( ruleVariableValue ) | ( ruleFunctionCall ) )
+            int alt20=4;
+            alt20 = dfa20.predict(input);
+            switch (alt20) {
                 case 1 :
-                    // InternalSmartCE.g:1709:2: ( ruleNumericValue )
+                    // InternalSmartCE.g:1742:2: ( ruleNumericValue )
                     {
-                    // InternalSmartCE.g:1709:2: ( ruleNumericValue )
-                    // InternalSmartCE.g:1710:3: ruleNumericValue
+                    // InternalSmartCE.g:1742:2: ( ruleNumericValue )
+                    // InternalSmartCE.g:1743:3: ruleNumericValue
                     {
                      before(grammarAccess.getLiteralValueAccess().getNumericValueParserRuleCall_0()); 
                     pushFollow(FOLLOW_2);
@@ -5682,10 +5857,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1715:2: ( ruleStringValue )
+                    // InternalSmartCE.g:1748:2: ( ruleStringValue )
                     {
-                    // InternalSmartCE.g:1715:2: ( ruleStringValue )
-                    // InternalSmartCE.g:1716:3: ruleStringValue
+                    // InternalSmartCE.g:1748:2: ( ruleStringValue )
+                    // InternalSmartCE.g:1749:3: ruleStringValue
                     {
                      before(grammarAccess.getLiteralValueAccess().getStringValueParserRuleCall_1()); 
                     pushFollow(FOLLOW_2);
@@ -5701,10 +5876,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1721:2: ( ruleVariableValue )
+                    // InternalSmartCE.g:1754:2: ( ruleVariableValue )
                     {
-                    // InternalSmartCE.g:1721:2: ( ruleVariableValue )
-                    // InternalSmartCE.g:1722:3: ruleVariableValue
+                    // InternalSmartCE.g:1754:2: ( ruleVariableValue )
+                    // InternalSmartCE.g:1755:3: ruleVariableValue
                     {
                      before(grammarAccess.getLiteralValueAccess().getVariableValueParserRuleCall_2()); 
                     pushFollow(FOLLOW_2);
@@ -5720,10 +5895,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1727:2: ( ruleFunctionCall )
+                    // InternalSmartCE.g:1760:2: ( ruleFunctionCall )
                     {
-                    // InternalSmartCE.g:1727:2: ( ruleFunctionCall )
-                    // InternalSmartCE.g:1728:3: ruleFunctionCall
+                    // InternalSmartCE.g:1760:2: ( ruleFunctionCall )
+                    // InternalSmartCE.g:1761:3: ruleFunctionCall
                     {
                      before(grammarAccess.getLiteralValueAccess().getFunctionCallParserRuleCall_3()); 
                     pushFollow(FOLLOW_2);
@@ -5756,62 +5931,62 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Operation__Alternatives"
-    // InternalSmartCE.g:1737:1: rule__Operation__Alternatives : ( ( ( 'push' ) ) | ( ( 'poll' ) ) | ( ( 'write' ) ) | ( ( 'read' ) ) | ( ( 'request' ) ) | ( ( 'response' ) ) );
+    // InternalSmartCE.g:1770:1: rule__Operation__Alternatives : ( ( ( 'push' ) ) | ( ( 'poll' ) ) | ( ( 'write' ) ) | ( ( 'read' ) ) | ( ( 'request' ) ) | ( ( 'response' ) ) );
     public final void rule__Operation__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1741:1: ( ( ( 'push' ) ) | ( ( 'poll' ) ) | ( ( 'write' ) ) | ( ( 'read' ) ) | ( ( 'request' ) ) | ( ( 'response' ) ) )
-            int alt20=6;
+            // InternalSmartCE.g:1774:1: ( ( ( 'push' ) ) | ( ( 'poll' ) ) | ( ( 'write' ) ) | ( ( 'read' ) ) | ( ( 'request' ) ) | ( ( 'response' ) ) )
+            int alt21=6;
             switch ( input.LA(1) ) {
             case 23:
                 {
-                alt20=1;
+                alt21=1;
                 }
                 break;
             case 24:
                 {
-                alt20=2;
+                alt21=2;
                 }
                 break;
             case 25:
                 {
-                alt20=3;
+                alt21=3;
                 }
                 break;
             case 26:
                 {
-                alt20=4;
+                alt21=4;
                 }
                 break;
             case 27:
                 {
-                alt20=5;
+                alt21=5;
                 }
                 break;
             case 28:
                 {
-                alt20=6;
+                alt21=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 20, 0, input);
+                    new NoViableAltException("", 21, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt20) {
+            switch (alt21) {
                 case 1 :
-                    // InternalSmartCE.g:1742:2: ( ( 'push' ) )
+                    // InternalSmartCE.g:1775:2: ( ( 'push' ) )
                     {
-                    // InternalSmartCE.g:1742:2: ( ( 'push' ) )
-                    // InternalSmartCE.g:1743:3: ( 'push' )
+                    // InternalSmartCE.g:1775:2: ( ( 'push' ) )
+                    // InternalSmartCE.g:1776:3: ( 'push' )
                     {
                      before(grammarAccess.getOperationAccess().getPUSHEnumLiteralDeclaration_0()); 
-                    // InternalSmartCE.g:1744:3: ( 'push' )
-                    // InternalSmartCE.g:1744:4: 'push'
+                    // InternalSmartCE.g:1777:3: ( 'push' )
+                    // InternalSmartCE.g:1777:4: 'push'
                     {
                     match(input,23,FOLLOW_2); 
 
@@ -5825,14 +6000,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1748:2: ( ( 'poll' ) )
+                    // InternalSmartCE.g:1781:2: ( ( 'poll' ) )
                     {
-                    // InternalSmartCE.g:1748:2: ( ( 'poll' ) )
-                    // InternalSmartCE.g:1749:3: ( 'poll' )
+                    // InternalSmartCE.g:1781:2: ( ( 'poll' ) )
+                    // InternalSmartCE.g:1782:3: ( 'poll' )
                     {
                      before(grammarAccess.getOperationAccess().getPOLLEnumLiteralDeclaration_1()); 
-                    // InternalSmartCE.g:1750:3: ( 'poll' )
-                    // InternalSmartCE.g:1750:4: 'poll'
+                    // InternalSmartCE.g:1783:3: ( 'poll' )
+                    // InternalSmartCE.g:1783:4: 'poll'
                     {
                     match(input,24,FOLLOW_2); 
 
@@ -5846,14 +6021,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1754:2: ( ( 'write' ) )
+                    // InternalSmartCE.g:1787:2: ( ( 'write' ) )
                     {
-                    // InternalSmartCE.g:1754:2: ( ( 'write' ) )
-                    // InternalSmartCE.g:1755:3: ( 'write' )
+                    // InternalSmartCE.g:1787:2: ( ( 'write' ) )
+                    // InternalSmartCE.g:1788:3: ( 'write' )
                     {
                      before(grammarAccess.getOperationAccess().getWRITEEnumLiteralDeclaration_2()); 
-                    // InternalSmartCE.g:1756:3: ( 'write' )
-                    // InternalSmartCE.g:1756:4: 'write'
+                    // InternalSmartCE.g:1789:3: ( 'write' )
+                    // InternalSmartCE.g:1789:4: 'write'
                     {
                     match(input,25,FOLLOW_2); 
 
@@ -5867,14 +6042,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1760:2: ( ( 'read' ) )
+                    // InternalSmartCE.g:1793:2: ( ( 'read' ) )
                     {
-                    // InternalSmartCE.g:1760:2: ( ( 'read' ) )
-                    // InternalSmartCE.g:1761:3: ( 'read' )
+                    // InternalSmartCE.g:1793:2: ( ( 'read' ) )
+                    // InternalSmartCE.g:1794:3: ( 'read' )
                     {
                      before(grammarAccess.getOperationAccess().getREADEnumLiteralDeclaration_3()); 
-                    // InternalSmartCE.g:1762:3: ( 'read' )
-                    // InternalSmartCE.g:1762:4: 'read'
+                    // InternalSmartCE.g:1795:3: ( 'read' )
+                    // InternalSmartCE.g:1795:4: 'read'
                     {
                     match(input,26,FOLLOW_2); 
 
@@ -5888,14 +6063,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1766:2: ( ( 'request' ) )
+                    // InternalSmartCE.g:1799:2: ( ( 'request' ) )
                     {
-                    // InternalSmartCE.g:1766:2: ( ( 'request' ) )
-                    // InternalSmartCE.g:1767:3: ( 'request' )
+                    // InternalSmartCE.g:1799:2: ( ( 'request' ) )
+                    // InternalSmartCE.g:1800:3: ( 'request' )
                     {
                      before(grammarAccess.getOperationAccess().getREQUESTEnumLiteralDeclaration_4()); 
-                    // InternalSmartCE.g:1768:3: ( 'request' )
-                    // InternalSmartCE.g:1768:4: 'request'
+                    // InternalSmartCE.g:1801:3: ( 'request' )
+                    // InternalSmartCE.g:1801:4: 'request'
                     {
                     match(input,27,FOLLOW_2); 
 
@@ -5909,14 +6084,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:1772:2: ( ( 'response' ) )
+                    // InternalSmartCE.g:1805:2: ( ( 'response' ) )
                     {
-                    // InternalSmartCE.g:1772:2: ( ( 'response' ) )
-                    // InternalSmartCE.g:1773:3: ( 'response' )
+                    // InternalSmartCE.g:1805:2: ( ( 'response' ) )
+                    // InternalSmartCE.g:1806:3: ( 'response' )
                     {
                      before(grammarAccess.getOperationAccess().getRESPONSEEnumLiteralDeclaration_5()); 
-                    // InternalSmartCE.g:1774:3: ( 'response' )
-                    // InternalSmartCE.g:1774:4: 'response'
+                    // InternalSmartCE.g:1807:3: ( 'response' )
+                    // InternalSmartCE.g:1807:4: 'response'
                     {
                     match(input,28,FOLLOW_2); 
 
@@ -5947,67 +6122,67 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDay__Alternatives"
-    // InternalSmartCE.g:1782:1: rule__WeekDay__Alternatives : ( ( ( 'Sunday' ) ) | ( ( 'Monday' ) ) | ( ( 'Tuesday' ) ) | ( ( 'Wednesday' ) ) | ( ( 'Thursday' ) ) | ( ( 'Friday' ) ) | ( ( 'Saturday' ) ) );
+    // InternalSmartCE.g:1815:1: rule__WeekDay__Alternatives : ( ( ( 'Sunday' ) ) | ( ( 'Monday' ) ) | ( ( 'Tuesday' ) ) | ( ( 'Wednesday' ) ) | ( ( 'Thursday' ) ) | ( ( 'Friday' ) ) | ( ( 'Saturday' ) ) );
     public final void rule__WeekDay__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1786:1: ( ( ( 'Sunday' ) ) | ( ( 'Monday' ) ) | ( ( 'Tuesday' ) ) | ( ( 'Wednesday' ) ) | ( ( 'Thursday' ) ) | ( ( 'Friday' ) ) | ( ( 'Saturday' ) ) )
-            int alt21=7;
+            // InternalSmartCE.g:1819:1: ( ( ( 'Sunday' ) ) | ( ( 'Monday' ) ) | ( ( 'Tuesday' ) ) | ( ( 'Wednesday' ) ) | ( ( 'Thursday' ) ) | ( ( 'Friday' ) ) | ( ( 'Saturday' ) ) )
+            int alt22=7;
             switch ( input.LA(1) ) {
             case 29:
                 {
-                alt21=1;
+                alt22=1;
                 }
                 break;
             case 30:
                 {
-                alt21=2;
+                alt22=2;
                 }
                 break;
             case 31:
                 {
-                alt21=3;
+                alt22=3;
                 }
                 break;
             case 32:
                 {
-                alt21=4;
+                alt22=4;
                 }
                 break;
             case 33:
                 {
-                alt21=5;
+                alt22=5;
                 }
                 break;
             case 34:
                 {
-                alt21=6;
+                alt22=6;
                 }
                 break;
             case 35:
                 {
-                alt21=7;
+                alt22=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 21, 0, input);
+                    new NoViableAltException("", 22, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt21) {
+            switch (alt22) {
                 case 1 :
-                    // InternalSmartCE.g:1787:2: ( ( 'Sunday' ) )
+                    // InternalSmartCE.g:1820:2: ( ( 'Sunday' ) )
                     {
-                    // InternalSmartCE.g:1787:2: ( ( 'Sunday' ) )
-                    // InternalSmartCE.g:1788:3: ( 'Sunday' )
+                    // InternalSmartCE.g:1820:2: ( ( 'Sunday' ) )
+                    // InternalSmartCE.g:1821:3: ( 'Sunday' )
                     {
                      before(grammarAccess.getWeekDayAccess().getSUNDAYEnumLiteralDeclaration_0()); 
-                    // InternalSmartCE.g:1789:3: ( 'Sunday' )
-                    // InternalSmartCE.g:1789:4: 'Sunday'
+                    // InternalSmartCE.g:1822:3: ( 'Sunday' )
+                    // InternalSmartCE.g:1822:4: 'Sunday'
                     {
                     match(input,29,FOLLOW_2); 
 
@@ -6021,14 +6196,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1793:2: ( ( 'Monday' ) )
+                    // InternalSmartCE.g:1826:2: ( ( 'Monday' ) )
                     {
-                    // InternalSmartCE.g:1793:2: ( ( 'Monday' ) )
-                    // InternalSmartCE.g:1794:3: ( 'Monday' )
+                    // InternalSmartCE.g:1826:2: ( ( 'Monday' ) )
+                    // InternalSmartCE.g:1827:3: ( 'Monday' )
                     {
                      before(grammarAccess.getWeekDayAccess().getMONDAYEnumLiteralDeclaration_1()); 
-                    // InternalSmartCE.g:1795:3: ( 'Monday' )
-                    // InternalSmartCE.g:1795:4: 'Monday'
+                    // InternalSmartCE.g:1828:3: ( 'Monday' )
+                    // InternalSmartCE.g:1828:4: 'Monday'
                     {
                     match(input,30,FOLLOW_2); 
 
@@ -6042,14 +6217,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1799:2: ( ( 'Tuesday' ) )
+                    // InternalSmartCE.g:1832:2: ( ( 'Tuesday' ) )
                     {
-                    // InternalSmartCE.g:1799:2: ( ( 'Tuesday' ) )
-                    // InternalSmartCE.g:1800:3: ( 'Tuesday' )
+                    // InternalSmartCE.g:1832:2: ( ( 'Tuesday' ) )
+                    // InternalSmartCE.g:1833:3: ( 'Tuesday' )
                     {
                      before(grammarAccess.getWeekDayAccess().getTUESDAYEnumLiteralDeclaration_2()); 
-                    // InternalSmartCE.g:1801:3: ( 'Tuesday' )
-                    // InternalSmartCE.g:1801:4: 'Tuesday'
+                    // InternalSmartCE.g:1834:3: ( 'Tuesday' )
+                    // InternalSmartCE.g:1834:4: 'Tuesday'
                     {
                     match(input,31,FOLLOW_2); 
 
@@ -6063,14 +6238,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1805:2: ( ( 'Wednesday' ) )
+                    // InternalSmartCE.g:1838:2: ( ( 'Wednesday' ) )
                     {
-                    // InternalSmartCE.g:1805:2: ( ( 'Wednesday' ) )
-                    // InternalSmartCE.g:1806:3: ( 'Wednesday' )
+                    // InternalSmartCE.g:1838:2: ( ( 'Wednesday' ) )
+                    // InternalSmartCE.g:1839:3: ( 'Wednesday' )
                     {
                      before(grammarAccess.getWeekDayAccess().getWEDNESDAYEnumLiteralDeclaration_3()); 
-                    // InternalSmartCE.g:1807:3: ( 'Wednesday' )
-                    // InternalSmartCE.g:1807:4: 'Wednesday'
+                    // InternalSmartCE.g:1840:3: ( 'Wednesday' )
+                    // InternalSmartCE.g:1840:4: 'Wednesday'
                     {
                     match(input,32,FOLLOW_2); 
 
@@ -6084,14 +6259,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1811:2: ( ( 'Thursday' ) )
+                    // InternalSmartCE.g:1844:2: ( ( 'Thursday' ) )
                     {
-                    // InternalSmartCE.g:1811:2: ( ( 'Thursday' ) )
-                    // InternalSmartCE.g:1812:3: ( 'Thursday' )
+                    // InternalSmartCE.g:1844:2: ( ( 'Thursday' ) )
+                    // InternalSmartCE.g:1845:3: ( 'Thursday' )
                     {
                      before(grammarAccess.getWeekDayAccess().getTHURSDAYEnumLiteralDeclaration_4()); 
-                    // InternalSmartCE.g:1813:3: ( 'Thursday' )
-                    // InternalSmartCE.g:1813:4: 'Thursday'
+                    // InternalSmartCE.g:1846:3: ( 'Thursday' )
+                    // InternalSmartCE.g:1846:4: 'Thursday'
                     {
                     match(input,33,FOLLOW_2); 
 
@@ -6105,14 +6280,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:1817:2: ( ( 'Friday' ) )
+                    // InternalSmartCE.g:1850:2: ( ( 'Friday' ) )
                     {
-                    // InternalSmartCE.g:1817:2: ( ( 'Friday' ) )
-                    // InternalSmartCE.g:1818:3: ( 'Friday' )
+                    // InternalSmartCE.g:1850:2: ( ( 'Friday' ) )
+                    // InternalSmartCE.g:1851:3: ( 'Friday' )
                     {
                      before(grammarAccess.getWeekDayAccess().getFRIDAYEnumLiteralDeclaration_5()); 
-                    // InternalSmartCE.g:1819:3: ( 'Friday' )
-                    // InternalSmartCE.g:1819:4: 'Friday'
+                    // InternalSmartCE.g:1852:3: ( 'Friday' )
+                    // InternalSmartCE.g:1852:4: 'Friday'
                     {
                     match(input,34,FOLLOW_2); 
 
@@ -6126,14 +6301,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCE.g:1823:2: ( ( 'Saturday' ) )
+                    // InternalSmartCE.g:1856:2: ( ( 'Saturday' ) )
                     {
-                    // InternalSmartCE.g:1823:2: ( ( 'Saturday' ) )
-                    // InternalSmartCE.g:1824:3: ( 'Saturday' )
+                    // InternalSmartCE.g:1856:2: ( ( 'Saturday' ) )
+                    // InternalSmartCE.g:1857:3: ( 'Saturday' )
                     {
                      before(grammarAccess.getWeekDayAccess().getSATURDAYEnumLiteralDeclaration_6()); 
-                    // InternalSmartCE.g:1825:3: ( 'Saturday' )
-                    // InternalSmartCE.g:1825:4: 'Saturday'
+                    // InternalSmartCE.g:1858:3: ( 'Saturday' )
+                    // InternalSmartCE.g:1858:4: 'Saturday'
                     {
                     match(input,35,FOLLOW_2); 
 
@@ -6164,67 +6339,67 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeUnit__Alternatives"
-    // InternalSmartCE.g:1833:1: rule__TimeUnit__Alternatives : ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'Day' ) ) | ( ( 'Week' ) ) | ( ( 'Month' ) ) | ( ( 'Year' ) ) );
+    // InternalSmartCE.g:1866:1: rule__TimeUnit__Alternatives : ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'Day' ) ) | ( ( 'Week' ) ) | ( ( 'Month' ) ) | ( ( 'Year' ) ) );
     public final void rule__TimeUnit__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1837:1: ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'Day' ) ) | ( ( 'Week' ) ) | ( ( 'Month' ) ) | ( ( 'Year' ) ) )
-            int alt22=7;
+            // InternalSmartCE.g:1870:1: ( ( ( 'Second' ) ) | ( ( 'Minute' ) ) | ( ( 'Hour' ) ) | ( ( 'Day' ) ) | ( ( 'Week' ) ) | ( ( 'Month' ) ) | ( ( 'Year' ) ) )
+            int alt23=7;
             switch ( input.LA(1) ) {
             case 36:
                 {
-                alt22=1;
+                alt23=1;
                 }
                 break;
             case 37:
                 {
-                alt22=2;
+                alt23=2;
                 }
                 break;
             case 38:
                 {
-                alt22=3;
+                alt23=3;
                 }
                 break;
             case 39:
                 {
-                alt22=4;
+                alt23=4;
                 }
                 break;
             case 40:
                 {
-                alt22=5;
+                alt23=5;
                 }
                 break;
             case 41:
                 {
-                alt22=6;
+                alt23=6;
                 }
                 break;
             case 42:
                 {
-                alt22=7;
+                alt23=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // InternalSmartCE.g:1838:2: ( ( 'Second' ) )
+                    // InternalSmartCE.g:1871:2: ( ( 'Second' ) )
                     {
-                    // InternalSmartCE.g:1838:2: ( ( 'Second' ) )
-                    // InternalSmartCE.g:1839:3: ( 'Second' )
+                    // InternalSmartCE.g:1871:2: ( ( 'Second' ) )
+                    // InternalSmartCE.g:1872:3: ( 'Second' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getSECONDEnumLiteralDeclaration_0()); 
-                    // InternalSmartCE.g:1840:3: ( 'Second' )
-                    // InternalSmartCE.g:1840:4: 'Second'
+                    // InternalSmartCE.g:1873:3: ( 'Second' )
+                    // InternalSmartCE.g:1873:4: 'Second'
                     {
                     match(input,36,FOLLOW_2); 
 
@@ -6238,14 +6413,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1844:2: ( ( 'Minute' ) )
+                    // InternalSmartCE.g:1877:2: ( ( 'Minute' ) )
                     {
-                    // InternalSmartCE.g:1844:2: ( ( 'Minute' ) )
-                    // InternalSmartCE.g:1845:3: ( 'Minute' )
+                    // InternalSmartCE.g:1877:2: ( ( 'Minute' ) )
+                    // InternalSmartCE.g:1878:3: ( 'Minute' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getMINUTEEnumLiteralDeclaration_1()); 
-                    // InternalSmartCE.g:1846:3: ( 'Minute' )
-                    // InternalSmartCE.g:1846:4: 'Minute'
+                    // InternalSmartCE.g:1879:3: ( 'Minute' )
+                    // InternalSmartCE.g:1879:4: 'Minute'
                     {
                     match(input,37,FOLLOW_2); 
 
@@ -6259,14 +6434,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1850:2: ( ( 'Hour' ) )
+                    // InternalSmartCE.g:1883:2: ( ( 'Hour' ) )
                     {
-                    // InternalSmartCE.g:1850:2: ( ( 'Hour' ) )
-                    // InternalSmartCE.g:1851:3: ( 'Hour' )
+                    // InternalSmartCE.g:1883:2: ( ( 'Hour' ) )
+                    // InternalSmartCE.g:1884:3: ( 'Hour' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getHOUREnumLiteralDeclaration_2()); 
-                    // InternalSmartCE.g:1852:3: ( 'Hour' )
-                    // InternalSmartCE.g:1852:4: 'Hour'
+                    // InternalSmartCE.g:1885:3: ( 'Hour' )
+                    // InternalSmartCE.g:1885:4: 'Hour'
                     {
                     match(input,38,FOLLOW_2); 
 
@@ -6280,14 +6455,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 4 :
-                    // InternalSmartCE.g:1856:2: ( ( 'Day' ) )
+                    // InternalSmartCE.g:1889:2: ( ( 'Day' ) )
                     {
-                    // InternalSmartCE.g:1856:2: ( ( 'Day' ) )
-                    // InternalSmartCE.g:1857:3: ( 'Day' )
+                    // InternalSmartCE.g:1889:2: ( ( 'Day' ) )
+                    // InternalSmartCE.g:1890:3: ( 'Day' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getDAYEnumLiteralDeclaration_3()); 
-                    // InternalSmartCE.g:1858:3: ( 'Day' )
-                    // InternalSmartCE.g:1858:4: 'Day'
+                    // InternalSmartCE.g:1891:3: ( 'Day' )
+                    // InternalSmartCE.g:1891:4: 'Day'
                     {
                     match(input,39,FOLLOW_2); 
 
@@ -6301,14 +6476,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 5 :
-                    // InternalSmartCE.g:1862:2: ( ( 'Week' ) )
+                    // InternalSmartCE.g:1895:2: ( ( 'Week' ) )
                     {
-                    // InternalSmartCE.g:1862:2: ( ( 'Week' ) )
-                    // InternalSmartCE.g:1863:3: ( 'Week' )
+                    // InternalSmartCE.g:1895:2: ( ( 'Week' ) )
+                    // InternalSmartCE.g:1896:3: ( 'Week' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getWEEKEnumLiteralDeclaration_4()); 
-                    // InternalSmartCE.g:1864:3: ( 'Week' )
-                    // InternalSmartCE.g:1864:4: 'Week'
+                    // InternalSmartCE.g:1897:3: ( 'Week' )
+                    // InternalSmartCE.g:1897:4: 'Week'
                     {
                     match(input,40,FOLLOW_2); 
 
@@ -6322,14 +6497,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 6 :
-                    // InternalSmartCE.g:1868:2: ( ( 'Month' ) )
+                    // InternalSmartCE.g:1901:2: ( ( 'Month' ) )
                     {
-                    // InternalSmartCE.g:1868:2: ( ( 'Month' ) )
-                    // InternalSmartCE.g:1869:3: ( 'Month' )
+                    // InternalSmartCE.g:1901:2: ( ( 'Month' ) )
+                    // InternalSmartCE.g:1902:3: ( 'Month' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getMONTHEnumLiteralDeclaration_5()); 
-                    // InternalSmartCE.g:1870:3: ( 'Month' )
-                    // InternalSmartCE.g:1870:4: 'Month'
+                    // InternalSmartCE.g:1903:3: ( 'Month' )
+                    // InternalSmartCE.g:1903:4: 'Month'
                     {
                     match(input,41,FOLLOW_2); 
 
@@ -6343,14 +6518,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 7 :
-                    // InternalSmartCE.g:1874:2: ( ( 'Year' ) )
+                    // InternalSmartCE.g:1907:2: ( ( 'Year' ) )
                     {
-                    // InternalSmartCE.g:1874:2: ( ( 'Year' ) )
-                    // InternalSmartCE.g:1875:3: ( 'Year' )
+                    // InternalSmartCE.g:1907:2: ( ( 'Year' ) )
+                    // InternalSmartCE.g:1908:3: ( 'Year' )
                     {
                      before(grammarAccess.getTimeUnitAccess().getYEAREnumLiteralDeclaration_6()); 
-                    // InternalSmartCE.g:1876:3: ( 'Year' )
-                    // InternalSmartCE.g:1876:4: 'Year'
+                    // InternalSmartCE.g:1909:3: ( 'Year' )
+                    // InternalSmartCE.g:1909:4: 'Year'
                     {
                     match(input,42,FOLLOW_2); 
 
@@ -6381,14 +6556,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__0"
-    // InternalSmartCE.g:1884:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
+    // InternalSmartCE.g:1917:1: rule__Model__Group__0 : rule__Model__Group__0__Impl rule__Model__Group__1 ;
     public final void rule__Model__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1888:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
-            // InternalSmartCE.g:1889:2: rule__Model__Group__0__Impl rule__Model__Group__1
+            // InternalSmartCE.g:1921:1: ( rule__Model__Group__0__Impl rule__Model__Group__1 )
+            // InternalSmartCE.g:1922:2: rule__Model__Group__0__Impl rule__Model__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__0__Impl();
@@ -6419,21 +6594,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__0__Impl"
-    // InternalSmartCE.g:1896:1: rule__Model__Group__0__Impl : ( () ) ;
+    // InternalSmartCE.g:1929:1: rule__Model__Group__0__Impl : ( () ) ;
     public final void rule__Model__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1900:1: ( ( () ) )
-            // InternalSmartCE.g:1901:1: ( () )
+            // InternalSmartCE.g:1933:1: ( ( () ) )
+            // InternalSmartCE.g:1934:1: ( () )
             {
-            // InternalSmartCE.g:1901:1: ( () )
-            // InternalSmartCE.g:1902:2: ()
+            // InternalSmartCE.g:1934:1: ( () )
+            // InternalSmartCE.g:1935:2: ()
             {
              before(grammarAccess.getModelAccess().getModelAction_0()); 
-            // InternalSmartCE.g:1903:2: ()
-            // InternalSmartCE.g:1903:3: 
+            // InternalSmartCE.g:1936:2: ()
+            // InternalSmartCE.g:1936:3: 
             {
             }
 
@@ -6456,14 +6631,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1"
-    // InternalSmartCE.g:1911:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
+    // InternalSmartCE.g:1944:1: rule__Model__Group__1 : rule__Model__Group__1__Impl rule__Model__Group__2 ;
     public final void rule__Model__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1915:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
-            // InternalSmartCE.g:1916:2: rule__Model__Group__1__Impl rule__Model__Group__2
+            // InternalSmartCE.g:1948:1: ( rule__Model__Group__1__Impl rule__Model__Group__2 )
+            // InternalSmartCE.g:1949:2: rule__Model__Group__1__Impl rule__Model__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Model__Group__1__Impl();
@@ -6494,33 +6669,33 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__1__Impl"
-    // InternalSmartCE.g:1923:1: rule__Model__Group__1__Impl : ( ( rule__Model__ImportsAssignment_1 )* ) ;
+    // InternalSmartCE.g:1956:1: rule__Model__Group__1__Impl : ( ( rule__Model__ImportsAssignment_1 )* ) ;
     public final void rule__Model__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1927:1: ( ( ( rule__Model__ImportsAssignment_1 )* ) )
-            // InternalSmartCE.g:1928:1: ( ( rule__Model__ImportsAssignment_1 )* )
+            // InternalSmartCE.g:1960:1: ( ( ( rule__Model__ImportsAssignment_1 )* ) )
+            // InternalSmartCE.g:1961:1: ( ( rule__Model__ImportsAssignment_1 )* )
             {
-            // InternalSmartCE.g:1928:1: ( ( rule__Model__ImportsAssignment_1 )* )
-            // InternalSmartCE.g:1929:2: ( rule__Model__ImportsAssignment_1 )*
+            // InternalSmartCE.g:1961:1: ( ( rule__Model__ImportsAssignment_1 )* )
+            // InternalSmartCE.g:1962:2: ( rule__Model__ImportsAssignment_1 )*
             {
              before(grammarAccess.getModelAccess().getImportsAssignment_1()); 
-            // InternalSmartCE.g:1930:2: ( rule__Model__ImportsAssignment_1 )*
-            loop23:
+            // InternalSmartCE.g:1963:2: ( rule__Model__ImportsAssignment_1 )*
+            loop24:
             do {
-                int alt23=2;
-                int LA23_0 = input.LA(1);
+                int alt24=2;
+                int LA24_0 = input.LA(1);
 
-                if ( (LA23_0==43) ) {
-                    alt23=1;
+                if ( (LA24_0==43) ) {
+                    alt24=1;
                 }
 
 
-                switch (alt23) {
+                switch (alt24) {
             	case 1 :
-            	    // InternalSmartCE.g:1930:3: rule__Model__ImportsAssignment_1
+            	    // InternalSmartCE.g:1963:3: rule__Model__ImportsAssignment_1
             	    {
             	    pushFollow(FOLLOW_4);
             	    rule__Model__ImportsAssignment_1();
@@ -6532,7 +6707,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop23;
+            	    break loop24;
                 }
             } while (true);
 
@@ -6559,14 +6734,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__2"
-    // InternalSmartCE.g:1938:1: rule__Model__Group__2 : rule__Model__Group__2__Impl ;
+    // InternalSmartCE.g:1971:1: rule__Model__Group__2 : rule__Model__Group__2__Impl ;
     public final void rule__Model__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1942:1: ( rule__Model__Group__2__Impl )
-            // InternalSmartCE.g:1943:2: rule__Model__Group__2__Impl
+            // InternalSmartCE.g:1975:1: ( rule__Model__Group__2__Impl )
+            // InternalSmartCE.g:1976:2: rule__Model__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Model__Group__2__Impl();
@@ -6592,33 +6767,33 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__Group__2__Impl"
-    // InternalSmartCE.g:1949:1: rule__Model__Group__2__Impl : ( ( rule__Model__ContractsAssignment_2 )* ) ;
+    // InternalSmartCE.g:1982:1: rule__Model__Group__2__Impl : ( ( rule__Model__ContractsAssignment_2 )* ) ;
     public final void rule__Model__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1953:1: ( ( ( rule__Model__ContractsAssignment_2 )* ) )
-            // InternalSmartCE.g:1954:1: ( ( rule__Model__ContractsAssignment_2 )* )
+            // InternalSmartCE.g:1986:1: ( ( ( rule__Model__ContractsAssignment_2 )* ) )
+            // InternalSmartCE.g:1987:1: ( ( rule__Model__ContractsAssignment_2 )* )
             {
-            // InternalSmartCE.g:1954:1: ( ( rule__Model__ContractsAssignment_2 )* )
-            // InternalSmartCE.g:1955:2: ( rule__Model__ContractsAssignment_2 )*
+            // InternalSmartCE.g:1987:1: ( ( rule__Model__ContractsAssignment_2 )* )
+            // InternalSmartCE.g:1988:2: ( rule__Model__ContractsAssignment_2 )*
             {
              before(grammarAccess.getModelAccess().getContractsAssignment_2()); 
-            // InternalSmartCE.g:1956:2: ( rule__Model__ContractsAssignment_2 )*
-            loop24:
+            // InternalSmartCE.g:1989:2: ( rule__Model__ContractsAssignment_2 )*
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==44) ) {
-                    alt24=1;
+                if ( (LA25_0==44) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
-            	    // InternalSmartCE.g:1956:3: rule__Model__ContractsAssignment_2
+            	    // InternalSmartCE.g:1989:3: rule__Model__ContractsAssignment_2
             	    {
             	    pushFollow(FOLLOW_5);
             	    rule__Model__ContractsAssignment_2();
@@ -6630,7 +6805,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
@@ -6657,14 +6832,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__0"
-    // InternalSmartCE.g:1965:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
+    // InternalSmartCE.g:1998:1: rule__Import__Group__0 : rule__Import__Group__0__Impl rule__Import__Group__1 ;
     public final void rule__Import__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1969:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
-            // InternalSmartCE.g:1970:2: rule__Import__Group__0__Impl rule__Import__Group__1
+            // InternalSmartCE.g:2002:1: ( rule__Import__Group__0__Impl rule__Import__Group__1 )
+            // InternalSmartCE.g:2003:2: rule__Import__Group__0__Impl rule__Import__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Import__Group__0__Impl();
@@ -6695,17 +6870,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__0__Impl"
-    // InternalSmartCE.g:1977:1: rule__Import__Group__0__Impl : ( 'import' ) ;
+    // InternalSmartCE.g:2010:1: rule__Import__Group__0__Impl : ( 'import' ) ;
     public final void rule__Import__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1981:1: ( ( 'import' ) )
-            // InternalSmartCE.g:1982:1: ( 'import' )
+            // InternalSmartCE.g:2014:1: ( ( 'import' ) )
+            // InternalSmartCE.g:2015:1: ( 'import' )
             {
-            // InternalSmartCE.g:1982:1: ( 'import' )
-            // InternalSmartCE.g:1983:2: 'import'
+            // InternalSmartCE.g:2015:1: ( 'import' )
+            // InternalSmartCE.g:2016:2: 'import'
             {
              before(grammarAccess.getImportAccess().getImportKeyword_0()); 
             match(input,43,FOLLOW_2); 
@@ -6732,14 +6907,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__1"
-    // InternalSmartCE.g:1992:1: rule__Import__Group__1 : rule__Import__Group__1__Impl ;
+    // InternalSmartCE.g:2025:1: rule__Import__Group__1 : rule__Import__Group__1__Impl ;
     public final void rule__Import__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1996:1: ( rule__Import__Group__1__Impl )
-            // InternalSmartCE.g:1997:2: rule__Import__Group__1__Impl
+            // InternalSmartCE.g:2029:1: ( rule__Import__Group__1__Impl )
+            // InternalSmartCE.g:2030:2: rule__Import__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Import__Group__1__Impl();
@@ -6765,21 +6940,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__Group__1__Impl"
-    // InternalSmartCE.g:2003:1: rule__Import__Group__1__Impl : ( ( rule__Import__ImportedNamespaceAssignment_1 ) ) ;
+    // InternalSmartCE.g:2036:1: rule__Import__Group__1__Impl : ( ( rule__Import__ImportedNamespaceAssignment_1 ) ) ;
     public final void rule__Import__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2007:1: ( ( ( rule__Import__ImportedNamespaceAssignment_1 ) ) )
-            // InternalSmartCE.g:2008:1: ( ( rule__Import__ImportedNamespaceAssignment_1 ) )
+            // InternalSmartCE.g:2040:1: ( ( ( rule__Import__ImportedNamespaceAssignment_1 ) ) )
+            // InternalSmartCE.g:2041:1: ( ( rule__Import__ImportedNamespaceAssignment_1 ) )
             {
-            // InternalSmartCE.g:2008:1: ( ( rule__Import__ImportedNamespaceAssignment_1 ) )
-            // InternalSmartCE.g:2009:2: ( rule__Import__ImportedNamespaceAssignment_1 )
+            // InternalSmartCE.g:2041:1: ( ( rule__Import__ImportedNamespaceAssignment_1 ) )
+            // InternalSmartCE.g:2042:2: ( rule__Import__ImportedNamespaceAssignment_1 )
             {
              before(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1()); 
-            // InternalSmartCE.g:2010:2: ( rule__Import__ImportedNamespaceAssignment_1 )
-            // InternalSmartCE.g:2010:3: rule__Import__ImportedNamespaceAssignment_1
+            // InternalSmartCE.g:2043:2: ( rule__Import__ImportedNamespaceAssignment_1 )
+            // InternalSmartCE.g:2043:3: rule__Import__ImportedNamespaceAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Import__ImportedNamespaceAssignment_1();
@@ -6812,14 +6987,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__0"
-    // InternalSmartCE.g:2019:1: rule__Contract__Group__0 : rule__Contract__Group__0__Impl rule__Contract__Group__1 ;
+    // InternalSmartCE.g:2052:1: rule__Contract__Group__0 : rule__Contract__Group__0__Impl rule__Contract__Group__1 ;
     public final void rule__Contract__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2023:1: ( rule__Contract__Group__0__Impl rule__Contract__Group__1 )
-            // InternalSmartCE.g:2024:2: rule__Contract__Group__0__Impl rule__Contract__Group__1
+            // InternalSmartCE.g:2056:1: ( rule__Contract__Group__0__Impl rule__Contract__Group__1 )
+            // InternalSmartCE.g:2057:2: rule__Contract__Group__0__Impl rule__Contract__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Contract__Group__0__Impl();
@@ -6850,17 +7025,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__0__Impl"
-    // InternalSmartCE.g:2031:1: rule__Contract__Group__0__Impl : ( 'Contract' ) ;
+    // InternalSmartCE.g:2064:1: rule__Contract__Group__0__Impl : ( 'Contract' ) ;
     public final void rule__Contract__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2035:1: ( ( 'Contract' ) )
-            // InternalSmartCE.g:2036:1: ( 'Contract' )
+            // InternalSmartCE.g:2068:1: ( ( 'Contract' ) )
+            // InternalSmartCE.g:2069:1: ( 'Contract' )
             {
-            // InternalSmartCE.g:2036:1: ( 'Contract' )
-            // InternalSmartCE.g:2037:2: 'Contract'
+            // InternalSmartCE.g:2069:1: ( 'Contract' )
+            // InternalSmartCE.g:2070:2: 'Contract'
             {
              before(grammarAccess.getContractAccess().getContractKeyword_0()); 
             match(input,44,FOLLOW_2); 
@@ -6887,14 +7062,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__1"
-    // InternalSmartCE.g:2046:1: rule__Contract__Group__1 : rule__Contract__Group__1__Impl rule__Contract__Group__2 ;
+    // InternalSmartCE.g:2079:1: rule__Contract__Group__1 : rule__Contract__Group__1__Impl rule__Contract__Group__2 ;
     public final void rule__Contract__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2050:1: ( rule__Contract__Group__1__Impl rule__Contract__Group__2 )
-            // InternalSmartCE.g:2051:2: rule__Contract__Group__1__Impl rule__Contract__Group__2
+            // InternalSmartCE.g:2083:1: ( rule__Contract__Group__1__Impl rule__Contract__Group__2 )
+            // InternalSmartCE.g:2084:2: rule__Contract__Group__1__Impl rule__Contract__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Contract__Group__1__Impl();
@@ -6925,21 +7100,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__1__Impl"
-    // InternalSmartCE.g:2058:1: rule__Contract__Group__1__Impl : ( ( rule__Contract__NameAssignment_1 ) ) ;
+    // InternalSmartCE.g:2091:1: rule__Contract__Group__1__Impl : ( ( rule__Contract__NameAssignment_1 ) ) ;
     public final void rule__Contract__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2062:1: ( ( ( rule__Contract__NameAssignment_1 ) ) )
-            // InternalSmartCE.g:2063:1: ( ( rule__Contract__NameAssignment_1 ) )
+            // InternalSmartCE.g:2095:1: ( ( ( rule__Contract__NameAssignment_1 ) ) )
+            // InternalSmartCE.g:2096:1: ( ( rule__Contract__NameAssignment_1 ) )
             {
-            // InternalSmartCE.g:2063:1: ( ( rule__Contract__NameAssignment_1 ) )
-            // InternalSmartCE.g:2064:2: ( rule__Contract__NameAssignment_1 )
+            // InternalSmartCE.g:2096:1: ( ( rule__Contract__NameAssignment_1 ) )
+            // InternalSmartCE.g:2097:2: ( rule__Contract__NameAssignment_1 )
             {
              before(grammarAccess.getContractAccess().getNameAssignment_1()); 
-            // InternalSmartCE.g:2065:2: ( rule__Contract__NameAssignment_1 )
-            // InternalSmartCE.g:2065:3: rule__Contract__NameAssignment_1
+            // InternalSmartCE.g:2098:2: ( rule__Contract__NameAssignment_1 )
+            // InternalSmartCE.g:2098:3: rule__Contract__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Contract__NameAssignment_1();
@@ -6972,14 +7147,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__2"
-    // InternalSmartCE.g:2073:1: rule__Contract__Group__2 : rule__Contract__Group__2__Impl rule__Contract__Group__3 ;
+    // InternalSmartCE.g:2106:1: rule__Contract__Group__2 : rule__Contract__Group__2__Impl rule__Contract__Group__3 ;
     public final void rule__Contract__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2077:1: ( rule__Contract__Group__2__Impl rule__Contract__Group__3 )
-            // InternalSmartCE.g:2078:2: rule__Contract__Group__2__Impl rule__Contract__Group__3
+            // InternalSmartCE.g:2110:1: ( rule__Contract__Group__2__Impl rule__Contract__Group__3 )
+            // InternalSmartCE.g:2111:2: rule__Contract__Group__2__Impl rule__Contract__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__Contract__Group__2__Impl();
@@ -7010,17 +7185,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__2__Impl"
-    // InternalSmartCE.g:2085:1: rule__Contract__Group__2__Impl : ( '{' ) ;
+    // InternalSmartCE.g:2118:1: rule__Contract__Group__2__Impl : ( '{' ) ;
     public final void rule__Contract__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2089:1: ( ( '{' ) )
-            // InternalSmartCE.g:2090:1: ( '{' )
+            // InternalSmartCE.g:2122:1: ( ( '{' ) )
+            // InternalSmartCE.g:2123:1: ( '{' )
             {
-            // InternalSmartCE.g:2090:1: ( '{' )
-            // InternalSmartCE.g:2091:2: '{'
+            // InternalSmartCE.g:2123:1: ( '{' )
+            // InternalSmartCE.g:2124:2: '{'
             {
              before(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,45,FOLLOW_2); 
@@ -7047,16 +7222,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__3"
-    // InternalSmartCE.g:2100:1: rule__Contract__Group__3 : rule__Contract__Group__3__Impl rule__Contract__Group__4 ;
+    // InternalSmartCE.g:2133:1: rule__Contract__Group__3 : rule__Contract__Group__3__Impl rule__Contract__Group__4 ;
     public final void rule__Contract__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2104:1: ( rule__Contract__Group__3__Impl rule__Contract__Group__4 )
-            // InternalSmartCE.g:2105:2: rule__Contract__Group__3__Impl rule__Contract__Group__4
+            // InternalSmartCE.g:2137:1: ( rule__Contract__Group__3__Impl rule__Contract__Group__4 )
+            // InternalSmartCE.g:2138:2: rule__Contract__Group__3__Impl rule__Contract__Group__4
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_7);
             rule__Contract__Group__3__Impl();
 
             state._fsp--;
@@ -7085,21 +7260,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__3__Impl"
-    // InternalSmartCE.g:2112:1: rule__Contract__Group__3__Impl : ( 'beginDate' ) ;
+    // InternalSmartCE.g:2145:1: rule__Contract__Group__3__Impl : ( 'dates' ) ;
     public final void rule__Contract__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2116:1: ( ( 'beginDate' ) )
-            // InternalSmartCE.g:2117:1: ( 'beginDate' )
+            // InternalSmartCE.g:2149:1: ( ( 'dates' ) )
+            // InternalSmartCE.g:2150:1: ( 'dates' )
             {
-            // InternalSmartCE.g:2117:1: ( 'beginDate' )
-            // InternalSmartCE.g:2118:2: 'beginDate'
+            // InternalSmartCE.g:2150:1: ( 'dates' )
+            // InternalSmartCE.g:2151:2: 'dates'
             {
-             before(grammarAccess.getContractAccess().getBeginDateKeyword_3()); 
+             before(grammarAccess.getContractAccess().getDatesKeyword_3()); 
             match(input,46,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getBeginDateKeyword_3()); 
+             after(grammarAccess.getContractAccess().getDatesKeyword_3()); 
 
             }
 
@@ -7122,16 +7297,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__4"
-    // InternalSmartCE.g:2127:1: rule__Contract__Group__4 : rule__Contract__Group__4__Impl rule__Contract__Group__5 ;
+    // InternalSmartCE.g:2160:1: rule__Contract__Group__4 : rule__Contract__Group__4__Impl rule__Contract__Group__5 ;
     public final void rule__Contract__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2131:1: ( rule__Contract__Group__4__Impl rule__Contract__Group__5 )
-            // InternalSmartCE.g:2132:2: rule__Contract__Group__4__Impl rule__Contract__Group__5
+            // InternalSmartCE.g:2164:1: ( rule__Contract__Group__4__Impl rule__Contract__Group__5 )
+            // InternalSmartCE.g:2165:2: rule__Contract__Group__4__Impl rule__Contract__Group__5
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_9);
             rule__Contract__Group__4__Impl();
 
             state._fsp--;
@@ -7160,21 +7335,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__4__Impl"
-    // InternalSmartCE.g:2139:1: rule__Contract__Group__4__Impl : ( '=' ) ;
+    // InternalSmartCE.g:2172:1: rule__Contract__Group__4__Impl : ( '{' ) ;
     public final void rule__Contract__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2143:1: ( ( '=' ) )
-            // InternalSmartCE.g:2144:1: ( '=' )
+            // InternalSmartCE.g:2176:1: ( ( '{' ) )
+            // InternalSmartCE.g:2177:1: ( '{' )
             {
-            // InternalSmartCE.g:2144:1: ( '=' )
-            // InternalSmartCE.g:2145:2: '='
+            // InternalSmartCE.g:2177:1: ( '{' )
+            // InternalSmartCE.g:2178:2: '{'
             {
-             before(grammarAccess.getContractAccess().getEqualsSignKeyword_4()); 
-            match(input,47,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getEqualsSignKeyword_4()); 
+             before(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_4()); 
+            match(input,45,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_4()); 
 
             }
 
@@ -7197,16 +7372,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__5"
-    // InternalSmartCE.g:2154:1: rule__Contract__Group__5 : rule__Contract__Group__5__Impl rule__Contract__Group__6 ;
+    // InternalSmartCE.g:2187:1: rule__Contract__Group__5 : rule__Contract__Group__5__Impl rule__Contract__Group__6 ;
     public final void rule__Contract__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2158:1: ( rule__Contract__Group__5__Impl rule__Contract__Group__6 )
-            // InternalSmartCE.g:2159:2: rule__Contract__Group__5__Impl rule__Contract__Group__6
+            // InternalSmartCE.g:2191:1: ( rule__Contract__Group__5__Impl rule__Contract__Group__6 )
+            // InternalSmartCE.g:2192:2: rule__Contract__Group__5__Impl rule__Contract__Group__6
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__Contract__Group__5__Impl();
 
             state._fsp--;
@@ -7235,31 +7410,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__5__Impl"
-    // InternalSmartCE.g:2166:1: rule__Contract__Group__5__Impl : ( ( rule__Contract__BeginDateAssignment_5 ) ) ;
+    // InternalSmartCE.g:2199:1: rule__Contract__Group__5__Impl : ( 'beginDate' ) ;
     public final void rule__Contract__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2170:1: ( ( ( rule__Contract__BeginDateAssignment_5 ) ) )
-            // InternalSmartCE.g:2171:1: ( ( rule__Contract__BeginDateAssignment_5 ) )
+            // InternalSmartCE.g:2203:1: ( ( 'beginDate' ) )
+            // InternalSmartCE.g:2204:1: ( 'beginDate' )
             {
-            // InternalSmartCE.g:2171:1: ( ( rule__Contract__BeginDateAssignment_5 ) )
-            // InternalSmartCE.g:2172:2: ( rule__Contract__BeginDateAssignment_5 )
+            // InternalSmartCE.g:2204:1: ( 'beginDate' )
+            // InternalSmartCE.g:2205:2: 'beginDate'
             {
-             before(grammarAccess.getContractAccess().getBeginDateAssignment_5()); 
-            // InternalSmartCE.g:2173:2: ( rule__Contract__BeginDateAssignment_5 )
-            // InternalSmartCE.g:2173:3: rule__Contract__BeginDateAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__Contract__BeginDateAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getContractAccess().getBeginDateAssignment_5()); 
+             before(grammarAccess.getContractAccess().getBeginDateKeyword_5()); 
+            match(input,47,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getBeginDateKeyword_5()); 
 
             }
 
@@ -7282,16 +7447,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__6"
-    // InternalSmartCE.g:2181:1: rule__Contract__Group__6 : rule__Contract__Group__6__Impl rule__Contract__Group__7 ;
+    // InternalSmartCE.g:2214:1: rule__Contract__Group__6 : rule__Contract__Group__6__Impl rule__Contract__Group__7 ;
     public final void rule__Contract__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2185:1: ( rule__Contract__Group__6__Impl rule__Contract__Group__7 )
-            // InternalSmartCE.g:2186:2: rule__Contract__Group__6__Impl rule__Contract__Group__7
+            // InternalSmartCE.g:2218:1: ( rule__Contract__Group__6__Impl rule__Contract__Group__7 )
+            // InternalSmartCE.g:2219:2: rule__Contract__Group__6__Impl rule__Contract__Group__7
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_11);
             rule__Contract__Group__6__Impl();
 
             state._fsp--;
@@ -7320,21 +7485,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__6__Impl"
-    // InternalSmartCE.g:2193:1: rule__Contract__Group__6__Impl : ( 'dueDate' ) ;
+    // InternalSmartCE.g:2226:1: rule__Contract__Group__6__Impl : ( '=' ) ;
     public final void rule__Contract__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2197:1: ( ( 'dueDate' ) )
-            // InternalSmartCE.g:2198:1: ( 'dueDate' )
+            // InternalSmartCE.g:2230:1: ( ( '=' ) )
+            // InternalSmartCE.g:2231:1: ( '=' )
             {
-            // InternalSmartCE.g:2198:1: ( 'dueDate' )
-            // InternalSmartCE.g:2199:2: 'dueDate'
+            // InternalSmartCE.g:2231:1: ( '=' )
+            // InternalSmartCE.g:2232:2: '='
             {
-             before(grammarAccess.getContractAccess().getDueDateKeyword_6()); 
+             before(grammarAccess.getContractAccess().getEqualsSignKeyword_6()); 
             match(input,48,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getDueDateKeyword_6()); 
+             after(grammarAccess.getContractAccess().getEqualsSignKeyword_6()); 
 
             }
 
@@ -7357,16 +7522,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__7"
-    // InternalSmartCE.g:2208:1: rule__Contract__Group__7 : rule__Contract__Group__7__Impl rule__Contract__Group__8 ;
+    // InternalSmartCE.g:2241:1: rule__Contract__Group__7 : rule__Contract__Group__7__Impl rule__Contract__Group__8 ;
     public final void rule__Contract__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2212:1: ( rule__Contract__Group__7__Impl rule__Contract__Group__8 )
-            // InternalSmartCE.g:2213:2: rule__Contract__Group__7__Impl rule__Contract__Group__8
+            // InternalSmartCE.g:2245:1: ( rule__Contract__Group__7__Impl rule__Contract__Group__8 )
+            // InternalSmartCE.g:2246:2: rule__Contract__Group__7__Impl rule__Contract__Group__8
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_12);
             rule__Contract__Group__7__Impl();
 
             state._fsp--;
@@ -7395,21 +7560,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__7__Impl"
-    // InternalSmartCE.g:2220:1: rule__Contract__Group__7__Impl : ( '=' ) ;
+    // InternalSmartCE.g:2253:1: rule__Contract__Group__7__Impl : ( ( rule__Contract__BeginDateAssignment_7 ) ) ;
     public final void rule__Contract__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2224:1: ( ( '=' ) )
-            // InternalSmartCE.g:2225:1: ( '=' )
+            // InternalSmartCE.g:2257:1: ( ( ( rule__Contract__BeginDateAssignment_7 ) ) )
+            // InternalSmartCE.g:2258:1: ( ( rule__Contract__BeginDateAssignment_7 ) )
             {
-            // InternalSmartCE.g:2225:1: ( '=' )
-            // InternalSmartCE.g:2226:2: '='
+            // InternalSmartCE.g:2258:1: ( ( rule__Contract__BeginDateAssignment_7 ) )
+            // InternalSmartCE.g:2259:2: ( rule__Contract__BeginDateAssignment_7 )
             {
-             before(grammarAccess.getContractAccess().getEqualsSignKeyword_7()); 
-            match(input,47,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getEqualsSignKeyword_7()); 
+             before(grammarAccess.getContractAccess().getBeginDateAssignment_7()); 
+            // InternalSmartCE.g:2260:2: ( rule__Contract__BeginDateAssignment_7 )
+            // InternalSmartCE.g:2260:3: rule__Contract__BeginDateAssignment_7
+            {
+            pushFollow(FOLLOW_2);
+            rule__Contract__BeginDateAssignment_7();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getContractAccess().getBeginDateAssignment_7()); 
 
             }
 
@@ -7432,16 +7607,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__8"
-    // InternalSmartCE.g:2235:1: rule__Contract__Group__8 : rule__Contract__Group__8__Impl rule__Contract__Group__9 ;
+    // InternalSmartCE.g:2268:1: rule__Contract__Group__8 : rule__Contract__Group__8__Impl rule__Contract__Group__9 ;
     public final void rule__Contract__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2239:1: ( rule__Contract__Group__8__Impl rule__Contract__Group__9 )
-            // InternalSmartCE.g:2240:2: rule__Contract__Group__8__Impl rule__Contract__Group__9
+            // InternalSmartCE.g:2272:1: ( rule__Contract__Group__8__Impl rule__Contract__Group__9 )
+            // InternalSmartCE.g:2273:2: rule__Contract__Group__8__Impl rule__Contract__Group__9
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_10);
             rule__Contract__Group__8__Impl();
 
             state._fsp--;
@@ -7470,31 +7645,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__8__Impl"
-    // InternalSmartCE.g:2247:1: rule__Contract__Group__8__Impl : ( ( rule__Contract__DueDateAssignment_8 ) ) ;
+    // InternalSmartCE.g:2280:1: rule__Contract__Group__8__Impl : ( 'dueDate' ) ;
     public final void rule__Contract__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2251:1: ( ( ( rule__Contract__DueDateAssignment_8 ) ) )
-            // InternalSmartCE.g:2252:1: ( ( rule__Contract__DueDateAssignment_8 ) )
+            // InternalSmartCE.g:2284:1: ( ( 'dueDate' ) )
+            // InternalSmartCE.g:2285:1: ( 'dueDate' )
             {
-            // InternalSmartCE.g:2252:1: ( ( rule__Contract__DueDateAssignment_8 ) )
-            // InternalSmartCE.g:2253:2: ( rule__Contract__DueDateAssignment_8 )
+            // InternalSmartCE.g:2285:1: ( 'dueDate' )
+            // InternalSmartCE.g:2286:2: 'dueDate'
             {
-             before(grammarAccess.getContractAccess().getDueDateAssignment_8()); 
-            // InternalSmartCE.g:2254:2: ( rule__Contract__DueDateAssignment_8 )
-            // InternalSmartCE.g:2254:3: rule__Contract__DueDateAssignment_8
-            {
-            pushFollow(FOLLOW_2);
-            rule__Contract__DueDateAssignment_8();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getContractAccess().getDueDateAssignment_8()); 
+             before(grammarAccess.getContractAccess().getDueDateKeyword_8()); 
+            match(input,49,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getDueDateKeyword_8()); 
 
             }
 
@@ -7517,16 +7682,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__9"
-    // InternalSmartCE.g:2262:1: rule__Contract__Group__9 : rule__Contract__Group__9__Impl rule__Contract__Group__10 ;
+    // InternalSmartCE.g:2295:1: rule__Contract__Group__9 : rule__Contract__Group__9__Impl rule__Contract__Group__10 ;
     public final void rule__Contract__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2266:1: ( rule__Contract__Group__9__Impl rule__Contract__Group__10 )
-            // InternalSmartCE.g:2267:2: rule__Contract__Group__9__Impl rule__Contract__Group__10
+            // InternalSmartCE.g:2299:1: ( rule__Contract__Group__9__Impl rule__Contract__Group__10 )
+            // InternalSmartCE.g:2300:2: rule__Contract__Group__9__Impl rule__Contract__Group__10
             {
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_11);
             rule__Contract__Group__9__Impl();
 
             state._fsp--;
@@ -7555,21 +7720,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__9__Impl"
-    // InternalSmartCE.g:2274:1: rule__Contract__Group__9__Impl : ( 'parties' ) ;
+    // InternalSmartCE.g:2307:1: rule__Contract__Group__9__Impl : ( '=' ) ;
     public final void rule__Contract__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2278:1: ( ( 'parties' ) )
-            // InternalSmartCE.g:2279:1: ( 'parties' )
+            // InternalSmartCE.g:2311:1: ( ( '=' ) )
+            // InternalSmartCE.g:2312:1: ( '=' )
             {
-            // InternalSmartCE.g:2279:1: ( 'parties' )
-            // InternalSmartCE.g:2280:2: 'parties'
+            // InternalSmartCE.g:2312:1: ( '=' )
+            // InternalSmartCE.g:2313:2: '='
             {
-             before(grammarAccess.getContractAccess().getPartiesKeyword_9()); 
-            match(input,49,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getPartiesKeyword_9()); 
+             before(grammarAccess.getContractAccess().getEqualsSignKeyword_9()); 
+            match(input,48,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getEqualsSignKeyword_9()); 
 
             }
 
@@ -7592,14 +7757,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__10"
-    // InternalSmartCE.g:2289:1: rule__Contract__Group__10 : rule__Contract__Group__10__Impl rule__Contract__Group__11 ;
+    // InternalSmartCE.g:2322:1: rule__Contract__Group__10 : rule__Contract__Group__10__Impl rule__Contract__Group__11 ;
     public final void rule__Contract__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2293:1: ( rule__Contract__Group__10__Impl rule__Contract__Group__11 )
-            // InternalSmartCE.g:2294:2: rule__Contract__Group__10__Impl rule__Contract__Group__11
+            // InternalSmartCE.g:2326:1: ( rule__Contract__Group__10__Impl rule__Contract__Group__11 )
+            // InternalSmartCE.g:2327:2: rule__Contract__Group__10__Impl rule__Contract__Group__11
             {
             pushFollow(FOLLOW_13);
             rule__Contract__Group__10__Impl();
@@ -7630,21 +7795,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__10__Impl"
-    // InternalSmartCE.g:2301:1: rule__Contract__Group__10__Impl : ( '{' ) ;
+    // InternalSmartCE.g:2334:1: rule__Contract__Group__10__Impl : ( ( rule__Contract__DueDateAssignment_10 ) ) ;
     public final void rule__Contract__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2305:1: ( ( '{' ) )
-            // InternalSmartCE.g:2306:1: ( '{' )
+            // InternalSmartCE.g:2338:1: ( ( ( rule__Contract__DueDateAssignment_10 ) ) )
+            // InternalSmartCE.g:2339:1: ( ( rule__Contract__DueDateAssignment_10 ) )
             {
-            // InternalSmartCE.g:2306:1: ( '{' )
-            // InternalSmartCE.g:2307:2: '{'
+            // InternalSmartCE.g:2339:1: ( ( rule__Contract__DueDateAssignment_10 ) )
+            // InternalSmartCE.g:2340:2: ( rule__Contract__DueDateAssignment_10 )
             {
-             before(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_10()); 
-            match(input,45,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_10()); 
+             before(grammarAccess.getContractAccess().getDueDateAssignment_10()); 
+            // InternalSmartCE.g:2341:2: ( rule__Contract__DueDateAssignment_10 )
+            // InternalSmartCE.g:2341:3: rule__Contract__DueDateAssignment_10
+            {
+            pushFollow(FOLLOW_2);
+            rule__Contract__DueDateAssignment_10();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getContractAccess().getDueDateAssignment_10()); 
 
             }
 
@@ -7667,16 +7842,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__11"
-    // InternalSmartCE.g:2316:1: rule__Contract__Group__11 : rule__Contract__Group__11__Impl rule__Contract__Group__12 ;
+    // InternalSmartCE.g:2349:1: rule__Contract__Group__11 : rule__Contract__Group__11__Impl rule__Contract__Group__12 ;
     public final void rule__Contract__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2320:1: ( rule__Contract__Group__11__Impl rule__Contract__Group__12 )
-            // InternalSmartCE.g:2321:2: rule__Contract__Group__11__Impl rule__Contract__Group__12
+            // InternalSmartCE.g:2353:1: ( rule__Contract__Group__11__Impl rule__Contract__Group__12 )
+            // InternalSmartCE.g:2354:2: rule__Contract__Group__11__Impl rule__Contract__Group__12
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_14);
             rule__Contract__Group__11__Impl();
 
             state._fsp--;
@@ -7705,21 +7880,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__11__Impl"
-    // InternalSmartCE.g:2328:1: rule__Contract__Group__11__Impl : ( 'application' ) ;
+    // InternalSmartCE.g:2361:1: rule__Contract__Group__11__Impl : ( '}' ) ;
     public final void rule__Contract__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2332:1: ( ( 'application' ) )
-            // InternalSmartCE.g:2333:1: ( 'application' )
+            // InternalSmartCE.g:2365:1: ( ( '}' ) )
+            // InternalSmartCE.g:2366:1: ( '}' )
             {
-            // InternalSmartCE.g:2333:1: ( 'application' )
-            // InternalSmartCE.g:2334:2: 'application'
+            // InternalSmartCE.g:2366:1: ( '}' )
+            // InternalSmartCE.g:2367:2: '}'
             {
-             before(grammarAccess.getContractAccess().getApplicationKeyword_11()); 
-            match(input,15,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getApplicationKeyword_11()); 
+             before(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_11()); 
+            match(input,50,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_11()); 
 
             }
 
@@ -7742,16 +7917,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__12"
-    // InternalSmartCE.g:2343:1: rule__Contract__Group__12 : rule__Contract__Group__12__Impl rule__Contract__Group__13 ;
+    // InternalSmartCE.g:2376:1: rule__Contract__Group__12 : rule__Contract__Group__12__Impl rule__Contract__Group__13 ;
     public final void rule__Contract__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2347:1: ( rule__Contract__Group__12__Impl rule__Contract__Group__13 )
-            // InternalSmartCE.g:2348:2: rule__Contract__Group__12__Impl rule__Contract__Group__13
+            // InternalSmartCE.g:2380:1: ( rule__Contract__Group__12__Impl rule__Contract__Group__13 )
+            // InternalSmartCE.g:2381:2: rule__Contract__Group__12__Impl rule__Contract__Group__13
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_7);
             rule__Contract__Group__12__Impl();
 
             state._fsp--;
@@ -7780,21 +7955,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__12__Impl"
-    // InternalSmartCE.g:2355:1: rule__Contract__Group__12__Impl : ( '=' ) ;
+    // InternalSmartCE.g:2388:1: rule__Contract__Group__12__Impl : ( 'parties' ) ;
     public final void rule__Contract__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2359:1: ( ( '=' ) )
-            // InternalSmartCE.g:2360:1: ( '=' )
+            // InternalSmartCE.g:2392:1: ( ( 'parties' ) )
+            // InternalSmartCE.g:2393:1: ( 'parties' )
             {
-            // InternalSmartCE.g:2360:1: ( '=' )
-            // InternalSmartCE.g:2361:2: '='
+            // InternalSmartCE.g:2393:1: ( 'parties' )
+            // InternalSmartCE.g:2394:2: 'parties'
             {
-             before(grammarAccess.getContractAccess().getEqualsSignKeyword_12()); 
-            match(input,47,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getEqualsSignKeyword_12()); 
+             before(grammarAccess.getContractAccess().getPartiesKeyword_12()); 
+            match(input,51,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getPartiesKeyword_12()); 
 
             }
 
@@ -7817,14 +7992,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__13"
-    // InternalSmartCE.g:2370:1: rule__Contract__Group__13 : rule__Contract__Group__13__Impl rule__Contract__Group__14 ;
+    // InternalSmartCE.g:2403:1: rule__Contract__Group__13 : rule__Contract__Group__13__Impl rule__Contract__Group__14 ;
     public final void rule__Contract__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2374:1: ( rule__Contract__Group__13__Impl rule__Contract__Group__14 )
-            // InternalSmartCE.g:2375:2: rule__Contract__Group__13__Impl rule__Contract__Group__14
+            // InternalSmartCE.g:2407:1: ( rule__Contract__Group__13__Impl rule__Contract__Group__14 )
+            // InternalSmartCE.g:2408:2: rule__Contract__Group__13__Impl rule__Contract__Group__14
             {
             pushFollow(FOLLOW_15);
             rule__Contract__Group__13__Impl();
@@ -7855,31 +8030,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__13__Impl"
-    // InternalSmartCE.g:2382:1: rule__Contract__Group__13__Impl : ( ( rule__Contract__ApplicationAssignment_13 ) ) ;
+    // InternalSmartCE.g:2415:1: rule__Contract__Group__13__Impl : ( '{' ) ;
     public final void rule__Contract__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2386:1: ( ( ( rule__Contract__ApplicationAssignment_13 ) ) )
-            // InternalSmartCE.g:2387:1: ( ( rule__Contract__ApplicationAssignment_13 ) )
+            // InternalSmartCE.g:2419:1: ( ( '{' ) )
+            // InternalSmartCE.g:2420:1: ( '{' )
             {
-            // InternalSmartCE.g:2387:1: ( ( rule__Contract__ApplicationAssignment_13 ) )
-            // InternalSmartCE.g:2388:2: ( rule__Contract__ApplicationAssignment_13 )
+            // InternalSmartCE.g:2420:1: ( '{' )
+            // InternalSmartCE.g:2421:2: '{'
             {
-             before(grammarAccess.getContractAccess().getApplicationAssignment_13()); 
-            // InternalSmartCE.g:2389:2: ( rule__Contract__ApplicationAssignment_13 )
-            // InternalSmartCE.g:2389:3: rule__Contract__ApplicationAssignment_13
-            {
-            pushFollow(FOLLOW_2);
-            rule__Contract__ApplicationAssignment_13();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getContractAccess().getApplicationAssignment_13()); 
+             before(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_13()); 
+            match(input,45,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_13()); 
 
             }
 
@@ -7902,16 +8067,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__14"
-    // InternalSmartCE.g:2397:1: rule__Contract__Group__14 : rule__Contract__Group__14__Impl rule__Contract__Group__15 ;
+    // InternalSmartCE.g:2430:1: rule__Contract__Group__14 : rule__Contract__Group__14__Impl rule__Contract__Group__15 ;
     public final void rule__Contract__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2401:1: ( rule__Contract__Group__14__Impl rule__Contract__Group__15 )
-            // InternalSmartCE.g:2402:2: rule__Contract__Group__14__Impl rule__Contract__Group__15
+            // InternalSmartCE.g:2434:1: ( rule__Contract__Group__14__Impl rule__Contract__Group__15 )
+            // InternalSmartCE.g:2435:2: rule__Contract__Group__14__Impl rule__Contract__Group__15
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__Contract__Group__14__Impl();
 
             state._fsp--;
@@ -7940,21 +8105,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__14__Impl"
-    // InternalSmartCE.g:2409:1: rule__Contract__Group__14__Impl : ( 'process' ) ;
+    // InternalSmartCE.g:2442:1: rule__Contract__Group__14__Impl : ( 'application' ) ;
     public final void rule__Contract__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2413:1: ( ( 'process' ) )
-            // InternalSmartCE.g:2414:1: ( 'process' )
+            // InternalSmartCE.g:2446:1: ( ( 'application' ) )
+            // InternalSmartCE.g:2447:1: ( 'application' )
             {
-            // InternalSmartCE.g:2414:1: ( 'process' )
-            // InternalSmartCE.g:2415:2: 'process'
+            // InternalSmartCE.g:2447:1: ( 'application' )
+            // InternalSmartCE.g:2448:2: 'application'
             {
-             before(grammarAccess.getContractAccess().getProcessKeyword_14()); 
-            match(input,14,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getProcessKeyword_14()); 
+             before(grammarAccess.getContractAccess().getApplicationKeyword_14()); 
+            match(input,15,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getApplicationKeyword_14()); 
 
             }
 
@@ -7977,16 +8142,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__15"
-    // InternalSmartCE.g:2424:1: rule__Contract__Group__15 : rule__Contract__Group__15__Impl rule__Contract__Group__16 ;
+    // InternalSmartCE.g:2457:1: rule__Contract__Group__15 : rule__Contract__Group__15__Impl rule__Contract__Group__16 ;
     public final void rule__Contract__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2428:1: ( rule__Contract__Group__15__Impl rule__Contract__Group__16 )
-            // InternalSmartCE.g:2429:2: rule__Contract__Group__15__Impl rule__Contract__Group__16
+            // InternalSmartCE.g:2461:1: ( rule__Contract__Group__15__Impl rule__Contract__Group__16 )
+            // InternalSmartCE.g:2462:2: rule__Contract__Group__15__Impl rule__Contract__Group__16
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__Contract__Group__15__Impl();
 
             state._fsp--;
@@ -8015,20 +8180,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__15__Impl"
-    // InternalSmartCE.g:2436:1: rule__Contract__Group__15__Impl : ( '=' ) ;
+    // InternalSmartCE.g:2469:1: rule__Contract__Group__15__Impl : ( '=' ) ;
     public final void rule__Contract__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2440:1: ( ( '=' ) )
-            // InternalSmartCE.g:2441:1: ( '=' )
+            // InternalSmartCE.g:2473:1: ( ( '=' ) )
+            // InternalSmartCE.g:2474:1: ( '=' )
             {
-            // InternalSmartCE.g:2441:1: ( '=' )
-            // InternalSmartCE.g:2442:2: '='
+            // InternalSmartCE.g:2474:1: ( '=' )
+            // InternalSmartCE.g:2475:2: '='
             {
              before(grammarAccess.getContractAccess().getEqualsSignKeyword_15()); 
-            match(input,47,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getContractAccess().getEqualsSignKeyword_15()); 
 
             }
@@ -8052,16 +8217,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__16"
-    // InternalSmartCE.g:2451:1: rule__Contract__Group__16 : rule__Contract__Group__16__Impl rule__Contract__Group__17 ;
+    // InternalSmartCE.g:2484:1: rule__Contract__Group__16 : rule__Contract__Group__16__Impl rule__Contract__Group__17 ;
     public final void rule__Contract__Group__16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2455:1: ( rule__Contract__Group__16__Impl rule__Contract__Group__17 )
-            // InternalSmartCE.g:2456:2: rule__Contract__Group__16__Impl rule__Contract__Group__17
+            // InternalSmartCE.g:2488:1: ( rule__Contract__Group__16__Impl rule__Contract__Group__17 )
+            // InternalSmartCE.g:2489:2: rule__Contract__Group__16__Impl rule__Contract__Group__17
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_17);
             rule__Contract__Group__16__Impl();
 
             state._fsp--;
@@ -8090,31 +8255,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__16__Impl"
-    // InternalSmartCE.g:2463:1: rule__Contract__Group__16__Impl : ( ( rule__Contract__ProcessAssignment_16 ) ) ;
+    // InternalSmartCE.g:2496:1: rule__Contract__Group__16__Impl : ( ( rule__Contract__ApplicationAssignment_16 ) ) ;
     public final void rule__Contract__Group__16__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2467:1: ( ( ( rule__Contract__ProcessAssignment_16 ) ) )
-            // InternalSmartCE.g:2468:1: ( ( rule__Contract__ProcessAssignment_16 ) )
+            // InternalSmartCE.g:2500:1: ( ( ( rule__Contract__ApplicationAssignment_16 ) ) )
+            // InternalSmartCE.g:2501:1: ( ( rule__Contract__ApplicationAssignment_16 ) )
             {
-            // InternalSmartCE.g:2468:1: ( ( rule__Contract__ProcessAssignment_16 ) )
-            // InternalSmartCE.g:2469:2: ( rule__Contract__ProcessAssignment_16 )
+            // InternalSmartCE.g:2501:1: ( ( rule__Contract__ApplicationAssignment_16 ) )
+            // InternalSmartCE.g:2502:2: ( rule__Contract__ApplicationAssignment_16 )
             {
-             before(grammarAccess.getContractAccess().getProcessAssignment_16()); 
-            // InternalSmartCE.g:2470:2: ( rule__Contract__ProcessAssignment_16 )
-            // InternalSmartCE.g:2470:3: rule__Contract__ProcessAssignment_16
+             before(grammarAccess.getContractAccess().getApplicationAssignment_16()); 
+            // InternalSmartCE.g:2503:2: ( rule__Contract__ApplicationAssignment_16 )
+            // InternalSmartCE.g:2503:3: rule__Contract__ApplicationAssignment_16
             {
             pushFollow(FOLLOW_2);
-            rule__Contract__ProcessAssignment_16();
+            rule__Contract__ApplicationAssignment_16();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getContractAccess().getProcessAssignment_16()); 
+             after(grammarAccess.getContractAccess().getApplicationAssignment_16()); 
 
             }
 
@@ -8137,16 +8302,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__17"
-    // InternalSmartCE.g:2478:1: rule__Contract__Group__17 : rule__Contract__Group__17__Impl rule__Contract__Group__18 ;
+    // InternalSmartCE.g:2511:1: rule__Contract__Group__17 : rule__Contract__Group__17__Impl rule__Contract__Group__18 ;
     public final void rule__Contract__Group__17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2482:1: ( rule__Contract__Group__17__Impl rule__Contract__Group__18 )
-            // InternalSmartCE.g:2483:2: rule__Contract__Group__17__Impl rule__Contract__Group__18
+            // InternalSmartCE.g:2515:1: ( rule__Contract__Group__17__Impl rule__Contract__Group__18 )
+            // InternalSmartCE.g:2516:2: rule__Contract__Group__17__Impl rule__Contract__Group__18
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_10);
             rule__Contract__Group__17__Impl();
 
             state._fsp--;
@@ -8175,21 +8340,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__17__Impl"
-    // InternalSmartCE.g:2490:1: rule__Contract__Group__17__Impl : ( '}' ) ;
+    // InternalSmartCE.g:2523:1: rule__Contract__Group__17__Impl : ( 'process' ) ;
     public final void rule__Contract__Group__17__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2494:1: ( ( '}' ) )
-            // InternalSmartCE.g:2495:1: ( '}' )
+            // InternalSmartCE.g:2527:1: ( ( 'process' ) )
+            // InternalSmartCE.g:2528:1: ( 'process' )
             {
-            // InternalSmartCE.g:2495:1: ( '}' )
-            // InternalSmartCE.g:2496:2: '}'
+            // InternalSmartCE.g:2528:1: ( 'process' )
+            // InternalSmartCE.g:2529:2: 'process'
             {
-             before(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_17()); 
-            match(input,50,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_17()); 
+             before(grammarAccess.getContractAccess().getProcessKeyword_17()); 
+            match(input,14,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getProcessKeyword_17()); 
 
             }
 
@@ -8212,16 +8377,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__18"
-    // InternalSmartCE.g:2505:1: rule__Contract__Group__18 : rule__Contract__Group__18__Impl rule__Contract__Group__19 ;
+    // InternalSmartCE.g:2538:1: rule__Contract__Group__18 : rule__Contract__Group__18__Impl rule__Contract__Group__19 ;
     public final void rule__Contract__Group__18() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2509:1: ( rule__Contract__Group__18__Impl rule__Contract__Group__19 )
-            // InternalSmartCE.g:2510:2: rule__Contract__Group__18__Impl rule__Contract__Group__19
+            // InternalSmartCE.g:2542:1: ( rule__Contract__Group__18__Impl rule__Contract__Group__19 )
+            // InternalSmartCE.g:2543:2: rule__Contract__Group__18__Impl rule__Contract__Group__19
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_16);
             rule__Contract__Group__18__Impl();
 
             state._fsp--;
@@ -8250,42 +8415,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__18__Impl"
-    // InternalSmartCE.g:2517:1: rule__Contract__Group__18__Impl : ( ( rule__Contract__Group_18__0 )? ) ;
+    // InternalSmartCE.g:2550:1: rule__Contract__Group__18__Impl : ( '=' ) ;
     public final void rule__Contract__Group__18__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2521:1: ( ( ( rule__Contract__Group_18__0 )? ) )
-            // InternalSmartCE.g:2522:1: ( ( rule__Contract__Group_18__0 )? )
+            // InternalSmartCE.g:2554:1: ( ( '=' ) )
+            // InternalSmartCE.g:2555:1: ( '=' )
             {
-            // InternalSmartCE.g:2522:1: ( ( rule__Contract__Group_18__0 )? )
-            // InternalSmartCE.g:2523:2: ( rule__Contract__Group_18__0 )?
+            // InternalSmartCE.g:2555:1: ( '=' )
+            // InternalSmartCE.g:2556:2: '='
             {
-             before(grammarAccess.getContractAccess().getGroup_18()); 
-            // InternalSmartCE.g:2524:2: ( rule__Contract__Group_18__0 )?
-            int alt25=2;
-            int LA25_0 = input.LA(1);
-
-            if ( (LA25_0==51) ) {
-                alt25=1;
-            }
-            switch (alt25) {
-                case 1 :
-                    // InternalSmartCE.g:2524:3: rule__Contract__Group_18__0
-                    {
-                    pushFollow(FOLLOW_2);
-                    rule__Contract__Group_18__0();
-
-                    state._fsp--;
-
-
-                    }
-                    break;
-
-            }
-
-             after(grammarAccess.getContractAccess().getGroup_18()); 
+             before(grammarAccess.getContractAccess().getEqualsSignKeyword_18()); 
+            match(input,48,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getEqualsSignKeyword_18()); 
 
             }
 
@@ -8308,16 +8452,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__19"
-    // InternalSmartCE.g:2532:1: rule__Contract__Group__19 : rule__Contract__Group__19__Impl rule__Contract__Group__20 ;
+    // InternalSmartCE.g:2565:1: rule__Contract__Group__19 : rule__Contract__Group__19__Impl rule__Contract__Group__20 ;
     public final void rule__Contract__Group__19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2536:1: ( rule__Contract__Group__19__Impl rule__Contract__Group__20 )
-            // InternalSmartCE.g:2537:2: rule__Contract__Group__19__Impl rule__Contract__Group__20
+            // InternalSmartCE.g:2569:1: ( rule__Contract__Group__19__Impl rule__Contract__Group__20 )
+            // InternalSmartCE.g:2570:2: rule__Contract__Group__19__Impl rule__Contract__Group__20
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_13);
             rule__Contract__Group__19__Impl();
 
             state._fsp--;
@@ -8346,31 +8490,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__19__Impl"
-    // InternalSmartCE.g:2544:1: rule__Contract__Group__19__Impl : ( ( rule__Contract__ClausesAssignment_19 ) ) ;
+    // InternalSmartCE.g:2577:1: rule__Contract__Group__19__Impl : ( ( rule__Contract__ProcessAssignment_19 ) ) ;
     public final void rule__Contract__Group__19__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2548:1: ( ( ( rule__Contract__ClausesAssignment_19 ) ) )
-            // InternalSmartCE.g:2549:1: ( ( rule__Contract__ClausesAssignment_19 ) )
+            // InternalSmartCE.g:2581:1: ( ( ( rule__Contract__ProcessAssignment_19 ) ) )
+            // InternalSmartCE.g:2582:1: ( ( rule__Contract__ProcessAssignment_19 ) )
             {
-            // InternalSmartCE.g:2549:1: ( ( rule__Contract__ClausesAssignment_19 ) )
-            // InternalSmartCE.g:2550:2: ( rule__Contract__ClausesAssignment_19 )
+            // InternalSmartCE.g:2582:1: ( ( rule__Contract__ProcessAssignment_19 ) )
+            // InternalSmartCE.g:2583:2: ( rule__Contract__ProcessAssignment_19 )
             {
-             before(grammarAccess.getContractAccess().getClausesAssignment_19()); 
-            // InternalSmartCE.g:2551:2: ( rule__Contract__ClausesAssignment_19 )
-            // InternalSmartCE.g:2551:3: rule__Contract__ClausesAssignment_19
+             before(grammarAccess.getContractAccess().getProcessAssignment_19()); 
+            // InternalSmartCE.g:2584:2: ( rule__Contract__ProcessAssignment_19 )
+            // InternalSmartCE.g:2584:3: rule__Contract__ProcessAssignment_19
             {
             pushFollow(FOLLOW_2);
-            rule__Contract__ClausesAssignment_19();
+            rule__Contract__ProcessAssignment_19();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getContractAccess().getClausesAssignment_19()); 
+             after(grammarAccess.getContractAccess().getProcessAssignment_19()); 
 
             }
 
@@ -8393,17 +8537,22 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__20"
-    // InternalSmartCE.g:2559:1: rule__Contract__Group__20 : rule__Contract__Group__20__Impl ;
+    // InternalSmartCE.g:2592:1: rule__Contract__Group__20 : rule__Contract__Group__20__Impl rule__Contract__Group__21 ;
     public final void rule__Contract__Group__20() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2563:1: ( rule__Contract__Group__20__Impl )
-            // InternalSmartCE.g:2564:2: rule__Contract__Group__20__Impl
+            // InternalSmartCE.g:2596:1: ( rule__Contract__Group__20__Impl rule__Contract__Group__21 )
+            // InternalSmartCE.g:2597:2: rule__Contract__Group__20__Impl rule__Contract__Group__21
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_18);
             rule__Contract__Group__20__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Contract__Group__21();
 
             state._fsp--;
 
@@ -8426,17 +8575,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__20__Impl"
-    // InternalSmartCE.g:2570:1: rule__Contract__Group__20__Impl : ( '}' ) ;
+    // InternalSmartCE.g:2604:1: rule__Contract__Group__20__Impl : ( '}' ) ;
     public final void rule__Contract__Group__20__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2574:1: ( ( '}' ) )
-            // InternalSmartCE.g:2575:1: ( '}' )
+            // InternalSmartCE.g:2608:1: ( ( '}' ) )
+            // InternalSmartCE.g:2609:1: ( '}' )
             {
-            // InternalSmartCE.g:2575:1: ( '}' )
-            // InternalSmartCE.g:2576:2: '}'
+            // InternalSmartCE.g:2609:1: ( '}' )
+            // InternalSmartCE.g:2610:2: '}'
             {
              before(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_20()); 
             match(input,50,FOLLOW_2); 
@@ -8462,23 +8611,119 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Contract__Group__20__Impl"
 
 
-    // $ANTLR start "rule__Contract__Group_18__0"
-    // InternalSmartCE.g:2586:1: rule__Contract__Group_18__0 : rule__Contract__Group_18__0__Impl rule__Contract__Group_18__1 ;
-    public final void rule__Contract__Group_18__0() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__21"
+    // InternalSmartCE.g:2619:1: rule__Contract__Group__21 : rule__Contract__Group__21__Impl rule__Contract__Group__22 ;
+    public final void rule__Contract__Group__21() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2590:1: ( rule__Contract__Group_18__0__Impl rule__Contract__Group_18__1 )
-            // InternalSmartCE.g:2591:2: rule__Contract__Group_18__0__Impl rule__Contract__Group_18__1
+            // InternalSmartCE.g:2623:1: ( rule__Contract__Group__21__Impl rule__Contract__Group__22 )
+            // InternalSmartCE.g:2624:2: rule__Contract__Group__21__Impl rule__Contract__Group__22
+            {
+            pushFollow(FOLLOW_18);
+            rule__Contract__Group__21__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Contract__Group__22();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group__21"
+
+
+    // $ANTLR start "rule__Contract__Group__21__Impl"
+    // InternalSmartCE.g:2631:1: rule__Contract__Group__21__Impl : ( ( rule__Contract__Group_21__0 )? ) ;
+    public final void rule__Contract__Group__21__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2635:1: ( ( ( rule__Contract__Group_21__0 )? ) )
+            // InternalSmartCE.g:2636:1: ( ( rule__Contract__Group_21__0 )? )
+            {
+            // InternalSmartCE.g:2636:1: ( ( rule__Contract__Group_21__0 )? )
+            // InternalSmartCE.g:2637:2: ( rule__Contract__Group_21__0 )?
+            {
+             before(grammarAccess.getContractAccess().getGroup_21()); 
+            // InternalSmartCE.g:2638:2: ( rule__Contract__Group_21__0 )?
+            int alt26=2;
+            int LA26_0 = input.LA(1);
+
+            if ( (LA26_0==53) ) {
+                alt26=1;
+            }
+            switch (alt26) {
+                case 1 :
+                    // InternalSmartCE.g:2638:3: rule__Contract__Group_21__0
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__Contract__Group_21__0();
+
+                    state._fsp--;
+
+
+                    }
+                    break;
+
+            }
+
+             after(grammarAccess.getContractAccess().getGroup_21()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group__21__Impl"
+
+
+    // $ANTLR start "rule__Contract__Group__22"
+    // InternalSmartCE.g:2646:1: rule__Contract__Group__22 : rule__Contract__Group__22__Impl rule__Contract__Group__23 ;
+    public final void rule__Contract__Group__22() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2650:1: ( rule__Contract__Group__22__Impl rule__Contract__Group__23 )
+            // InternalSmartCE.g:2651:2: rule__Contract__Group__22__Impl rule__Contract__Group__23
             {
             pushFollow(FOLLOW_7);
-            rule__Contract__Group_18__0__Impl();
+            rule__Contract__Group__22__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Contract__Group_18__1();
+            rule__Contract__Group__23();
 
             state._fsp--;
 
@@ -8497,25 +8742,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__0"
+    // $ANTLR end "rule__Contract__Group__22"
 
 
-    // $ANTLR start "rule__Contract__Group_18__0__Impl"
-    // InternalSmartCE.g:2598:1: rule__Contract__Group_18__0__Impl : ( 'variables' ) ;
-    public final void rule__Contract__Group_18__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__22__Impl"
+    // InternalSmartCE.g:2658:1: rule__Contract__Group__22__Impl : ( 'clauses' ) ;
+    public final void rule__Contract__Group__22__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2602:1: ( ( 'variables' ) )
-            // InternalSmartCE.g:2603:1: ( 'variables' )
+            // InternalSmartCE.g:2662:1: ( ( 'clauses' ) )
+            // InternalSmartCE.g:2663:1: ( 'clauses' )
             {
-            // InternalSmartCE.g:2603:1: ( 'variables' )
-            // InternalSmartCE.g:2604:2: 'variables'
+            // InternalSmartCE.g:2663:1: ( 'clauses' )
+            // InternalSmartCE.g:2664:2: 'clauses'
             {
-             before(grammarAccess.getContractAccess().getVariablesKeyword_18_0()); 
-            match(input,51,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getVariablesKeyword_18_0()); 
+             before(grammarAccess.getContractAccess().getClausesKeyword_22()); 
+            match(input,52,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getClausesKeyword_22()); 
 
             }
 
@@ -8534,26 +8779,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__0__Impl"
+    // $ANTLR end "rule__Contract__Group__22__Impl"
 
 
-    // $ANTLR start "rule__Contract__Group_18__1"
-    // InternalSmartCE.g:2613:1: rule__Contract__Group_18__1 : rule__Contract__Group_18__1__Impl rule__Contract__Group_18__2 ;
-    public final void rule__Contract__Group_18__1() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__23"
+    // InternalSmartCE.g:2673:1: rule__Contract__Group__23 : rule__Contract__Group__23__Impl rule__Contract__Group__24 ;
+    public final void rule__Contract__Group__23() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2617:1: ( rule__Contract__Group_18__1__Impl rule__Contract__Group_18__2 )
-            // InternalSmartCE.g:2618:2: rule__Contract__Group_18__1__Impl rule__Contract__Group_18__2
+            // InternalSmartCE.g:2677:1: ( rule__Contract__Group__23__Impl rule__Contract__Group__24 )
+            // InternalSmartCE.g:2678:2: rule__Contract__Group__23__Impl rule__Contract__Group__24
             {
-            pushFollow(FOLLOW_18);
-            rule__Contract__Group_18__1__Impl();
+            pushFollow(FOLLOW_19);
+            rule__Contract__Group__23__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Contract__Group_18__2();
+            rule__Contract__Group__24();
 
             state._fsp--;
 
@@ -8572,25 +8817,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__1"
+    // $ANTLR end "rule__Contract__Group__23"
 
 
-    // $ANTLR start "rule__Contract__Group_18__1__Impl"
-    // InternalSmartCE.g:2625:1: rule__Contract__Group_18__1__Impl : ( '{' ) ;
-    public final void rule__Contract__Group_18__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__23__Impl"
+    // InternalSmartCE.g:2685:1: rule__Contract__Group__23__Impl : ( '{' ) ;
+    public final void rule__Contract__Group__23__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2629:1: ( ( '{' ) )
-            // InternalSmartCE.g:2630:1: ( '{' )
+            // InternalSmartCE.g:2689:1: ( ( '{' ) )
+            // InternalSmartCE.g:2690:1: ( '{' )
             {
-            // InternalSmartCE.g:2630:1: ( '{' )
-            // InternalSmartCE.g:2631:2: '{'
+            // InternalSmartCE.g:2690:1: ( '{' )
+            // InternalSmartCE.g:2691:2: '{'
             {
-             before(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_18_1()); 
+             before(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_23()); 
             match(input,45,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_18_1()); 
+             after(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_23()); 
 
             }
 
@@ -8609,26 +8854,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__1__Impl"
+    // $ANTLR end "rule__Contract__Group__23__Impl"
 
 
-    // $ANTLR start "rule__Contract__Group_18__2"
-    // InternalSmartCE.g:2640:1: rule__Contract__Group_18__2 : rule__Contract__Group_18__2__Impl rule__Contract__Group_18__3 ;
-    public final void rule__Contract__Group_18__2() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__24"
+    // InternalSmartCE.g:2700:1: rule__Contract__Group__24 : rule__Contract__Group__24__Impl rule__Contract__Group__25 ;
+    public final void rule__Contract__Group__24() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2644:1: ( rule__Contract__Group_18__2__Impl rule__Contract__Group_18__3 )
-            // InternalSmartCE.g:2645:2: rule__Contract__Group_18__2__Impl rule__Contract__Group_18__3
+            // InternalSmartCE.g:2704:1: ( rule__Contract__Group__24__Impl rule__Contract__Group__25 )
+            // InternalSmartCE.g:2705:2: rule__Contract__Group__24__Impl rule__Contract__Group__25
             {
-            pushFollow(FOLLOW_18);
-            rule__Contract__Group_18__2__Impl();
+            pushFollow(FOLLOW_19);
+            rule__Contract__Group__24__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Contract__Group_18__3();
+            rule__Contract__Group__25();
 
             state._fsp--;
 
@@ -8647,40 +8892,40 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__2"
+    // $ANTLR end "rule__Contract__Group__24"
 
 
-    // $ANTLR start "rule__Contract__Group_18__2__Impl"
-    // InternalSmartCE.g:2652:1: rule__Contract__Group_18__2__Impl : ( ( rule__Contract__VariablesAssignment_18_2 )* ) ;
-    public final void rule__Contract__Group_18__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__24__Impl"
+    // InternalSmartCE.g:2712:1: rule__Contract__Group__24__Impl : ( ( rule__Contract__ClausesAssignment_24 )* ) ;
+    public final void rule__Contract__Group__24__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2656:1: ( ( ( rule__Contract__VariablesAssignment_18_2 )* ) )
-            // InternalSmartCE.g:2657:1: ( ( rule__Contract__VariablesAssignment_18_2 )* )
+            // InternalSmartCE.g:2716:1: ( ( ( rule__Contract__ClausesAssignment_24 )* ) )
+            // InternalSmartCE.g:2717:1: ( ( rule__Contract__ClausesAssignment_24 )* )
             {
-            // InternalSmartCE.g:2657:1: ( ( rule__Contract__VariablesAssignment_18_2 )* )
-            // InternalSmartCE.g:2658:2: ( rule__Contract__VariablesAssignment_18_2 )*
+            // InternalSmartCE.g:2717:1: ( ( rule__Contract__ClausesAssignment_24 )* )
+            // InternalSmartCE.g:2718:2: ( rule__Contract__ClausesAssignment_24 )*
             {
-             before(grammarAccess.getContractAccess().getVariablesAssignment_18_2()); 
-            // InternalSmartCE.g:2659:2: ( rule__Contract__VariablesAssignment_18_2 )*
-            loop26:
+             before(grammarAccess.getContractAccess().getClausesAssignment_24()); 
+            // InternalSmartCE.g:2719:2: ( rule__Contract__ClausesAssignment_24 )*
+            loop27:
             do {
-                int alt26=2;
-                int LA26_0 = input.LA(1);
+                int alt27=2;
+                int LA27_0 = input.LA(1);
 
-                if ( (LA26_0==RULE_ID) ) {
-                    alt26=1;
+                if ( ((LA27_0>=11 && LA27_0<=13)) ) {
+                    alt27=1;
                 }
 
 
-                switch (alt26) {
+                switch (alt27) {
             	case 1 :
-            	    // InternalSmartCE.g:2659:3: rule__Contract__VariablesAssignment_18_2
+            	    // InternalSmartCE.g:2719:3: rule__Contract__ClausesAssignment_24
             	    {
-            	    pushFollow(FOLLOW_19);
-            	    rule__Contract__VariablesAssignment_18_2();
+            	    pushFollow(FOLLOW_20);
+            	    rule__Contract__ClausesAssignment_24();
 
             	    state._fsp--;
 
@@ -8689,11 +8934,11 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop26;
+            	    break loop27;
                 }
             } while (true);
 
-             after(grammarAccess.getContractAccess().getVariablesAssignment_18_2()); 
+             after(grammarAccess.getContractAccess().getClausesAssignment_24()); 
 
             }
 
@@ -8712,21 +8957,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__2__Impl"
+    // $ANTLR end "rule__Contract__Group__24__Impl"
 
 
-    // $ANTLR start "rule__Contract__Group_18__3"
-    // InternalSmartCE.g:2667:1: rule__Contract__Group_18__3 : rule__Contract__Group_18__3__Impl ;
-    public final void rule__Contract__Group_18__3() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__25"
+    // InternalSmartCE.g:2727:1: rule__Contract__Group__25 : rule__Contract__Group__25__Impl rule__Contract__Group__26 ;
+    public final void rule__Contract__Group__25() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2671:1: ( rule__Contract__Group_18__3__Impl )
-            // InternalSmartCE.g:2672:2: rule__Contract__Group_18__3__Impl
+            // InternalSmartCE.g:2731:1: ( rule__Contract__Group__25__Impl rule__Contract__Group__26 )
+            // InternalSmartCE.g:2732:2: rule__Contract__Group__25__Impl rule__Contract__Group__26
             {
+            pushFollow(FOLLOW_13);
+            rule__Contract__Group__25__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__Contract__Group_18__3__Impl();
+            rule__Contract__Group__26();
 
             state._fsp--;
 
@@ -8745,25 +8995,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__3"
+    // $ANTLR end "rule__Contract__Group__25"
 
 
-    // $ANTLR start "rule__Contract__Group_18__3__Impl"
-    // InternalSmartCE.g:2678:1: rule__Contract__Group_18__3__Impl : ( '}' ) ;
-    public final void rule__Contract__Group_18__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__25__Impl"
+    // InternalSmartCE.g:2739:1: rule__Contract__Group__25__Impl : ( '}' ) ;
+    public final void rule__Contract__Group__25__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2682:1: ( ( '}' ) )
-            // InternalSmartCE.g:2683:1: ( '}' )
+            // InternalSmartCE.g:2743:1: ( ( '}' ) )
+            // InternalSmartCE.g:2744:1: ( '}' )
             {
-            // InternalSmartCE.g:2683:1: ( '}' )
-            // InternalSmartCE.g:2684:2: '}'
+            // InternalSmartCE.g:2744:1: ( '}' )
+            // InternalSmartCE.g:2745:2: '}'
             {
-             before(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_18_3()); 
+             before(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_25()); 
             match(input,50,FOLLOW_2); 
-             after(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_18_3()); 
+             after(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_25()); 
 
             }
 
@@ -8782,26 +9032,96 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__Group_18__3__Impl"
+    // $ANTLR end "rule__Contract__Group__25__Impl"
 
 
-    // $ANTLR start "rule__Variable__Group__0"
-    // InternalSmartCE.g:2694:1: rule__Variable__Group__0 : rule__Variable__Group__0__Impl rule__Variable__Group__1 ;
-    public final void rule__Variable__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group__26"
+    // InternalSmartCE.g:2754:1: rule__Contract__Group__26 : rule__Contract__Group__26__Impl ;
+    public final void rule__Contract__Group__26() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2698:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
-            // InternalSmartCE.g:2699:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
+            // InternalSmartCE.g:2758:1: ( rule__Contract__Group__26__Impl )
+            // InternalSmartCE.g:2759:2: rule__Contract__Group__26__Impl
             {
-            pushFollow(FOLLOW_9);
-            rule__Variable__Group__0__Impl();
+            pushFollow(FOLLOW_2);
+            rule__Contract__Group__26__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group__26"
+
+
+    // $ANTLR start "rule__Contract__Group__26__Impl"
+    // InternalSmartCE.g:2765:1: rule__Contract__Group__26__Impl : ( '}' ) ;
+    public final void rule__Contract__Group__26__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2769:1: ( ( '}' ) )
+            // InternalSmartCE.g:2770:1: ( '}' )
+            {
+            // InternalSmartCE.g:2770:1: ( '}' )
+            // InternalSmartCE.g:2771:2: '}'
+            {
+             before(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_26()); 
+            match(input,50,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_26()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group__26__Impl"
+
+
+    // $ANTLR start "rule__Contract__Group_21__0"
+    // InternalSmartCE.g:2781:1: rule__Contract__Group_21__0 : rule__Contract__Group_21__0__Impl rule__Contract__Group_21__1 ;
+    public final void rule__Contract__Group_21__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2785:1: ( rule__Contract__Group_21__0__Impl rule__Contract__Group_21__1 )
+            // InternalSmartCE.g:2786:2: rule__Contract__Group_21__0__Impl rule__Contract__Group_21__1
+            {
+            pushFollow(FOLLOW_7);
+            rule__Contract__Group_21__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Variable__Group__1();
+            rule__Contract__Group_21__1();
 
             state._fsp--;
 
@@ -8820,35 +9140,273 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable__Group__0"
+    // $ANTLR end "rule__Contract__Group_21__0"
 
 
-    // $ANTLR start "rule__Variable__Group__0__Impl"
-    // InternalSmartCE.g:2706:1: rule__Variable__Group__0__Impl : ( ( rule__Variable__NameAssignment_0 ) ) ;
-    public final void rule__Variable__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Contract__Group_21__0__Impl"
+    // InternalSmartCE.g:2793:1: rule__Contract__Group_21__0__Impl : ( 'variables' ) ;
+    public final void rule__Contract__Group_21__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2710:1: ( ( ( rule__Variable__NameAssignment_0 ) ) )
-            // InternalSmartCE.g:2711:1: ( ( rule__Variable__NameAssignment_0 ) )
+            // InternalSmartCE.g:2797:1: ( ( 'variables' ) )
+            // InternalSmartCE.g:2798:1: ( 'variables' )
             {
-            // InternalSmartCE.g:2711:1: ( ( rule__Variable__NameAssignment_0 ) )
-            // InternalSmartCE.g:2712:2: ( rule__Variable__NameAssignment_0 )
+            // InternalSmartCE.g:2798:1: ( 'variables' )
+            // InternalSmartCE.g:2799:2: 'variables'
             {
-             before(grammarAccess.getVariableAccess().getNameAssignment_0()); 
-            // InternalSmartCE.g:2713:2: ( rule__Variable__NameAssignment_0 )
-            // InternalSmartCE.g:2713:3: rule__Variable__NameAssignment_0
+             before(grammarAccess.getContractAccess().getVariablesKeyword_21_0()); 
+            match(input,53,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getVariablesKeyword_21_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group_21__0__Impl"
+
+
+    // $ANTLR start "rule__Contract__Group_21__1"
+    // InternalSmartCE.g:2808:1: rule__Contract__Group_21__1 : rule__Contract__Group_21__1__Impl rule__Contract__Group_21__2 ;
+    public final void rule__Contract__Group_21__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2812:1: ( rule__Contract__Group_21__1__Impl rule__Contract__Group_21__2 )
+            // InternalSmartCE.g:2813:2: rule__Contract__Group_21__1__Impl rule__Contract__Group_21__2
+            {
+            pushFollow(FOLLOW_21);
+            rule__Contract__Group_21__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Contract__Group_21__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group_21__1"
+
+
+    // $ANTLR start "rule__Contract__Group_21__1__Impl"
+    // InternalSmartCE.g:2820:1: rule__Contract__Group_21__1__Impl : ( '{' ) ;
+    public final void rule__Contract__Group_21__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2824:1: ( ( '{' ) )
+            // InternalSmartCE.g:2825:1: ( '{' )
+            {
+            // InternalSmartCE.g:2825:1: ( '{' )
+            // InternalSmartCE.g:2826:2: '{'
+            {
+             before(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_21_1()); 
+            match(input,45,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_21_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group_21__1__Impl"
+
+
+    // $ANTLR start "rule__Contract__Group_21__2"
+    // InternalSmartCE.g:2835:1: rule__Contract__Group_21__2 : rule__Contract__Group_21__2__Impl rule__Contract__Group_21__3 ;
+    public final void rule__Contract__Group_21__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2839:1: ( rule__Contract__Group_21__2__Impl rule__Contract__Group_21__3 )
+            // InternalSmartCE.g:2840:2: rule__Contract__Group_21__2__Impl rule__Contract__Group_21__3
+            {
+            pushFollow(FOLLOW_21);
+            rule__Contract__Group_21__2__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Contract__Group_21__3();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group_21__2"
+
+
+    // $ANTLR start "rule__Contract__Group_21__2__Impl"
+    // InternalSmartCE.g:2847:1: rule__Contract__Group_21__2__Impl : ( ( rule__Contract__VariablesAssignment_21_2 )* ) ;
+    public final void rule__Contract__Group_21__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2851:1: ( ( ( rule__Contract__VariablesAssignment_21_2 )* ) )
+            // InternalSmartCE.g:2852:1: ( ( rule__Contract__VariablesAssignment_21_2 )* )
+            {
+            // InternalSmartCE.g:2852:1: ( ( rule__Contract__VariablesAssignment_21_2 )* )
+            // InternalSmartCE.g:2853:2: ( rule__Contract__VariablesAssignment_21_2 )*
+            {
+             before(grammarAccess.getContractAccess().getVariablesAssignment_21_2()); 
+            // InternalSmartCE.g:2854:2: ( rule__Contract__VariablesAssignment_21_2 )*
+            loop28:
+            do {
+                int alt28=2;
+                int LA28_0 = input.LA(1);
+
+                if ( (LA28_0==RULE_ID) ) {
+                    alt28=1;
+                }
+
+
+                switch (alt28) {
+            	case 1 :
+            	    // InternalSmartCE.g:2854:3: rule__Contract__VariablesAssignment_21_2
+            	    {
+            	    pushFollow(FOLLOW_22);
+            	    rule__Contract__VariablesAssignment_21_2();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop28;
+                }
+            } while (true);
+
+             after(grammarAccess.getContractAccess().getVariablesAssignment_21_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group_21__2__Impl"
+
+
+    // $ANTLR start "rule__Contract__Group_21__3"
+    // InternalSmartCE.g:2862:1: rule__Contract__Group_21__3 : rule__Contract__Group_21__3__Impl ;
+    public final void rule__Contract__Group_21__3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2866:1: ( rule__Contract__Group_21__3__Impl )
+            // InternalSmartCE.g:2867:2: rule__Contract__Group_21__3__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Variable__NameAssignment_0();
+            rule__Contract__Group_21__3__Impl();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVariableAccess().getNameAssignment_0()); 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Contract__Group_21__3"
+
+
+    // $ANTLR start "rule__Contract__Group_21__3__Impl"
+    // InternalSmartCE.g:2873:1: rule__Contract__Group_21__3__Impl : ( '}' ) ;
+    public final void rule__Contract__Group_21__3__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2877:1: ( ( '}' ) )
+            // InternalSmartCE.g:2878:1: ( '}' )
+            {
+            // InternalSmartCE.g:2878:1: ( '}' )
+            // InternalSmartCE.g:2879:2: '}'
+            {
+             before(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_21_3()); 
+            match(input,50,FOLLOW_2); 
+             after(grammarAccess.getContractAccess().getRightCurlyBracketKeyword_21_3()); 
 
             }
 
@@ -8867,26 +9425,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable__Group__0__Impl"
+    // $ANTLR end "rule__Contract__Group_21__3__Impl"
 
 
-    // $ANTLR start "rule__Variable__Group__1"
-    // InternalSmartCE.g:2721:1: rule__Variable__Group__1 : rule__Variable__Group__1__Impl rule__Variable__Group__2 ;
-    public final void rule__Variable__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Variable__Group_0__0"
+    // InternalSmartCE.g:2889:1: rule__Variable__Group_0__0 : rule__Variable__Group_0__0__Impl rule__Variable__Group_0__1 ;
+    public final void rule__Variable__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2725:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
-            // InternalSmartCE.g:2726:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
+            // InternalSmartCE.g:2893:1: ( rule__Variable__Group_0__0__Impl rule__Variable__Group_0__1 )
+            // InternalSmartCE.g:2894:2: rule__Variable__Group_0__0__Impl rule__Variable__Group_0__1
             {
             pushFollow(FOLLOW_10);
-            rule__Variable__Group__1__Impl();
+            rule__Variable__Group_0__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Variable__Group__2();
+            rule__Variable__Group_0__1();
 
             state._fsp--;
 
@@ -8905,60 +9463,37 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable__Group__1"
+    // $ANTLR end "rule__Variable__Group_0__0"
 
 
-    // $ANTLR start "rule__Variable__Group__1__Impl"
-    // InternalSmartCE.g:2733:1: rule__Variable__Group__1__Impl : ( '=' ) ;
-    public final void rule__Variable__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:2737:1: ( ( '=' ) )
-            // InternalSmartCE.g:2738:1: ( '=' )
-            {
-            // InternalSmartCE.g:2738:1: ( '=' )
-            // InternalSmartCE.g:2739:2: '='
-            {
-             before(grammarAccess.getVariableAccess().getEqualsSignKeyword_1()); 
-            match(input,47,FOLLOW_2); 
-             after(grammarAccess.getVariableAccess().getEqualsSignKeyword_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Variable__Group__1__Impl"
-
-
-    // $ANTLR start "rule__Variable__Group__2"
-    // InternalSmartCE.g:2748:1: rule__Variable__Group__2 : rule__Variable__Group__2__Impl ;
-    public final void rule__Variable__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Variable__Group_0__0__Impl"
+    // InternalSmartCE.g:2901:1: rule__Variable__Group_0__0__Impl : ( ( rule__Variable__NameAssignment_0_0 ) ) ;
+    public final void rule__Variable__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2752:1: ( rule__Variable__Group__2__Impl )
-            // InternalSmartCE.g:2753:2: rule__Variable__Group__2__Impl
+            // InternalSmartCE.g:2905:1: ( ( ( rule__Variable__NameAssignment_0_0 ) ) )
+            // InternalSmartCE.g:2906:1: ( ( rule__Variable__NameAssignment_0_0 ) )
+            {
+            // InternalSmartCE.g:2906:1: ( ( rule__Variable__NameAssignment_0_0 ) )
+            // InternalSmartCE.g:2907:2: ( rule__Variable__NameAssignment_0_0 )
+            {
+             before(grammarAccess.getVariableAccess().getNameAssignment_0_0()); 
+            // InternalSmartCE.g:2908:2: ( rule__Variable__NameAssignment_0_0 )
+            // InternalSmartCE.g:2908:3: rule__Variable__NameAssignment_0_0
             {
             pushFollow(FOLLOW_2);
-            rule__Variable__Group__2__Impl();
+            rule__Variable__NameAssignment_0_0();
 
             state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVariableAccess().getNameAssignment_0_0()); 
+
+            }
 
 
             }
@@ -8975,35 +9510,63 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable__Group__2"
+    // $ANTLR end "rule__Variable__Group_0__0__Impl"
 
 
-    // $ANTLR start "rule__Variable__Group__2__Impl"
-    // InternalSmartCE.g:2759:1: rule__Variable__Group__2__Impl : ( ( rule__Variable__ExpressionAssignment_2 ) ) ;
-    public final void rule__Variable__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Variable__Group_0__1"
+    // InternalSmartCE.g:2916:1: rule__Variable__Group_0__1 : rule__Variable__Group_0__1__Impl rule__Variable__Group_0__2 ;
+    public final void rule__Variable__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2763:1: ( ( ( rule__Variable__ExpressionAssignment_2 ) ) )
-            // InternalSmartCE.g:2764:1: ( ( rule__Variable__ExpressionAssignment_2 ) )
+            // InternalSmartCE.g:2920:1: ( rule__Variable__Group_0__1__Impl rule__Variable__Group_0__2 )
+            // InternalSmartCE.g:2921:2: rule__Variable__Group_0__1__Impl rule__Variable__Group_0__2
             {
-            // InternalSmartCE.g:2764:1: ( ( rule__Variable__ExpressionAssignment_2 ) )
-            // InternalSmartCE.g:2765:2: ( rule__Variable__ExpressionAssignment_2 )
-            {
-             before(grammarAccess.getVariableAccess().getExpressionAssignment_2()); 
-            // InternalSmartCE.g:2766:2: ( rule__Variable__ExpressionAssignment_2 )
-            // InternalSmartCE.g:2766:3: rule__Variable__ExpressionAssignment_2
-            {
+            pushFollow(FOLLOW_11);
+            rule__Variable__Group_0__1__Impl();
+
+            state._fsp--;
+
             pushFollow(FOLLOW_2);
-            rule__Variable__ExpressionAssignment_2();
+            rule__Variable__Group_0__2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getVariableAccess().getExpressionAssignment_2()); 
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_0__1"
+
+
+    // $ANTLR start "rule__Variable__Group_0__1__Impl"
+    // InternalSmartCE.g:2928:1: rule__Variable__Group_0__1__Impl : ( '=' ) ;
+    public final void rule__Variable__Group_0__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2932:1: ( ( '=' ) )
+            // InternalSmartCE.g:2933:1: ( '=' )
+            {
+            // InternalSmartCE.g:2933:1: ( '=' )
+            // InternalSmartCE.g:2934:2: '='
+            {
+             before(grammarAccess.getVariableAccess().getEqualsSignKeyword_0_1()); 
+            match(input,48,FOLLOW_2); 
+             after(grammarAccess.getVariableAccess().getEqualsSignKeyword_0_1()); 
 
             }
 
@@ -9022,18 +9585,338 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable__Group__2__Impl"
+    // $ANTLR end "rule__Variable__Group_0__1__Impl"
+
+
+    // $ANTLR start "rule__Variable__Group_0__2"
+    // InternalSmartCE.g:2943:1: rule__Variable__Group_0__2 : rule__Variable__Group_0__2__Impl ;
+    public final void rule__Variable__Group_0__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2947:1: ( rule__Variable__Group_0__2__Impl )
+            // InternalSmartCE.g:2948:2: rule__Variable__Group_0__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Variable__Group_0__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_0__2"
+
+
+    // $ANTLR start "rule__Variable__Group_0__2__Impl"
+    // InternalSmartCE.g:2954:1: rule__Variable__Group_0__2__Impl : ( ( rule__Variable__ExpressionAssignment_0_2 ) ) ;
+    public final void rule__Variable__Group_0__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2958:1: ( ( ( rule__Variable__ExpressionAssignment_0_2 ) ) )
+            // InternalSmartCE.g:2959:1: ( ( rule__Variable__ExpressionAssignment_0_2 ) )
+            {
+            // InternalSmartCE.g:2959:1: ( ( rule__Variable__ExpressionAssignment_0_2 ) )
+            // InternalSmartCE.g:2960:2: ( rule__Variable__ExpressionAssignment_0_2 )
+            {
+             before(grammarAccess.getVariableAccess().getExpressionAssignment_0_2()); 
+            // InternalSmartCE.g:2961:2: ( rule__Variable__ExpressionAssignment_0_2 )
+            // InternalSmartCE.g:2961:3: rule__Variable__ExpressionAssignment_0_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Variable__ExpressionAssignment_0_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVariableAccess().getExpressionAssignment_0_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_0__2__Impl"
+
+
+    // $ANTLR start "rule__Variable__Group_1__0"
+    // InternalSmartCE.g:2970:1: rule__Variable__Group_1__0 : rule__Variable__Group_1__0__Impl rule__Variable__Group_1__1 ;
+    public final void rule__Variable__Group_1__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2974:1: ( rule__Variable__Group_1__0__Impl rule__Variable__Group_1__1 )
+            // InternalSmartCE.g:2975:2: rule__Variable__Group_1__0__Impl rule__Variable__Group_1__1
+            {
+            pushFollow(FOLLOW_10);
+            rule__Variable__Group_1__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Variable__Group_1__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_1__0"
+
+
+    // $ANTLR start "rule__Variable__Group_1__0__Impl"
+    // InternalSmartCE.g:2982:1: rule__Variable__Group_1__0__Impl : ( ( rule__Variable__NameAssignment_1_0 ) ) ;
+    public final void rule__Variable__Group_1__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:2986:1: ( ( ( rule__Variable__NameAssignment_1_0 ) ) )
+            // InternalSmartCE.g:2987:1: ( ( rule__Variable__NameAssignment_1_0 ) )
+            {
+            // InternalSmartCE.g:2987:1: ( ( rule__Variable__NameAssignment_1_0 ) )
+            // InternalSmartCE.g:2988:2: ( rule__Variable__NameAssignment_1_0 )
+            {
+             before(grammarAccess.getVariableAccess().getNameAssignment_1_0()); 
+            // InternalSmartCE.g:2989:2: ( rule__Variable__NameAssignment_1_0 )
+            // InternalSmartCE.g:2989:3: rule__Variable__NameAssignment_1_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Variable__NameAssignment_1_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVariableAccess().getNameAssignment_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_1__0__Impl"
+
+
+    // $ANTLR start "rule__Variable__Group_1__1"
+    // InternalSmartCE.g:2997:1: rule__Variable__Group_1__1 : rule__Variable__Group_1__1__Impl rule__Variable__Group_1__2 ;
+    public final void rule__Variable__Group_1__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:3001:1: ( rule__Variable__Group_1__1__Impl rule__Variable__Group_1__2 )
+            // InternalSmartCE.g:3002:2: rule__Variable__Group_1__1__Impl rule__Variable__Group_1__2
+            {
+            pushFollow(FOLLOW_23);
+            rule__Variable__Group_1__1__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Variable__Group_1__2();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_1__1"
+
+
+    // $ANTLR start "rule__Variable__Group_1__1__Impl"
+    // InternalSmartCE.g:3009:1: rule__Variable__Group_1__1__Impl : ( '=' ) ;
+    public final void rule__Variable__Group_1__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:3013:1: ( ( '=' ) )
+            // InternalSmartCE.g:3014:1: ( '=' )
+            {
+            // InternalSmartCE.g:3014:1: ( '=' )
+            // InternalSmartCE.g:3015:2: '='
+            {
+             before(grammarAccess.getVariableAccess().getEqualsSignKeyword_1_1()); 
+            match(input,48,FOLLOW_2); 
+             after(grammarAccess.getVariableAccess().getEqualsSignKeyword_1_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_1__1__Impl"
+
+
+    // $ANTLR start "rule__Variable__Group_1__2"
+    // InternalSmartCE.g:3024:1: rule__Variable__Group_1__2 : rule__Variable__Group_1__2__Impl ;
+    public final void rule__Variable__Group_1__2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:3028:1: ( rule__Variable__Group_1__2__Impl )
+            // InternalSmartCE.g:3029:2: rule__Variable__Group_1__2__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Variable__Group_1__2__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_1__2"
+
+
+    // $ANTLR start "rule__Variable__Group_1__2__Impl"
+    // InternalSmartCE.g:3035:1: rule__Variable__Group_1__2__Impl : ( ( rule__Variable__BusinessRuleAssignment_1_2 ) ) ;
+    public final void rule__Variable__Group_1__2__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:3039:1: ( ( ( rule__Variable__BusinessRuleAssignment_1_2 ) ) )
+            // InternalSmartCE.g:3040:1: ( ( rule__Variable__BusinessRuleAssignment_1_2 ) )
+            {
+            // InternalSmartCE.g:3040:1: ( ( rule__Variable__BusinessRuleAssignment_1_2 ) )
+            // InternalSmartCE.g:3041:2: ( rule__Variable__BusinessRuleAssignment_1_2 )
+            {
+             before(grammarAccess.getVariableAccess().getBusinessRuleAssignment_1_2()); 
+            // InternalSmartCE.g:3042:2: ( rule__Variable__BusinessRuleAssignment_1_2 )
+            // InternalSmartCE.g:3042:3: rule__Variable__BusinessRuleAssignment_1_2
+            {
+            pushFollow(FOLLOW_2);
+            rule__Variable__BusinessRuleAssignment_1_2();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getVariableAccess().getBusinessRuleAssignment_1_2()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__Group_1__2__Impl"
 
 
     // $ANTLR start "rule__Clause__Group__0"
-    // InternalSmartCE.g:2775:1: rule__Clause__Group__0 : rule__Clause__Group__0__Impl rule__Clause__Group__1 ;
+    // InternalSmartCE.g:3051:1: rule__Clause__Group__0 : rule__Clause__Group__0__Impl rule__Clause__Group__1 ;
     public final void rule__Clause__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2779:1: ( rule__Clause__Group__0__Impl rule__Clause__Group__1 )
-            // InternalSmartCE.g:2780:2: rule__Clause__Group__0__Impl rule__Clause__Group__1
+            // InternalSmartCE.g:3055:1: ( rule__Clause__Group__0__Impl rule__Clause__Group__1 )
+            // InternalSmartCE.g:3056:2: rule__Clause__Group__0__Impl rule__Clause__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__Clause__Group__0__Impl();
@@ -9064,21 +9947,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__0__Impl"
-    // InternalSmartCE.g:2787:1: rule__Clause__Group__0__Impl : ( ( rule__Clause__Alternatives_0 ) ) ;
+    // InternalSmartCE.g:3063:1: rule__Clause__Group__0__Impl : ( ( rule__Clause__Alternatives_0 ) ) ;
     public final void rule__Clause__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2791:1: ( ( ( rule__Clause__Alternatives_0 ) ) )
-            // InternalSmartCE.g:2792:1: ( ( rule__Clause__Alternatives_0 ) )
+            // InternalSmartCE.g:3067:1: ( ( ( rule__Clause__Alternatives_0 ) ) )
+            // InternalSmartCE.g:3068:1: ( ( rule__Clause__Alternatives_0 ) )
             {
-            // InternalSmartCE.g:2792:1: ( ( rule__Clause__Alternatives_0 ) )
-            // InternalSmartCE.g:2793:2: ( rule__Clause__Alternatives_0 )
+            // InternalSmartCE.g:3068:1: ( ( rule__Clause__Alternatives_0 ) )
+            // InternalSmartCE.g:3069:2: ( rule__Clause__Alternatives_0 )
             {
              before(grammarAccess.getClauseAccess().getAlternatives_0()); 
-            // InternalSmartCE.g:2794:2: ( rule__Clause__Alternatives_0 )
-            // InternalSmartCE.g:2794:3: rule__Clause__Alternatives_0
+            // InternalSmartCE.g:3070:2: ( rule__Clause__Alternatives_0 )
+            // InternalSmartCE.g:3070:3: rule__Clause__Alternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__Clause__Alternatives_0();
@@ -9111,14 +9994,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__1"
-    // InternalSmartCE.g:2802:1: rule__Clause__Group__1 : rule__Clause__Group__1__Impl rule__Clause__Group__2 ;
+    // InternalSmartCE.g:3078:1: rule__Clause__Group__1 : rule__Clause__Group__1__Impl rule__Clause__Group__2 ;
     public final void rule__Clause__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2806:1: ( rule__Clause__Group__1__Impl rule__Clause__Group__2 )
-            // InternalSmartCE.g:2807:2: rule__Clause__Group__1__Impl rule__Clause__Group__2
+            // InternalSmartCE.g:3082:1: ( rule__Clause__Group__1__Impl rule__Clause__Group__2 )
+            // InternalSmartCE.g:3083:2: rule__Clause__Group__1__Impl rule__Clause__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__Clause__Group__1__Impl();
@@ -9149,21 +10032,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__1__Impl"
-    // InternalSmartCE.g:2814:1: rule__Clause__Group__1__Impl : ( ( rule__Clause__NameAssignment_1 ) ) ;
+    // InternalSmartCE.g:3090:1: rule__Clause__Group__1__Impl : ( ( rule__Clause__NameAssignment_1 ) ) ;
     public final void rule__Clause__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2818:1: ( ( ( rule__Clause__NameAssignment_1 ) ) )
-            // InternalSmartCE.g:2819:1: ( ( rule__Clause__NameAssignment_1 ) )
+            // InternalSmartCE.g:3094:1: ( ( ( rule__Clause__NameAssignment_1 ) ) )
+            // InternalSmartCE.g:3095:1: ( ( rule__Clause__NameAssignment_1 ) )
             {
-            // InternalSmartCE.g:2819:1: ( ( rule__Clause__NameAssignment_1 ) )
-            // InternalSmartCE.g:2820:2: ( rule__Clause__NameAssignment_1 )
+            // InternalSmartCE.g:3095:1: ( ( rule__Clause__NameAssignment_1 ) )
+            // InternalSmartCE.g:3096:2: ( rule__Clause__NameAssignment_1 )
             {
              before(grammarAccess.getClauseAccess().getNameAssignment_1()); 
-            // InternalSmartCE.g:2821:2: ( rule__Clause__NameAssignment_1 )
-            // InternalSmartCE.g:2821:3: rule__Clause__NameAssignment_1
+            // InternalSmartCE.g:3097:2: ( rule__Clause__NameAssignment_1 )
+            // InternalSmartCE.g:3097:3: rule__Clause__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Clause__NameAssignment_1();
@@ -9196,16 +10079,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__2"
-    // InternalSmartCE.g:2829:1: rule__Clause__Group__2 : rule__Clause__Group__2__Impl rule__Clause__Group__3 ;
+    // InternalSmartCE.g:3105:1: rule__Clause__Group__2 : rule__Clause__Group__2__Impl rule__Clause__Group__3 ;
     public final void rule__Clause__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2833:1: ( rule__Clause__Group__2__Impl rule__Clause__Group__3 )
-            // InternalSmartCE.g:2834:2: rule__Clause__Group__2__Impl rule__Clause__Group__3
+            // InternalSmartCE.g:3109:1: ( rule__Clause__Group__2__Impl rule__Clause__Group__3 )
+            // InternalSmartCE.g:3110:2: rule__Clause__Group__2__Impl rule__Clause__Group__3
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_24);
             rule__Clause__Group__2__Impl();
 
             state._fsp--;
@@ -9234,17 +10117,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__2__Impl"
-    // InternalSmartCE.g:2841:1: rule__Clause__Group__2__Impl : ( '{' ) ;
+    // InternalSmartCE.g:3117:1: rule__Clause__Group__2__Impl : ( '{' ) ;
     public final void rule__Clause__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2845:1: ( ( '{' ) )
-            // InternalSmartCE.g:2846:1: ( '{' )
+            // InternalSmartCE.g:3121:1: ( ( '{' ) )
+            // InternalSmartCE.g:3122:1: ( '{' )
             {
-            // InternalSmartCE.g:2846:1: ( '{' )
-            // InternalSmartCE.g:2847:2: '{'
+            // InternalSmartCE.g:3122:1: ( '{' )
+            // InternalSmartCE.g:3123:2: '{'
             {
              before(grammarAccess.getClauseAccess().getLeftCurlyBracketKeyword_2()); 
             match(input,45,FOLLOW_2); 
@@ -9271,16 +10154,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__3"
-    // InternalSmartCE.g:2856:1: rule__Clause__Group__3 : rule__Clause__Group__3__Impl rule__Clause__Group__4 ;
+    // InternalSmartCE.g:3132:1: rule__Clause__Group__3 : rule__Clause__Group__3__Impl rule__Clause__Group__4 ;
     public final void rule__Clause__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2860:1: ( rule__Clause__Group__3__Impl rule__Clause__Group__4 )
-            // InternalSmartCE.g:2861:2: rule__Clause__Group__3__Impl rule__Clause__Group__4
+            // InternalSmartCE.g:3136:1: ( rule__Clause__Group__3__Impl rule__Clause__Group__4 )
+            // InternalSmartCE.g:3137:2: rule__Clause__Group__3__Impl rule__Clause__Group__4
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__Clause__Group__3__Impl();
 
             state._fsp--;
@@ -9309,20 +10192,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__3__Impl"
-    // InternalSmartCE.g:2868:1: rule__Clause__Group__3__Impl : ( 'rolePlayer' ) ;
+    // InternalSmartCE.g:3144:1: rule__Clause__Group__3__Impl : ( 'rolePlayer' ) ;
     public final void rule__Clause__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2872:1: ( ( 'rolePlayer' ) )
-            // InternalSmartCE.g:2873:1: ( 'rolePlayer' )
+            // InternalSmartCE.g:3148:1: ( ( 'rolePlayer' ) )
+            // InternalSmartCE.g:3149:1: ( 'rolePlayer' )
             {
-            // InternalSmartCE.g:2873:1: ( 'rolePlayer' )
-            // InternalSmartCE.g:2874:2: 'rolePlayer'
+            // InternalSmartCE.g:3149:1: ( 'rolePlayer' )
+            // InternalSmartCE.g:3150:2: 'rolePlayer'
             {
              before(grammarAccess.getClauseAccess().getRolePlayerKeyword_3()); 
-            match(input,52,FOLLOW_2); 
+            match(input,54,FOLLOW_2); 
              after(grammarAccess.getClauseAccess().getRolePlayerKeyword_3()); 
 
             }
@@ -9346,16 +10229,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__4"
-    // InternalSmartCE.g:2883:1: rule__Clause__Group__4 : rule__Clause__Group__4__Impl rule__Clause__Group__5 ;
+    // InternalSmartCE.g:3159:1: rule__Clause__Group__4 : rule__Clause__Group__4__Impl rule__Clause__Group__5 ;
     public final void rule__Clause__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2887:1: ( rule__Clause__Group__4__Impl rule__Clause__Group__5 )
-            // InternalSmartCE.g:2888:2: rule__Clause__Group__4__Impl rule__Clause__Group__5
+            // InternalSmartCE.g:3163:1: ( rule__Clause__Group__4__Impl rule__Clause__Group__5 )
+            // InternalSmartCE.g:3164:2: rule__Clause__Group__4__Impl rule__Clause__Group__5
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_25);
             rule__Clause__Group__4__Impl();
 
             state._fsp--;
@@ -9384,20 +10267,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__4__Impl"
-    // InternalSmartCE.g:2895:1: rule__Clause__Group__4__Impl : ( '=' ) ;
+    // InternalSmartCE.g:3171:1: rule__Clause__Group__4__Impl : ( '=' ) ;
     public final void rule__Clause__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2899:1: ( ( '=' ) )
-            // InternalSmartCE.g:2900:1: ( '=' )
+            // InternalSmartCE.g:3175:1: ( ( '=' ) )
+            // InternalSmartCE.g:3176:1: ( '=' )
             {
-            // InternalSmartCE.g:2900:1: ( '=' )
-            // InternalSmartCE.g:2901:2: '='
+            // InternalSmartCE.g:3176:1: ( '=' )
+            // InternalSmartCE.g:3177:2: '='
             {
              before(grammarAccess.getClauseAccess().getEqualsSignKeyword_4()); 
-            match(input,47,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getClauseAccess().getEqualsSignKeyword_4()); 
 
             }
@@ -9421,16 +10304,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__5"
-    // InternalSmartCE.g:2910:1: rule__Clause__Group__5 : rule__Clause__Group__5__Impl rule__Clause__Group__6 ;
+    // InternalSmartCE.g:3186:1: rule__Clause__Group__5 : rule__Clause__Group__5__Impl rule__Clause__Group__6 ;
     public final void rule__Clause__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2914:1: ( rule__Clause__Group__5__Impl rule__Clause__Group__6 )
-            // InternalSmartCE.g:2915:2: rule__Clause__Group__5__Impl rule__Clause__Group__6
+            // InternalSmartCE.g:3190:1: ( rule__Clause__Group__5__Impl rule__Clause__Group__6 )
+            // InternalSmartCE.g:3191:2: rule__Clause__Group__5__Impl rule__Clause__Group__6
             {
-            pushFollow(FOLLOW_22);
+            pushFollow(FOLLOW_26);
             rule__Clause__Group__5__Impl();
 
             state._fsp--;
@@ -9459,21 +10342,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__5__Impl"
-    // InternalSmartCE.g:2922:1: rule__Clause__Group__5__Impl : ( ( rule__Clause__Alternatives_5 ) ) ;
+    // InternalSmartCE.g:3198:1: rule__Clause__Group__5__Impl : ( ( rule__Clause__Alternatives_5 ) ) ;
     public final void rule__Clause__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2926:1: ( ( ( rule__Clause__Alternatives_5 ) ) )
-            // InternalSmartCE.g:2927:1: ( ( rule__Clause__Alternatives_5 ) )
+            // InternalSmartCE.g:3202:1: ( ( ( rule__Clause__Alternatives_5 ) ) )
+            // InternalSmartCE.g:3203:1: ( ( rule__Clause__Alternatives_5 ) )
             {
-            // InternalSmartCE.g:2927:1: ( ( rule__Clause__Alternatives_5 ) )
-            // InternalSmartCE.g:2928:2: ( rule__Clause__Alternatives_5 )
+            // InternalSmartCE.g:3203:1: ( ( rule__Clause__Alternatives_5 ) )
+            // InternalSmartCE.g:3204:2: ( rule__Clause__Alternatives_5 )
             {
              before(grammarAccess.getClauseAccess().getAlternatives_5()); 
-            // InternalSmartCE.g:2929:2: ( rule__Clause__Alternatives_5 )
-            // InternalSmartCE.g:2929:3: rule__Clause__Alternatives_5
+            // InternalSmartCE.g:3205:2: ( rule__Clause__Alternatives_5 )
+            // InternalSmartCE.g:3205:3: rule__Clause__Alternatives_5
             {
             pushFollow(FOLLOW_2);
             rule__Clause__Alternatives_5();
@@ -9506,16 +10389,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__6"
-    // InternalSmartCE.g:2937:1: rule__Clause__Group__6 : rule__Clause__Group__6__Impl rule__Clause__Group__7 ;
+    // InternalSmartCE.g:3213:1: rule__Clause__Group__6 : rule__Clause__Group__6__Impl rule__Clause__Group__7 ;
     public final void rule__Clause__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2941:1: ( rule__Clause__Group__6__Impl rule__Clause__Group__7 )
-            // InternalSmartCE.g:2942:2: rule__Clause__Group__6__Impl rule__Clause__Group__7
+            // InternalSmartCE.g:3217:1: ( rule__Clause__Group__6__Impl rule__Clause__Group__7 )
+            // InternalSmartCE.g:3218:2: rule__Clause__Group__6__Impl rule__Clause__Group__7
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_10);
             rule__Clause__Group__6__Impl();
 
             state._fsp--;
@@ -9544,20 +10427,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__6__Impl"
-    // InternalSmartCE.g:2949:1: rule__Clause__Group__6__Impl : ( 'operation' ) ;
+    // InternalSmartCE.g:3225:1: rule__Clause__Group__6__Impl : ( 'operation' ) ;
     public final void rule__Clause__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2953:1: ( ( 'operation' ) )
-            // InternalSmartCE.g:2954:1: ( 'operation' )
+            // InternalSmartCE.g:3229:1: ( ( 'operation' ) )
+            // InternalSmartCE.g:3230:1: ( 'operation' )
             {
-            // InternalSmartCE.g:2954:1: ( 'operation' )
-            // InternalSmartCE.g:2955:2: 'operation'
+            // InternalSmartCE.g:3230:1: ( 'operation' )
+            // InternalSmartCE.g:3231:2: 'operation'
             {
              before(grammarAccess.getClauseAccess().getOperationKeyword_6()); 
-            match(input,53,FOLLOW_2); 
+            match(input,55,FOLLOW_2); 
              after(grammarAccess.getClauseAccess().getOperationKeyword_6()); 
 
             }
@@ -9581,16 +10464,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__7"
-    // InternalSmartCE.g:2964:1: rule__Clause__Group__7 : rule__Clause__Group__7__Impl rule__Clause__Group__8 ;
+    // InternalSmartCE.g:3240:1: rule__Clause__Group__7 : rule__Clause__Group__7__Impl rule__Clause__Group__8 ;
     public final void rule__Clause__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2968:1: ( rule__Clause__Group__7__Impl rule__Clause__Group__8 )
-            // InternalSmartCE.g:2969:2: rule__Clause__Group__7__Impl rule__Clause__Group__8
+            // InternalSmartCE.g:3244:1: ( rule__Clause__Group__7__Impl rule__Clause__Group__8 )
+            // InternalSmartCE.g:3245:2: rule__Clause__Group__7__Impl rule__Clause__Group__8
             {
-            pushFollow(FOLLOW_23);
+            pushFollow(FOLLOW_27);
             rule__Clause__Group__7__Impl();
 
             state._fsp--;
@@ -9619,20 +10502,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__7__Impl"
-    // InternalSmartCE.g:2976:1: rule__Clause__Group__7__Impl : ( '=' ) ;
+    // InternalSmartCE.g:3252:1: rule__Clause__Group__7__Impl : ( '=' ) ;
     public final void rule__Clause__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2980:1: ( ( '=' ) )
-            // InternalSmartCE.g:2981:1: ( '=' )
+            // InternalSmartCE.g:3256:1: ( ( '=' ) )
+            // InternalSmartCE.g:3257:1: ( '=' )
             {
-            // InternalSmartCE.g:2981:1: ( '=' )
-            // InternalSmartCE.g:2982:2: '='
+            // InternalSmartCE.g:3257:1: ( '=' )
+            // InternalSmartCE.g:3258:2: '='
             {
              before(grammarAccess.getClauseAccess().getEqualsSignKeyword_7()); 
-            match(input,47,FOLLOW_2); 
+            match(input,48,FOLLOW_2); 
              after(grammarAccess.getClauseAccess().getEqualsSignKeyword_7()); 
 
             }
@@ -9656,16 +10539,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__8"
-    // InternalSmartCE.g:2991:1: rule__Clause__Group__8 : rule__Clause__Group__8__Impl rule__Clause__Group__9 ;
+    // InternalSmartCE.g:3267:1: rule__Clause__Group__8 : rule__Clause__Group__8__Impl rule__Clause__Group__9 ;
     public final void rule__Clause__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2995:1: ( rule__Clause__Group__8__Impl rule__Clause__Group__9 )
-            // InternalSmartCE.g:2996:2: rule__Clause__Group__8__Impl rule__Clause__Group__9
+            // InternalSmartCE.g:3271:1: ( rule__Clause__Group__8__Impl rule__Clause__Group__9 )
+            // InternalSmartCE.g:3272:2: rule__Clause__Group__8__Impl rule__Clause__Group__9
             {
-            pushFollow(FOLLOW_24);
+            pushFollow(FOLLOW_28);
             rule__Clause__Group__8__Impl();
 
             state._fsp--;
@@ -9694,21 +10577,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__8__Impl"
-    // InternalSmartCE.g:3003:1: rule__Clause__Group__8__Impl : ( ( rule__Clause__OperationAssignment_8 ) ) ;
+    // InternalSmartCE.g:3279:1: rule__Clause__Group__8__Impl : ( ( rule__Clause__OperationAssignment_8 ) ) ;
     public final void rule__Clause__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3007:1: ( ( ( rule__Clause__OperationAssignment_8 ) ) )
-            // InternalSmartCE.g:3008:1: ( ( rule__Clause__OperationAssignment_8 ) )
+            // InternalSmartCE.g:3283:1: ( ( ( rule__Clause__OperationAssignment_8 ) ) )
+            // InternalSmartCE.g:3284:1: ( ( rule__Clause__OperationAssignment_8 ) )
             {
-            // InternalSmartCE.g:3008:1: ( ( rule__Clause__OperationAssignment_8 ) )
-            // InternalSmartCE.g:3009:2: ( rule__Clause__OperationAssignment_8 )
+            // InternalSmartCE.g:3284:1: ( ( rule__Clause__OperationAssignment_8 ) )
+            // InternalSmartCE.g:3285:2: ( rule__Clause__OperationAssignment_8 )
             {
              before(grammarAccess.getClauseAccess().getOperationAssignment_8()); 
-            // InternalSmartCE.g:3010:2: ( rule__Clause__OperationAssignment_8 )
-            // InternalSmartCE.g:3010:3: rule__Clause__OperationAssignment_8
+            // InternalSmartCE.g:3286:2: ( rule__Clause__OperationAssignment_8 )
+            // InternalSmartCE.g:3286:3: rule__Clause__OperationAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Clause__OperationAssignment_8();
@@ -9741,14 +10624,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__9"
-    // InternalSmartCE.g:3018:1: rule__Clause__Group__9 : rule__Clause__Group__9__Impl rule__Clause__Group__10 ;
+    // InternalSmartCE.g:3294:1: rule__Clause__Group__9 : rule__Clause__Group__9__Impl rule__Clause__Group__10 ;
     public final void rule__Clause__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3022:1: ( rule__Clause__Group__9__Impl rule__Clause__Group__10 )
-            // InternalSmartCE.g:3023:2: rule__Clause__Group__9__Impl rule__Clause__Group__10
+            // InternalSmartCE.g:3298:1: ( rule__Clause__Group__9__Impl rule__Clause__Group__10 )
+            // InternalSmartCE.g:3299:2: rule__Clause__Group__9__Impl rule__Clause__Group__10
             {
             pushFollow(FOLLOW_7);
             rule__Clause__Group__9__Impl();
@@ -9779,20 +10662,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__9__Impl"
-    // InternalSmartCE.g:3030:1: rule__Clause__Group__9__Impl : ( 'condition' ) ;
+    // InternalSmartCE.g:3306:1: rule__Clause__Group__9__Impl : ( 'condition' ) ;
     public final void rule__Clause__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3034:1: ( ( 'condition' ) )
-            // InternalSmartCE.g:3035:1: ( 'condition' )
+            // InternalSmartCE.g:3310:1: ( ( 'condition' ) )
+            // InternalSmartCE.g:3311:1: ( 'condition' )
             {
-            // InternalSmartCE.g:3035:1: ( 'condition' )
-            // InternalSmartCE.g:3036:2: 'condition'
+            // InternalSmartCE.g:3311:1: ( 'condition' )
+            // InternalSmartCE.g:3312:2: 'condition'
             {
              before(grammarAccess.getClauseAccess().getConditionKeyword_9()); 
-            match(input,54,FOLLOW_2); 
+            match(input,56,FOLLOW_2); 
              after(grammarAccess.getClauseAccess().getConditionKeyword_9()); 
 
             }
@@ -9816,16 +10699,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__10"
-    // InternalSmartCE.g:3045:1: rule__Clause__Group__10 : rule__Clause__Group__10__Impl rule__Clause__Group__11 ;
+    // InternalSmartCE.g:3321:1: rule__Clause__Group__10 : rule__Clause__Group__10__Impl rule__Clause__Group__11 ;
     public final void rule__Clause__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3049:1: ( rule__Clause__Group__10__Impl rule__Clause__Group__11 )
-            // InternalSmartCE.g:3050:2: rule__Clause__Group__10__Impl rule__Clause__Group__11
+            // InternalSmartCE.g:3325:1: ( rule__Clause__Group__10__Impl rule__Clause__Group__11 )
+            // InternalSmartCE.g:3326:2: rule__Clause__Group__10__Impl rule__Clause__Group__11
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__Clause__Group__10__Impl();
 
             state._fsp--;
@@ -9854,17 +10737,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__10__Impl"
-    // InternalSmartCE.g:3057:1: rule__Clause__Group__10__Impl : ( '{' ) ;
+    // InternalSmartCE.g:3333:1: rule__Clause__Group__10__Impl : ( '{' ) ;
     public final void rule__Clause__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3061:1: ( ( '{' ) )
-            // InternalSmartCE.g:3062:1: ( '{' )
+            // InternalSmartCE.g:3337:1: ( ( '{' ) )
+            // InternalSmartCE.g:3338:1: ( '{' )
             {
-            // InternalSmartCE.g:3062:1: ( '{' )
-            // InternalSmartCE.g:3063:2: '{'
+            // InternalSmartCE.g:3338:1: ( '{' )
+            // InternalSmartCE.g:3339:2: '{'
             {
              before(grammarAccess.getClauseAccess().getLeftCurlyBracketKeyword_10()); 
             match(input,45,FOLLOW_2); 
@@ -9891,16 +10774,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__11"
-    // InternalSmartCE.g:3072:1: rule__Clause__Group__11 : rule__Clause__Group__11__Impl rule__Clause__Group__12 ;
+    // InternalSmartCE.g:3348:1: rule__Clause__Group__11 : rule__Clause__Group__11__Impl rule__Clause__Group__12 ;
     public final void rule__Clause__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3076:1: ( rule__Clause__Group__11__Impl rule__Clause__Group__12 )
-            // InternalSmartCE.g:3077:2: rule__Clause__Group__11__Impl rule__Clause__Group__12
+            // InternalSmartCE.g:3352:1: ( rule__Clause__Group__11__Impl rule__Clause__Group__12 )
+            // InternalSmartCE.g:3353:2: rule__Clause__Group__11__Impl rule__Clause__Group__12
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_13);
             rule__Clause__Group__11__Impl();
 
             state._fsp--;
@@ -9929,21 +10812,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__11__Impl"
-    // InternalSmartCE.g:3084:1: rule__Clause__Group__11__Impl : ( ( rule__Clause__ConditionAssignment_11 ) ) ;
+    // InternalSmartCE.g:3360:1: rule__Clause__Group__11__Impl : ( ( rule__Clause__ConditionAssignment_11 ) ) ;
     public final void rule__Clause__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3088:1: ( ( ( rule__Clause__ConditionAssignment_11 ) ) )
-            // InternalSmartCE.g:3089:1: ( ( rule__Clause__ConditionAssignment_11 ) )
+            // InternalSmartCE.g:3364:1: ( ( ( rule__Clause__ConditionAssignment_11 ) ) )
+            // InternalSmartCE.g:3365:1: ( ( rule__Clause__ConditionAssignment_11 ) )
             {
-            // InternalSmartCE.g:3089:1: ( ( rule__Clause__ConditionAssignment_11 ) )
-            // InternalSmartCE.g:3090:2: ( rule__Clause__ConditionAssignment_11 )
+            // InternalSmartCE.g:3365:1: ( ( rule__Clause__ConditionAssignment_11 ) )
+            // InternalSmartCE.g:3366:2: ( rule__Clause__ConditionAssignment_11 )
             {
              before(grammarAccess.getClauseAccess().getConditionAssignment_11()); 
-            // InternalSmartCE.g:3091:2: ( rule__Clause__ConditionAssignment_11 )
-            // InternalSmartCE.g:3091:3: rule__Clause__ConditionAssignment_11
+            // InternalSmartCE.g:3367:2: ( rule__Clause__ConditionAssignment_11 )
+            // InternalSmartCE.g:3367:3: rule__Clause__ConditionAssignment_11
             {
             pushFollow(FOLLOW_2);
             rule__Clause__ConditionAssignment_11();
@@ -9976,16 +10859,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__12"
-    // InternalSmartCE.g:3099:1: rule__Clause__Group__12 : rule__Clause__Group__12__Impl rule__Clause__Group__13 ;
+    // InternalSmartCE.g:3375:1: rule__Clause__Group__12 : rule__Clause__Group__12__Impl rule__Clause__Group__13 ;
     public final void rule__Clause__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3103:1: ( rule__Clause__Group__12__Impl rule__Clause__Group__13 )
-            // InternalSmartCE.g:3104:2: rule__Clause__Group__12__Impl rule__Clause__Group__13
+            // InternalSmartCE.g:3379:1: ( rule__Clause__Group__12__Impl rule__Clause__Group__13 )
+            // InternalSmartCE.g:3380:2: rule__Clause__Group__12__Impl rule__Clause__Group__13
             {
-            pushFollow(FOLLOW_26);
+            pushFollow(FOLLOW_29);
             rule__Clause__Group__12__Impl();
 
             state._fsp--;
@@ -10014,17 +10897,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__12__Impl"
-    // InternalSmartCE.g:3111:1: rule__Clause__Group__12__Impl : ( '}' ) ;
+    // InternalSmartCE.g:3387:1: rule__Clause__Group__12__Impl : ( '}' ) ;
     public final void rule__Clause__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3115:1: ( ( '}' ) )
-            // InternalSmartCE.g:3116:1: ( '}' )
+            // InternalSmartCE.g:3391:1: ( ( '}' ) )
+            // InternalSmartCE.g:3392:1: ( '}' )
             {
-            // InternalSmartCE.g:3116:1: ( '}' )
-            // InternalSmartCE.g:3117:2: '}'
+            // InternalSmartCE.g:3392:1: ( '}' )
+            // InternalSmartCE.g:3393:2: '}'
             {
              before(grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_12()); 
             match(input,50,FOLLOW_2); 
@@ -10051,16 +10934,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__13"
-    // InternalSmartCE.g:3126:1: rule__Clause__Group__13 : rule__Clause__Group__13__Impl rule__Clause__Group__14 ;
+    // InternalSmartCE.g:3402:1: rule__Clause__Group__13 : rule__Clause__Group__13__Impl rule__Clause__Group__14 ;
     public final void rule__Clause__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3130:1: ( rule__Clause__Group__13__Impl rule__Clause__Group__14 )
-            // InternalSmartCE.g:3131:2: rule__Clause__Group__13__Impl rule__Clause__Group__14
+            // InternalSmartCE.g:3406:1: ( rule__Clause__Group__13__Impl rule__Clause__Group__14 )
+            // InternalSmartCE.g:3407:2: rule__Clause__Group__13__Impl rule__Clause__Group__14
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__Clause__Group__13__Impl();
 
             state._fsp--;
@@ -10089,20 +10972,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__13__Impl"
-    // InternalSmartCE.g:3138:1: rule__Clause__Group__13__Impl : ( 'onBreach' ) ;
+    // InternalSmartCE.g:3414:1: rule__Clause__Group__13__Impl : ( 'onBreach' ) ;
     public final void rule__Clause__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3142:1: ( ( 'onBreach' ) )
-            // InternalSmartCE.g:3143:1: ( 'onBreach' )
+            // InternalSmartCE.g:3418:1: ( ( 'onBreach' ) )
+            // InternalSmartCE.g:3419:1: ( 'onBreach' )
             {
-            // InternalSmartCE.g:3143:1: ( 'onBreach' )
-            // InternalSmartCE.g:3144:2: 'onBreach'
+            // InternalSmartCE.g:3419:1: ( 'onBreach' )
+            // InternalSmartCE.g:3420:2: 'onBreach'
             {
              before(grammarAccess.getClauseAccess().getOnBreachKeyword_13()); 
-            match(input,55,FOLLOW_2); 
+            match(input,57,FOLLOW_2); 
              after(grammarAccess.getClauseAccess().getOnBreachKeyword_13()); 
 
             }
@@ -10126,16 +11009,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__14"
-    // InternalSmartCE.g:3153:1: rule__Clause__Group__14 : rule__Clause__Group__14__Impl rule__Clause__Group__15 ;
+    // InternalSmartCE.g:3429:1: rule__Clause__Group__14 : rule__Clause__Group__14__Impl rule__Clause__Group__15 ;
     public final void rule__Clause__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3157:1: ( rule__Clause__Group__14__Impl rule__Clause__Group__15 )
-            // InternalSmartCE.g:3158:2: rule__Clause__Group__14__Impl rule__Clause__Group__15
+            // InternalSmartCE.g:3433:1: ( rule__Clause__Group__14__Impl rule__Clause__Group__15 )
+            // InternalSmartCE.g:3434:2: rule__Clause__Group__14__Impl rule__Clause__Group__15
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_31);
             rule__Clause__Group__14__Impl();
 
             state._fsp--;
@@ -10164,21 +11047,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__14__Impl"
-    // InternalSmartCE.g:3165:1: rule__Clause__Group__14__Impl : ( ( rule__Clause__OnBreachAssignment_14 ) ) ;
+    // InternalSmartCE.g:3441:1: rule__Clause__Group__14__Impl : ( ( rule__Clause__OnBreachAssignment_14 ) ) ;
     public final void rule__Clause__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3169:1: ( ( ( rule__Clause__OnBreachAssignment_14 ) ) )
-            // InternalSmartCE.g:3170:1: ( ( rule__Clause__OnBreachAssignment_14 ) )
+            // InternalSmartCE.g:3445:1: ( ( ( rule__Clause__OnBreachAssignment_14 ) ) )
+            // InternalSmartCE.g:3446:1: ( ( rule__Clause__OnBreachAssignment_14 ) )
             {
-            // InternalSmartCE.g:3170:1: ( ( rule__Clause__OnBreachAssignment_14 ) )
-            // InternalSmartCE.g:3171:2: ( rule__Clause__OnBreachAssignment_14 )
+            // InternalSmartCE.g:3446:1: ( ( rule__Clause__OnBreachAssignment_14 ) )
+            // InternalSmartCE.g:3447:2: ( rule__Clause__OnBreachAssignment_14 )
             {
              before(grammarAccess.getClauseAccess().getOnBreachAssignment_14()); 
-            // InternalSmartCE.g:3172:2: ( rule__Clause__OnBreachAssignment_14 )
-            // InternalSmartCE.g:3172:3: rule__Clause__OnBreachAssignment_14
+            // InternalSmartCE.g:3448:2: ( rule__Clause__OnBreachAssignment_14 )
+            // InternalSmartCE.g:3448:3: rule__Clause__OnBreachAssignment_14
             {
             pushFollow(FOLLOW_2);
             rule__Clause__OnBreachAssignment_14();
@@ -10211,16 +11094,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__15"
-    // InternalSmartCE.g:3180:1: rule__Clause__Group__15 : rule__Clause__Group__15__Impl rule__Clause__Group__16 ;
+    // InternalSmartCE.g:3456:1: rule__Clause__Group__15 : rule__Clause__Group__15__Impl rule__Clause__Group__16 ;
     public final void rule__Clause__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3184:1: ( rule__Clause__Group__15__Impl rule__Clause__Group__16 )
-            // InternalSmartCE.g:3185:2: rule__Clause__Group__15__Impl rule__Clause__Group__16
+            // InternalSmartCE.g:3460:1: ( rule__Clause__Group__15__Impl rule__Clause__Group__16 )
+            // InternalSmartCE.g:3461:2: rule__Clause__Group__15__Impl rule__Clause__Group__16
             {
-            pushFollow(FOLLOW_28);
+            pushFollow(FOLLOW_31);
             rule__Clause__Group__15__Impl();
 
             state._fsp--;
@@ -10249,29 +11132,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__15__Impl"
-    // InternalSmartCE.g:3192:1: rule__Clause__Group__15__Impl : ( ( rule__Clause__Group_15__0 )? ) ;
+    // InternalSmartCE.g:3468:1: rule__Clause__Group__15__Impl : ( ( rule__Clause__Group_15__0 )? ) ;
     public final void rule__Clause__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3196:1: ( ( ( rule__Clause__Group_15__0 )? ) )
-            // InternalSmartCE.g:3197:1: ( ( rule__Clause__Group_15__0 )? )
+            // InternalSmartCE.g:3472:1: ( ( ( rule__Clause__Group_15__0 )? ) )
+            // InternalSmartCE.g:3473:1: ( ( rule__Clause__Group_15__0 )? )
             {
-            // InternalSmartCE.g:3197:1: ( ( rule__Clause__Group_15__0 )? )
-            // InternalSmartCE.g:3198:2: ( rule__Clause__Group_15__0 )?
+            // InternalSmartCE.g:3473:1: ( ( rule__Clause__Group_15__0 )? )
+            // InternalSmartCE.g:3474:2: ( rule__Clause__Group_15__0 )?
             {
              before(grammarAccess.getClauseAccess().getGroup_15()); 
-            // InternalSmartCE.g:3199:2: ( rule__Clause__Group_15__0 )?
-            int alt27=2;
-            int LA27_0 = input.LA(1);
+            // InternalSmartCE.g:3475:2: ( rule__Clause__Group_15__0 )?
+            int alt29=2;
+            int LA29_0 = input.LA(1);
 
-            if ( (LA27_0==56) ) {
-                alt27=1;
+            if ( (LA29_0==58) ) {
+                alt29=1;
             }
-            switch (alt27) {
+            switch (alt29) {
                 case 1 :
-                    // InternalSmartCE.g:3199:3: rule__Clause__Group_15__0
+                    // InternalSmartCE.g:3475:3: rule__Clause__Group_15__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Clause__Group_15__0();
@@ -10307,14 +11190,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__16"
-    // InternalSmartCE.g:3207:1: rule__Clause__Group__16 : rule__Clause__Group__16__Impl ;
+    // InternalSmartCE.g:3483:1: rule__Clause__Group__16 : rule__Clause__Group__16__Impl ;
     public final void rule__Clause__Group__16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3211:1: ( rule__Clause__Group__16__Impl )
-            // InternalSmartCE.g:3212:2: rule__Clause__Group__16__Impl
+            // InternalSmartCE.g:3487:1: ( rule__Clause__Group__16__Impl )
+            // InternalSmartCE.g:3488:2: rule__Clause__Group__16__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Clause__Group__16__Impl();
@@ -10340,17 +11223,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group__16__Impl"
-    // InternalSmartCE.g:3218:1: rule__Clause__Group__16__Impl : ( '}' ) ;
+    // InternalSmartCE.g:3494:1: rule__Clause__Group__16__Impl : ( '}' ) ;
     public final void rule__Clause__Group__16__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3222:1: ( ( '}' ) )
-            // InternalSmartCE.g:3223:1: ( '}' )
+            // InternalSmartCE.g:3498:1: ( ( '}' ) )
+            // InternalSmartCE.g:3499:1: ( '}' )
             {
-            // InternalSmartCE.g:3223:1: ( '}' )
-            // InternalSmartCE.g:3224:2: '}'
+            // InternalSmartCE.g:3499:1: ( '}' )
+            // InternalSmartCE.g:3500:2: '}'
             {
              before(grammarAccess.getClauseAccess().getRightCurlyBracketKeyword_16()); 
             match(input,50,FOLLOW_2); 
@@ -10377,16 +11260,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group_15__0"
-    // InternalSmartCE.g:3234:1: rule__Clause__Group_15__0 : rule__Clause__Group_15__0__Impl rule__Clause__Group_15__1 ;
+    // InternalSmartCE.g:3510:1: rule__Clause__Group_15__0 : rule__Clause__Group_15__0__Impl rule__Clause__Group_15__1 ;
     public final void rule__Clause__Group_15__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3238:1: ( rule__Clause__Group_15__0__Impl rule__Clause__Group_15__1 )
-            // InternalSmartCE.g:3239:2: rule__Clause__Group_15__0__Impl rule__Clause__Group_15__1
+            // InternalSmartCE.g:3514:1: ( rule__Clause__Group_15__0__Impl rule__Clause__Group_15__1 )
+            // InternalSmartCE.g:3515:2: rule__Clause__Group_15__0__Impl rule__Clause__Group_15__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__Clause__Group_15__0__Impl();
 
             state._fsp--;
@@ -10415,20 +11298,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group_15__0__Impl"
-    // InternalSmartCE.g:3246:1: rule__Clause__Group_15__0__Impl : ( 'onSuccess' ) ;
+    // InternalSmartCE.g:3522:1: rule__Clause__Group_15__0__Impl : ( 'onSuccess' ) ;
     public final void rule__Clause__Group_15__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3250:1: ( ( 'onSuccess' ) )
-            // InternalSmartCE.g:3251:1: ( 'onSuccess' )
+            // InternalSmartCE.g:3526:1: ( ( 'onSuccess' ) )
+            // InternalSmartCE.g:3527:1: ( 'onSuccess' )
             {
-            // InternalSmartCE.g:3251:1: ( 'onSuccess' )
-            // InternalSmartCE.g:3252:2: 'onSuccess'
+            // InternalSmartCE.g:3527:1: ( 'onSuccess' )
+            // InternalSmartCE.g:3528:2: 'onSuccess'
             {
              before(grammarAccess.getClauseAccess().getOnSuccessKeyword_15_0()); 
-            match(input,56,FOLLOW_2); 
+            match(input,58,FOLLOW_2); 
              after(grammarAccess.getClauseAccess().getOnSuccessKeyword_15_0()); 
 
             }
@@ -10452,14 +11335,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group_15__1"
-    // InternalSmartCE.g:3261:1: rule__Clause__Group_15__1 : rule__Clause__Group_15__1__Impl ;
+    // InternalSmartCE.g:3537:1: rule__Clause__Group_15__1 : rule__Clause__Group_15__1__Impl ;
     public final void rule__Clause__Group_15__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3265:1: ( rule__Clause__Group_15__1__Impl )
-            // InternalSmartCE.g:3266:2: rule__Clause__Group_15__1__Impl
+            // InternalSmartCE.g:3541:1: ( rule__Clause__Group_15__1__Impl )
+            // InternalSmartCE.g:3542:2: rule__Clause__Group_15__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Clause__Group_15__1__Impl();
@@ -10485,21 +11368,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Group_15__1__Impl"
-    // InternalSmartCE.g:3272:1: rule__Clause__Group_15__1__Impl : ( ( rule__Clause__OnSuccessAssignment_15_1 ) ) ;
+    // InternalSmartCE.g:3548:1: rule__Clause__Group_15__1__Impl : ( ( rule__Clause__OnSuccessAssignment_15_1 ) ) ;
     public final void rule__Clause__Group_15__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3276:1: ( ( ( rule__Clause__OnSuccessAssignment_15_1 ) ) )
-            // InternalSmartCE.g:3277:1: ( ( rule__Clause__OnSuccessAssignment_15_1 ) )
+            // InternalSmartCE.g:3552:1: ( ( ( rule__Clause__OnSuccessAssignment_15_1 ) ) )
+            // InternalSmartCE.g:3553:1: ( ( rule__Clause__OnSuccessAssignment_15_1 ) )
             {
-            // InternalSmartCE.g:3277:1: ( ( rule__Clause__OnSuccessAssignment_15_1 ) )
-            // InternalSmartCE.g:3278:2: ( rule__Clause__OnSuccessAssignment_15_1 )
+            // InternalSmartCE.g:3553:1: ( ( rule__Clause__OnSuccessAssignment_15_1 ) )
+            // InternalSmartCE.g:3554:2: ( rule__Clause__OnSuccessAssignment_15_1 )
             {
              before(grammarAccess.getClauseAccess().getOnSuccessAssignment_15_1()); 
-            // InternalSmartCE.g:3279:2: ( rule__Clause__OnSuccessAssignment_15_1 )
-            // InternalSmartCE.g:3279:3: rule__Clause__OnSuccessAssignment_15_1
+            // InternalSmartCE.g:3555:2: ( rule__Clause__OnSuccessAssignment_15_1 )
+            // InternalSmartCE.g:3555:3: rule__Clause__OnSuccessAssignment_15_1
             {
             pushFollow(FOLLOW_2);
             rule__Clause__OnSuccessAssignment_15_1();
@@ -10532,16 +11415,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group__0"
-    // InternalSmartCE.g:3288:1: rule__CompositeCondition__Group__0 : rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1 ;
+    // InternalSmartCE.g:3564:1: rule__CompositeCondition__Group__0 : rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1 ;
     public final void rule__CompositeCondition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3292:1: ( rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1 )
-            // InternalSmartCE.g:3293:2: rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1
+            // InternalSmartCE.g:3568:1: ( rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1 )
+            // InternalSmartCE.g:3569:2: rule__CompositeCondition__Group__0__Impl rule__CompositeCondition__Group__1
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_32);
             rule__CompositeCondition__Group__0__Impl();
 
             state._fsp--;
@@ -10570,21 +11453,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group__0__Impl"
-    // InternalSmartCE.g:3300:1: rule__CompositeCondition__Group__0__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_0 ) ) ;
+    // InternalSmartCE.g:3576:1: rule__CompositeCondition__Group__0__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_0 ) ) ;
     public final void rule__CompositeCondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3304:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_0 ) ) )
-            // InternalSmartCE.g:3305:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 ) )
+            // InternalSmartCE.g:3580:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_0 ) ) )
+            // InternalSmartCE.g:3581:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 ) )
             {
-            // InternalSmartCE.g:3305:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 ) )
-            // InternalSmartCE.g:3306:2: ( rule__CompositeCondition__ConditionsAssignment_0 )
+            // InternalSmartCE.g:3581:1: ( ( rule__CompositeCondition__ConditionsAssignment_0 ) )
+            // InternalSmartCE.g:3582:2: ( rule__CompositeCondition__ConditionsAssignment_0 )
             {
              before(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_0()); 
-            // InternalSmartCE.g:3307:2: ( rule__CompositeCondition__ConditionsAssignment_0 )
-            // InternalSmartCE.g:3307:3: rule__CompositeCondition__ConditionsAssignment_0
+            // InternalSmartCE.g:3583:2: ( rule__CompositeCondition__ConditionsAssignment_0 )
+            // InternalSmartCE.g:3583:3: rule__CompositeCondition__ConditionsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__ConditionsAssignment_0();
@@ -10617,16 +11500,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group__1"
-    // InternalSmartCE.g:3315:1: rule__CompositeCondition__Group__1 : rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2 ;
+    // InternalSmartCE.g:3591:1: rule__CompositeCondition__Group__1 : rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2 ;
     public final void rule__CompositeCondition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3319:1: ( rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2 )
-            // InternalSmartCE.g:3320:2: rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2
+            // InternalSmartCE.g:3595:1: ( rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2 )
+            // InternalSmartCE.g:3596:2: rule__CompositeCondition__Group__1__Impl rule__CompositeCondition__Group__2
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__CompositeCondition__Group__1__Impl();
 
             state._fsp--;
@@ -10655,21 +11538,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group__1__Impl"
-    // InternalSmartCE.g:3327:1: rule__CompositeCondition__Group__1__Impl : ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) ) ;
+    // InternalSmartCE.g:3603:1: rule__CompositeCondition__Group__1__Impl : ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) ) ;
     public final void rule__CompositeCondition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3331:1: ( ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) ) )
-            // InternalSmartCE.g:3332:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) )
+            // InternalSmartCE.g:3607:1: ( ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) ) )
+            // InternalSmartCE.g:3608:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) )
             {
-            // InternalSmartCE.g:3332:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) )
-            // InternalSmartCE.g:3333:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_1 )
+            // InternalSmartCE.g:3608:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_1 ) )
+            // InternalSmartCE.g:3609:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_1 )
             {
              before(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsAssignment_1()); 
-            // InternalSmartCE.g:3334:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_1 )
-            // InternalSmartCE.g:3334:3: rule__CompositeCondition__LogicalOperatorsAssignment_1
+            // InternalSmartCE.g:3610:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_1 )
+            // InternalSmartCE.g:3610:3: rule__CompositeCondition__LogicalOperatorsAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__LogicalOperatorsAssignment_1();
@@ -10702,14 +11585,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group__2"
-    // InternalSmartCE.g:3342:1: rule__CompositeCondition__Group__2 : rule__CompositeCondition__Group__2__Impl ;
+    // InternalSmartCE.g:3618:1: rule__CompositeCondition__Group__2 : rule__CompositeCondition__Group__2__Impl ;
     public final void rule__CompositeCondition__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3346:1: ( rule__CompositeCondition__Group__2__Impl )
-            // InternalSmartCE.g:3347:2: rule__CompositeCondition__Group__2__Impl
+            // InternalSmartCE.g:3622:1: ( rule__CompositeCondition__Group__2__Impl )
+            // InternalSmartCE.g:3623:2: rule__CompositeCondition__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__Group__2__Impl();
@@ -10735,35 +11618,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group__2__Impl"
-    // InternalSmartCE.g:3353:1: rule__CompositeCondition__Group__2__Impl : ( ( rule__CompositeCondition__Group_2__0 )* ) ;
+    // InternalSmartCE.g:3629:1: rule__CompositeCondition__Group__2__Impl : ( ( rule__CompositeCondition__Group_2__0 )* ) ;
     public final void rule__CompositeCondition__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3357:1: ( ( ( rule__CompositeCondition__Group_2__0 )* ) )
-            // InternalSmartCE.g:3358:1: ( ( rule__CompositeCondition__Group_2__0 )* )
+            // InternalSmartCE.g:3633:1: ( ( ( rule__CompositeCondition__Group_2__0 )* ) )
+            // InternalSmartCE.g:3634:1: ( ( rule__CompositeCondition__Group_2__0 )* )
             {
-            // InternalSmartCE.g:3358:1: ( ( rule__CompositeCondition__Group_2__0 )* )
-            // InternalSmartCE.g:3359:2: ( rule__CompositeCondition__Group_2__0 )*
+            // InternalSmartCE.g:3634:1: ( ( rule__CompositeCondition__Group_2__0 )* )
+            // InternalSmartCE.g:3635:2: ( rule__CompositeCondition__Group_2__0 )*
             {
              before(grammarAccess.getCompositeConditionAccess().getGroup_2()); 
-            // InternalSmartCE.g:3360:2: ( rule__CompositeCondition__Group_2__0 )*
-            loop28:
+            // InternalSmartCE.g:3636:2: ( rule__CompositeCondition__Group_2__0 )*
+            loop30:
             do {
-                int alt28=2;
-                int LA28_0 = input.LA(1);
+                int alt30=2;
+                int LA30_0 = input.LA(1);
 
-                if ( ((LA28_0>=62 && LA28_0<=63)||LA28_0==65||(LA28_0>=67 && LA28_0<=68)||LA28_0==70) ) {
-                    alt28=1;
+                if ( ((LA30_0>=63 && LA30_0<=64)||LA30_0==66||(LA30_0>=68 && LA30_0<=70)) ) {
+                    alt30=1;
                 }
 
 
-                switch (alt28) {
+                switch (alt30) {
             	case 1 :
-            	    // InternalSmartCE.g:3360:3: rule__CompositeCondition__Group_2__0
+            	    // InternalSmartCE.g:3636:3: rule__CompositeCondition__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_30);
+            	    pushFollow(FOLLOW_33);
             	    rule__CompositeCondition__Group_2__0();
 
             	    state._fsp--;
@@ -10773,7 +11656,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop28;
+            	    break loop30;
                 }
             } while (true);
 
@@ -10800,16 +11683,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2__0"
-    // InternalSmartCE.g:3369:1: rule__CompositeCondition__Group_2__0 : rule__CompositeCondition__Group_2__0__Impl rule__CompositeCondition__Group_2__1 ;
+    // InternalSmartCE.g:3645:1: rule__CompositeCondition__Group_2__0 : rule__CompositeCondition__Group_2__0__Impl rule__CompositeCondition__Group_2__1 ;
     public final void rule__CompositeCondition__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3373:1: ( rule__CompositeCondition__Group_2__0__Impl rule__CompositeCondition__Group_2__1 )
-            // InternalSmartCE.g:3374:2: rule__CompositeCondition__Group_2__0__Impl rule__CompositeCondition__Group_2__1
+            // InternalSmartCE.g:3649:1: ( rule__CompositeCondition__Group_2__0__Impl rule__CompositeCondition__Group_2__1 )
+            // InternalSmartCE.g:3650:2: rule__CompositeCondition__Group_2__0__Impl rule__CompositeCondition__Group_2__1
             {
-            pushFollow(FOLLOW_29);
+            pushFollow(FOLLOW_32);
             rule__CompositeCondition__Group_2__0__Impl();
 
             state._fsp--;
@@ -10838,21 +11721,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2__0__Impl"
-    // InternalSmartCE.g:3381:1: rule__CompositeCondition__Group_2__0__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) ) ;
+    // InternalSmartCE.g:3657:1: rule__CompositeCondition__Group_2__0__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) ) ;
     public final void rule__CompositeCondition__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3385:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) ) )
-            // InternalSmartCE.g:3386:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) )
+            // InternalSmartCE.g:3661:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) ) )
+            // InternalSmartCE.g:3662:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) )
             {
-            // InternalSmartCE.g:3386:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) )
-            // InternalSmartCE.g:3387:2: ( rule__CompositeCondition__ConditionsAssignment_2_0 )
+            // InternalSmartCE.g:3662:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_0 ) )
+            // InternalSmartCE.g:3663:2: ( rule__CompositeCondition__ConditionsAssignment_2_0 )
             {
              before(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_2_0()); 
-            // InternalSmartCE.g:3388:2: ( rule__CompositeCondition__ConditionsAssignment_2_0 )
-            // InternalSmartCE.g:3388:3: rule__CompositeCondition__ConditionsAssignment_2_0
+            // InternalSmartCE.g:3664:2: ( rule__CompositeCondition__ConditionsAssignment_2_0 )
+            // InternalSmartCE.g:3664:3: rule__CompositeCondition__ConditionsAssignment_2_0
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__ConditionsAssignment_2_0();
@@ -10885,14 +11768,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2__1"
-    // InternalSmartCE.g:3396:1: rule__CompositeCondition__Group_2__1 : rule__CompositeCondition__Group_2__1__Impl ;
+    // InternalSmartCE.g:3672:1: rule__CompositeCondition__Group_2__1 : rule__CompositeCondition__Group_2__1__Impl ;
     public final void rule__CompositeCondition__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3400:1: ( rule__CompositeCondition__Group_2__1__Impl )
-            // InternalSmartCE.g:3401:2: rule__CompositeCondition__Group_2__1__Impl
+            // InternalSmartCE.g:3676:1: ( rule__CompositeCondition__Group_2__1__Impl )
+            // InternalSmartCE.g:3677:2: rule__CompositeCondition__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__Group_2__1__Impl();
@@ -10918,35 +11801,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2__1__Impl"
-    // InternalSmartCE.g:3407:1: rule__CompositeCondition__Group_2__1__Impl : ( ( rule__CompositeCondition__Group_2_1__0 )* ) ;
+    // InternalSmartCE.g:3683:1: rule__CompositeCondition__Group_2__1__Impl : ( ( rule__CompositeCondition__Group_2_1__0 )* ) ;
     public final void rule__CompositeCondition__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3411:1: ( ( ( rule__CompositeCondition__Group_2_1__0 )* ) )
-            // InternalSmartCE.g:3412:1: ( ( rule__CompositeCondition__Group_2_1__0 )* )
+            // InternalSmartCE.g:3687:1: ( ( ( rule__CompositeCondition__Group_2_1__0 )* ) )
+            // InternalSmartCE.g:3688:1: ( ( rule__CompositeCondition__Group_2_1__0 )* )
             {
-            // InternalSmartCE.g:3412:1: ( ( rule__CompositeCondition__Group_2_1__0 )* )
-            // InternalSmartCE.g:3413:2: ( rule__CompositeCondition__Group_2_1__0 )*
+            // InternalSmartCE.g:3688:1: ( ( rule__CompositeCondition__Group_2_1__0 )* )
+            // InternalSmartCE.g:3689:2: ( rule__CompositeCondition__Group_2_1__0 )*
             {
              before(grammarAccess.getCompositeConditionAccess().getGroup_2_1()); 
-            // InternalSmartCE.g:3414:2: ( rule__CompositeCondition__Group_2_1__0 )*
-            loop29:
+            // InternalSmartCE.g:3690:2: ( rule__CompositeCondition__Group_2_1__0 )*
+            loop31:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt31=2;
+                int LA31_0 = input.LA(1);
 
-                if ( ((LA29_0>=16 && LA29_0<=18)) ) {
-                    alt29=1;
+                if ( ((LA31_0>=16 && LA31_0<=18)) ) {
+                    alt31=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt31) {
             	case 1 :
-            	    // InternalSmartCE.g:3414:3: rule__CompositeCondition__Group_2_1__0
+            	    // InternalSmartCE.g:3690:3: rule__CompositeCondition__Group_2_1__0
             	    {
-            	    pushFollow(FOLLOW_31);
+            	    pushFollow(FOLLOW_34);
             	    rule__CompositeCondition__Group_2_1__0();
 
             	    state._fsp--;
@@ -10956,7 +11839,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop31;
                 }
             } while (true);
 
@@ -10983,16 +11866,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2_1__0"
-    // InternalSmartCE.g:3423:1: rule__CompositeCondition__Group_2_1__0 : rule__CompositeCondition__Group_2_1__0__Impl rule__CompositeCondition__Group_2_1__1 ;
+    // InternalSmartCE.g:3699:1: rule__CompositeCondition__Group_2_1__0 : rule__CompositeCondition__Group_2_1__0__Impl rule__CompositeCondition__Group_2_1__1 ;
     public final void rule__CompositeCondition__Group_2_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3427:1: ( rule__CompositeCondition__Group_2_1__0__Impl rule__CompositeCondition__Group_2_1__1 )
-            // InternalSmartCE.g:3428:2: rule__CompositeCondition__Group_2_1__0__Impl rule__CompositeCondition__Group_2_1__1
+            // InternalSmartCE.g:3703:1: ( rule__CompositeCondition__Group_2_1__0__Impl rule__CompositeCondition__Group_2_1__1 )
+            // InternalSmartCE.g:3704:2: rule__CompositeCondition__Group_2_1__0__Impl rule__CompositeCondition__Group_2_1__1
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__CompositeCondition__Group_2_1__0__Impl();
 
             state._fsp--;
@@ -11021,21 +11904,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2_1__0__Impl"
-    // InternalSmartCE.g:3435:1: rule__CompositeCondition__Group_2_1__0__Impl : ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) ) ;
+    // InternalSmartCE.g:3711:1: rule__CompositeCondition__Group_2_1__0__Impl : ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) ) ;
     public final void rule__CompositeCondition__Group_2_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3439:1: ( ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) ) )
-            // InternalSmartCE.g:3440:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) )
+            // InternalSmartCE.g:3715:1: ( ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) ) )
+            // InternalSmartCE.g:3716:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) )
             {
-            // InternalSmartCE.g:3440:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) )
-            // InternalSmartCE.g:3441:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 )
+            // InternalSmartCE.g:3716:1: ( ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 ) )
+            // InternalSmartCE.g:3717:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 )
             {
              before(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsAssignment_2_1_0()); 
-            // InternalSmartCE.g:3442:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 )
-            // InternalSmartCE.g:3442:3: rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0
+            // InternalSmartCE.g:3718:2: ( rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 )
+            // InternalSmartCE.g:3718:3: rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0();
@@ -11068,14 +11951,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2_1__1"
-    // InternalSmartCE.g:3450:1: rule__CompositeCondition__Group_2_1__1 : rule__CompositeCondition__Group_2_1__1__Impl ;
+    // InternalSmartCE.g:3726:1: rule__CompositeCondition__Group_2_1__1 : rule__CompositeCondition__Group_2_1__1__Impl ;
     public final void rule__CompositeCondition__Group_2_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3454:1: ( rule__CompositeCondition__Group_2_1__1__Impl )
-            // InternalSmartCE.g:3455:2: rule__CompositeCondition__Group_2_1__1__Impl
+            // InternalSmartCE.g:3730:1: ( rule__CompositeCondition__Group_2_1__1__Impl )
+            // InternalSmartCE.g:3731:2: rule__CompositeCondition__Group_2_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__Group_2_1__1__Impl();
@@ -11101,21 +11984,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__Group_2_1__1__Impl"
-    // InternalSmartCE.g:3461:1: rule__CompositeCondition__Group_2_1__1__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) ) ;
+    // InternalSmartCE.g:3737:1: rule__CompositeCondition__Group_2_1__1__Impl : ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) ) ;
     public final void rule__CompositeCondition__Group_2_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3465:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) ) )
-            // InternalSmartCE.g:3466:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) )
+            // InternalSmartCE.g:3741:1: ( ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) ) )
+            // InternalSmartCE.g:3742:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) )
             {
-            // InternalSmartCE.g:3466:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) )
-            // InternalSmartCE.g:3467:2: ( rule__CompositeCondition__ConditionsAssignment_2_1_1 )
+            // InternalSmartCE.g:3742:1: ( ( rule__CompositeCondition__ConditionsAssignment_2_1_1 ) )
+            // InternalSmartCE.g:3743:2: ( rule__CompositeCondition__ConditionsAssignment_2_1_1 )
             {
              before(grammarAccess.getCompositeConditionAccess().getConditionsAssignment_2_1_1()); 
-            // InternalSmartCE.g:3468:2: ( rule__CompositeCondition__ConditionsAssignment_2_1_1 )
-            // InternalSmartCE.g:3468:3: rule__CompositeCondition__ConditionsAssignment_2_1_1
+            // InternalSmartCE.g:3744:2: ( rule__CompositeCondition__ConditionsAssignment_2_1_1 )
+            // InternalSmartCE.g:3744:3: rule__CompositeCondition__ConditionsAssignment_2_1_1
             {
             pushFollow(FOLLOW_2);
             rule__CompositeCondition__ConditionsAssignment_2_1_1();
@@ -11148,16 +12031,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__0"
-    // InternalSmartCE.g:3477:1: rule__ConditionalExpression__Group__0 : rule__ConditionalExpression__Group__0__Impl rule__ConditionalExpression__Group__1 ;
+    // InternalSmartCE.g:3753:1: rule__ConditionalExpression__Group__0 : rule__ConditionalExpression__Group__0__Impl rule__ConditionalExpression__Group__1 ;
     public final void rule__ConditionalExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3481:1: ( rule__ConditionalExpression__Group__0__Impl rule__ConditionalExpression__Group__1 )
-            // InternalSmartCE.g:3482:2: rule__ConditionalExpression__Group__0__Impl rule__ConditionalExpression__Group__1
+            // InternalSmartCE.g:3757:1: ( rule__ConditionalExpression__Group__0__Impl rule__ConditionalExpression__Group__1 )
+            // InternalSmartCE.g:3758:2: rule__ConditionalExpression__Group__0__Impl rule__ConditionalExpression__Group__1
             {
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_35);
             rule__ConditionalExpression__Group__0__Impl();
 
             state._fsp--;
@@ -11186,21 +12069,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__0__Impl"
-    // InternalSmartCE.g:3489:1: rule__ConditionalExpression__Group__0__Impl : ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) ) ;
+    // InternalSmartCE.g:3765:1: rule__ConditionalExpression__Group__0__Impl : ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) ) ;
     public final void rule__ConditionalExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3493:1: ( ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) ) )
-            // InternalSmartCE.g:3494:1: ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) )
+            // InternalSmartCE.g:3769:1: ( ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) ) )
+            // InternalSmartCE.g:3770:1: ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) )
             {
-            // InternalSmartCE.g:3494:1: ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) )
-            // InternalSmartCE.g:3495:2: ( rule__ConditionalExpression__ConditionsAssignment_0 )
+            // InternalSmartCE.g:3770:1: ( ( rule__ConditionalExpression__ConditionsAssignment_0 ) )
+            // InternalSmartCE.g:3771:2: ( rule__ConditionalExpression__ConditionsAssignment_0 )
             {
              before(grammarAccess.getConditionalExpressionAccess().getConditionsAssignment_0()); 
-            // InternalSmartCE.g:3496:2: ( rule__ConditionalExpression__ConditionsAssignment_0 )
-            // InternalSmartCE.g:3496:3: rule__ConditionalExpression__ConditionsAssignment_0
+            // InternalSmartCE.g:3772:2: ( rule__ConditionalExpression__ConditionsAssignment_0 )
+            // InternalSmartCE.g:3772:3: rule__ConditionalExpression__ConditionsAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__ConditionalExpression__ConditionsAssignment_0();
@@ -11233,16 +12116,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__1"
-    // InternalSmartCE.g:3504:1: rule__ConditionalExpression__Group__1 : rule__ConditionalExpression__Group__1__Impl rule__ConditionalExpression__Group__2 ;
+    // InternalSmartCE.g:3780:1: rule__ConditionalExpression__Group__1 : rule__ConditionalExpression__Group__1__Impl rule__ConditionalExpression__Group__2 ;
     public final void rule__ConditionalExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3508:1: ( rule__ConditionalExpression__Group__1__Impl rule__ConditionalExpression__Group__2 )
-            // InternalSmartCE.g:3509:2: rule__ConditionalExpression__Group__1__Impl rule__ConditionalExpression__Group__2
+            // InternalSmartCE.g:3784:1: ( rule__ConditionalExpression__Group__1__Impl rule__ConditionalExpression__Group__2 )
+            // InternalSmartCE.g:3785:2: rule__ConditionalExpression__Group__1__Impl rule__ConditionalExpression__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__ConditionalExpression__Group__1__Impl();
 
             state._fsp--;
@@ -11271,20 +12154,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__1__Impl"
-    // InternalSmartCE.g:3516:1: rule__ConditionalExpression__Group__1__Impl : ( 'when' ) ;
+    // InternalSmartCE.g:3792:1: rule__ConditionalExpression__Group__1__Impl : ( 'when' ) ;
     public final void rule__ConditionalExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3520:1: ( ( 'when' ) )
-            // InternalSmartCE.g:3521:1: ( 'when' )
+            // InternalSmartCE.g:3796:1: ( ( 'when' ) )
+            // InternalSmartCE.g:3797:1: ( 'when' )
             {
-            // InternalSmartCE.g:3521:1: ( 'when' )
-            // InternalSmartCE.g:3522:2: 'when'
+            // InternalSmartCE.g:3797:1: ( 'when' )
+            // InternalSmartCE.g:3798:2: 'when'
             {
              before(grammarAccess.getConditionalExpressionAccess().getWhenKeyword_1()); 
-            match(input,57,FOLLOW_2); 
+            match(input,59,FOLLOW_2); 
              after(grammarAccess.getConditionalExpressionAccess().getWhenKeyword_1()); 
 
             }
@@ -11308,16 +12191,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__2"
-    // InternalSmartCE.g:3531:1: rule__ConditionalExpression__Group__2 : rule__ConditionalExpression__Group__2__Impl rule__ConditionalExpression__Group__3 ;
+    // InternalSmartCE.g:3807:1: rule__ConditionalExpression__Group__2 : rule__ConditionalExpression__Group__2__Impl rule__ConditionalExpression__Group__3 ;
     public final void rule__ConditionalExpression__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3535:1: ( rule__ConditionalExpression__Group__2__Impl rule__ConditionalExpression__Group__3 )
-            // InternalSmartCE.g:3536:2: rule__ConditionalExpression__Group__2__Impl rule__ConditionalExpression__Group__3
+            // InternalSmartCE.g:3811:1: ( rule__ConditionalExpression__Group__2__Impl rule__ConditionalExpression__Group__3 )
+            // InternalSmartCE.g:3812:2: rule__ConditionalExpression__Group__2__Impl rule__ConditionalExpression__Group__3
             {
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_11);
             rule__ConditionalExpression__Group__2__Impl();
 
             state._fsp--;
@@ -11346,20 +12229,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__2__Impl"
-    // InternalSmartCE.g:3543:1: rule__ConditionalExpression__Group__2__Impl : ( '(' ) ;
+    // InternalSmartCE.g:3819:1: rule__ConditionalExpression__Group__2__Impl : ( '(' ) ;
     public final void rule__ConditionalExpression__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3547:1: ( ( '(' ) )
-            // InternalSmartCE.g:3548:1: ( '(' )
+            // InternalSmartCE.g:3823:1: ( ( '(' ) )
+            // InternalSmartCE.g:3824:1: ( '(' )
             {
-            // InternalSmartCE.g:3548:1: ( '(' )
-            // InternalSmartCE.g:3549:2: '('
+            // InternalSmartCE.g:3824:1: ( '(' )
+            // InternalSmartCE.g:3825:2: '('
             {
              before(grammarAccess.getConditionalExpressionAccess().getLeftParenthesisKeyword_2()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getConditionalExpressionAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -11383,16 +12266,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__3"
-    // InternalSmartCE.g:3558:1: rule__ConditionalExpression__Group__3 : rule__ConditionalExpression__Group__3__Impl rule__ConditionalExpression__Group__4 ;
+    // InternalSmartCE.g:3834:1: rule__ConditionalExpression__Group__3 : rule__ConditionalExpression__Group__3__Impl rule__ConditionalExpression__Group__4 ;
     public final void rule__ConditionalExpression__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3562:1: ( rule__ConditionalExpression__Group__3__Impl rule__ConditionalExpression__Group__4 )
-            // InternalSmartCE.g:3563:2: rule__ConditionalExpression__Group__3__Impl rule__ConditionalExpression__Group__4
+            // InternalSmartCE.g:3838:1: ( rule__ConditionalExpression__Group__3__Impl rule__ConditionalExpression__Group__4 )
+            // InternalSmartCE.g:3839:2: rule__ConditionalExpression__Group__3__Impl rule__ConditionalExpression__Group__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__ConditionalExpression__Group__3__Impl();
 
             state._fsp--;
@@ -11421,21 +12304,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__3__Impl"
-    // InternalSmartCE.g:3570:1: rule__ConditionalExpression__Group__3__Impl : ( 'expression' ) ;
+    // InternalSmartCE.g:3846:1: rule__ConditionalExpression__Group__3__Impl : ( ( rule__ConditionalExpression__ExpressionAssignment_3 ) ) ;
     public final void rule__ConditionalExpression__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3574:1: ( ( 'expression' ) )
-            // InternalSmartCE.g:3575:1: ( 'expression' )
+            // InternalSmartCE.g:3850:1: ( ( ( rule__ConditionalExpression__ExpressionAssignment_3 ) ) )
+            // InternalSmartCE.g:3851:1: ( ( rule__ConditionalExpression__ExpressionAssignment_3 ) )
             {
-            // InternalSmartCE.g:3575:1: ( 'expression' )
-            // InternalSmartCE.g:3576:2: 'expression'
+            // InternalSmartCE.g:3851:1: ( ( rule__ConditionalExpression__ExpressionAssignment_3 ) )
+            // InternalSmartCE.g:3852:2: ( rule__ConditionalExpression__ExpressionAssignment_3 )
             {
-             before(grammarAccess.getConditionalExpressionAccess().getExpressionKeyword_3()); 
-            match(input,59,FOLLOW_2); 
-             after(grammarAccess.getConditionalExpressionAccess().getExpressionKeyword_3()); 
+             before(grammarAccess.getConditionalExpressionAccess().getExpressionAssignment_3()); 
+            // InternalSmartCE.g:3853:2: ( rule__ConditionalExpression__ExpressionAssignment_3 )
+            // InternalSmartCE.g:3853:3: rule__ConditionalExpression__ExpressionAssignment_3
+            {
+            pushFollow(FOLLOW_2);
+            rule__ConditionalExpression__ExpressionAssignment_3();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getConditionalExpressionAccess().getExpressionAssignment_3()); 
 
             }
 
@@ -11458,16 +12351,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__4"
-    // InternalSmartCE.g:3585:1: rule__ConditionalExpression__Group__4 : rule__ConditionalExpression__Group__4__Impl rule__ConditionalExpression__Group__5 ;
+    // InternalSmartCE.g:3861:1: rule__ConditionalExpression__Group__4 : rule__ConditionalExpression__Group__4__Impl rule__ConditionalExpression__Group__5 ;
     public final void rule__ConditionalExpression__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3589:1: ( rule__ConditionalExpression__Group__4__Impl rule__ConditionalExpression__Group__5 )
-            // InternalSmartCE.g:3590:2: rule__ConditionalExpression__Group__4__Impl rule__ConditionalExpression__Group__5
+            // InternalSmartCE.g:3865:1: ( rule__ConditionalExpression__Group__4__Impl rule__ConditionalExpression__Group__5 )
+            // InternalSmartCE.g:3866:2: rule__ConditionalExpression__Group__4__Impl rule__ConditionalExpression__Group__5
             {
-            pushFollow(FOLLOW_35);
+            pushFollow(FOLLOW_37);
             rule__ConditionalExpression__Group__4__Impl();
 
             state._fsp--;
@@ -11496,20 +12389,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__4__Impl"
-    // InternalSmartCE.g:3597:1: rule__ConditionalExpression__Group__4__Impl : ( ')' ) ;
+    // InternalSmartCE.g:3873:1: rule__ConditionalExpression__Group__4__Impl : ( ')' ) ;
     public final void rule__ConditionalExpression__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3601:1: ( ( ')' ) )
-            // InternalSmartCE.g:3602:1: ( ')' )
+            // InternalSmartCE.g:3877:1: ( ( ')' ) )
+            // InternalSmartCE.g:3878:1: ( ')' )
             {
-            // InternalSmartCE.g:3602:1: ( ')' )
-            // InternalSmartCE.g:3603:2: ')'
+            // InternalSmartCE.g:3878:1: ( ')' )
+            // InternalSmartCE.g:3879:2: ')'
             {
              before(grammarAccess.getConditionalExpressionAccess().getRightParenthesisKeyword_4()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getConditionalExpressionAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -11533,14 +12426,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__5"
-    // InternalSmartCE.g:3612:1: rule__ConditionalExpression__Group__5 : rule__ConditionalExpression__Group__5__Impl rule__ConditionalExpression__Group__6 ;
+    // InternalSmartCE.g:3888:1: rule__ConditionalExpression__Group__5 : rule__ConditionalExpression__Group__5__Impl rule__ConditionalExpression__Group__6 ;
     public final void rule__ConditionalExpression__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3616:1: ( rule__ConditionalExpression__Group__5__Impl rule__ConditionalExpression__Group__6 )
-            // InternalSmartCE.g:3617:2: rule__ConditionalExpression__Group__5__Impl rule__ConditionalExpression__Group__6
+            // InternalSmartCE.g:3892:1: ( rule__ConditionalExpression__Group__5__Impl rule__ConditionalExpression__Group__6 )
+            // InternalSmartCE.g:3893:2: rule__ConditionalExpression__Group__5__Impl rule__ConditionalExpression__Group__6
             {
             pushFollow(FOLLOW_7);
             rule__ConditionalExpression__Group__5__Impl();
@@ -11571,21 +12464,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__5__Impl"
-    // InternalSmartCE.g:3624:1: rule__ConditionalExpression__Group__5__Impl : ( 'check' ) ;
+    // InternalSmartCE.g:3900:1: rule__ConditionalExpression__Group__5__Impl : ( 'do' ) ;
     public final void rule__ConditionalExpression__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3628:1: ( ( 'check' ) )
-            // InternalSmartCE.g:3629:1: ( 'check' )
+            // InternalSmartCE.g:3904:1: ( ( 'do' ) )
+            // InternalSmartCE.g:3905:1: ( 'do' )
             {
-            // InternalSmartCE.g:3629:1: ( 'check' )
-            // InternalSmartCE.g:3630:2: 'check'
+            // InternalSmartCE.g:3905:1: ( 'do' )
+            // InternalSmartCE.g:3906:2: 'do'
             {
-             before(grammarAccess.getConditionalExpressionAccess().getCheckKeyword_5()); 
-            match(input,61,FOLLOW_2); 
-             after(grammarAccess.getConditionalExpressionAccess().getCheckKeyword_5()); 
+             before(grammarAccess.getConditionalExpressionAccess().getDoKeyword_5()); 
+            match(input,62,FOLLOW_2); 
+             after(grammarAccess.getConditionalExpressionAccess().getDoKeyword_5()); 
 
             }
 
@@ -11608,16 +12501,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__6"
-    // InternalSmartCE.g:3639:1: rule__ConditionalExpression__Group__6 : rule__ConditionalExpression__Group__6__Impl rule__ConditionalExpression__Group__7 ;
+    // InternalSmartCE.g:3915:1: rule__ConditionalExpression__Group__6 : rule__ConditionalExpression__Group__6__Impl rule__ConditionalExpression__Group__7 ;
     public final void rule__ConditionalExpression__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3643:1: ( rule__ConditionalExpression__Group__6__Impl rule__ConditionalExpression__Group__7 )
-            // InternalSmartCE.g:3644:2: rule__ConditionalExpression__Group__6__Impl rule__ConditionalExpression__Group__7
+            // InternalSmartCE.g:3919:1: ( rule__ConditionalExpression__Group__6__Impl rule__ConditionalExpression__Group__7 )
+            // InternalSmartCE.g:3920:2: rule__ConditionalExpression__Group__6__Impl rule__ConditionalExpression__Group__7
             {
-            pushFollow(FOLLOW_25);
+            pushFollow(FOLLOW_23);
             rule__ConditionalExpression__Group__6__Impl();
 
             state._fsp--;
@@ -11646,17 +12539,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__6__Impl"
-    // InternalSmartCE.g:3651:1: rule__ConditionalExpression__Group__6__Impl : ( '{' ) ;
+    // InternalSmartCE.g:3927:1: rule__ConditionalExpression__Group__6__Impl : ( '{' ) ;
     public final void rule__ConditionalExpression__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3655:1: ( ( '{' ) )
-            // InternalSmartCE.g:3656:1: ( '{' )
+            // InternalSmartCE.g:3931:1: ( ( '{' ) )
+            // InternalSmartCE.g:3932:1: ( '{' )
             {
-            // InternalSmartCE.g:3656:1: ( '{' )
-            // InternalSmartCE.g:3657:2: '{'
+            // InternalSmartCE.g:3932:1: ( '{' )
+            // InternalSmartCE.g:3933:2: '{'
             {
              before(grammarAccess.getConditionalExpressionAccess().getLeftCurlyBracketKeyword_6()); 
             match(input,45,FOLLOW_2); 
@@ -11683,16 +12576,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__7"
-    // InternalSmartCE.g:3666:1: rule__ConditionalExpression__Group__7 : rule__ConditionalExpression__Group__7__Impl rule__ConditionalExpression__Group__8 ;
+    // InternalSmartCE.g:3942:1: rule__ConditionalExpression__Group__7 : rule__ConditionalExpression__Group__7__Impl rule__ConditionalExpression__Group__8 ;
     public final void rule__ConditionalExpression__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3670:1: ( rule__ConditionalExpression__Group__7__Impl rule__ConditionalExpression__Group__8 )
-            // InternalSmartCE.g:3671:2: rule__ConditionalExpression__Group__7__Impl rule__ConditionalExpression__Group__8
+            // InternalSmartCE.g:3946:1: ( rule__ConditionalExpression__Group__7__Impl rule__ConditionalExpression__Group__8 )
+            // InternalSmartCE.g:3947:2: rule__ConditionalExpression__Group__7__Impl rule__ConditionalExpression__Group__8
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_13);
             rule__ConditionalExpression__Group__7__Impl();
 
             state._fsp--;
@@ -11721,21 +12614,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__7__Impl"
-    // InternalSmartCE.g:3678:1: rule__ConditionalExpression__Group__7__Impl : ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) ) ;
+    // InternalSmartCE.g:3954:1: rule__ConditionalExpression__Group__7__Impl : ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) ) ;
     public final void rule__ConditionalExpression__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3682:1: ( ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) ) )
-            // InternalSmartCE.g:3683:1: ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) )
+            // InternalSmartCE.g:3958:1: ( ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) ) )
+            // InternalSmartCE.g:3959:1: ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) )
             {
-            // InternalSmartCE.g:3683:1: ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) )
-            // InternalSmartCE.g:3684:2: ( rule__ConditionalExpression__ConditionsAssignment_7 )
+            // InternalSmartCE.g:3959:1: ( ( rule__ConditionalExpression__ConditionsAssignment_7 ) )
+            // InternalSmartCE.g:3960:2: ( rule__ConditionalExpression__ConditionsAssignment_7 )
             {
              before(grammarAccess.getConditionalExpressionAccess().getConditionsAssignment_7()); 
-            // InternalSmartCE.g:3685:2: ( rule__ConditionalExpression__ConditionsAssignment_7 )
-            // InternalSmartCE.g:3685:3: rule__ConditionalExpression__ConditionsAssignment_7
+            // InternalSmartCE.g:3961:2: ( rule__ConditionalExpression__ConditionsAssignment_7 )
+            // InternalSmartCE.g:3961:3: rule__ConditionalExpression__ConditionsAssignment_7
             {
             pushFollow(FOLLOW_2);
             rule__ConditionalExpression__ConditionsAssignment_7();
@@ -11768,14 +12661,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__8"
-    // InternalSmartCE.g:3693:1: rule__ConditionalExpression__Group__8 : rule__ConditionalExpression__Group__8__Impl ;
+    // InternalSmartCE.g:3969:1: rule__ConditionalExpression__Group__8 : rule__ConditionalExpression__Group__8__Impl ;
     public final void rule__ConditionalExpression__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3697:1: ( rule__ConditionalExpression__Group__8__Impl )
-            // InternalSmartCE.g:3698:2: rule__ConditionalExpression__Group__8__Impl
+            // InternalSmartCE.g:3973:1: ( rule__ConditionalExpression__Group__8__Impl )
+            // InternalSmartCE.g:3974:2: rule__ConditionalExpression__Group__8__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ConditionalExpression__Group__8__Impl();
@@ -11801,17 +12694,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__Group__8__Impl"
-    // InternalSmartCE.g:3704:1: rule__ConditionalExpression__Group__8__Impl : ( '}' ) ;
+    // InternalSmartCE.g:3980:1: rule__ConditionalExpression__Group__8__Impl : ( '}' ) ;
     public final void rule__ConditionalExpression__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3708:1: ( ( '}' ) )
-            // InternalSmartCE.g:3709:1: ( '}' )
+            // InternalSmartCE.g:3984:1: ( ( '}' ) )
+            // InternalSmartCE.g:3985:1: ( '}' )
             {
-            // InternalSmartCE.g:3709:1: ( '}' )
-            // InternalSmartCE.g:3710:2: '}'
+            // InternalSmartCE.g:3985:1: ( '}' )
+            // InternalSmartCE.g:3986:2: '}'
             {
              before(grammarAccess.getConditionalExpressionAccess().getRightCurlyBracketKeyword_8()); 
             match(input,50,FOLLOW_2); 
@@ -11838,16 +12731,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__0"
-    // InternalSmartCE.g:3720:1: rule__Timeout__Group__0 : rule__Timeout__Group__0__Impl rule__Timeout__Group__1 ;
+    // InternalSmartCE.g:3996:1: rule__Timeout__Group__0 : rule__Timeout__Group__0__Impl rule__Timeout__Group__1 ;
     public final void rule__Timeout__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3724:1: ( rule__Timeout__Group__0__Impl rule__Timeout__Group__1 )
-            // InternalSmartCE.g:3725:2: rule__Timeout__Group__0__Impl rule__Timeout__Group__1
+            // InternalSmartCE.g:4000:1: ( rule__Timeout__Group__0__Impl rule__Timeout__Group__1 )
+            // InternalSmartCE.g:4001:2: rule__Timeout__Group__0__Impl rule__Timeout__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__Timeout__Group__0__Impl();
 
             state._fsp--;
@@ -11876,20 +12769,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__0__Impl"
-    // InternalSmartCE.g:3732:1: rule__Timeout__Group__0__Impl : ( 'Timeout' ) ;
+    // InternalSmartCE.g:4008:1: rule__Timeout__Group__0__Impl : ( 'Timeout' ) ;
     public final void rule__Timeout__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3736:1: ( ( 'Timeout' ) )
-            // InternalSmartCE.g:3737:1: ( 'Timeout' )
+            // InternalSmartCE.g:4012:1: ( ( 'Timeout' ) )
+            // InternalSmartCE.g:4013:1: ( 'Timeout' )
             {
-            // InternalSmartCE.g:3737:1: ( 'Timeout' )
-            // InternalSmartCE.g:3738:2: 'Timeout'
+            // InternalSmartCE.g:4013:1: ( 'Timeout' )
+            // InternalSmartCE.g:4014:2: 'Timeout'
             {
              before(grammarAccess.getTimeoutAccess().getTimeoutKeyword_0()); 
-            match(input,62,FOLLOW_2); 
+            match(input,63,FOLLOW_2); 
              after(grammarAccess.getTimeoutAccess().getTimeoutKeyword_0()); 
 
             }
@@ -11913,16 +12806,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__1"
-    // InternalSmartCE.g:3747:1: rule__Timeout__Group__1 : rule__Timeout__Group__1__Impl rule__Timeout__Group__2 ;
+    // InternalSmartCE.g:4023:1: rule__Timeout__Group__1 : rule__Timeout__Group__1__Impl rule__Timeout__Group__2 ;
     public final void rule__Timeout__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3751:1: ( rule__Timeout__Group__1__Impl rule__Timeout__Group__2 )
-            // InternalSmartCE.g:3752:2: rule__Timeout__Group__1__Impl rule__Timeout__Group__2
+            // InternalSmartCE.g:4027:1: ( rule__Timeout__Group__1__Impl rule__Timeout__Group__2 )
+            // InternalSmartCE.g:4028:2: rule__Timeout__Group__1__Impl rule__Timeout__Group__2
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_38);
             rule__Timeout__Group__1__Impl();
 
             state._fsp--;
@@ -11951,20 +12844,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__1__Impl"
-    // InternalSmartCE.g:3759:1: rule__Timeout__Group__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:4035:1: rule__Timeout__Group__1__Impl : ( '(' ) ;
     public final void rule__Timeout__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3763:1: ( ( '(' ) )
-            // InternalSmartCE.g:3764:1: ( '(' )
+            // InternalSmartCE.g:4039:1: ( ( '(' ) )
+            // InternalSmartCE.g:4040:1: ( '(' )
             {
-            // InternalSmartCE.g:3764:1: ( '(' )
-            // InternalSmartCE.g:3765:2: '('
+            // InternalSmartCE.g:4040:1: ( '(' )
+            // InternalSmartCE.g:4041:2: '('
             {
              before(grammarAccess.getTimeoutAccess().getLeftParenthesisKeyword_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getTimeoutAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -11988,16 +12881,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__2"
-    // InternalSmartCE.g:3774:1: rule__Timeout__Group__2 : rule__Timeout__Group__2__Impl rule__Timeout__Group__3 ;
+    // InternalSmartCE.g:4050:1: rule__Timeout__Group__2 : rule__Timeout__Group__2__Impl rule__Timeout__Group__3 ;
     public final void rule__Timeout__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3778:1: ( rule__Timeout__Group__2__Impl rule__Timeout__Group__3 )
-            // InternalSmartCE.g:3779:2: rule__Timeout__Group__2__Impl rule__Timeout__Group__3
+            // InternalSmartCE.g:4054:1: ( rule__Timeout__Group__2__Impl rule__Timeout__Group__3 )
+            // InternalSmartCE.g:4055:2: rule__Timeout__Group__2__Impl rule__Timeout__Group__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__Timeout__Group__2__Impl();
 
             state._fsp--;
@@ -12026,21 +12919,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__2__Impl"
-    // InternalSmartCE.g:3786:1: rule__Timeout__Group__2__Impl : ( ( rule__Timeout__ValueAssignment_2 ) ) ;
+    // InternalSmartCE.g:4062:1: rule__Timeout__Group__2__Impl : ( ( rule__Timeout__ValueAssignment_2 ) ) ;
     public final void rule__Timeout__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3790:1: ( ( ( rule__Timeout__ValueAssignment_2 ) ) )
-            // InternalSmartCE.g:3791:1: ( ( rule__Timeout__ValueAssignment_2 ) )
+            // InternalSmartCE.g:4066:1: ( ( ( rule__Timeout__ValueAssignment_2 ) ) )
+            // InternalSmartCE.g:4067:1: ( ( rule__Timeout__ValueAssignment_2 ) )
             {
-            // InternalSmartCE.g:3791:1: ( ( rule__Timeout__ValueAssignment_2 ) )
-            // InternalSmartCE.g:3792:2: ( rule__Timeout__ValueAssignment_2 )
+            // InternalSmartCE.g:4067:1: ( ( rule__Timeout__ValueAssignment_2 ) )
+            // InternalSmartCE.g:4068:2: ( rule__Timeout__ValueAssignment_2 )
             {
              before(grammarAccess.getTimeoutAccess().getValueAssignment_2()); 
-            // InternalSmartCE.g:3793:2: ( rule__Timeout__ValueAssignment_2 )
-            // InternalSmartCE.g:3793:3: rule__Timeout__ValueAssignment_2
+            // InternalSmartCE.g:4069:2: ( rule__Timeout__ValueAssignment_2 )
+            // InternalSmartCE.g:4069:3: rule__Timeout__ValueAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Timeout__ValueAssignment_2();
@@ -12073,14 +12966,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__3"
-    // InternalSmartCE.g:3801:1: rule__Timeout__Group__3 : rule__Timeout__Group__3__Impl ;
+    // InternalSmartCE.g:4077:1: rule__Timeout__Group__3 : rule__Timeout__Group__3__Impl ;
     public final void rule__Timeout__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3805:1: ( rule__Timeout__Group__3__Impl )
-            // InternalSmartCE.g:3806:2: rule__Timeout__Group__3__Impl
+            // InternalSmartCE.g:4081:1: ( rule__Timeout__Group__3__Impl )
+            // InternalSmartCE.g:4082:2: rule__Timeout__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Timeout__Group__3__Impl();
@@ -12106,20 +12999,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__Group__3__Impl"
-    // InternalSmartCE.g:3812:1: rule__Timeout__Group__3__Impl : ( ')' ) ;
+    // InternalSmartCE.g:4088:1: rule__Timeout__Group__3__Impl : ( ')' ) ;
     public final void rule__Timeout__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3816:1: ( ( ')' ) )
-            // InternalSmartCE.g:3817:1: ( ')' )
+            // InternalSmartCE.g:4092:1: ( ( ')' ) )
+            // InternalSmartCE.g:4093:1: ( ')' )
             {
-            // InternalSmartCE.g:3817:1: ( ')' )
-            // InternalSmartCE.g:3818:2: ')'
+            // InternalSmartCE.g:4093:1: ( ')' )
+            // InternalSmartCE.g:4094:2: ')'
             {
              before(grammarAccess.getTimeoutAccess().getRightParenthesisKeyword_3()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getTimeoutAccess().getRightParenthesisKeyword_3()); 
 
             }
@@ -12143,16 +13036,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__0"
-    // InternalSmartCE.g:3828:1: rule__OperationLimit__Group__0 : rule__OperationLimit__Group__0__Impl rule__OperationLimit__Group__1 ;
+    // InternalSmartCE.g:4104:1: rule__OperationLimit__Group__0 : rule__OperationLimit__Group__0__Impl rule__OperationLimit__Group__1 ;
     public final void rule__OperationLimit__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3832:1: ( rule__OperationLimit__Group__0__Impl rule__OperationLimit__Group__1 )
-            // InternalSmartCE.g:3833:2: rule__OperationLimit__Group__0__Impl rule__OperationLimit__Group__1
+            // InternalSmartCE.g:4108:1: ( rule__OperationLimit__Group__0__Impl rule__OperationLimit__Group__1 )
+            // InternalSmartCE.g:4109:2: rule__OperationLimit__Group__0__Impl rule__OperationLimit__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__OperationLimit__Group__0__Impl();
 
             state._fsp--;
@@ -12181,20 +13074,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__0__Impl"
-    // InternalSmartCE.g:3840:1: rule__OperationLimit__Group__0__Impl : ( 'OperationLimit' ) ;
+    // InternalSmartCE.g:4116:1: rule__OperationLimit__Group__0__Impl : ( 'OperationLimit' ) ;
     public final void rule__OperationLimit__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3844:1: ( ( 'OperationLimit' ) )
-            // InternalSmartCE.g:3845:1: ( 'OperationLimit' )
+            // InternalSmartCE.g:4120:1: ( ( 'OperationLimit' ) )
+            // InternalSmartCE.g:4121:1: ( 'OperationLimit' )
             {
-            // InternalSmartCE.g:3845:1: ( 'OperationLimit' )
-            // InternalSmartCE.g:3846:2: 'OperationLimit'
+            // InternalSmartCE.g:4121:1: ( 'OperationLimit' )
+            // InternalSmartCE.g:4122:2: 'OperationLimit'
             {
              before(grammarAccess.getOperationLimitAccess().getOperationLimitKeyword_0()); 
-            match(input,63,FOLLOW_2); 
+            match(input,64,FOLLOW_2); 
              after(grammarAccess.getOperationLimitAccess().getOperationLimitKeyword_0()); 
 
             }
@@ -12218,16 +13111,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__1"
-    // InternalSmartCE.g:3855:1: rule__OperationLimit__Group__1 : rule__OperationLimit__Group__1__Impl rule__OperationLimit__Group__2 ;
+    // InternalSmartCE.g:4131:1: rule__OperationLimit__Group__1 : rule__OperationLimit__Group__1__Impl rule__OperationLimit__Group__2 ;
     public final void rule__OperationLimit__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3859:1: ( rule__OperationLimit__Group__1__Impl rule__OperationLimit__Group__2 )
-            // InternalSmartCE.g:3860:2: rule__OperationLimit__Group__1__Impl rule__OperationLimit__Group__2
+            // InternalSmartCE.g:4135:1: ( rule__OperationLimit__Group__1__Impl rule__OperationLimit__Group__2 )
+            // InternalSmartCE.g:4136:2: rule__OperationLimit__Group__1__Impl rule__OperationLimit__Group__2
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_38);
             rule__OperationLimit__Group__1__Impl();
 
             state._fsp--;
@@ -12256,20 +13149,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__1__Impl"
-    // InternalSmartCE.g:3867:1: rule__OperationLimit__Group__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:4143:1: rule__OperationLimit__Group__1__Impl : ( '(' ) ;
     public final void rule__OperationLimit__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3871:1: ( ( '(' ) )
-            // InternalSmartCE.g:3872:1: ( '(' )
+            // InternalSmartCE.g:4147:1: ( ( '(' ) )
+            // InternalSmartCE.g:4148:1: ( '(' )
             {
-            // InternalSmartCE.g:3872:1: ( '(' )
-            // InternalSmartCE.g:3873:2: '('
+            // InternalSmartCE.g:4148:1: ( '(' )
+            // InternalSmartCE.g:4149:2: '('
             {
              before(grammarAccess.getOperationLimitAccess().getLeftParenthesisKeyword_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getOperationLimitAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -12293,16 +13186,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__2"
-    // InternalSmartCE.g:3882:1: rule__OperationLimit__Group__2 : rule__OperationLimit__Group__2__Impl rule__OperationLimit__Group__3 ;
+    // InternalSmartCE.g:4158:1: rule__OperationLimit__Group__2 : rule__OperationLimit__Group__2__Impl rule__OperationLimit__Group__3 ;
     public final void rule__OperationLimit__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3886:1: ( rule__OperationLimit__Group__2__Impl rule__OperationLimit__Group__3 )
-            // InternalSmartCE.g:3887:2: rule__OperationLimit__Group__2__Impl rule__OperationLimit__Group__3
+            // InternalSmartCE.g:4162:1: ( rule__OperationLimit__Group__2__Impl rule__OperationLimit__Group__3 )
+            // InternalSmartCE.g:4163:2: rule__OperationLimit__Group__2__Impl rule__OperationLimit__Group__3
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_39);
             rule__OperationLimit__Group__2__Impl();
 
             state._fsp--;
@@ -12331,21 +13224,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__2__Impl"
-    // InternalSmartCE.g:3894:1: rule__OperationLimit__Group__2__Impl : ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) ) ;
+    // InternalSmartCE.g:4170:1: rule__OperationLimit__Group__2__Impl : ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) ) ;
     public final void rule__OperationLimit__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3898:1: ( ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) ) )
-            // InternalSmartCE.g:3899:1: ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) )
+            // InternalSmartCE.g:4174:1: ( ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) ) )
+            // InternalSmartCE.g:4175:1: ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) )
             {
-            // InternalSmartCE.g:3899:1: ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) )
-            // InternalSmartCE.g:3900:2: ( rule__OperationLimit__OperationsNumberAssignment_2 )
+            // InternalSmartCE.g:4175:1: ( ( rule__OperationLimit__OperationsNumberAssignment_2 ) )
+            // InternalSmartCE.g:4176:2: ( rule__OperationLimit__OperationsNumberAssignment_2 )
             {
              before(grammarAccess.getOperationLimitAccess().getOperationsNumberAssignment_2()); 
-            // InternalSmartCE.g:3901:2: ( rule__OperationLimit__OperationsNumberAssignment_2 )
-            // InternalSmartCE.g:3901:3: rule__OperationLimit__OperationsNumberAssignment_2
+            // InternalSmartCE.g:4177:2: ( rule__OperationLimit__OperationsNumberAssignment_2 )
+            // InternalSmartCE.g:4177:3: rule__OperationLimit__OperationsNumberAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__OperationLimit__OperationsNumberAssignment_2();
@@ -12378,16 +13271,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__3"
-    // InternalSmartCE.g:3909:1: rule__OperationLimit__Group__3 : rule__OperationLimit__Group__3__Impl rule__OperationLimit__Group__4 ;
+    // InternalSmartCE.g:4185:1: rule__OperationLimit__Group__3 : rule__OperationLimit__Group__3__Impl rule__OperationLimit__Group__4 ;
     public final void rule__OperationLimit__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3913:1: ( rule__OperationLimit__Group__3__Impl rule__OperationLimit__Group__4 )
-            // InternalSmartCE.g:3914:2: rule__OperationLimit__Group__3__Impl rule__OperationLimit__Group__4
+            // InternalSmartCE.g:4189:1: ( rule__OperationLimit__Group__3__Impl rule__OperationLimit__Group__4 )
+            // InternalSmartCE.g:4190:2: rule__OperationLimit__Group__3__Impl rule__OperationLimit__Group__4
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_40);
             rule__OperationLimit__Group__3__Impl();
 
             state._fsp--;
@@ -12416,20 +13309,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__3__Impl"
-    // InternalSmartCE.g:3921:1: rule__OperationLimit__Group__3__Impl : ( 'by' ) ;
+    // InternalSmartCE.g:4197:1: rule__OperationLimit__Group__3__Impl : ( 'by' ) ;
     public final void rule__OperationLimit__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3925:1: ( ( 'by' ) )
-            // InternalSmartCE.g:3926:1: ( 'by' )
+            // InternalSmartCE.g:4201:1: ( ( 'by' ) )
+            // InternalSmartCE.g:4202:1: ( 'by' )
             {
-            // InternalSmartCE.g:3926:1: ( 'by' )
-            // InternalSmartCE.g:3927:2: 'by'
+            // InternalSmartCE.g:4202:1: ( 'by' )
+            // InternalSmartCE.g:4203:2: 'by'
             {
              before(grammarAccess.getOperationLimitAccess().getByKeyword_3()); 
-            match(input,64,FOLLOW_2); 
+            match(input,65,FOLLOW_2); 
              after(grammarAccess.getOperationLimitAccess().getByKeyword_3()); 
 
             }
@@ -12453,16 +13346,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__4"
-    // InternalSmartCE.g:3936:1: rule__OperationLimit__Group__4 : rule__OperationLimit__Group__4__Impl rule__OperationLimit__Group__5 ;
+    // InternalSmartCE.g:4212:1: rule__OperationLimit__Group__4 : rule__OperationLimit__Group__4__Impl rule__OperationLimit__Group__5 ;
     public final void rule__OperationLimit__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3940:1: ( rule__OperationLimit__Group__4__Impl rule__OperationLimit__Group__5 )
-            // InternalSmartCE.g:3941:2: rule__OperationLimit__Group__4__Impl rule__OperationLimit__Group__5
+            // InternalSmartCE.g:4216:1: ( rule__OperationLimit__Group__4__Impl rule__OperationLimit__Group__5 )
+            // InternalSmartCE.g:4217:2: rule__OperationLimit__Group__4__Impl rule__OperationLimit__Group__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__OperationLimit__Group__4__Impl();
 
             state._fsp--;
@@ -12491,21 +13384,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__4__Impl"
-    // InternalSmartCE.g:3948:1: rule__OperationLimit__Group__4__Impl : ( ( rule__OperationLimit__TimeUnitAssignment_4 ) ) ;
+    // InternalSmartCE.g:4224:1: rule__OperationLimit__Group__4__Impl : ( ( rule__OperationLimit__TimeUnitAssignment_4 ) ) ;
     public final void rule__OperationLimit__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3952:1: ( ( ( rule__OperationLimit__TimeUnitAssignment_4 ) ) )
-            // InternalSmartCE.g:3953:1: ( ( rule__OperationLimit__TimeUnitAssignment_4 ) )
+            // InternalSmartCE.g:4228:1: ( ( ( rule__OperationLimit__TimeUnitAssignment_4 ) ) )
+            // InternalSmartCE.g:4229:1: ( ( rule__OperationLimit__TimeUnitAssignment_4 ) )
             {
-            // InternalSmartCE.g:3953:1: ( ( rule__OperationLimit__TimeUnitAssignment_4 ) )
-            // InternalSmartCE.g:3954:2: ( rule__OperationLimit__TimeUnitAssignment_4 )
+            // InternalSmartCE.g:4229:1: ( ( rule__OperationLimit__TimeUnitAssignment_4 ) )
+            // InternalSmartCE.g:4230:2: ( rule__OperationLimit__TimeUnitAssignment_4 )
             {
              before(grammarAccess.getOperationLimitAccess().getTimeUnitAssignment_4()); 
-            // InternalSmartCE.g:3955:2: ( rule__OperationLimit__TimeUnitAssignment_4 )
-            // InternalSmartCE.g:3955:3: rule__OperationLimit__TimeUnitAssignment_4
+            // InternalSmartCE.g:4231:2: ( rule__OperationLimit__TimeUnitAssignment_4 )
+            // InternalSmartCE.g:4231:3: rule__OperationLimit__TimeUnitAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__OperationLimit__TimeUnitAssignment_4();
@@ -12538,14 +13431,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__5"
-    // InternalSmartCE.g:3963:1: rule__OperationLimit__Group__5 : rule__OperationLimit__Group__5__Impl ;
+    // InternalSmartCE.g:4239:1: rule__OperationLimit__Group__5 : rule__OperationLimit__Group__5__Impl ;
     public final void rule__OperationLimit__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3967:1: ( rule__OperationLimit__Group__5__Impl )
-            // InternalSmartCE.g:3968:2: rule__OperationLimit__Group__5__Impl
+            // InternalSmartCE.g:4243:1: ( rule__OperationLimit__Group__5__Impl )
+            // InternalSmartCE.g:4244:2: rule__OperationLimit__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OperationLimit__Group__5__Impl();
@@ -12571,20 +13464,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__Group__5__Impl"
-    // InternalSmartCE.g:3974:1: rule__OperationLimit__Group__5__Impl : ( ')' ) ;
+    // InternalSmartCE.g:4250:1: rule__OperationLimit__Group__5__Impl : ( ')' ) ;
     public final void rule__OperationLimit__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3978:1: ( ( ')' ) )
-            // InternalSmartCE.g:3979:1: ( ')' )
+            // InternalSmartCE.g:4254:1: ( ( ')' ) )
+            // InternalSmartCE.g:4255:1: ( ')' )
             {
-            // InternalSmartCE.g:3979:1: ( ')' )
-            // InternalSmartCE.g:3980:2: ')'
+            // InternalSmartCE.g:4255:1: ( ')' )
+            // InternalSmartCE.g:4256:2: ')'
             {
              before(grammarAccess.getOperationLimitAccess().getRightParenthesisKeyword_5()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getOperationLimitAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -12608,16 +13501,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__0"
-    // InternalSmartCE.g:3990:1: rule__BusinessDay__Group__0 : rule__BusinessDay__Group__0__Impl rule__BusinessDay__Group__1 ;
+    // InternalSmartCE.g:4266:1: rule__BusinessDay__Group__0 : rule__BusinessDay__Group__0__Impl rule__BusinessDay__Group__1 ;
     public final void rule__BusinessDay__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:3994:1: ( rule__BusinessDay__Group__0__Impl rule__BusinessDay__Group__1 )
-            // InternalSmartCE.g:3995:2: rule__BusinessDay__Group__0__Impl rule__BusinessDay__Group__1
+            // InternalSmartCE.g:4270:1: ( rule__BusinessDay__Group__0__Impl rule__BusinessDay__Group__1 )
+            // InternalSmartCE.g:4271:2: rule__BusinessDay__Group__0__Impl rule__BusinessDay__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__BusinessDay__Group__0__Impl();
 
             state._fsp--;
@@ -12646,20 +13539,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__0__Impl"
-    // InternalSmartCE.g:4002:1: rule__BusinessDay__Group__0__Impl : ( 'BusinessDay' ) ;
+    // InternalSmartCE.g:4278:1: rule__BusinessDay__Group__0__Impl : ( 'BusinessDay' ) ;
     public final void rule__BusinessDay__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4006:1: ( ( 'BusinessDay' ) )
-            // InternalSmartCE.g:4007:1: ( 'BusinessDay' )
+            // InternalSmartCE.g:4282:1: ( ( 'BusinessDay' ) )
+            // InternalSmartCE.g:4283:1: ( 'BusinessDay' )
             {
-            // InternalSmartCE.g:4007:1: ( 'BusinessDay' )
-            // InternalSmartCE.g:4008:2: 'BusinessDay'
+            // InternalSmartCE.g:4283:1: ( 'BusinessDay' )
+            // InternalSmartCE.g:4284:2: 'BusinessDay'
             {
              before(grammarAccess.getBusinessDayAccess().getBusinessDayKeyword_0()); 
-            match(input,65,FOLLOW_2); 
+            match(input,66,FOLLOW_2); 
              after(grammarAccess.getBusinessDayAccess().getBusinessDayKeyword_0()); 
 
             }
@@ -12683,16 +13576,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__1"
-    // InternalSmartCE.g:4017:1: rule__BusinessDay__Group__1 : rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2 ;
+    // InternalSmartCE.g:4293:1: rule__BusinessDay__Group__1 : rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2 ;
     public final void rule__BusinessDay__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4021:1: ( rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2 )
-            // InternalSmartCE.g:4022:2: rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2
+            // InternalSmartCE.g:4297:1: ( rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2 )
+            // InternalSmartCE.g:4298:2: rule__BusinessDay__Group__1__Impl rule__BusinessDay__Group__2
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_41);
             rule__BusinessDay__Group__1__Impl();
 
             state._fsp--;
@@ -12721,20 +13614,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__1__Impl"
-    // InternalSmartCE.g:4029:1: rule__BusinessDay__Group__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:4305:1: rule__BusinessDay__Group__1__Impl : ( '(' ) ;
     public final void rule__BusinessDay__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4033:1: ( ( '(' ) )
-            // InternalSmartCE.g:4034:1: ( '(' )
+            // InternalSmartCE.g:4309:1: ( ( '(' ) )
+            // InternalSmartCE.g:4310:1: ( '(' )
             {
-            // InternalSmartCE.g:4034:1: ( '(' )
-            // InternalSmartCE.g:4035:2: '('
+            // InternalSmartCE.g:4310:1: ( '(' )
+            // InternalSmartCE.g:4311:2: '('
             {
              before(grammarAccess.getBusinessDayAccess().getLeftParenthesisKeyword_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getBusinessDayAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -12758,16 +13651,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__2"
-    // InternalSmartCE.g:4044:1: rule__BusinessDay__Group__2 : rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3 ;
+    // InternalSmartCE.g:4320:1: rule__BusinessDay__Group__2 : rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3 ;
     public final void rule__BusinessDay__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4048:1: ( rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3 )
-            // InternalSmartCE.g:4049:2: rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3
+            // InternalSmartCE.g:4324:1: ( rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3 )
+            // InternalSmartCE.g:4325:2: rule__BusinessDay__Group__2__Impl rule__BusinessDay__Group__3
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_42);
             rule__BusinessDay__Group__2__Impl();
 
             state._fsp--;
@@ -12796,21 +13689,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__2__Impl"
-    // InternalSmartCE.g:4056:1: rule__BusinessDay__Group__2__Impl : ( ( rule__BusinessDay__StartAssignment_2 ) ) ;
+    // InternalSmartCE.g:4332:1: rule__BusinessDay__Group__2__Impl : ( ( rule__BusinessDay__StartAssignment_2 ) ) ;
     public final void rule__BusinessDay__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4060:1: ( ( ( rule__BusinessDay__StartAssignment_2 ) ) )
-            // InternalSmartCE.g:4061:1: ( ( rule__BusinessDay__StartAssignment_2 ) )
+            // InternalSmartCE.g:4336:1: ( ( ( rule__BusinessDay__StartAssignment_2 ) ) )
+            // InternalSmartCE.g:4337:1: ( ( rule__BusinessDay__StartAssignment_2 ) )
             {
-            // InternalSmartCE.g:4061:1: ( ( rule__BusinessDay__StartAssignment_2 ) )
-            // InternalSmartCE.g:4062:2: ( rule__BusinessDay__StartAssignment_2 )
+            // InternalSmartCE.g:4337:1: ( ( rule__BusinessDay__StartAssignment_2 ) )
+            // InternalSmartCE.g:4338:2: ( rule__BusinessDay__StartAssignment_2 )
             {
              before(grammarAccess.getBusinessDayAccess().getStartAssignment_2()); 
-            // InternalSmartCE.g:4063:2: ( rule__BusinessDay__StartAssignment_2 )
-            // InternalSmartCE.g:4063:3: rule__BusinessDay__StartAssignment_2
+            // InternalSmartCE.g:4339:2: ( rule__BusinessDay__StartAssignment_2 )
+            // InternalSmartCE.g:4339:3: rule__BusinessDay__StartAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__BusinessDay__StartAssignment_2();
@@ -12843,16 +13736,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__3"
-    // InternalSmartCE.g:4071:1: rule__BusinessDay__Group__3 : rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4 ;
+    // InternalSmartCE.g:4347:1: rule__BusinessDay__Group__3 : rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4 ;
     public final void rule__BusinessDay__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4075:1: ( rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4 )
-            // InternalSmartCE.g:4076:2: rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4
+            // InternalSmartCE.g:4351:1: ( rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4 )
+            // InternalSmartCE.g:4352:2: rule__BusinessDay__Group__3__Impl rule__BusinessDay__Group__4
             {
-            pushFollow(FOLLOW_39);
+            pushFollow(FOLLOW_41);
             rule__BusinessDay__Group__3__Impl();
 
             state._fsp--;
@@ -12881,20 +13774,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__3__Impl"
-    // InternalSmartCE.g:4083:1: rule__BusinessDay__Group__3__Impl : ( 'to' ) ;
+    // InternalSmartCE.g:4359:1: rule__BusinessDay__Group__3__Impl : ( 'to' ) ;
     public final void rule__BusinessDay__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4087:1: ( ( 'to' ) )
-            // InternalSmartCE.g:4088:1: ( 'to' )
+            // InternalSmartCE.g:4363:1: ( ( 'to' ) )
+            // InternalSmartCE.g:4364:1: ( 'to' )
             {
-            // InternalSmartCE.g:4088:1: ( 'to' )
-            // InternalSmartCE.g:4089:2: 'to'
+            // InternalSmartCE.g:4364:1: ( 'to' )
+            // InternalSmartCE.g:4365:2: 'to'
             {
              before(grammarAccess.getBusinessDayAccess().getToKeyword_3()); 
-            match(input,66,FOLLOW_2); 
+            match(input,67,FOLLOW_2); 
              after(grammarAccess.getBusinessDayAccess().getToKeyword_3()); 
 
             }
@@ -12918,16 +13811,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__4"
-    // InternalSmartCE.g:4098:1: rule__BusinessDay__Group__4 : rule__BusinessDay__Group__4__Impl rule__BusinessDay__Group__5 ;
+    // InternalSmartCE.g:4374:1: rule__BusinessDay__Group__4 : rule__BusinessDay__Group__4__Impl rule__BusinessDay__Group__5 ;
     public final void rule__BusinessDay__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4102:1: ( rule__BusinessDay__Group__4__Impl rule__BusinessDay__Group__5 )
-            // InternalSmartCE.g:4103:2: rule__BusinessDay__Group__4__Impl rule__BusinessDay__Group__5
+            // InternalSmartCE.g:4378:1: ( rule__BusinessDay__Group__4__Impl rule__BusinessDay__Group__5 )
+            // InternalSmartCE.g:4379:2: rule__BusinessDay__Group__4__Impl rule__BusinessDay__Group__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__BusinessDay__Group__4__Impl();
 
             state._fsp--;
@@ -12956,21 +13849,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__4__Impl"
-    // InternalSmartCE.g:4110:1: rule__BusinessDay__Group__4__Impl : ( ( rule__BusinessDay__EndAssignment_4 ) ) ;
+    // InternalSmartCE.g:4386:1: rule__BusinessDay__Group__4__Impl : ( ( rule__BusinessDay__EndAssignment_4 ) ) ;
     public final void rule__BusinessDay__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4114:1: ( ( ( rule__BusinessDay__EndAssignment_4 ) ) )
-            // InternalSmartCE.g:4115:1: ( ( rule__BusinessDay__EndAssignment_4 ) )
+            // InternalSmartCE.g:4390:1: ( ( ( rule__BusinessDay__EndAssignment_4 ) ) )
+            // InternalSmartCE.g:4391:1: ( ( rule__BusinessDay__EndAssignment_4 ) )
             {
-            // InternalSmartCE.g:4115:1: ( ( rule__BusinessDay__EndAssignment_4 ) )
-            // InternalSmartCE.g:4116:2: ( rule__BusinessDay__EndAssignment_4 )
+            // InternalSmartCE.g:4391:1: ( ( rule__BusinessDay__EndAssignment_4 ) )
+            // InternalSmartCE.g:4392:2: ( rule__BusinessDay__EndAssignment_4 )
             {
              before(grammarAccess.getBusinessDayAccess().getEndAssignment_4()); 
-            // InternalSmartCE.g:4117:2: ( rule__BusinessDay__EndAssignment_4 )
-            // InternalSmartCE.g:4117:3: rule__BusinessDay__EndAssignment_4
+            // InternalSmartCE.g:4393:2: ( rule__BusinessDay__EndAssignment_4 )
+            // InternalSmartCE.g:4393:3: rule__BusinessDay__EndAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__BusinessDay__EndAssignment_4();
@@ -13003,14 +13896,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__5"
-    // InternalSmartCE.g:4125:1: rule__BusinessDay__Group__5 : rule__BusinessDay__Group__5__Impl ;
+    // InternalSmartCE.g:4401:1: rule__BusinessDay__Group__5 : rule__BusinessDay__Group__5__Impl ;
     public final void rule__BusinessDay__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4129:1: ( rule__BusinessDay__Group__5__Impl )
-            // InternalSmartCE.g:4130:2: rule__BusinessDay__Group__5__Impl
+            // InternalSmartCE.g:4405:1: ( rule__BusinessDay__Group__5__Impl )
+            // InternalSmartCE.g:4406:2: rule__BusinessDay__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__BusinessDay__Group__5__Impl();
@@ -13036,20 +13929,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__Group__5__Impl"
-    // InternalSmartCE.g:4136:1: rule__BusinessDay__Group__5__Impl : ( ')' ) ;
+    // InternalSmartCE.g:4412:1: rule__BusinessDay__Group__5__Impl : ( ')' ) ;
     public final void rule__BusinessDay__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4140:1: ( ( ')' ) )
-            // InternalSmartCE.g:4141:1: ( ')' )
+            // InternalSmartCE.g:4416:1: ( ( ')' ) )
+            // InternalSmartCE.g:4417:1: ( ')' )
             {
-            // InternalSmartCE.g:4141:1: ( ')' )
-            // InternalSmartCE.g:4142:2: ')'
+            // InternalSmartCE.g:4417:1: ( ')' )
+            // InternalSmartCE.g:4418:2: ')'
             {
              before(grammarAccess.getBusinessDayAccess().getRightParenthesisKeyword_5()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getBusinessDayAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -13073,16 +13966,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__0"
-    // InternalSmartCE.g:4152:1: rule__TimeInterval__Group__0 : rule__TimeInterval__Group__0__Impl rule__TimeInterval__Group__1 ;
+    // InternalSmartCE.g:4428:1: rule__TimeInterval__Group__0 : rule__TimeInterval__Group__0__Impl rule__TimeInterval__Group__1 ;
     public final void rule__TimeInterval__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4156:1: ( rule__TimeInterval__Group__0__Impl rule__TimeInterval__Group__1 )
-            // InternalSmartCE.g:4157:2: rule__TimeInterval__Group__0__Impl rule__TimeInterval__Group__1
+            // InternalSmartCE.g:4432:1: ( rule__TimeInterval__Group__0__Impl rule__TimeInterval__Group__1 )
+            // InternalSmartCE.g:4433:2: rule__TimeInterval__Group__0__Impl rule__TimeInterval__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__TimeInterval__Group__0__Impl();
 
             state._fsp--;
@@ -13111,20 +14004,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__0__Impl"
-    // InternalSmartCE.g:4164:1: rule__TimeInterval__Group__0__Impl : ( 'TimeInterval' ) ;
+    // InternalSmartCE.g:4440:1: rule__TimeInterval__Group__0__Impl : ( 'TimeInterval' ) ;
     public final void rule__TimeInterval__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4168:1: ( ( 'TimeInterval' ) )
-            // InternalSmartCE.g:4169:1: ( 'TimeInterval' )
+            // InternalSmartCE.g:4444:1: ( ( 'TimeInterval' ) )
+            // InternalSmartCE.g:4445:1: ( 'TimeInterval' )
             {
-            // InternalSmartCE.g:4169:1: ( 'TimeInterval' )
-            // InternalSmartCE.g:4170:2: 'TimeInterval'
+            // InternalSmartCE.g:4445:1: ( 'TimeInterval' )
+            // InternalSmartCE.g:4446:2: 'TimeInterval'
             {
              before(grammarAccess.getTimeIntervalAccess().getTimeIntervalKeyword_0()); 
-            match(input,67,FOLLOW_2); 
+            match(input,68,FOLLOW_2); 
              after(grammarAccess.getTimeIntervalAccess().getTimeIntervalKeyword_0()); 
 
             }
@@ -13148,16 +14041,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__1"
-    // InternalSmartCE.g:4179:1: rule__TimeInterval__Group__1 : rule__TimeInterval__Group__1__Impl rule__TimeInterval__Group__2 ;
+    // InternalSmartCE.g:4455:1: rule__TimeInterval__Group__1 : rule__TimeInterval__Group__1__Impl rule__TimeInterval__Group__2 ;
     public final void rule__TimeInterval__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4183:1: ( rule__TimeInterval__Group__1__Impl rule__TimeInterval__Group__2 )
-            // InternalSmartCE.g:4184:2: rule__TimeInterval__Group__1__Impl rule__TimeInterval__Group__2
+            // InternalSmartCE.g:4459:1: ( rule__TimeInterval__Group__1__Impl rule__TimeInterval__Group__2 )
+            // InternalSmartCE.g:4460:2: rule__TimeInterval__Group__1__Impl rule__TimeInterval__Group__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__TimeInterval__Group__1__Impl();
 
             state._fsp--;
@@ -13186,20 +14079,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__1__Impl"
-    // InternalSmartCE.g:4191:1: rule__TimeInterval__Group__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:4467:1: rule__TimeInterval__Group__1__Impl : ( '(' ) ;
     public final void rule__TimeInterval__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4195:1: ( ( '(' ) )
-            // InternalSmartCE.g:4196:1: ( '(' )
+            // InternalSmartCE.g:4471:1: ( ( '(' ) )
+            // InternalSmartCE.g:4472:1: ( '(' )
             {
-            // InternalSmartCE.g:4196:1: ( '(' )
-            // InternalSmartCE.g:4197:2: '('
+            // InternalSmartCE.g:4472:1: ( '(' )
+            // InternalSmartCE.g:4473:2: '('
             {
              before(grammarAccess.getTimeIntervalAccess().getLeftParenthesisKeyword_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getTimeIntervalAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -13223,16 +14116,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__2"
-    // InternalSmartCE.g:4206:1: rule__TimeInterval__Group__2 : rule__TimeInterval__Group__2__Impl rule__TimeInterval__Group__3 ;
+    // InternalSmartCE.g:4482:1: rule__TimeInterval__Group__2 : rule__TimeInterval__Group__2__Impl rule__TimeInterval__Group__3 ;
     public final void rule__TimeInterval__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4210:1: ( rule__TimeInterval__Group__2__Impl rule__TimeInterval__Group__3 )
-            // InternalSmartCE.g:4211:2: rule__TimeInterval__Group__2__Impl rule__TimeInterval__Group__3
+            // InternalSmartCE.g:4486:1: ( rule__TimeInterval__Group__2__Impl rule__TimeInterval__Group__3 )
+            // InternalSmartCE.g:4487:2: rule__TimeInterval__Group__2__Impl rule__TimeInterval__Group__3
             {
-            pushFollow(FOLLOW_40);
+            pushFollow(FOLLOW_42);
             rule__TimeInterval__Group__2__Impl();
 
             state._fsp--;
@@ -13261,21 +14154,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__2__Impl"
-    // InternalSmartCE.g:4218:1: rule__TimeInterval__Group__2__Impl : ( ( rule__TimeInterval__StartAssignment_2 ) ) ;
+    // InternalSmartCE.g:4494:1: rule__TimeInterval__Group__2__Impl : ( ( rule__TimeInterval__StartAssignment_2 ) ) ;
     public final void rule__TimeInterval__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4222:1: ( ( ( rule__TimeInterval__StartAssignment_2 ) ) )
-            // InternalSmartCE.g:4223:1: ( ( rule__TimeInterval__StartAssignment_2 ) )
+            // InternalSmartCE.g:4498:1: ( ( ( rule__TimeInterval__StartAssignment_2 ) ) )
+            // InternalSmartCE.g:4499:1: ( ( rule__TimeInterval__StartAssignment_2 ) )
             {
-            // InternalSmartCE.g:4223:1: ( ( rule__TimeInterval__StartAssignment_2 ) )
-            // InternalSmartCE.g:4224:2: ( rule__TimeInterval__StartAssignment_2 )
+            // InternalSmartCE.g:4499:1: ( ( rule__TimeInterval__StartAssignment_2 ) )
+            // InternalSmartCE.g:4500:2: ( rule__TimeInterval__StartAssignment_2 )
             {
              before(grammarAccess.getTimeIntervalAccess().getStartAssignment_2()); 
-            // InternalSmartCE.g:4225:2: ( rule__TimeInterval__StartAssignment_2 )
-            // InternalSmartCE.g:4225:3: rule__TimeInterval__StartAssignment_2
+            // InternalSmartCE.g:4501:2: ( rule__TimeInterval__StartAssignment_2 )
+            // InternalSmartCE.g:4501:3: rule__TimeInterval__StartAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__TimeInterval__StartAssignment_2();
@@ -13308,16 +14201,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__3"
-    // InternalSmartCE.g:4233:1: rule__TimeInterval__Group__3 : rule__TimeInterval__Group__3__Impl rule__TimeInterval__Group__4 ;
+    // InternalSmartCE.g:4509:1: rule__TimeInterval__Group__3 : rule__TimeInterval__Group__3__Impl rule__TimeInterval__Group__4 ;
     public final void rule__TimeInterval__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4237:1: ( rule__TimeInterval__Group__3__Impl rule__TimeInterval__Group__4 )
-            // InternalSmartCE.g:4238:2: rule__TimeInterval__Group__3__Impl rule__TimeInterval__Group__4
+            // InternalSmartCE.g:4513:1: ( rule__TimeInterval__Group__3__Impl rule__TimeInterval__Group__4 )
+            // InternalSmartCE.g:4514:2: rule__TimeInterval__Group__3__Impl rule__TimeInterval__Group__4
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__TimeInterval__Group__3__Impl();
 
             state._fsp--;
@@ -13346,20 +14239,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__3__Impl"
-    // InternalSmartCE.g:4245:1: rule__TimeInterval__Group__3__Impl : ( 'to' ) ;
+    // InternalSmartCE.g:4521:1: rule__TimeInterval__Group__3__Impl : ( 'to' ) ;
     public final void rule__TimeInterval__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4249:1: ( ( 'to' ) )
-            // InternalSmartCE.g:4250:1: ( 'to' )
+            // InternalSmartCE.g:4525:1: ( ( 'to' ) )
+            // InternalSmartCE.g:4526:1: ( 'to' )
             {
-            // InternalSmartCE.g:4250:1: ( 'to' )
-            // InternalSmartCE.g:4251:2: 'to'
+            // InternalSmartCE.g:4526:1: ( 'to' )
+            // InternalSmartCE.g:4527:2: 'to'
             {
              before(grammarAccess.getTimeIntervalAccess().getToKeyword_3()); 
-            match(input,66,FOLLOW_2); 
+            match(input,67,FOLLOW_2); 
              after(grammarAccess.getTimeIntervalAccess().getToKeyword_3()); 
 
             }
@@ -13383,16 +14276,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__4"
-    // InternalSmartCE.g:4260:1: rule__TimeInterval__Group__4 : rule__TimeInterval__Group__4__Impl rule__TimeInterval__Group__5 ;
+    // InternalSmartCE.g:4536:1: rule__TimeInterval__Group__4 : rule__TimeInterval__Group__4__Impl rule__TimeInterval__Group__5 ;
     public final void rule__TimeInterval__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4264:1: ( rule__TimeInterval__Group__4__Impl rule__TimeInterval__Group__5 )
-            // InternalSmartCE.g:4265:2: rule__TimeInterval__Group__4__Impl rule__TimeInterval__Group__5
+            // InternalSmartCE.g:4540:1: ( rule__TimeInterval__Group__4__Impl rule__TimeInterval__Group__5 )
+            // InternalSmartCE.g:4541:2: rule__TimeInterval__Group__4__Impl rule__TimeInterval__Group__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__TimeInterval__Group__4__Impl();
 
             state._fsp--;
@@ -13421,21 +14314,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__4__Impl"
-    // InternalSmartCE.g:4272:1: rule__TimeInterval__Group__4__Impl : ( ( rule__TimeInterval__EndAssignment_4 ) ) ;
+    // InternalSmartCE.g:4548:1: rule__TimeInterval__Group__4__Impl : ( ( rule__TimeInterval__EndAssignment_4 ) ) ;
     public final void rule__TimeInterval__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4276:1: ( ( ( rule__TimeInterval__EndAssignment_4 ) ) )
-            // InternalSmartCE.g:4277:1: ( ( rule__TimeInterval__EndAssignment_4 ) )
+            // InternalSmartCE.g:4552:1: ( ( ( rule__TimeInterval__EndAssignment_4 ) ) )
+            // InternalSmartCE.g:4553:1: ( ( rule__TimeInterval__EndAssignment_4 ) )
             {
-            // InternalSmartCE.g:4277:1: ( ( rule__TimeInterval__EndAssignment_4 ) )
-            // InternalSmartCE.g:4278:2: ( rule__TimeInterval__EndAssignment_4 )
+            // InternalSmartCE.g:4553:1: ( ( rule__TimeInterval__EndAssignment_4 ) )
+            // InternalSmartCE.g:4554:2: ( rule__TimeInterval__EndAssignment_4 )
             {
              before(grammarAccess.getTimeIntervalAccess().getEndAssignment_4()); 
-            // InternalSmartCE.g:4279:2: ( rule__TimeInterval__EndAssignment_4 )
-            // InternalSmartCE.g:4279:3: rule__TimeInterval__EndAssignment_4
+            // InternalSmartCE.g:4555:2: ( rule__TimeInterval__EndAssignment_4 )
+            // InternalSmartCE.g:4555:3: rule__TimeInterval__EndAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__TimeInterval__EndAssignment_4();
@@ -13468,14 +14361,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__5"
-    // InternalSmartCE.g:4287:1: rule__TimeInterval__Group__5 : rule__TimeInterval__Group__5__Impl ;
+    // InternalSmartCE.g:4563:1: rule__TimeInterval__Group__5 : rule__TimeInterval__Group__5__Impl ;
     public final void rule__TimeInterval__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4291:1: ( rule__TimeInterval__Group__5__Impl )
-            // InternalSmartCE.g:4292:2: rule__TimeInterval__Group__5__Impl
+            // InternalSmartCE.g:4567:1: ( rule__TimeInterval__Group__5__Impl )
+            // InternalSmartCE.g:4568:2: rule__TimeInterval__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TimeInterval__Group__5__Impl();
@@ -13501,20 +14394,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__Group__5__Impl"
-    // InternalSmartCE.g:4298:1: rule__TimeInterval__Group__5__Impl : ( ')' ) ;
+    // InternalSmartCE.g:4574:1: rule__TimeInterval__Group__5__Impl : ( ')' ) ;
     public final void rule__TimeInterval__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4302:1: ( ( ')' ) )
-            // InternalSmartCE.g:4303:1: ( ')' )
+            // InternalSmartCE.g:4578:1: ( ( ')' ) )
+            // InternalSmartCE.g:4579:1: ( ')' )
             {
-            // InternalSmartCE.g:4303:1: ( ')' )
-            // InternalSmartCE.g:4304:2: ')'
+            // InternalSmartCE.g:4579:1: ( ')' )
+            // InternalSmartCE.g:4580:2: ')'
             {
              before(grammarAccess.getTimeIntervalAccess().getRightParenthesisKeyword_5()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getTimeIntervalAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -13538,16 +14431,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_0__0"
-    // InternalSmartCE.g:4314:1: rule__SessionInterval__Group_0__0 : rule__SessionInterval__Group_0__0__Impl rule__SessionInterval__Group_0__1 ;
+    // InternalSmartCE.g:4590:1: rule__SessionInterval__Group_0__0 : rule__SessionInterval__Group_0__0__Impl rule__SessionInterval__Group_0__1 ;
     public final void rule__SessionInterval__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4318:1: ( rule__SessionInterval__Group_0__0__Impl rule__SessionInterval__Group_0__1 )
-            // InternalSmartCE.g:4319:2: rule__SessionInterval__Group_0__0__Impl rule__SessionInterval__Group_0__1
+            // InternalSmartCE.g:4594:1: ( rule__SessionInterval__Group_0__0__Impl rule__SessionInterval__Group_0__1 )
+            // InternalSmartCE.g:4595:2: rule__SessionInterval__Group_0__0__Impl rule__SessionInterval__Group_0__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_36);
             rule__SessionInterval__Group_0__0__Impl();
 
             state._fsp--;
@@ -13576,21 +14469,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_0__0__Impl"
-    // InternalSmartCE.g:4326:1: rule__SessionInterval__Group_0__0__Impl : ( 'SessionInterval' ) ;
+    // InternalSmartCE.g:4602:1: rule__SessionInterval__Group_0__0__Impl : ( ( rule__SessionInterval__Group_0_0__0 ) ) ;
     public final void rule__SessionInterval__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4330:1: ( ( 'SessionInterval' ) )
-            // InternalSmartCE.g:4331:1: ( 'SessionInterval' )
+            // InternalSmartCE.g:4606:1: ( ( ( rule__SessionInterval__Group_0_0__0 ) ) )
+            // InternalSmartCE.g:4607:1: ( ( rule__SessionInterval__Group_0_0__0 ) )
             {
-            // InternalSmartCE.g:4331:1: ( 'SessionInterval' )
-            // InternalSmartCE.g:4332:2: 'SessionInterval'
+            // InternalSmartCE.g:4607:1: ( ( rule__SessionInterval__Group_0_0__0 ) )
+            // InternalSmartCE.g:4608:2: ( rule__SessionInterval__Group_0_0__0 )
             {
-             before(grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_0_0()); 
-            match(input,68,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_0_0()); 
+             before(grammarAccess.getSessionIntervalAccess().getGroup_0_0()); 
+            // InternalSmartCE.g:4609:2: ( rule__SessionInterval__Group_0_0__0 )
+            // InternalSmartCE.g:4609:3: rule__SessionInterval__Group_0_0__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__SessionInterval__Group_0_0__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSessionIntervalAccess().getGroup_0_0()); 
 
             }
 
@@ -13613,22 +14516,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_0__1"
-    // InternalSmartCE.g:4341:1: rule__SessionInterval__Group_0__1 : rule__SessionInterval__Group_0__1__Impl rule__SessionInterval__Group_0__2 ;
+    // InternalSmartCE.g:4617:1: rule__SessionInterval__Group_0__1 : rule__SessionInterval__Group_0__1__Impl ;
     public final void rule__SessionInterval__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4345:1: ( rule__SessionInterval__Group_0__1__Impl rule__SessionInterval__Group_0__2 )
-            // InternalSmartCE.g:4346:2: rule__SessionInterval__Group_0__1__Impl rule__SessionInterval__Group_0__2
+            // InternalSmartCE.g:4621:1: ( rule__SessionInterval__Group_0__1__Impl )
+            // InternalSmartCE.g:4622:2: rule__SessionInterval__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_36);
-            rule__SessionInterval__Group_0__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__2();
+            rule__SessionInterval__Group_0__1__Impl();
 
             state._fsp--;
 
@@ -13651,21 +14549,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_0__1__Impl"
-    // InternalSmartCE.g:4353:1: rule__SessionInterval__Group_0__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:4628:1: rule__SessionInterval__Group_0__1__Impl : ( ')' ) ;
     public final void rule__SessionInterval__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4357:1: ( ( '(' ) )
-            // InternalSmartCE.g:4358:1: ( '(' )
+            // InternalSmartCE.g:4632:1: ( ( ')' ) )
+            // InternalSmartCE.g:4633:1: ( ')' )
             {
-            // InternalSmartCE.g:4358:1: ( '(' )
-            // InternalSmartCE.g:4359:2: '('
+            // InternalSmartCE.g:4633:1: ( ')' )
+            // InternalSmartCE.g:4634:2: ')'
             {
-             before(grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_0_1()); 
-            match(input,58,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_0_1()); 
+             before(grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_0_1()); 
+            match(input,61,FOLLOW_2); 
+             after(grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_0_1()); 
 
             }
 
@@ -13687,23 +14585,98 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SessionInterval__Group_0__1__Impl"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__2"
-    // InternalSmartCE.g:4368:1: rule__SessionInterval__Group_0__2 : rule__SessionInterval__Group_0__2__Impl rule__SessionInterval__Group_0__3 ;
-    public final void rule__SessionInterval__Group_0__2() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__0"
+    // InternalSmartCE.g:4644:1: rule__SessionInterval__Group_0_0__0 : rule__SessionInterval__Group_0_0__0__Impl rule__SessionInterval__Group_0_0__1 ;
+    public final void rule__SessionInterval__Group_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4372:1: ( rule__SessionInterval__Group_0__2__Impl rule__SessionInterval__Group_0__3 )
-            // InternalSmartCE.g:4373:2: rule__SessionInterval__Group_0__2__Impl rule__SessionInterval__Group_0__3
+            // InternalSmartCE.g:4648:1: ( rule__SessionInterval__Group_0_0__0__Impl rule__SessionInterval__Group_0_0__1 )
+            // InternalSmartCE.g:4649:2: rule__SessionInterval__Group_0_0__0__Impl rule__SessionInterval__Group_0_0__1
+            {
+            pushFollow(FOLLOW_30);
+            rule__SessionInterval__Group_0_0__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SessionInterval__Group_0_0__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SessionInterval__Group_0_0__0"
+
+
+    // $ANTLR start "rule__SessionInterval__Group_0_0__0__Impl"
+    // InternalSmartCE.g:4656:1: rule__SessionInterval__Group_0_0__0__Impl : ( 'SessionInterval' ) ;
+    public final void rule__SessionInterval__Group_0_0__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:4660:1: ( ( 'SessionInterval' ) )
+            // InternalSmartCE.g:4661:1: ( 'SessionInterval' )
+            {
+            // InternalSmartCE.g:4661:1: ( 'SessionInterval' )
+            // InternalSmartCE.g:4662:2: 'SessionInterval'
+            {
+             before(grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_0_0_0()); 
+            match(input,69,FOLLOW_2); 
+             after(grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_0_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SessionInterval__Group_0_0__0__Impl"
+
+
+    // $ANTLR start "rule__SessionInterval__Group_0_0__1"
+    // InternalSmartCE.g:4671:1: rule__SessionInterval__Group_0_0__1 : rule__SessionInterval__Group_0_0__1__Impl rule__SessionInterval__Group_0_0__2 ;
+    public final void rule__SessionInterval__Group_0_0__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:4675:1: ( rule__SessionInterval__Group_0_0__1__Impl rule__SessionInterval__Group_0_0__2 )
+            // InternalSmartCE.g:4676:2: rule__SessionInterval__Group_0_0__1__Impl rule__SessionInterval__Group_0_0__2
             {
             pushFollow(FOLLOW_38);
-            rule__SessionInterval__Group_0__2__Impl();
+            rule__SessionInterval__Group_0_0__1__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__3();
+            rule__SessionInterval__Group_0_0__2();
 
             state._fsp--;
 
@@ -13722,35 +14695,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__2"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__1"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__2__Impl"
-    // InternalSmartCE.g:4380:1: rule__SessionInterval__Group_0__2__Impl : ( ( rule__SessionInterval__FrequencyAssignment_0_2 ) ) ;
-    public final void rule__SessionInterval__Group_0__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__1__Impl"
+    // InternalSmartCE.g:4683:1: rule__SessionInterval__Group_0_0__1__Impl : ( '(' ) ;
+    public final void rule__SessionInterval__Group_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4384:1: ( ( ( rule__SessionInterval__FrequencyAssignment_0_2 ) ) )
-            // InternalSmartCE.g:4385:1: ( ( rule__SessionInterval__FrequencyAssignment_0_2 ) )
+            // InternalSmartCE.g:4687:1: ( ( '(' ) )
+            // InternalSmartCE.g:4688:1: ( '(' )
             {
-            // InternalSmartCE.g:4385:1: ( ( rule__SessionInterval__FrequencyAssignment_0_2 ) )
-            // InternalSmartCE.g:4386:2: ( rule__SessionInterval__FrequencyAssignment_0_2 )
+            // InternalSmartCE.g:4688:1: ( '(' )
+            // InternalSmartCE.g:4689:2: '('
             {
-             before(grammarAccess.getSessionIntervalAccess().getFrequencyAssignment_0_2()); 
-            // InternalSmartCE.g:4387:2: ( rule__SessionInterval__FrequencyAssignment_0_2 )
-            // InternalSmartCE.g:4387:3: rule__SessionInterval__FrequencyAssignment_0_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__SessionInterval__FrequencyAssignment_0_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSessionIntervalAccess().getFrequencyAssignment_0_2()); 
+             before(grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_0_0_1()); 
+            match(input,60,FOLLOW_2); 
+             after(grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_0_0_1()); 
 
             }
 
@@ -13769,186 +14732,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__2__Impl"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__1__Impl"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__3"
-    // InternalSmartCE.g:4395:1: rule__SessionInterval__Group_0__3 : rule__SessionInterval__Group_0__3__Impl rule__SessionInterval__Group_0__4 ;
-    public final void rule__SessionInterval__Group_0__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:4399:1: ( rule__SessionInterval__Group_0__3__Impl rule__SessionInterval__Group_0__4 )
-            // InternalSmartCE.g:4400:2: rule__SessionInterval__Group_0__3__Impl rule__SessionInterval__Group_0__4
-            {
-            pushFollow(FOLLOW_41);
-            rule__SessionInterval__Group_0__3__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__4();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SessionInterval__Group_0__3"
-
-
-    // $ANTLR start "rule__SessionInterval__Group_0__3__Impl"
-    // InternalSmartCE.g:4407:1: rule__SessionInterval__Group_0__3__Impl : ( ( rule__SessionInterval__TimeUnitAssignment_0_3 ) ) ;
-    public final void rule__SessionInterval__Group_0__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__2"
+    // InternalSmartCE.g:4698:1: rule__SessionInterval__Group_0_0__2 : rule__SessionInterval__Group_0_0__2__Impl rule__SessionInterval__Group_0_0__3 ;
+    public final void rule__SessionInterval__Group_0_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4411:1: ( ( ( rule__SessionInterval__TimeUnitAssignment_0_3 ) ) )
-            // InternalSmartCE.g:4412:1: ( ( rule__SessionInterval__TimeUnitAssignment_0_3 ) )
-            {
-            // InternalSmartCE.g:4412:1: ( ( rule__SessionInterval__TimeUnitAssignment_0_3 ) )
-            // InternalSmartCE.g:4413:2: ( rule__SessionInterval__TimeUnitAssignment_0_3 )
-            {
-             before(grammarAccess.getSessionIntervalAccess().getTimeUnitAssignment_0_3()); 
-            // InternalSmartCE.g:4414:2: ( rule__SessionInterval__TimeUnitAssignment_0_3 )
-            // InternalSmartCE.g:4414:3: rule__SessionInterval__TimeUnitAssignment_0_3
-            {
-            pushFollow(FOLLOW_2);
-            rule__SessionInterval__TimeUnitAssignment_0_3();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getSessionIntervalAccess().getTimeUnitAssignment_0_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SessionInterval__Group_0__3__Impl"
-
-
-    // $ANTLR start "rule__SessionInterval__Group_0__4"
-    // InternalSmartCE.g:4422:1: rule__SessionInterval__Group_0__4 : rule__SessionInterval__Group_0__4__Impl rule__SessionInterval__Group_0__5 ;
-    public final void rule__SessionInterval__Group_0__4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:4426:1: ( rule__SessionInterval__Group_0__4__Impl rule__SessionInterval__Group_0__5 )
-            // InternalSmartCE.g:4427:2: rule__SessionInterval__Group_0__4__Impl rule__SessionInterval__Group_0__5
-            {
-            pushFollow(FOLLOW_14);
-            rule__SessionInterval__Group_0__4__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__5();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SessionInterval__Group_0__4"
-
-
-    // $ANTLR start "rule__SessionInterval__Group_0__4__Impl"
-    // InternalSmartCE.g:4434:1: rule__SessionInterval__Group_0__4__Impl : ( 'from' ) ;
-    public final void rule__SessionInterval__Group_0__4__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:4438:1: ( ( 'from' ) )
-            // InternalSmartCE.g:4439:1: ( 'from' )
-            {
-            // InternalSmartCE.g:4439:1: ( 'from' )
-            // InternalSmartCE.g:4440:2: 'from'
-            {
-             before(grammarAccess.getSessionIntervalAccess().getFromKeyword_0_4()); 
-            match(input,69,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getFromKeyword_0_4()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SessionInterval__Group_0__4__Impl"
-
-
-    // $ANTLR start "rule__SessionInterval__Group_0__5"
-    // InternalSmartCE.g:4449:1: rule__SessionInterval__Group_0__5 : rule__SessionInterval__Group_0__5__Impl rule__SessionInterval__Group_0__6 ;
-    public final void rule__SessionInterval__Group_0__5() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:4453:1: ( rule__SessionInterval__Group_0__5__Impl rule__SessionInterval__Group_0__6 )
-            // InternalSmartCE.g:4454:2: rule__SessionInterval__Group_0__5__Impl rule__SessionInterval__Group_0__6
+            // InternalSmartCE.g:4702:1: ( rule__SessionInterval__Group_0_0__2__Impl rule__SessionInterval__Group_0_0__3 )
+            // InternalSmartCE.g:4703:2: rule__SessionInterval__Group_0_0__2__Impl rule__SessionInterval__Group_0_0__3
             {
             pushFollow(FOLLOW_40);
-            rule__SessionInterval__Group_0__5__Impl();
+            rule__SessionInterval__Group_0_0__2__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__6();
+            rule__SessionInterval__Group_0_0__3();
 
             state._fsp--;
 
@@ -13967,35 +14770,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__5"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__2"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__5__Impl"
-    // InternalSmartCE.g:4461:1: rule__SessionInterval__Group_0__5__Impl : ( ( rule__SessionInterval__StartAssignment_0_5 ) ) ;
-    public final void rule__SessionInterval__Group_0__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__2__Impl"
+    // InternalSmartCE.g:4710:1: rule__SessionInterval__Group_0_0__2__Impl : ( ( rule__SessionInterval__FrequencyAssignment_0_0_2 ) ) ;
+    public final void rule__SessionInterval__Group_0_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4465:1: ( ( ( rule__SessionInterval__StartAssignment_0_5 ) ) )
-            // InternalSmartCE.g:4466:1: ( ( rule__SessionInterval__StartAssignment_0_5 ) )
+            // InternalSmartCE.g:4714:1: ( ( ( rule__SessionInterval__FrequencyAssignment_0_0_2 ) ) )
+            // InternalSmartCE.g:4715:1: ( ( rule__SessionInterval__FrequencyAssignment_0_0_2 ) )
             {
-            // InternalSmartCE.g:4466:1: ( ( rule__SessionInterval__StartAssignment_0_5 ) )
-            // InternalSmartCE.g:4467:2: ( rule__SessionInterval__StartAssignment_0_5 )
+            // InternalSmartCE.g:4715:1: ( ( rule__SessionInterval__FrequencyAssignment_0_0_2 ) )
+            // InternalSmartCE.g:4716:2: ( rule__SessionInterval__FrequencyAssignment_0_0_2 )
             {
-             before(grammarAccess.getSessionIntervalAccess().getStartAssignment_0_5()); 
-            // InternalSmartCE.g:4468:2: ( rule__SessionInterval__StartAssignment_0_5 )
-            // InternalSmartCE.g:4468:3: rule__SessionInterval__StartAssignment_0_5
+             before(grammarAccess.getSessionIntervalAccess().getFrequencyAssignment_0_0_2()); 
+            // InternalSmartCE.g:4717:2: ( rule__SessionInterval__FrequencyAssignment_0_0_2 )
+            // InternalSmartCE.g:4717:3: rule__SessionInterval__FrequencyAssignment_0_0_2
             {
             pushFollow(FOLLOW_2);
-            rule__SessionInterval__StartAssignment_0_5();
+            rule__SessionInterval__FrequencyAssignment_0_0_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSessionIntervalAccess().getStartAssignment_0_5()); 
+             after(grammarAccess.getSessionIntervalAccess().getFrequencyAssignment_0_0_2()); 
 
             }
 
@@ -14014,101 +14817,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__5__Impl"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__2__Impl"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__6"
-    // InternalSmartCE.g:4476:1: rule__SessionInterval__Group_0__6 : rule__SessionInterval__Group_0__6__Impl rule__SessionInterval__Group_0__7 ;
-    public final void rule__SessionInterval__Group_0__6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:4480:1: ( rule__SessionInterval__Group_0__6__Impl rule__SessionInterval__Group_0__7 )
-            // InternalSmartCE.g:4481:2: rule__SessionInterval__Group_0__6__Impl rule__SessionInterval__Group_0__7
-            {
-            pushFollow(FOLLOW_14);
-            rule__SessionInterval__Group_0__6__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__7();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SessionInterval__Group_0__6"
-
-
-    // $ANTLR start "rule__SessionInterval__Group_0__6__Impl"
-    // InternalSmartCE.g:4488:1: rule__SessionInterval__Group_0__6__Impl : ( 'to' ) ;
-    public final void rule__SessionInterval__Group_0__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__3"
+    // InternalSmartCE.g:4725:1: rule__SessionInterval__Group_0_0__3 : rule__SessionInterval__Group_0_0__3__Impl rule__SessionInterval__Group_0_0__4 ;
+    public final void rule__SessionInterval__Group_0_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4492:1: ( ( 'to' ) )
-            // InternalSmartCE.g:4493:1: ( 'to' )
+            // InternalSmartCE.g:4729:1: ( rule__SessionInterval__Group_0_0__3__Impl rule__SessionInterval__Group_0_0__4 )
+            // InternalSmartCE.g:4730:2: rule__SessionInterval__Group_0_0__3__Impl rule__SessionInterval__Group_0_0__4
             {
-            // InternalSmartCE.g:4493:1: ( 'to' )
-            // InternalSmartCE.g:4494:2: 'to'
-            {
-             before(grammarAccess.getSessionIntervalAccess().getToKeyword_0_6()); 
-            match(input,66,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getToKeyword_0_6()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SessionInterval__Group_0__6__Impl"
-
-
-    // $ANTLR start "rule__SessionInterval__Group_0__7"
-    // InternalSmartCE.g:4503:1: rule__SessionInterval__Group_0__7 : rule__SessionInterval__Group_0__7__Impl rule__SessionInterval__Group_0__8 ;
-    public final void rule__SessionInterval__Group_0__7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:4507:1: ( rule__SessionInterval__Group_0__7__Impl rule__SessionInterval__Group_0__8 )
-            // InternalSmartCE.g:4508:2: rule__SessionInterval__Group_0__7__Impl rule__SessionInterval__Group_0__8
-            {
-            pushFollow(FOLLOW_34);
-            rule__SessionInterval__Group_0__7__Impl();
+            pushFollow(FOLLOW_39);
+            rule__SessionInterval__Group_0_0__3__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__8();
+            rule__SessionInterval__Group_0_0__4();
 
             state._fsp--;
 
@@ -14127,35 +14855,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__7"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__3"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__7__Impl"
-    // InternalSmartCE.g:4515:1: rule__SessionInterval__Group_0__7__Impl : ( ( rule__SessionInterval__EndAssignment_0_7 ) ) ;
-    public final void rule__SessionInterval__Group_0__7__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__3__Impl"
+    // InternalSmartCE.g:4737:1: rule__SessionInterval__Group_0_0__3__Impl : ( ( rule__SessionInterval__TimeUnitAssignment_0_0_3 ) ) ;
+    public final void rule__SessionInterval__Group_0_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4519:1: ( ( ( rule__SessionInterval__EndAssignment_0_7 ) ) )
-            // InternalSmartCE.g:4520:1: ( ( rule__SessionInterval__EndAssignment_0_7 ) )
+            // InternalSmartCE.g:4741:1: ( ( ( rule__SessionInterval__TimeUnitAssignment_0_0_3 ) ) )
+            // InternalSmartCE.g:4742:1: ( ( rule__SessionInterval__TimeUnitAssignment_0_0_3 ) )
             {
-            // InternalSmartCE.g:4520:1: ( ( rule__SessionInterval__EndAssignment_0_7 ) )
-            // InternalSmartCE.g:4521:2: ( rule__SessionInterval__EndAssignment_0_7 )
+            // InternalSmartCE.g:4742:1: ( ( rule__SessionInterval__TimeUnitAssignment_0_0_3 ) )
+            // InternalSmartCE.g:4743:2: ( rule__SessionInterval__TimeUnitAssignment_0_0_3 )
             {
-             before(grammarAccess.getSessionIntervalAccess().getEndAssignment_0_7()); 
-            // InternalSmartCE.g:4522:2: ( rule__SessionInterval__EndAssignment_0_7 )
-            // InternalSmartCE.g:4522:3: rule__SessionInterval__EndAssignment_0_7
+             before(grammarAccess.getSessionIntervalAccess().getTimeUnitAssignment_0_0_3()); 
+            // InternalSmartCE.g:4744:2: ( rule__SessionInterval__TimeUnitAssignment_0_0_3 )
+            // InternalSmartCE.g:4744:3: rule__SessionInterval__TimeUnitAssignment_0_0_3
             {
             pushFollow(FOLLOW_2);
-            rule__SessionInterval__EndAssignment_0_7();
+            rule__SessionInterval__TimeUnitAssignment_0_0_3();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSessionIntervalAccess().getEndAssignment_0_7()); 
+             after(grammarAccess.getSessionIntervalAccess().getTimeUnitAssignment_0_0_3()); 
 
             }
 
@@ -14174,21 +14902,96 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__7__Impl"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__3__Impl"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__8"
-    // InternalSmartCE.g:4530:1: rule__SessionInterval__Group_0__8 : rule__SessionInterval__Group_0__8__Impl ;
-    public final void rule__SessionInterval__Group_0__8() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__4"
+    // InternalSmartCE.g:4752:1: rule__SessionInterval__Group_0_0__4 : rule__SessionInterval__Group_0_0__4__Impl rule__SessionInterval__Group_0_0__5 ;
+    public final void rule__SessionInterval__Group_0_0__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4534:1: ( rule__SessionInterval__Group_0__8__Impl )
-            // InternalSmartCE.g:4535:2: rule__SessionInterval__Group_0__8__Impl
+            // InternalSmartCE.g:4756:1: ( rule__SessionInterval__Group_0_0__4__Impl rule__SessionInterval__Group_0_0__5 )
+            // InternalSmartCE.g:4757:2: rule__SessionInterval__Group_0_0__4__Impl rule__SessionInterval__Group_0_0__5
+            {
+            pushFollow(FOLLOW_43);
+            rule__SessionInterval__Group_0_0__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__SessionInterval__Group_0_0__5();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SessionInterval__Group_0_0__4"
+
+
+    // $ANTLR start "rule__SessionInterval__Group_0_0__4__Impl"
+    // InternalSmartCE.g:4764:1: rule__SessionInterval__Group_0_0__4__Impl : ( 'by' ) ;
+    public final void rule__SessionInterval__Group_0_0__4__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:4768:1: ( ( 'by' ) )
+            // InternalSmartCE.g:4769:1: ( 'by' )
+            {
+            // InternalSmartCE.g:4769:1: ( 'by' )
+            // InternalSmartCE.g:4770:2: 'by'
+            {
+             before(grammarAccess.getSessionIntervalAccess().getByKeyword_0_0_4()); 
+            match(input,65,FOLLOW_2); 
+             after(grammarAccess.getSessionIntervalAccess().getByKeyword_0_0_4()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__SessionInterval__Group_0_0__4__Impl"
+
+
+    // $ANTLR start "rule__SessionInterval__Group_0_0__5"
+    // InternalSmartCE.g:4779:1: rule__SessionInterval__Group_0_0__5 : rule__SessionInterval__Group_0_0__5__Impl ;
+    public final void rule__SessionInterval__Group_0_0__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:4783:1: ( rule__SessionInterval__Group_0_0__5__Impl )
+            // InternalSmartCE.g:4784:2: rule__SessionInterval__Group_0_0__5__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__SessionInterval__Group_0__8__Impl();
+            rule__SessionInterval__Group_0_0__5__Impl();
 
             state._fsp--;
 
@@ -14207,25 +15010,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__8"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__5"
 
 
-    // $ANTLR start "rule__SessionInterval__Group_0__8__Impl"
-    // InternalSmartCE.g:4541:1: rule__SessionInterval__Group_0__8__Impl : ( ')' ) ;
-    public final void rule__SessionInterval__Group_0__8__Impl() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__Group_0_0__5__Impl"
+    // InternalSmartCE.g:4790:1: rule__SessionInterval__Group_0_0__5__Impl : ( ( rule__SessionInterval__MessagecontentAssignment_0_0_5 ) ) ;
+    public final void rule__SessionInterval__Group_0_0__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4545:1: ( ( ')' ) )
-            // InternalSmartCE.g:4546:1: ( ')' )
+            // InternalSmartCE.g:4794:1: ( ( ( rule__SessionInterval__MessagecontentAssignment_0_0_5 ) ) )
+            // InternalSmartCE.g:4795:1: ( ( rule__SessionInterval__MessagecontentAssignment_0_0_5 ) )
             {
-            // InternalSmartCE.g:4546:1: ( ')' )
-            // InternalSmartCE.g:4547:2: ')'
+            // InternalSmartCE.g:4795:1: ( ( rule__SessionInterval__MessagecontentAssignment_0_0_5 ) )
+            // InternalSmartCE.g:4796:2: ( rule__SessionInterval__MessagecontentAssignment_0_0_5 )
             {
-             before(grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_0_8()); 
-            match(input,60,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_0_8()); 
+             before(grammarAccess.getSessionIntervalAccess().getMessagecontentAssignment_0_0_5()); 
+            // InternalSmartCE.g:4797:2: ( rule__SessionInterval__MessagecontentAssignment_0_0_5 )
+            // InternalSmartCE.g:4797:3: rule__SessionInterval__MessagecontentAssignment_0_0_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__SessionInterval__MessagecontentAssignment_0_0_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getSessionIntervalAccess().getMessagecontentAssignment_0_0_5()); 
 
             }
 
@@ -14244,20 +15057,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__Group_0__8__Impl"
+    // $ANTLR end "rule__SessionInterval__Group_0_0__5__Impl"
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__0"
-    // InternalSmartCE.g:4557:1: rule__SessionInterval__Group_1__0 : rule__SessionInterval__Group_1__0__Impl rule__SessionInterval__Group_1__1 ;
+    // InternalSmartCE.g:4806:1: rule__SessionInterval__Group_1__0 : rule__SessionInterval__Group_1__0__Impl rule__SessionInterval__Group_1__1 ;
     public final void rule__SessionInterval__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4561:1: ( rule__SessionInterval__Group_1__0__Impl rule__SessionInterval__Group_1__1 )
-            // InternalSmartCE.g:4562:2: rule__SessionInterval__Group_1__0__Impl rule__SessionInterval__Group_1__1
+            // InternalSmartCE.g:4810:1: ( rule__SessionInterval__Group_1__0__Impl rule__SessionInterval__Group_1__1 )
+            // InternalSmartCE.g:4811:2: rule__SessionInterval__Group_1__0__Impl rule__SessionInterval__Group_1__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__SessionInterval__Group_1__0__Impl();
 
             state._fsp--;
@@ -14286,20 +15099,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__0__Impl"
-    // InternalSmartCE.g:4569:1: rule__SessionInterval__Group_1__0__Impl : ( 'SessionInterval' ) ;
+    // InternalSmartCE.g:4818:1: rule__SessionInterval__Group_1__0__Impl : ( 'SessionInterval' ) ;
     public final void rule__SessionInterval__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4573:1: ( ( 'SessionInterval' ) )
-            // InternalSmartCE.g:4574:1: ( 'SessionInterval' )
+            // InternalSmartCE.g:4822:1: ( ( 'SessionInterval' ) )
+            // InternalSmartCE.g:4823:1: ( 'SessionInterval' )
             {
-            // InternalSmartCE.g:4574:1: ( 'SessionInterval' )
-            // InternalSmartCE.g:4575:2: 'SessionInterval'
+            // InternalSmartCE.g:4823:1: ( 'SessionInterval' )
+            // InternalSmartCE.g:4824:2: 'SessionInterval'
             {
              before(grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_1_0()); 
-            match(input,68,FOLLOW_2); 
+            match(input,69,FOLLOW_2); 
              after(grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_1_0()); 
 
             }
@@ -14323,16 +15136,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__1"
-    // InternalSmartCE.g:4584:1: rule__SessionInterval__Group_1__1 : rule__SessionInterval__Group_1__1__Impl rule__SessionInterval__Group_1__2 ;
+    // InternalSmartCE.g:4833:1: rule__SessionInterval__Group_1__1 : rule__SessionInterval__Group_1__1__Impl rule__SessionInterval__Group_1__2 ;
     public final void rule__SessionInterval__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4588:1: ( rule__SessionInterval__Group_1__1__Impl rule__SessionInterval__Group_1__2 )
-            // InternalSmartCE.g:4589:2: rule__SessionInterval__Group_1__1__Impl rule__SessionInterval__Group_1__2
+            // InternalSmartCE.g:4837:1: ( rule__SessionInterval__Group_1__1__Impl rule__SessionInterval__Group_1__2 )
+            // InternalSmartCE.g:4838:2: rule__SessionInterval__Group_1__1__Impl rule__SessionInterval__Group_1__2
             {
-            pushFollow(FOLLOW_36);
+            pushFollow(FOLLOW_38);
             rule__SessionInterval__Group_1__1__Impl();
 
             state._fsp--;
@@ -14361,20 +15174,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__1__Impl"
-    // InternalSmartCE.g:4596:1: rule__SessionInterval__Group_1__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:4845:1: rule__SessionInterval__Group_1__1__Impl : ( '(' ) ;
     public final void rule__SessionInterval__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4600:1: ( ( '(' ) )
-            // InternalSmartCE.g:4601:1: ( '(' )
+            // InternalSmartCE.g:4849:1: ( ( '(' ) )
+            // InternalSmartCE.g:4850:1: ( '(' )
             {
-            // InternalSmartCE.g:4601:1: ( '(' )
-            // InternalSmartCE.g:4602:2: '('
+            // InternalSmartCE.g:4850:1: ( '(' )
+            // InternalSmartCE.g:4851:2: '('
             {
              before(grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_1_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_1_1()); 
 
             }
@@ -14398,16 +15211,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__2"
-    // InternalSmartCE.g:4611:1: rule__SessionInterval__Group_1__2 : rule__SessionInterval__Group_1__2__Impl rule__SessionInterval__Group_1__3 ;
+    // InternalSmartCE.g:4860:1: rule__SessionInterval__Group_1__2 : rule__SessionInterval__Group_1__2__Impl rule__SessionInterval__Group_1__3 ;
     public final void rule__SessionInterval__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4615:1: ( rule__SessionInterval__Group_1__2__Impl rule__SessionInterval__Group_1__3 )
-            // InternalSmartCE.g:4616:2: rule__SessionInterval__Group_1__2__Impl rule__SessionInterval__Group_1__3
+            // InternalSmartCE.g:4864:1: ( rule__SessionInterval__Group_1__2__Impl rule__SessionInterval__Group_1__3 )
+            // InternalSmartCE.g:4865:2: rule__SessionInterval__Group_1__2__Impl rule__SessionInterval__Group_1__3
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_40);
             rule__SessionInterval__Group_1__2__Impl();
 
             state._fsp--;
@@ -14436,21 +15249,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__2__Impl"
-    // InternalSmartCE.g:4623:1: rule__SessionInterval__Group_1__2__Impl : ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:4872:1: rule__SessionInterval__Group_1__2__Impl : ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) ) ;
     public final void rule__SessionInterval__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4627:1: ( ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) ) )
-            // InternalSmartCE.g:4628:1: ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) )
+            // InternalSmartCE.g:4876:1: ( ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) ) )
+            // InternalSmartCE.g:4877:1: ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:4628:1: ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) )
-            // InternalSmartCE.g:4629:2: ( rule__SessionInterval__FrequencyAssignment_1_2 )
+            // InternalSmartCE.g:4877:1: ( ( rule__SessionInterval__FrequencyAssignment_1_2 ) )
+            // InternalSmartCE.g:4878:2: ( rule__SessionInterval__FrequencyAssignment_1_2 )
             {
              before(grammarAccess.getSessionIntervalAccess().getFrequencyAssignment_1_2()); 
-            // InternalSmartCE.g:4630:2: ( rule__SessionInterval__FrequencyAssignment_1_2 )
-            // InternalSmartCE.g:4630:3: rule__SessionInterval__FrequencyAssignment_1_2
+            // InternalSmartCE.g:4879:2: ( rule__SessionInterval__FrequencyAssignment_1_2 )
+            // InternalSmartCE.g:4879:3: rule__SessionInterval__FrequencyAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__SessionInterval__FrequencyAssignment_1_2();
@@ -14483,16 +15296,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__3"
-    // InternalSmartCE.g:4638:1: rule__SessionInterval__Group_1__3 : rule__SessionInterval__Group_1__3__Impl rule__SessionInterval__Group_1__4 ;
+    // InternalSmartCE.g:4887:1: rule__SessionInterval__Group_1__3 : rule__SessionInterval__Group_1__3__Impl rule__SessionInterval__Group_1__4 ;
     public final void rule__SessionInterval__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4642:1: ( rule__SessionInterval__Group_1__3__Impl rule__SessionInterval__Group_1__4 )
-            // InternalSmartCE.g:4643:2: rule__SessionInterval__Group_1__3__Impl rule__SessionInterval__Group_1__4
+            // InternalSmartCE.g:4891:1: ( rule__SessionInterval__Group_1__3__Impl rule__SessionInterval__Group_1__4 )
+            // InternalSmartCE.g:4892:2: rule__SessionInterval__Group_1__3__Impl rule__SessionInterval__Group_1__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__SessionInterval__Group_1__3__Impl();
 
             state._fsp--;
@@ -14521,21 +15334,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__3__Impl"
-    // InternalSmartCE.g:4650:1: rule__SessionInterval__Group_1__3__Impl : ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) ) ;
+    // InternalSmartCE.g:4899:1: rule__SessionInterval__Group_1__3__Impl : ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) ) ;
     public final void rule__SessionInterval__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4654:1: ( ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) ) )
-            // InternalSmartCE.g:4655:1: ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) )
+            // InternalSmartCE.g:4903:1: ( ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) ) )
+            // InternalSmartCE.g:4904:1: ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) )
             {
-            // InternalSmartCE.g:4655:1: ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) )
-            // InternalSmartCE.g:4656:2: ( rule__SessionInterval__TimeUnitAssignment_1_3 )
+            // InternalSmartCE.g:4904:1: ( ( rule__SessionInterval__TimeUnitAssignment_1_3 ) )
+            // InternalSmartCE.g:4905:2: ( rule__SessionInterval__TimeUnitAssignment_1_3 )
             {
              before(grammarAccess.getSessionIntervalAccess().getTimeUnitAssignment_1_3()); 
-            // InternalSmartCE.g:4657:2: ( rule__SessionInterval__TimeUnitAssignment_1_3 )
-            // InternalSmartCE.g:4657:3: rule__SessionInterval__TimeUnitAssignment_1_3
+            // InternalSmartCE.g:4906:2: ( rule__SessionInterval__TimeUnitAssignment_1_3 )
+            // InternalSmartCE.g:4906:3: rule__SessionInterval__TimeUnitAssignment_1_3
             {
             pushFollow(FOLLOW_2);
             rule__SessionInterval__TimeUnitAssignment_1_3();
@@ -14568,14 +15381,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__4"
-    // InternalSmartCE.g:4665:1: rule__SessionInterval__Group_1__4 : rule__SessionInterval__Group_1__4__Impl ;
+    // InternalSmartCE.g:4914:1: rule__SessionInterval__Group_1__4 : rule__SessionInterval__Group_1__4__Impl ;
     public final void rule__SessionInterval__Group_1__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4669:1: ( rule__SessionInterval__Group_1__4__Impl )
-            // InternalSmartCE.g:4670:2: rule__SessionInterval__Group_1__4__Impl
+            // InternalSmartCE.g:4918:1: ( rule__SessionInterval__Group_1__4__Impl )
+            // InternalSmartCE.g:4919:2: rule__SessionInterval__Group_1__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SessionInterval__Group_1__4__Impl();
@@ -14601,20 +15414,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__Group_1__4__Impl"
-    // InternalSmartCE.g:4676:1: rule__SessionInterval__Group_1__4__Impl : ( ')' ) ;
+    // InternalSmartCE.g:4925:1: rule__SessionInterval__Group_1__4__Impl : ( ')' ) ;
     public final void rule__SessionInterval__Group_1__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4680:1: ( ( ')' ) )
-            // InternalSmartCE.g:4681:1: ( ')' )
+            // InternalSmartCE.g:4929:1: ( ( ')' ) )
+            // InternalSmartCE.g:4930:1: ( ')' )
             {
-            // InternalSmartCE.g:4681:1: ( ')' )
-            // InternalSmartCE.g:4682:2: ')'
+            // InternalSmartCE.g:4930:1: ( ')' )
+            // InternalSmartCE.g:4931:2: ')'
             {
              before(grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_1_4()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_1_4()); 
 
             }
@@ -14638,16 +15451,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__0"
-    // InternalSmartCE.g:4692:1: rule__MessageContent__Group_0__0 : rule__MessageContent__Group_0__0__Impl rule__MessageContent__Group_0__1 ;
+    // InternalSmartCE.g:4941:1: rule__MessageContent__Group_0__0 : rule__MessageContent__Group_0__0__Impl rule__MessageContent__Group_0__1 ;
     public final void rule__MessageContent__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4696:1: ( rule__MessageContent__Group_0__0__Impl rule__MessageContent__Group_0__1 )
-            // InternalSmartCE.g:4697:2: rule__MessageContent__Group_0__0__Impl rule__MessageContent__Group_0__1
+            // InternalSmartCE.g:4945:1: ( rule__MessageContent__Group_0__0__Impl rule__MessageContent__Group_0__1 )
+            // InternalSmartCE.g:4946:2: rule__MessageContent__Group_0__0__Impl rule__MessageContent__Group_0__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__MessageContent__Group_0__0__Impl();
 
             state._fsp--;
@@ -14676,17 +15489,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__0__Impl"
-    // InternalSmartCE.g:4704:1: rule__MessageContent__Group_0__0__Impl : ( 'MessageContent' ) ;
+    // InternalSmartCE.g:4953:1: rule__MessageContent__Group_0__0__Impl : ( 'MessageContent' ) ;
     public final void rule__MessageContent__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4708:1: ( ( 'MessageContent' ) )
-            // InternalSmartCE.g:4709:1: ( 'MessageContent' )
+            // InternalSmartCE.g:4957:1: ( ( 'MessageContent' ) )
+            // InternalSmartCE.g:4958:1: ( 'MessageContent' )
             {
-            // InternalSmartCE.g:4709:1: ( 'MessageContent' )
-            // InternalSmartCE.g:4710:2: 'MessageContent'
+            // InternalSmartCE.g:4958:1: ( 'MessageContent' )
+            // InternalSmartCE.g:4959:2: 'MessageContent'
             {
              before(grammarAccess.getMessageContentAccess().getMessageContentKeyword_0_0()); 
             match(input,70,FOLLOW_2); 
@@ -14713,16 +15526,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__1"
-    // InternalSmartCE.g:4719:1: rule__MessageContent__Group_0__1 : rule__MessageContent__Group_0__1__Impl rule__MessageContent__Group_0__2 ;
+    // InternalSmartCE.g:4968:1: rule__MessageContent__Group_0__1 : rule__MessageContent__Group_0__1__Impl rule__MessageContent__Group_0__2 ;
     public final void rule__MessageContent__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4723:1: ( rule__MessageContent__Group_0__1__Impl rule__MessageContent__Group_0__2 )
-            // InternalSmartCE.g:4724:2: rule__MessageContent__Group_0__1__Impl rule__MessageContent__Group_0__2
+            // InternalSmartCE.g:4972:1: ( rule__MessageContent__Group_0__1__Impl rule__MessageContent__Group_0__2 )
+            // InternalSmartCE.g:4973:2: rule__MessageContent__Group_0__1__Impl rule__MessageContent__Group_0__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__MessageContent__Group_0__1__Impl();
 
             state._fsp--;
@@ -14751,20 +15564,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__1__Impl"
-    // InternalSmartCE.g:4731:1: rule__MessageContent__Group_0__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:4980:1: rule__MessageContent__Group_0__1__Impl : ( '(' ) ;
     public final void rule__MessageContent__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4735:1: ( ( '(' ) )
-            // InternalSmartCE.g:4736:1: ( '(' )
+            // InternalSmartCE.g:4984:1: ( ( '(' ) )
+            // InternalSmartCE.g:4985:1: ( '(' )
             {
-            // InternalSmartCE.g:4736:1: ( '(' )
-            // InternalSmartCE.g:4737:2: '('
+            // InternalSmartCE.g:4985:1: ( '(' )
+            // InternalSmartCE.g:4986:2: '('
             {
              before(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_0_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_0_1()); 
 
             }
@@ -14788,16 +15601,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__2"
-    // InternalSmartCE.g:4746:1: rule__MessageContent__Group_0__2 : rule__MessageContent__Group_0__2__Impl rule__MessageContent__Group_0__3 ;
+    // InternalSmartCE.g:4995:1: rule__MessageContent__Group_0__2 : rule__MessageContent__Group_0__2__Impl rule__MessageContent__Group_0__3 ;
     public final void rule__MessageContent__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4750:1: ( rule__MessageContent__Group_0__2__Impl rule__MessageContent__Group_0__3 )
-            // InternalSmartCE.g:4751:2: rule__MessageContent__Group_0__2__Impl rule__MessageContent__Group_0__3
+            // InternalSmartCE.g:4999:1: ( rule__MessageContent__Group_0__2__Impl rule__MessageContent__Group_0__3 )
+            // InternalSmartCE.g:5000:2: rule__MessageContent__Group_0__2__Impl rule__MessageContent__Group_0__3
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__MessageContent__Group_0__2__Impl();
 
             state._fsp--;
@@ -14826,21 +15639,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__2__Impl"
-    // InternalSmartCE.g:4758:1: rule__MessageContent__Group_0__2__Impl : ( ( rule__MessageContent__ContentAssignment_0_2 ) ) ;
+    // InternalSmartCE.g:5007:1: rule__MessageContent__Group_0__2__Impl : ( ( rule__MessageContent__ContentAssignment_0_2 ) ) ;
     public final void rule__MessageContent__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4762:1: ( ( ( rule__MessageContent__ContentAssignment_0_2 ) ) )
-            // InternalSmartCE.g:4763:1: ( ( rule__MessageContent__ContentAssignment_0_2 ) )
+            // InternalSmartCE.g:5011:1: ( ( ( rule__MessageContent__ContentAssignment_0_2 ) ) )
+            // InternalSmartCE.g:5012:1: ( ( rule__MessageContent__ContentAssignment_0_2 ) )
             {
-            // InternalSmartCE.g:4763:1: ( ( rule__MessageContent__ContentAssignment_0_2 ) )
-            // InternalSmartCE.g:4764:2: ( rule__MessageContent__ContentAssignment_0_2 )
+            // InternalSmartCE.g:5012:1: ( ( rule__MessageContent__ContentAssignment_0_2 ) )
+            // InternalSmartCE.g:5013:2: ( rule__MessageContent__ContentAssignment_0_2 )
             {
              before(grammarAccess.getMessageContentAccess().getContentAssignment_0_2()); 
-            // InternalSmartCE.g:4765:2: ( rule__MessageContent__ContentAssignment_0_2 )
-            // InternalSmartCE.g:4765:3: rule__MessageContent__ContentAssignment_0_2
+            // InternalSmartCE.g:5014:2: ( rule__MessageContent__ContentAssignment_0_2 )
+            // InternalSmartCE.g:5014:3: rule__MessageContent__ContentAssignment_0_2
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__ContentAssignment_0_2();
@@ -14873,14 +15686,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__3"
-    // InternalSmartCE.g:4773:1: rule__MessageContent__Group_0__3 : rule__MessageContent__Group_0__3__Impl ;
+    // InternalSmartCE.g:5022:1: rule__MessageContent__Group_0__3 : rule__MessageContent__Group_0__3__Impl ;
     public final void rule__MessageContent__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4777:1: ( rule__MessageContent__Group_0__3__Impl )
-            // InternalSmartCE.g:4778:2: rule__MessageContent__Group_0__3__Impl
+            // InternalSmartCE.g:5026:1: ( rule__MessageContent__Group_0__3__Impl )
+            // InternalSmartCE.g:5027:2: rule__MessageContent__Group_0__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Group_0__3__Impl();
@@ -14906,20 +15719,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_0__3__Impl"
-    // InternalSmartCE.g:4784:1: rule__MessageContent__Group_0__3__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5033:1: rule__MessageContent__Group_0__3__Impl : ( ')' ) ;
     public final void rule__MessageContent__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4788:1: ( ( ')' ) )
-            // InternalSmartCE.g:4789:1: ( ')' )
+            // InternalSmartCE.g:5037:1: ( ( ')' ) )
+            // InternalSmartCE.g:5038:1: ( ')' )
             {
-            // InternalSmartCE.g:4789:1: ( ')' )
-            // InternalSmartCE.g:4790:2: ')'
+            // InternalSmartCE.g:5038:1: ( ')' )
+            // InternalSmartCE.g:5039:2: ')'
             {
              before(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_0_3()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_0_3()); 
 
             }
@@ -14943,16 +15756,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__0"
-    // InternalSmartCE.g:4800:1: rule__MessageContent__Group_1__0 : rule__MessageContent__Group_1__0__Impl rule__MessageContent__Group_1__1 ;
+    // InternalSmartCE.g:5049:1: rule__MessageContent__Group_1__0 : rule__MessageContent__Group_1__0__Impl rule__MessageContent__Group_1__1 ;
     public final void rule__MessageContent__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4804:1: ( rule__MessageContent__Group_1__0__Impl rule__MessageContent__Group_1__1 )
-            // InternalSmartCE.g:4805:2: rule__MessageContent__Group_1__0__Impl rule__MessageContent__Group_1__1
+            // InternalSmartCE.g:5053:1: ( rule__MessageContent__Group_1__0__Impl rule__MessageContent__Group_1__1 )
+            // InternalSmartCE.g:5054:2: rule__MessageContent__Group_1__0__Impl rule__MessageContent__Group_1__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__MessageContent__Group_1__0__Impl();
 
             state._fsp--;
@@ -14981,17 +15794,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__0__Impl"
-    // InternalSmartCE.g:4812:1: rule__MessageContent__Group_1__0__Impl : ( 'MessageContent' ) ;
+    // InternalSmartCE.g:5061:1: rule__MessageContent__Group_1__0__Impl : ( 'MessageContent' ) ;
     public final void rule__MessageContent__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4816:1: ( ( 'MessageContent' ) )
-            // InternalSmartCE.g:4817:1: ( 'MessageContent' )
+            // InternalSmartCE.g:5065:1: ( ( 'MessageContent' ) )
+            // InternalSmartCE.g:5066:1: ( 'MessageContent' )
             {
-            // InternalSmartCE.g:4817:1: ( 'MessageContent' )
-            // InternalSmartCE.g:4818:2: 'MessageContent'
+            // InternalSmartCE.g:5066:1: ( 'MessageContent' )
+            // InternalSmartCE.g:5067:2: 'MessageContent'
             {
              before(grammarAccess.getMessageContentAccess().getMessageContentKeyword_1_0()); 
             match(input,70,FOLLOW_2); 
@@ -15018,16 +15831,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__1"
-    // InternalSmartCE.g:4827:1: rule__MessageContent__Group_1__1 : rule__MessageContent__Group_1__1__Impl rule__MessageContent__Group_1__2 ;
+    // InternalSmartCE.g:5076:1: rule__MessageContent__Group_1__1 : rule__MessageContent__Group_1__1__Impl rule__MessageContent__Group_1__2 ;
     public final void rule__MessageContent__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4831:1: ( rule__MessageContent__Group_1__1__Impl rule__MessageContent__Group_1__2 )
-            // InternalSmartCE.g:4832:2: rule__MessageContent__Group_1__1__Impl rule__MessageContent__Group_1__2
+            // InternalSmartCE.g:5080:1: ( rule__MessageContent__Group_1__1__Impl rule__MessageContent__Group_1__2 )
+            // InternalSmartCE.g:5081:2: rule__MessageContent__Group_1__1__Impl rule__MessageContent__Group_1__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__MessageContent__Group_1__1__Impl();
 
             state._fsp--;
@@ -15056,20 +15869,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__1__Impl"
-    // InternalSmartCE.g:4839:1: rule__MessageContent__Group_1__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:5088:1: rule__MessageContent__Group_1__1__Impl : ( '(' ) ;
     public final void rule__MessageContent__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4843:1: ( ( '(' ) )
-            // InternalSmartCE.g:4844:1: ( '(' )
+            // InternalSmartCE.g:5092:1: ( ( '(' ) )
+            // InternalSmartCE.g:5093:1: ( '(' )
             {
-            // InternalSmartCE.g:4844:1: ( '(' )
-            // InternalSmartCE.g:4845:2: '('
+            // InternalSmartCE.g:5093:1: ( '(' )
+            // InternalSmartCE.g:5094:2: '('
             {
              before(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1_1()); 
 
             }
@@ -15093,16 +15906,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__2"
-    // InternalSmartCE.g:4854:1: rule__MessageContent__Group_1__2 : rule__MessageContent__Group_1__2__Impl rule__MessageContent__Group_1__3 ;
+    // InternalSmartCE.g:5103:1: rule__MessageContent__Group_1__2 : rule__MessageContent__Group_1__2__Impl rule__MessageContent__Group_1__3 ;
     public final void rule__MessageContent__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4858:1: ( rule__MessageContent__Group_1__2__Impl rule__MessageContent__Group_1__3 )
-            // InternalSmartCE.g:4859:2: rule__MessageContent__Group_1__2__Impl rule__MessageContent__Group_1__3
+            // InternalSmartCE.g:5107:1: ( rule__MessageContent__Group_1__2__Impl rule__MessageContent__Group_1__3 )
+            // InternalSmartCE.g:5108:2: rule__MessageContent__Group_1__2__Impl rule__MessageContent__Group_1__3
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_39);
             rule__MessageContent__Group_1__2__Impl();
 
             state._fsp--;
@@ -15131,21 +15944,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__2__Impl"
-    // InternalSmartCE.g:4866:1: rule__MessageContent__Group_1__2__Impl : ( ( rule__MessageContent__ContentAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:5115:1: rule__MessageContent__Group_1__2__Impl : ( ( rule__MessageContent__ContentAssignment_1_2 ) ) ;
     public final void rule__MessageContent__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4870:1: ( ( ( rule__MessageContent__ContentAssignment_1_2 ) ) )
-            // InternalSmartCE.g:4871:1: ( ( rule__MessageContent__ContentAssignment_1_2 ) )
+            // InternalSmartCE.g:5119:1: ( ( ( rule__MessageContent__ContentAssignment_1_2 ) ) )
+            // InternalSmartCE.g:5120:1: ( ( rule__MessageContent__ContentAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:4871:1: ( ( rule__MessageContent__ContentAssignment_1_2 ) )
-            // InternalSmartCE.g:4872:2: ( rule__MessageContent__ContentAssignment_1_2 )
+            // InternalSmartCE.g:5120:1: ( ( rule__MessageContent__ContentAssignment_1_2 ) )
+            // InternalSmartCE.g:5121:2: ( rule__MessageContent__ContentAssignment_1_2 )
             {
              before(grammarAccess.getMessageContentAccess().getContentAssignment_1_2()); 
-            // InternalSmartCE.g:4873:2: ( rule__MessageContent__ContentAssignment_1_2 )
-            // InternalSmartCE.g:4873:3: rule__MessageContent__ContentAssignment_1_2
+            // InternalSmartCE.g:5122:2: ( rule__MessageContent__ContentAssignment_1_2 )
+            // InternalSmartCE.g:5122:3: rule__MessageContent__ContentAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__ContentAssignment_1_2();
@@ -15178,16 +15991,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__3"
-    // InternalSmartCE.g:4881:1: rule__MessageContent__Group_1__3 : rule__MessageContent__Group_1__3__Impl rule__MessageContent__Group_1__4 ;
+    // InternalSmartCE.g:5130:1: rule__MessageContent__Group_1__3 : rule__MessageContent__Group_1__3__Impl rule__MessageContent__Group_1__4 ;
     public final void rule__MessageContent__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4885:1: ( rule__MessageContent__Group_1__3__Impl rule__MessageContent__Group_1__4 )
-            // InternalSmartCE.g:4886:2: rule__MessageContent__Group_1__3__Impl rule__MessageContent__Group_1__4
+            // InternalSmartCE.g:5134:1: ( rule__MessageContent__Group_1__3__Impl rule__MessageContent__Group_1__4 )
+            // InternalSmartCE.g:5135:2: rule__MessageContent__Group_1__3__Impl rule__MessageContent__Group_1__4
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_40);
             rule__MessageContent__Group_1__3__Impl();
 
             state._fsp--;
@@ -15216,20 +16029,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__3__Impl"
-    // InternalSmartCE.g:4893:1: rule__MessageContent__Group_1__3__Impl : ( 'by' ) ;
+    // InternalSmartCE.g:5142:1: rule__MessageContent__Group_1__3__Impl : ( 'by' ) ;
     public final void rule__MessageContent__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4897:1: ( ( 'by' ) )
-            // InternalSmartCE.g:4898:1: ( 'by' )
+            // InternalSmartCE.g:5146:1: ( ( 'by' ) )
+            // InternalSmartCE.g:5147:1: ( 'by' )
             {
-            // InternalSmartCE.g:4898:1: ( 'by' )
-            // InternalSmartCE.g:4899:2: 'by'
+            // InternalSmartCE.g:5147:1: ( 'by' )
+            // InternalSmartCE.g:5148:2: 'by'
             {
              before(grammarAccess.getMessageContentAccess().getByKeyword_1_3()); 
-            match(input,64,FOLLOW_2); 
+            match(input,65,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getByKeyword_1_3()); 
 
             }
@@ -15253,16 +16066,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__4"
-    // InternalSmartCE.g:4908:1: rule__MessageContent__Group_1__4 : rule__MessageContent__Group_1__4__Impl rule__MessageContent__Group_1__5 ;
+    // InternalSmartCE.g:5157:1: rule__MessageContent__Group_1__4 : rule__MessageContent__Group_1__4__Impl rule__MessageContent__Group_1__5 ;
     public final void rule__MessageContent__Group_1__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4912:1: ( rule__MessageContent__Group_1__4__Impl rule__MessageContent__Group_1__5 )
-            // InternalSmartCE.g:4913:2: rule__MessageContent__Group_1__4__Impl rule__MessageContent__Group_1__5
+            // InternalSmartCE.g:5161:1: ( rule__MessageContent__Group_1__4__Impl rule__MessageContent__Group_1__5 )
+            // InternalSmartCE.g:5162:2: rule__MessageContent__Group_1__4__Impl rule__MessageContent__Group_1__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__MessageContent__Group_1__4__Impl();
 
             state._fsp--;
@@ -15291,21 +16104,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__4__Impl"
-    // InternalSmartCE.g:4920:1: rule__MessageContent__Group_1__4__Impl : ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) ) ;
+    // InternalSmartCE.g:5169:1: rule__MessageContent__Group_1__4__Impl : ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) ) ;
     public final void rule__MessageContent__Group_1__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4924:1: ( ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) ) )
-            // InternalSmartCE.g:4925:1: ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) )
+            // InternalSmartCE.g:5173:1: ( ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) ) )
+            // InternalSmartCE.g:5174:1: ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) )
             {
-            // InternalSmartCE.g:4925:1: ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) )
-            // InternalSmartCE.g:4926:2: ( rule__MessageContent__TimeUnitAssignment_1_4 )
+            // InternalSmartCE.g:5174:1: ( ( rule__MessageContent__TimeUnitAssignment_1_4 ) )
+            // InternalSmartCE.g:5175:2: ( rule__MessageContent__TimeUnitAssignment_1_4 )
             {
              before(grammarAccess.getMessageContentAccess().getTimeUnitAssignment_1_4()); 
-            // InternalSmartCE.g:4927:2: ( rule__MessageContent__TimeUnitAssignment_1_4 )
-            // InternalSmartCE.g:4927:3: rule__MessageContent__TimeUnitAssignment_1_4
+            // InternalSmartCE.g:5176:2: ( rule__MessageContent__TimeUnitAssignment_1_4 )
+            // InternalSmartCE.g:5176:3: rule__MessageContent__TimeUnitAssignment_1_4
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__TimeUnitAssignment_1_4();
@@ -15338,14 +16151,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__5"
-    // InternalSmartCE.g:4935:1: rule__MessageContent__Group_1__5 : rule__MessageContent__Group_1__5__Impl ;
+    // InternalSmartCE.g:5184:1: rule__MessageContent__Group_1__5 : rule__MessageContent__Group_1__5__Impl ;
     public final void rule__MessageContent__Group_1__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4939:1: ( rule__MessageContent__Group_1__5__Impl )
-            // InternalSmartCE.g:4940:2: rule__MessageContent__Group_1__5__Impl
+            // InternalSmartCE.g:5188:1: ( rule__MessageContent__Group_1__5__Impl )
+            // InternalSmartCE.g:5189:2: rule__MessageContent__Group_1__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Group_1__5__Impl();
@@ -15371,20 +16184,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_1__5__Impl"
-    // InternalSmartCE.g:4946:1: rule__MessageContent__Group_1__5__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5195:1: rule__MessageContent__Group_1__5__Impl : ( ')' ) ;
     public final void rule__MessageContent__Group_1__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4950:1: ( ( ')' ) )
-            // InternalSmartCE.g:4951:1: ( ')' )
+            // InternalSmartCE.g:5199:1: ( ( ')' ) )
+            // InternalSmartCE.g:5200:1: ( ')' )
             {
-            // InternalSmartCE.g:4951:1: ( ')' )
-            // InternalSmartCE.g:4952:2: ')'
+            // InternalSmartCE.g:5200:1: ( ')' )
+            // InternalSmartCE.g:5201:2: ')'
             {
              before(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_1_5()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_1_5()); 
 
             }
@@ -15408,16 +16221,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__0"
-    // InternalSmartCE.g:4962:1: rule__MessageContent__Group_2__0 : rule__MessageContent__Group_2__0__Impl rule__MessageContent__Group_2__1 ;
+    // InternalSmartCE.g:5211:1: rule__MessageContent__Group_2__0 : rule__MessageContent__Group_2__0__Impl rule__MessageContent__Group_2__1 ;
     public final void rule__MessageContent__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4966:1: ( rule__MessageContent__Group_2__0__Impl rule__MessageContent__Group_2__1 )
-            // InternalSmartCE.g:4967:2: rule__MessageContent__Group_2__0__Impl rule__MessageContent__Group_2__1
+            // InternalSmartCE.g:5215:1: ( rule__MessageContent__Group_2__0__Impl rule__MessageContent__Group_2__1 )
+            // InternalSmartCE.g:5216:2: rule__MessageContent__Group_2__0__Impl rule__MessageContent__Group_2__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__MessageContent__Group_2__0__Impl();
 
             state._fsp--;
@@ -15446,17 +16259,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__0__Impl"
-    // InternalSmartCE.g:4974:1: rule__MessageContent__Group_2__0__Impl : ( 'MessageContent' ) ;
+    // InternalSmartCE.g:5223:1: rule__MessageContent__Group_2__0__Impl : ( 'MessageContent' ) ;
     public final void rule__MessageContent__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4978:1: ( ( 'MessageContent' ) )
-            // InternalSmartCE.g:4979:1: ( 'MessageContent' )
+            // InternalSmartCE.g:5227:1: ( ( 'MessageContent' ) )
+            // InternalSmartCE.g:5228:1: ( 'MessageContent' )
             {
-            // InternalSmartCE.g:4979:1: ( 'MessageContent' )
-            // InternalSmartCE.g:4980:2: 'MessageContent'
+            // InternalSmartCE.g:5228:1: ( 'MessageContent' )
+            // InternalSmartCE.g:5229:2: 'MessageContent'
             {
              before(grammarAccess.getMessageContentAccess().getMessageContentKeyword_2_0()); 
             match(input,70,FOLLOW_2); 
@@ -15483,16 +16296,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__1"
-    // InternalSmartCE.g:4989:1: rule__MessageContent__Group_2__1 : rule__MessageContent__Group_2__1__Impl rule__MessageContent__Group_2__2 ;
+    // InternalSmartCE.g:5238:1: rule__MessageContent__Group_2__1 : rule__MessageContent__Group_2__1__Impl rule__MessageContent__Group_2__2 ;
     public final void rule__MessageContent__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:4993:1: ( rule__MessageContent__Group_2__1__Impl rule__MessageContent__Group_2__2 )
-            // InternalSmartCE.g:4994:2: rule__MessageContent__Group_2__1__Impl rule__MessageContent__Group_2__2
+            // InternalSmartCE.g:5242:1: ( rule__MessageContent__Group_2__1__Impl rule__MessageContent__Group_2__2 )
+            // InternalSmartCE.g:5243:2: rule__MessageContent__Group_2__1__Impl rule__MessageContent__Group_2__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__MessageContent__Group_2__1__Impl();
 
             state._fsp--;
@@ -15521,20 +16334,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__1__Impl"
-    // InternalSmartCE.g:5001:1: rule__MessageContent__Group_2__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:5250:1: rule__MessageContent__Group_2__1__Impl : ( '(' ) ;
     public final void rule__MessageContent__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5005:1: ( ( '(' ) )
-            // InternalSmartCE.g:5006:1: ( '(' )
+            // InternalSmartCE.g:5254:1: ( ( '(' ) )
+            // InternalSmartCE.g:5255:1: ( '(' )
             {
-            // InternalSmartCE.g:5006:1: ( '(' )
-            // InternalSmartCE.g:5007:2: '('
+            // InternalSmartCE.g:5255:1: ( '(' )
+            // InternalSmartCE.g:5256:2: '('
             {
              before(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_2_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_2_1()); 
 
             }
@@ -15558,16 +16371,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__2"
-    // InternalSmartCE.g:5016:1: rule__MessageContent__Group_2__2 : rule__MessageContent__Group_2__2__Impl rule__MessageContent__Group_2__3 ;
+    // InternalSmartCE.g:5265:1: rule__MessageContent__Group_2__2 : rule__MessageContent__Group_2__2__Impl rule__MessageContent__Group_2__3 ;
     public final void rule__MessageContent__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5020:1: ( rule__MessageContent__Group_2__2__Impl rule__MessageContent__Group_2__3 )
-            // InternalSmartCE.g:5021:2: rule__MessageContent__Group_2__2__Impl rule__MessageContent__Group_2__3
+            // InternalSmartCE.g:5269:1: ( rule__MessageContent__Group_2__2__Impl rule__MessageContent__Group_2__3 )
+            // InternalSmartCE.g:5270:2: rule__MessageContent__Group_2__2__Impl rule__MessageContent__Group_2__3
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_44);
             rule__MessageContent__Group_2__2__Impl();
 
             state._fsp--;
@@ -15596,21 +16409,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__2__Impl"
-    // InternalSmartCE.g:5028:1: rule__MessageContent__Group_2__2__Impl : ( ( rule__MessageContent__ContentAssignment_2_2 ) ) ;
+    // InternalSmartCE.g:5277:1: rule__MessageContent__Group_2__2__Impl : ( ( rule__MessageContent__ContentAssignment_2_2 ) ) ;
     public final void rule__MessageContent__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5032:1: ( ( ( rule__MessageContent__ContentAssignment_2_2 ) ) )
-            // InternalSmartCE.g:5033:1: ( ( rule__MessageContent__ContentAssignment_2_2 ) )
+            // InternalSmartCE.g:5281:1: ( ( ( rule__MessageContent__ContentAssignment_2_2 ) ) )
+            // InternalSmartCE.g:5282:1: ( ( rule__MessageContent__ContentAssignment_2_2 ) )
             {
-            // InternalSmartCE.g:5033:1: ( ( rule__MessageContent__ContentAssignment_2_2 ) )
-            // InternalSmartCE.g:5034:2: ( rule__MessageContent__ContentAssignment_2_2 )
+            // InternalSmartCE.g:5282:1: ( ( rule__MessageContent__ContentAssignment_2_2 ) )
+            // InternalSmartCE.g:5283:2: ( rule__MessageContent__ContentAssignment_2_2 )
             {
              before(grammarAccess.getMessageContentAccess().getContentAssignment_2_2()); 
-            // InternalSmartCE.g:5035:2: ( rule__MessageContent__ContentAssignment_2_2 )
-            // InternalSmartCE.g:5035:3: rule__MessageContent__ContentAssignment_2_2
+            // InternalSmartCE.g:5284:2: ( rule__MessageContent__ContentAssignment_2_2 )
+            // InternalSmartCE.g:5284:3: rule__MessageContent__ContentAssignment_2_2
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__ContentAssignment_2_2();
@@ -15643,16 +16456,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__3"
-    // InternalSmartCE.g:5043:1: rule__MessageContent__Group_2__3 : rule__MessageContent__Group_2__3__Impl rule__MessageContent__Group_2__4 ;
+    // InternalSmartCE.g:5292:1: rule__MessageContent__Group_2__3 : rule__MessageContent__Group_2__3__Impl rule__MessageContent__Group_2__4 ;
     public final void rule__MessageContent__Group_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5047:1: ( rule__MessageContent__Group_2__3__Impl rule__MessageContent__Group_2__4 )
-            // InternalSmartCE.g:5048:2: rule__MessageContent__Group_2__3__Impl rule__MessageContent__Group_2__4
+            // InternalSmartCE.g:5296:1: ( rule__MessageContent__Group_2__3__Impl rule__MessageContent__Group_2__4 )
+            // InternalSmartCE.g:5297:2: rule__MessageContent__Group_2__3__Impl rule__MessageContent__Group_2__4
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_45);
             rule__MessageContent__Group_2__3__Impl();
 
             state._fsp--;
@@ -15681,21 +16494,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__3__Impl"
-    // InternalSmartCE.g:5055:1: rule__MessageContent__Group_2__3__Impl : ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) ) ;
+    // InternalSmartCE.g:5304:1: rule__MessageContent__Group_2__3__Impl : ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) ) ;
     public final void rule__MessageContent__Group_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5059:1: ( ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) ) )
-            // InternalSmartCE.g:5060:1: ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) )
+            // InternalSmartCE.g:5308:1: ( ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) ) )
+            // InternalSmartCE.g:5309:1: ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) )
             {
-            // InternalSmartCE.g:5060:1: ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) )
-            // InternalSmartCE.g:5061:2: ( rule__MessageContent__BinaryOperatorAssignment_2_3 )
+            // InternalSmartCE.g:5309:1: ( ( rule__MessageContent__BinaryOperatorAssignment_2_3 ) )
+            // InternalSmartCE.g:5310:2: ( rule__MessageContent__BinaryOperatorAssignment_2_3 )
             {
              before(grammarAccess.getMessageContentAccess().getBinaryOperatorAssignment_2_3()); 
-            // InternalSmartCE.g:5062:2: ( rule__MessageContent__BinaryOperatorAssignment_2_3 )
-            // InternalSmartCE.g:5062:3: rule__MessageContent__BinaryOperatorAssignment_2_3
+            // InternalSmartCE.g:5311:2: ( rule__MessageContent__BinaryOperatorAssignment_2_3 )
+            // InternalSmartCE.g:5311:3: rule__MessageContent__BinaryOperatorAssignment_2_3
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__BinaryOperatorAssignment_2_3();
@@ -15728,16 +16541,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__4"
-    // InternalSmartCE.g:5070:1: rule__MessageContent__Group_2__4 : rule__MessageContent__Group_2__4__Impl rule__MessageContent__Group_2__5 ;
+    // InternalSmartCE.g:5319:1: rule__MessageContent__Group_2__4 : rule__MessageContent__Group_2__4__Impl rule__MessageContent__Group_2__5 ;
     public final void rule__MessageContent__Group_2__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5074:1: ( rule__MessageContent__Group_2__4__Impl rule__MessageContent__Group_2__5 )
-            // InternalSmartCE.g:5075:2: rule__MessageContent__Group_2__4__Impl rule__MessageContent__Group_2__5
+            // InternalSmartCE.g:5323:1: ( rule__MessageContent__Group_2__4__Impl rule__MessageContent__Group_2__5 )
+            // InternalSmartCE.g:5324:2: rule__MessageContent__Group_2__4__Impl rule__MessageContent__Group_2__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__MessageContent__Group_2__4__Impl();
 
             state._fsp--;
@@ -15766,21 +16579,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__4__Impl"
-    // InternalSmartCE.g:5082:1: rule__MessageContent__Group_2__4__Impl : ( ( rule__MessageContent__Alternatives_2_4 ) ) ;
+    // InternalSmartCE.g:5331:1: rule__MessageContent__Group_2__4__Impl : ( ( rule__MessageContent__Alternatives_2_4 ) ) ;
     public final void rule__MessageContent__Group_2__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5086:1: ( ( ( rule__MessageContent__Alternatives_2_4 ) ) )
-            // InternalSmartCE.g:5087:1: ( ( rule__MessageContent__Alternatives_2_4 ) )
+            // InternalSmartCE.g:5335:1: ( ( ( rule__MessageContent__Alternatives_2_4 ) ) )
+            // InternalSmartCE.g:5336:1: ( ( rule__MessageContent__Alternatives_2_4 ) )
             {
-            // InternalSmartCE.g:5087:1: ( ( rule__MessageContent__Alternatives_2_4 ) )
-            // InternalSmartCE.g:5088:2: ( rule__MessageContent__Alternatives_2_4 )
+            // InternalSmartCE.g:5336:1: ( ( rule__MessageContent__Alternatives_2_4 ) )
+            // InternalSmartCE.g:5337:2: ( rule__MessageContent__Alternatives_2_4 )
             {
              before(grammarAccess.getMessageContentAccess().getAlternatives_2_4()); 
-            // InternalSmartCE.g:5089:2: ( rule__MessageContent__Alternatives_2_4 )
-            // InternalSmartCE.g:5089:3: rule__MessageContent__Alternatives_2_4
+            // InternalSmartCE.g:5338:2: ( rule__MessageContent__Alternatives_2_4 )
+            // InternalSmartCE.g:5338:3: rule__MessageContent__Alternatives_2_4
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Alternatives_2_4();
@@ -15813,14 +16626,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__5"
-    // InternalSmartCE.g:5097:1: rule__MessageContent__Group_2__5 : rule__MessageContent__Group_2__5__Impl ;
+    // InternalSmartCE.g:5346:1: rule__MessageContent__Group_2__5 : rule__MessageContent__Group_2__5__Impl ;
     public final void rule__MessageContent__Group_2__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5101:1: ( rule__MessageContent__Group_2__5__Impl )
-            // InternalSmartCE.g:5102:2: rule__MessageContent__Group_2__5__Impl
+            // InternalSmartCE.g:5350:1: ( rule__MessageContent__Group_2__5__Impl )
+            // InternalSmartCE.g:5351:2: rule__MessageContent__Group_2__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Group_2__5__Impl();
@@ -15846,20 +16659,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_2__5__Impl"
-    // InternalSmartCE.g:5108:1: rule__MessageContent__Group_2__5__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5357:1: rule__MessageContent__Group_2__5__Impl : ( ')' ) ;
     public final void rule__MessageContent__Group_2__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5112:1: ( ( ')' ) )
-            // InternalSmartCE.g:5113:1: ( ')' )
+            // InternalSmartCE.g:5361:1: ( ( ')' ) )
+            // InternalSmartCE.g:5362:1: ( ')' )
             {
-            // InternalSmartCE.g:5113:1: ( ')' )
-            // InternalSmartCE.g:5114:2: ')'
+            // InternalSmartCE.g:5362:1: ( ')' )
+            // InternalSmartCE.g:5363:2: ')'
             {
              before(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_2_5()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_2_5()); 
 
             }
@@ -15883,16 +16696,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__0"
-    // InternalSmartCE.g:5124:1: rule__MessageContent__Group_3__0 : rule__MessageContent__Group_3__0__Impl rule__MessageContent__Group_3__1 ;
+    // InternalSmartCE.g:5373:1: rule__MessageContent__Group_3__0 : rule__MessageContent__Group_3__0__Impl rule__MessageContent__Group_3__1 ;
     public final void rule__MessageContent__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5128:1: ( rule__MessageContent__Group_3__0__Impl rule__MessageContent__Group_3__1 )
-            // InternalSmartCE.g:5129:2: rule__MessageContent__Group_3__0__Impl rule__MessageContent__Group_3__1
+            // InternalSmartCE.g:5377:1: ( rule__MessageContent__Group_3__0__Impl rule__MessageContent__Group_3__1 )
+            // InternalSmartCE.g:5378:2: rule__MessageContent__Group_3__0__Impl rule__MessageContent__Group_3__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__MessageContent__Group_3__0__Impl();
 
             state._fsp--;
@@ -15921,17 +16734,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__0__Impl"
-    // InternalSmartCE.g:5136:1: rule__MessageContent__Group_3__0__Impl : ( 'MessageContent' ) ;
+    // InternalSmartCE.g:5385:1: rule__MessageContent__Group_3__0__Impl : ( 'MessageContent' ) ;
     public final void rule__MessageContent__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5140:1: ( ( 'MessageContent' ) )
-            // InternalSmartCE.g:5141:1: ( 'MessageContent' )
+            // InternalSmartCE.g:5389:1: ( ( 'MessageContent' ) )
+            // InternalSmartCE.g:5390:1: ( 'MessageContent' )
             {
-            // InternalSmartCE.g:5141:1: ( 'MessageContent' )
-            // InternalSmartCE.g:5142:2: 'MessageContent'
+            // InternalSmartCE.g:5390:1: ( 'MessageContent' )
+            // InternalSmartCE.g:5391:2: 'MessageContent'
             {
              before(grammarAccess.getMessageContentAccess().getMessageContentKeyword_3_0()); 
             match(input,70,FOLLOW_2); 
@@ -15958,16 +16771,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__1"
-    // InternalSmartCE.g:5151:1: rule__MessageContent__Group_3__1 : rule__MessageContent__Group_3__1__Impl rule__MessageContent__Group_3__2 ;
+    // InternalSmartCE.g:5400:1: rule__MessageContent__Group_3__1 : rule__MessageContent__Group_3__1__Impl rule__MessageContent__Group_3__2 ;
     public final void rule__MessageContent__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5155:1: ( rule__MessageContent__Group_3__1__Impl rule__MessageContent__Group_3__2 )
-            // InternalSmartCE.g:5156:2: rule__MessageContent__Group_3__1__Impl rule__MessageContent__Group_3__2
+            // InternalSmartCE.g:5404:1: ( rule__MessageContent__Group_3__1__Impl rule__MessageContent__Group_3__2 )
+            // InternalSmartCE.g:5405:2: rule__MessageContent__Group_3__1__Impl rule__MessageContent__Group_3__2
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_16);
             rule__MessageContent__Group_3__1__Impl();
 
             state._fsp--;
@@ -15996,20 +16809,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__1__Impl"
-    // InternalSmartCE.g:5163:1: rule__MessageContent__Group_3__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:5412:1: rule__MessageContent__Group_3__1__Impl : ( '(' ) ;
     public final void rule__MessageContent__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5167:1: ( ( '(' ) )
-            // InternalSmartCE.g:5168:1: ( '(' )
+            // InternalSmartCE.g:5416:1: ( ( '(' ) )
+            // InternalSmartCE.g:5417:1: ( '(' )
             {
-            // InternalSmartCE.g:5168:1: ( '(' )
-            // InternalSmartCE.g:5169:2: '('
+            // InternalSmartCE.g:5417:1: ( '(' )
+            // InternalSmartCE.g:5418:2: '('
             {
              before(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_3_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_3_1()); 
 
             }
@@ -16033,16 +16846,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__2"
-    // InternalSmartCE.g:5178:1: rule__MessageContent__Group_3__2 : rule__MessageContent__Group_3__2__Impl rule__MessageContent__Group_3__3 ;
+    // InternalSmartCE.g:5427:1: rule__MessageContent__Group_3__2 : rule__MessageContent__Group_3__2__Impl rule__MessageContent__Group_3__3 ;
     public final void rule__MessageContent__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5182:1: ( rule__MessageContent__Group_3__2__Impl rule__MessageContent__Group_3__3 )
-            // InternalSmartCE.g:5183:2: rule__MessageContent__Group_3__2__Impl rule__MessageContent__Group_3__3
+            // InternalSmartCE.g:5431:1: ( rule__MessageContent__Group_3__2__Impl rule__MessageContent__Group_3__3 )
+            // InternalSmartCE.g:5432:2: rule__MessageContent__Group_3__2__Impl rule__MessageContent__Group_3__3
             {
-            pushFollow(FOLLOW_42);
+            pushFollow(FOLLOW_44);
             rule__MessageContent__Group_3__2__Impl();
 
             state._fsp--;
@@ -16071,21 +16884,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__2__Impl"
-    // InternalSmartCE.g:5190:1: rule__MessageContent__Group_3__2__Impl : ( ( rule__MessageContent__ContentAssignment_3_2 ) ) ;
+    // InternalSmartCE.g:5439:1: rule__MessageContent__Group_3__2__Impl : ( ( rule__MessageContent__ContentAssignment_3_2 ) ) ;
     public final void rule__MessageContent__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5194:1: ( ( ( rule__MessageContent__ContentAssignment_3_2 ) ) )
-            // InternalSmartCE.g:5195:1: ( ( rule__MessageContent__ContentAssignment_3_2 ) )
+            // InternalSmartCE.g:5443:1: ( ( ( rule__MessageContent__ContentAssignment_3_2 ) ) )
+            // InternalSmartCE.g:5444:1: ( ( rule__MessageContent__ContentAssignment_3_2 ) )
             {
-            // InternalSmartCE.g:5195:1: ( ( rule__MessageContent__ContentAssignment_3_2 ) )
-            // InternalSmartCE.g:5196:2: ( rule__MessageContent__ContentAssignment_3_2 )
+            // InternalSmartCE.g:5444:1: ( ( rule__MessageContent__ContentAssignment_3_2 ) )
+            // InternalSmartCE.g:5445:2: ( rule__MessageContent__ContentAssignment_3_2 )
             {
              before(grammarAccess.getMessageContentAccess().getContentAssignment_3_2()); 
-            // InternalSmartCE.g:5197:2: ( rule__MessageContent__ContentAssignment_3_2 )
-            // InternalSmartCE.g:5197:3: rule__MessageContent__ContentAssignment_3_2
+            // InternalSmartCE.g:5446:2: ( rule__MessageContent__ContentAssignment_3_2 )
+            // InternalSmartCE.g:5446:3: rule__MessageContent__ContentAssignment_3_2
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__ContentAssignment_3_2();
@@ -16118,16 +16931,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__3"
-    // InternalSmartCE.g:5205:1: rule__MessageContent__Group_3__3 : rule__MessageContent__Group_3__3__Impl rule__MessageContent__Group_3__4 ;
+    // InternalSmartCE.g:5454:1: rule__MessageContent__Group_3__3 : rule__MessageContent__Group_3__3__Impl rule__MessageContent__Group_3__4 ;
     public final void rule__MessageContent__Group_3__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5209:1: ( rule__MessageContent__Group_3__3__Impl rule__MessageContent__Group_3__4 )
-            // InternalSmartCE.g:5210:2: rule__MessageContent__Group_3__3__Impl rule__MessageContent__Group_3__4
+            // InternalSmartCE.g:5458:1: ( rule__MessageContent__Group_3__3__Impl rule__MessageContent__Group_3__4 )
+            // InternalSmartCE.g:5459:2: rule__MessageContent__Group_3__3__Impl rule__MessageContent__Group_3__4
             {
-            pushFollow(FOLLOW_43);
+            pushFollow(FOLLOW_45);
             rule__MessageContent__Group_3__3__Impl();
 
             state._fsp--;
@@ -16156,21 +16969,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__3__Impl"
-    // InternalSmartCE.g:5217:1: rule__MessageContent__Group_3__3__Impl : ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) ) ;
+    // InternalSmartCE.g:5466:1: rule__MessageContent__Group_3__3__Impl : ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) ) ;
     public final void rule__MessageContent__Group_3__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5221:1: ( ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) ) )
-            // InternalSmartCE.g:5222:1: ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) )
+            // InternalSmartCE.g:5470:1: ( ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) ) )
+            // InternalSmartCE.g:5471:1: ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) )
             {
-            // InternalSmartCE.g:5222:1: ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) )
-            // InternalSmartCE.g:5223:2: ( rule__MessageContent__BinaryOperatorAssignment_3_3 )
+            // InternalSmartCE.g:5471:1: ( ( rule__MessageContent__BinaryOperatorAssignment_3_3 ) )
+            // InternalSmartCE.g:5472:2: ( rule__MessageContent__BinaryOperatorAssignment_3_3 )
             {
              before(grammarAccess.getMessageContentAccess().getBinaryOperatorAssignment_3_3()); 
-            // InternalSmartCE.g:5224:2: ( rule__MessageContent__BinaryOperatorAssignment_3_3 )
-            // InternalSmartCE.g:5224:3: rule__MessageContent__BinaryOperatorAssignment_3_3
+            // InternalSmartCE.g:5473:2: ( rule__MessageContent__BinaryOperatorAssignment_3_3 )
+            // InternalSmartCE.g:5473:3: rule__MessageContent__BinaryOperatorAssignment_3_3
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__BinaryOperatorAssignment_3_3();
@@ -16203,16 +17016,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__4"
-    // InternalSmartCE.g:5232:1: rule__MessageContent__Group_3__4 : rule__MessageContent__Group_3__4__Impl rule__MessageContent__Group_3__5 ;
+    // InternalSmartCE.g:5481:1: rule__MessageContent__Group_3__4 : rule__MessageContent__Group_3__4__Impl rule__MessageContent__Group_3__5 ;
     public final void rule__MessageContent__Group_3__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5236:1: ( rule__MessageContent__Group_3__4__Impl rule__MessageContent__Group_3__5 )
-            // InternalSmartCE.g:5237:2: rule__MessageContent__Group_3__4__Impl rule__MessageContent__Group_3__5
+            // InternalSmartCE.g:5485:1: ( rule__MessageContent__Group_3__4__Impl rule__MessageContent__Group_3__5 )
+            // InternalSmartCE.g:5486:2: rule__MessageContent__Group_3__4__Impl rule__MessageContent__Group_3__5
             {
-            pushFollow(FOLLOW_37);
+            pushFollow(FOLLOW_39);
             rule__MessageContent__Group_3__4__Impl();
 
             state._fsp--;
@@ -16241,21 +17054,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__4__Impl"
-    // InternalSmartCE.g:5244:1: rule__MessageContent__Group_3__4__Impl : ( ( rule__MessageContent__Alternatives_3_4 ) ) ;
+    // InternalSmartCE.g:5493:1: rule__MessageContent__Group_3__4__Impl : ( ( rule__MessageContent__Alternatives_3_4 ) ) ;
     public final void rule__MessageContent__Group_3__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5248:1: ( ( ( rule__MessageContent__Alternatives_3_4 ) ) )
-            // InternalSmartCE.g:5249:1: ( ( rule__MessageContent__Alternatives_3_4 ) )
+            // InternalSmartCE.g:5497:1: ( ( ( rule__MessageContent__Alternatives_3_4 ) ) )
+            // InternalSmartCE.g:5498:1: ( ( rule__MessageContent__Alternatives_3_4 ) )
             {
-            // InternalSmartCE.g:5249:1: ( ( rule__MessageContent__Alternatives_3_4 ) )
-            // InternalSmartCE.g:5250:2: ( rule__MessageContent__Alternatives_3_4 )
+            // InternalSmartCE.g:5498:1: ( ( rule__MessageContent__Alternatives_3_4 ) )
+            // InternalSmartCE.g:5499:2: ( rule__MessageContent__Alternatives_3_4 )
             {
              before(grammarAccess.getMessageContentAccess().getAlternatives_3_4()); 
-            // InternalSmartCE.g:5251:2: ( rule__MessageContent__Alternatives_3_4 )
-            // InternalSmartCE.g:5251:3: rule__MessageContent__Alternatives_3_4
+            // InternalSmartCE.g:5500:2: ( rule__MessageContent__Alternatives_3_4 )
+            // InternalSmartCE.g:5500:3: rule__MessageContent__Alternatives_3_4
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Alternatives_3_4();
@@ -16288,16 +17101,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__5"
-    // InternalSmartCE.g:5259:1: rule__MessageContent__Group_3__5 : rule__MessageContent__Group_3__5__Impl rule__MessageContent__Group_3__6 ;
+    // InternalSmartCE.g:5508:1: rule__MessageContent__Group_3__5 : rule__MessageContent__Group_3__5__Impl rule__MessageContent__Group_3__6 ;
     public final void rule__MessageContent__Group_3__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5263:1: ( rule__MessageContent__Group_3__5__Impl rule__MessageContent__Group_3__6 )
-            // InternalSmartCE.g:5264:2: rule__MessageContent__Group_3__5__Impl rule__MessageContent__Group_3__6
+            // InternalSmartCE.g:5512:1: ( rule__MessageContent__Group_3__5__Impl rule__MessageContent__Group_3__6 )
+            // InternalSmartCE.g:5513:2: rule__MessageContent__Group_3__5__Impl rule__MessageContent__Group_3__6
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_40);
             rule__MessageContent__Group_3__5__Impl();
 
             state._fsp--;
@@ -16326,20 +17139,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__5__Impl"
-    // InternalSmartCE.g:5271:1: rule__MessageContent__Group_3__5__Impl : ( 'by' ) ;
+    // InternalSmartCE.g:5520:1: rule__MessageContent__Group_3__5__Impl : ( 'by' ) ;
     public final void rule__MessageContent__Group_3__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5275:1: ( ( 'by' ) )
-            // InternalSmartCE.g:5276:1: ( 'by' )
+            // InternalSmartCE.g:5524:1: ( ( 'by' ) )
+            // InternalSmartCE.g:5525:1: ( 'by' )
             {
-            // InternalSmartCE.g:5276:1: ( 'by' )
-            // InternalSmartCE.g:5277:2: 'by'
+            // InternalSmartCE.g:5525:1: ( 'by' )
+            // InternalSmartCE.g:5526:2: 'by'
             {
              before(grammarAccess.getMessageContentAccess().getByKeyword_3_5()); 
-            match(input,64,FOLLOW_2); 
+            match(input,65,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getByKeyword_3_5()); 
 
             }
@@ -16363,16 +17176,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__6"
-    // InternalSmartCE.g:5286:1: rule__MessageContent__Group_3__6 : rule__MessageContent__Group_3__6__Impl rule__MessageContent__Group_3__7 ;
+    // InternalSmartCE.g:5535:1: rule__MessageContent__Group_3__6 : rule__MessageContent__Group_3__6__Impl rule__MessageContent__Group_3__7 ;
     public final void rule__MessageContent__Group_3__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5290:1: ( rule__MessageContent__Group_3__6__Impl rule__MessageContent__Group_3__7 )
-            // InternalSmartCE.g:5291:2: rule__MessageContent__Group_3__6__Impl rule__MessageContent__Group_3__7
+            // InternalSmartCE.g:5539:1: ( rule__MessageContent__Group_3__6__Impl rule__MessageContent__Group_3__7 )
+            // InternalSmartCE.g:5540:2: rule__MessageContent__Group_3__6__Impl rule__MessageContent__Group_3__7
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__MessageContent__Group_3__6__Impl();
 
             state._fsp--;
@@ -16401,21 +17214,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__6__Impl"
-    // InternalSmartCE.g:5298:1: rule__MessageContent__Group_3__6__Impl : ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) ) ;
+    // InternalSmartCE.g:5547:1: rule__MessageContent__Group_3__6__Impl : ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) ) ;
     public final void rule__MessageContent__Group_3__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5302:1: ( ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) ) )
-            // InternalSmartCE.g:5303:1: ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) )
+            // InternalSmartCE.g:5551:1: ( ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) ) )
+            // InternalSmartCE.g:5552:1: ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) )
             {
-            // InternalSmartCE.g:5303:1: ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) )
-            // InternalSmartCE.g:5304:2: ( rule__MessageContent__TimeUnitAssignment_3_6 )
+            // InternalSmartCE.g:5552:1: ( ( rule__MessageContent__TimeUnitAssignment_3_6 ) )
+            // InternalSmartCE.g:5553:2: ( rule__MessageContent__TimeUnitAssignment_3_6 )
             {
              before(grammarAccess.getMessageContentAccess().getTimeUnitAssignment_3_6()); 
-            // InternalSmartCE.g:5305:2: ( rule__MessageContent__TimeUnitAssignment_3_6 )
-            // InternalSmartCE.g:5305:3: rule__MessageContent__TimeUnitAssignment_3_6
+            // InternalSmartCE.g:5554:2: ( rule__MessageContent__TimeUnitAssignment_3_6 )
+            // InternalSmartCE.g:5554:3: rule__MessageContent__TimeUnitAssignment_3_6
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__TimeUnitAssignment_3_6();
@@ -16448,14 +17261,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__7"
-    // InternalSmartCE.g:5313:1: rule__MessageContent__Group_3__7 : rule__MessageContent__Group_3__7__Impl ;
+    // InternalSmartCE.g:5562:1: rule__MessageContent__Group_3__7 : rule__MessageContent__Group_3__7__Impl ;
     public final void rule__MessageContent__Group_3__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5317:1: ( rule__MessageContent__Group_3__7__Impl )
-            // InternalSmartCE.g:5318:2: rule__MessageContent__Group_3__7__Impl
+            // InternalSmartCE.g:5566:1: ( rule__MessageContent__Group_3__7__Impl )
+            // InternalSmartCE.g:5567:2: rule__MessageContent__Group_3__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Group_3__7__Impl();
@@ -16481,20 +17294,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_3__7__Impl"
-    // InternalSmartCE.g:5324:1: rule__MessageContent__Group_3__7__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5573:1: rule__MessageContent__Group_3__7__Impl : ( ')' ) ;
     public final void rule__MessageContent__Group_3__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5328:1: ( ( ')' ) )
-            // InternalSmartCE.g:5329:1: ( ')' )
+            // InternalSmartCE.g:5577:1: ( ( ')' ) )
+            // InternalSmartCE.g:5578:1: ( ')' )
             {
-            // InternalSmartCE.g:5329:1: ( ')' )
-            // InternalSmartCE.g:5330:2: ')'
+            // InternalSmartCE.g:5578:1: ( ')' )
+            // InternalSmartCE.g:5579:2: ')'
             {
              before(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_3_7()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_3_7()); 
 
             }
@@ -16518,16 +17331,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__0"
-    // InternalSmartCE.g:5340:1: rule__OnSuccess__Group__0 : rule__OnSuccess__Group__0__Impl rule__OnSuccess__Group__1 ;
+    // InternalSmartCE.g:5589:1: rule__OnSuccess__Group__0 : rule__OnSuccess__Group__0__Impl rule__OnSuccess__Group__1 ;
     public final void rule__OnSuccess__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5344:1: ( rule__OnSuccess__Group__0__Impl rule__OnSuccess__Group__1 )
-            // InternalSmartCE.g:5345:2: rule__OnSuccess__Group__0__Impl rule__OnSuccess__Group__1
+            // InternalSmartCE.g:5593:1: ( rule__OnSuccess__Group__0__Impl rule__OnSuccess__Group__1 )
+            // InternalSmartCE.g:5594:2: rule__OnSuccess__Group__0__Impl rule__OnSuccess__Group__1
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_46);
             rule__OnSuccess__Group__0__Impl();
 
             state._fsp--;
@@ -16556,20 +17369,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__0__Impl"
-    // InternalSmartCE.g:5352:1: rule__OnSuccess__Group__0__Impl : ( '(' ) ;
+    // InternalSmartCE.g:5601:1: rule__OnSuccess__Group__0__Impl : ( '(' ) ;
     public final void rule__OnSuccess__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5356:1: ( ( '(' ) )
-            // InternalSmartCE.g:5357:1: ( '(' )
+            // InternalSmartCE.g:5605:1: ( ( '(' ) )
+            // InternalSmartCE.g:5606:1: ( '(' )
             {
-            // InternalSmartCE.g:5357:1: ( '(' )
-            // InternalSmartCE.g:5358:2: '('
+            // InternalSmartCE.g:5606:1: ( '(' )
+            // InternalSmartCE.g:5607:2: '('
             {
              before(grammarAccess.getOnSuccessAccess().getLeftParenthesisKeyword_0()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getOnSuccessAccess().getLeftParenthesisKeyword_0()); 
 
             }
@@ -16593,16 +17406,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__1"
-    // InternalSmartCE.g:5367:1: rule__OnSuccess__Group__1 : rule__OnSuccess__Group__1__Impl rule__OnSuccess__Group__2 ;
+    // InternalSmartCE.g:5616:1: rule__OnSuccess__Group__1 : rule__OnSuccess__Group__1__Impl rule__OnSuccess__Group__2 ;
     public final void rule__OnSuccess__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5371:1: ( rule__OnSuccess__Group__1__Impl rule__OnSuccess__Group__2 )
-            // InternalSmartCE.g:5372:2: rule__OnSuccess__Group__1__Impl rule__OnSuccess__Group__2
+            // InternalSmartCE.g:5620:1: ( rule__OnSuccess__Group__1__Impl rule__OnSuccess__Group__2 )
+            // InternalSmartCE.g:5621:2: rule__OnSuccess__Group__1__Impl rule__OnSuccess__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__OnSuccess__Group__1__Impl();
 
             state._fsp--;
@@ -16631,21 +17444,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__1__Impl"
-    // InternalSmartCE.g:5379:1: rule__OnSuccess__Group__1__Impl : ( ( rule__OnSuccess__ActionAssignment_1 ) ) ;
+    // InternalSmartCE.g:5628:1: rule__OnSuccess__Group__1__Impl : ( ( rule__OnSuccess__ActionAssignment_1 ) ) ;
     public final void rule__OnSuccess__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5383:1: ( ( ( rule__OnSuccess__ActionAssignment_1 ) ) )
-            // InternalSmartCE.g:5384:1: ( ( rule__OnSuccess__ActionAssignment_1 ) )
+            // InternalSmartCE.g:5632:1: ( ( ( rule__OnSuccess__ActionAssignment_1 ) ) )
+            // InternalSmartCE.g:5633:1: ( ( rule__OnSuccess__ActionAssignment_1 ) )
             {
-            // InternalSmartCE.g:5384:1: ( ( rule__OnSuccess__ActionAssignment_1 ) )
-            // InternalSmartCE.g:5385:2: ( rule__OnSuccess__ActionAssignment_1 )
+            // InternalSmartCE.g:5633:1: ( ( rule__OnSuccess__ActionAssignment_1 ) )
+            // InternalSmartCE.g:5634:2: ( rule__OnSuccess__ActionAssignment_1 )
             {
              before(grammarAccess.getOnSuccessAccess().getActionAssignment_1()); 
-            // InternalSmartCE.g:5386:2: ( rule__OnSuccess__ActionAssignment_1 )
-            // InternalSmartCE.g:5386:3: rule__OnSuccess__ActionAssignment_1
+            // InternalSmartCE.g:5635:2: ( rule__OnSuccess__ActionAssignment_1 )
+            // InternalSmartCE.g:5635:3: rule__OnSuccess__ActionAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__OnSuccess__ActionAssignment_1();
@@ -16678,16 +17491,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__2"
-    // InternalSmartCE.g:5394:1: rule__OnSuccess__Group__2 : rule__OnSuccess__Group__2__Impl rule__OnSuccess__Group__3 ;
+    // InternalSmartCE.g:5643:1: rule__OnSuccess__Group__2 : rule__OnSuccess__Group__2__Impl rule__OnSuccess__Group__3 ;
     public final void rule__OnSuccess__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5398:1: ( rule__OnSuccess__Group__2__Impl rule__OnSuccess__Group__3 )
-            // InternalSmartCE.g:5399:2: rule__OnSuccess__Group__2__Impl rule__OnSuccess__Group__3
+            // InternalSmartCE.g:5647:1: ( rule__OnSuccess__Group__2__Impl rule__OnSuccess__Group__3 )
+            // InternalSmartCE.g:5648:2: rule__OnSuccess__Group__2__Impl rule__OnSuccess__Group__3
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__OnSuccess__Group__2__Impl();
 
             state._fsp--;
@@ -16716,20 +17529,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__2__Impl"
-    // InternalSmartCE.g:5406:1: rule__OnSuccess__Group__2__Impl : ( '(' ) ;
+    // InternalSmartCE.g:5655:1: rule__OnSuccess__Group__2__Impl : ( '(' ) ;
     public final void rule__OnSuccess__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5410:1: ( ( '(' ) )
-            // InternalSmartCE.g:5411:1: ( '(' )
+            // InternalSmartCE.g:5659:1: ( ( '(' ) )
+            // InternalSmartCE.g:5660:1: ( '(' )
             {
-            // InternalSmartCE.g:5411:1: ( '(' )
-            // InternalSmartCE.g:5412:2: '('
+            // InternalSmartCE.g:5660:1: ( '(' )
+            // InternalSmartCE.g:5661:2: '('
             {
              before(grammarAccess.getOnSuccessAccess().getLeftParenthesisKeyword_2()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getOnSuccessAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -16753,16 +17566,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__3"
-    // InternalSmartCE.g:5421:1: rule__OnSuccess__Group__3 : rule__OnSuccess__Group__3__Impl rule__OnSuccess__Group__4 ;
+    // InternalSmartCE.g:5670:1: rule__OnSuccess__Group__3 : rule__OnSuccess__Group__3__Impl rule__OnSuccess__Group__4 ;
     public final void rule__OnSuccess__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5425:1: ( rule__OnSuccess__Group__3__Impl rule__OnSuccess__Group__4 )
-            // InternalSmartCE.g:5426:2: rule__OnSuccess__Group__3__Impl rule__OnSuccess__Group__4
+            // InternalSmartCE.g:5674:1: ( rule__OnSuccess__Group__3__Impl rule__OnSuccess__Group__4 )
+            // InternalSmartCE.g:5675:2: rule__OnSuccess__Group__3__Impl rule__OnSuccess__Group__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__OnSuccess__Group__3__Impl();
 
             state._fsp--;
@@ -16791,21 +17604,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__3__Impl"
-    // InternalSmartCE.g:5433:1: rule__OnSuccess__Group__3__Impl : ( ( rule__OnSuccess__MessageAssignment_3 ) ) ;
+    // InternalSmartCE.g:5682:1: rule__OnSuccess__Group__3__Impl : ( ( rule__OnSuccess__MessageAssignment_3 ) ) ;
     public final void rule__OnSuccess__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5437:1: ( ( ( rule__OnSuccess__MessageAssignment_3 ) ) )
-            // InternalSmartCE.g:5438:1: ( ( rule__OnSuccess__MessageAssignment_3 ) )
+            // InternalSmartCE.g:5686:1: ( ( ( rule__OnSuccess__MessageAssignment_3 ) ) )
+            // InternalSmartCE.g:5687:1: ( ( rule__OnSuccess__MessageAssignment_3 ) )
             {
-            // InternalSmartCE.g:5438:1: ( ( rule__OnSuccess__MessageAssignment_3 ) )
-            // InternalSmartCE.g:5439:2: ( rule__OnSuccess__MessageAssignment_3 )
+            // InternalSmartCE.g:5687:1: ( ( rule__OnSuccess__MessageAssignment_3 ) )
+            // InternalSmartCE.g:5688:2: ( rule__OnSuccess__MessageAssignment_3 )
             {
              before(grammarAccess.getOnSuccessAccess().getMessageAssignment_3()); 
-            // InternalSmartCE.g:5440:2: ( rule__OnSuccess__MessageAssignment_3 )
-            // InternalSmartCE.g:5440:3: rule__OnSuccess__MessageAssignment_3
+            // InternalSmartCE.g:5689:2: ( rule__OnSuccess__MessageAssignment_3 )
+            // InternalSmartCE.g:5689:3: rule__OnSuccess__MessageAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__OnSuccess__MessageAssignment_3();
@@ -16838,16 +17651,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__4"
-    // InternalSmartCE.g:5448:1: rule__OnSuccess__Group__4 : rule__OnSuccess__Group__4__Impl rule__OnSuccess__Group__5 ;
+    // InternalSmartCE.g:5697:1: rule__OnSuccess__Group__4 : rule__OnSuccess__Group__4__Impl rule__OnSuccess__Group__5 ;
     public final void rule__OnSuccess__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5452:1: ( rule__OnSuccess__Group__4__Impl rule__OnSuccess__Group__5 )
-            // InternalSmartCE.g:5453:2: rule__OnSuccess__Group__4__Impl rule__OnSuccess__Group__5
+            // InternalSmartCE.g:5701:1: ( rule__OnSuccess__Group__4__Impl rule__OnSuccess__Group__5 )
+            // InternalSmartCE.g:5702:2: rule__OnSuccess__Group__4__Impl rule__OnSuccess__Group__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__OnSuccess__Group__4__Impl();
 
             state._fsp--;
@@ -16876,20 +17689,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__4__Impl"
-    // InternalSmartCE.g:5460:1: rule__OnSuccess__Group__4__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5709:1: rule__OnSuccess__Group__4__Impl : ( ')' ) ;
     public final void rule__OnSuccess__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5464:1: ( ( ')' ) )
-            // InternalSmartCE.g:5465:1: ( ')' )
+            // InternalSmartCE.g:5713:1: ( ( ')' ) )
+            // InternalSmartCE.g:5714:1: ( ')' )
             {
-            // InternalSmartCE.g:5465:1: ( ')' )
-            // InternalSmartCE.g:5466:2: ')'
+            // InternalSmartCE.g:5714:1: ( ')' )
+            // InternalSmartCE.g:5715:2: ')'
             {
              before(grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_4()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -16913,14 +17726,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__5"
-    // InternalSmartCE.g:5475:1: rule__OnSuccess__Group__5 : rule__OnSuccess__Group__5__Impl ;
+    // InternalSmartCE.g:5724:1: rule__OnSuccess__Group__5 : rule__OnSuccess__Group__5__Impl ;
     public final void rule__OnSuccess__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5479:1: ( rule__OnSuccess__Group__5__Impl )
-            // InternalSmartCE.g:5480:2: rule__OnSuccess__Group__5__Impl
+            // InternalSmartCE.g:5728:1: ( rule__OnSuccess__Group__5__Impl )
+            // InternalSmartCE.g:5729:2: rule__OnSuccess__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OnSuccess__Group__5__Impl();
@@ -16946,20 +17759,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__Group__5__Impl"
-    // InternalSmartCE.g:5486:1: rule__OnSuccess__Group__5__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5735:1: rule__OnSuccess__Group__5__Impl : ( ')' ) ;
     public final void rule__OnSuccess__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5490:1: ( ( ')' ) )
-            // InternalSmartCE.g:5491:1: ( ')' )
+            // InternalSmartCE.g:5739:1: ( ( ')' ) )
+            // InternalSmartCE.g:5740:1: ( ')' )
             {
-            // InternalSmartCE.g:5491:1: ( ')' )
-            // InternalSmartCE.g:5492:2: ')'
+            // InternalSmartCE.g:5740:1: ( ')' )
+            // InternalSmartCE.g:5741:2: ')'
             {
              before(grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_5()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getOnSuccessAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -16983,16 +17796,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__0"
-    // InternalSmartCE.g:5502:1: rule__OnBreach__Group__0 : rule__OnBreach__Group__0__Impl rule__OnBreach__Group__1 ;
+    // InternalSmartCE.g:5751:1: rule__OnBreach__Group__0 : rule__OnBreach__Group__0__Impl rule__OnBreach__Group__1 ;
     public final void rule__OnBreach__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5506:1: ( rule__OnBreach__Group__0__Impl rule__OnBreach__Group__1 )
-            // InternalSmartCE.g:5507:2: rule__OnBreach__Group__0__Impl rule__OnBreach__Group__1
+            // InternalSmartCE.g:5755:1: ( rule__OnBreach__Group__0__Impl rule__OnBreach__Group__1 )
+            // InternalSmartCE.g:5756:2: rule__OnBreach__Group__0__Impl rule__OnBreach__Group__1
             {
-            pushFollow(FOLLOW_44);
+            pushFollow(FOLLOW_46);
             rule__OnBreach__Group__0__Impl();
 
             state._fsp--;
@@ -17021,20 +17834,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__0__Impl"
-    // InternalSmartCE.g:5514:1: rule__OnBreach__Group__0__Impl : ( '(' ) ;
+    // InternalSmartCE.g:5763:1: rule__OnBreach__Group__0__Impl : ( '(' ) ;
     public final void rule__OnBreach__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5518:1: ( ( '(' ) )
-            // InternalSmartCE.g:5519:1: ( '(' )
+            // InternalSmartCE.g:5767:1: ( ( '(' ) )
+            // InternalSmartCE.g:5768:1: ( '(' )
             {
-            // InternalSmartCE.g:5519:1: ( '(' )
-            // InternalSmartCE.g:5520:2: '('
+            // InternalSmartCE.g:5768:1: ( '(' )
+            // InternalSmartCE.g:5769:2: '('
             {
              before(grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_0()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_0()); 
 
             }
@@ -17058,16 +17871,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__1"
-    // InternalSmartCE.g:5529:1: rule__OnBreach__Group__1 : rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2 ;
+    // InternalSmartCE.g:5778:1: rule__OnBreach__Group__1 : rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2 ;
     public final void rule__OnBreach__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5533:1: ( rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2 )
-            // InternalSmartCE.g:5534:2: rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2
+            // InternalSmartCE.g:5782:1: ( rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2 )
+            // InternalSmartCE.g:5783:2: rule__OnBreach__Group__1__Impl rule__OnBreach__Group__2
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__OnBreach__Group__1__Impl();
 
             state._fsp--;
@@ -17096,21 +17909,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__1__Impl"
-    // InternalSmartCE.g:5541:1: rule__OnBreach__Group__1__Impl : ( ( rule__OnBreach__ActionAssignment_1 ) ) ;
+    // InternalSmartCE.g:5790:1: rule__OnBreach__Group__1__Impl : ( ( rule__OnBreach__ActionAssignment_1 ) ) ;
     public final void rule__OnBreach__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5545:1: ( ( ( rule__OnBreach__ActionAssignment_1 ) ) )
-            // InternalSmartCE.g:5546:1: ( ( rule__OnBreach__ActionAssignment_1 ) )
+            // InternalSmartCE.g:5794:1: ( ( ( rule__OnBreach__ActionAssignment_1 ) ) )
+            // InternalSmartCE.g:5795:1: ( ( rule__OnBreach__ActionAssignment_1 ) )
             {
-            // InternalSmartCE.g:5546:1: ( ( rule__OnBreach__ActionAssignment_1 ) )
-            // InternalSmartCE.g:5547:2: ( rule__OnBreach__ActionAssignment_1 )
+            // InternalSmartCE.g:5795:1: ( ( rule__OnBreach__ActionAssignment_1 ) )
+            // InternalSmartCE.g:5796:2: ( rule__OnBreach__ActionAssignment_1 )
             {
              before(grammarAccess.getOnBreachAccess().getActionAssignment_1()); 
-            // InternalSmartCE.g:5548:2: ( rule__OnBreach__ActionAssignment_1 )
-            // InternalSmartCE.g:5548:3: rule__OnBreach__ActionAssignment_1
+            // InternalSmartCE.g:5797:2: ( rule__OnBreach__ActionAssignment_1 )
+            // InternalSmartCE.g:5797:3: rule__OnBreach__ActionAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__OnBreach__ActionAssignment_1();
@@ -17143,16 +17956,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__2"
-    // InternalSmartCE.g:5556:1: rule__OnBreach__Group__2 : rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3 ;
+    // InternalSmartCE.g:5805:1: rule__OnBreach__Group__2 : rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3 ;
     public final void rule__OnBreach__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5560:1: ( rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3 )
-            // InternalSmartCE.g:5561:2: rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3
+            // InternalSmartCE.g:5809:1: ( rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3 )
+            // InternalSmartCE.g:5810:2: rule__OnBreach__Group__2__Impl rule__OnBreach__Group__3
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__OnBreach__Group__2__Impl();
 
             state._fsp--;
@@ -17181,20 +17994,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__2__Impl"
-    // InternalSmartCE.g:5568:1: rule__OnBreach__Group__2__Impl : ( '(' ) ;
+    // InternalSmartCE.g:5817:1: rule__OnBreach__Group__2__Impl : ( '(' ) ;
     public final void rule__OnBreach__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5572:1: ( ( '(' ) )
-            // InternalSmartCE.g:5573:1: ( '(' )
+            // InternalSmartCE.g:5821:1: ( ( '(' ) )
+            // InternalSmartCE.g:5822:1: ( '(' )
             {
-            // InternalSmartCE.g:5573:1: ( '(' )
-            // InternalSmartCE.g:5574:2: '('
+            // InternalSmartCE.g:5822:1: ( '(' )
+            // InternalSmartCE.g:5823:2: '('
             {
              before(grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_2()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getOnBreachAccess().getLeftParenthesisKeyword_2()); 
 
             }
@@ -17218,16 +18031,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__3"
-    // InternalSmartCE.g:5583:1: rule__OnBreach__Group__3 : rule__OnBreach__Group__3__Impl rule__OnBreach__Group__4 ;
+    // InternalSmartCE.g:5832:1: rule__OnBreach__Group__3 : rule__OnBreach__Group__3__Impl rule__OnBreach__Group__4 ;
     public final void rule__OnBreach__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5587:1: ( rule__OnBreach__Group__3__Impl rule__OnBreach__Group__4 )
-            // InternalSmartCE.g:5588:2: rule__OnBreach__Group__3__Impl rule__OnBreach__Group__4
+            // InternalSmartCE.g:5836:1: ( rule__OnBreach__Group__3__Impl rule__OnBreach__Group__4 )
+            // InternalSmartCE.g:5837:2: rule__OnBreach__Group__3__Impl rule__OnBreach__Group__4
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__OnBreach__Group__3__Impl();
 
             state._fsp--;
@@ -17256,21 +18069,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__3__Impl"
-    // InternalSmartCE.g:5595:1: rule__OnBreach__Group__3__Impl : ( ( rule__OnBreach__MessageAssignment_3 ) ) ;
+    // InternalSmartCE.g:5844:1: rule__OnBreach__Group__3__Impl : ( ( rule__OnBreach__MessageAssignment_3 ) ) ;
     public final void rule__OnBreach__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5599:1: ( ( ( rule__OnBreach__MessageAssignment_3 ) ) )
-            // InternalSmartCE.g:5600:1: ( ( rule__OnBreach__MessageAssignment_3 ) )
+            // InternalSmartCE.g:5848:1: ( ( ( rule__OnBreach__MessageAssignment_3 ) ) )
+            // InternalSmartCE.g:5849:1: ( ( rule__OnBreach__MessageAssignment_3 ) )
             {
-            // InternalSmartCE.g:5600:1: ( ( rule__OnBreach__MessageAssignment_3 ) )
-            // InternalSmartCE.g:5601:2: ( rule__OnBreach__MessageAssignment_3 )
+            // InternalSmartCE.g:5849:1: ( ( rule__OnBreach__MessageAssignment_3 ) )
+            // InternalSmartCE.g:5850:2: ( rule__OnBreach__MessageAssignment_3 )
             {
              before(grammarAccess.getOnBreachAccess().getMessageAssignment_3()); 
-            // InternalSmartCE.g:5602:2: ( rule__OnBreach__MessageAssignment_3 )
-            // InternalSmartCE.g:5602:3: rule__OnBreach__MessageAssignment_3
+            // InternalSmartCE.g:5851:2: ( rule__OnBreach__MessageAssignment_3 )
+            // InternalSmartCE.g:5851:3: rule__OnBreach__MessageAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__OnBreach__MessageAssignment_3();
@@ -17303,16 +18116,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__4"
-    // InternalSmartCE.g:5610:1: rule__OnBreach__Group__4 : rule__OnBreach__Group__4__Impl rule__OnBreach__Group__5 ;
+    // InternalSmartCE.g:5859:1: rule__OnBreach__Group__4 : rule__OnBreach__Group__4__Impl rule__OnBreach__Group__5 ;
     public final void rule__OnBreach__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5614:1: ( rule__OnBreach__Group__4__Impl rule__OnBreach__Group__5 )
-            // InternalSmartCE.g:5615:2: rule__OnBreach__Group__4__Impl rule__OnBreach__Group__5
+            // InternalSmartCE.g:5863:1: ( rule__OnBreach__Group__4__Impl rule__OnBreach__Group__5 )
+            // InternalSmartCE.g:5864:2: rule__OnBreach__Group__4__Impl rule__OnBreach__Group__5
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__OnBreach__Group__4__Impl();
 
             state._fsp--;
@@ -17341,20 +18154,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__4__Impl"
-    // InternalSmartCE.g:5622:1: rule__OnBreach__Group__4__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5871:1: rule__OnBreach__Group__4__Impl : ( ')' ) ;
     public final void rule__OnBreach__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5626:1: ( ( ')' ) )
-            // InternalSmartCE.g:5627:1: ( ')' )
+            // InternalSmartCE.g:5875:1: ( ( ')' ) )
+            // InternalSmartCE.g:5876:1: ( ')' )
             {
-            // InternalSmartCE.g:5627:1: ( ')' )
-            // InternalSmartCE.g:5628:2: ')'
+            // InternalSmartCE.g:5876:1: ( ')' )
+            // InternalSmartCE.g:5877:2: ')'
             {
              before(grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_4()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -17378,14 +18191,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__5"
-    // InternalSmartCE.g:5637:1: rule__OnBreach__Group__5 : rule__OnBreach__Group__5__Impl ;
+    // InternalSmartCE.g:5886:1: rule__OnBreach__Group__5 : rule__OnBreach__Group__5__Impl ;
     public final void rule__OnBreach__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5641:1: ( rule__OnBreach__Group__5__Impl )
-            // InternalSmartCE.g:5642:2: rule__OnBreach__Group__5__Impl
+            // InternalSmartCE.g:5890:1: ( rule__OnBreach__Group__5__Impl )
+            // InternalSmartCE.g:5891:2: rule__OnBreach__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__OnBreach__Group__5__Impl();
@@ -17411,20 +18224,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__Group__5__Impl"
-    // InternalSmartCE.g:5648:1: rule__OnBreach__Group__5__Impl : ( ')' ) ;
+    // InternalSmartCE.g:5897:1: rule__OnBreach__Group__5__Impl : ( ')' ) ;
     public final void rule__OnBreach__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5652:1: ( ( ')' ) )
-            // InternalSmartCE.g:5653:1: ( ')' )
+            // InternalSmartCE.g:5901:1: ( ( ')' ) )
+            // InternalSmartCE.g:5902:1: ( ')' )
             {
-            // InternalSmartCE.g:5653:1: ( ')' )
-            // InternalSmartCE.g:5654:2: ')'
+            // InternalSmartCE.g:5902:1: ( ')' )
+            // InternalSmartCE.g:5903:2: ')'
             {
              before(grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_5()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getOnBreachAccess().getRightParenthesisKeyword_5()); 
 
             }
@@ -17447,327 +18260,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__OnBreach__Group__5__Impl"
 
 
-    // $ANTLR start "rule__BusinessAction__Group__0"
-    // InternalSmartCE.g:5664:1: rule__BusinessAction__Group__0 : rule__BusinessAction__Group__0__Impl rule__BusinessAction__Group__1 ;
-    public final void rule__BusinessAction__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5668:1: ( rule__BusinessAction__Group__0__Impl rule__BusinessAction__Group__1 )
-            // InternalSmartCE.g:5669:2: rule__BusinessAction__Group__0__Impl rule__BusinessAction__Group__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__BusinessAction__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__BusinessAction__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BusinessAction__Group__0"
-
-
-    // $ANTLR start "rule__BusinessAction__Group__0__Impl"
-    // InternalSmartCE.g:5676:1: rule__BusinessAction__Group__0__Impl : ( 'BusinessAction' ) ;
-    public final void rule__BusinessAction__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5680:1: ( ( 'BusinessAction' ) )
-            // InternalSmartCE.g:5681:1: ( 'BusinessAction' )
-            {
-            // InternalSmartCE.g:5681:1: ( 'BusinessAction' )
-            // InternalSmartCE.g:5682:2: 'BusinessAction'
-            {
-             before(grammarAccess.getBusinessActionAccess().getBusinessActionKeyword_0()); 
-            match(input,71,FOLLOW_2); 
-             after(grammarAccess.getBusinessActionAccess().getBusinessActionKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BusinessAction__Group__0__Impl"
-
-
-    // $ANTLR start "rule__BusinessAction__Group__1"
-    // InternalSmartCE.g:5691:1: rule__BusinessAction__Group__1 : rule__BusinessAction__Group__1__Impl ;
-    public final void rule__BusinessAction__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5695:1: ( rule__BusinessAction__Group__1__Impl )
-            // InternalSmartCE.g:5696:2: rule__BusinessAction__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__BusinessAction__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BusinessAction__Group__1"
-
-
-    // $ANTLR start "rule__BusinessAction__Group__1__Impl"
-    // InternalSmartCE.g:5702:1: rule__BusinessAction__Group__1__Impl : ( ( rule__BusinessAction__NameAssignment_1 ) ) ;
-    public final void rule__BusinessAction__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5706:1: ( ( ( rule__BusinessAction__NameAssignment_1 ) ) )
-            // InternalSmartCE.g:5707:1: ( ( rule__BusinessAction__NameAssignment_1 ) )
-            {
-            // InternalSmartCE.g:5707:1: ( ( rule__BusinessAction__NameAssignment_1 ) )
-            // InternalSmartCE.g:5708:2: ( rule__BusinessAction__NameAssignment_1 )
-            {
-             before(grammarAccess.getBusinessActionAccess().getNameAssignment_1()); 
-            // InternalSmartCE.g:5709:2: ( rule__BusinessAction__NameAssignment_1 )
-            // InternalSmartCE.g:5709:3: rule__BusinessAction__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__BusinessAction__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getBusinessActionAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__BusinessAction__Group__1__Impl"
-
-
-    // $ANTLR start "rule__EventLog__Group__0"
-    // InternalSmartCE.g:5718:1: rule__EventLog__Group__0 : rule__EventLog__Group__0__Impl rule__EventLog__Group__1 ;
-    public final void rule__EventLog__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5722:1: ( rule__EventLog__Group__0__Impl rule__EventLog__Group__1 )
-            // InternalSmartCE.g:5723:2: rule__EventLog__Group__0__Impl rule__EventLog__Group__1
-            {
-            pushFollow(FOLLOW_6);
-            rule__EventLog__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__EventLog__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EventLog__Group__0"
-
-
-    // $ANTLR start "rule__EventLog__Group__0__Impl"
-    // InternalSmartCE.g:5730:1: rule__EventLog__Group__0__Impl : ( 'EventLog' ) ;
-    public final void rule__EventLog__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5734:1: ( ( 'EventLog' ) )
-            // InternalSmartCE.g:5735:1: ( 'EventLog' )
-            {
-            // InternalSmartCE.g:5735:1: ( 'EventLog' )
-            // InternalSmartCE.g:5736:2: 'EventLog'
-            {
-             before(grammarAccess.getEventLogAccess().getEventLogKeyword_0()); 
-            match(input,72,FOLLOW_2); 
-             after(grammarAccess.getEventLogAccess().getEventLogKeyword_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EventLog__Group__0__Impl"
-
-
-    // $ANTLR start "rule__EventLog__Group__1"
-    // InternalSmartCE.g:5745:1: rule__EventLog__Group__1 : rule__EventLog__Group__1__Impl ;
-    public final void rule__EventLog__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5749:1: ( rule__EventLog__Group__1__Impl )
-            // InternalSmartCE.g:5750:2: rule__EventLog__Group__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__EventLog__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EventLog__Group__1"
-
-
-    // $ANTLR start "rule__EventLog__Group__1__Impl"
-    // InternalSmartCE.g:5756:1: rule__EventLog__Group__1__Impl : ( ( rule__EventLog__NameAssignment_1 ) ) ;
-    public final void rule__EventLog__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:5760:1: ( ( ( rule__EventLog__NameAssignment_1 ) ) )
-            // InternalSmartCE.g:5761:1: ( ( rule__EventLog__NameAssignment_1 ) )
-            {
-            // InternalSmartCE.g:5761:1: ( ( rule__EventLog__NameAssignment_1 ) )
-            // InternalSmartCE.g:5762:2: ( rule__EventLog__NameAssignment_1 )
-            {
-             before(grammarAccess.getEventLogAccess().getNameAssignment_1()); 
-            // InternalSmartCE.g:5763:2: ( rule__EventLog__NameAssignment_1 )
-            // InternalSmartCE.g:5763:3: rule__EventLog__NameAssignment_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__EventLog__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getEventLogAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__EventLog__Group__1__Impl"
-
-
     // $ANTLR start "rule__Expression__Group__0"
-    // InternalSmartCE.g:5772:1: rule__Expression__Group__0 : rule__Expression__Group__0__Impl rule__Expression__Group__1 ;
+    // InternalSmartCE.g:5913:1: rule__Expression__Group__0 : rule__Expression__Group__0__Impl rule__Expression__Group__1 ;
     public final void rule__Expression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5776:1: ( rule__Expression__Group__0__Impl rule__Expression__Group__1 )
-            // InternalSmartCE.g:5777:2: rule__Expression__Group__0__Impl rule__Expression__Group__1
+            // InternalSmartCE.g:5917:1: ( rule__Expression__Group__0__Impl rule__Expression__Group__1 )
+            // InternalSmartCE.g:5918:2: rule__Expression__Group__0__Impl rule__Expression__Group__1
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_47);
             rule__Expression__Group__0__Impl();
 
             state._fsp--;
@@ -17796,17 +18299,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__0__Impl"
-    // InternalSmartCE.g:5784:1: rule__Expression__Group__0__Impl : ( ruleNegation ) ;
+    // InternalSmartCE.g:5925:1: rule__Expression__Group__0__Impl : ( ruleNegation ) ;
     public final void rule__Expression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5788:1: ( ( ruleNegation ) )
-            // InternalSmartCE.g:5789:1: ( ruleNegation )
+            // InternalSmartCE.g:5929:1: ( ( ruleNegation ) )
+            // InternalSmartCE.g:5930:1: ( ruleNegation )
             {
-            // InternalSmartCE.g:5789:1: ( ruleNegation )
-            // InternalSmartCE.g:5790:2: ruleNegation
+            // InternalSmartCE.g:5930:1: ( ruleNegation )
+            // InternalSmartCE.g:5931:2: ruleNegation
             {
              before(grammarAccess.getExpressionAccess().getNegationParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -17837,14 +18340,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__1"
-    // InternalSmartCE.g:5799:1: rule__Expression__Group__1 : rule__Expression__Group__1__Impl ;
+    // InternalSmartCE.g:5940:1: rule__Expression__Group__1 : rule__Expression__Group__1__Impl ;
     public final void rule__Expression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5803:1: ( rule__Expression__Group__1__Impl )
-            // InternalSmartCE.g:5804:2: rule__Expression__Group__1__Impl
+            // InternalSmartCE.g:5944:1: ( rule__Expression__Group__1__Impl )
+            // InternalSmartCE.g:5945:2: rule__Expression__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Expression__Group__1__Impl();
@@ -17870,35 +18373,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group__1__Impl"
-    // InternalSmartCE.g:5810:1: rule__Expression__Group__1__Impl : ( ( rule__Expression__Group_1__0 )* ) ;
+    // InternalSmartCE.g:5951:1: rule__Expression__Group__1__Impl : ( ( rule__Expression__Group_1__0 )* ) ;
     public final void rule__Expression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5814:1: ( ( ( rule__Expression__Group_1__0 )* ) )
-            // InternalSmartCE.g:5815:1: ( ( rule__Expression__Group_1__0 )* )
+            // InternalSmartCE.g:5955:1: ( ( ( rule__Expression__Group_1__0 )* ) )
+            // InternalSmartCE.g:5956:1: ( ( rule__Expression__Group_1__0 )* )
             {
-            // InternalSmartCE.g:5815:1: ( ( rule__Expression__Group_1__0 )* )
-            // InternalSmartCE.g:5816:2: ( rule__Expression__Group_1__0 )*
+            // InternalSmartCE.g:5956:1: ( ( rule__Expression__Group_1__0 )* )
+            // InternalSmartCE.g:5957:2: ( rule__Expression__Group_1__0 )*
             {
              before(grammarAccess.getExpressionAccess().getGroup_1()); 
-            // InternalSmartCE.g:5817:2: ( rule__Expression__Group_1__0 )*
-            loop30:
+            // InternalSmartCE.g:5958:2: ( rule__Expression__Group_1__0 )*
+            loop32:
             do {
-                int alt30=2;
-                int LA30_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( ((LA30_0>=82 && LA30_0<=83)) ) {
-                    alt30=1;
+                if ( ((LA32_0>=16 && LA32_0<=17)||(LA32_0>=82 && LA32_0<=83)) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt30) {
+                switch (alt32) {
             	case 1 :
-            	    // InternalSmartCE.g:5817:3: rule__Expression__Group_1__0
+            	    // InternalSmartCE.g:5958:3: rule__Expression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_46);
+            	    pushFollow(FOLLOW_48);
             	    rule__Expression__Group_1__0();
 
             	    state._fsp--;
@@ -17908,7 +18411,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop30;
+            	    break loop32;
                 }
             } while (true);
 
@@ -17935,16 +18438,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__0"
-    // InternalSmartCE.g:5826:1: rule__Expression__Group_1__0 : rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 ;
+    // InternalSmartCE.g:5967:1: rule__Expression__Group_1__0 : rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 ;
     public final void rule__Expression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5830:1: ( rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 )
-            // InternalSmartCE.g:5831:2: rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1
+            // InternalSmartCE.g:5971:1: ( rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1 )
+            // InternalSmartCE.g:5972:2: rule__Expression__Group_1__0__Impl rule__Expression__Group_1__1
             {
-            pushFollow(FOLLOW_45);
+            pushFollow(FOLLOW_47);
             rule__Expression__Group_1__0__Impl();
 
             state._fsp--;
@@ -17973,21 +18476,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__0__Impl"
-    // InternalSmartCE.g:5838:1: rule__Expression__Group_1__0__Impl : ( () ) ;
+    // InternalSmartCE.g:5979:1: rule__Expression__Group_1__0__Impl : ( () ) ;
     public final void rule__Expression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5842:1: ( ( () ) )
-            // InternalSmartCE.g:5843:1: ( () )
+            // InternalSmartCE.g:5983:1: ( ( () ) )
+            // InternalSmartCE.g:5984:1: ( () )
             {
-            // InternalSmartCE.g:5843:1: ( () )
-            // InternalSmartCE.g:5844:2: ()
+            // InternalSmartCE.g:5984:1: ( () )
+            // InternalSmartCE.g:5985:2: ()
             {
              before(grammarAccess.getExpressionAccess().getBinaryOperatorLeftAction_1_0()); 
-            // InternalSmartCE.g:5845:2: ()
-            // InternalSmartCE.g:5845:3: 
+            // InternalSmartCE.g:5986:2: ()
+            // InternalSmartCE.g:5986:3: 
             {
             }
 
@@ -18010,16 +18513,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__1"
-    // InternalSmartCE.g:5853:1: rule__Expression__Group_1__1 : rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2 ;
+    // InternalSmartCE.g:5994:1: rule__Expression__Group_1__1 : rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2 ;
     public final void rule__Expression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5857:1: ( rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2 )
-            // InternalSmartCE.g:5858:2: rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2
+            // InternalSmartCE.g:5998:1: ( rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2 )
+            // InternalSmartCE.g:5999:2: rule__Expression__Group_1__1__Impl rule__Expression__Group_1__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Expression__Group_1__1__Impl();
 
             state._fsp--;
@@ -18048,21 +18551,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__1__Impl"
-    // InternalSmartCE.g:5865:1: rule__Expression__Group_1__1__Impl : ( ( rule__Expression__Alternatives_1_1 ) ) ;
+    // InternalSmartCE.g:6006:1: rule__Expression__Group_1__1__Impl : ( ( rule__Expression__Alternatives_1_1 ) ) ;
     public final void rule__Expression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5869:1: ( ( ( rule__Expression__Alternatives_1_1 ) ) )
-            // InternalSmartCE.g:5870:1: ( ( rule__Expression__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6010:1: ( ( ( rule__Expression__Alternatives_1_1 ) ) )
+            // InternalSmartCE.g:6011:1: ( ( rule__Expression__Alternatives_1_1 ) )
             {
-            // InternalSmartCE.g:5870:1: ( ( rule__Expression__Alternatives_1_1 ) )
-            // InternalSmartCE.g:5871:2: ( rule__Expression__Alternatives_1_1 )
+            // InternalSmartCE.g:6011:1: ( ( rule__Expression__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6012:2: ( rule__Expression__Alternatives_1_1 )
             {
              before(grammarAccess.getExpressionAccess().getAlternatives_1_1()); 
-            // InternalSmartCE.g:5872:2: ( rule__Expression__Alternatives_1_1 )
-            // InternalSmartCE.g:5872:3: rule__Expression__Alternatives_1_1
+            // InternalSmartCE.g:6013:2: ( rule__Expression__Alternatives_1_1 )
+            // InternalSmartCE.g:6013:3: rule__Expression__Alternatives_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Expression__Alternatives_1_1();
@@ -18095,14 +18598,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__2"
-    // InternalSmartCE.g:5880:1: rule__Expression__Group_1__2 : rule__Expression__Group_1__2__Impl ;
+    // InternalSmartCE.g:6021:1: rule__Expression__Group_1__2 : rule__Expression__Group_1__2__Impl ;
     public final void rule__Expression__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5884:1: ( rule__Expression__Group_1__2__Impl )
-            // InternalSmartCE.g:5885:2: rule__Expression__Group_1__2__Impl
+            // InternalSmartCE.g:6025:1: ( rule__Expression__Group_1__2__Impl )
+            // InternalSmartCE.g:6026:2: rule__Expression__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Expression__Group_1__2__Impl();
@@ -18128,21 +18631,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__Group_1__2__Impl"
-    // InternalSmartCE.g:5891:1: rule__Expression__Group_1__2__Impl : ( ( rule__Expression__RightAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:6032:1: rule__Expression__Group_1__2__Impl : ( ( rule__Expression__RightAssignment_1_2 ) ) ;
     public final void rule__Expression__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5895:1: ( ( ( rule__Expression__RightAssignment_1_2 ) ) )
-            // InternalSmartCE.g:5896:1: ( ( rule__Expression__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6036:1: ( ( ( rule__Expression__RightAssignment_1_2 ) ) )
+            // InternalSmartCE.g:6037:1: ( ( rule__Expression__RightAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:5896:1: ( ( rule__Expression__RightAssignment_1_2 ) )
-            // InternalSmartCE.g:5897:2: ( rule__Expression__RightAssignment_1_2 )
+            // InternalSmartCE.g:6037:1: ( ( rule__Expression__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6038:2: ( rule__Expression__RightAssignment_1_2 )
             {
              before(grammarAccess.getExpressionAccess().getRightAssignment_1_2()); 
-            // InternalSmartCE.g:5898:2: ( rule__Expression__RightAssignment_1_2 )
-            // InternalSmartCE.g:5898:3: rule__Expression__RightAssignment_1_2
+            // InternalSmartCE.g:6039:2: ( rule__Expression__RightAssignment_1_2 )
+            // InternalSmartCE.g:6039:3: rule__Expression__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Expression__RightAssignment_1_2();
@@ -18175,16 +18678,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__Group_1__0"
-    // InternalSmartCE.g:5907:1: rule__Negation__Group_1__0 : rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1 ;
+    // InternalSmartCE.g:6048:1: rule__Negation__Group_1__0 : rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1 ;
     public final void rule__Negation__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5911:1: ( rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1 )
-            // InternalSmartCE.g:5912:2: rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1
+            // InternalSmartCE.g:6052:1: ( rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1 )
+            // InternalSmartCE.g:6053:2: rule__Negation__Group_1__0__Impl rule__Negation__Group_1__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Negation__Group_1__0__Impl();
 
             state._fsp--;
@@ -18213,21 +18716,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__Group_1__0__Impl"
-    // InternalSmartCE.g:5919:1: rule__Negation__Group_1__0__Impl : ( () ) ;
+    // InternalSmartCE.g:6060:1: rule__Negation__Group_1__0__Impl : ( () ) ;
     public final void rule__Negation__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5923:1: ( ( () ) )
-            // InternalSmartCE.g:5924:1: ( () )
+            // InternalSmartCE.g:6064:1: ( ( () ) )
+            // InternalSmartCE.g:6065:1: ( () )
             {
-            // InternalSmartCE.g:5924:1: ( () )
-            // InternalSmartCE.g:5925:2: ()
+            // InternalSmartCE.g:6065:1: ( () )
+            // InternalSmartCE.g:6066:2: ()
             {
              before(grammarAccess.getNegationAccess().getUnaryOperatorAction_1_0()); 
-            // InternalSmartCE.g:5926:2: ()
-            // InternalSmartCE.g:5926:3: 
+            // InternalSmartCE.g:6067:2: ()
+            // InternalSmartCE.g:6067:3: 
             {
             }
 
@@ -18250,16 +18753,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__Group_1__1"
-    // InternalSmartCE.g:5934:1: rule__Negation__Group_1__1 : rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2 ;
+    // InternalSmartCE.g:6075:1: rule__Negation__Group_1__1 : rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2 ;
     public final void rule__Negation__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5938:1: ( rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2 )
-            // InternalSmartCE.g:5939:2: rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2
+            // InternalSmartCE.g:6079:1: ( rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2 )
+            // InternalSmartCE.g:6080:2: rule__Negation__Group_1__1__Impl rule__Negation__Group_1__2
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_49);
             rule__Negation__Group_1__1__Impl();
 
             state._fsp--;
@@ -18288,21 +18791,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__Group_1__1__Impl"
-    // InternalSmartCE.g:5946:1: rule__Negation__Group_1__1__Impl : ( ( rule__Negation__SymbolAssignment_1_1 ) ) ;
+    // InternalSmartCE.g:6087:1: rule__Negation__Group_1__1__Impl : ( ( rule__Negation__SymbolAssignment_1_1 ) ) ;
     public final void rule__Negation__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5950:1: ( ( ( rule__Negation__SymbolAssignment_1_1 ) ) )
-            // InternalSmartCE.g:5951:1: ( ( rule__Negation__SymbolAssignment_1_1 ) )
+            // InternalSmartCE.g:6091:1: ( ( ( rule__Negation__SymbolAssignment_1_1 ) ) )
+            // InternalSmartCE.g:6092:1: ( ( rule__Negation__SymbolAssignment_1_1 ) )
             {
-            // InternalSmartCE.g:5951:1: ( ( rule__Negation__SymbolAssignment_1_1 ) )
-            // InternalSmartCE.g:5952:2: ( rule__Negation__SymbolAssignment_1_1 )
+            // InternalSmartCE.g:6092:1: ( ( rule__Negation__SymbolAssignment_1_1 ) )
+            // InternalSmartCE.g:6093:2: ( rule__Negation__SymbolAssignment_1_1 )
             {
              before(grammarAccess.getNegationAccess().getSymbolAssignment_1_1()); 
-            // InternalSmartCE.g:5953:2: ( rule__Negation__SymbolAssignment_1_1 )
-            // InternalSmartCE.g:5953:3: rule__Negation__SymbolAssignment_1_1
+            // InternalSmartCE.g:6094:2: ( rule__Negation__SymbolAssignment_1_1 )
+            // InternalSmartCE.g:6094:3: rule__Negation__SymbolAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Negation__SymbolAssignment_1_1();
@@ -18335,14 +18838,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__Group_1__2"
-    // InternalSmartCE.g:5961:1: rule__Negation__Group_1__2 : rule__Negation__Group_1__2__Impl ;
+    // InternalSmartCE.g:6102:1: rule__Negation__Group_1__2 : rule__Negation__Group_1__2__Impl ;
     public final void rule__Negation__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5965:1: ( rule__Negation__Group_1__2__Impl )
-            // InternalSmartCE.g:5966:2: rule__Negation__Group_1__2__Impl
+            // InternalSmartCE.g:6106:1: ( rule__Negation__Group_1__2__Impl )
+            // InternalSmartCE.g:6107:2: rule__Negation__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Negation__Group_1__2__Impl();
@@ -18368,21 +18871,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__Group_1__2__Impl"
-    // InternalSmartCE.g:5972:1: rule__Negation__Group_1__2__Impl : ( ( rule__Negation__ExpressionAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:6113:1: rule__Negation__Group_1__2__Impl : ( ( rule__Negation__ExpressionAssignment_1_2 ) ) ;
     public final void rule__Negation__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5976:1: ( ( ( rule__Negation__ExpressionAssignment_1_2 ) ) )
-            // InternalSmartCE.g:5977:1: ( ( rule__Negation__ExpressionAssignment_1_2 ) )
+            // InternalSmartCE.g:6117:1: ( ( ( rule__Negation__ExpressionAssignment_1_2 ) ) )
+            // InternalSmartCE.g:6118:1: ( ( rule__Negation__ExpressionAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:5977:1: ( ( rule__Negation__ExpressionAssignment_1_2 ) )
-            // InternalSmartCE.g:5978:2: ( rule__Negation__ExpressionAssignment_1_2 )
+            // InternalSmartCE.g:6118:1: ( ( rule__Negation__ExpressionAssignment_1_2 ) )
+            // InternalSmartCE.g:6119:2: ( rule__Negation__ExpressionAssignment_1_2 )
             {
              before(grammarAccess.getNegationAccess().getExpressionAssignment_1_2()); 
-            // InternalSmartCE.g:5979:2: ( rule__Negation__ExpressionAssignment_1_2 )
-            // InternalSmartCE.g:5979:3: rule__Negation__ExpressionAssignment_1_2
+            // InternalSmartCE.g:6120:2: ( rule__Negation__ExpressionAssignment_1_2 )
+            // InternalSmartCE.g:6120:3: rule__Negation__ExpressionAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Negation__ExpressionAssignment_1_2();
@@ -18415,16 +18918,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__0"
-    // InternalSmartCE.g:5988:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
+    // InternalSmartCE.g:6129:1: rule__Comparison__Group__0 : rule__Comparison__Group__0__Impl rule__Comparison__Group__1 ;
     public final void rule__Comparison__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:5992:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
-            // InternalSmartCE.g:5993:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
+            // InternalSmartCE.g:6133:1: ( rule__Comparison__Group__0__Impl rule__Comparison__Group__1 )
+            // InternalSmartCE.g:6134:2: rule__Comparison__Group__0__Impl rule__Comparison__Group__1
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_50);
             rule__Comparison__Group__0__Impl();
 
             state._fsp--;
@@ -18453,17 +18956,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__0__Impl"
-    // InternalSmartCE.g:6000:1: rule__Comparison__Group__0__Impl : ( rulePlus ) ;
+    // InternalSmartCE.g:6141:1: rule__Comparison__Group__0__Impl : ( rulePlus ) ;
     public final void rule__Comparison__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6004:1: ( ( rulePlus ) )
-            // InternalSmartCE.g:6005:1: ( rulePlus )
+            // InternalSmartCE.g:6145:1: ( ( rulePlus ) )
+            // InternalSmartCE.g:6146:1: ( rulePlus )
             {
-            // InternalSmartCE.g:6005:1: ( rulePlus )
-            // InternalSmartCE.g:6006:2: rulePlus
+            // InternalSmartCE.g:6146:1: ( rulePlus )
+            // InternalSmartCE.g:6147:2: rulePlus
             {
              before(grammarAccess.getComparisonAccess().getPlusParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -18494,14 +18997,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__1"
-    // InternalSmartCE.g:6015:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
+    // InternalSmartCE.g:6156:1: rule__Comparison__Group__1 : rule__Comparison__Group__1__Impl ;
     public final void rule__Comparison__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6019:1: ( rule__Comparison__Group__1__Impl )
-            // InternalSmartCE.g:6020:2: rule__Comparison__Group__1__Impl
+            // InternalSmartCE.g:6160:1: ( rule__Comparison__Group__1__Impl )
+            // InternalSmartCE.g:6161:2: rule__Comparison__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group__1__Impl();
@@ -18527,35 +19030,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group__1__Impl"
-    // InternalSmartCE.g:6026:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )* ) ;
+    // InternalSmartCE.g:6167:1: rule__Comparison__Group__1__Impl : ( ( rule__Comparison__Group_1__0 )* ) ;
     public final void rule__Comparison__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6030:1: ( ( ( rule__Comparison__Group_1__0 )* ) )
-            // InternalSmartCE.g:6031:1: ( ( rule__Comparison__Group_1__0 )* )
+            // InternalSmartCE.g:6171:1: ( ( ( rule__Comparison__Group_1__0 )* ) )
+            // InternalSmartCE.g:6172:1: ( ( rule__Comparison__Group_1__0 )* )
             {
-            // InternalSmartCE.g:6031:1: ( ( rule__Comparison__Group_1__0 )* )
-            // InternalSmartCE.g:6032:2: ( rule__Comparison__Group_1__0 )*
+            // InternalSmartCE.g:6172:1: ( ( rule__Comparison__Group_1__0 )* )
+            // InternalSmartCE.g:6173:2: ( rule__Comparison__Group_1__0 )*
             {
              before(grammarAccess.getComparisonAccess().getGroup_1()); 
-            // InternalSmartCE.g:6033:2: ( rule__Comparison__Group_1__0 )*
-            loop31:
+            // InternalSmartCE.g:6174:2: ( rule__Comparison__Group_1__0 )*
+            loop33:
             do {
-                int alt31=2;
-                int LA31_0 = input.LA(1);
+                int alt33=2;
+                int LA33_0 = input.LA(1);
 
-                if ( ((LA31_0>=76 && LA31_0<=81)||(LA31_0>=85 && LA31_0<=86)) ) {
-                    alt31=1;
+                if ( ((LA33_0>=74 && LA33_0<=79)||(LA33_0>=85 && LA33_0<=86)) ) {
+                    alt33=1;
                 }
 
 
-                switch (alt31) {
+                switch (alt33) {
             	case 1 :
-            	    // InternalSmartCE.g:6033:3: rule__Comparison__Group_1__0
+            	    // InternalSmartCE.g:6174:3: rule__Comparison__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_49);
+            	    pushFollow(FOLLOW_51);
             	    rule__Comparison__Group_1__0();
 
             	    state._fsp--;
@@ -18565,7 +19068,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop31;
+            	    break loop33;
                 }
             } while (true);
 
@@ -18592,16 +19095,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__0"
-    // InternalSmartCE.g:6042:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
+    // InternalSmartCE.g:6183:1: rule__Comparison__Group_1__0 : rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 ;
     public final void rule__Comparison__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6046:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
-            // InternalSmartCE.g:6047:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
+            // InternalSmartCE.g:6187:1: ( rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1 )
+            // InternalSmartCE.g:6188:2: rule__Comparison__Group_1__0__Impl rule__Comparison__Group_1__1
             {
-            pushFollow(FOLLOW_48);
+            pushFollow(FOLLOW_50);
             rule__Comparison__Group_1__0__Impl();
 
             state._fsp--;
@@ -18630,21 +19133,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__0__Impl"
-    // InternalSmartCE.g:6054:1: rule__Comparison__Group_1__0__Impl : ( () ) ;
+    // InternalSmartCE.g:6195:1: rule__Comparison__Group_1__0__Impl : ( () ) ;
     public final void rule__Comparison__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6058:1: ( ( () ) )
-            // InternalSmartCE.g:6059:1: ( () )
+            // InternalSmartCE.g:6199:1: ( ( () ) )
+            // InternalSmartCE.g:6200:1: ( () )
             {
-            // InternalSmartCE.g:6059:1: ( () )
-            // InternalSmartCE.g:6060:2: ()
+            // InternalSmartCE.g:6200:1: ( () )
+            // InternalSmartCE.g:6201:2: ()
             {
              before(grammarAccess.getComparisonAccess().getBinaryOperatorLeftAction_1_0()); 
-            // InternalSmartCE.g:6061:2: ()
-            // InternalSmartCE.g:6061:3: 
+            // InternalSmartCE.g:6202:2: ()
+            // InternalSmartCE.g:6202:3: 
             {
             }
 
@@ -18667,16 +19170,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__1"
-    // InternalSmartCE.g:6069:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 ;
+    // InternalSmartCE.g:6210:1: rule__Comparison__Group_1__1 : rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 ;
     public final void rule__Comparison__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6073:1: ( rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 )
-            // InternalSmartCE.g:6074:2: rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2
+            // InternalSmartCE.g:6214:1: ( rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2 )
+            // InternalSmartCE.g:6215:2: rule__Comparison__Group_1__1__Impl rule__Comparison__Group_1__2
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_49);
             rule__Comparison__Group_1__1__Impl();
 
             state._fsp--;
@@ -18705,21 +19208,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__1__Impl"
-    // InternalSmartCE.g:6081:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__Alternatives_1_1 ) ) ;
+    // InternalSmartCE.g:6222:1: rule__Comparison__Group_1__1__Impl : ( ( rule__Comparison__Alternatives_1_1 ) ) ;
     public final void rule__Comparison__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6085:1: ( ( ( rule__Comparison__Alternatives_1_1 ) ) )
-            // InternalSmartCE.g:6086:1: ( ( rule__Comparison__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6226:1: ( ( ( rule__Comparison__Alternatives_1_1 ) ) )
+            // InternalSmartCE.g:6227:1: ( ( rule__Comparison__Alternatives_1_1 ) )
             {
-            // InternalSmartCE.g:6086:1: ( ( rule__Comparison__Alternatives_1_1 ) )
-            // InternalSmartCE.g:6087:2: ( rule__Comparison__Alternatives_1_1 )
+            // InternalSmartCE.g:6227:1: ( ( rule__Comparison__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6228:2: ( rule__Comparison__Alternatives_1_1 )
             {
              before(grammarAccess.getComparisonAccess().getAlternatives_1_1()); 
-            // InternalSmartCE.g:6088:2: ( rule__Comparison__Alternatives_1_1 )
-            // InternalSmartCE.g:6088:3: rule__Comparison__Alternatives_1_1
+            // InternalSmartCE.g:6229:2: ( rule__Comparison__Alternatives_1_1 )
+            // InternalSmartCE.g:6229:3: rule__Comparison__Alternatives_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Alternatives_1_1();
@@ -18752,14 +19255,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__2"
-    // InternalSmartCE.g:6096:1: rule__Comparison__Group_1__2 : rule__Comparison__Group_1__2__Impl ;
+    // InternalSmartCE.g:6237:1: rule__Comparison__Group_1__2 : rule__Comparison__Group_1__2__Impl ;
     public final void rule__Comparison__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6100:1: ( rule__Comparison__Group_1__2__Impl )
-            // InternalSmartCE.g:6101:2: rule__Comparison__Group_1__2__Impl
+            // InternalSmartCE.g:6241:1: ( rule__Comparison__Group_1__2__Impl )
+            // InternalSmartCE.g:6242:2: rule__Comparison__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__Group_1__2__Impl();
@@ -18785,21 +19288,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__Group_1__2__Impl"
-    // InternalSmartCE.g:6107:1: rule__Comparison__Group_1__2__Impl : ( ( rule__Comparison__RightAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:6248:1: rule__Comparison__Group_1__2__Impl : ( ( rule__Comparison__RightAssignment_1_2 ) ) ;
     public final void rule__Comparison__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6111:1: ( ( ( rule__Comparison__RightAssignment_1_2 ) ) )
-            // InternalSmartCE.g:6112:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6252:1: ( ( ( rule__Comparison__RightAssignment_1_2 ) ) )
+            // InternalSmartCE.g:6253:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:6112:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
-            // InternalSmartCE.g:6113:2: ( rule__Comparison__RightAssignment_1_2 )
+            // InternalSmartCE.g:6253:1: ( ( rule__Comparison__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6254:2: ( rule__Comparison__RightAssignment_1_2 )
             {
              before(grammarAccess.getComparisonAccess().getRightAssignment_1_2()); 
-            // InternalSmartCE.g:6114:2: ( rule__Comparison__RightAssignment_1_2 )
-            // InternalSmartCE.g:6114:3: rule__Comparison__RightAssignment_1_2
+            // InternalSmartCE.g:6255:2: ( rule__Comparison__RightAssignment_1_2 )
+            // InternalSmartCE.g:6255:3: rule__Comparison__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Comparison__RightAssignment_1_2();
@@ -18832,16 +19335,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group__0"
-    // InternalSmartCE.g:6123:1: rule__Plus__Group__0 : rule__Plus__Group__0__Impl rule__Plus__Group__1 ;
+    // InternalSmartCE.g:6264:1: rule__Plus__Group__0 : rule__Plus__Group__0__Impl rule__Plus__Group__1 ;
     public final void rule__Plus__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6127:1: ( rule__Plus__Group__0__Impl rule__Plus__Group__1 )
-            // InternalSmartCE.g:6128:2: rule__Plus__Group__0__Impl rule__Plus__Group__1
+            // InternalSmartCE.g:6268:1: ( rule__Plus__Group__0__Impl rule__Plus__Group__1 )
+            // InternalSmartCE.g:6269:2: rule__Plus__Group__0__Impl rule__Plus__Group__1
             {
-            pushFollow(FOLLOW_50);
+            pushFollow(FOLLOW_52);
             rule__Plus__Group__0__Impl();
 
             state._fsp--;
@@ -18870,17 +19373,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group__0__Impl"
-    // InternalSmartCE.g:6135:1: rule__Plus__Group__0__Impl : ( ruleFactor ) ;
+    // InternalSmartCE.g:6276:1: rule__Plus__Group__0__Impl : ( ruleFactor ) ;
     public final void rule__Plus__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6139:1: ( ( ruleFactor ) )
-            // InternalSmartCE.g:6140:1: ( ruleFactor )
+            // InternalSmartCE.g:6280:1: ( ( ruleFactor ) )
+            // InternalSmartCE.g:6281:1: ( ruleFactor )
             {
-            // InternalSmartCE.g:6140:1: ( ruleFactor )
-            // InternalSmartCE.g:6141:2: ruleFactor
+            // InternalSmartCE.g:6281:1: ( ruleFactor )
+            // InternalSmartCE.g:6282:2: ruleFactor
             {
              before(grammarAccess.getPlusAccess().getFactorParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -18911,14 +19414,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group__1"
-    // InternalSmartCE.g:6150:1: rule__Plus__Group__1 : rule__Plus__Group__1__Impl ;
+    // InternalSmartCE.g:6291:1: rule__Plus__Group__1 : rule__Plus__Group__1__Impl ;
     public final void rule__Plus__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6154:1: ( rule__Plus__Group__1__Impl )
-            // InternalSmartCE.g:6155:2: rule__Plus__Group__1__Impl
+            // InternalSmartCE.g:6295:1: ( rule__Plus__Group__1__Impl )
+            // InternalSmartCE.g:6296:2: rule__Plus__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Plus__Group__1__Impl();
@@ -18944,35 +19447,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group__1__Impl"
-    // InternalSmartCE.g:6161:1: rule__Plus__Group__1__Impl : ( ( rule__Plus__Group_1__0 )* ) ;
+    // InternalSmartCE.g:6302:1: rule__Plus__Group__1__Impl : ( ( rule__Plus__Group_1__0 )* ) ;
     public final void rule__Plus__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6165:1: ( ( ( rule__Plus__Group_1__0 )* ) )
-            // InternalSmartCE.g:6166:1: ( ( rule__Plus__Group_1__0 )* )
+            // InternalSmartCE.g:6306:1: ( ( ( rule__Plus__Group_1__0 )* ) )
+            // InternalSmartCE.g:6307:1: ( ( rule__Plus__Group_1__0 )* )
             {
-            // InternalSmartCE.g:6166:1: ( ( rule__Plus__Group_1__0 )* )
-            // InternalSmartCE.g:6167:2: ( rule__Plus__Group_1__0 )*
+            // InternalSmartCE.g:6307:1: ( ( rule__Plus__Group_1__0 )* )
+            // InternalSmartCE.g:6308:2: ( rule__Plus__Group_1__0 )*
             {
              before(grammarAccess.getPlusAccess().getGroup_1()); 
-            // InternalSmartCE.g:6168:2: ( rule__Plus__Group_1__0 )*
-            loop32:
+            // InternalSmartCE.g:6309:2: ( rule__Plus__Group_1__0 )*
+            loop34:
             do {
-                int alt32=2;
-                int LA32_0 = input.LA(1);
+                int alt34=2;
+                int LA34_0 = input.LA(1);
 
-                if ( ((LA32_0>=19 && LA32_0<=20)) ) {
-                    alt32=1;
+                if ( ((LA34_0>=19 && LA34_0<=20)) ) {
+                    alt34=1;
                 }
 
 
-                switch (alt32) {
+                switch (alt34) {
             	case 1 :
-            	    // InternalSmartCE.g:6168:3: rule__Plus__Group_1__0
+            	    // InternalSmartCE.g:6309:3: rule__Plus__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_51);
+            	    pushFollow(FOLLOW_53);
             	    rule__Plus__Group_1__0();
 
             	    state._fsp--;
@@ -18982,7 +19485,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop32;
+            	    break loop34;
                 }
             } while (true);
 
@@ -19009,16 +19512,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group_1__0"
-    // InternalSmartCE.g:6177:1: rule__Plus__Group_1__0 : rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1 ;
+    // InternalSmartCE.g:6318:1: rule__Plus__Group_1__0 : rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1 ;
     public final void rule__Plus__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6181:1: ( rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1 )
-            // InternalSmartCE.g:6182:2: rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1
+            // InternalSmartCE.g:6322:1: ( rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1 )
+            // InternalSmartCE.g:6323:2: rule__Plus__Group_1__0__Impl rule__Plus__Group_1__1
             {
-            pushFollow(FOLLOW_50);
+            pushFollow(FOLLOW_52);
             rule__Plus__Group_1__0__Impl();
 
             state._fsp--;
@@ -19047,21 +19550,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group_1__0__Impl"
-    // InternalSmartCE.g:6189:1: rule__Plus__Group_1__0__Impl : ( () ) ;
+    // InternalSmartCE.g:6330:1: rule__Plus__Group_1__0__Impl : ( () ) ;
     public final void rule__Plus__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6193:1: ( ( () ) )
-            // InternalSmartCE.g:6194:1: ( () )
+            // InternalSmartCE.g:6334:1: ( ( () ) )
+            // InternalSmartCE.g:6335:1: ( () )
             {
-            // InternalSmartCE.g:6194:1: ( () )
-            // InternalSmartCE.g:6195:2: ()
+            // InternalSmartCE.g:6335:1: ( () )
+            // InternalSmartCE.g:6336:2: ()
             {
              before(grammarAccess.getPlusAccess().getBinaryOperatorLeftAction_1_0()); 
-            // InternalSmartCE.g:6196:2: ()
-            // InternalSmartCE.g:6196:3: 
+            // InternalSmartCE.g:6337:2: ()
+            // InternalSmartCE.g:6337:3: 
             {
             }
 
@@ -19084,16 +19587,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group_1__1"
-    // InternalSmartCE.g:6204:1: rule__Plus__Group_1__1 : rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2 ;
+    // InternalSmartCE.g:6345:1: rule__Plus__Group_1__1 : rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2 ;
     public final void rule__Plus__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6208:1: ( rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2 )
-            // InternalSmartCE.g:6209:2: rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2
+            // InternalSmartCE.g:6349:1: ( rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2 )
+            // InternalSmartCE.g:6350:2: rule__Plus__Group_1__1__Impl rule__Plus__Group_1__2
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_49);
             rule__Plus__Group_1__1__Impl();
 
             state._fsp--;
@@ -19122,21 +19625,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group_1__1__Impl"
-    // InternalSmartCE.g:6216:1: rule__Plus__Group_1__1__Impl : ( ( rule__Plus__Alternatives_1_1 ) ) ;
+    // InternalSmartCE.g:6357:1: rule__Plus__Group_1__1__Impl : ( ( rule__Plus__Alternatives_1_1 ) ) ;
     public final void rule__Plus__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6220:1: ( ( ( rule__Plus__Alternatives_1_1 ) ) )
-            // InternalSmartCE.g:6221:1: ( ( rule__Plus__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6361:1: ( ( ( rule__Plus__Alternatives_1_1 ) ) )
+            // InternalSmartCE.g:6362:1: ( ( rule__Plus__Alternatives_1_1 ) )
             {
-            // InternalSmartCE.g:6221:1: ( ( rule__Plus__Alternatives_1_1 ) )
-            // InternalSmartCE.g:6222:2: ( rule__Plus__Alternatives_1_1 )
+            // InternalSmartCE.g:6362:1: ( ( rule__Plus__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6363:2: ( rule__Plus__Alternatives_1_1 )
             {
              before(grammarAccess.getPlusAccess().getAlternatives_1_1()); 
-            // InternalSmartCE.g:6223:2: ( rule__Plus__Alternatives_1_1 )
-            // InternalSmartCE.g:6223:3: rule__Plus__Alternatives_1_1
+            // InternalSmartCE.g:6364:2: ( rule__Plus__Alternatives_1_1 )
+            // InternalSmartCE.g:6364:3: rule__Plus__Alternatives_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Plus__Alternatives_1_1();
@@ -19169,14 +19672,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group_1__2"
-    // InternalSmartCE.g:6231:1: rule__Plus__Group_1__2 : rule__Plus__Group_1__2__Impl ;
+    // InternalSmartCE.g:6372:1: rule__Plus__Group_1__2 : rule__Plus__Group_1__2__Impl ;
     public final void rule__Plus__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6235:1: ( rule__Plus__Group_1__2__Impl )
-            // InternalSmartCE.g:6236:2: rule__Plus__Group_1__2__Impl
+            // InternalSmartCE.g:6376:1: ( rule__Plus__Group_1__2__Impl )
+            // InternalSmartCE.g:6377:2: rule__Plus__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Plus__Group_1__2__Impl();
@@ -19202,21 +19705,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__Group_1__2__Impl"
-    // InternalSmartCE.g:6242:1: rule__Plus__Group_1__2__Impl : ( ( rule__Plus__RightAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:6383:1: rule__Plus__Group_1__2__Impl : ( ( rule__Plus__RightAssignment_1_2 ) ) ;
     public final void rule__Plus__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6246:1: ( ( ( rule__Plus__RightAssignment_1_2 ) ) )
-            // InternalSmartCE.g:6247:1: ( ( rule__Plus__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6387:1: ( ( ( rule__Plus__RightAssignment_1_2 ) ) )
+            // InternalSmartCE.g:6388:1: ( ( rule__Plus__RightAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:6247:1: ( ( rule__Plus__RightAssignment_1_2 ) )
-            // InternalSmartCE.g:6248:2: ( rule__Plus__RightAssignment_1_2 )
+            // InternalSmartCE.g:6388:1: ( ( rule__Plus__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6389:2: ( rule__Plus__RightAssignment_1_2 )
             {
              before(grammarAccess.getPlusAccess().getRightAssignment_1_2()); 
-            // InternalSmartCE.g:6249:2: ( rule__Plus__RightAssignment_1_2 )
-            // InternalSmartCE.g:6249:3: rule__Plus__RightAssignment_1_2
+            // InternalSmartCE.g:6390:2: ( rule__Plus__RightAssignment_1_2 )
+            // InternalSmartCE.g:6390:3: rule__Plus__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Plus__RightAssignment_1_2();
@@ -19249,16 +19752,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__0"
-    // InternalSmartCE.g:6258:1: rule__Factor__Group__0 : rule__Factor__Group__0__Impl rule__Factor__Group__1 ;
+    // InternalSmartCE.g:6399:1: rule__Factor__Group__0 : rule__Factor__Group__0__Impl rule__Factor__Group__1 ;
     public final void rule__Factor__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6262:1: ( rule__Factor__Group__0__Impl rule__Factor__Group__1 )
-            // InternalSmartCE.g:6263:2: rule__Factor__Group__0__Impl rule__Factor__Group__1
+            // InternalSmartCE.g:6403:1: ( rule__Factor__Group__0__Impl rule__Factor__Group__1 )
+            // InternalSmartCE.g:6404:2: rule__Factor__Group__0__Impl rule__Factor__Group__1
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_54);
             rule__Factor__Group__0__Impl();
 
             state._fsp--;
@@ -19287,17 +19790,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__0__Impl"
-    // InternalSmartCE.g:6270:1: rule__Factor__Group__0__Impl : ( ruleNegative ) ;
+    // InternalSmartCE.g:6411:1: rule__Factor__Group__0__Impl : ( ruleNegative ) ;
     public final void rule__Factor__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6274:1: ( ( ruleNegative ) )
-            // InternalSmartCE.g:6275:1: ( ruleNegative )
+            // InternalSmartCE.g:6415:1: ( ( ruleNegative ) )
+            // InternalSmartCE.g:6416:1: ( ruleNegative )
             {
-            // InternalSmartCE.g:6275:1: ( ruleNegative )
-            // InternalSmartCE.g:6276:2: ruleNegative
+            // InternalSmartCE.g:6416:1: ( ruleNegative )
+            // InternalSmartCE.g:6417:2: ruleNegative
             {
              before(grammarAccess.getFactorAccess().getNegativeParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -19328,14 +19831,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__1"
-    // InternalSmartCE.g:6285:1: rule__Factor__Group__1 : rule__Factor__Group__1__Impl ;
+    // InternalSmartCE.g:6426:1: rule__Factor__Group__1 : rule__Factor__Group__1__Impl ;
     public final void rule__Factor__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6289:1: ( rule__Factor__Group__1__Impl )
-            // InternalSmartCE.g:6290:2: rule__Factor__Group__1__Impl
+            // InternalSmartCE.g:6430:1: ( rule__Factor__Group__1__Impl )
+            // InternalSmartCE.g:6431:2: rule__Factor__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Group__1__Impl();
@@ -19361,35 +19864,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group__1__Impl"
-    // InternalSmartCE.g:6296:1: rule__Factor__Group__1__Impl : ( ( rule__Factor__Group_1__0 )* ) ;
+    // InternalSmartCE.g:6437:1: rule__Factor__Group__1__Impl : ( ( rule__Factor__Group_1__0 )* ) ;
     public final void rule__Factor__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6300:1: ( ( ( rule__Factor__Group_1__0 )* ) )
-            // InternalSmartCE.g:6301:1: ( ( rule__Factor__Group_1__0 )* )
+            // InternalSmartCE.g:6441:1: ( ( ( rule__Factor__Group_1__0 )* ) )
+            // InternalSmartCE.g:6442:1: ( ( rule__Factor__Group_1__0 )* )
             {
-            // InternalSmartCE.g:6301:1: ( ( rule__Factor__Group_1__0 )* )
-            // InternalSmartCE.g:6302:2: ( rule__Factor__Group_1__0 )*
+            // InternalSmartCE.g:6442:1: ( ( rule__Factor__Group_1__0 )* )
+            // InternalSmartCE.g:6443:2: ( rule__Factor__Group_1__0 )*
             {
              before(grammarAccess.getFactorAccess().getGroup_1()); 
-            // InternalSmartCE.g:6303:2: ( rule__Factor__Group_1__0 )*
-            loop33:
+            // InternalSmartCE.g:6444:2: ( rule__Factor__Group_1__0 )*
+            loop35:
             do {
-                int alt33=2;
-                int LA33_0 = input.LA(1);
+                int alt35=2;
+                int LA35_0 = input.LA(1);
 
-                if ( ((LA33_0>=21 && LA33_0<=22)) ) {
-                    alt33=1;
+                if ( ((LA35_0>=21 && LA35_0<=22)) ) {
+                    alt35=1;
                 }
 
 
-                switch (alt33) {
+                switch (alt35) {
             	case 1 :
-            	    // InternalSmartCE.g:6303:3: rule__Factor__Group_1__0
+            	    // InternalSmartCE.g:6444:3: rule__Factor__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_53);
+            	    pushFollow(FOLLOW_55);
             	    rule__Factor__Group_1__0();
 
             	    state._fsp--;
@@ -19399,7 +19902,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop33;
+            	    break loop35;
                 }
             } while (true);
 
@@ -19426,16 +19929,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__0"
-    // InternalSmartCE.g:6312:1: rule__Factor__Group_1__0 : rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 ;
+    // InternalSmartCE.g:6453:1: rule__Factor__Group_1__0 : rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 ;
     public final void rule__Factor__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6316:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
-            // InternalSmartCE.g:6317:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
+            // InternalSmartCE.g:6457:1: ( rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1 )
+            // InternalSmartCE.g:6458:2: rule__Factor__Group_1__0__Impl rule__Factor__Group_1__1
             {
-            pushFollow(FOLLOW_52);
+            pushFollow(FOLLOW_54);
             rule__Factor__Group_1__0__Impl();
 
             state._fsp--;
@@ -19464,21 +19967,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__0__Impl"
-    // InternalSmartCE.g:6324:1: rule__Factor__Group_1__0__Impl : ( () ) ;
+    // InternalSmartCE.g:6465:1: rule__Factor__Group_1__0__Impl : ( () ) ;
     public final void rule__Factor__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6328:1: ( ( () ) )
-            // InternalSmartCE.g:6329:1: ( () )
+            // InternalSmartCE.g:6469:1: ( ( () ) )
+            // InternalSmartCE.g:6470:1: ( () )
             {
-            // InternalSmartCE.g:6329:1: ( () )
-            // InternalSmartCE.g:6330:2: ()
+            // InternalSmartCE.g:6470:1: ( () )
+            // InternalSmartCE.g:6471:2: ()
             {
              before(grammarAccess.getFactorAccess().getBinaryOperatorLeftAction_1_0()); 
-            // InternalSmartCE.g:6331:2: ()
-            // InternalSmartCE.g:6331:3: 
+            // InternalSmartCE.g:6472:2: ()
+            // InternalSmartCE.g:6472:3: 
             {
             }
 
@@ -19501,16 +20004,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__1"
-    // InternalSmartCE.g:6339:1: rule__Factor__Group_1__1 : rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 ;
+    // InternalSmartCE.g:6480:1: rule__Factor__Group_1__1 : rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 ;
     public final void rule__Factor__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6343:1: ( rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 )
-            // InternalSmartCE.g:6344:2: rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2
+            // InternalSmartCE.g:6484:1: ( rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2 )
+            // InternalSmartCE.g:6485:2: rule__Factor__Group_1__1__Impl rule__Factor__Group_1__2
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_49);
             rule__Factor__Group_1__1__Impl();
 
             state._fsp--;
@@ -19539,21 +20042,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__1__Impl"
-    // InternalSmartCE.g:6351:1: rule__Factor__Group_1__1__Impl : ( ( rule__Factor__Alternatives_1_1 ) ) ;
+    // InternalSmartCE.g:6492:1: rule__Factor__Group_1__1__Impl : ( ( rule__Factor__Alternatives_1_1 ) ) ;
     public final void rule__Factor__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6355:1: ( ( ( rule__Factor__Alternatives_1_1 ) ) )
-            // InternalSmartCE.g:6356:1: ( ( rule__Factor__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6496:1: ( ( ( rule__Factor__Alternatives_1_1 ) ) )
+            // InternalSmartCE.g:6497:1: ( ( rule__Factor__Alternatives_1_1 ) )
             {
-            // InternalSmartCE.g:6356:1: ( ( rule__Factor__Alternatives_1_1 ) )
-            // InternalSmartCE.g:6357:2: ( rule__Factor__Alternatives_1_1 )
+            // InternalSmartCE.g:6497:1: ( ( rule__Factor__Alternatives_1_1 ) )
+            // InternalSmartCE.g:6498:2: ( rule__Factor__Alternatives_1_1 )
             {
              before(grammarAccess.getFactorAccess().getAlternatives_1_1()); 
-            // InternalSmartCE.g:6358:2: ( rule__Factor__Alternatives_1_1 )
-            // InternalSmartCE.g:6358:3: rule__Factor__Alternatives_1_1
+            // InternalSmartCE.g:6499:2: ( rule__Factor__Alternatives_1_1 )
+            // InternalSmartCE.g:6499:3: rule__Factor__Alternatives_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Alternatives_1_1();
@@ -19586,14 +20089,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__2"
-    // InternalSmartCE.g:6366:1: rule__Factor__Group_1__2 : rule__Factor__Group_1__2__Impl ;
+    // InternalSmartCE.g:6507:1: rule__Factor__Group_1__2 : rule__Factor__Group_1__2__Impl ;
     public final void rule__Factor__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6370:1: ( rule__Factor__Group_1__2__Impl )
-            // InternalSmartCE.g:6371:2: rule__Factor__Group_1__2__Impl
+            // InternalSmartCE.g:6511:1: ( rule__Factor__Group_1__2__Impl )
+            // InternalSmartCE.g:6512:2: rule__Factor__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Factor__Group_1__2__Impl();
@@ -19619,21 +20122,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__Group_1__2__Impl"
-    // InternalSmartCE.g:6377:1: rule__Factor__Group_1__2__Impl : ( ( rule__Factor__RightAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:6518:1: rule__Factor__Group_1__2__Impl : ( ( rule__Factor__RightAssignment_1_2 ) ) ;
     public final void rule__Factor__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6381:1: ( ( ( rule__Factor__RightAssignment_1_2 ) ) )
-            // InternalSmartCE.g:6382:1: ( ( rule__Factor__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6522:1: ( ( ( rule__Factor__RightAssignment_1_2 ) ) )
+            // InternalSmartCE.g:6523:1: ( ( rule__Factor__RightAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:6382:1: ( ( rule__Factor__RightAssignment_1_2 ) )
-            // InternalSmartCE.g:6383:2: ( rule__Factor__RightAssignment_1_2 )
+            // InternalSmartCE.g:6523:1: ( ( rule__Factor__RightAssignment_1_2 ) )
+            // InternalSmartCE.g:6524:2: ( rule__Factor__RightAssignment_1_2 )
             {
              before(grammarAccess.getFactorAccess().getRightAssignment_1_2()); 
-            // InternalSmartCE.g:6384:2: ( rule__Factor__RightAssignment_1_2 )
-            // InternalSmartCE.g:6384:3: rule__Factor__RightAssignment_1_2
+            // InternalSmartCE.g:6525:2: ( rule__Factor__RightAssignment_1_2 )
+            // InternalSmartCE.g:6525:3: rule__Factor__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Factor__RightAssignment_1_2();
@@ -19666,16 +20169,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__Group_1__0"
-    // InternalSmartCE.g:6393:1: rule__Negative__Group_1__0 : rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1 ;
+    // InternalSmartCE.g:6534:1: rule__Negative__Group_1__0 : rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1 ;
     public final void rule__Negative__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6397:1: ( rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1 )
-            // InternalSmartCE.g:6398:2: rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1
+            // InternalSmartCE.g:6538:1: ( rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1 )
+            // InternalSmartCE.g:6539:2: rule__Negative__Group_1__0__Impl rule__Negative__Group_1__1
             {
-            pushFollow(FOLLOW_47);
+            pushFollow(FOLLOW_49);
             rule__Negative__Group_1__0__Impl();
 
             state._fsp--;
@@ -19704,21 +20207,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__Group_1__0__Impl"
-    // InternalSmartCE.g:6405:1: rule__Negative__Group_1__0__Impl : ( () ) ;
+    // InternalSmartCE.g:6546:1: rule__Negative__Group_1__0__Impl : ( () ) ;
     public final void rule__Negative__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6409:1: ( ( () ) )
-            // InternalSmartCE.g:6410:1: ( () )
+            // InternalSmartCE.g:6550:1: ( ( () ) )
+            // InternalSmartCE.g:6551:1: ( () )
             {
-            // InternalSmartCE.g:6410:1: ( () )
-            // InternalSmartCE.g:6411:2: ()
+            // InternalSmartCE.g:6551:1: ( () )
+            // InternalSmartCE.g:6552:2: ()
             {
              before(grammarAccess.getNegativeAccess().getUnaryOperatorAction_1_0()); 
-            // InternalSmartCE.g:6412:2: ()
-            // InternalSmartCE.g:6412:3: 
+            // InternalSmartCE.g:6553:2: ()
+            // InternalSmartCE.g:6553:3: 
             {
             }
 
@@ -19741,16 +20244,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__Group_1__1"
-    // InternalSmartCE.g:6420:1: rule__Negative__Group_1__1 : rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2 ;
+    // InternalSmartCE.g:6561:1: rule__Negative__Group_1__1 : rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2 ;
     public final void rule__Negative__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6424:1: ( rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2 )
-            // InternalSmartCE.g:6425:2: rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2
+            // InternalSmartCE.g:6565:1: ( rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2 )
+            // InternalSmartCE.g:6566:2: rule__Negative__Group_1__1__Impl rule__Negative__Group_1__2
             {
-            pushFollow(FOLLOW_54);
+            pushFollow(FOLLOW_56);
             rule__Negative__Group_1__1__Impl();
 
             state._fsp--;
@@ -19779,17 +20282,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__Group_1__1__Impl"
-    // InternalSmartCE.g:6432:1: rule__Negative__Group_1__1__Impl : ( '-' ) ;
+    // InternalSmartCE.g:6573:1: rule__Negative__Group_1__1__Impl : ( '-' ) ;
     public final void rule__Negative__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6436:1: ( ( '-' ) )
-            // InternalSmartCE.g:6437:1: ( '-' )
+            // InternalSmartCE.g:6577:1: ( ( '-' ) )
+            // InternalSmartCE.g:6578:1: ( '-' )
             {
-            // InternalSmartCE.g:6437:1: ( '-' )
-            // InternalSmartCE.g:6438:2: '-'
+            // InternalSmartCE.g:6578:1: ( '-' )
+            // InternalSmartCE.g:6579:2: '-'
             {
              before(grammarAccess.getNegativeAccess().getHyphenMinusKeyword_1_1()); 
             match(input,20,FOLLOW_2); 
@@ -19816,14 +20319,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__Group_1__2"
-    // InternalSmartCE.g:6447:1: rule__Negative__Group_1__2 : rule__Negative__Group_1__2__Impl ;
+    // InternalSmartCE.g:6588:1: rule__Negative__Group_1__2 : rule__Negative__Group_1__2__Impl ;
     public final void rule__Negative__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6451:1: ( rule__Negative__Group_1__2__Impl )
-            // InternalSmartCE.g:6452:2: rule__Negative__Group_1__2__Impl
+            // InternalSmartCE.g:6592:1: ( rule__Negative__Group_1__2__Impl )
+            // InternalSmartCE.g:6593:2: rule__Negative__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Negative__Group_1__2__Impl();
@@ -19849,21 +20352,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__Group_1__2__Impl"
-    // InternalSmartCE.g:6458:1: rule__Negative__Group_1__2__Impl : ( ( rule__Negative__ExpressionAssignment_1_2 ) ) ;
+    // InternalSmartCE.g:6599:1: rule__Negative__Group_1__2__Impl : ( ( rule__Negative__ExpressionAssignment_1_2 ) ) ;
     public final void rule__Negative__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6462:1: ( ( ( rule__Negative__ExpressionAssignment_1_2 ) ) )
-            // InternalSmartCE.g:6463:1: ( ( rule__Negative__ExpressionAssignment_1_2 ) )
+            // InternalSmartCE.g:6603:1: ( ( ( rule__Negative__ExpressionAssignment_1_2 ) ) )
+            // InternalSmartCE.g:6604:1: ( ( rule__Negative__ExpressionAssignment_1_2 ) )
             {
-            // InternalSmartCE.g:6463:1: ( ( rule__Negative__ExpressionAssignment_1_2 ) )
-            // InternalSmartCE.g:6464:2: ( rule__Negative__ExpressionAssignment_1_2 )
+            // InternalSmartCE.g:6604:1: ( ( rule__Negative__ExpressionAssignment_1_2 ) )
+            // InternalSmartCE.g:6605:2: ( rule__Negative__ExpressionAssignment_1_2 )
             {
              before(grammarAccess.getNegativeAccess().getExpressionAssignment_1_2()); 
-            // InternalSmartCE.g:6465:2: ( rule__Negative__ExpressionAssignment_1_2 )
-            // InternalSmartCE.g:6465:3: rule__Negative__ExpressionAssignment_1_2
+            // InternalSmartCE.g:6606:2: ( rule__Negative__ExpressionAssignment_1_2 )
+            // InternalSmartCE.g:6606:3: rule__Negative__ExpressionAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__Negative__ExpressionAssignment_1_2();
@@ -19896,16 +20399,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__0"
-    // InternalSmartCE.g:6474:1: rule__Primary__Group_1__0 : rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 ;
+    // InternalSmartCE.g:6615:1: rule__Primary__Group_1__0 : rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 ;
     public final void rule__Primary__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6478:1: ( rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 )
-            // InternalSmartCE.g:6479:2: rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1
+            // InternalSmartCE.g:6619:1: ( rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1 )
+            // InternalSmartCE.g:6620:2: rule__Primary__Group_1__0__Impl rule__Primary__Group_1__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__Primary__Group_1__0__Impl();
 
             state._fsp--;
@@ -19934,20 +20437,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__0__Impl"
-    // InternalSmartCE.g:6486:1: rule__Primary__Group_1__0__Impl : ( '(' ) ;
+    // InternalSmartCE.g:6627:1: rule__Primary__Group_1__0__Impl : ( '(' ) ;
     public final void rule__Primary__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6490:1: ( ( '(' ) )
-            // InternalSmartCE.g:6491:1: ( '(' )
+            // InternalSmartCE.g:6631:1: ( ( '(' ) )
+            // InternalSmartCE.g:6632:1: ( '(' )
             {
-            // InternalSmartCE.g:6491:1: ( '(' )
-            // InternalSmartCE.g:6492:2: '('
+            // InternalSmartCE.g:6632:1: ( '(' )
+            // InternalSmartCE.g:6633:2: '('
             {
              before(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0()); 
 
             }
@@ -19971,16 +20474,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__1"
-    // InternalSmartCE.g:6501:1: rule__Primary__Group_1__1 : rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 ;
+    // InternalSmartCE.g:6642:1: rule__Primary__Group_1__1 : rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 ;
     public final void rule__Primary__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6505:1: ( rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 )
-            // InternalSmartCE.g:6506:2: rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2
+            // InternalSmartCE.g:6646:1: ( rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2 )
+            // InternalSmartCE.g:6647:2: rule__Primary__Group_1__1__Impl rule__Primary__Group_1__2
             {
-            pushFollow(FOLLOW_34);
+            pushFollow(FOLLOW_36);
             rule__Primary__Group_1__1__Impl();
 
             state._fsp--;
@@ -20009,17 +20512,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__1__Impl"
-    // InternalSmartCE.g:6513:1: rule__Primary__Group_1__1__Impl : ( ruleExpression ) ;
+    // InternalSmartCE.g:6654:1: rule__Primary__Group_1__1__Impl : ( ruleExpression ) ;
     public final void rule__Primary__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6517:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:6518:1: ( ruleExpression )
+            // InternalSmartCE.g:6658:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:6659:1: ( ruleExpression )
             {
-            // InternalSmartCE.g:6518:1: ( ruleExpression )
-            // InternalSmartCE.g:6519:2: ruleExpression
+            // InternalSmartCE.g:6659:1: ( ruleExpression )
+            // InternalSmartCE.g:6660:2: ruleExpression
             {
              before(grammarAccess.getPrimaryAccess().getExpressionParserRuleCall_1_1()); 
             pushFollow(FOLLOW_2);
@@ -20050,14 +20553,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__2"
-    // InternalSmartCE.g:6528:1: rule__Primary__Group_1__2 : rule__Primary__Group_1__2__Impl ;
+    // InternalSmartCE.g:6669:1: rule__Primary__Group_1__2 : rule__Primary__Group_1__2__Impl ;
     public final void rule__Primary__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6532:1: ( rule__Primary__Group_1__2__Impl )
-            // InternalSmartCE.g:6533:2: rule__Primary__Group_1__2__Impl
+            // InternalSmartCE.g:6673:1: ( rule__Primary__Group_1__2__Impl )
+            // InternalSmartCE.g:6674:2: rule__Primary__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Primary__Group_1__2__Impl();
@@ -20083,20 +20586,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Primary__Group_1__2__Impl"
-    // InternalSmartCE.g:6539:1: rule__Primary__Group_1__2__Impl : ( ')' ) ;
+    // InternalSmartCE.g:6680:1: rule__Primary__Group_1__2__Impl : ( ')' ) ;
     public final void rule__Primary__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6543:1: ( ( ')' ) )
-            // InternalSmartCE.g:6544:1: ( ')' )
+            // InternalSmartCE.g:6684:1: ( ( ')' ) )
+            // InternalSmartCE.g:6685:1: ( ')' )
             {
-            // InternalSmartCE.g:6544:1: ( ')' )
-            // InternalSmartCE.g:6545:2: ')'
+            // InternalSmartCE.g:6685:1: ( ')' )
+            // InternalSmartCE.g:6686:2: ')'
             {
              before(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_1_2()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_1_2()); 
 
             }
@@ -20120,16 +20623,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__0"
-    // InternalSmartCE.g:6555:1: rule__FunctionCall__Group__0 : rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 ;
+    // InternalSmartCE.g:6696:1: rule__FunctionCall__Group__0 : rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 ;
     public final void rule__FunctionCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6559:1: ( rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 )
-            // InternalSmartCE.g:6560:2: rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1
+            // InternalSmartCE.g:6700:1: ( rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1 )
+            // InternalSmartCE.g:6701:2: rule__FunctionCall__Group__0__Impl rule__FunctionCall__Group__1
             {
-            pushFollow(FOLLOW_27);
+            pushFollow(FOLLOW_30);
             rule__FunctionCall__Group__0__Impl();
 
             state._fsp--;
@@ -20158,21 +20661,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__0__Impl"
-    // InternalSmartCE.g:6567:1: rule__FunctionCall__Group__0__Impl : ( ( rule__FunctionCall__NameAssignment_0 ) ) ;
+    // InternalSmartCE.g:6708:1: rule__FunctionCall__Group__0__Impl : ( ( rule__FunctionCall__NameAssignment_0 ) ) ;
     public final void rule__FunctionCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6571:1: ( ( ( rule__FunctionCall__NameAssignment_0 ) ) )
-            // InternalSmartCE.g:6572:1: ( ( rule__FunctionCall__NameAssignment_0 ) )
+            // InternalSmartCE.g:6712:1: ( ( ( rule__FunctionCall__NameAssignment_0 ) ) )
+            // InternalSmartCE.g:6713:1: ( ( rule__FunctionCall__NameAssignment_0 ) )
             {
-            // InternalSmartCE.g:6572:1: ( ( rule__FunctionCall__NameAssignment_0 ) )
-            // InternalSmartCE.g:6573:2: ( rule__FunctionCall__NameAssignment_0 )
+            // InternalSmartCE.g:6713:1: ( ( rule__FunctionCall__NameAssignment_0 ) )
+            // InternalSmartCE.g:6714:2: ( rule__FunctionCall__NameAssignment_0 )
             {
              before(grammarAccess.getFunctionCallAccess().getNameAssignment_0()); 
-            // InternalSmartCE.g:6574:2: ( rule__FunctionCall__NameAssignment_0 )
-            // InternalSmartCE.g:6574:3: rule__FunctionCall__NameAssignment_0
+            // InternalSmartCE.g:6715:2: ( rule__FunctionCall__NameAssignment_0 )
+            // InternalSmartCE.g:6715:3: rule__FunctionCall__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__NameAssignment_0();
@@ -20205,16 +20708,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__1"
-    // InternalSmartCE.g:6582:1: rule__FunctionCall__Group__1 : rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 ;
+    // InternalSmartCE.g:6723:1: rule__FunctionCall__Group__1 : rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 ;
     public final void rule__FunctionCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6586:1: ( rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 )
-            // InternalSmartCE.g:6587:2: rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2
+            // InternalSmartCE.g:6727:1: ( rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2 )
+            // InternalSmartCE.g:6728:2: rule__FunctionCall__Group__1__Impl rule__FunctionCall__Group__2
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__FunctionCall__Group__1__Impl();
 
             state._fsp--;
@@ -20243,20 +20746,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__1__Impl"
-    // InternalSmartCE.g:6594:1: rule__FunctionCall__Group__1__Impl : ( '(' ) ;
+    // InternalSmartCE.g:6735:1: rule__FunctionCall__Group__1__Impl : ( '(' ) ;
     public final void rule__FunctionCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6598:1: ( ( '(' ) )
-            // InternalSmartCE.g:6599:1: ( '(' )
+            // InternalSmartCE.g:6739:1: ( ( '(' ) )
+            // InternalSmartCE.g:6740:1: ( '(' )
             {
-            // InternalSmartCE.g:6599:1: ( '(' )
-            // InternalSmartCE.g:6600:2: '('
+            // InternalSmartCE.g:6740:1: ( '(' )
+            // InternalSmartCE.g:6741:2: '('
             {
              before(grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1()); 
-            match(input,58,FOLLOW_2); 
+            match(input,60,FOLLOW_2); 
              after(grammarAccess.getFunctionCallAccess().getLeftParenthesisKeyword_1()); 
 
             }
@@ -20280,16 +20783,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__2"
-    // InternalSmartCE.g:6609:1: rule__FunctionCall__Group__2 : rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 ;
+    // InternalSmartCE.g:6750:1: rule__FunctionCall__Group__2 : rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 ;
     public final void rule__FunctionCall__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6613:1: ( rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 )
-            // InternalSmartCE.g:6614:2: rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3
+            // InternalSmartCE.g:6754:1: ( rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3 )
+            // InternalSmartCE.g:6755:2: rule__FunctionCall__Group__2__Impl rule__FunctionCall__Group__3
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_57);
             rule__FunctionCall__Group__2__Impl();
 
             state._fsp--;
@@ -20318,21 +20821,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__2__Impl"
-    // InternalSmartCE.g:6621:1: rule__FunctionCall__Group__2__Impl : ( ( rule__FunctionCall__ParamsAssignment_2 ) ) ;
+    // InternalSmartCE.g:6762:1: rule__FunctionCall__Group__2__Impl : ( ( rule__FunctionCall__ParamsAssignment_2 ) ) ;
     public final void rule__FunctionCall__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6625:1: ( ( ( rule__FunctionCall__ParamsAssignment_2 ) ) )
-            // InternalSmartCE.g:6626:1: ( ( rule__FunctionCall__ParamsAssignment_2 ) )
+            // InternalSmartCE.g:6766:1: ( ( ( rule__FunctionCall__ParamsAssignment_2 ) ) )
+            // InternalSmartCE.g:6767:1: ( ( rule__FunctionCall__ParamsAssignment_2 ) )
             {
-            // InternalSmartCE.g:6626:1: ( ( rule__FunctionCall__ParamsAssignment_2 ) )
-            // InternalSmartCE.g:6627:2: ( rule__FunctionCall__ParamsAssignment_2 )
+            // InternalSmartCE.g:6767:1: ( ( rule__FunctionCall__ParamsAssignment_2 ) )
+            // InternalSmartCE.g:6768:2: ( rule__FunctionCall__ParamsAssignment_2 )
             {
              before(grammarAccess.getFunctionCallAccess().getParamsAssignment_2()); 
-            // InternalSmartCE.g:6628:2: ( rule__FunctionCall__ParamsAssignment_2 )
-            // InternalSmartCE.g:6628:3: rule__FunctionCall__ParamsAssignment_2
+            // InternalSmartCE.g:6769:2: ( rule__FunctionCall__ParamsAssignment_2 )
+            // InternalSmartCE.g:6769:3: rule__FunctionCall__ParamsAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__ParamsAssignment_2();
@@ -20365,16 +20868,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__3"
-    // InternalSmartCE.g:6636:1: rule__FunctionCall__Group__3 : rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4 ;
+    // InternalSmartCE.g:6777:1: rule__FunctionCall__Group__3 : rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4 ;
     public final void rule__FunctionCall__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6640:1: ( rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4 )
-            // InternalSmartCE.g:6641:2: rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4
+            // InternalSmartCE.g:6781:1: ( rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4 )
+            // InternalSmartCE.g:6782:2: rule__FunctionCall__Group__3__Impl rule__FunctionCall__Group__4
             {
-            pushFollow(FOLLOW_55);
+            pushFollow(FOLLOW_57);
             rule__FunctionCall__Group__3__Impl();
 
             state._fsp--;
@@ -20403,35 +20906,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__3__Impl"
-    // InternalSmartCE.g:6648:1: rule__FunctionCall__Group__3__Impl : ( ( rule__FunctionCall__Group_3__0 )* ) ;
+    // InternalSmartCE.g:6789:1: rule__FunctionCall__Group__3__Impl : ( ( rule__FunctionCall__Group_3__0 )* ) ;
     public final void rule__FunctionCall__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6652:1: ( ( ( rule__FunctionCall__Group_3__0 )* ) )
-            // InternalSmartCE.g:6653:1: ( ( rule__FunctionCall__Group_3__0 )* )
+            // InternalSmartCE.g:6793:1: ( ( ( rule__FunctionCall__Group_3__0 )* ) )
+            // InternalSmartCE.g:6794:1: ( ( rule__FunctionCall__Group_3__0 )* )
             {
-            // InternalSmartCE.g:6653:1: ( ( rule__FunctionCall__Group_3__0 )* )
-            // InternalSmartCE.g:6654:2: ( rule__FunctionCall__Group_3__0 )*
+            // InternalSmartCE.g:6794:1: ( ( rule__FunctionCall__Group_3__0 )* )
+            // InternalSmartCE.g:6795:2: ( rule__FunctionCall__Group_3__0 )*
             {
              before(grammarAccess.getFunctionCallAccess().getGroup_3()); 
-            // InternalSmartCE.g:6655:2: ( rule__FunctionCall__Group_3__0 )*
-            loop34:
+            // InternalSmartCE.g:6796:2: ( rule__FunctionCall__Group_3__0 )*
+            loop36:
             do {
-                int alt34=2;
-                int LA34_0 = input.LA(1);
+                int alt36=2;
+                int LA36_0 = input.LA(1);
 
-                if ( (LA34_0==73) ) {
-                    alt34=1;
+                if ( (LA36_0==71) ) {
+                    alt36=1;
                 }
 
 
-                switch (alt34) {
+                switch (alt36) {
             	case 1 :
-            	    // InternalSmartCE.g:6655:3: rule__FunctionCall__Group_3__0
+            	    // InternalSmartCE.g:6796:3: rule__FunctionCall__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_56);
+            	    pushFollow(FOLLOW_58);
             	    rule__FunctionCall__Group_3__0();
 
             	    state._fsp--;
@@ -20441,7 +20944,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop34;
+            	    break loop36;
                 }
             } while (true);
 
@@ -20468,14 +20971,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__4"
-    // InternalSmartCE.g:6663:1: rule__FunctionCall__Group__4 : rule__FunctionCall__Group__4__Impl ;
+    // InternalSmartCE.g:6804:1: rule__FunctionCall__Group__4 : rule__FunctionCall__Group__4__Impl ;
     public final void rule__FunctionCall__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6667:1: ( rule__FunctionCall__Group__4__Impl )
-            // InternalSmartCE.g:6668:2: rule__FunctionCall__Group__4__Impl
+            // InternalSmartCE.g:6808:1: ( rule__FunctionCall__Group__4__Impl )
+            // InternalSmartCE.g:6809:2: rule__FunctionCall__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__Group__4__Impl();
@@ -20501,20 +21004,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group__4__Impl"
-    // InternalSmartCE.g:6674:1: rule__FunctionCall__Group__4__Impl : ( ')' ) ;
+    // InternalSmartCE.g:6815:1: rule__FunctionCall__Group__4__Impl : ( ')' ) ;
     public final void rule__FunctionCall__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6678:1: ( ( ')' ) )
-            // InternalSmartCE.g:6679:1: ( ')' )
+            // InternalSmartCE.g:6819:1: ( ( ')' ) )
+            // InternalSmartCE.g:6820:1: ( ')' )
             {
-            // InternalSmartCE.g:6679:1: ( ')' )
-            // InternalSmartCE.g:6680:2: ')'
+            // InternalSmartCE.g:6820:1: ( ')' )
+            // InternalSmartCE.g:6821:2: ')'
             {
              before(grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_4()); 
-            match(input,60,FOLLOW_2); 
+            match(input,61,FOLLOW_2); 
              after(grammarAccess.getFunctionCallAccess().getRightParenthesisKeyword_4()); 
 
             }
@@ -20538,16 +21041,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group_3__0"
-    // InternalSmartCE.g:6690:1: rule__FunctionCall__Group_3__0 : rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1 ;
+    // InternalSmartCE.g:6831:1: rule__FunctionCall__Group_3__0 : rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1 ;
     public final void rule__FunctionCall__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6694:1: ( rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1 )
-            // InternalSmartCE.g:6695:2: rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1
+            // InternalSmartCE.g:6835:1: ( rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1 )
+            // InternalSmartCE.g:6836:2: rule__FunctionCall__Group_3__0__Impl rule__FunctionCall__Group_3__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_11);
             rule__FunctionCall__Group_3__0__Impl();
 
             state._fsp--;
@@ -20576,20 +21079,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group_3__0__Impl"
-    // InternalSmartCE.g:6702:1: rule__FunctionCall__Group_3__0__Impl : ( ',' ) ;
+    // InternalSmartCE.g:6843:1: rule__FunctionCall__Group_3__0__Impl : ( ',' ) ;
     public final void rule__FunctionCall__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6706:1: ( ( ',' ) )
-            // InternalSmartCE.g:6707:1: ( ',' )
+            // InternalSmartCE.g:6847:1: ( ( ',' ) )
+            // InternalSmartCE.g:6848:1: ( ',' )
             {
-            // InternalSmartCE.g:6707:1: ( ',' )
-            // InternalSmartCE.g:6708:2: ','
+            // InternalSmartCE.g:6848:1: ( ',' )
+            // InternalSmartCE.g:6849:2: ','
             {
              before(grammarAccess.getFunctionCallAccess().getCommaKeyword_3_0()); 
-            match(input,73,FOLLOW_2); 
+            match(input,71,FOLLOW_2); 
              after(grammarAccess.getFunctionCallAccess().getCommaKeyword_3_0()); 
 
             }
@@ -20613,14 +21116,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group_3__1"
-    // InternalSmartCE.g:6717:1: rule__FunctionCall__Group_3__1 : rule__FunctionCall__Group_3__1__Impl ;
+    // InternalSmartCE.g:6858:1: rule__FunctionCall__Group_3__1 : rule__FunctionCall__Group_3__1__Impl ;
     public final void rule__FunctionCall__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6721:1: ( rule__FunctionCall__Group_3__1__Impl )
-            // InternalSmartCE.g:6722:2: rule__FunctionCall__Group_3__1__Impl
+            // InternalSmartCE.g:6862:1: ( rule__FunctionCall__Group_3__1__Impl )
+            // InternalSmartCE.g:6863:2: rule__FunctionCall__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__Group_3__1__Impl();
@@ -20646,21 +21149,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__Group_3__1__Impl"
-    // InternalSmartCE.g:6728:1: rule__FunctionCall__Group_3__1__Impl : ( ( rule__FunctionCall__ParamsAssignment_3_1 ) ) ;
+    // InternalSmartCE.g:6869:1: rule__FunctionCall__Group_3__1__Impl : ( ( rule__FunctionCall__ParamsAssignment_3_1 ) ) ;
     public final void rule__FunctionCall__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6732:1: ( ( ( rule__FunctionCall__ParamsAssignment_3_1 ) ) )
-            // InternalSmartCE.g:6733:1: ( ( rule__FunctionCall__ParamsAssignment_3_1 ) )
+            // InternalSmartCE.g:6873:1: ( ( ( rule__FunctionCall__ParamsAssignment_3_1 ) ) )
+            // InternalSmartCE.g:6874:1: ( ( rule__FunctionCall__ParamsAssignment_3_1 ) )
             {
-            // InternalSmartCE.g:6733:1: ( ( rule__FunctionCall__ParamsAssignment_3_1 ) )
-            // InternalSmartCE.g:6734:2: ( rule__FunctionCall__ParamsAssignment_3_1 )
+            // InternalSmartCE.g:6874:1: ( ( rule__FunctionCall__ParamsAssignment_3_1 ) )
+            // InternalSmartCE.g:6875:2: ( rule__FunctionCall__ParamsAssignment_3_1 )
             {
              before(grammarAccess.getFunctionCallAccess().getParamsAssignment_3_1()); 
-            // InternalSmartCE.g:6735:2: ( rule__FunctionCall__ParamsAssignment_3_1 )
-            // InternalSmartCE.g:6735:3: rule__FunctionCall__ParamsAssignment_3_1
+            // InternalSmartCE.g:6876:2: ( rule__FunctionCall__ParamsAssignment_3_1 )
+            // InternalSmartCE.g:6876:3: rule__FunctionCall__ParamsAssignment_3_1
             {
             pushFollow(FOLLOW_2);
             rule__FunctionCall__ParamsAssignment_3_1();
@@ -20693,16 +21196,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalSmartCE.g:6744:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalSmartCE.g:6885:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6748:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalSmartCE.g:6749:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalSmartCE.g:6889:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalSmartCE.g:6890:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_59);
             rule__QualifiedName__Group__0__Impl();
 
             state._fsp--;
@@ -20731,17 +21234,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalSmartCE.g:6756:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // InternalSmartCE.g:6897:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6760:1: ( ( RULE_ID ) )
-            // InternalSmartCE.g:6761:1: ( RULE_ID )
+            // InternalSmartCE.g:6901:1: ( ( RULE_ID ) )
+            // InternalSmartCE.g:6902:1: ( RULE_ID )
             {
-            // InternalSmartCE.g:6761:1: ( RULE_ID )
-            // InternalSmartCE.g:6762:2: RULE_ID
+            // InternalSmartCE.g:6902:1: ( RULE_ID )
+            // InternalSmartCE.g:6903:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20768,14 +21271,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalSmartCE.g:6771:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalSmartCE.g:6912:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6775:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalSmartCE.g:6776:2: rule__QualifiedName__Group__1__Impl
+            // InternalSmartCE.g:6916:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalSmartCE.g:6917:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -20801,35 +21304,35 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalSmartCE.g:6782:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // InternalSmartCE.g:6923:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6786:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // InternalSmartCE.g:6787:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalSmartCE.g:6927:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalSmartCE.g:6928:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // InternalSmartCE.g:6787:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // InternalSmartCE.g:6788:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalSmartCE.g:6928:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalSmartCE.g:6929:2: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // InternalSmartCE.g:6789:2: ( rule__QualifiedName__Group_1__0 )*
-            loop35:
+            // InternalSmartCE.g:6930:2: ( rule__QualifiedName__Group_1__0 )*
+            loop37:
             do {
-                int alt35=2;
-                int LA35_0 = input.LA(1);
+                int alt37=2;
+                int LA37_0 = input.LA(1);
 
-                if ( (LA35_0==74) ) {
-                    alt35=1;
+                if ( (LA37_0==72) ) {
+                    alt37=1;
                 }
 
 
-                switch (alt35) {
+                switch (alt37) {
             	case 1 :
-            	    // InternalSmartCE.g:6789:3: rule__QualifiedName__Group_1__0
+            	    // InternalSmartCE.g:6930:3: rule__QualifiedName__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_58);
+            	    pushFollow(FOLLOW_60);
             	    rule__QualifiedName__Group_1__0();
 
             	    state._fsp--;
@@ -20839,7 +21342,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             	    break;
 
             	default :
-            	    break loop35;
+            	    break loop37;
                 }
             } while (true);
 
@@ -20866,14 +21369,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // InternalSmartCE.g:6798:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // InternalSmartCE.g:6939:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6802:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // InternalSmartCE.g:6803:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // InternalSmartCE.g:6943:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalSmartCE.g:6944:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
             pushFollow(FOLLOW_6);
             rule__QualifiedName__Group_1__0__Impl();
@@ -20904,20 +21407,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // InternalSmartCE.g:6810:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // InternalSmartCE.g:6951:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6814:1: ( ( '.' ) )
-            // InternalSmartCE.g:6815:1: ( '.' )
+            // InternalSmartCE.g:6955:1: ( ( '.' ) )
+            // InternalSmartCE.g:6956:1: ( '.' )
             {
-            // InternalSmartCE.g:6815:1: ( '.' )
-            // InternalSmartCE.g:6816:2: '.'
+            // InternalSmartCE.g:6956:1: ( '.' )
+            // InternalSmartCE.g:6957:2: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
-            match(input,74,FOLLOW_2); 
+            match(input,72,FOLLOW_2); 
              after(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -20941,14 +21444,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // InternalSmartCE.g:6825:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // InternalSmartCE.g:6966:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6829:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // InternalSmartCE.g:6830:2: rule__QualifiedName__Group_1__1__Impl
+            // InternalSmartCE.g:6970:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalSmartCE.g:6971:2: rule__QualifiedName__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group_1__1__Impl();
@@ -20974,17 +21477,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // InternalSmartCE.g:6836:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalSmartCE.g:6977:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6840:1: ( ( RULE_ID ) )
-            // InternalSmartCE.g:6841:1: ( RULE_ID )
+            // InternalSmartCE.g:6981:1: ( ( RULE_ID ) )
+            // InternalSmartCE.g:6982:1: ( RULE_ID )
             {
-            // InternalSmartCE.g:6841:1: ( RULE_ID )
-            // InternalSmartCE.g:6842:2: RULE_ID
+            // InternalSmartCE.g:6982:1: ( RULE_ID )
+            // InternalSmartCE.g:6983:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21011,16 +21514,16 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__0"
-    // InternalSmartCE.g:6852:1: rule__QualifiedNameWithWildcard__Group__0 : rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 ;
+    // InternalSmartCE.g:6993:1: rule__QualifiedNameWithWildcard__Group__0 : rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 ;
     public final void rule__QualifiedNameWithWildcard__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6856:1: ( rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 )
-            // InternalSmartCE.g:6857:2: rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1
+            // InternalSmartCE.g:6997:1: ( rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 )
+            // InternalSmartCE.g:6998:2: rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1
             {
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_61);
             rule__QualifiedNameWithWildcard__Group__0__Impl();
 
             state._fsp--;
@@ -21049,17 +21552,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__0__Impl"
-    // InternalSmartCE.g:6864:1: rule__QualifiedNameWithWildcard__Group__0__Impl : ( ruleQualifiedName ) ;
+    // InternalSmartCE.g:7005:1: rule__QualifiedNameWithWildcard__Group__0__Impl : ( ruleQualifiedName ) ;
     public final void rule__QualifiedNameWithWildcard__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6868:1: ( ( ruleQualifiedName ) )
-            // InternalSmartCE.g:6869:1: ( ruleQualifiedName )
+            // InternalSmartCE.g:7009:1: ( ( ruleQualifiedName ) )
+            // InternalSmartCE.g:7010:1: ( ruleQualifiedName )
             {
-            // InternalSmartCE.g:6869:1: ( ruleQualifiedName )
-            // InternalSmartCE.g:6870:2: ruleQualifiedName
+            // InternalSmartCE.g:7010:1: ( ruleQualifiedName )
+            // InternalSmartCE.g:7011:2: ruleQualifiedName
             {
              before(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -21090,14 +21593,14 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__1"
-    // InternalSmartCE.g:6879:1: rule__QualifiedNameWithWildcard__Group__1 : rule__QualifiedNameWithWildcard__Group__1__Impl ;
+    // InternalSmartCE.g:7020:1: rule__QualifiedNameWithWildcard__Group__1 : rule__QualifiedNameWithWildcard__Group__1__Impl ;
     public final void rule__QualifiedNameWithWildcard__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6883:1: ( rule__QualifiedNameWithWildcard__Group__1__Impl )
-            // InternalSmartCE.g:6884:2: rule__QualifiedNameWithWildcard__Group__1__Impl
+            // InternalSmartCE.g:7024:1: ( rule__QualifiedNameWithWildcard__Group__1__Impl )
+            // InternalSmartCE.g:7025:2: rule__QualifiedNameWithWildcard__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedNameWithWildcard__Group__1__Impl();
@@ -21123,20 +21626,20 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__1__Impl"
-    // InternalSmartCE.g:6890:1: rule__QualifiedNameWithWildcard__Group__1__Impl : ( '.*' ) ;
+    // InternalSmartCE.g:7031:1: rule__QualifiedNameWithWildcard__Group__1__Impl : ( '.*' ) ;
     public final void rule__QualifiedNameWithWildcard__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6894:1: ( ( '.*' ) )
-            // InternalSmartCE.g:6895:1: ( '.*' )
+            // InternalSmartCE.g:7035:1: ( ( '.*' ) )
+            // InternalSmartCE.g:7036:1: ( '.*' )
             {
-            // InternalSmartCE.g:6895:1: ( '.*' )
-            // InternalSmartCE.g:6896:2: '.*'
+            // InternalSmartCE.g:7036:1: ( '.*' )
+            // InternalSmartCE.g:7037:2: '.*'
             {
              before(grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
-            match(input,75,FOLLOW_2); 
+            match(input,73,FOLLOW_2); 
              after(grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
 
             }
@@ -21160,17 +21663,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ImportsAssignment_1"
-    // InternalSmartCE.g:6906:1: rule__Model__ImportsAssignment_1 : ( ruleImport ) ;
+    // InternalSmartCE.g:7047:1: rule__Model__ImportsAssignment_1 : ( ruleImport ) ;
     public final void rule__Model__ImportsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6910:1: ( ( ruleImport ) )
-            // InternalSmartCE.g:6911:2: ( ruleImport )
+            // InternalSmartCE.g:7051:1: ( ( ruleImport ) )
+            // InternalSmartCE.g:7052:2: ( ruleImport )
             {
-            // InternalSmartCE.g:6911:2: ( ruleImport )
-            // InternalSmartCE.g:6912:3: ruleImport
+            // InternalSmartCE.g:7052:2: ( ruleImport )
+            // InternalSmartCE.g:7053:3: ruleImport
             {
              before(grammarAccess.getModelAccess().getImportsImportParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21201,17 +21704,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ContractsAssignment_2"
-    // InternalSmartCE.g:6921:1: rule__Model__ContractsAssignment_2 : ( ruleContract ) ;
+    // InternalSmartCE.g:7062:1: rule__Model__ContractsAssignment_2 : ( ruleContract ) ;
     public final void rule__Model__ContractsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6925:1: ( ( ruleContract ) )
-            // InternalSmartCE.g:6926:2: ( ruleContract )
+            // InternalSmartCE.g:7066:1: ( ( ruleContract ) )
+            // InternalSmartCE.g:7067:2: ( ruleContract )
             {
-            // InternalSmartCE.g:6926:2: ( ruleContract )
-            // InternalSmartCE.g:6927:3: ruleContract
+            // InternalSmartCE.g:7067:2: ( ruleContract )
+            // InternalSmartCE.g:7068:3: ruleContract
             {
              before(grammarAccess.getModelAccess().getContractsContractParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -21242,17 +21745,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
-    // InternalSmartCE.g:6936:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    // InternalSmartCE.g:7077:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__Import__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6940:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // InternalSmartCE.g:6941:2: ( ruleQualifiedNameWithWildcard )
+            // InternalSmartCE.g:7081:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // InternalSmartCE.g:7082:2: ( ruleQualifiedNameWithWildcard )
             {
-            // InternalSmartCE.g:6941:2: ( ruleQualifiedNameWithWildcard )
-            // InternalSmartCE.g:6942:3: ruleQualifiedNameWithWildcard
+            // InternalSmartCE.g:7082:2: ( ruleQualifiedNameWithWildcard )
+            // InternalSmartCE.g:7083:3: ruleQualifiedNameWithWildcard
             {
              before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21283,17 +21786,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__NameAssignment_1"
-    // InternalSmartCE.g:6951:1: rule__Contract__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCE.g:7092:1: rule__Contract__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Contract__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6955:1: ( ( RULE_ID ) )
-            // InternalSmartCE.g:6956:2: ( RULE_ID )
+            // InternalSmartCE.g:7096:1: ( ( RULE_ID ) )
+            // InternalSmartCE.g:7097:2: ( RULE_ID )
             {
-            // InternalSmartCE.g:6956:2: ( RULE_ID )
-            // InternalSmartCE.g:6957:3: RULE_ID
+            // InternalSmartCE.g:7097:2: ( RULE_ID )
+            // InternalSmartCE.g:7098:3: RULE_ID
             {
              before(grammarAccess.getContractAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21319,26 +21822,26 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Contract__NameAssignment_1"
 
 
-    // $ANTLR start "rule__Contract__BeginDateAssignment_5"
-    // InternalSmartCE.g:6966:1: rule__Contract__BeginDateAssignment_5 : ( ruleExpression ) ;
-    public final void rule__Contract__BeginDateAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__Contract__BeginDateAssignment_7"
+    // InternalSmartCE.g:7107:1: rule__Contract__BeginDateAssignment_7 : ( ruleExpression ) ;
+    public final void rule__Contract__BeginDateAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6970:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:6971:2: ( ruleExpression )
+            // InternalSmartCE.g:7111:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:7112:2: ( ruleExpression )
             {
-            // InternalSmartCE.g:6971:2: ( ruleExpression )
-            // InternalSmartCE.g:6972:3: ruleExpression
+            // InternalSmartCE.g:7112:2: ( ruleExpression )
+            // InternalSmartCE.g:7113:3: ruleExpression
             {
-             before(grammarAccess.getContractAccess().getBeginDateExpressionParserRuleCall_5_0()); 
+             before(grammarAccess.getContractAccess().getBeginDateExpressionParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
             ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getContractAccess().getBeginDateExpressionParserRuleCall_5_0()); 
+             after(grammarAccess.getContractAccess().getBeginDateExpressionParserRuleCall_7_0()); 
 
             }
 
@@ -21357,29 +21860,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__BeginDateAssignment_5"
+    // $ANTLR end "rule__Contract__BeginDateAssignment_7"
 
 
-    // $ANTLR start "rule__Contract__DueDateAssignment_8"
-    // InternalSmartCE.g:6981:1: rule__Contract__DueDateAssignment_8 : ( ruleExpression ) ;
-    public final void rule__Contract__DueDateAssignment_8() throws RecognitionException {
+    // $ANTLR start "rule__Contract__DueDateAssignment_10"
+    // InternalSmartCE.g:7122:1: rule__Contract__DueDateAssignment_10 : ( ruleExpression ) ;
+    public final void rule__Contract__DueDateAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:6985:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:6986:2: ( ruleExpression )
+            // InternalSmartCE.g:7126:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:7127:2: ( ruleExpression )
             {
-            // InternalSmartCE.g:6986:2: ( ruleExpression )
-            // InternalSmartCE.g:6987:3: ruleExpression
+            // InternalSmartCE.g:7127:2: ( ruleExpression )
+            // InternalSmartCE.g:7128:3: ruleExpression
             {
-             before(grammarAccess.getContractAccess().getDueDateExpressionParserRuleCall_8_0()); 
+             before(grammarAccess.getContractAccess().getDueDateExpressionParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
             ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getContractAccess().getDueDateExpressionParserRuleCall_8_0()); 
+             after(grammarAccess.getContractAccess().getDueDateExpressionParserRuleCall_10_0()); 
 
             }
 
@@ -21398,29 +21901,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__DueDateAssignment_8"
+    // $ANTLR end "rule__Contract__DueDateAssignment_10"
 
 
-    // $ANTLR start "rule__Contract__ApplicationAssignment_13"
-    // InternalSmartCE.g:6996:1: rule__Contract__ApplicationAssignment_13 : ( ruleApplication ) ;
-    public final void rule__Contract__ApplicationAssignment_13() throws RecognitionException {
+    // $ANTLR start "rule__Contract__ApplicationAssignment_16"
+    // InternalSmartCE.g:7137:1: rule__Contract__ApplicationAssignment_16 : ( ruleApplication ) ;
+    public final void rule__Contract__ApplicationAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7000:1: ( ( ruleApplication ) )
-            // InternalSmartCE.g:7001:2: ( ruleApplication )
+            // InternalSmartCE.g:7141:1: ( ( ruleApplication ) )
+            // InternalSmartCE.g:7142:2: ( ruleApplication )
             {
-            // InternalSmartCE.g:7001:2: ( ruleApplication )
-            // InternalSmartCE.g:7002:3: ruleApplication
+            // InternalSmartCE.g:7142:2: ( ruleApplication )
+            // InternalSmartCE.g:7143:3: ruleApplication
             {
-             before(grammarAccess.getContractAccess().getApplicationApplicationParserRuleCall_13_0()); 
+             before(grammarAccess.getContractAccess().getApplicationApplicationParserRuleCall_16_0()); 
             pushFollow(FOLLOW_2);
             ruleApplication();
 
             state._fsp--;
 
-             after(grammarAccess.getContractAccess().getApplicationApplicationParserRuleCall_13_0()); 
+             after(grammarAccess.getContractAccess().getApplicationApplicationParserRuleCall_16_0()); 
 
             }
 
@@ -21439,29 +21942,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__ApplicationAssignment_13"
+    // $ANTLR end "rule__Contract__ApplicationAssignment_16"
 
 
-    // $ANTLR start "rule__Contract__ProcessAssignment_16"
-    // InternalSmartCE.g:7011:1: rule__Contract__ProcessAssignment_16 : ( ruleProcess ) ;
-    public final void rule__Contract__ProcessAssignment_16() throws RecognitionException {
+    // $ANTLR start "rule__Contract__ProcessAssignment_19"
+    // InternalSmartCE.g:7152:1: rule__Contract__ProcessAssignment_19 : ( ruleProcess ) ;
+    public final void rule__Contract__ProcessAssignment_19() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7015:1: ( ( ruleProcess ) )
-            // InternalSmartCE.g:7016:2: ( ruleProcess )
+            // InternalSmartCE.g:7156:1: ( ( ruleProcess ) )
+            // InternalSmartCE.g:7157:2: ( ruleProcess )
             {
-            // InternalSmartCE.g:7016:2: ( ruleProcess )
-            // InternalSmartCE.g:7017:3: ruleProcess
+            // InternalSmartCE.g:7157:2: ( ruleProcess )
+            // InternalSmartCE.g:7158:3: ruleProcess
             {
-             before(grammarAccess.getContractAccess().getProcessProcessParserRuleCall_16_0()); 
+             before(grammarAccess.getContractAccess().getProcessProcessParserRuleCall_19_0()); 
             pushFollow(FOLLOW_2);
             ruleProcess();
 
             state._fsp--;
 
-             after(grammarAccess.getContractAccess().getProcessProcessParserRuleCall_16_0()); 
+             after(grammarAccess.getContractAccess().getProcessProcessParserRuleCall_19_0()); 
 
             }
 
@@ -21480,29 +21983,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__ProcessAssignment_16"
+    // $ANTLR end "rule__Contract__ProcessAssignment_19"
 
 
-    // $ANTLR start "rule__Contract__VariablesAssignment_18_2"
-    // InternalSmartCE.g:7026:1: rule__Contract__VariablesAssignment_18_2 : ( ruleVariable ) ;
-    public final void rule__Contract__VariablesAssignment_18_2() throws RecognitionException {
+    // $ANTLR start "rule__Contract__VariablesAssignment_21_2"
+    // InternalSmartCE.g:7167:1: rule__Contract__VariablesAssignment_21_2 : ( ruleVariable ) ;
+    public final void rule__Contract__VariablesAssignment_21_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7030:1: ( ( ruleVariable ) )
-            // InternalSmartCE.g:7031:2: ( ruleVariable )
+            // InternalSmartCE.g:7171:1: ( ( ruleVariable ) )
+            // InternalSmartCE.g:7172:2: ( ruleVariable )
             {
-            // InternalSmartCE.g:7031:2: ( ruleVariable )
-            // InternalSmartCE.g:7032:3: ruleVariable
+            // InternalSmartCE.g:7172:2: ( ruleVariable )
+            // InternalSmartCE.g:7173:3: ruleVariable
             {
-             before(grammarAccess.getContractAccess().getVariablesVariableParserRuleCall_18_2_0()); 
+             before(grammarAccess.getContractAccess().getVariablesVariableParserRuleCall_21_2_0()); 
             pushFollow(FOLLOW_2);
             ruleVariable();
 
             state._fsp--;
 
-             after(grammarAccess.getContractAccess().getVariablesVariableParserRuleCall_18_2_0()); 
+             after(grammarAccess.getContractAccess().getVariablesVariableParserRuleCall_21_2_0()); 
 
             }
 
@@ -21521,29 +22024,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__VariablesAssignment_18_2"
+    // $ANTLR end "rule__Contract__VariablesAssignment_21_2"
 
 
-    // $ANTLR start "rule__Contract__ClausesAssignment_19"
-    // InternalSmartCE.g:7041:1: rule__Contract__ClausesAssignment_19 : ( ruleClause ) ;
-    public final void rule__Contract__ClausesAssignment_19() throws RecognitionException {
+    // $ANTLR start "rule__Contract__ClausesAssignment_24"
+    // InternalSmartCE.g:7182:1: rule__Contract__ClausesAssignment_24 : ( ruleClause ) ;
+    public final void rule__Contract__ClausesAssignment_24() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7045:1: ( ( ruleClause ) )
-            // InternalSmartCE.g:7046:2: ( ruleClause )
+            // InternalSmartCE.g:7186:1: ( ( ruleClause ) )
+            // InternalSmartCE.g:7187:2: ( ruleClause )
             {
-            // InternalSmartCE.g:7046:2: ( ruleClause )
-            // InternalSmartCE.g:7047:3: ruleClause
+            // InternalSmartCE.g:7187:2: ( ruleClause )
+            // InternalSmartCE.g:7188:3: ruleClause
             {
-             before(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_19_0()); 
+             before(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_24_0()); 
             pushFollow(FOLLOW_2);
             ruleClause();
 
             state._fsp--;
 
-             after(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_19_0()); 
+             after(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_24_0()); 
 
             }
 
@@ -21562,25 +22065,25 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Contract__ClausesAssignment_19"
+    // $ANTLR end "rule__Contract__ClausesAssignment_24"
 
 
-    // $ANTLR start "rule__Variable__NameAssignment_0"
-    // InternalSmartCE.g:7056:1: rule__Variable__NameAssignment_0 : ( RULE_ID ) ;
-    public final void rule__Variable__NameAssignment_0() throws RecognitionException {
+    // $ANTLR start "rule__Variable__NameAssignment_0_0"
+    // InternalSmartCE.g:7197:1: rule__Variable__NameAssignment_0_0 : ( RULE_ID ) ;
+    public final void rule__Variable__NameAssignment_0_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7060:1: ( ( RULE_ID ) )
-            // InternalSmartCE.g:7061:2: ( RULE_ID )
+            // InternalSmartCE.g:7201:1: ( ( RULE_ID ) )
+            // InternalSmartCE.g:7202:2: ( RULE_ID )
             {
-            // InternalSmartCE.g:7061:2: ( RULE_ID )
-            // InternalSmartCE.g:7062:3: RULE_ID
+            // InternalSmartCE.g:7202:2: ( RULE_ID )
+            // InternalSmartCE.g:7203:3: RULE_ID
             {
-             before(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0()); 
+             before(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0()); 
+             after(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0_0()); 
 
             }
 
@@ -21599,29 +22102,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable__NameAssignment_0"
+    // $ANTLR end "rule__Variable__NameAssignment_0_0"
 
 
-    // $ANTLR start "rule__Variable__ExpressionAssignment_2"
-    // InternalSmartCE.g:7071:1: rule__Variable__ExpressionAssignment_2 : ( ruleExpression ) ;
-    public final void rule__Variable__ExpressionAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__Variable__ExpressionAssignment_0_2"
+    // InternalSmartCE.g:7212:1: rule__Variable__ExpressionAssignment_0_2 : ( ruleExpression ) ;
+    public final void rule__Variable__ExpressionAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7075:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:7076:2: ( ruleExpression )
+            // InternalSmartCE.g:7216:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:7217:2: ( ruleExpression )
             {
-            // InternalSmartCE.g:7076:2: ( ruleExpression )
-            // InternalSmartCE.g:7077:3: ruleExpression
+            // InternalSmartCE.g:7217:2: ( ruleExpression )
+            // InternalSmartCE.g:7218:3: ruleExpression
             {
-             before(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0()); 
+             before(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_0_2_0()); 
             pushFollow(FOLLOW_2);
             ruleExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0()); 
+             after(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_0_2_0()); 
 
             }
 
@@ -21640,21 +22143,99 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Variable__ExpressionAssignment_2"
+    // $ANTLR end "rule__Variable__ExpressionAssignment_0_2"
+
+
+    // $ANTLR start "rule__Variable__NameAssignment_1_0"
+    // InternalSmartCE.g:7227:1: rule__Variable__NameAssignment_1_0 : ( RULE_ID ) ;
+    public final void rule__Variable__NameAssignment_1_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:7231:1: ( ( RULE_ID ) )
+            // InternalSmartCE.g:7232:2: ( RULE_ID )
+            {
+            // InternalSmartCE.g:7232:2: ( RULE_ID )
+            // InternalSmartCE.g:7233:3: RULE_ID
+            {
+             before(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__NameAssignment_1_0"
+
+
+    // $ANTLR start "rule__Variable__BusinessRuleAssignment_1_2"
+    // InternalSmartCE.g:7242:1: rule__Variable__BusinessRuleAssignment_1_2 : ( ruleBusinessRule ) ;
+    public final void rule__Variable__BusinessRuleAssignment_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:7246:1: ( ( ruleBusinessRule ) )
+            // InternalSmartCE.g:7247:2: ( ruleBusinessRule )
+            {
+            // InternalSmartCE.g:7247:2: ( ruleBusinessRule )
+            // InternalSmartCE.g:7248:3: ruleBusinessRule
+            {
+             before(grammarAccess.getVariableAccess().getBusinessRuleBusinessRuleParserRuleCall_1_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleBusinessRule();
+
+            state._fsp--;
+
+             after(grammarAccess.getVariableAccess().getBusinessRuleBusinessRuleParserRuleCall_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Variable__BusinessRuleAssignment_1_2"
 
 
     // $ANTLR start "rule__Clause__NameAssignment_1"
-    // InternalSmartCE.g:7086:1: rule__Clause__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSmartCE.g:7257:1: rule__Clause__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Clause__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7090:1: ( ( RULE_ID ) )
-            // InternalSmartCE.g:7091:2: ( RULE_ID )
+            // InternalSmartCE.g:7261:1: ( ( RULE_ID ) )
+            // InternalSmartCE.g:7262:2: ( RULE_ID )
             {
-            // InternalSmartCE.g:7091:2: ( RULE_ID )
-            // InternalSmartCE.g:7092:3: RULE_ID
+            // InternalSmartCE.g:7262:2: ( RULE_ID )
+            // InternalSmartCE.g:7263:3: RULE_ID
             {
              before(grammarAccess.getClauseAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21681,17 +22262,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__OperationAssignment_8"
-    // InternalSmartCE.g:7101:1: rule__Clause__OperationAssignment_8 : ( ruleOperation ) ;
+    // InternalSmartCE.g:7272:1: rule__Clause__OperationAssignment_8 : ( ruleOperation ) ;
     public final void rule__Clause__OperationAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7105:1: ( ( ruleOperation ) )
-            // InternalSmartCE.g:7106:2: ( ruleOperation )
+            // InternalSmartCE.g:7276:1: ( ( ruleOperation ) )
+            // InternalSmartCE.g:7277:2: ( ruleOperation )
             {
-            // InternalSmartCE.g:7106:2: ( ruleOperation )
-            // InternalSmartCE.g:7107:3: ruleOperation
+            // InternalSmartCE.g:7277:2: ( ruleOperation )
+            // InternalSmartCE.g:7278:3: ruleOperation
             {
              before(grammarAccess.getClauseAccess().getOperationOperationEnumRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -21722,17 +22303,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__ConditionAssignment_11"
-    // InternalSmartCE.g:7116:1: rule__Clause__ConditionAssignment_11 : ( ruleCondition ) ;
+    // InternalSmartCE.g:7287:1: rule__Clause__ConditionAssignment_11 : ( ruleCondition ) ;
     public final void rule__Clause__ConditionAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7120:1: ( ( ruleCondition ) )
-            // InternalSmartCE.g:7121:2: ( ruleCondition )
+            // InternalSmartCE.g:7291:1: ( ( ruleCondition ) )
+            // InternalSmartCE.g:7292:2: ( ruleCondition )
             {
-            // InternalSmartCE.g:7121:2: ( ruleCondition )
-            // InternalSmartCE.g:7122:3: ruleCondition
+            // InternalSmartCE.g:7292:2: ( ruleCondition )
+            // InternalSmartCE.g:7293:3: ruleCondition
             {
              before(grammarAccess.getClauseAccess().getConditionConditionParserRuleCall_11_0()); 
             pushFollow(FOLLOW_2);
@@ -21763,17 +22344,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__OnBreachAssignment_14"
-    // InternalSmartCE.g:7131:1: rule__Clause__OnBreachAssignment_14 : ( ruleOnBreach ) ;
+    // InternalSmartCE.g:7302:1: rule__Clause__OnBreachAssignment_14 : ( ruleOnBreach ) ;
     public final void rule__Clause__OnBreachAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7135:1: ( ( ruleOnBreach ) )
-            // InternalSmartCE.g:7136:2: ( ruleOnBreach )
+            // InternalSmartCE.g:7306:1: ( ( ruleOnBreach ) )
+            // InternalSmartCE.g:7307:2: ( ruleOnBreach )
             {
-            // InternalSmartCE.g:7136:2: ( ruleOnBreach )
-            // InternalSmartCE.g:7137:3: ruleOnBreach
+            // InternalSmartCE.g:7307:2: ( ruleOnBreach )
+            // InternalSmartCE.g:7308:3: ruleOnBreach
             {
              before(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_14_0()); 
             pushFollow(FOLLOW_2);
@@ -21804,17 +22385,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__OnSuccessAssignment_15_1"
-    // InternalSmartCE.g:7146:1: rule__Clause__OnSuccessAssignment_15_1 : ( ruleOnSuccess ) ;
+    // InternalSmartCE.g:7317:1: rule__Clause__OnSuccessAssignment_15_1 : ( ruleOnSuccess ) ;
     public final void rule__Clause__OnSuccessAssignment_15_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7150:1: ( ( ruleOnSuccess ) )
-            // InternalSmartCE.g:7151:2: ( ruleOnSuccess )
+            // InternalSmartCE.g:7321:1: ( ( ruleOnSuccess ) )
+            // InternalSmartCE.g:7322:2: ( ruleOnSuccess )
             {
-            // InternalSmartCE.g:7151:2: ( ruleOnSuccess )
-            // InternalSmartCE.g:7152:3: ruleOnSuccess
+            // InternalSmartCE.g:7322:2: ( ruleOnSuccess )
+            // InternalSmartCE.g:7323:3: ruleOnSuccess
             {
              before(grammarAccess.getClauseAccess().getOnSuccessOnSuccessParserRuleCall_15_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21845,17 +22426,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__ConditionsAssignment_0"
-    // InternalSmartCE.g:7161:1: rule__CompositeCondition__ConditionsAssignment_0 : ( ruleBusinessRule ) ;
+    // InternalSmartCE.g:7332:1: rule__CompositeCondition__ConditionsAssignment_0 : ( ruleBusinessRule ) ;
     public final void rule__CompositeCondition__ConditionsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7165:1: ( ( ruleBusinessRule ) )
-            // InternalSmartCE.g:7166:2: ( ruleBusinessRule )
+            // InternalSmartCE.g:7336:1: ( ( ruleBusinessRule ) )
+            // InternalSmartCE.g:7337:2: ( ruleBusinessRule )
             {
-            // InternalSmartCE.g:7166:2: ( ruleBusinessRule )
-            // InternalSmartCE.g:7167:3: ruleBusinessRule
+            // InternalSmartCE.g:7337:2: ( ruleBusinessRule )
+            // InternalSmartCE.g:7338:3: ruleBusinessRule
             {
              before(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21886,17 +22467,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__LogicalOperatorsAssignment_1"
-    // InternalSmartCE.g:7176:1: rule__CompositeCondition__LogicalOperatorsAssignment_1 : ( ruleLogicalOperator ) ;
+    // InternalSmartCE.g:7347:1: rule__CompositeCondition__LogicalOperatorsAssignment_1 : ( ruleLogicalOperator ) ;
     public final void rule__CompositeCondition__LogicalOperatorsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7180:1: ( ( ruleLogicalOperator ) )
-            // InternalSmartCE.g:7181:2: ( ruleLogicalOperator )
+            // InternalSmartCE.g:7351:1: ( ( ruleLogicalOperator ) )
+            // InternalSmartCE.g:7352:2: ( ruleLogicalOperator )
             {
-            // InternalSmartCE.g:7181:2: ( ruleLogicalOperator )
-            // InternalSmartCE.g:7182:3: ruleLogicalOperator
+            // InternalSmartCE.g:7352:2: ( ruleLogicalOperator )
+            // InternalSmartCE.g:7353:3: ruleLogicalOperator
             {
              before(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21927,17 +22508,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__ConditionsAssignment_2_0"
-    // InternalSmartCE.g:7191:1: rule__CompositeCondition__ConditionsAssignment_2_0 : ( ruleBusinessRule ) ;
+    // InternalSmartCE.g:7362:1: rule__CompositeCondition__ConditionsAssignment_2_0 : ( ruleBusinessRule ) ;
     public final void rule__CompositeCondition__ConditionsAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7195:1: ( ( ruleBusinessRule ) )
-            // InternalSmartCE.g:7196:2: ( ruleBusinessRule )
+            // InternalSmartCE.g:7366:1: ( ( ruleBusinessRule ) )
+            // InternalSmartCE.g:7367:2: ( ruleBusinessRule )
             {
-            // InternalSmartCE.g:7196:2: ( ruleBusinessRule )
-            // InternalSmartCE.g:7197:3: ruleBusinessRule
+            // InternalSmartCE.g:7367:2: ( ruleBusinessRule )
+            // InternalSmartCE.g:7368:3: ruleBusinessRule
             {
              before(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21968,17 +22549,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0"
-    // InternalSmartCE.g:7206:1: rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 : ( ruleLogicalOperator ) ;
+    // InternalSmartCE.g:7377:1: rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0 : ( ruleLogicalOperator ) ;
     public final void rule__CompositeCondition__LogicalOperatorsAssignment_2_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7210:1: ( ( ruleLogicalOperator ) )
-            // InternalSmartCE.g:7211:2: ( ruleLogicalOperator )
+            // InternalSmartCE.g:7381:1: ( ( ruleLogicalOperator ) )
+            // InternalSmartCE.g:7382:2: ( ruleLogicalOperator )
             {
-            // InternalSmartCE.g:7211:2: ( ruleLogicalOperator )
-            // InternalSmartCE.g:7212:3: ruleLogicalOperator
+            // InternalSmartCE.g:7382:2: ( ruleLogicalOperator )
+            // InternalSmartCE.g:7383:3: ruleLogicalOperator
             {
              before(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_2_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -22009,17 +22590,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__CompositeCondition__ConditionsAssignment_2_1_1"
-    // InternalSmartCE.g:7221:1: rule__CompositeCondition__ConditionsAssignment_2_1_1 : ( ruleBusinessRule ) ;
+    // InternalSmartCE.g:7392:1: rule__CompositeCondition__ConditionsAssignment_2_1_1 : ( ruleBusinessRule ) ;
     public final void rule__CompositeCondition__ConditionsAssignment_2_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7225:1: ( ( ruleBusinessRule ) )
-            // InternalSmartCE.g:7226:2: ( ruleBusinessRule )
+            // InternalSmartCE.g:7396:1: ( ( ruleBusinessRule ) )
+            // InternalSmartCE.g:7397:2: ( ruleBusinessRule )
             {
-            // InternalSmartCE.g:7226:2: ( ruleBusinessRule )
-            // InternalSmartCE.g:7227:3: ruleBusinessRule
+            // InternalSmartCE.g:7397:2: ( ruleBusinessRule )
+            // InternalSmartCE.g:7398:3: ruleBusinessRule
             {
              before(grammarAccess.getCompositeConditionAccess().getConditionsBusinessRuleParserRuleCall_2_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -22050,17 +22631,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__ConditionsAssignment_0"
-    // InternalSmartCE.g:7236:1: rule__ConditionalExpression__ConditionsAssignment_0 : ( ruleCompositeCondition ) ;
+    // InternalSmartCE.g:7407:1: rule__ConditionalExpression__ConditionsAssignment_0 : ( ruleCompositeCondition ) ;
     public final void rule__ConditionalExpression__ConditionsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7240:1: ( ( ruleCompositeCondition ) )
-            // InternalSmartCE.g:7241:2: ( ruleCompositeCondition )
+            // InternalSmartCE.g:7411:1: ( ( ruleCompositeCondition ) )
+            // InternalSmartCE.g:7412:2: ( ruleCompositeCondition )
             {
-            // InternalSmartCE.g:7241:2: ( ruleCompositeCondition )
-            // InternalSmartCE.g:7242:3: ruleCompositeCondition
+            // InternalSmartCE.g:7412:2: ( ruleCompositeCondition )
+            // InternalSmartCE.g:7413:3: ruleCompositeCondition
             {
              before(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -22090,18 +22671,59 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ConditionalExpression__ConditionsAssignment_0"
 
 
+    // $ANTLR start "rule__ConditionalExpression__ExpressionAssignment_3"
+    // InternalSmartCE.g:7422:1: rule__ConditionalExpression__ExpressionAssignment_3 : ( ruleExpression ) ;
+    public final void rule__ConditionalExpression__ExpressionAssignment_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:7426:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:7427:2: ( ruleExpression )
+            {
+            // InternalSmartCE.g:7427:2: ( ruleExpression )
+            // InternalSmartCE.g:7428:3: ruleExpression
+            {
+             before(grammarAccess.getConditionalExpressionAccess().getExpressionExpressionParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_2);
+            ruleExpression();
+
+            state._fsp--;
+
+             after(grammarAccess.getConditionalExpressionAccess().getExpressionExpressionParserRuleCall_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__ConditionalExpression__ExpressionAssignment_3"
+
+
     // $ANTLR start "rule__ConditionalExpression__ConditionsAssignment_7"
-    // InternalSmartCE.g:7251:1: rule__ConditionalExpression__ConditionsAssignment_7 : ( ruleCondition ) ;
+    // InternalSmartCE.g:7437:1: rule__ConditionalExpression__ConditionsAssignment_7 : ( ruleCondition ) ;
     public final void rule__ConditionalExpression__ConditionsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7255:1: ( ( ruleCondition ) )
-            // InternalSmartCE.g:7256:2: ( ruleCondition )
+            // InternalSmartCE.g:7441:1: ( ( ruleCondition ) )
+            // InternalSmartCE.g:7442:2: ( ruleCondition )
             {
-            // InternalSmartCE.g:7256:2: ( ruleCondition )
-            // InternalSmartCE.g:7257:3: ruleCondition
+            // InternalSmartCE.g:7442:2: ( ruleCondition )
+            // InternalSmartCE.g:7443:3: ruleCondition
             {
              before(grammarAccess.getConditionalExpressionAccess().getConditionsConditionParserRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -22132,21 +22754,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LogicalOperator__NameAssignment"
-    // InternalSmartCE.g:7266:1: rule__LogicalOperator__NameAssignment : ( ( rule__LogicalOperator__NameAlternatives_0 ) ) ;
+    // InternalSmartCE.g:7452:1: rule__LogicalOperator__NameAssignment : ( ( rule__LogicalOperator__NameAlternatives_0 ) ) ;
     public final void rule__LogicalOperator__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7270:1: ( ( ( rule__LogicalOperator__NameAlternatives_0 ) ) )
-            // InternalSmartCE.g:7271:2: ( ( rule__LogicalOperator__NameAlternatives_0 ) )
+            // InternalSmartCE.g:7456:1: ( ( ( rule__LogicalOperator__NameAlternatives_0 ) ) )
+            // InternalSmartCE.g:7457:2: ( ( rule__LogicalOperator__NameAlternatives_0 ) )
             {
-            // InternalSmartCE.g:7271:2: ( ( rule__LogicalOperator__NameAlternatives_0 ) )
-            // InternalSmartCE.g:7272:3: ( rule__LogicalOperator__NameAlternatives_0 )
+            // InternalSmartCE.g:7457:2: ( ( rule__LogicalOperator__NameAlternatives_0 ) )
+            // InternalSmartCE.g:7458:3: ( rule__LogicalOperator__NameAlternatives_0 )
             {
              before(grammarAccess.getLogicalOperatorAccess().getNameAlternatives_0()); 
-            // InternalSmartCE.g:7273:3: ( rule__LogicalOperator__NameAlternatives_0 )
-            // InternalSmartCE.g:7273:4: rule__LogicalOperator__NameAlternatives_0
+            // InternalSmartCE.g:7459:3: ( rule__LogicalOperator__NameAlternatives_0 )
+            // InternalSmartCE.g:7459:4: rule__LogicalOperator__NameAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__LogicalOperator__NameAlternatives_0();
@@ -22179,17 +22801,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__ValueAssignment_2"
-    // InternalSmartCE.g:7281:1: rule__Timeout__ValueAssignment_2 : ( RULE_INT ) ;
+    // InternalSmartCE.g:7467:1: rule__Timeout__ValueAssignment_2 : ( RULE_INT ) ;
     public final void rule__Timeout__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7285:1: ( ( RULE_INT ) )
-            // InternalSmartCE.g:7286:2: ( RULE_INT )
+            // InternalSmartCE.g:7471:1: ( ( RULE_INT ) )
+            // InternalSmartCE.g:7472:2: ( RULE_INT )
             {
-            // InternalSmartCE.g:7286:2: ( RULE_INT )
-            // InternalSmartCE.g:7287:3: RULE_INT
+            // InternalSmartCE.g:7472:2: ( RULE_INT )
+            // InternalSmartCE.g:7473:3: RULE_INT
             {
              before(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -22216,17 +22838,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__OperationsNumberAssignment_2"
-    // InternalSmartCE.g:7296:1: rule__OperationLimit__OperationsNumberAssignment_2 : ( RULE_INT ) ;
+    // InternalSmartCE.g:7482:1: rule__OperationLimit__OperationsNumberAssignment_2 : ( RULE_INT ) ;
     public final void rule__OperationLimit__OperationsNumberAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7300:1: ( ( RULE_INT ) )
-            // InternalSmartCE.g:7301:2: ( RULE_INT )
+            // InternalSmartCE.g:7486:1: ( ( RULE_INT ) )
+            // InternalSmartCE.g:7487:2: ( RULE_INT )
             {
-            // InternalSmartCE.g:7301:2: ( RULE_INT )
-            // InternalSmartCE.g:7302:3: RULE_INT
+            // InternalSmartCE.g:7487:2: ( RULE_INT )
+            // InternalSmartCE.g:7488:3: RULE_INT
             {
              before(grammarAccess.getOperationLimitAccess().getOperationsNumberINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -22253,17 +22875,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OperationLimit__TimeUnitAssignment_4"
-    // InternalSmartCE.g:7311:1: rule__OperationLimit__TimeUnitAssignment_4 : ( ruleTimeUnit ) ;
+    // InternalSmartCE.g:7497:1: rule__OperationLimit__TimeUnitAssignment_4 : ( ruleTimeUnit ) ;
     public final void rule__OperationLimit__TimeUnitAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7315:1: ( ( ruleTimeUnit ) )
-            // InternalSmartCE.g:7316:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7501:1: ( ( ruleTimeUnit ) )
+            // InternalSmartCE.g:7502:2: ( ruleTimeUnit )
             {
-            // InternalSmartCE.g:7316:2: ( ruleTimeUnit )
-            // InternalSmartCE.g:7317:3: ruleTimeUnit
+            // InternalSmartCE.g:7502:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7503:3: ruleTimeUnit
             {
              before(grammarAccess.getOperationLimitAccess().getTimeUnitTimeUnitEnumRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -22294,17 +22916,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__StartAssignment_2"
-    // InternalSmartCE.g:7326:1: rule__BusinessDay__StartAssignment_2 : ( ruleWeekDay ) ;
+    // InternalSmartCE.g:7512:1: rule__BusinessDay__StartAssignment_2 : ( ruleWeekDay ) ;
     public final void rule__BusinessDay__StartAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7330:1: ( ( ruleWeekDay ) )
-            // InternalSmartCE.g:7331:2: ( ruleWeekDay )
+            // InternalSmartCE.g:7516:1: ( ( ruleWeekDay ) )
+            // InternalSmartCE.g:7517:2: ( ruleWeekDay )
             {
-            // InternalSmartCE.g:7331:2: ( ruleWeekDay )
-            // InternalSmartCE.g:7332:3: ruleWeekDay
+            // InternalSmartCE.g:7517:2: ( ruleWeekDay )
+            // InternalSmartCE.g:7518:3: ruleWeekDay
             {
              before(grammarAccess.getBusinessDayAccess().getStartWeekDayEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22335,17 +22957,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BusinessDay__EndAssignment_4"
-    // InternalSmartCE.g:7341:1: rule__BusinessDay__EndAssignment_4 : ( ruleWeekDay ) ;
+    // InternalSmartCE.g:7527:1: rule__BusinessDay__EndAssignment_4 : ( ruleWeekDay ) ;
     public final void rule__BusinessDay__EndAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7345:1: ( ( ruleWeekDay ) )
-            // InternalSmartCE.g:7346:2: ( ruleWeekDay )
+            // InternalSmartCE.g:7531:1: ( ( ruleWeekDay ) )
+            // InternalSmartCE.g:7532:2: ( ruleWeekDay )
             {
-            // InternalSmartCE.g:7346:2: ( ruleWeekDay )
-            // InternalSmartCE.g:7347:3: ruleWeekDay
+            // InternalSmartCE.g:7532:2: ( ruleWeekDay )
+            // InternalSmartCE.g:7533:3: ruleWeekDay
             {
              before(grammarAccess.getBusinessDayAccess().getEndWeekDayEnumRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -22376,17 +22998,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__StartAssignment_2"
-    // InternalSmartCE.g:7356:1: rule__TimeInterval__StartAssignment_2 : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7542:1: rule__TimeInterval__StartAssignment_2 : ( RULE_STRING ) ;
     public final void rule__TimeInterval__StartAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7360:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7361:2: ( RULE_STRING )
+            // InternalSmartCE.g:7546:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7547:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7361:2: ( RULE_STRING )
-            // InternalSmartCE.g:7362:3: RULE_STRING
+            // InternalSmartCE.g:7547:2: ( RULE_STRING )
+            // InternalSmartCE.g:7548:3: RULE_STRING
             {
              before(grammarAccess.getTimeIntervalAccess().getStartSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -22413,17 +23035,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__EndAssignment_4"
-    // InternalSmartCE.g:7371:1: rule__TimeInterval__EndAssignment_4 : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7557:1: rule__TimeInterval__EndAssignment_4 : ( RULE_STRING ) ;
     public final void rule__TimeInterval__EndAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7375:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7376:2: ( RULE_STRING )
+            // InternalSmartCE.g:7561:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7562:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7376:2: ( RULE_STRING )
-            // InternalSmartCE.g:7377:3: RULE_STRING
+            // InternalSmartCE.g:7562:2: ( RULE_STRING )
+            // InternalSmartCE.g:7563:3: RULE_STRING
             {
              before(grammarAccess.getTimeIntervalAccess().getEndSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -22449,22 +23071,22 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__TimeInterval__EndAssignment_4"
 
 
-    // $ANTLR start "rule__SessionInterval__FrequencyAssignment_0_2"
-    // InternalSmartCE.g:7386:1: rule__SessionInterval__FrequencyAssignment_0_2 : ( RULE_INT ) ;
-    public final void rule__SessionInterval__FrequencyAssignment_0_2() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__FrequencyAssignment_0_0_2"
+    // InternalSmartCE.g:7572:1: rule__SessionInterval__FrequencyAssignment_0_0_2 : ( RULE_INT ) ;
+    public final void rule__SessionInterval__FrequencyAssignment_0_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7390:1: ( ( RULE_INT ) )
-            // InternalSmartCE.g:7391:2: ( RULE_INT )
+            // InternalSmartCE.g:7576:1: ( ( RULE_INT ) )
+            // InternalSmartCE.g:7577:2: ( RULE_INT )
             {
-            // InternalSmartCE.g:7391:2: ( RULE_INT )
-            // InternalSmartCE.g:7392:3: RULE_INT
+            // InternalSmartCE.g:7577:2: ( RULE_INT )
+            // InternalSmartCE.g:7578:3: RULE_INT
             {
-             before(grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_0_2_0()); 
+             before(grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_0_0_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_0_2_0()); 
+             after(grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_0_0_2_0()); 
 
             }
 
@@ -22483,29 +23105,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__FrequencyAssignment_0_2"
+    // $ANTLR end "rule__SessionInterval__FrequencyAssignment_0_0_2"
 
 
-    // $ANTLR start "rule__SessionInterval__TimeUnitAssignment_0_3"
-    // InternalSmartCE.g:7401:1: rule__SessionInterval__TimeUnitAssignment_0_3 : ( ruleTimeUnit ) ;
-    public final void rule__SessionInterval__TimeUnitAssignment_0_3() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__TimeUnitAssignment_0_0_3"
+    // InternalSmartCE.g:7587:1: rule__SessionInterval__TimeUnitAssignment_0_0_3 : ( ruleTimeUnit ) ;
+    public final void rule__SessionInterval__TimeUnitAssignment_0_0_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7405:1: ( ( ruleTimeUnit ) )
-            // InternalSmartCE.g:7406:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7591:1: ( ( ruleTimeUnit ) )
+            // InternalSmartCE.g:7592:2: ( ruleTimeUnit )
             {
-            // InternalSmartCE.g:7406:2: ( ruleTimeUnit )
-            // InternalSmartCE.g:7407:3: ruleTimeUnit
+            // InternalSmartCE.g:7592:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7593:3: ruleTimeUnit
             {
-             before(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_0_3_0()); 
+             before(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_0_0_3_0()); 
             pushFollow(FOLLOW_2);
             ruleTimeUnit();
 
             state._fsp--;
 
-             after(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_0_3_0()); 
+             after(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_0_0_3_0()); 
 
             }
 
@@ -22524,25 +23146,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__TimeUnitAssignment_0_3"
+    // $ANTLR end "rule__SessionInterval__TimeUnitAssignment_0_0_3"
 
 
-    // $ANTLR start "rule__SessionInterval__StartAssignment_0_5"
-    // InternalSmartCE.g:7416:1: rule__SessionInterval__StartAssignment_0_5 : ( RULE_STRING ) ;
-    public final void rule__SessionInterval__StartAssignment_0_5() throws RecognitionException {
+    // $ANTLR start "rule__SessionInterval__MessagecontentAssignment_0_0_5"
+    // InternalSmartCE.g:7602:1: rule__SessionInterval__MessagecontentAssignment_0_0_5 : ( ruleMessageContent ) ;
+    public final void rule__SessionInterval__MessagecontentAssignment_0_0_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7420:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7421:2: ( RULE_STRING )
+            // InternalSmartCE.g:7606:1: ( ( ruleMessageContent ) )
+            // InternalSmartCE.g:7607:2: ( ruleMessageContent )
             {
-            // InternalSmartCE.g:7421:2: ( RULE_STRING )
-            // InternalSmartCE.g:7422:3: RULE_STRING
+            // InternalSmartCE.g:7607:2: ( ruleMessageContent )
+            // InternalSmartCE.g:7608:3: ruleMessageContent
             {
-             before(grammarAccess.getSessionIntervalAccess().getStartSTRINGTerminalRuleCall_0_5_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getStartSTRINGTerminalRuleCall_0_5_0()); 
+             before(grammarAccess.getSessionIntervalAccess().getMessagecontentMessageContentParserRuleCall_0_0_5_0()); 
+            pushFollow(FOLLOW_2);
+            ruleMessageContent();
+
+            state._fsp--;
+
+             after(grammarAccess.getSessionIntervalAccess().getMessagecontentMessageContentParserRuleCall_0_0_5_0()); 
 
             }
 
@@ -22561,58 +23187,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SessionInterval__StartAssignment_0_5"
-
-
-    // $ANTLR start "rule__SessionInterval__EndAssignment_0_7"
-    // InternalSmartCE.g:7431:1: rule__SessionInterval__EndAssignment_0_7 : ( RULE_STRING ) ;
-    public final void rule__SessionInterval__EndAssignment_0_7() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSmartCE.g:7435:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7436:2: ( RULE_STRING )
-            {
-            // InternalSmartCE.g:7436:2: ( RULE_STRING )
-            // InternalSmartCE.g:7437:3: RULE_STRING
-            {
-             before(grammarAccess.getSessionIntervalAccess().getEndSTRINGTerminalRuleCall_0_7_0()); 
-            match(input,RULE_STRING,FOLLOW_2); 
-             after(grammarAccess.getSessionIntervalAccess().getEndSTRINGTerminalRuleCall_0_7_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__SessionInterval__EndAssignment_0_7"
+    // $ANTLR end "rule__SessionInterval__MessagecontentAssignment_0_0_5"
 
 
     // $ANTLR start "rule__SessionInterval__FrequencyAssignment_1_2"
-    // InternalSmartCE.g:7446:1: rule__SessionInterval__FrequencyAssignment_1_2 : ( RULE_INT ) ;
+    // InternalSmartCE.g:7617:1: rule__SessionInterval__FrequencyAssignment_1_2 : ( RULE_INT ) ;
     public final void rule__SessionInterval__FrequencyAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7450:1: ( ( RULE_INT ) )
-            // InternalSmartCE.g:7451:2: ( RULE_INT )
+            // InternalSmartCE.g:7621:1: ( ( RULE_INT ) )
+            // InternalSmartCE.g:7622:2: ( RULE_INT )
             {
-            // InternalSmartCE.g:7451:2: ( RULE_INT )
-            // InternalSmartCE.g:7452:3: RULE_INT
+            // InternalSmartCE.g:7622:2: ( RULE_INT )
+            // InternalSmartCE.g:7623:3: RULE_INT
             {
              before(grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_1_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -22639,17 +23228,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__TimeUnitAssignment_1_3"
-    // InternalSmartCE.g:7461:1: rule__SessionInterval__TimeUnitAssignment_1_3 : ( ruleTimeUnit ) ;
+    // InternalSmartCE.g:7632:1: rule__SessionInterval__TimeUnitAssignment_1_3 : ( ruleTimeUnit ) ;
     public final void rule__SessionInterval__TimeUnitAssignment_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7465:1: ( ( ruleTimeUnit ) )
-            // InternalSmartCE.g:7466:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7636:1: ( ( ruleTimeUnit ) )
+            // InternalSmartCE.g:7637:2: ( ruleTimeUnit )
             {
-            // InternalSmartCE.g:7466:2: ( ruleTimeUnit )
-            // InternalSmartCE.g:7467:3: ruleTimeUnit
+            // InternalSmartCE.g:7637:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7638:3: ruleTimeUnit
             {
              before(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_1_3_0()); 
             pushFollow(FOLLOW_2);
@@ -22680,17 +23269,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ContentAssignment_0_2"
-    // InternalSmartCE.g:7476:1: rule__MessageContent__ContentAssignment_0_2 : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7647:1: rule__MessageContent__ContentAssignment_0_2 : ( RULE_STRING ) ;
     public final void rule__MessageContent__ContentAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7480:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7481:2: ( RULE_STRING )
+            // InternalSmartCE.g:7651:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7652:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7481:2: ( RULE_STRING )
-            // InternalSmartCE.g:7482:3: RULE_STRING
+            // InternalSmartCE.g:7652:2: ( RULE_STRING )
+            // InternalSmartCE.g:7653:3: RULE_STRING
             {
              before(grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_0_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -22717,17 +23306,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ContentAssignment_1_2"
-    // InternalSmartCE.g:7491:1: rule__MessageContent__ContentAssignment_1_2 : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7662:1: rule__MessageContent__ContentAssignment_1_2 : ( RULE_STRING ) ;
     public final void rule__MessageContent__ContentAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7495:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7496:2: ( RULE_STRING )
+            // InternalSmartCE.g:7666:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7667:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7496:2: ( RULE_STRING )
-            // InternalSmartCE.g:7497:3: RULE_STRING
+            // InternalSmartCE.g:7667:2: ( RULE_STRING )
+            // InternalSmartCE.g:7668:3: RULE_STRING
             {
              before(grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_1_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -22754,17 +23343,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__TimeUnitAssignment_1_4"
-    // InternalSmartCE.g:7506:1: rule__MessageContent__TimeUnitAssignment_1_4 : ( ruleTimeUnit ) ;
+    // InternalSmartCE.g:7677:1: rule__MessageContent__TimeUnitAssignment_1_4 : ( ruleTimeUnit ) ;
     public final void rule__MessageContent__TimeUnitAssignment_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7510:1: ( ( ruleTimeUnit ) )
-            // InternalSmartCE.g:7511:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7681:1: ( ( ruleTimeUnit ) )
+            // InternalSmartCE.g:7682:2: ( ruleTimeUnit )
             {
-            // InternalSmartCE.g:7511:2: ( ruleTimeUnit )
-            // InternalSmartCE.g:7512:3: ruleTimeUnit
+            // InternalSmartCE.g:7682:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7683:3: ruleTimeUnit
             {
              before(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_1_4_0()); 
             pushFollow(FOLLOW_2);
@@ -22795,17 +23384,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ContentAssignment_2_2"
-    // InternalSmartCE.g:7521:1: rule__MessageContent__ContentAssignment_2_2 : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7692:1: rule__MessageContent__ContentAssignment_2_2 : ( RULE_STRING ) ;
     public final void rule__MessageContent__ContentAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7525:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7526:2: ( RULE_STRING )
+            // InternalSmartCE.g:7696:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7697:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7526:2: ( RULE_STRING )
-            // InternalSmartCE.g:7527:3: RULE_STRING
+            // InternalSmartCE.g:7697:2: ( RULE_STRING )
+            // InternalSmartCE.g:7698:3: RULE_STRING
             {
              before(grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_2_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -22832,17 +23421,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__BinaryOperatorAssignment_2_3"
-    // InternalSmartCE.g:7536:1: rule__MessageContent__BinaryOperatorAssignment_2_3 : ( ruleBinaryOperator ) ;
+    // InternalSmartCE.g:7707:1: rule__MessageContent__BinaryOperatorAssignment_2_3 : ( ruleBinaryOperator ) ;
     public final void rule__MessageContent__BinaryOperatorAssignment_2_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7540:1: ( ( ruleBinaryOperator ) )
-            // InternalSmartCE.g:7541:2: ( ruleBinaryOperator )
+            // InternalSmartCE.g:7711:1: ( ( ruleBinaryOperator ) )
+            // InternalSmartCE.g:7712:2: ( ruleBinaryOperator )
             {
-            // InternalSmartCE.g:7541:2: ( ruleBinaryOperator )
-            // InternalSmartCE.g:7542:3: ruleBinaryOperator
+            // InternalSmartCE.g:7712:2: ( ruleBinaryOperator )
+            // InternalSmartCE.g:7713:3: ruleBinaryOperator
             {
              before(grammarAccess.getMessageContentAccess().getBinaryOperatorBinaryOperatorParserRuleCall_2_3_0()); 
             pushFollow(FOLLOW_2);
@@ -22873,17 +23462,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__StringValueAssignment_2_4_0"
-    // InternalSmartCE.g:7551:1: rule__MessageContent__StringValueAssignment_2_4_0 : ( ruleStringValue ) ;
+    // InternalSmartCE.g:7722:1: rule__MessageContent__StringValueAssignment_2_4_0 : ( ruleStringValue ) ;
     public final void rule__MessageContent__StringValueAssignment_2_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7555:1: ( ( ruleStringValue ) )
-            // InternalSmartCE.g:7556:2: ( ruleStringValue )
+            // InternalSmartCE.g:7726:1: ( ( ruleStringValue ) )
+            // InternalSmartCE.g:7727:2: ( ruleStringValue )
             {
-            // InternalSmartCE.g:7556:2: ( ruleStringValue )
-            // InternalSmartCE.g:7557:3: ruleStringValue
+            // InternalSmartCE.g:7727:2: ( ruleStringValue )
+            // InternalSmartCE.g:7728:3: ruleStringValue
             {
              before(grammarAccess.getMessageContentAccess().getStringValueStringValueParserRuleCall_2_4_0_0()); 
             pushFollow(FOLLOW_2);
@@ -22914,17 +23503,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__VariableValueAssignment_2_4_1"
-    // InternalSmartCE.g:7566:1: rule__MessageContent__VariableValueAssignment_2_4_1 : ( ruleVariableValue ) ;
+    // InternalSmartCE.g:7737:1: rule__MessageContent__VariableValueAssignment_2_4_1 : ( ruleVariableValue ) ;
     public final void rule__MessageContent__VariableValueAssignment_2_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7570:1: ( ( ruleVariableValue ) )
-            // InternalSmartCE.g:7571:2: ( ruleVariableValue )
+            // InternalSmartCE.g:7741:1: ( ( ruleVariableValue ) )
+            // InternalSmartCE.g:7742:2: ( ruleVariableValue )
             {
-            // InternalSmartCE.g:7571:2: ( ruleVariableValue )
-            // InternalSmartCE.g:7572:3: ruleVariableValue
+            // InternalSmartCE.g:7742:2: ( ruleVariableValue )
+            // InternalSmartCE.g:7743:3: ruleVariableValue
             {
              before(grammarAccess.getMessageContentAccess().getVariableValueVariableValueParserRuleCall_2_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -22955,17 +23544,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__NumericValueAssignment_2_4_2"
-    // InternalSmartCE.g:7581:1: rule__MessageContent__NumericValueAssignment_2_4_2 : ( ruleNumericValue ) ;
+    // InternalSmartCE.g:7752:1: rule__MessageContent__NumericValueAssignment_2_4_2 : ( ruleNumericValue ) ;
     public final void rule__MessageContent__NumericValueAssignment_2_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7585:1: ( ( ruleNumericValue ) )
-            // InternalSmartCE.g:7586:2: ( ruleNumericValue )
+            // InternalSmartCE.g:7756:1: ( ( ruleNumericValue ) )
+            // InternalSmartCE.g:7757:2: ( ruleNumericValue )
             {
-            // InternalSmartCE.g:7586:2: ( ruleNumericValue )
-            // InternalSmartCE.g:7587:3: ruleNumericValue
+            // InternalSmartCE.g:7757:2: ( ruleNumericValue )
+            // InternalSmartCE.g:7758:3: ruleNumericValue
             {
              before(grammarAccess.getMessageContentAccess().getNumericValueNumericValueParserRuleCall_2_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22996,17 +23585,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ContentAssignment_3_2"
-    // InternalSmartCE.g:7596:1: rule__MessageContent__ContentAssignment_3_2 : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7767:1: rule__MessageContent__ContentAssignment_3_2 : ( RULE_STRING ) ;
     public final void rule__MessageContent__ContentAssignment_3_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7600:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7601:2: ( RULE_STRING )
+            // InternalSmartCE.g:7771:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7772:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7601:2: ( RULE_STRING )
-            // InternalSmartCE.g:7602:3: RULE_STRING
+            // InternalSmartCE.g:7772:2: ( RULE_STRING )
+            // InternalSmartCE.g:7773:3: RULE_STRING
             {
              before(grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_3_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -23033,17 +23622,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__BinaryOperatorAssignment_3_3"
-    // InternalSmartCE.g:7611:1: rule__MessageContent__BinaryOperatorAssignment_3_3 : ( ruleBinaryOperator ) ;
+    // InternalSmartCE.g:7782:1: rule__MessageContent__BinaryOperatorAssignment_3_3 : ( ruleBinaryOperator ) ;
     public final void rule__MessageContent__BinaryOperatorAssignment_3_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7615:1: ( ( ruleBinaryOperator ) )
-            // InternalSmartCE.g:7616:2: ( ruleBinaryOperator )
+            // InternalSmartCE.g:7786:1: ( ( ruleBinaryOperator ) )
+            // InternalSmartCE.g:7787:2: ( ruleBinaryOperator )
             {
-            // InternalSmartCE.g:7616:2: ( ruleBinaryOperator )
-            // InternalSmartCE.g:7617:3: ruleBinaryOperator
+            // InternalSmartCE.g:7787:2: ( ruleBinaryOperator )
+            // InternalSmartCE.g:7788:3: ruleBinaryOperator
             {
              before(grammarAccess.getMessageContentAccess().getBinaryOperatorBinaryOperatorParserRuleCall_3_3_0()); 
             pushFollow(FOLLOW_2);
@@ -23074,17 +23663,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__StringValueAssignment_3_4_0"
-    // InternalSmartCE.g:7626:1: rule__MessageContent__StringValueAssignment_3_4_0 : ( ruleStringValue ) ;
+    // InternalSmartCE.g:7797:1: rule__MessageContent__StringValueAssignment_3_4_0 : ( ruleStringValue ) ;
     public final void rule__MessageContent__StringValueAssignment_3_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7630:1: ( ( ruleStringValue ) )
-            // InternalSmartCE.g:7631:2: ( ruleStringValue )
+            // InternalSmartCE.g:7801:1: ( ( ruleStringValue ) )
+            // InternalSmartCE.g:7802:2: ( ruleStringValue )
             {
-            // InternalSmartCE.g:7631:2: ( ruleStringValue )
-            // InternalSmartCE.g:7632:3: ruleStringValue
+            // InternalSmartCE.g:7802:2: ( ruleStringValue )
+            // InternalSmartCE.g:7803:3: ruleStringValue
             {
              before(grammarAccess.getMessageContentAccess().getStringValueStringValueParserRuleCall_3_4_0_0()); 
             pushFollow(FOLLOW_2);
@@ -23115,17 +23704,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__VariableValueAssignment_3_4_1"
-    // InternalSmartCE.g:7641:1: rule__MessageContent__VariableValueAssignment_3_4_1 : ( ruleVariableValue ) ;
+    // InternalSmartCE.g:7812:1: rule__MessageContent__VariableValueAssignment_3_4_1 : ( ruleVariableValue ) ;
     public final void rule__MessageContent__VariableValueAssignment_3_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7645:1: ( ( ruleVariableValue ) )
-            // InternalSmartCE.g:7646:2: ( ruleVariableValue )
+            // InternalSmartCE.g:7816:1: ( ( ruleVariableValue ) )
+            // InternalSmartCE.g:7817:2: ( ruleVariableValue )
             {
-            // InternalSmartCE.g:7646:2: ( ruleVariableValue )
-            // InternalSmartCE.g:7647:3: ruleVariableValue
+            // InternalSmartCE.g:7817:2: ( ruleVariableValue )
+            // InternalSmartCE.g:7818:3: ruleVariableValue
             {
              before(grammarAccess.getMessageContentAccess().getVariableValueVariableValueParserRuleCall_3_4_1_0()); 
             pushFollow(FOLLOW_2);
@@ -23156,17 +23745,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__NumericValueAssignment_3_4_2"
-    // InternalSmartCE.g:7656:1: rule__MessageContent__NumericValueAssignment_3_4_2 : ( ruleNumericValue ) ;
+    // InternalSmartCE.g:7827:1: rule__MessageContent__NumericValueAssignment_3_4_2 : ( ruleNumericValue ) ;
     public final void rule__MessageContent__NumericValueAssignment_3_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7660:1: ( ( ruleNumericValue ) )
-            // InternalSmartCE.g:7661:2: ( ruleNumericValue )
+            // InternalSmartCE.g:7831:1: ( ( ruleNumericValue ) )
+            // InternalSmartCE.g:7832:2: ( ruleNumericValue )
             {
-            // InternalSmartCE.g:7661:2: ( ruleNumericValue )
-            // InternalSmartCE.g:7662:3: ruleNumericValue
+            // InternalSmartCE.g:7832:2: ( ruleNumericValue )
+            // InternalSmartCE.g:7833:3: ruleNumericValue
             {
              before(grammarAccess.getMessageContentAccess().getNumericValueNumericValueParserRuleCall_3_4_2_0()); 
             pushFollow(FOLLOW_2);
@@ -23197,17 +23786,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__TimeUnitAssignment_3_6"
-    // InternalSmartCE.g:7671:1: rule__MessageContent__TimeUnitAssignment_3_6 : ( ruleTimeUnit ) ;
+    // InternalSmartCE.g:7842:1: rule__MessageContent__TimeUnitAssignment_3_6 : ( ruleTimeUnit ) ;
     public final void rule__MessageContent__TimeUnitAssignment_3_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7675:1: ( ( ruleTimeUnit ) )
-            // InternalSmartCE.g:7676:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7846:1: ( ( ruleTimeUnit ) )
+            // InternalSmartCE.g:7847:2: ( ruleTimeUnit )
             {
-            // InternalSmartCE.g:7676:2: ( ruleTimeUnit )
-            // InternalSmartCE.g:7677:3: ruleTimeUnit
+            // InternalSmartCE.g:7847:2: ( ruleTimeUnit )
+            // InternalSmartCE.g:7848:3: ruleTimeUnit
             {
              before(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_3_6_0()); 
             pushFollow(FOLLOW_2);
@@ -23238,24 +23827,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinaryOperator__SymbolAssignment_0"
-    // InternalSmartCE.g:7686:1: rule__BinaryOperator__SymbolAssignment_0 : ( ( '<=' ) ) ;
+    // InternalSmartCE.g:7857:1: rule__BinaryOperator__SymbolAssignment_0 : ( ( '<=' ) ) ;
     public final void rule__BinaryOperator__SymbolAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7690:1: ( ( ( '<=' ) ) )
-            // InternalSmartCE.g:7691:2: ( ( '<=' ) )
+            // InternalSmartCE.g:7861:1: ( ( ( '<=' ) ) )
+            // InternalSmartCE.g:7862:2: ( ( '<=' ) )
             {
-            // InternalSmartCE.g:7691:2: ( ( '<=' ) )
-            // InternalSmartCE.g:7692:3: ( '<=' )
-            {
-             before(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignEqualsSignKeyword_0_0()); 
-            // InternalSmartCE.g:7693:3: ( '<=' )
-            // InternalSmartCE.g:7694:4: '<='
+            // InternalSmartCE.g:7862:2: ( ( '<=' ) )
+            // InternalSmartCE.g:7863:3: ( '<=' )
             {
              before(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignEqualsSignKeyword_0_0()); 
-            match(input,76,FOLLOW_2); 
+            // InternalSmartCE.g:7864:3: ( '<=' )
+            // InternalSmartCE.g:7865:4: '<='
+            {
+             before(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignEqualsSignKeyword_0_0()); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignEqualsSignKeyword_0_0()); 
 
             }
@@ -23283,24 +23872,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinaryOperator__SymbolAssignment_1"
-    // InternalSmartCE.g:7705:1: rule__BinaryOperator__SymbolAssignment_1 : ( ( '>=' ) ) ;
+    // InternalSmartCE.g:7876:1: rule__BinaryOperator__SymbolAssignment_1 : ( ( '>=' ) ) ;
     public final void rule__BinaryOperator__SymbolAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7709:1: ( ( ( '>=' ) ) )
-            // InternalSmartCE.g:7710:2: ( ( '>=' ) )
+            // InternalSmartCE.g:7880:1: ( ( ( '>=' ) ) )
+            // InternalSmartCE.g:7881:2: ( ( '>=' ) )
             {
-            // InternalSmartCE.g:7710:2: ( ( '>=' ) )
-            // InternalSmartCE.g:7711:3: ( '>=' )
-            {
-             before(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_0()); 
-            // InternalSmartCE.g:7712:3: ( '>=' )
-            // InternalSmartCE.g:7713:4: '>='
+            // InternalSmartCE.g:7881:2: ( ( '>=' ) )
+            // InternalSmartCE.g:7882:3: ( '>=' )
             {
              before(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_0()); 
-            match(input,77,FOLLOW_2); 
+            // InternalSmartCE.g:7883:3: ( '>=' )
+            // InternalSmartCE.g:7884:4: '>='
+            {
+             before(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_0()); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_0()); 
 
             }
@@ -23328,24 +23917,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinaryOperator__SymbolAssignment_2"
-    // InternalSmartCE.g:7724:1: rule__BinaryOperator__SymbolAssignment_2 : ( ( '>' ) ) ;
+    // InternalSmartCE.g:7895:1: rule__BinaryOperator__SymbolAssignment_2 : ( ( '>' ) ) ;
     public final void rule__BinaryOperator__SymbolAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7728:1: ( ( ( '>' ) ) )
-            // InternalSmartCE.g:7729:2: ( ( '>' ) )
+            // InternalSmartCE.g:7899:1: ( ( ( '>' ) ) )
+            // InternalSmartCE.g:7900:2: ( ( '>' ) )
             {
-            // InternalSmartCE.g:7729:2: ( ( '>' ) )
-            // InternalSmartCE.g:7730:3: ( '>' )
-            {
-             before(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignKeyword_2_0()); 
-            // InternalSmartCE.g:7731:3: ( '>' )
-            // InternalSmartCE.g:7732:4: '>'
+            // InternalSmartCE.g:7900:2: ( ( '>' ) )
+            // InternalSmartCE.g:7901:3: ( '>' )
             {
              before(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignKeyword_2_0()); 
-            match(input,78,FOLLOW_2); 
+            // InternalSmartCE.g:7902:3: ( '>' )
+            // InternalSmartCE.g:7903:4: '>'
+            {
+             before(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignKeyword_2_0()); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getBinaryOperatorAccess().getSymbolGreaterThanSignKeyword_2_0()); 
 
             }
@@ -23373,24 +23962,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinaryOperator__SymbolAssignment_3"
-    // InternalSmartCE.g:7743:1: rule__BinaryOperator__SymbolAssignment_3 : ( ( '<' ) ) ;
+    // InternalSmartCE.g:7914:1: rule__BinaryOperator__SymbolAssignment_3 : ( ( '<' ) ) ;
     public final void rule__BinaryOperator__SymbolAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7747:1: ( ( ( '<' ) ) )
-            // InternalSmartCE.g:7748:2: ( ( '<' ) )
+            // InternalSmartCE.g:7918:1: ( ( ( '<' ) ) )
+            // InternalSmartCE.g:7919:2: ( ( '<' ) )
             {
-            // InternalSmartCE.g:7748:2: ( ( '<' ) )
-            // InternalSmartCE.g:7749:3: ( '<' )
-            {
-             before(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignKeyword_3_0()); 
-            // InternalSmartCE.g:7750:3: ( '<' )
-            // InternalSmartCE.g:7751:4: '<'
+            // InternalSmartCE.g:7919:2: ( ( '<' ) )
+            // InternalSmartCE.g:7920:3: ( '<' )
             {
              before(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignKeyword_3_0()); 
-            match(input,79,FOLLOW_2); 
+            // InternalSmartCE.g:7921:3: ( '<' )
+            // InternalSmartCE.g:7922:4: '<'
+            {
+             before(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignKeyword_3_0()); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getBinaryOperatorAccess().getSymbolLessThanSignKeyword_3_0()); 
 
             }
@@ -23418,24 +24007,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinaryOperator__SymbolAssignment_4"
-    // InternalSmartCE.g:7762:1: rule__BinaryOperator__SymbolAssignment_4 : ( ( '!=' ) ) ;
+    // InternalSmartCE.g:7933:1: rule__BinaryOperator__SymbolAssignment_4 : ( ( '!=' ) ) ;
     public final void rule__BinaryOperator__SymbolAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7766:1: ( ( ( '!=' ) ) )
-            // InternalSmartCE.g:7767:2: ( ( '!=' ) )
+            // InternalSmartCE.g:7937:1: ( ( ( '!=' ) ) )
+            // InternalSmartCE.g:7938:2: ( ( '!=' ) )
             {
-            // InternalSmartCE.g:7767:2: ( ( '!=' ) )
-            // InternalSmartCE.g:7768:3: ( '!=' )
-            {
-             before(grammarAccess.getBinaryOperatorAccess().getSymbolExclamationMarkEqualsSignKeyword_4_0()); 
-            // InternalSmartCE.g:7769:3: ( '!=' )
-            // InternalSmartCE.g:7770:4: '!='
+            // InternalSmartCE.g:7938:2: ( ( '!=' ) )
+            // InternalSmartCE.g:7939:3: ( '!=' )
             {
              before(grammarAccess.getBinaryOperatorAccess().getSymbolExclamationMarkEqualsSignKeyword_4_0()); 
-            match(input,80,FOLLOW_2); 
+            // InternalSmartCE.g:7940:3: ( '!=' )
+            // InternalSmartCE.g:7941:4: '!='
+            {
+             before(grammarAccess.getBinaryOperatorAccess().getSymbolExclamationMarkEqualsSignKeyword_4_0()); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getBinaryOperatorAccess().getSymbolExclamationMarkEqualsSignKeyword_4_0()); 
 
             }
@@ -23463,24 +24052,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__BinaryOperator__SymbolAssignment_5"
-    // InternalSmartCE.g:7781:1: rule__BinaryOperator__SymbolAssignment_5 : ( ( '==' ) ) ;
+    // InternalSmartCE.g:7952:1: rule__BinaryOperator__SymbolAssignment_5 : ( ( '==' ) ) ;
     public final void rule__BinaryOperator__SymbolAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7785:1: ( ( ( '==' ) ) )
-            // InternalSmartCE.g:7786:2: ( ( '==' ) )
+            // InternalSmartCE.g:7956:1: ( ( ( '==' ) ) )
+            // InternalSmartCE.g:7957:2: ( ( '==' ) )
             {
-            // InternalSmartCE.g:7786:2: ( ( '==' ) )
-            // InternalSmartCE.g:7787:3: ( '==' )
-            {
-             before(grammarAccess.getBinaryOperatorAccess().getSymbolEqualsSignEqualsSignKeyword_5_0()); 
-            // InternalSmartCE.g:7788:3: ( '==' )
-            // InternalSmartCE.g:7789:4: '=='
+            // InternalSmartCE.g:7957:2: ( ( '==' ) )
+            // InternalSmartCE.g:7958:3: ( '==' )
             {
              before(grammarAccess.getBinaryOperatorAccess().getSymbolEqualsSignEqualsSignKeyword_5_0()); 
-            match(input,81,FOLLOW_2); 
+            // InternalSmartCE.g:7959:3: ( '==' )
+            // InternalSmartCE.g:7960:4: '=='
+            {
+             before(grammarAccess.getBinaryOperatorAccess().getSymbolEqualsSignEqualsSignKeyword_5_0()); 
+            match(input,79,FOLLOW_2); 
              after(grammarAccess.getBinaryOperatorAccess().getSymbolEqualsSignEqualsSignKeyword_5_0()); 
 
             }
@@ -23508,17 +24097,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Application__NameAssignment"
-    // InternalSmartCE.g:7800:1: rule__Application__NameAssignment : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7971:1: rule__Application__NameAssignment : ( RULE_STRING ) ;
     public final void rule__Application__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7804:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7805:2: ( RULE_STRING )
+            // InternalSmartCE.g:7975:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7976:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7805:2: ( RULE_STRING )
-            // InternalSmartCE.g:7806:3: RULE_STRING
+            // InternalSmartCE.g:7976:2: ( RULE_STRING )
+            // InternalSmartCE.g:7977:3: RULE_STRING
             {
              before(grammarAccess.getApplicationAccess().getNameSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -23545,17 +24134,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Process__NameAssignment"
-    // InternalSmartCE.g:7815:1: rule__Process__NameAssignment : ( RULE_STRING ) ;
+    // InternalSmartCE.g:7986:1: rule__Process__NameAssignment : ( RULE_STRING ) ;
     public final void rule__Process__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7819:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:7820:2: ( RULE_STRING )
+            // InternalSmartCE.g:7990:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7991:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7820:2: ( RULE_STRING )
-            // InternalSmartCE.g:7821:3: RULE_STRING
+            // InternalSmartCE.g:7991:2: ( RULE_STRING )
+            // InternalSmartCE.g:7992:3: RULE_STRING
             {
              before(grammarAccess.getProcessAccess().getNameSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -23582,17 +24171,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__ActionAssignment_1"
-    // InternalSmartCE.g:7830:1: rule__OnSuccess__ActionAssignment_1 : ( ruleAction ) ;
+    // InternalSmartCE.g:8001:1: rule__OnSuccess__ActionAssignment_1 : ( ruleAction ) ;
     public final void rule__OnSuccess__ActionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7834:1: ( ( ruleAction ) )
-            // InternalSmartCE.g:7835:2: ( ruleAction )
+            // InternalSmartCE.g:8005:1: ( ( ruleAction ) )
+            // InternalSmartCE.g:8006:2: ( ruleAction )
             {
-            // InternalSmartCE.g:7835:2: ( ruleAction )
-            // InternalSmartCE.g:7836:3: ruleAction
+            // InternalSmartCE.g:8006:2: ( ruleAction )
+            // InternalSmartCE.g:8007:3: ruleAction
             {
              before(grammarAccess.getOnSuccessAccess().getActionActionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -23623,17 +24212,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__MessageAssignment_3"
-    // InternalSmartCE.g:7845:1: rule__OnSuccess__MessageAssignment_3 : ( ruleExpression ) ;
+    // InternalSmartCE.g:8016:1: rule__OnSuccess__MessageAssignment_3 : ( ruleExpression ) ;
     public final void rule__OnSuccess__MessageAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7849:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:7850:2: ( ruleExpression )
+            // InternalSmartCE.g:8020:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:8021:2: ( ruleExpression )
             {
-            // InternalSmartCE.g:7850:2: ( ruleExpression )
-            // InternalSmartCE.g:7851:3: ruleExpression
+            // InternalSmartCE.g:8021:2: ( ruleExpression )
+            // InternalSmartCE.g:8022:3: ruleExpression
             {
              before(grammarAccess.getOnSuccessAccess().getMessageExpressionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -23664,17 +24253,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__ActionAssignment_1"
-    // InternalSmartCE.g:7860:1: rule__OnBreach__ActionAssignment_1 : ( ruleAction ) ;
+    // InternalSmartCE.g:8031:1: rule__OnBreach__ActionAssignment_1 : ( ruleAction ) ;
     public final void rule__OnBreach__ActionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7864:1: ( ( ruleAction ) )
-            // InternalSmartCE.g:7865:2: ( ruleAction )
+            // InternalSmartCE.g:8035:1: ( ( ruleAction ) )
+            // InternalSmartCE.g:8036:2: ( ruleAction )
             {
-            // InternalSmartCE.g:7865:2: ( ruleAction )
-            // InternalSmartCE.g:7866:3: ruleAction
+            // InternalSmartCE.g:8036:2: ( ruleAction )
+            // InternalSmartCE.g:8037:3: ruleAction
             {
              before(grammarAccess.getOnBreachAccess().getActionActionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -23705,17 +24294,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__MessageAssignment_3"
-    // InternalSmartCE.g:7875:1: rule__OnBreach__MessageAssignment_3 : ( ruleExpression ) ;
+    // InternalSmartCE.g:8046:1: rule__OnBreach__MessageAssignment_3 : ( ruleExpression ) ;
     public final void rule__OnBreach__MessageAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7879:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:7880:2: ( ruleExpression )
+            // InternalSmartCE.g:8050:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:8051:2: ( ruleExpression )
             {
-            // InternalSmartCE.g:7880:2: ( ruleExpression )
-            // InternalSmartCE.g:7881:3: ruleExpression
+            // InternalSmartCE.g:8051:2: ( ruleExpression )
+            // InternalSmartCE.g:8052:3: ruleExpression
             {
              before(grammarAccess.getOnBreachAccess().getMessageExpressionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -23745,22 +24334,30 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__OnBreach__MessageAssignment_3"
 
 
-    // $ANTLR start "rule__BusinessAction__NameAssignment_1"
-    // InternalSmartCE.g:7890:1: rule__BusinessAction__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__BusinessAction__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__BusinessAction__NameAssignment"
+    // InternalSmartCE.g:8061:1: rule__BusinessAction__NameAssignment : ( ( 'BusinessAction' ) ) ;
+    public final void rule__BusinessAction__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7894:1: ( ( RULE_ID ) )
-            // InternalSmartCE.g:7895:2: ( RULE_ID )
+            // InternalSmartCE.g:8065:1: ( ( ( 'BusinessAction' ) ) )
+            // InternalSmartCE.g:8066:2: ( ( 'BusinessAction' ) )
             {
-            // InternalSmartCE.g:7895:2: ( RULE_ID )
-            // InternalSmartCE.g:7896:3: RULE_ID
+            // InternalSmartCE.g:8066:2: ( ( 'BusinessAction' ) )
+            // InternalSmartCE.g:8067:3: ( 'BusinessAction' )
             {
-             before(grammarAccess.getBusinessActionAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getBusinessActionAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getBusinessActionAccess().getNameBusinessActionKeyword_0()); 
+            // InternalSmartCE.g:8068:3: ( 'BusinessAction' )
+            // InternalSmartCE.g:8069:4: 'BusinessAction'
+            {
+             before(grammarAccess.getBusinessActionAccess().getNameBusinessActionKeyword_0()); 
+            match(input,80,FOLLOW_2); 
+             after(grammarAccess.getBusinessActionAccess().getNameBusinessActionKeyword_0()); 
+
+            }
+
+             after(grammarAccess.getBusinessActionAccess().getNameBusinessActionKeyword_0()); 
 
             }
 
@@ -23779,25 +24376,33 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__BusinessAction__NameAssignment_1"
+    // $ANTLR end "rule__BusinessAction__NameAssignment"
 
 
-    // $ANTLR start "rule__EventLog__NameAssignment_1"
-    // InternalSmartCE.g:7905:1: rule__EventLog__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__EventLog__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__EventLog__NameAssignment"
+    // InternalSmartCE.g:8080:1: rule__EventLog__NameAssignment : ( ( 'EventLog' ) ) ;
+    public final void rule__EventLog__NameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7909:1: ( ( RULE_ID ) )
-            // InternalSmartCE.g:7910:2: ( RULE_ID )
+            // InternalSmartCE.g:8084:1: ( ( ( 'EventLog' ) ) )
+            // InternalSmartCE.g:8085:2: ( ( 'EventLog' ) )
             {
-            // InternalSmartCE.g:7910:2: ( RULE_ID )
-            // InternalSmartCE.g:7911:3: RULE_ID
+            // InternalSmartCE.g:8085:2: ( ( 'EventLog' ) )
+            // InternalSmartCE.g:8086:3: ( 'EventLog' )
             {
-             before(grammarAccess.getEventLogAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getEventLogAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getEventLogAccess().getNameEventLogKeyword_0()); 
+            // InternalSmartCE.g:8087:3: ( 'EventLog' )
+            // InternalSmartCE.g:8088:4: 'EventLog'
+            {
+             before(grammarAccess.getEventLogAccess().getNameEventLogKeyword_0()); 
+            match(input,81,FOLLOW_2); 
+             after(grammarAccess.getEventLogAccess().getNameEventLogKeyword_0()); 
+
+            }
+
+             after(grammarAccess.getEventLogAccess().getNameEventLogKeyword_0()); 
 
             }
 
@@ -23816,33 +24421,33 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__EventLog__NameAssignment_1"
+    // $ANTLR end "rule__EventLog__NameAssignment"
 
 
     // $ANTLR start "rule__Expression__SymbolAssignment_1_1_0"
-    // InternalSmartCE.g:7920:1: rule__Expression__SymbolAssignment_1_1_0 : ( ( '&&' ) ) ;
+    // InternalSmartCE.g:8099:1: rule__Expression__SymbolAssignment_1_1_0 : ( ( 'AND' ) ) ;
     public final void rule__Expression__SymbolAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7924:1: ( ( ( '&&' ) ) )
-            // InternalSmartCE.g:7925:2: ( ( '&&' ) )
+            // InternalSmartCE.g:8103:1: ( ( ( 'AND' ) ) )
+            // InternalSmartCE.g:8104:2: ( ( 'AND' ) )
             {
-            // InternalSmartCE.g:7925:2: ( ( '&&' ) )
-            // InternalSmartCE.g:7926:3: ( '&&' )
+            // InternalSmartCE.g:8104:2: ( ( 'AND' ) )
+            // InternalSmartCE.g:8105:3: ( 'AND' )
             {
-             before(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_0_0()); 
-            // InternalSmartCE.g:7927:3: ( '&&' )
-            // InternalSmartCE.g:7928:4: '&&'
+             before(grammarAccess.getExpressionAccess().getSymbolANDKeyword_1_1_0_0()); 
+            // InternalSmartCE.g:8106:3: ( 'AND' )
+            // InternalSmartCE.g:8107:4: 'AND'
             {
-             before(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_0_0()); 
-            match(input,82,FOLLOW_2); 
-             after(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_0_0()); 
+             before(grammarAccess.getExpressionAccess().getSymbolANDKeyword_1_1_0_0()); 
+            match(input,16,FOLLOW_2); 
+             after(grammarAccess.getExpressionAccess().getSymbolANDKeyword_1_1_0_0()); 
 
             }
 
-             after(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_0_0()); 
+             after(grammarAccess.getExpressionAccess().getSymbolANDKeyword_1_1_0_0()); 
 
             }
 
@@ -23865,29 +24470,29 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__SymbolAssignment_1_1_1"
-    // InternalSmartCE.g:7939:1: rule__Expression__SymbolAssignment_1_1_1 : ( ( '||' ) ) ;
+    // InternalSmartCE.g:8118:1: rule__Expression__SymbolAssignment_1_1_1 : ( ( '&&' ) ) ;
     public final void rule__Expression__SymbolAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7943:1: ( ( ( '||' ) ) )
-            // InternalSmartCE.g:7944:2: ( ( '||' ) )
+            // InternalSmartCE.g:8122:1: ( ( ( '&&' ) ) )
+            // InternalSmartCE.g:8123:2: ( ( '&&' ) )
             {
-            // InternalSmartCE.g:7944:2: ( ( '||' ) )
-            // InternalSmartCE.g:7945:3: ( '||' )
+            // InternalSmartCE.g:8123:2: ( ( '&&' ) )
+            // InternalSmartCE.g:8124:3: ( '&&' )
             {
-             before(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_1_0()); 
-            // InternalSmartCE.g:7946:3: ( '||' )
-            // InternalSmartCE.g:7947:4: '||'
+             before(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_1_0()); 
+            // InternalSmartCE.g:8125:3: ( '&&' )
+            // InternalSmartCE.g:8126:4: '&&'
             {
-             before(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_1_0()); 
-            match(input,83,FOLLOW_2); 
-             after(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_1_0()); 
+             before(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_1_0()); 
+            match(input,82,FOLLOW_2); 
+             after(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_1_0()); 
 
             }
 
-             after(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_1_0()); 
+             after(grammarAccess.getExpressionAccess().getSymbolAmpersandAmpersandKeyword_1_1_1_0()); 
 
             }
 
@@ -23909,18 +24514,108 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Expression__SymbolAssignment_1_1_1"
 
 
+    // $ANTLR start "rule__Expression__SymbolAssignment_1_1_2"
+    // InternalSmartCE.g:8137:1: rule__Expression__SymbolAssignment_1_1_2 : ( ( '||' ) ) ;
+    public final void rule__Expression__SymbolAssignment_1_1_2() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:8141:1: ( ( ( '||' ) ) )
+            // InternalSmartCE.g:8142:2: ( ( '||' ) )
+            {
+            // InternalSmartCE.g:8142:2: ( ( '||' ) )
+            // InternalSmartCE.g:8143:3: ( '||' )
+            {
+             before(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_2_0()); 
+            // InternalSmartCE.g:8144:3: ( '||' )
+            // InternalSmartCE.g:8145:4: '||'
+            {
+             before(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_2_0()); 
+            match(input,83,FOLLOW_2); 
+             after(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_2_0()); 
+
+            }
+
+             after(grammarAccess.getExpressionAccess().getSymbolVerticalLineVerticalLineKeyword_1_1_2_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Expression__SymbolAssignment_1_1_2"
+
+
+    // $ANTLR start "rule__Expression__SymbolAssignment_1_1_3"
+    // InternalSmartCE.g:8156:1: rule__Expression__SymbolAssignment_1_1_3 : ( ( 'OR' ) ) ;
+    public final void rule__Expression__SymbolAssignment_1_1_3() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSmartCE.g:8160:1: ( ( ( 'OR' ) ) )
+            // InternalSmartCE.g:8161:2: ( ( 'OR' ) )
+            {
+            // InternalSmartCE.g:8161:2: ( ( 'OR' ) )
+            // InternalSmartCE.g:8162:3: ( 'OR' )
+            {
+             before(grammarAccess.getExpressionAccess().getSymbolORKeyword_1_1_3_0()); 
+            // InternalSmartCE.g:8163:3: ( 'OR' )
+            // InternalSmartCE.g:8164:4: 'OR'
+            {
+             before(grammarAccess.getExpressionAccess().getSymbolORKeyword_1_1_3_0()); 
+            match(input,17,FOLLOW_2); 
+             after(grammarAccess.getExpressionAccess().getSymbolORKeyword_1_1_3_0()); 
+
+            }
+
+             after(grammarAccess.getExpressionAccess().getSymbolORKeyword_1_1_3_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Expression__SymbolAssignment_1_1_3"
+
+
     // $ANTLR start "rule__Expression__RightAssignment_1_2"
-    // InternalSmartCE.g:7958:1: rule__Expression__RightAssignment_1_2 : ( ruleNegation ) ;
+    // InternalSmartCE.g:8175:1: rule__Expression__RightAssignment_1_2 : ( ruleNegation ) ;
     public final void rule__Expression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7962:1: ( ( ruleNegation ) )
-            // InternalSmartCE.g:7963:2: ( ruleNegation )
+            // InternalSmartCE.g:8179:1: ( ( ruleNegation ) )
+            // InternalSmartCE.g:8180:2: ( ruleNegation )
             {
-            // InternalSmartCE.g:7963:2: ( ruleNegation )
-            // InternalSmartCE.g:7964:3: ruleNegation
+            // InternalSmartCE.g:8180:2: ( ruleNegation )
+            // InternalSmartCE.g:8181:3: ruleNegation
             {
              before(grammarAccess.getExpressionAccess().getRightNegationParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -23951,21 +24646,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__SymbolAssignment_1_1"
-    // InternalSmartCE.g:7973:1: rule__Negation__SymbolAssignment_1_1 : ( ( '!' ) ) ;
+    // InternalSmartCE.g:8190:1: rule__Negation__SymbolAssignment_1_1 : ( ( '!' ) ) ;
     public final void rule__Negation__SymbolAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7977:1: ( ( ( '!' ) ) )
-            // InternalSmartCE.g:7978:2: ( ( '!' ) )
+            // InternalSmartCE.g:8194:1: ( ( ( '!' ) ) )
+            // InternalSmartCE.g:8195:2: ( ( '!' ) )
             {
-            // InternalSmartCE.g:7978:2: ( ( '!' ) )
-            // InternalSmartCE.g:7979:3: ( '!' )
+            // InternalSmartCE.g:8195:2: ( ( '!' ) )
+            // InternalSmartCE.g:8196:3: ( '!' )
             {
              before(grammarAccess.getNegationAccess().getSymbolExclamationMarkKeyword_1_1_0()); 
-            // InternalSmartCE.g:7980:3: ( '!' )
-            // InternalSmartCE.g:7981:4: '!'
+            // InternalSmartCE.g:8197:3: ( '!' )
+            // InternalSmartCE.g:8198:4: '!'
             {
              before(grammarAccess.getNegationAccess().getSymbolExclamationMarkKeyword_1_1_0()); 
             match(input,84,FOLLOW_2); 
@@ -23996,17 +24691,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__ExpressionAssignment_1_2"
-    // InternalSmartCE.g:7992:1: rule__Negation__ExpressionAssignment_1_2 : ( ruleComparison ) ;
+    // InternalSmartCE.g:8209:1: rule__Negation__ExpressionAssignment_1_2 : ( ruleComparison ) ;
     public final void rule__Negation__ExpressionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7996:1: ( ( ruleComparison ) )
-            // InternalSmartCE.g:7997:2: ( ruleComparison )
+            // InternalSmartCE.g:8213:1: ( ( ruleComparison ) )
+            // InternalSmartCE.g:8214:2: ( ruleComparison )
             {
-            // InternalSmartCE.g:7997:2: ( ruleComparison )
-            // InternalSmartCE.g:7998:3: ruleComparison
+            // InternalSmartCE.g:8214:2: ( ruleComparison )
+            // InternalSmartCE.g:8215:3: ruleComparison
             {
              before(grammarAccess.getNegationAccess().getExpressionComparisonParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24037,24 +24732,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_0"
-    // InternalSmartCE.g:8007:1: rule__Comparison__SymbolAssignment_1_1_0 : ( ( '<=' ) ) ;
+    // InternalSmartCE.g:8224:1: rule__Comparison__SymbolAssignment_1_1_0 : ( ( '<=' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8011:1: ( ( ( '<=' ) ) )
-            // InternalSmartCE.g:8012:2: ( ( '<=' ) )
+            // InternalSmartCE.g:8228:1: ( ( ( '<=' ) ) )
+            // InternalSmartCE.g:8229:2: ( ( '<=' ) )
             {
-            // InternalSmartCE.g:8012:2: ( ( '<=' ) )
-            // InternalSmartCE.g:8013:3: ( '<=' )
-            {
-             before(grammarAccess.getComparisonAccess().getSymbolLessThanSignEqualsSignKeyword_1_1_0_0()); 
-            // InternalSmartCE.g:8014:3: ( '<=' )
-            // InternalSmartCE.g:8015:4: '<='
+            // InternalSmartCE.g:8229:2: ( ( '<=' ) )
+            // InternalSmartCE.g:8230:3: ( '<=' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolLessThanSignEqualsSignKeyword_1_1_0_0()); 
-            match(input,76,FOLLOW_2); 
+            // InternalSmartCE.g:8231:3: ( '<=' )
+            // InternalSmartCE.g:8232:4: '<='
+            {
+             before(grammarAccess.getComparisonAccess().getSymbolLessThanSignEqualsSignKeyword_1_1_0_0()); 
+            match(input,74,FOLLOW_2); 
              after(grammarAccess.getComparisonAccess().getSymbolLessThanSignEqualsSignKeyword_1_1_0_0()); 
 
             }
@@ -24082,24 +24777,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_1"
-    // InternalSmartCE.g:8026:1: rule__Comparison__SymbolAssignment_1_1_1 : ( ( '>=' ) ) ;
+    // InternalSmartCE.g:8243:1: rule__Comparison__SymbolAssignment_1_1_1 : ( ( '>=' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8030:1: ( ( ( '>=' ) ) )
-            // InternalSmartCE.g:8031:2: ( ( '>=' ) )
+            // InternalSmartCE.g:8247:1: ( ( ( '>=' ) ) )
+            // InternalSmartCE.g:8248:2: ( ( '>=' ) )
             {
-            // InternalSmartCE.g:8031:2: ( ( '>=' ) )
-            // InternalSmartCE.g:8032:3: ( '>=' )
-            {
-             before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_1_1_0()); 
-            // InternalSmartCE.g:8033:3: ( '>=' )
-            // InternalSmartCE.g:8034:4: '>='
+            // InternalSmartCE.g:8248:2: ( ( '>=' ) )
+            // InternalSmartCE.g:8249:3: ( '>=' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_1_1_0()); 
-            match(input,77,FOLLOW_2); 
+            // InternalSmartCE.g:8250:3: ( '>=' )
+            // InternalSmartCE.g:8251:4: '>='
+            {
+             before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_1_1_0()); 
+            match(input,75,FOLLOW_2); 
              after(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_1_1_0()); 
 
             }
@@ -24127,24 +24822,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_2"
-    // InternalSmartCE.g:8045:1: rule__Comparison__SymbolAssignment_1_1_2 : ( ( '>' ) ) ;
+    // InternalSmartCE.g:8262:1: rule__Comparison__SymbolAssignment_1_1_2 : ( ( '>' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8049:1: ( ( ( '>' ) ) )
-            // InternalSmartCE.g:8050:2: ( ( '>' ) )
+            // InternalSmartCE.g:8266:1: ( ( ( '>' ) ) )
+            // InternalSmartCE.g:8267:2: ( ( '>' ) )
             {
-            // InternalSmartCE.g:8050:2: ( ( '>' ) )
-            // InternalSmartCE.g:8051:3: ( '>' )
-            {
-             before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignKeyword_1_1_2_0()); 
-            // InternalSmartCE.g:8052:3: ( '>' )
-            // InternalSmartCE.g:8053:4: '>'
+            // InternalSmartCE.g:8267:2: ( ( '>' ) )
+            // InternalSmartCE.g:8268:3: ( '>' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignKeyword_1_1_2_0()); 
-            match(input,78,FOLLOW_2); 
+            // InternalSmartCE.g:8269:3: ( '>' )
+            // InternalSmartCE.g:8270:4: '>'
+            {
+             before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignKeyword_1_1_2_0()); 
+            match(input,76,FOLLOW_2); 
              after(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignKeyword_1_1_2_0()); 
 
             }
@@ -24172,24 +24867,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_3"
-    // InternalSmartCE.g:8064:1: rule__Comparison__SymbolAssignment_1_1_3 : ( ( '<' ) ) ;
+    // InternalSmartCE.g:8281:1: rule__Comparison__SymbolAssignment_1_1_3 : ( ( '<' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8068:1: ( ( ( '<' ) ) )
-            // InternalSmartCE.g:8069:2: ( ( '<' ) )
+            // InternalSmartCE.g:8285:1: ( ( ( '<' ) ) )
+            // InternalSmartCE.g:8286:2: ( ( '<' ) )
             {
-            // InternalSmartCE.g:8069:2: ( ( '<' ) )
-            // InternalSmartCE.g:8070:3: ( '<' )
-            {
-             before(grammarAccess.getComparisonAccess().getSymbolLessThanSignKeyword_1_1_3_0()); 
-            // InternalSmartCE.g:8071:3: ( '<' )
-            // InternalSmartCE.g:8072:4: '<'
+            // InternalSmartCE.g:8286:2: ( ( '<' ) )
+            // InternalSmartCE.g:8287:3: ( '<' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolLessThanSignKeyword_1_1_3_0()); 
-            match(input,79,FOLLOW_2); 
+            // InternalSmartCE.g:8288:3: ( '<' )
+            // InternalSmartCE.g:8289:4: '<'
+            {
+             before(grammarAccess.getComparisonAccess().getSymbolLessThanSignKeyword_1_1_3_0()); 
+            match(input,77,FOLLOW_2); 
              after(grammarAccess.getComparisonAccess().getSymbolLessThanSignKeyword_1_1_3_0()); 
 
             }
@@ -24217,24 +24912,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_4"
-    // InternalSmartCE.g:8083:1: rule__Comparison__SymbolAssignment_1_1_4 : ( ( '!=' ) ) ;
+    // InternalSmartCE.g:8300:1: rule__Comparison__SymbolAssignment_1_1_4 : ( ( '!=' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8087:1: ( ( ( '!=' ) ) )
-            // InternalSmartCE.g:8088:2: ( ( '!=' ) )
+            // InternalSmartCE.g:8304:1: ( ( ( '!=' ) ) )
+            // InternalSmartCE.g:8305:2: ( ( '!=' ) )
             {
-            // InternalSmartCE.g:8088:2: ( ( '!=' ) )
-            // InternalSmartCE.g:8089:3: ( '!=' )
-            {
-             before(grammarAccess.getComparisonAccess().getSymbolExclamationMarkEqualsSignKeyword_1_1_4_0()); 
-            // InternalSmartCE.g:8090:3: ( '!=' )
-            // InternalSmartCE.g:8091:4: '!='
+            // InternalSmartCE.g:8305:2: ( ( '!=' ) )
+            // InternalSmartCE.g:8306:3: ( '!=' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolExclamationMarkEqualsSignKeyword_1_1_4_0()); 
-            match(input,80,FOLLOW_2); 
+            // InternalSmartCE.g:8307:3: ( '!=' )
+            // InternalSmartCE.g:8308:4: '!='
+            {
+             before(grammarAccess.getComparisonAccess().getSymbolExclamationMarkEqualsSignKeyword_1_1_4_0()); 
+            match(input,78,FOLLOW_2); 
              after(grammarAccess.getComparisonAccess().getSymbolExclamationMarkEqualsSignKeyword_1_1_4_0()); 
 
             }
@@ -24262,24 +24957,24 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_5"
-    // InternalSmartCE.g:8102:1: rule__Comparison__SymbolAssignment_1_1_5 : ( ( '==' ) ) ;
+    // InternalSmartCE.g:8319:1: rule__Comparison__SymbolAssignment_1_1_5 : ( ( '==' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8106:1: ( ( ( '==' ) ) )
-            // InternalSmartCE.g:8107:2: ( ( '==' ) )
+            // InternalSmartCE.g:8323:1: ( ( ( '==' ) ) )
+            // InternalSmartCE.g:8324:2: ( ( '==' ) )
             {
-            // InternalSmartCE.g:8107:2: ( ( '==' ) )
-            // InternalSmartCE.g:8108:3: ( '==' )
-            {
-             before(grammarAccess.getComparisonAccess().getSymbolEqualsSignEqualsSignKeyword_1_1_5_0()); 
-            // InternalSmartCE.g:8109:3: ( '==' )
-            // InternalSmartCE.g:8110:4: '=='
+            // InternalSmartCE.g:8324:2: ( ( '==' ) )
+            // InternalSmartCE.g:8325:3: ( '==' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolEqualsSignEqualsSignKeyword_1_1_5_0()); 
-            match(input,81,FOLLOW_2); 
+            // InternalSmartCE.g:8326:3: ( '==' )
+            // InternalSmartCE.g:8327:4: '=='
+            {
+             before(grammarAccess.getComparisonAccess().getSymbolEqualsSignEqualsSignKeyword_1_1_5_0()); 
+            match(input,79,FOLLOW_2); 
              after(grammarAccess.getComparisonAccess().getSymbolEqualsSignEqualsSignKeyword_1_1_5_0()); 
 
             }
@@ -24307,21 +25002,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_6"
-    // InternalSmartCE.g:8121:1: rule__Comparison__SymbolAssignment_1_1_6 : ( ( 'is' ) ) ;
+    // InternalSmartCE.g:8338:1: rule__Comparison__SymbolAssignment_1_1_6 : ( ( 'is' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8125:1: ( ( ( 'is' ) ) )
-            // InternalSmartCE.g:8126:2: ( ( 'is' ) )
+            // InternalSmartCE.g:8342:1: ( ( ( 'is' ) ) )
+            // InternalSmartCE.g:8343:2: ( ( 'is' ) )
             {
-            // InternalSmartCE.g:8126:2: ( ( 'is' ) )
-            // InternalSmartCE.g:8127:3: ( 'is' )
+            // InternalSmartCE.g:8343:2: ( ( 'is' ) )
+            // InternalSmartCE.g:8344:3: ( 'is' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolIsKeyword_1_1_6_0()); 
-            // InternalSmartCE.g:8128:3: ( 'is' )
-            // InternalSmartCE.g:8129:4: 'is'
+            // InternalSmartCE.g:8345:3: ( 'is' )
+            // InternalSmartCE.g:8346:4: 'is'
             {
              before(grammarAccess.getComparisonAccess().getSymbolIsKeyword_1_1_6_0()); 
             match(input,85,FOLLOW_2); 
@@ -24352,21 +25047,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_7"
-    // InternalSmartCE.g:8140:1: rule__Comparison__SymbolAssignment_1_1_7 : ( ( 'as' ) ) ;
+    // InternalSmartCE.g:8357:1: rule__Comparison__SymbolAssignment_1_1_7 : ( ( 'as' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8144:1: ( ( ( 'as' ) ) )
-            // InternalSmartCE.g:8145:2: ( ( 'as' ) )
+            // InternalSmartCE.g:8361:1: ( ( ( 'as' ) ) )
+            // InternalSmartCE.g:8362:2: ( ( 'as' ) )
             {
-            // InternalSmartCE.g:8145:2: ( ( 'as' ) )
-            // InternalSmartCE.g:8146:3: ( 'as' )
+            // InternalSmartCE.g:8362:2: ( ( 'as' ) )
+            // InternalSmartCE.g:8363:3: ( 'as' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolAsKeyword_1_1_7_0()); 
-            // InternalSmartCE.g:8147:3: ( 'as' )
-            // InternalSmartCE.g:8148:4: 'as'
+            // InternalSmartCE.g:8364:3: ( 'as' )
+            // InternalSmartCE.g:8365:4: 'as'
             {
              before(grammarAccess.getComparisonAccess().getSymbolAsKeyword_1_1_7_0()); 
             match(input,86,FOLLOW_2); 
@@ -24397,17 +25092,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__RightAssignment_1_2"
-    // InternalSmartCE.g:8159:1: rule__Comparison__RightAssignment_1_2 : ( rulePlus ) ;
+    // InternalSmartCE.g:8376:1: rule__Comparison__RightAssignment_1_2 : ( rulePlus ) ;
     public final void rule__Comparison__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8163:1: ( ( rulePlus ) )
-            // InternalSmartCE.g:8164:2: ( rulePlus )
+            // InternalSmartCE.g:8380:1: ( ( rulePlus ) )
+            // InternalSmartCE.g:8381:2: ( rulePlus )
             {
-            // InternalSmartCE.g:8164:2: ( rulePlus )
-            // InternalSmartCE.g:8165:3: rulePlus
+            // InternalSmartCE.g:8381:2: ( rulePlus )
+            // InternalSmartCE.g:8382:3: rulePlus
             {
              before(grammarAccess.getComparisonAccess().getRightPlusParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24438,17 +25133,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__RightAssignment_1_2"
-    // InternalSmartCE.g:8174:1: rule__Plus__RightAssignment_1_2 : ( ruleFactor ) ;
+    // InternalSmartCE.g:8391:1: rule__Plus__RightAssignment_1_2 : ( ruleFactor ) ;
     public final void rule__Plus__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8178:1: ( ( ruleFactor ) )
-            // InternalSmartCE.g:8179:2: ( ruleFactor )
+            // InternalSmartCE.g:8395:1: ( ( ruleFactor ) )
+            // InternalSmartCE.g:8396:2: ( ruleFactor )
             {
-            // InternalSmartCE.g:8179:2: ( ruleFactor )
-            // InternalSmartCE.g:8180:3: ruleFactor
+            // InternalSmartCE.g:8396:2: ( ruleFactor )
+            // InternalSmartCE.g:8397:3: ruleFactor
             {
              before(grammarAccess.getPlusAccess().getRightFactorParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24479,17 +25174,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__RightAssignment_1_2"
-    // InternalSmartCE.g:8189:1: rule__Factor__RightAssignment_1_2 : ( ruleNegative ) ;
+    // InternalSmartCE.g:8406:1: rule__Factor__RightAssignment_1_2 : ( ruleNegative ) ;
     public final void rule__Factor__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8193:1: ( ( ruleNegative ) )
-            // InternalSmartCE.g:8194:2: ( ruleNegative )
+            // InternalSmartCE.g:8410:1: ( ( ruleNegative ) )
+            // InternalSmartCE.g:8411:2: ( ruleNegative )
             {
-            // InternalSmartCE.g:8194:2: ( ruleNegative )
-            // InternalSmartCE.g:8195:3: ruleNegative
+            // InternalSmartCE.g:8411:2: ( ruleNegative )
+            // InternalSmartCE.g:8412:3: ruleNegative
             {
              before(grammarAccess.getFactorAccess().getRightNegativeParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24520,17 +25215,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__ExpressionAssignment_1_2"
-    // InternalSmartCE.g:8204:1: rule__Negative__ExpressionAssignment_1_2 : ( rulePrimary ) ;
+    // InternalSmartCE.g:8421:1: rule__Negative__ExpressionAssignment_1_2 : ( rulePrimary ) ;
     public final void rule__Negative__ExpressionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8208:1: ( ( rulePrimary ) )
-            // InternalSmartCE.g:8209:2: ( rulePrimary )
+            // InternalSmartCE.g:8425:1: ( ( rulePrimary ) )
+            // InternalSmartCE.g:8426:2: ( rulePrimary )
             {
-            // InternalSmartCE.g:8209:2: ( rulePrimary )
-            // InternalSmartCE.g:8210:3: rulePrimary
+            // InternalSmartCE.g:8426:2: ( rulePrimary )
+            // InternalSmartCE.g:8427:3: rulePrimary
             {
              before(grammarAccess.getNegativeAccess().getExpressionPrimaryParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24561,17 +25256,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericValue__ValueAssignment"
-    // InternalSmartCE.g:8219:1: rule__NumericValue__ValueAssignment : ( RULE_INT ) ;
+    // InternalSmartCE.g:8436:1: rule__NumericValue__ValueAssignment : ( RULE_INT ) ;
     public final void rule__NumericValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8223:1: ( ( RULE_INT ) )
-            // InternalSmartCE.g:8224:2: ( RULE_INT )
+            // InternalSmartCE.g:8440:1: ( ( RULE_INT ) )
+            // InternalSmartCE.g:8441:2: ( RULE_INT )
             {
-            // InternalSmartCE.g:8224:2: ( RULE_INT )
-            // InternalSmartCE.g:8225:3: RULE_INT
+            // InternalSmartCE.g:8441:2: ( RULE_INT )
+            // InternalSmartCE.g:8442:3: RULE_INT
             {
              before(grammarAccess.getNumericValueAccess().getValueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -24598,17 +25293,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__ValueAssignment"
-    // InternalSmartCE.g:8234:1: rule__StringValue__ValueAssignment : ( RULE_STRING ) ;
+    // InternalSmartCE.g:8451:1: rule__StringValue__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__StringValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8238:1: ( ( RULE_STRING ) )
-            // InternalSmartCE.g:8239:2: ( RULE_STRING )
+            // InternalSmartCE.g:8455:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:8456:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:8239:2: ( RULE_STRING )
-            // InternalSmartCE.g:8240:3: RULE_STRING
+            // InternalSmartCE.g:8456:2: ( RULE_STRING )
+            // InternalSmartCE.g:8457:3: RULE_STRING
             {
              before(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24635,17 +25330,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableValue__ValueAssignment"
-    // InternalSmartCE.g:8249:1: rule__VariableValue__ValueAssignment : ( ruleQualifiedName ) ;
+    // InternalSmartCE.g:8466:1: rule__VariableValue__ValueAssignment : ( ruleQualifiedName ) ;
     public final void rule__VariableValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8253:1: ( ( ruleQualifiedName ) )
-            // InternalSmartCE.g:8254:2: ( ruleQualifiedName )
+            // InternalSmartCE.g:8470:1: ( ( ruleQualifiedName ) )
+            // InternalSmartCE.g:8471:2: ( ruleQualifiedName )
             {
-            // InternalSmartCE.g:8254:2: ( ruleQualifiedName )
-            // InternalSmartCE.g:8255:3: ruleQualifiedName
+            // InternalSmartCE.g:8471:2: ( ruleQualifiedName )
+            // InternalSmartCE.g:8472:3: ruleQualifiedName
             {
              before(grammarAccess.getVariableValueAccess().getValueQualifiedNameParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -24676,17 +25371,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__NameAssignment_0"
-    // InternalSmartCE.g:8264:1: rule__FunctionCall__NameAssignment_0 : ( ruleQualifiedName ) ;
+    // InternalSmartCE.g:8481:1: rule__FunctionCall__NameAssignment_0 : ( ruleQualifiedName ) ;
     public final void rule__FunctionCall__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8268:1: ( ( ruleQualifiedName ) )
-            // InternalSmartCE.g:8269:2: ( ruleQualifiedName )
+            // InternalSmartCE.g:8485:1: ( ( ruleQualifiedName ) )
+            // InternalSmartCE.g:8486:2: ( ruleQualifiedName )
             {
-            // InternalSmartCE.g:8269:2: ( ruleQualifiedName )
-            // InternalSmartCE.g:8270:3: ruleQualifiedName
+            // InternalSmartCE.g:8486:2: ( ruleQualifiedName )
+            // InternalSmartCE.g:8487:3: ruleQualifiedName
             {
              before(grammarAccess.getFunctionCallAccess().getNameQualifiedNameParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -24717,17 +25412,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__ParamsAssignment_2"
-    // InternalSmartCE.g:8279:1: rule__FunctionCall__ParamsAssignment_2 : ( ruleExpression ) ;
+    // InternalSmartCE.g:8496:1: rule__FunctionCall__ParamsAssignment_2 : ( ruleExpression ) ;
     public final void rule__FunctionCall__ParamsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8283:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:8284:2: ( ruleExpression )
+            // InternalSmartCE.g:8500:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:8501:2: ( ruleExpression )
             {
-            // InternalSmartCE.g:8284:2: ( ruleExpression )
-            // InternalSmartCE.g:8285:3: ruleExpression
+            // InternalSmartCE.g:8501:2: ( ruleExpression )
+            // InternalSmartCE.g:8502:3: ruleExpression
             {
              before(grammarAccess.getFunctionCallAccess().getParamsExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24758,17 +25453,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__FunctionCall__ParamsAssignment_3_1"
-    // InternalSmartCE.g:8294:1: rule__FunctionCall__ParamsAssignment_3_1 : ( ruleExpression ) ;
+    // InternalSmartCE.g:8511:1: rule__FunctionCall__ParamsAssignment_3_1 : ( ruleExpression ) ;
     public final void rule__FunctionCall__ParamsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:8298:1: ( ( ruleExpression ) )
-            // InternalSmartCE.g:8299:2: ( ruleExpression )
+            // InternalSmartCE.g:8515:1: ( ( ruleExpression ) )
+            // InternalSmartCE.g:8516:2: ( ruleExpression )
             {
-            // InternalSmartCE.g:8299:2: ( ruleExpression )
-            // InternalSmartCE.g:8300:3: ruleExpression
+            // InternalSmartCE.g:8516:2: ( ruleExpression )
+            // InternalSmartCE.g:8517:3: ruleExpression
             {
              before(grammarAccess.getFunctionCallAccess().getParamsExpressionParserRuleCall_3_1_0()); 
             pushFollow(FOLLOW_2);
@@ -24800,18 +25495,18 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     // Delegated rules
 
 
-    protected DFA3 dfa3 = new DFA3(this);
-    protected DFA6 dfa6 = new DFA6(this);
+    protected DFA4 dfa4 = new DFA4(this);
     protected DFA7 dfa7 = new DFA7(this);
-    protected DFA19 dfa19 = new DFA19(this);
-    static final String dfa_1s = "\u0118\uffff";
-    static final String dfa_2s = "\31\uffff\1\57\12\uffff\1\57\7\uffff\3\121\32\uffff\1\57\11\uffff\4\57\2\uffff\1\57\34\uffff\1\57\1\uffff\1\121\12\uffff\1\121\7\uffff\1\57\35\uffff\1\121\6\uffff\4\121\1\uffff\1\121\35\uffff\1\121\1\uffff\1\121\4\uffff\1\121\15\uffff\1\121\31\uffff\1\121\1\uffff\5\121\14\uffff\1\121\1\uffff\1\121";
-    static final String dfa_3s = "\1\76\6\72\2\4\1\35\2\6\1\4\1\74\1\100\10\102\1\74\1\44\1\20\1\44\1\35\1\6\6\4\1\44\1\20\7\74\3\62\1\uffff\31\74\1\20\1\6\6\72\2\uffff\4\20\1\44\1\5\1\20\1\102\2\4\1\35\2\6\1\4\10\74\1\6\1\74\1\100\10\102\1\74\1\44\1\20\1\74\1\20\1\44\1\35\1\6\1\44\6\4\1\20\7\74\1\20\3\76\31\74\1\6\1\20\6\72\4\20\1\44\1\20\1\5\1\102\2\4\1\35\2\6\1\4\10\74\1\6\1\74\1\100\10\102\1\74\1\44\1\20\1\74\1\20\1\44\1\35\1\6\1\44\1\20\6\4\7\74\1\20\31\74\1\20\1\6\5\20\1\44\1\5\1\102\10\74\1\6\1\20\1\74\1\20";
-    static final String dfa_4s = "\1\106\6\72\2\4\1\43\2\6\1\4\1\74\1\100\10\102\1\121\1\52\1\62\1\52\1\43\7\6\1\52\1\62\7\105\3\106\1\uffff\17\74\1\100\1\112\1\100\7\74\1\62\1\6\6\72\2\uffff\4\62\1\52\1\5\1\62\1\102\2\4\1\43\2\6\1\4\7\74\1\112\1\6\1\74\1\100\10\102\1\121\1\52\1\62\1\74\1\106\1\52\1\43\1\6\1\52\6\6\1\106\7\105\1\62\3\106\26\74\1\100\1\112\1\100\1\6\1\106\6\72\4\106\1\52\1\106\1\5\1\102\2\4\1\43\2\6\1\4\7\74\1\112\1\6\1\74\1\100\10\102\1\121\1\52\1\106\1\74\1\106\1\52\1\43\1\6\1\52\1\106\6\6\7\105\1\106\26\74\1\100\1\112\1\100\1\106\1\6\5\106\1\52\1\5\1\102\7\74\1\112\1\6\1\106\1\74\1\106";
-    static final String dfa_5s = "\57\uffff\1\1\41\uffff\1\2\1\3\u00c5\uffff";
-    static final String dfa_6s = "\u0118\uffff}>";
+    protected DFA8 dfa8 = new DFA8(this);
+    protected DFA20 dfa20 = new DFA20(this);
+    static final String dfa_1s = "\u0175\uffff";
+    static final String dfa_2s = "\31\uffff\1\54\12\uffff\1\54\10\uffff\3\122\31\uffff\1\54\11\uffff\5\54\36\uffff\1\54\1\uffff\1\122\12\uffff\1\122\54\uffff\1\122\12\uffff\1\54\6\uffff\3\122\1\uffff\1\122\1\uffff\1\122\50\uffff\1\122\2\uffff\1\122\11\uffff\1\122\52\uffff\1\122\12\uffff\4\122\1\uffff\1\122\1\uffff\1\122\26\uffff\1\122\24\uffff\1\122\15\uffff";
+    static final String dfa_3s = "\1\77\6\74\2\4\1\35\2\6\1\4\1\75\1\101\10\103\1\75\1\44\1\20\1\44\1\35\1\6\1\44\6\4\1\20\7\75\1\uffff\3\62\31\75\1\20\1\106\6\74\2\uffff\5\20\1\44\1\5\1\74\2\4\1\35\2\6\1\4\10\75\1\6\1\75\1\101\10\103\1\75\1\44\1\20\1\75\1\20\1\44\1\35\1\6\6\4\1\44\1\20\7\75\1\44\6\4\1\75\3\77\31\75\1\106\1\20\12\75\1\20\6\74\3\20\1\44\1\20\1\5\1\20\1\74\1\75\1\44\1\75\1\5\2\4\1\35\2\6\1\4\10\75\1\6\11\75\1\101\10\103\1\75\1\44\1\20\2\75\1\20\1\44\1\35\1\6\6\4\1\20\1\44\7\75\6\4\1\44\32\75\1\106\1\20\12\75\4\20\1\44\1\20\1\5\1\20\1\74\1\75\1\44\1\5\11\75\1\6\10\75\1\20\2\75\6\4\1\44\13\75\1\20\1\75\1\44\1\5\12\75";
+    static final String dfa_4s = "\1\106\6\74\2\4\1\43\2\6\1\4\1\75\1\101\10\103\1\117\1\52\1\62\1\52\1\43\1\6\1\52\6\6\1\62\7\101\1\uffff\3\106\26\75\1\101\1\110\1\101\1\62\1\106\6\74\2\uffff\5\62\1\52\1\5\1\74\2\4\1\43\2\6\1\4\7\75\1\110\1\6\1\75\1\101\10\103\1\117\1\52\1\62\1\117\1\106\1\52\1\43\7\6\1\52\1\106\7\101\1\52\6\6\1\75\3\106\17\75\1\101\1\110\1\101\7\75\2\106\7\75\1\101\1\110\1\101\1\62\6\74\3\106\1\52\1\106\1\5\1\106\1\74\1\75\1\52\1\75\1\5\2\4\1\43\2\6\1\4\7\75\1\110\1\6\7\75\1\110\1\75\1\101\10\103\1\117\1\52\1\106\1\117\1\75\1\106\1\52\1\43\7\6\1\106\1\52\7\101\6\6\1\52\20\75\1\101\1\110\1\101\7\75\2\106\1\101\1\110\1\101\7\75\4\106\1\52\1\106\1\5\1\106\1\74\1\75\1\52\1\5\10\75\1\110\1\6\7\75\1\110\1\106\1\117\1\75\6\6\1\52\1\75\1\101\1\110\1\101\7\75\1\106\1\75\1\52\1\5\10\75\1\110\1\75";
+    static final String dfa_5s = "\54\uffff\1\1\44\uffff\1\3\1\2\u0122\uffff";
+    static final String dfa_6s = "\u0175\uffff}>";
     static final String[] dfa_7s = {
-            "\1\1\1\2\1\uffff\1\3\1\uffff\1\4\1\6\1\uffff\1\5",
+            "\1\1\1\2\1\uffff\1\3\1\uffff\1\4\1\6\1\5",
             "\1\7",
             "\1\10",
             "\1\11",
@@ -24834,31 +25529,31 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\33",
             "\1\33",
             "\1\34",
-            "\1\44\3\uffff\1\43\13\uffff\1\35\1\36\1\37\1\40\1\41\1\42",
+            "\1\44\3\uffff\1\35\10\uffff\1\36\1\37\1\40\1\41\1\42\1\43",
             "\1\45\1\46\1\47\1\50\1\51\1\52\1\53",
-            "\1\54\1\55\1\56\37\uffff\1\57",
+            "\1\55\1\56\1\57\37\uffff\1\54",
             "\1\60\1\61\1\62\1\63\1\64\1\65\1\66",
             "\1\67\1\70\1\71\1\72\1\73\1\74\1\75",
             "\1\76",
-            "\1\101\1\100\1\77",
-            "\1\101\1\100\1\77",
-            "\1\101\1\100\1\77",
-            "\1\101\1\100\1\77",
-            "\1\101\1\100\1\77",
-            "\1\101\1\100\1\77",
-            "\1\102\1\103\1\104\1\105\1\106\1\107\1\110",
-            "\1\54\1\55\1\56\37\uffff\1\57",
-            "\1\111\10\uffff\1\112",
-            "\1\111\10\uffff\1\112",
-            "\1\111\10\uffff\1\112",
-            "\1\111\10\uffff\1\112",
-            "\1\111\10\uffff\1\112",
-            "\1\111\10\uffff\1\112",
-            "\1\111\10\uffff\1\112",
-            "\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
+            "\1\77\1\100\1\101\1\102\1\103\1\104\1\105",
+            "\1\110\1\107\1\106",
+            "\1\110\1\107\1\106",
+            "\1\110\1\107\1\106",
+            "\1\110\1\107\1\106",
+            "\1\110\1\107\1\106",
+            "\1\110\1\107\1\106",
+            "\1\55\1\56\1\57\37\uffff\1\54",
+            "\1\111\3\uffff\1\112",
+            "\1\111\3\uffff\1\112",
+            "\1\111\3\uffff\1\112",
+            "\1\111\3\uffff\1\112",
+            "\1\111\3\uffff\1\112",
+            "\1\111\3\uffff\1\112",
+            "\1\111\3\uffff\1\112",
             "",
+            "\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
             "\1\123",
             "\1\123",
             "\1\123",
@@ -24874,17 +25569,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\124",
             "\1\124",
             "\1\125",
-            "\1\126\3\uffff\1\127",
-            "\1\126\3\uffff\1\127\11\uffff\1\130",
-            "\1\126\3\uffff\1\127",
-            "\1\131",
-            "\1\131",
-            "\1\131",
-            "\1\131",
-            "\1\131",
-            "\1\131",
-            "\1\131",
-            "\1\54\1\55\1\56\37\uffff\1\57",
+            "\1\126",
+            "\1\126",
+            "\1\126",
+            "\1\126",
+            "\1\126",
+            "\1\126",
+            "\1\126",
+            "\1\127\3\uffff\1\130",
+            "\1\127\3\uffff\1\130\6\uffff\1\131",
+            "\1\127\3\uffff\1\130",
+            "\1\55\1\56\1\57\37\uffff\1\54",
             "\1\132",
             "\1\133",
             "\1\134",
@@ -24894,13 +25589,13 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\140",
             "",
             "",
-            "\1\54\1\55\1\56\37\uffff\1\57",
-            "\1\54\1\55\1\56\37\uffff\1\57",
-            "\1\54\1\55\1\56\37\uffff\1\57",
-            "\1\54\1\55\1\56\37\uffff\1\57",
+            "\1\55\1\56\1\57\37\uffff\1\54",
+            "\1\55\1\56\1\57\37\uffff\1\54",
+            "\1\55\1\56\1\57\37\uffff\1\54",
+            "\1\55\1\56\1\57\37\uffff\1\54",
+            "\1\55\1\56\1\57\37\uffff\1\54",
             "\1\141\1\142\1\143\1\144\1\145\1\146\1\147",
             "\1\150",
-            "\1\54\1\55\1\56\37\uffff\1\57",
             "\1\151",
             "\1\152",
             "\1\153",
@@ -24915,7 +25610,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\166",
             "\1\166",
             "\1\166",
-            "\1\126\3\uffff\1\127\11\uffff\1\130",
+            "\1\127\3\uffff\1\130\6\uffff\1\131",
             "\1\167",
             "\1\170",
             "\1\171",
@@ -24927,170 +25622,263 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\172",
             "\1\172",
             "\1\173",
-            "\1\u0083\3\uffff\1\174\13\uffff\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082",
+            "\1\u0083\3\uffff\1\u0082\10\uffff\1\174\1\175\1\176\1\177\1\u0080\1\u0081",
             "\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089\1\u008a",
-            "\1\54\1\55\1\56\37\uffff\1\57",
-            "\1\u008b",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008f\1\u0090\1\u0091\1\u0092\1\u0093\1\u0094\1\u0095",
+            "\1\55\1\56\1\57\37\uffff\1\54",
+            "\1\u0092\3\uffff\1\u008b\10\uffff\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090\1\u0091",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
             "\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b\1\u009c",
-            "\1\u009d",
-            "\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3\1\u00a4",
+            "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3",
+            "\1\u00a4",
             "\1\u00a7\1\u00a6\1\u00a5",
             "\1\u00a7\1\u00a6\1\u00a5",
             "\1\u00a7\1\u00a6\1\u00a5",
             "\1\u00a7\1\u00a6\1\u00a5",
             "\1\u00a7\1\u00a6\1\u00a5",
             "\1\u00a7\1\u00a6\1\u00a5",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u00a9\10\uffff\1\u00a8",
-            "\1\u00a9\10\uffff\1\u00a8",
-            "\1\u00a9\10\uffff\1\u00a8",
-            "\1\u00a9\10\uffff\1\u00a8",
-            "\1\u00a9\10\uffff\1\u00a8",
-            "\1\u00a9\10\uffff\1\u00a8",
-            "\1\u00a9\10\uffff\1\u00a8",
-            "\1\54\1\55\1\56\37\uffff\1\57",
-            "\1\u00aa\1\u00ab\1\uffff\1\u00ac\1\uffff\1\u00ad\1\u00af\1\uffff\1\u00ae",
-            "\1\u00aa\1\u00ab\1\uffff\1\u00ac\1\uffff\1\u00ad\1\u00af\1\uffff\1\u00ae",
-            "\1\u00aa\1\u00ab\1\uffff\1\u00ac\1\uffff\1\u00ad\1\u00af\1\uffff\1\u00ae",
-            "\1\u00b0",
-            "\1\u00b0",
-            "\1\u00b0",
-            "\1\u00b0",
-            "\1\u00b0",
-            "\1\u00b0",
-            "\1\u00b0",
-            "\1\u00b1",
-            "\1\u00b1",
-            "\1\u00b1",
-            "\1\u00b1",
-            "\1\u00b1",
-            "\1\u00b1",
-            "\1\u00b1",
-            "\1\u00b2",
-            "\1\u00b3",
-            "\1\u00b3",
-            "\1\u00b3",
-            "\1\u00b3",
-            "\1\u00b3",
-            "\1\u00b3",
-            "\1\u00b3",
-            "\1\u00b5\3\uffff\1\u00b4",
-            "\1\u00b5\3\uffff\1\u00b4\11\uffff\1\u00b6",
-            "\1\u00b5\3\uffff\1\u00b4",
-            "\1\u00b7",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u00b8",
-            "\1\u00b9",
-            "\1\u00ba",
+            "\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\u00ae",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u00b0\3\uffff\1\u00af",
+            "\1\u00b0\3\uffff\1\u00af",
+            "\1\u00b0\3\uffff\1\u00af",
+            "\1\u00b0\3\uffff\1\u00af",
+            "\1\u00b0\3\uffff\1\u00af",
+            "\1\u00b0\3\uffff\1\u00af",
+            "\1\u00b0\3\uffff\1\u00af",
+            "\1\u00b1\1\u00b2\1\u00b3\1\u00b4\1\u00b5\1\u00b6\1\u00b7",
+            "\1\u00ba\1\u00b9\1\u00b8",
+            "\1\u00ba\1\u00b9\1\u00b8",
+            "\1\u00ba\1\u00b9\1\u00b8",
+            "\1\u00ba\1\u00b9\1\u00b8",
+            "\1\u00ba\1\u00b9\1\u00b8",
+            "\1\u00ba\1\u00b9\1\u00b8",
             "\1\u00bb",
-            "\1\u00bc",
-            "\1\u00bd",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u00be\1\u00bf\1\u00c0\1\u00c1\1\u00c2\1\u00c3\1\u00c4",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u00c5",
-            "\1\u00c6",
-            "\1\u00c7",
+            "\1\u00bc\1\u00bd\1\uffff\1\u00be\1\uffff\1\u00bf\1\u00c1\1\u00c0",
+            "\1\u00bc\1\u00bd\1\uffff\1\u00be\1\uffff\1\u00bf\1\u00c1\1\u00c0",
+            "\1\u00bc\1\u00bd\1\uffff\1\u00be\1\uffff\1\u00bf\1\u00c1\1\u00c0",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c3",
+            "\1\u00c3",
+            "\1\u00c3",
+            "\1\u00c3",
+            "\1\u00c3",
+            "\1\u00c3",
+            "\1\u00c3",
+            "\1\u00c4",
+            "\1\u00c6\3\uffff\1\u00c5",
+            "\1\u00c6\3\uffff\1\u00c5\6\uffff\1\u00c7",
+            "\1\u00c6\3\uffff\1\u00c5",
             "\1\u00c8",
-            "\1\u00c9\1\u00ca\1\u00cb\1\u00cc\1\u00cd\1\u00ce\1\u00cf",
+            "\1\u00c8",
+            "\1\u00c8",
+            "\1\u00c8",
+            "\1\u00c8",
+            "\1\u00c8",
+            "\1\u00c8",
+            "\1\u00c9",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u00ca",
+            "\1\u00ca",
+            "\1\u00ca",
+            "\1\u00ca",
+            "\1\u00ca",
+            "\1\u00ca",
+            "\1\u00ca",
+            "\1\u00cc\3\uffff\1\u00cb",
+            "\1\u00cc\3\uffff\1\u00cb\6\uffff\1\u00cd",
+            "\1\u00cc\3\uffff\1\u00cb",
+            "\1\55\1\56\1\57\37\uffff\1\54",
+            "\1\u00ce",
+            "\1\u00cf",
             "\1\u00d0",
             "\1\u00d1",
             "\1\u00d2",
             "\1\u00d3",
-            "\1\u00d3",
-            "\1\u00d3",
-            "\1\u00d3",
-            "\1\u00d3",
-            "\1\u00d3",
-            "\1\u00d3",
-            "\1\u00b5\3\uffff\1\u00b4\11\uffff\1\u00b6",
-            "\1\u00d4",
-            "\1\u00d5",
-            "\1\u00d6",
-            "\1\u00d7",
-            "\1\u00d7",
-            "\1\u00d7",
-            "\1\u00d7",
-            "\1\u00d7",
-            "\1\u00d7",
-            "\1\u00d7",
-            "\1\u00d8",
-            "\1\u00da\3\uffff\1\u00d9\13\uffff\1\u00db\1\u00dc\1\u00dd\1\u00de\1\u00df\1\u00e0",
-            "\1\u00e1\1\u00e2\1\u00e3\1\u00e4\1\u00e5\1\u00e6\1\u00e7",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u00e8",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u00e9\1\u00ea\1\u00eb\1\u00ec\1\u00ed\1\u00ee\1\u00ef",
-            "\1\u00f0\1\u00f1\1\u00f2\1\u00f3\1\u00f4\1\u00f5\1\u00f6",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u00d4\1\u00d5\1\u00d6\1\u00d7\1\u00d8\1\u00d9\1\u00da",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u00db",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u00dc",
+            "\1\u00bb",
+            "\1\u00dd\1\u00de\1\u00df\1\u00e0\1\u00e1\1\u00e2\1\u00e3",
+            "\1\u00bb",
+            "\1\u00e4",
+            "\1\u00e5",
+            "\1\u00e6",
+            "\1\u00e7\1\u00e8\1\u00e9\1\u00ea\1\u00eb\1\u00ec\1\u00ed",
+            "\1\u00ee",
+            "\1\u00ef",
+            "\1\u00f0",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00c6\3\uffff\1\u00c5\6\uffff\1\u00c7",
+            "\1\u00f2",
+            "\1\u00f3",
+            "\1\u00f3",
+            "\1\u00f3",
+            "\1\u00f3",
+            "\1\u00f3",
+            "\1\u00f3",
+            "\1\u00f3",
+            "\1\u00cc\3\uffff\1\u00cb\6\uffff\1\u00cd",
+            "\1\u00f4",
+            "\1\u00f5",
+            "\1\u00f6",
+            "\1\u00f6",
+            "\1\u00f6",
+            "\1\u00f6",
+            "\1\u00f6",
+            "\1\u00f6",
+            "\1\u00f6",
             "\1\u00f7",
-            "\1\u00f8\1\u00f9\1\u00fa\1\u00fb\1\u00fc\1\u00fd\1\u00fe",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u0101\1\u0100\1\u00ff",
-            "\1\u0101\1\u0100\1\u00ff",
-            "\1\u0101\1\u0100\1\u00ff",
-            "\1\u0101\1\u0100\1\u00ff",
-            "\1\u0101\1\u0100\1\u00ff",
-            "\1\u0101\1\u0100\1\u00ff",
-            "\1\u0102\10\uffff\1\u0103",
-            "\1\u0102\10\uffff\1\u0103",
-            "\1\u0102\10\uffff\1\u0103",
-            "\1\u0102\10\uffff\1\u0103",
-            "\1\u0102\10\uffff\1\u0103",
-            "\1\u0102\10\uffff\1\u0103",
-            "\1\u0102\10\uffff\1\u0103",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u0104",
-            "\1\u0104",
-            "\1\u0104",
-            "\1\u0104",
-            "\1\u0104",
-            "\1\u0104",
-            "\1\u0104",
-            "\1\u0105",
-            "\1\u0105",
-            "\1\u0105",
-            "\1\u0105",
-            "\1\u0105",
-            "\1\u0105",
-            "\1\u0105",
-            "\1\u0106",
-            "\1\u0107",
-            "\1\u0107",
-            "\1\u0107",
-            "\1\u0107",
-            "\1\u0107",
-            "\1\u0107",
-            "\1\u0107",
-            "\1\u0108\3\uffff\1\u0109",
-            "\1\u0108\3\uffff\1\u0109\11\uffff\1\u010a",
-            "\1\u0108\3\uffff\1\u0109",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u010b",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u010c\1\u010d\1\u010e\1\u010f\1\u0110\1\u0111\1\u0112",
-            "\1\u0113",
-            "\1\u0114",
-            "\1\u0115",
-            "\1\u0115",
-            "\1\u0115",
-            "\1\u0115",
-            "\1\u0115",
-            "\1\u0115",
-            "\1\u0115",
-            "\1\u0108\3\uffff\1\u0109\11\uffff\1\u010a",
-            "\1\u0116",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117",
-            "\1\u0117",
-            "\1\u008c\1\u008d\1\u008e\37\uffff\1\121\6\uffff\1\122\4\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\uffff\1\117"
+            "\1\u00fe\3\uffff\1\u00ff\10\uffff\1\u00f8\1\u00f9\1\u00fa\1\u00fb\1\u00fc\1\u00fd",
+            "\1\u0100\1\u0101\1\u0102\1\u0103\1\u0104\1\u0105\1\u0106",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u010e\3\uffff\1\u010d\10\uffff\1\u0107\1\u0108\1\u0109\1\u010a\1\u010b\1\u010c",
+            "\1\u00bb",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u010f\1\u0110\1\u0111\1\u0112\1\u0113\1\u0114\1\u0115",
+            "\1\u0116\1\u0117\1\u0118\1\u0119\1\u011a\1\u011b\1\u011c",
+            "\1\u011d",
+            "\1\u0120\1\u011f\1\u011e",
+            "\1\u0120\1\u011f\1\u011e",
+            "\1\u0120\1\u011f\1\u011e",
+            "\1\u0120\1\u011f\1\u011e",
+            "\1\u0120\1\u011f\1\u011e",
+            "\1\u0120\1\u011f\1\u011e",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0121\1\u0122\1\u0123\1\u0124\1\u0125\1\u0126\1\u0127",
+            "\1\u0129\3\uffff\1\u0128",
+            "\1\u0129\3\uffff\1\u0128",
+            "\1\u0129\3\uffff\1\u0128",
+            "\1\u0129\3\uffff\1\u0128",
+            "\1\u0129\3\uffff\1\u0128",
+            "\1\u0129\3\uffff\1\u0128",
+            "\1\u0129\3\uffff\1\u0128",
+            "\1\u012c\1\u012b\1\u012a",
+            "\1\u012c\1\u012b\1\u012a",
+            "\1\u012c\1\u012b\1\u012a",
+            "\1\u012c\1\u012b\1\u012a",
+            "\1\u012c\1\u012b\1\u012a",
+            "\1\u012c\1\u012b\1\u012a",
+            "\1\u012d\1\u012e\1\u012f\1\u0130\1\u0131\1\u0132\1\u0133",
+            "\1\u0134",
+            "\1\u0135",
+            "\1\u0135",
+            "\1\u0135",
+            "\1\u0135",
+            "\1\u0135",
+            "\1\u0135",
+            "\1\u0135",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0137",
+            "\1\u0139\3\uffff\1\u0138",
+            "\1\u0139\3\uffff\1\u0138\6\uffff\1\u013a",
+            "\1\u0139\3\uffff\1\u0138",
+            "\1\u013b",
+            "\1\u013b",
+            "\1\u013b",
+            "\1\u013b",
+            "\1\u013b",
+            "\1\u013b",
+            "\1\u013b",
+            "\1\u013c",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u013d\3\uffff\1\u013e",
+            "\1\u013d\3\uffff\1\u013e\6\uffff\1\u013f",
+            "\1\u013d\3\uffff\1\u013e",
+            "\1\u0140",
+            "\1\u0140",
+            "\1\u0140",
+            "\1\u0140",
+            "\1\u0140",
+            "\1\u0140",
+            "\1\u0140",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0141\1\u0142\1\u0143\1\u0144\1\u0145\1\u0146\1\u0147",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0148",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0149",
+            "\1\u0134",
+            "\1\u014a\1\u014b\1\u014c\1\u014d\1\u014e\1\u014f\1\u0150",
+            "\1\u0151",
+            "\1\u0134",
+            "\1\u0152",
+            "\1\u0152",
+            "\1\u0152",
+            "\1\u0152",
+            "\1\u0152",
+            "\1\u0152",
+            "\1\u0152",
+            "\1\u0139\3\uffff\1\u0138\6\uffff\1\u013a",
+            "\1\u0153",
+            "\1\u0154",
+            "\1\u0154",
+            "\1\u0154",
+            "\1\u0154",
+            "\1\u0154",
+            "\1\u0154",
+            "\1\u0154",
+            "\1\u013d\3\uffff\1\u013e\6\uffff\1\u013f",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u015c\3\uffff\1\u015b\10\uffff\1\u0155\1\u0156\1\u0157\1\u0158\1\u0159\1\u015a",
+            "\1\u0134",
+            "\1\u015f\1\u015e\1\u015d",
+            "\1\u015f\1\u015e\1\u015d",
+            "\1\u015f\1\u015e\1\u015d",
+            "\1\u015f\1\u015e\1\u015d",
+            "\1\u015f\1\u015e\1\u015d",
+            "\1\u015f\1\u015e\1\u015d",
+            "\1\u0160\1\u0161\1\u0162\1\u0163\1\u0164\1\u0165\1\u0166",
+            "\1\u0167",
+            "\1\u0168\3\uffff\1\u0169",
+            "\1\u0168\3\uffff\1\u0169\6\uffff\1\u016a",
+            "\1\u0168\3\uffff\1\u0169",
+            "\1\u016b",
+            "\1\u016b",
+            "\1\u016b",
+            "\1\u016b",
+            "\1\u016b",
+            "\1\u016b",
+            "\1\u016b",
+            "\1\u0093\1\u0094\1\u0095\37\uffff\1\122\10\uffff\1\121\3\uffff\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
+            "\1\u0167",
+            "\1\u016c\1\u016d\1\u016e\1\u016f\1\u0170\1\u0171\1\u0172",
+            "\1\u0173",
+            "\1\u0167",
+            "\1\u0174",
+            "\1\u0174",
+            "\1\u0174",
+            "\1\u0174",
+            "\1\u0174",
+            "\1\u0174",
+            "\1\u0174",
+            "\1\u0168\3\uffff\1\u0169\6\uffff\1\u016a",
+            "\1\u0167"
     };
 
     static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
@@ -25101,11 +25889,11 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA3 extends DFA {
+    class DFA4 extends DFA {
 
-        public DFA3(BaseRecognizer recognizer) {
+        public DFA4(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 3;
+            this.decisionNumber = 4;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -25115,12 +25903,12 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "1248:1: rule__Condition__Alternatives : ( ( ruleBusinessRule ) | ( ruleCompositeCondition ) | ( ruleConditionalExpression ) );";
+            return "1269:1: rule__Condition__Alternatives : ( ( ruleBusinessRule ) | ( ruleCompositeCondition ) | ( ruleConditionalExpression ) );";
         }
     }
     static final String dfa_8s = "\15\uffff";
-    static final String dfa_9s = "\1\104\1\72\1\4\1\44\7\74\2\uffff";
-    static final String dfa_10s = "\1\104\1\72\1\4\1\52\7\105\2\uffff";
+    static final String dfa_9s = "\1\105\1\74\1\4\1\44\7\75\2\uffff";
+    static final String dfa_10s = "\1\105\1\74\1\4\1\52\7\101\2\uffff";
     static final String dfa_11s = "\13\uffff\1\2\1\1";
     static final String dfa_12s = "\15\uffff}>";
     static final String[] dfa_13s = {
@@ -25128,13 +25916,13 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\2",
             "\1\3",
             "\1\4\1\5\1\6\1\7\1\10\1\11\1\12",
-            "\1\13\10\uffff\1\14",
-            "\1\13\10\uffff\1\14",
-            "\1\13\10\uffff\1\14",
-            "\1\13\10\uffff\1\14",
-            "\1\13\10\uffff\1\14",
-            "\1\13\10\uffff\1\14",
-            "\1\13\10\uffff\1\14",
+            "\1\13\3\uffff\1\14",
+            "\1\13\3\uffff\1\14",
+            "\1\13\3\uffff\1\14",
+            "\1\13\3\uffff\1\14",
+            "\1\13\3\uffff\1\14",
+            "\1\13\3\uffff\1\14",
+            "\1\13\3\uffff\1\14",
             "",
             ""
     };
@@ -25146,11 +25934,11 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     static final short[] dfa_12 = DFA.unpackEncodedString(dfa_12s);
     static final short[][] dfa_13 = unpackEncodedStringArray(dfa_13s);
 
-    class DFA6 extends DFA {
+    class DFA7 extends DFA {
 
-        public DFA6(BaseRecognizer recognizer) {
+        public DFA7(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 6;
+            this.decisionNumber = 7;
             this.eot = dfa_8;
             this.eof = dfa_8;
             this.min = dfa_9;
@@ -25160,19 +25948,19 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_13;
         }
         public String getDescription() {
-            return "1347:1: rule__SessionInterval__Alternatives : ( ( ( rule__SessionInterval__Group_0__0 ) ) | ( ( rule__SessionInterval__Group_1__0 ) ) );";
+            return "1368:1: rule__SessionInterval__Alternatives : ( ( ( rule__SessionInterval__Group_0__0 ) ) | ( ( rule__SessionInterval__Group_1__0 ) ) );";
         }
     }
     static final String dfa_14s = "\23\uffff";
-    static final String dfa_15s = "\1\106\1\72\1\6\1\74\1\uffff\6\4\1\uffff\3\74\2\uffff\1\5\1\74";
-    static final String dfa_16s = "\1\106\1\72\1\6\1\121\1\uffff\6\6\1\uffff\1\100\1\112\1\100\2\uffff\1\5\1\112";
+    static final String dfa_15s = "\1\106\1\74\1\6\1\75\1\uffff\6\4\1\uffff\3\75\2\uffff\1\5\1\75";
+    static final String dfa_16s = "\1\106\1\74\1\6\1\117\1\uffff\6\6\1\uffff\1\101\1\110\1\101\2\uffff\1\5\1\110";
     static final String dfa_17s = "\4\uffff\1\2\6\uffff\1\1\3\uffff\1\4\1\3\2\uffff";
     static final String dfa_18s = "\23\uffff}>";
     static final String[] dfa_19s = {
             "\1\1",
             "\1\2",
             "\1\3",
-            "\1\13\3\uffff\1\4\13\uffff\1\5\1\6\1\7\1\10\1\11\1\12",
+            "\1\13\3\uffff\1\4\10\uffff\1\5\1\6\1\7\1\10\1\11\1\12",
             "",
             "\1\16\1\15\1\14",
             "\1\16\1\15\1\14",
@@ -25182,12 +25970,12 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\16\1\15\1\14",
             "",
             "\1\20\3\uffff\1\17",
-            "\1\20\3\uffff\1\17\11\uffff\1\21",
+            "\1\20\3\uffff\1\17\6\uffff\1\21",
             "\1\20\3\uffff\1\17",
             "",
             "",
             "\1\22",
-            "\1\20\3\uffff\1\17\11\uffff\1\21"
+            "\1\20\3\uffff\1\17\6\uffff\1\21"
     };
 
     static final short[] dfa_14 = DFA.unpackEncodedString(dfa_14s);
@@ -25197,11 +25985,11 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     static final short[] dfa_18 = DFA.unpackEncodedString(dfa_18s);
     static final short[][] dfa_19 = unpackEncodedStringArray(dfa_19s);
 
-    class DFA7 extends DFA {
+    class DFA8 extends DFA {
 
-        public DFA7(BaseRecognizer recognizer) {
+        public DFA8(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 7;
+            this.decisionNumber = 8;
             this.eot = dfa_14;
             this.eof = dfa_14;
             this.min = dfa_15;
@@ -25211,7 +25999,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_19;
         }
         public String getDescription() {
-            return "1368:1: rule__MessageContent__Alternatives : ( ( ( rule__MessageContent__Group_0__0 ) ) | ( ( rule__MessageContent__Group_1__0 ) ) | ( ( rule__MessageContent__Group_2__0 ) ) | ( ( rule__MessageContent__Group_3__0 ) ) );";
+            return "1389:1: rule__MessageContent__Alternatives : ( ( ( rule__MessageContent__Group_0__0 ) ) | ( ( rule__MessageContent__Group_1__0 ) ) | ( ( rule__MessageContent__Group_2__0 ) ) | ( ( rule__MessageContent__Group_3__0 ) ) );";
         }
     }
     static final String dfa_20s = "\10\uffff";
@@ -25224,11 +26012,11 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             "\1\1\1\3\1\2",
             "",
             "",
-            "\1\6\15\uffff\4\6\31\uffff\3\6\7\uffff\1\5\1\uffff\1\6\14\uffff\1\6\1\4\1\uffff\10\6\1\uffff\2\6",
+            "\1\6\12\uffff\2\6\1\uffff\4\6\32\uffff\2\6\11\uffff\1\5\1\6\11\uffff\1\6\1\4\1\uffff\6\6\2\uffff\2\6\1\uffff\2\6",
             "\1\7",
             "",
             "",
-            "\1\6\15\uffff\4\6\31\uffff\3\6\7\uffff\1\5\1\uffff\1\6\14\uffff\1\6\1\4\1\uffff\10\6\1\uffff\2\6"
+            "\1\6\12\uffff\2\6\1\uffff\4\6\32\uffff\2\6\11\uffff\1\5\1\6\11\uffff\1\6\1\4\1\uffff\6\6\2\uffff\2\6\1\uffff\2\6"
     };
 
     static final short[] dfa_20 = DFA.unpackEncodedString(dfa_20s);
@@ -25239,11 +26027,11 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     static final short[] dfa_25 = DFA.unpackEncodedString(dfa_25s);
     static final short[][] dfa_26 = unpackEncodedStringArray(dfa_26s);
 
-    class DFA19 extends DFA {
+    class DFA20 extends DFA {
 
-        public DFA19(BaseRecognizer recognizer) {
+        public DFA20(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 19;
+            this.decisionNumber = 20;
             this.eot = dfa_20;
             this.eof = dfa_21;
             this.min = dfa_22;
@@ -25253,7 +26041,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             this.transition = dfa_26;
         }
         public String getDescription() {
-            return "1704:1: rule__LiteralValue__Alternatives : ( ( ruleNumericValue ) | ( ruleStringValue ) | ( ruleVariableValue ) | ( ruleFunctionCall ) );";
+            return "1737:1: rule__LiteralValue__Alternatives : ( ( ruleNumericValue ) | ( ruleStringValue ) | ( ruleVariableValue ) | ( ruleFunctionCall ) );";
         }
     }
  
@@ -25267,55 +26055,57 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000200000000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000400000000000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0400000000100070L,0x0000000000100000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x1000000000100070L,0x0000000000100000L});
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0008000000003800L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0004000000000020L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x000000000000C000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x000000001F800000L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0030000000000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0004000000003800L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000003802L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0004000000000020L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x8000000000000000L,0x0000000000000075L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0xC000000000000000L,0x000000000000005AL});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x000000000000C000L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0104000000000000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000070000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0xC000000000000002L,0x000000000000005AL});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000070002L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x2000000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x000007F000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000FE0000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000004L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000020L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x000000000003F000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000070L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000180L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000000L,0x00000000000C0000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000002L,0x00000000000C0000L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0400000000100070L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000000000L,0x000000000063F000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000002L,0x000000000063F000L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000180002L});
-    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000600000L});
-    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000600002L});
-    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0400000000000070L});
-    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x1000000000000000L,0x0000000000000200L});
-    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000200L});
-    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000400L});
-    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x000000001F800000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0404000000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000070000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000075L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000000070002L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x4000000000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x000007F000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000000FE0000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000008L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000040L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000000000000000L,0x000000000000FC00L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000000000000070L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000000000000000L,0x0000000000030000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000030000L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x0000000000030002L,0x00000000000C0000L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x1000000000100070L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x000000000060FC00L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000002L,0x000000000060FC00L});
+    public static final BitSet FOLLOW_52 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_53 = new BitSet(new long[]{0x0000000000180002L});
+    public static final BitSet FOLLOW_54 = new BitSet(new long[]{0x0000000000600000L});
+    public static final BitSet FOLLOW_55 = new BitSet(new long[]{0x0000000000600002L});
+    public static final BitSet FOLLOW_56 = new BitSet(new long[]{0x1000000000000070L});
+    public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x2000000000000000L,0x0000000000000080L});
+    public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000080L});
+    public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000100L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000100L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
 
 }

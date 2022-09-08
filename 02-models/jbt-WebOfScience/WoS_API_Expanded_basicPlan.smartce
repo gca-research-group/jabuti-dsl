@@ -1,0 +1,42 @@
+///@version - jabuti 0.1.0 
+
+Contract ApiExpandedBasicPlan {
+
+	dates{ 	
+		beginDate = "2022-01-01 08:00:00" 
+		dueDate = "2022-12-31 18:00:00"
+	}
+
+	parties{
+		application = "webOfScience" 
+		process = "integrationProcess" 
+	}
+
+	variables{
+		test= "teste"
+	}
+
+	clauses{	
+
+		Right requestDocuments {
+			rolePlayer = process
+			operation = request
+			condition {
+				 OperationLimit(2 by Second) AND 
+				 MessageContent("count(//body/document)" <= 100) AND
+				 MessageContent("count(//body/document)" <= 50000 by Month) 			 
+			}
+			onBreach(EventLog("Exceded number of docuemnts"))
+		}
+		
+		Obligation responseWithDocuments {
+	
+			rolePlayer =  application
+			operation =  response
+			condition{
+				Timeout(60) 
+			}
+			onBreach(EventLog("Conditon not meet"))
+		}
+	}
+}

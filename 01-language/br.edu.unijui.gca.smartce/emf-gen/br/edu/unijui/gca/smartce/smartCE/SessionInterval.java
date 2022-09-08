@@ -13,11 +13,9 @@ package br.edu.unijui.gca.smartce.smartCE;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getStart <em>Start</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getEnd <em>End</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getFrequency <em>Frequency</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence <em>Recurrence</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getMessagecontent <em>Messagecontent</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval()
@@ -26,50 +24,6 @@ package br.edu.unijui.gca.smartce.smartCE;
  */
 public interface SessionInterval extends BusinessRule
 {
-	/**
-	 * Returns the value of the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Start</em>' attribute.
-	 * @see #setStart(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval_Start()
-	 * @model
-	 * @generated
-	 */
-	String getStart();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getStart <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' attribute.
-	 * @see #getStart()
-	 * @generated
-	 */
-	void setStart(String value);
-
-	/**
-	 * Returns the value of the '<em><b>End</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>End</em>' attribute.
-	 * @see #setEnd(String)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval_End()
-	 * @model
-	 * @generated
-	 */
-	String getEnd();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getEnd <em>End</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>End</em>' attribute.
-	 * @see #getEnd()
-	 * @generated
-	 */
-	void setEnd(String value);
-
 	/**
 	 * Returns the value of the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -118,28 +72,25 @@ public interface SessionInterval extends BusinessRule
 	void setTimeUnit(TimeUnit value);
 
 	/**
-	 * Returns the value of the '<em><b>Recurrence</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.Recurrence}.
+	 * Returns the value of the '<em><b>Messagecontent</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Recurrence</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
-	 * @see #setRecurrence(Recurrence)
-	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval_Recurrence()
-	 * @model
+	 * @return the value of the '<em>Messagecontent</em>' containment reference.
+	 * @see #setMessagecontent(MessageContent)
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionInterval_Messagecontent()
+	 * @model containment="true"
 	 * @generated
 	 */
-	Recurrence getRecurrence();
+	MessageContent getMessagecontent();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence <em>Recurrence</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getMessagecontent <em>Messagecontent</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Recurrence</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
-	 * @see #getRecurrence()
+	 * @param value the new value of the '<em>Messagecontent</em>' containment reference.
+	 * @see #getMessagecontent()
 	 * @generated
 	 */
-	void setRecurrence(Recurrence value);
+	void setMessagecontent(MessageContent value);
 
 } // SessionInterval

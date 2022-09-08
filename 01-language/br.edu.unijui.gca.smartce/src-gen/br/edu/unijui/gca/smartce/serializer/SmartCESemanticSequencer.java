@@ -205,7 +205,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     BusinessAction returns BusinessAction
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     name='BusinessAction'
 	 * </pre>
 	 */
 	protected void sequence_BusinessAction(ISerializationContext context, BusinessAction semanticObject) {
@@ -214,7 +214,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.ACTION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBusinessActionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getBusinessActionAccess().getNameBusinessActionKeyword_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -275,7 +275,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *
 	 * Constraint:
 	 *     (
-	 *         (left=Expression_BinaryOperator_1_0 (symbol='&&' | symbol='||') right=Negation) | 
+	 *         (left=Expression_BinaryOperator_1_0 (symbol='AND' | symbol='&&' | symbol='||' | symbol='OR') right=Negation) | 
 	 *         (
 	 *             left=Comparison_BinaryOperator_1_0 
 	 *             (
@@ -326,7 +326,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     ConditionalExpression returns ConditionalExpression
 	 *
 	 * Constraint:
-	 *     (conditions+=CompositeCondition conditions+=Condition)
+	 *     (conditions+=CompositeCondition expression+=Expression conditions+=Condition)
 	 * </pre>
 	 */
 	protected void sequence_ConditionalExpression(ISerializationContext context, ConditionalExpression semanticObject) {
@@ -347,7 +347,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *         application=Application 
 	 *         process=Process 
 	 *         variables+=Variable* 
-	 *         clauses+=Clause
+	 *         clauses+=Clause*
 	 *     )
 	 * </pre>
 	 */
@@ -363,7 +363,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     EventLog returns EventLog
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     name='EventLog'
 	 * </pre>
 	 */
 	protected void sequence_EventLog(ISerializationContext context, EventLog semanticObject) {
@@ -372,7 +372,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.ACTION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getEventLogAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEventLogAccess().getNameEventLogKeyword_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -633,7 +633,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SessionInterval returns SessionInterval
 	 *
 	 * Constraint:
-	 *     ((frequency=INT timeUnit=TimeUnit start=STRING end=STRING) | (frequency=INT timeUnit=TimeUnit))
+	 *     ((frequency=INT timeUnit=TimeUnit messagecontent=MessageContent) | (frequency=INT timeUnit=TimeUnit))
 	 * </pre>
 	 */
 	protected void sequence_SessionInterval(ISerializationContext context, SessionInterval semanticObject) {
@@ -758,7 +758,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (name=ID expression+=Expression)
+	 *     ((name=ID expression+=Expression) | (name=ID businessRule+=BusinessRule))
 	 * </pre>
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {

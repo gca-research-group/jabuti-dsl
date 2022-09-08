@@ -1,0 +1,40 @@
+//@version - jabuti 0.1.0 
+
+Contract RequestWorks{
+
+	dates{
+		beginDate = "2022-01-01 08:00:00" 
+		dueDate = "2022-12-31 18:00:00"
+	}	
+
+	parties{	
+		application = "Orcid" 
+		process  	= "integrationProcess" 
+	}
+	
+	clauses{
+
+		Right requestAllWorks {
+			rolePlayer = process
+			operation = request
+			condition {
+				BusinessDay(Monday to Sunday) AND
+				TimeInterval ("00:00:00" to "23:59:59") AND
+				OperationLimit (24 by Second)
+			}
+			onBreach (EventLog("Conditions do not meet"))
+		}
+		
+		Obligation responseWorks {
+	
+			//Send the requested works
+			rolePlayer = application
+			operation = response
+			condition {
+				MessageContent("count(//body/request/document)" == "count(//body/response/document)")
+			}
+			onBreach (EventLog("Conditions do not meet"))
+		}
+	}
+}
+	

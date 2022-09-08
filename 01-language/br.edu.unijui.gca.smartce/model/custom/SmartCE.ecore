@@ -52,7 +52,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="onSuccess" eType="#//OnSuccess"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//Operation"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolePlayer" eType="#//Parties"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolePlayer" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Import">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -177,21 +177,18 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
         eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessRule" upperBound="-1"
+        eType="#//BusinessRule" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Parties">
-    <eLiterals name="APPLICATION"/>
-    <eLiterals name="PROCESS" value="1"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="SessionStatus">
+    <eLiterals name="CLOSED"/>
+    <eLiterals name="OPEN" value="1"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SessionInterval" eSuperTypes="#//BusinessRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="recurrence" eType="#//Recurrence"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Recurrence">
-    <eLiterals name="RECURRING"/>
-    <eLiterals name="NON_RECURRING" value="1"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messagecontent" eType="#//MessageContent"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"

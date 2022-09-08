@@ -1,0 +1,35 @@
+//@version -  0.1.0  
+
+Contract sendMessageWhatsapp {
+
+	dates{
+		beginDate = "2022-01-01 08:00:00" 
+		dueDate = "2022-12-31 18:00:00" 
+	}
+	
+	parties{
+		application = "whatsapp" 
+		process = "integrationProcess" 
+	}
+	
+	variables{
+		conversationId = MessageContent("//conversationId/text()")		
+		session = SessionInterval(24 Hour by MessageContent("//conversationId/text()"))
+		conversationStarter = MessageContent("//conversationStarter/text()") 
+	}
+
+	clauses{
+		
+		Right sendMessage{
+			rolePlayer = process
+			operation = write		
+			condition {
+				BusinessDay(Monday to Friday)  AND
+				when(session == 'CLOSED' AND conversationStarter == "Business-initiated") do {				
+					 	OperationLimit(10000 by Month)		
+				}	 	
+			}				
+			onBreach( EventLog("Request operation performed outside of allowed hours or limit operation exceeded"))
+		}
+	}	
+}

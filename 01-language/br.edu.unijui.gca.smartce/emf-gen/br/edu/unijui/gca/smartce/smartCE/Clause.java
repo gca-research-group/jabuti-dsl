@@ -235,27 +235,24 @@ public interface Clause extends EObject
 
 	/**
 	 * Returns the value of the '<em><b>Role Player</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.smartce.smartCE.Parties}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Role Player</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Parties
-	 * @see #setRolePlayer(Parties)
+	 * @see #setRolePlayer(String)
 	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getClause_RolePlayer()
 	 * @model
 	 * @generated
 	 */
-	Parties getRolePlayer();
+	String getRolePlayer();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.smartce.smartCE.Clause#getRolePlayer <em>Role Player</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Role Player</em>' attribute.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Parties
 	 * @see #getRolePlayer()
 	 * @generated
 	 */
-	void setRolePlayer(Parties value);
+	void setRolePlayer(String value);
 
 } // Clause

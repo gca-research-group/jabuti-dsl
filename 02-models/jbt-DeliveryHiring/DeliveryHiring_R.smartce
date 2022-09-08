@@ -1,0 +1,34 @@
+//@version - jabuti 0.1.0 
+
+Contract DeliveryHiring_R { 
+	dates{
+		beginDate = "2022-01-01 08:00:00" 
+		dueDate = "2022-12-31 18:00:00"
+	}	
+
+	parties{
+		application = "deliverySystem" 
+		process  	= "integrationProcess" 
+	}
+
+	clauses{
+		Right requestDelivery {
+			/*Setting the days and hours to request a delivery,
+			the maximum request operation by minute and number of address by request*/
+		
+			rolePlayer = application
+			operation = request
+			
+			condition {
+				BusinessDay(Monday to Friday) AND
+				TimeInterval("08:30:00" to "18:30:00") AND
+				OperationLimit(5 by Day) AND
+				MessageContent("count(//address)" >= 1) AND 
+				MessageContent("count(//address)" <= 3) AND
+				MessageContent("count(//address)" <= 1000 by Month) 
+			}
+			// the onSuccess is optional
+			onBreach(EventLog("Request operation performed outside of allowed hours or limit operation exceeded"))
+		}
+	}
+}

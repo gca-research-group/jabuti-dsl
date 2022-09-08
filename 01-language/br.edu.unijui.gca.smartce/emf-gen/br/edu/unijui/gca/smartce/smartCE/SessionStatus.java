@@ -11,91 +11,91 @@ import org.eclipse.emf.common.util.Enumerator;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Recurrence</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Session Status</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getRecurrence()
+ * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getSessionStatus()
  * @model
  * @generated
  */
-public enum Recurrence implements Enumerator
+public enum SessionStatus implements Enumerator
 {
 	/**
-	 * The '<em><b>RECURRING</b></em>' literal object.
+	 * The '<em><b>CLOSED</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RECURRING_VALUE
+	 * @see #CLOSED_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RECURRING(0, "RECURRING", "RECURRING"),
+	CLOSED(0, "CLOSED", "CLOSED"),
 
 	/**
-	 * The '<em><b>NON RECURRING</b></em>' literal object.
+	 * The '<em><b>OPEN</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NON_RECURRING_VALUE
+	 * @see #OPEN_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NON_RECURRING(1, "NON_RECURRING", "NON_RECURRING");
+	OPEN(1, "OPEN", "OPEN");
 
 	/**
-	 * The '<em><b>RECURRING</b></em>' literal value.
+	 * The '<em><b>CLOSED</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RECURRING
+	 * @see #CLOSED
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RECURRING_VALUE = 0;
+	public static final int CLOSED_VALUE = 0;
 
 	/**
-	 * The '<em><b>NON RECURRING</b></em>' literal value.
+	 * The '<em><b>OPEN</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NON_RECURRING
+	 * @see #OPEN
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NON_RECURRING_VALUE = 1;
+	public static final int OPEN_VALUE = 1;
 
 	/**
-	 * An array of all the '<em><b>Recurrence</b></em>' enumerators.
+	 * An array of all the '<em><b>Session Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final Recurrence[] VALUES_ARRAY =
-		new Recurrence[]
+	private static final SessionStatus[] VALUES_ARRAY =
+		new SessionStatus[]
 		{
-			RECURRING,
-			NON_RECURRING,
+			CLOSED,
+			OPEN,
 		};
 
 	/**
-	 * A public read-only list of all the '<em><b>Recurrence</b></em>' enumerators.
+	 * A public read-only list of all the '<em><b>Session Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static final List<Recurrence> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+	public static final List<SessionStatus> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
 	/**
-	 * Returns the '<em><b>Recurrence</b></em>' literal with the specified literal value.
+	 * Returns the '<em><b>Session Status</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param literal the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Recurrence get(String literal)
+	public static SessionStatus get(String literal)
 	{
 		for (int i = 0; i < VALUES_ARRAY.length; ++i)
 		{
-			Recurrence result = VALUES_ARRAY[i];
+			SessionStatus result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal))
 			{
 				return result;
@@ -105,18 +105,18 @@ public enum Recurrence implements Enumerator
 	}
 
 	/**
-	 * Returns the '<em><b>Recurrence</b></em>' literal with the specified name.
+	 * Returns the '<em><b>Session Status</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param name the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Recurrence getByName(String name)
+	public static SessionStatus getByName(String name)
 	{
 		for (int i = 0; i < VALUES_ARRAY.length; ++i)
 		{
-			Recurrence result = VALUES_ARRAY[i];
+			SessionStatus result = VALUES_ARRAY[i];
 			if (result.getName().equals(name))
 			{
 				return result;
@@ -126,19 +126,19 @@ public enum Recurrence implements Enumerator
 	}
 
 	/**
-	 * Returns the '<em><b>Recurrence</b></em>' literal with the specified integer value.
+	 * Returns the '<em><b>Session Status</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
-	public static Recurrence get(int value)
+	public static SessionStatus get(int value)
 	{
 		switch (value)
 		{
-			case RECURRING_VALUE: return RECURRING;
-			case NON_RECURRING_VALUE: return NON_RECURRING;
+			case CLOSED_VALUE: return CLOSED;
+			case OPEN_VALUE: return OPEN;
 		}
 		return null;
 	}
@@ -170,7 +170,7 @@ public enum Recurrence implements Enumerator
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private Recurrence(int value, String name, String literal)
+	private SessionStatus(int value, String name, String literal)
 	{
 		this.value = value;
 		this.name = name;
@@ -222,4 +222,4 @@ public enum Recurrence implements Enumerator
 		return literal;
 	}
 	
-} //Recurrence
+} //SessionStatus

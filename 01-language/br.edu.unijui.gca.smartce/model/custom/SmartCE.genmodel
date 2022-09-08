@@ -32,13 +32,9 @@
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/REQUEST"/>
       <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Operation/RESPONSE"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//Parties">
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Parties/APPLICATION"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Parties/PROCESS"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//Recurrence">
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Recurrence/RECURRING"/>
-      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//Recurrence/NON_RECURRING"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="SmartCE.ecore#//SessionStatus">
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//SessionStatus/CLOSED"/>
+      <genEnumLiterals ecoreEnumLiteral="SmartCE.ecore#//SessionStatus/OPEN"/>
     </genEnums>
     <genClasses ecoreClass="SmartCE.ecore#//Contract">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Contract/name"/>
@@ -159,13 +155,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Variable/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Variable/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Variable/businessRule"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//SessionInterval">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/start"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/end"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/frequency"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/timeUnit"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//SessionInterval/recurrence"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference SmartCE.ecore#//SessionInterval/messagecontent"/>
     </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//ConditionalExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//ConditionalExpression/conditions"/>

@@ -3,14 +3,16 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
-import br.edu.unijui.gca.smartce.smartCE.Recurrence;
+import br.edu.unijui.gca.smartce.smartCE.MessageContent;
 import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.TimeUnit;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -22,57 +24,15 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl#getStart <em>Start</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl#getEnd <em>End</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl#getFrequency <em>Frequency</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl#getRecurrence <em>Recurrence</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl#getMessagecontent <em>Messagecontent</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInterval
 {
-	/**
-	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String START_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getStart()
-	 * @generated
-	 * @ordered
-	 */
-	protected String start = START_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getEnd() <em>End</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnd()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String END_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getEnd() <em>End</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getEnd()
-	 * @generated
-	 * @ordered
-	 */
-	protected String end = END_EDEFAULT;
-
 	/**
 	 * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -114,24 +74,14 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getRecurrence() <em>Recurrence</em>}' attribute.
+	 * The cached value of the '{@link #getMessagecontent() <em>Messagecontent</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRecurrence()
+	 * @see #getMessagecontent()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Recurrence RECURRENCE_EDEFAULT = Recurrence.RECURRING;
-
-	/**
-	 * The cached value of the '{@link #getRecurrence() <em>Recurrence</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRecurrence()
-	 * @generated
-	 * @ordered
-	 */
-	protected Recurrence recurrence = RECURRENCE_EDEFAULT;
+	protected MessageContent messagecontent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,56 +102,6 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	protected EClass eStaticClass()
 	{
 		return SmartCEPackage.Literals.SESSION_INTERVAL;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getStart()
-	{
-		return start;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setStart(String newStart)
-	{
-		String oldStart = start;
-		start = newStart;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.SESSION_INTERVAL__START, oldStart, start));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getEnd()
-	{
-		return end;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setEnd(String newEnd)
-	{
-		String oldEnd = end;
-		end = newEnd;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.SESSION_INTERVAL__END, oldEnd, end));
 	}
 
 	/**
@@ -260,9 +160,26 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	 * @generated
 	 */
 	@Override
-	public Recurrence getRecurrence()
+	public MessageContent getMessagecontent()
 	{
-		return recurrence;
+		return messagecontent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetMessagecontent(MessageContent newMessagecontent, NotificationChain msgs)
+	{
+		MessageContent oldMessagecontent = messagecontent;
+		messagecontent = newMessagecontent;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT, oldMessagecontent, newMessagecontent);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -271,12 +188,36 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	 * @generated
 	 */
 	@Override
-	public void setRecurrence(Recurrence newRecurrence)
+	public void setMessagecontent(MessageContent newMessagecontent)
 	{
-		Recurrence oldRecurrence = recurrence;
-		recurrence = newRecurrence == null ? RECURRENCE_EDEFAULT : newRecurrence;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.SESSION_INTERVAL__RECURRENCE, oldRecurrence, recurrence));
+		if (newMessagecontent != messagecontent)
+		{
+			NotificationChain msgs = null;
+			if (messagecontent != null)
+				msgs = ((InternalEObject)messagecontent).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT, null, msgs);
+			if (newMessagecontent != null)
+				msgs = ((InternalEObject)newMessagecontent).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT, null, msgs);
+			msgs = basicSetMessagecontent(newMessagecontent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT, newMessagecontent, newMessagecontent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT:
+				return basicSetMessagecontent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -289,16 +230,12 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.SESSION_INTERVAL__START:
-				return getStart();
-			case SmartCEPackage.SESSION_INTERVAL__END:
-				return getEnd();
 			case SmartCEPackage.SESSION_INTERVAL__FREQUENCY:
 				return getFrequency();
 			case SmartCEPackage.SESSION_INTERVAL__TIME_UNIT:
 				return getTimeUnit();
-			case SmartCEPackage.SESSION_INTERVAL__RECURRENCE:
-				return getRecurrence();
+			case SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT:
+				return getMessagecontent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -313,20 +250,14 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.SESSION_INTERVAL__START:
-				setStart((String)newValue);
-				return;
-			case SmartCEPackage.SESSION_INTERVAL__END:
-				setEnd((String)newValue);
-				return;
 			case SmartCEPackage.SESSION_INTERVAL__FREQUENCY:
 				setFrequency((Integer)newValue);
 				return;
 			case SmartCEPackage.SESSION_INTERVAL__TIME_UNIT:
 				setTimeUnit((TimeUnit)newValue);
 				return;
-			case SmartCEPackage.SESSION_INTERVAL__RECURRENCE:
-				setRecurrence((Recurrence)newValue);
+			case SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT:
+				setMessagecontent((MessageContent)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,20 +273,14 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.SESSION_INTERVAL__START:
-				setStart(START_EDEFAULT);
-				return;
-			case SmartCEPackage.SESSION_INTERVAL__END:
-				setEnd(END_EDEFAULT);
-				return;
 			case SmartCEPackage.SESSION_INTERVAL__FREQUENCY:
 				setFrequency(FREQUENCY_EDEFAULT);
 				return;
 			case SmartCEPackage.SESSION_INTERVAL__TIME_UNIT:
 				setTimeUnit(TIME_UNIT_EDEFAULT);
 				return;
-			case SmartCEPackage.SESSION_INTERVAL__RECURRENCE:
-				setRecurrence(RECURRENCE_EDEFAULT);
+			case SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT:
+				setMessagecontent((MessageContent)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -371,16 +296,12 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 	{
 		switch (featureID)
 		{
-			case SmartCEPackage.SESSION_INTERVAL__START:
-				return START_EDEFAULT == null ? start != null : !START_EDEFAULT.equals(start);
-			case SmartCEPackage.SESSION_INTERVAL__END:
-				return END_EDEFAULT == null ? end != null : !END_EDEFAULT.equals(end);
 			case SmartCEPackage.SESSION_INTERVAL__FREQUENCY:
 				return frequency != FREQUENCY_EDEFAULT;
 			case SmartCEPackage.SESSION_INTERVAL__TIME_UNIT:
 				return timeUnit != TIME_UNIT_EDEFAULT;
-			case SmartCEPackage.SESSION_INTERVAL__RECURRENCE:
-				return recurrence != RECURRENCE_EDEFAULT;
+			case SmartCEPackage.SESSION_INTERVAL__MESSAGECONTENT:
+				return messagecontent != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -396,16 +317,10 @@ public class SessionIntervalImpl extends BusinessRuleImpl implements SessionInte
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (start: ");
-		result.append(start);
-		result.append(", end: ");
-		result.append(end);
-		result.append(", frequency: ");
+		result.append(" (frequency: ");
 		result.append(frequency);
 		result.append(", timeUnit: ");
 		result.append(timeUnit);
-		result.append(", recurrence: ");
-		result.append(recurrence);
 		result.append(')');
 		return result.toString();
 	}

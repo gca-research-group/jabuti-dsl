@@ -27,10 +27,9 @@ import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
-import br.edu.unijui.gca.smartce.smartCE.Parties;
 import br.edu.unijui.gca.smartce.smartCE.Party;
-import br.edu.unijui.gca.smartce.smartCE.Recurrence;
 import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
+import br.edu.unijui.gca.smartce.smartCE.SessionStatus;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
@@ -316,14 +315,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum partiesEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum recurrenceEEnum = null;
+	private EEnum sessionStatusEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1450,6 +1442,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getVariable_BusinessRule()
+	{
+		return (EReference)variableEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getSessionInterval()
 	{
 		return sessionIntervalEClass;
@@ -1461,7 +1464,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSessionInterval_Start()
+	public EAttribute getSessionInterval_Frequency()
 	{
 		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(0);
 	}
@@ -1472,7 +1475,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSessionInterval_End()
+	public EAttribute getSessionInterval_TimeUnit()
 	{
 		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(1);
 	}
@@ -1483,31 +1486,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getSessionInterval_Frequency()
+	public EReference getSessionInterval_Messagecontent()
 	{
-		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSessionInterval_TimeUnit()
-	{
-		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getSessionInterval_Recurrence()
-	{
-		return (EAttribute)sessionIntervalEClass.getEStructuralFeatures().get(4);
+		return (EReference)sessionIntervalEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1582,20 +1563,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EEnum getParties()
+	public EEnum getSessionStatus()
 	{
-		return partiesEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getRecurrence()
-	{
-		return recurrenceEEnum;
+		return sessionStatusEEnum;
 	}
 
 	/**
@@ -1755,13 +1725,12 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEAttribute(variableEClass, VARIABLE__NAME);
 		createEAttribute(variableEClass, VARIABLE__DESCRIPTION);
 		createEReference(variableEClass, VARIABLE__EXPRESSION);
+		createEReference(variableEClass, VARIABLE__BUSINESS_RULE);
 
 		sessionIntervalEClass = createEClass(SESSION_INTERVAL);
-		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__START);
-		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__END);
 		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__FREQUENCY);
 		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__TIME_UNIT);
-		createEAttribute(sessionIntervalEClass, SESSION_INTERVAL__RECURRENCE);
+		createEReference(sessionIntervalEClass, SESSION_INTERVAL__MESSAGECONTENT);
 
 		conditionalExpressionEClass = createEClass(CONDITIONAL_EXPRESSION);
 		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__CONDITIONS);
@@ -1771,8 +1740,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
 		operationEEnum = createEEnum(OPERATION);
-		partiesEEnum = createEEnum(PARTIES);
-		recurrenceEEnum = createEEnum(RECURRENCE);
+		sessionStatusEEnum = createEEnum(SESSION_STATUS);
 	}
 
 	/**
@@ -1866,7 +1834,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEReference(getClause_Condition(), this.getCondition(), null, "condition", null, 1, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_OnSuccess(), this.getOnSuccess(), null, "onSuccess", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_Operation(), this.getOperation(), "operation", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClause_RolePlayer(), this.getParties(), "rolePlayer", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClause_RolePlayer(), ecorePackage.getEString(), "rolePlayer", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1952,13 +1920,12 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getVariable_Description(), ecorePackage.getEString(), "description", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariable_Expression(), this.getExpression(), null, "expression", null, 0, -1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariable_BusinessRule(), this.getBusinessRule(), null, "businessRule", null, 0, -1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sessionIntervalEClass, SessionInterval.class, "SessionInterval", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSessionInterval_Start(), ecorePackage.getEString(), "start", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSessionInterval_End(), ecorePackage.getEString(), "end", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSessionInterval_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSessionInterval_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSessionInterval_Recurrence(), this.getRecurrence(), "recurrence", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSessionInterval_Messagecontent(), this.getMessageContent(), null, "messagecontent", null, 0, 1, SessionInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionalExpressionEClass, ConditionalExpression.class, "ConditionalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConditionalExpression_Conditions(), this.getCondition(), null, "conditions", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1991,13 +1958,9 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		addEEnumLiteral(operationEEnum, Operation.REQUEST);
 		addEEnumLiteral(operationEEnum, Operation.RESPONSE);
 
-		initEEnum(partiesEEnum, Parties.class, "Parties");
-		addEEnumLiteral(partiesEEnum, Parties.APPLICATION);
-		addEEnumLiteral(partiesEEnum, Parties.PROCESS);
-
-		initEEnum(recurrenceEEnum, Recurrence.class, "Recurrence");
-		addEEnumLiteral(recurrenceEEnum, Recurrence.RECURRING);
-		addEEnumLiteral(recurrenceEEnum, Recurrence.NON_RECURRING);
+		initEEnum(sessionStatusEEnum, SessionStatus.class, "SessionStatus");
+		addEEnumLiteral(sessionStatusEEnum, SessionStatus.CLOSED);
+		addEEnumLiteral(sessionStatusEEnum, SessionStatus.OPEN);
 
 		// Create resource
 		createResource(eNS_URI);

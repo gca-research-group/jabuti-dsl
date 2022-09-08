@@ -1359,13 +1359,22 @@ public interface SmartCEPackage extends EPackage
 	int VARIABLE__EXPRESSION = 2;
 
 	/**
+	 * The feature id for the '<em><b>Business Rule</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__BUSINESS_RULE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = 3;
+	int VARIABLE_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl <em>Session Interval</em>}' class.
@@ -1387,31 +1396,13 @@ public interface SmartCEPackage extends EPackage
 	int SESSION_INTERVAL__EXPRESSION = BUSINESS_RULE__EXPRESSION;
 
 	/**
-	 * The feature id for the '<em><b>Start</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SESSION_INTERVAL__START = BUSINESS_RULE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>End</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SESSION_INTERVAL__END = BUSINESS_RULE_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL__FREQUENCY = BUSINESS_RULE_FEATURE_COUNT + 2;
+	int SESSION_INTERVAL__FREQUENCY = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
@@ -1420,16 +1411,16 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL__TIME_UNIT = BUSINESS_RULE_FEATURE_COUNT + 3;
+	int SESSION_INTERVAL__TIME_UNIT = BUSINESS_RULE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Recurrence</b></em>' attribute.
+	 * The feature id for the '<em><b>Messagecontent</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL__RECURRENCE = BUSINESS_RULE_FEATURE_COUNT + 4;
+	int SESSION_INTERVAL__MESSAGECONTENT = BUSINESS_RULE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Session Interval</em>' class.
@@ -1438,7 +1429,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 5;
+	int SESSION_INTERVAL_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
@@ -1517,24 +1508,14 @@ public interface SmartCEPackage extends EPackage
 	int OPERATION = 35;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Parties <em>Parties</em>}' enum.
+	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.SessionStatus <em>Session Status</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.Parties
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getParties()
+	 * @see br.edu.unijui.gca.smartce.smartCE.SessionStatus
+	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getSessionStatus()
 	 * @generated
 	 */
-	int PARTIES = 36;
-
-	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.Recurrence <em>Recurrence</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
-	 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getRecurrence()
-	 * @generated
-	 */
-	int RECURRENCE = 37;
+	int SESSION_STATUS = 36;
 
 
 	/**
@@ -2563,6 +2544,17 @@ public interface SmartCEPackage extends EPackage
 	EReference getVariable_Expression();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.smartce.smartCE.Variable#getBusinessRule <em>Business Rule</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Business Rule</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.Variable#getBusinessRule()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EReference getVariable_BusinessRule();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval <em>Session Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2571,28 +2563,6 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EClass getSessionInterval();
-
-	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getStart <em>Start</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Start</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SessionInterval#getStart()
-	 * @see #getSessionInterval()
-	 * @generated
-	 */
-	EAttribute getSessionInterval_Start();
-
-	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getEnd <em>End</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>End</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SessionInterval#getEnd()
-	 * @see #getSessionInterval()
-	 * @generated
-	 */
-	EAttribute getSessionInterval_End();
 
 	/**
 	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getFrequency <em>Frequency</em>}'.
@@ -2617,15 +2587,15 @@ public interface SmartCEPackage extends EPackage
 	EAttribute getSessionInterval_TimeUnit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence <em>Recurrence</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.smartce.smartCE.SessionInterval#getMessagecontent <em>Messagecontent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Recurrence</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.SessionInterval#getRecurrence()
+	 * @return the meta object for the containment reference '<em>Messagecontent</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SessionInterval#getMessagecontent()
 	 * @see #getSessionInterval()
 	 * @generated
 	 */
-	EAttribute getSessionInterval_Recurrence();
+	EReference getSessionInterval_Messagecontent();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.ConditionalExpression <em>Conditional Expression</em>}'.
@@ -2690,24 +2660,14 @@ public interface SmartCEPackage extends EPackage
 	EEnum getOperation();
 
 	/**
-	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.Parties <em>Parties</em>}'.
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.SessionStatus <em>Session Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Parties</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Parties
+	 * @return the meta object for enum '<em>Session Status</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SessionStatus
 	 * @generated
 	 */
-	EEnum getParties();
-
-	/**
-	 * Returns the meta object for enum '{@link br.edu.unijui.gca.smartce.smartCE.Recurrence <em>Recurrence</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Recurrence</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
-	 * @generated
-	 */
-	EEnum getRecurrence();
+	EEnum getSessionStatus();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3563,6 +3523,14 @@ public interface SmartCEPackage extends EPackage
 		EReference VARIABLE__EXPRESSION = eINSTANCE.getVariable_Expression();
 
 		/**
+		 * The meta object literal for the '<em><b>Business Rule</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE__BUSINESS_RULE = eINSTANCE.getVariable_BusinessRule();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.SessionIntervalImpl <em>Session Interval</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3571,22 +3539,6 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass SESSION_INTERVAL = eINSTANCE.getSessionInterval();
-
-		/**
-		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SESSION_INTERVAL__START = eINSTANCE.getSessionInterval_Start();
-
-		/**
-		 * The meta object literal for the '<em><b>End</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SESSION_INTERVAL__END = eINSTANCE.getSessionInterval_End();
 
 		/**
 		 * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
@@ -3605,12 +3557,12 @@ public interface SmartCEPackage extends EPackage
 		EAttribute SESSION_INTERVAL__TIME_UNIT = eINSTANCE.getSessionInterval_TimeUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Recurrence</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Messagecontent</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SESSION_INTERVAL__RECURRENCE = eINSTANCE.getSessionInterval_Recurrence();
+		EReference SESSION_INTERVAL__MESSAGECONTENT = eINSTANCE.getSessionInterval_Messagecontent();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
@@ -3669,24 +3621,14 @@ public interface SmartCEPackage extends EPackage
 		EEnum OPERATION = eINSTANCE.getOperation();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.Parties <em>Parties</em>}' enum.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.SessionStatus <em>Session Status</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.Parties
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getParties()
+		 * @see br.edu.unijui.gca.smartce.smartCE.SessionStatus
+		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getSessionStatus()
 		 * @generated
 		 */
-		EEnum PARTIES = eINSTANCE.getParties();
-
-		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.Recurrence <em>Recurrence</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.smartce.smartCE.Recurrence
-		 * @see br.edu.unijui.gca.smartce.smartCE.impl.SmartCEPackageImpl#getRecurrence()
-		 * @generated
-		 */
-		EEnum RECURRENCE = eINSTANCE.getRecurrence();
+		EEnum SESSION_STATUS = eINSTANCE.getSessionStatus();
 
 	}
 

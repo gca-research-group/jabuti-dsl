@@ -13,8 +13,11 @@ Import:
 
 Contract: 
 	'Contract' name=ID '{'
-		'beginDate' '=' beginDate=Expression
-		'dueDate' '=' dueDate=Expression 
+		
+		'dates' '{'
+			'beginDate' '=' beginDate=Expression
+			'dueDate' '=' dueDate=Expression 
+		'}'
 		
 		'parties' '{'
 			'application' '=' application=Application
@@ -24,12 +27,16 @@ Contract:
 		('variables' '{'
 			variables+=Variable*
 		'}')?
-			
-		clauses+=Clause
+		
+		'clauses' '{'
+			clauses+=Clause*
+		'}'
+		
 	'}'; 
 
 Variable:
-	name=ID '=' expression+=Expression
+	(name=ID '=' expression+=Expression) |
+	(name=ID '=' businessRule+=BusinessRule)
 ;
 
 
@@ -62,7 +69,7 @@ CompositeCondition:
 
 ConditionalExpression: 
 	conditions+=CompositeCondition
-	'when' '(' 'expression' ')' 'check' '{'
+	'when' '(' expression+=Expression ')' 'do' '{'
 		conditions+=Condition
 	'}'
 ;
@@ -97,7 +104,7 @@ TimeInterval:
 ; 
 
 SessionInterval: 
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'from' start=STRING 'to' end=STRING ')' )|
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messagecontent=MessageContent  ) ')'|
 	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')')
 ; 
 MessageContent:
@@ -137,15 +144,15 @@ Action:
 	BusinessAction | EventLog;
 
 BusinessAction:
-	'BusinessAction' name=ID
+	name='BusinessAction' 
 ;
 
 EventLog:
-	'EventLog' name=ID
+	name='EventLog' 
 ;
 
 Expression:
-	Negation ({BinaryOperator.left=current} (symbol='&&' | symbol="||") right=Negation)*;
+	Negation ({BinaryOperator.left=current} (symbol='AND' | symbol='&&' | symbol="||" | symbol='OR'  ) right=Negation)*;
 
 Negation returns Expression:
 	Comparison | {UnaryOperator} symbol='!' expression=Comparison;

@@ -25,10 +25,9 @@ import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
 import br.edu.unijui.gca.smartce.smartCE.OperationLimit;
-import br.edu.unijui.gca.smartce.smartCE.Parties;
 import br.edu.unijui.gca.smartce.smartCE.Party;
-import br.edu.unijui.gca.smartce.smartCE.Recurrence;
 import br.edu.unijui.gca.smartce.smartCE.SessionInterval;
+import br.edu.unijui.gca.smartce.smartCE.SessionStatus;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEFactory;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Status;
@@ -154,10 +153,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return createTimeUnitFromString(eDataType, initialValue);
 			case SmartCEPackage.OPERATION:
 				return createOperationFromString(eDataType, initialValue);
-			case SmartCEPackage.PARTIES:
-				return createPartiesFromString(eDataType, initialValue);
-			case SmartCEPackage.RECURRENCE:
-				return createRecurrenceFromString(eDataType, initialValue);
+			case SmartCEPackage.SESSION_STATUS:
+				return createSessionStatusFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -179,10 +176,8 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 				return convertTimeUnitToString(eDataType, instanceValue);
 			case SmartCEPackage.OPERATION:
 				return convertOperationToString(eDataType, instanceValue);
-			case SmartCEPackage.PARTIES:
-				return convertPartiesToString(eDataType, instanceValue);
-			case SmartCEPackage.RECURRENCE:
-				return convertRecurrenceToString(eDataType, instanceValue);
+			case SmartCEPackage.SESSION_STATUS:
+				return convertSessionStatusToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -631,9 +626,9 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Parties createPartiesFromString(EDataType eDataType, String initialValue)
+	public SessionStatus createSessionStatusFromString(EDataType eDataType, String initialValue)
 	{
-		Parties result = Parties.get(initialValue);
+		SessionStatus result = SessionStatus.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
@@ -643,29 +638,7 @@ public class SmartCEFactoryImpl extends EFactoryImpl implements SmartCEFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertPartiesToString(EDataType eDataType, Object instanceValue)
-	{
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Recurrence createRecurrenceFromString(EDataType eDataType, String initialValue)
-	{
-		Recurrence result = Recurrence.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertRecurrenceToString(EDataType eDataType, Object instanceValue)
+	public String convertSessionStatusToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

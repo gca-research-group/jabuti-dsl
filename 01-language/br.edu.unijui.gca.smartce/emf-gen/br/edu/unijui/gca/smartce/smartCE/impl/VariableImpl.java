@@ -3,6 +3,7 @@
  */
 package br.edu.unijui.gca.smartce.smartCE.impl;
 
+import br.edu.unijui.gca.smartce.smartCE.BusinessRule;
 import br.edu.unijui.gca.smartce.smartCE.Expression;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 import br.edu.unijui.gca.smartce.smartCE.Variable;
@@ -34,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.impl.VariableImpl#getBusinessRule <em>Business Rule</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +91,16 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @ordered
 	 */
 	protected EList<Expression> expression;
+
+	/**
+	 * The cached value of the '{@link #getBusinessRule() <em>Business Rule</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBusinessRule()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BusinessRule> businessRule;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -182,12 +194,29 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @generated
 	 */
 	@Override
+	public EList<BusinessRule> getBusinessRule()
+	{
+		if (businessRule == null)
+		{
+			businessRule = new EObjectContainmentEList<BusinessRule>(BusinessRule.class, this, SmartCEPackage.VARIABLE__BUSINESS_RULE);
+		}
+		return businessRule;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
 		{
 			case SmartCEPackage.VARIABLE__EXPRESSION:
 				return ((InternalEList<?>)getExpression()).basicRemove(otherEnd, msgs);
+			case SmartCEPackage.VARIABLE__BUSINESS_RULE:
+				return ((InternalEList<?>)getBusinessRule()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -208,6 +237,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 				return getDescription();
 			case SmartCEPackage.VARIABLE__EXPRESSION:
 				return getExpression();
+			case SmartCEPackage.VARIABLE__BUSINESS_RULE:
+				return getBusinessRule();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -233,6 +264,10 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 				getExpression().clear();
 				getExpression().addAll((Collection<? extends Expression>)newValue);
 				return;
+			case SmartCEPackage.VARIABLE__BUSINESS_RULE:
+				getBusinessRule().clear();
+				getBusinessRule().addAll((Collection<? extends BusinessRule>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -256,6 +291,9 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 			case SmartCEPackage.VARIABLE__EXPRESSION:
 				getExpression().clear();
 				return;
+			case SmartCEPackage.VARIABLE__BUSINESS_RULE:
+				getBusinessRule().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -276,6 +314,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case SmartCEPackage.VARIABLE__EXPRESSION:
 				return expression != null && !expression.isEmpty();
+			case SmartCEPackage.VARIABLE__BUSINESS_RULE:
+				return businessRule != null && !businessRule.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

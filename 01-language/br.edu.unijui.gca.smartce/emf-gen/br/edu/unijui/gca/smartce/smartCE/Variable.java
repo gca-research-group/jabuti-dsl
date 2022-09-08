@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getDescription <em>Description</em>}</li>
  *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.smartce.smartCE.Variable#getBusinessRule <em>Business Rule</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getVariable()
@@ -82,5 +83,17 @@ public interface Variable extends EObject
 	 * @generated
 	 */
 	EList<Expression> getExpression();
+
+	/**
+	 * Returns the value of the '<em><b>Business Rule</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.smartce.smartCE.BusinessRule}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Business Rule</em>' containment reference list.
+	 * @see br.edu.unijui.gca.smartce.smartCE.SmartCEPackage#getVariable_BusinessRule()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<BusinessRule> getBusinessRule();
 
 } // Variable

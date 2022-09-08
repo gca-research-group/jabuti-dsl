@@ -8,7 +8,6 @@ import br.edu.unijui.gca.smartce.smartCE.Condition;
 import br.edu.unijui.gca.smartce.smartCE.OnBreach;
 import br.edu.unijui.gca.smartce.smartCE.OnSuccess;
 import br.edu.unijui.gca.smartce.smartCE.Operation;
-import br.edu.unijui.gca.smartce.smartCE.Parties;
 import br.edu.unijui.gca.smartce.smartCE.Party;
 import br.edu.unijui.gca.smartce.smartCE.SmartCEPackage;
 
@@ -193,7 +192,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Parties ROLE_PLAYER_EDEFAULT = Parties.APPLICATION;
+	protected static final String ROLE_PLAYER_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getRolePlayer() <em>Role Player</em>}' attribute.
@@ -203,7 +202,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 * @ordered
 	 */
-	protected Parties rolePlayer = ROLE_PLAYER_EDEFAULT;
+	protected String rolePlayer = ROLE_PLAYER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -552,7 +551,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public Parties getRolePlayer()
+	public String getRolePlayer()
 	{
 		return rolePlayer;
 	}
@@ -563,10 +562,10 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public void setRolePlayer(Parties newRolePlayer)
+	public void setRolePlayer(String newRolePlayer)
 	{
-		Parties oldRolePlayer = rolePlayer;
-		rolePlayer = newRolePlayer == null ? ROLE_PLAYER_EDEFAULT : newRolePlayer;
+		String oldRolePlayer = rolePlayer;
+		rolePlayer = newRolePlayer;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, SmartCEPackage.CLAUSE__ROLE_PLAYER, oldRolePlayer, rolePlayer));
 	}
@@ -664,7 +663,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				setOperation((Operation)newValue);
 				return;
 			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
-				setRolePlayer((Parties)newValue);
+				setRolePlayer((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -743,7 +742,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case SmartCEPackage.CLAUSE__OPERATION:
 				return operation != OPERATION_EDEFAULT;
 			case SmartCEPackage.CLAUSE__ROLE_PLAYER:
-				return rolePlayer != ROLE_PLAYER_EDEFAULT;
+				return ROLE_PLAYER_EDEFAULT == null ? rolePlayer != null : !ROLE_PLAYER_EDEFAULT.equals(rolePlayer);
 		}
 		return super.eIsSet(featureID);
 	}

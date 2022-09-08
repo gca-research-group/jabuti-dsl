@@ -1,0 +1,26 @@
+//@version -  0.1.0  
+
+Contract DeliveryHiring_O {   
+	dates{
+		beginDate = "2022-01-01 08:00:00" 
+		dueDate = "2022-12-31 18:00:00"
+	}	
+
+	parties{
+		application = "deliverySystem" 
+		process  	= "integrationProcess" 
+	}
+	
+	clauses{	
+		Right right {
+			rolePlayer = application
+			operation = request
+			condition {
+					SessionInterval(24 Day) AND
+					 OperationLimit(1000 by Month)
+			} 
+			onBreach (EventLog(""))
+		}
+	
+	}
+}
