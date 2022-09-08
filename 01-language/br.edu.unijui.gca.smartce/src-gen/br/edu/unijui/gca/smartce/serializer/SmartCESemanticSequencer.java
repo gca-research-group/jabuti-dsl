@@ -706,16 +706,16 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Timeout returns Timeout
 	 *
 	 * Constraint:
-	 *     value=INT
+	 *     value=STRING
 	 * </pre>
 	 */
 	protected void sequence_Timeout(ISerializationContext context, Timeout semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.TIMEOUT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.TIMEOUT__VALUE));
+			if (transientValues.isValueTransient(semanticObject, SmartCEPackage.Literals.BUSINESS_RULE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SmartCEPackage.Literals.BUSINESS_RULE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

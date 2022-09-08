@@ -12,7 +12,7 @@ Import:
 ;
 
 Contract: 
-	'Contract' name=ID '{'
+	'contract' name=ID '{'
 		
 		'dates' '{'
 			'beginDate' '=' beginDate=Expression
@@ -41,7 +41,7 @@ Variable:
 
 
 Clause: 
-	('Right' | 'Prohibition' | 'Obligation') name=ID '{'
+	('right' | 'prohibition' | 'obligation') name=ID '{'
 		'rolePlayer' '=' ('process' | 'application')
 		'operation' '=' operation=Operation
 		'condition' '{' 
@@ -79,7 +79,7 @@ LogicalOperator:
 ;
 
 Timeout:
-	'Timeout' '(' value=INT ')'
+	'Timeout' '(' value=STRING ')'
 ;
 
 OperationLimit:

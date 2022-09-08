@@ -114,9 +114,7 @@
     <genClasses ecoreClass="SmartCE.ecore#//Condition">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//Condition/expression"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//Timeout">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//Timeout/value"/>
-    </genClasses>
+    <genClasses ecoreClass="SmartCE.ecore#//Timeout"/>
     <genClasses ecoreClass="SmartCE.ecore#//OperationLimit">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationLimit/operationsNumber"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//OperationLimit/timeUnit"/>
@@ -141,7 +139,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//CompositeCondition/conditions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference SmartCE.ecore#//CompositeCondition/logicalOperators"/>
     </genClasses>
-    <genClasses ecoreClass="SmartCE.ecore#//BusinessRule"/>
+    <genClasses ecoreClass="SmartCE.ecore#//BusinessRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute SmartCE.ecore#//BusinessRule/value"/>
+    </genClasses>
     <genClasses ecoreClass="SmartCE.ecore#//BusinessAction"/>
     <genClasses ecoreClass="SmartCE.ecore#//EventLog"/>
     <genClasses ecoreClass="SmartCE.ecore#//LogicalOperator">

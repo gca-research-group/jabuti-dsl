@@ -183,7 +183,7 @@ ruleContract returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Contract'
+		otherlv_0='contract'
 		{
 			newLeafNode(otherlv_0, grammarAccess.getContractAccess().getContractKeyword_0());
 		}
@@ -535,17 +535,17 @@ ruleClause returns [EObject current=null]
 }:
 	(
 		(
-			otherlv_0='Right'
+			otherlv_0='right'
 			{
 				newLeafNode(otherlv_0, grammarAccess.getClauseAccess().getRightKeyword_0_0());
 			}
 			    |
-			otherlv_1='Prohibition'
+			otherlv_1='prohibition'
 			{
 				newLeafNode(otherlv_1, grammarAccess.getClauseAccess().getProhibitionKeyword_0_1());
 			}
 			    |
-			otherlv_2='Obligation'
+			otherlv_2='obligation'
 			{
 				newLeafNode(otherlv_2, grammarAccess.getClauseAccess().getObligationKeyword_0_2());
 			}
@@ -1120,9 +1120,9 @@ ruleTimeout returns [EObject current=null]
 		}
 		(
 			(
-				lv_value_2_0=RULE_INT
+				lv_value_2_0=RULE_STRING
 				{
-					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0());
+					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -1132,7 +1132,7 @@ ruleTimeout returns [EObject current=null]
 						$current,
 						"value",
 						lv_value_2_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)

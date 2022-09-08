@@ -127,7 +127,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_26 = (Keyword)cGroup.eContents().get(26);
 		
 		//Contract:
-		//    'Contract' name=ID '{'
+		//    'contract' name=ID '{'
 		//        'dates' '{'
 		//            'beginDate' '=' beginDate=Expression
 		//            'dueDate' '=' dueDate=Expression
@@ -145,7 +145,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Contract' name=ID '{'
+		//'contract' name=ID '{'
 		//    'dates' '{'
 		//        'beginDate' '=' beginDate=Expression
 		//        'dueDate' '=' dueDate=Expression
@@ -163,7 +163,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//'Contract'
+		//'contract'
 		public Keyword getContractKeyword_0() { return cContractKeyword_0; }
 		
 		//name=ID
@@ -375,7 +375,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cRightCurlyBracketKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//Clause:
-		//    ('Right' | 'Prohibition' | 'Obligation') name=ID '{'
+		//    ('right' | 'prohibition' | 'obligation') name=ID '{'
 		//        'rolePlayer' '=' ('process' | 'application')
 		//        'operation' '=' operation=Operation
 		//        'condition' '{'
@@ -386,7 +386,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('Right' | 'Prohibition' | 'Obligation') name=ID '{'
+		//('right' | 'prohibition' | 'obligation') name=ID '{'
 		//    'rolePlayer' '=' ('process' | 'application')
 		//    'operation' '=' operation=Operation
 		//    'condition' '{'
@@ -396,16 +396,16 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		// '}'
 		public Group getGroup() { return cGroup; }
 		
-		//('Right' | 'Prohibition' | 'Obligation')
+		//('right' | 'prohibition' | 'obligation')
 		public Alternatives getAlternatives_0() { return cAlternatives_0; }
 		
-		//'Right'
+		//'right'
 		public Keyword getRightKeyword_0_0() { return cRightKeyword_0_0; }
 		
-		//'Prohibition'
+		//'prohibition'
 		public Keyword getProhibitionKeyword_0_1() { return cProhibitionKeyword_0_1; }
 		
-		//'Obligation'
+		//'obligation'
 		public Keyword getObligationKeyword_0_2() { return cObligationKeyword_0_2; }
 		
 		//name=ID
@@ -703,15 +703,15 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Keyword cTimeoutKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cValueAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cValueINTTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
+		private final RuleCall cValueSTRINGTerminalRuleCall_2_0 = (RuleCall)cValueAssignment_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Timeout:
-		//    'Timeout' '(' value=INT ')'
+		//    'Timeout' '(' value=STRING ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Timeout' '(' value=INT ')'
+		//'Timeout' '(' value=STRING ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'Timeout'
@@ -720,11 +720,11 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		//'('
 		public Keyword getLeftParenthesisKeyword_1() { return cLeftParenthesisKeyword_1; }
 		
-		//value=INT
+		//value=STRING
 		public Assignment getValueAssignment_2() { return cValueAssignment_2; }
 		
-		//INT
-		public RuleCall getValueINTTerminalRuleCall_2_0() { return cValueINTTerminalRuleCall_2_0; }
+		//STRING
+		public RuleCall getValueSTRINGTerminalRuleCall_2_0() { return cValueSTRINGTerminalRuleCall_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
@@ -2424,7 +2424,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Contract:
-	//    'Contract' name=ID '{'
+	//    'contract' name=ID '{'
 	//        'dates' '{'
 	//            'beginDate' '=' beginDate=Expression
 	//            'dueDate' '=' dueDate=Expression
@@ -2461,7 +2461,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Clause:
-	//    ('Right' | 'Prohibition' | 'Obligation') name=ID '{'
+	//    ('right' | 'prohibition' | 'obligation') name=ID '{'
 	//        'rolePlayer' '=' ('process' | 'application')
 	//        'operation' '=' operation=Operation
 	//        'condition' '{'
@@ -2548,7 +2548,7 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	}
 	
 	//Timeout:
-	//    'Timeout' '(' value=INT ')'
+	//    'Timeout' '(' value=STRING ')'
 	//;
 	public TimeoutElements getTimeoutAccess() {
 		return pTimeout;

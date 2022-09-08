@@ -1225,19 +1225,19 @@ rule__Clause__Alternatives_0
 :
 	(
 		{ before(grammarAccess.getClauseAccess().getRightKeyword_0_0()); }
-		'Right'
+		'right'
 		{ after(grammarAccess.getClauseAccess().getRightKeyword_0_0()); }
 	)
 	|
 	(
 		{ before(grammarAccess.getClauseAccess().getProhibitionKeyword_0_1()); }
-		'Prohibition'
+		'prohibition'
 		{ after(grammarAccess.getClauseAccess().getProhibitionKeyword_0_1()); }
 	)
 	|
 	(
 		{ before(grammarAccess.getClauseAccess().getObligationKeyword_0_2()); }
-		'Obligation'
+		'obligation'
 		{ after(grammarAccess.getClauseAccess().getObligationKeyword_0_2()); }
 	)
 ;
@@ -2068,7 +2068,7 @@ rule__Contract__Group__0__Impl
 :
 (
 	{ before(grammarAccess.getContractAccess().getContractKeyword_0()); }
-	'Contract'
+	'contract'
 	{ after(grammarAccess.getContractAccess().getContractKeyword_0()); }
 )
 ;
@@ -7470,9 +7470,9 @@ rule__Timeout__ValueAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0()); }
-		RULE_INT
-		{ after(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0()); }
+		{ before(grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0()); }
+		RULE_STRING
+		{ after(grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0()); }
 	)
 ;
 finally {

@@ -17,7 +17,7 @@ contract DeliveryHiring_O is EAI_Domain{
 	    integrationProcess = Party("", _processWallet);
 	}
 	
-	function right(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
+	function respondIntervalAndLimit(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
 					
 		
 		bool isBreached=false;

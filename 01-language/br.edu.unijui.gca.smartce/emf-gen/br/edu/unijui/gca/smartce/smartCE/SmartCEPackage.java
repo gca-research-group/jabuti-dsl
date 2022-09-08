@@ -871,13 +871,22 @@ public interface SmartCEPackage extends EPackage
 	int BUSINESS_RULE__EXPRESSION = CONDITION__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_RULE__VALUE = CONDITION_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Business Rule</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_RULE_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+	int BUSINESS_RULE_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.TimeoutImpl <em>Timeout</em>}' class.
@@ -905,7 +914,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEOUT__VALUE = BUSINESS_RULE_FEATURE_COUNT + 0;
+	int TIMEOUT__VALUE = BUSINESS_RULE__VALUE;
 
 	/**
 	 * The number of structural features of the '<em>Timeout</em>' class.
@@ -914,7 +923,7 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEOUT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 1;
+	int TIMEOUT_FEATURE_COUNT = BUSINESS_RULE_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl <em>Operation Limit</em>}' class.
@@ -934,6 +943,15 @@ public interface SmartCEPackage extends EPackage
 	 * @ordered
 	 */
 	int OPERATION_LIMIT__EXPRESSION = BUSINESS_RULE__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OPERATION_LIMIT__VALUE = BUSINESS_RULE__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Operations Number</b></em>' attribute.
@@ -982,6 +1000,15 @@ public interface SmartCEPackage extends EPackage
 	int BUSINESS_DAY__EXPRESSION = BUSINESS_RULE__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_DAY__VALUE = BUSINESS_RULE__VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1028,6 +1055,15 @@ public interface SmartCEPackage extends EPackage
 	int TIME_INTERVAL__EXPRESSION = BUSINESS_RULE__EXPRESSION;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL__VALUE = BUSINESS_RULE__VALUE;
+
+	/**
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1072,6 +1108,15 @@ public interface SmartCEPackage extends EPackage
 	 * @ordered
 	 */
 	int MESSAGE_CONTENT__EXPRESSION = BUSINESS_RULE__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__VALUE = BUSINESS_RULE__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Content</b></em>' attribute.
@@ -1394,6 +1439,15 @@ public interface SmartCEPackage extends EPackage
 	 * @ordered
 	 */
 	int SESSION_INTERVAL__EXPRESSION = BUSINESS_RULE__EXPRESSION;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__VALUE = BUSINESS_RULE__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
@@ -2203,17 +2257,6 @@ public interface SmartCEPackage extends EPackage
 	EClass getTimeout();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.Timeout#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see br.edu.unijui.gca.smartce.smartCE.Timeout#getValue()
-	 * @see #getTimeout()
-	 * @generated
-	 */
-	EAttribute getTimeout_Value();
-
-	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.OperationLimit <em>Operation Limit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2426,6 +2469,17 @@ public interface SmartCEPackage extends EPackage
 	 * @generated
 	 */
 	EClass getBusinessRule();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.smartce.smartCE.BusinessRule#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.smartce.smartCE.BusinessRule#getValue()
+	 * @see #getBusinessRule()
+	 * @generated
+	 */
+	EAttribute getBusinessRule_Value();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.smartce.smartCE.BusinessAction <em>Business Action</em>}'.
@@ -3245,14 +3299,6 @@ public interface SmartCEPackage extends EPackage
 		EClass TIMEOUT = eINSTANCE.getTimeout();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TIMEOUT__VALUE = eINSTANCE.getTimeout_Value();
-
-		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.OperationLimitImpl <em>Operation Limit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3423,6 +3469,14 @@ public interface SmartCEPackage extends EPackage
 		 * @generated
 		 */
 		EClass BUSINESS_RULE = eINSTANCE.getBusinessRule();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BUSINESS_RULE__VALUE = eINSTANCE.getBusinessRule_Value();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.smartce.smartCE.impl.BusinessActionImpl <em>Business Action</em>}' class.

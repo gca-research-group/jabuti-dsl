@@ -1,6 +1,7 @@
 //@version -  0.1.0  
 
-Contract sendMessageWhatsapp {
+contract sendMessageWhatsapp {
+
 
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
@@ -12,20 +13,20 @@ Contract sendMessageWhatsapp {
 		process = "integrationProcess" 
 	}
 	
-	variables{
-		conversationId = MessageContent("//conversationId/text()")		
-		session = SessionInterval(24 Hour by MessageContent("//conversationId/text()"))
+	variables{			
+		conversationId = MessageContent("//conversationId/text()")				
+		session = SessionInterval(24 Hour by conversationId)		
 		conversationStarter = MessageContent("//conversationStarter/text()") 
 	}
 
 	clauses{
 		
-		Right sendMessage{
+		right sendMessage{
 			rolePlayer = process
 			operation = write		
 			condition {
-				BusinessDay(Monday to Friday)  AND
-				when(session == 'CLOSED' AND conversationStarter == "Business-initiated") do {				
+				BusinessDay(Monday to Friday)  AND			 			 	
+				when(session == "CLOSED" AND conversationStarter == "Business-initiated") do {				
 					 	OperationLimit(10000 by Month)		
 				}	 	
 			}				

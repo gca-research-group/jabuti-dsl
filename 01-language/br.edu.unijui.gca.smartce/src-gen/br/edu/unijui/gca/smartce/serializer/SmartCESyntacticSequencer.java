@@ -89,7 +89,7 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     'Right' | 'Prohibition' | 'Obligation'
+	 *     'right' | 'prohibition' | 'obligation'
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) name=ID

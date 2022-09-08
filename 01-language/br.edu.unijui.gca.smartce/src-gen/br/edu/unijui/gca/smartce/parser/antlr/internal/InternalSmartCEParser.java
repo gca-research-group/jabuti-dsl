@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'Contract'", "'{'", "'dates'", "'beginDate'", "'='", "'dueDate'", "'}'", "'parties'", "'application'", "'process'", "'variables'", "'clauses'", "'Right'", "'Prohibition'", "'Obligation'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "')'", "'do'", "'AND'", "'OR'", "'NOT'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'MessageContent'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'BusinessAction'", "'EventLog'", "'&&'", "'||'", "'!'", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "','", "'.'", "'.*'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_STRING", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'contract'", "'{'", "'dates'", "'beginDate'", "'='", "'dueDate'", "'}'", "'parties'", "'application'", "'process'", "'variables'", "'clauses'", "'right'", "'prohibition'", "'obligation'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "')'", "'do'", "'AND'", "'OR'", "'NOT'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'MessageContent'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'BusinessAction'", "'EventLog'", "'&&'", "'||'", "'!'", "'is'", "'as'", "'+'", "'-'", "'*'", "'/'", "','", "'.'", "'.*'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -49,7 +49,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final int T__26=26;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=5;
+    public static final int RULE_INT=6;
     public static final int T__29=29;
     public static final int T__22=22;
     public static final int T__66=66;
@@ -69,7 +69,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final int T__70=70;
     public static final int T__71=71;
     public static final int T__72=72;
-    public static final int RULE_STRING=6;
+    public static final int RULE_STRING=5;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__37=37;
     public static final int T__38=38;
@@ -484,7 +484,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleContract"
-    // InternalSmartCE.g:178:1: ruleContract returns [EObject current=null] : (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' ) ;
+    // InternalSmartCE.g:178:1: ruleContract returns [EObject current=null] : (otherlv_0= 'contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' ) ;
     public final EObject ruleContract() throws RecognitionException {
         EObject current = null;
 
@@ -529,11 +529,11 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:184:2: ( (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' ) )
-            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' )
+            // InternalSmartCE.g:184:2: ( (otherlv_0= 'contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' ) )
+            // InternalSmartCE.g:185:2: (otherlv_0= 'contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' )
             {
-            // InternalSmartCE.g:185:2: (otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' )
-            // InternalSmartCE.g:186:3: otherlv_0= 'Contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}'
+            // InternalSmartCE.g:185:2: (otherlv_0= 'contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}' )
+            // InternalSmartCE.g:186:3: otherlv_0= 'contract' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '{' otherlv_3= 'dates' otherlv_4= '{' otherlv_5= 'beginDate' otherlv_6= '=' ( (lv_beginDate_7_0= ruleExpression ) ) otherlv_8= 'dueDate' otherlv_9= '=' ( (lv_dueDate_10_0= ruleExpression ) ) otherlv_11= '}' otherlv_12= 'parties' otherlv_13= '{' otherlv_14= 'application' otherlv_15= '=' ( (lv_application_16_0= ruleApplication ) ) otherlv_17= 'process' otherlv_18= '=' ( (lv_process_19_0= ruleProcess ) ) otherlv_20= '}' (otherlv_21= 'variables' otherlv_22= '{' ( (lv_variables_23_0= ruleVariable ) )* otherlv_24= '}' )? otherlv_25= 'clauses' otherlv_26= '{' ( (lv_clauses_27_0= ruleClause ) )* otherlv_28= '}' otherlv_29= '}'
             {
             otherlv_0=(Token)match(input,12,FOLLOW_5); 
 
@@ -981,7 +981,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                 if ( (LA6_1==16) ) {
                     int LA6_2 = input.LA(3);
 
-                    if ( ((LA6_2>=RULE_ID && LA6_2<=RULE_STRING)||LA6_2==33||LA6_2==57||LA6_2==61) ) {
+                    if ( ((LA6_2>=RULE_ID && LA6_2<=RULE_INT)||LA6_2==33||LA6_2==57||LA6_2==61) ) {
                         alt6=1;
                     }
                     else if ( ((LA6_2>=39 && LA6_2<=40)||LA6_2==42||(LA6_2>=44 && LA6_2<=46)) ) {
@@ -1213,7 +1213,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleClause"
-    // InternalSmartCE.g:529:1: ruleClause returns [EObject current=null] : ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) ;
+    // InternalSmartCE.g:529:1: ruleClause returns [EObject current=null] : ( (otherlv_0= 'right' | otherlv_1= 'prohibition' | otherlv_2= 'obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) ;
     public final EObject ruleClause() throws RecognitionException {
         EObject current = null;
 
@@ -1247,13 +1247,13 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:535:2: ( ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) )
-            // InternalSmartCE.g:536:2: ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
+            // InternalSmartCE.g:535:2: ( ( (otherlv_0= 'right' | otherlv_1= 'prohibition' | otherlv_2= 'obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' ) )
+            // InternalSmartCE.g:536:2: ( (otherlv_0= 'right' | otherlv_1= 'prohibition' | otherlv_2= 'obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
             {
-            // InternalSmartCE.g:536:2: ( (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
-            // InternalSmartCE.g:537:3: (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}'
+            // InternalSmartCE.g:536:2: ( (otherlv_0= 'right' | otherlv_1= 'prohibition' | otherlv_2= 'obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}' )
+            // InternalSmartCE.g:537:3: (otherlv_0= 'right' | otherlv_1= 'prohibition' | otherlv_2= 'obligation' ) ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '{' otherlv_5= 'rolePlayer' otherlv_6= '=' (otherlv_7= 'process' | otherlv_8= 'application' ) otherlv_9= 'operation' otherlv_10= '=' ( (lv_operation_11_0= ruleOperation ) ) otherlv_12= 'condition' otherlv_13= '{' ( (lv_condition_14_0= ruleCondition ) ) otherlv_15= '}' otherlv_16= 'onBreach' ( (lv_onBreach_17_0= ruleOnBreach ) ) (otherlv_18= 'onSuccess' ( (lv_onSuccess_19_0= ruleOnSuccess ) ) )? otherlv_20= '}'
             {
-            // InternalSmartCE.g:537:3: (otherlv_0= 'Right' | otherlv_1= 'Prohibition' | otherlv_2= 'Obligation' )
+            // InternalSmartCE.g:537:3: (otherlv_0= 'right' | otherlv_1= 'prohibition' | otherlv_2= 'obligation' )
             int alt7=3;
             switch ( input.LA(1) ) {
             case 24:
@@ -1280,7 +1280,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalSmartCE.g:538:4: otherlv_0= 'Right'
+                    // InternalSmartCE.g:538:4: otherlv_0= 'right'
                     {
                     otherlv_0=(Token)match(input,24,FOLLOW_5); 
 
@@ -1290,7 +1290,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:543:4: otherlv_1= 'Prohibition'
+                    // InternalSmartCE.g:543:4: otherlv_1= 'prohibition'
                     {
                     otherlv_1=(Token)match(input,25,FOLLOW_5); 
 
@@ -1300,7 +1300,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:548:4: otherlv_2= 'Obligation'
+                    // InternalSmartCE.g:548:4: otherlv_2= 'obligation'
                     {
                     otherlv_2=(Token)match(input,26,FOLLOW_5); 
 
@@ -2639,7 +2639,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeout"
-    // InternalSmartCE.g:1105:1: ruleTimeout returns [EObject current=null] : (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
+    // InternalSmartCE.g:1105:1: ruleTimeout returns [EObject current=null] : (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' ) ;
     public final EObject ruleTimeout() throws RecognitionException {
         EObject current = null;
 
@@ -2652,29 +2652,29 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSmartCE.g:1111:2: ( (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) )
-            // InternalSmartCE.g:1112:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // InternalSmartCE.g:1111:2: ( (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' ) )
+            // InternalSmartCE.g:1112:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' )
             {
-            // InternalSmartCE.g:1112:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
-            // InternalSmartCE.g:1113:3: otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')'
+            // InternalSmartCE.g:1112:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' )
+            // InternalSmartCE.g:1113:3: otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')'
             {
             otherlv_0=(Token)match(input,39,FOLLOW_28); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTimeoutAccess().getTimeoutKeyword_0());
             		
-            otherlv_1=(Token)match(input,33,FOLLOW_36); 
+            otherlv_1=(Token)match(input,33,FOLLOW_15); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTimeoutAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalSmartCE.g:1121:3: ( (lv_value_2_0= RULE_INT ) )
-            // InternalSmartCE.g:1122:4: (lv_value_2_0= RULE_INT )
+            // InternalSmartCE.g:1121:3: ( (lv_value_2_0= RULE_STRING ) )
+            // InternalSmartCE.g:1122:4: (lv_value_2_0= RULE_STRING )
             {
-            // InternalSmartCE.g:1122:4: (lv_value_2_0= RULE_INT )
-            // InternalSmartCE.g:1123:5: lv_value_2_0= RULE_INT
+            // InternalSmartCE.g:1122:4: (lv_value_2_0= RULE_STRING )
+            // InternalSmartCE.g:1123:5: lv_value_2_0= RULE_STRING
             {
-            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_34); 
+            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_34); 
 
-            					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0());
+            					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -2684,7 +2684,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             						current,
             						"value",
             						lv_value_2_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
+            						"org.eclipse.xtext.common.Terminals.STRING");
             				
 
             }
@@ -5668,7 +5668,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             int alt23=2;
             int LA23_0 = input.LA(1);
 
-            if ( ((LA23_0>=RULE_ID && LA23_0<=RULE_STRING)||LA23_0==33||LA23_0==61) ) {
+            if ( ((LA23_0>=RULE_ID && LA23_0<=RULE_INT)||LA23_0==33||LA23_0==61) ) {
                 alt23=1;
             }
             else if ( (LA23_0==57) ) {
@@ -6693,7 +6693,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             int alt30=2;
             int LA30_0 = input.LA(1);
 
-            if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_STRING)||LA30_0==33) ) {
+            if ( ((LA30_0>=RULE_ID && LA30_0<=RULE_INT)||LA30_0==33) ) {
                 alt30=1;
             }
             else if ( (LA30_0==61) ) {
@@ -6863,7 +6863,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             int alt31=2;
             int LA31_0 = input.LA(1);
 
-            if ( ((LA31_0>=RULE_ID && LA31_0<=RULE_STRING)) ) {
+            if ( ((LA31_0>=RULE_ID && LA31_0<=RULE_INT)) ) {
                 alt31=1;
             }
             else if ( (LA31_0==33) ) {
@@ -8884,8 +8884,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     protected DFA32 dfa32 = new DFA32(this);
     static final String dfa_1s = "\u0175\uffff";
     static final String dfa_2s = "\31\uffff\1\57\3\uffff\1\57\16\uffff\3\122\32\uffff\1\57\11\uffff\3\57\1\uffff\1\57\1\uffff\1\57\34\uffff\1\57\1\uffff\1\122\3\uffff\1\122\62\uffff\1\122\1\uffff\1\57\20\uffff\3\122\1\uffff\1\122\1\uffff\1\122\50\uffff\1\122\2\uffff\1\122\3\uffff\1\122\57\uffff\1\122\1\uffff\1\122\12\uffff\3\122\1\uffff\1\122\1\uffff\1\122\26\uffff\1\122\12\uffff\1\122\27\uffff";
-    static final String dfa_3s = "\1\47\6\41\2\5\1\111\2\6\1\5\1\42\1\51\10\53\1\42\1\120\1\22\1\120\1\111\1\6\1\22\6\4\1\120\7\42\3\22\1\uffff\31\42\1\22\1\56\6\41\2\uffff\3\22\1\120\1\22\1\4\1\22\1\41\2\5\1\111\2\6\1\5\10\42\1\6\1\42\1\51\10\53\1\42\1\120\1\22\1\42\1\22\1\120\1\111\1\6\1\22\6\4\1\120\10\42\6\4\1\120\3\47\31\42\1\22\1\56\1\22\12\42\6\41\3\22\1\120\1\22\1\4\1\22\1\41\1\120\1\42\1\4\1\42\2\5\1\111\2\6\1\5\10\42\1\6\11\42\1\51\10\53\1\42\1\120\1\22\2\42\1\22\1\120\1\111\1\6\1\22\6\4\1\120\10\42\6\4\1\120\31\42\1\22\1\56\1\22\12\42\3\22\1\120\1\22\1\4\1\22\1\41\1\120\1\42\1\4\11\42\1\6\10\42\1\22\3\42\6\4\1\120\1\22\12\42\1\120\1\42\1\4\12\42";
-    static final String dfa_4s = "\1\56\6\41\2\5\1\117\2\6\1\5\1\42\1\51\10\53\1\64\1\126\1\46\1\126\1\117\1\6\1\46\6\6\1\126\7\51\3\56\1\uffff\17\42\1\51\1\101\1\51\7\42\1\46\1\56\6\41\2\uffff\3\46\1\126\1\46\1\4\1\46\1\41\2\5\1\117\2\6\1\5\7\42\1\101\1\6\1\42\1\51\10\53\1\64\1\126\1\46\1\64\1\56\1\126\1\117\1\6\1\56\6\6\1\126\7\51\1\42\6\6\1\126\3\56\17\42\1\51\1\101\1\51\7\42\2\56\1\46\1\51\1\101\1\51\7\42\6\41\3\56\1\126\1\56\1\4\1\56\1\41\1\126\1\42\1\4\1\42\2\5\1\117\2\6\1\5\7\42\1\101\1\6\7\42\1\101\1\42\1\51\10\53\1\64\1\126\1\56\1\64\1\42\1\56\1\126\1\117\1\6\1\56\6\6\1\126\7\51\1\42\6\6\1\126\17\42\1\51\1\101\1\51\7\42\3\56\1\51\1\101\1\51\7\42\3\56\1\126\1\56\1\4\1\56\1\41\1\126\1\42\1\4\10\42\1\101\1\6\7\42\1\101\1\56\1\64\2\42\6\6\1\126\1\56\1\51\1\101\1\51\7\42\1\126\1\42\1\4\10\42\1\101\1\42";
+    static final String dfa_3s = "\1\47\6\41\1\5\1\6\1\111\2\5\1\6\1\42\1\51\10\53\1\42\1\120\1\22\1\120\1\111\1\5\1\22\6\4\1\120\7\42\3\22\1\uffff\31\42\1\22\1\56\6\41\2\uffff\3\22\1\120\1\22\1\4\1\22\1\41\1\5\1\6\1\111\2\5\1\6\10\42\1\5\1\42\1\51\10\53\1\42\1\120\1\22\1\42\1\22\1\120\1\111\1\5\1\22\6\4\1\120\10\42\6\4\1\120\3\47\31\42\1\22\1\56\1\22\12\42\6\41\3\22\1\120\1\22\1\4\1\22\1\41\1\120\1\42\1\4\1\42\1\5\1\6\1\111\2\5\1\6\10\42\1\5\11\42\1\51\10\53\1\42\1\120\1\22\2\42\1\22\1\120\1\111\1\5\1\22\6\4\1\120\10\42\6\4\1\120\31\42\1\22\1\56\1\22\12\42\3\22\1\120\1\22\1\4\1\22\1\41\1\120\1\42\1\4\11\42\1\5\10\42\1\22\3\42\6\4\1\120\1\22\12\42\1\120\1\42\1\4\12\42";
+    static final String dfa_4s = "\1\56\6\41\1\5\1\6\1\117\2\5\1\6\1\42\1\51\10\53\1\64\1\126\1\46\1\126\1\117\1\5\1\46\6\6\1\126\7\51\3\56\1\uffff\17\42\1\51\1\101\1\51\7\42\1\46\1\56\6\41\2\uffff\3\46\1\126\1\46\1\4\1\46\1\41\1\5\1\6\1\117\2\5\1\6\7\42\1\101\1\5\1\42\1\51\10\53\1\64\1\126\1\46\1\64\1\56\1\126\1\117\1\5\1\56\6\6\1\126\7\51\1\42\6\6\1\126\3\56\17\42\1\51\1\101\1\51\7\42\2\56\1\46\1\51\1\101\1\51\7\42\6\41\3\56\1\126\1\56\1\4\1\56\1\41\1\126\1\42\1\4\1\42\1\5\1\6\1\117\2\5\1\6\7\42\1\101\1\5\7\42\1\101\1\42\1\51\10\53\1\64\1\126\1\56\1\64\1\42\1\56\1\126\1\117\1\5\1\56\6\6\1\126\7\51\1\42\6\6\1\126\17\42\1\51\1\101\1\51\7\42\3\56\1\51\1\101\1\51\7\42\3\56\1\126\1\56\1\4\1\56\1\41\1\126\1\42\1\4\10\42\1\101\1\5\7\42\1\101\1\56\1\64\2\42\6\6\1\126\1\56\1\51\1\101\1\51\7\42\1\126\1\42\1\4\10\42\1\101\1\42";
     static final String dfa_5s = "\57\uffff\1\1\41\uffff\1\3\1\2\u0122\uffff";
     static final String dfa_6s = "\u0175\uffff}>";
     static final String[] dfa_7s = {
@@ -8919,12 +8919,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\67\1\70\1\71\1\72\1\73\1\74\1\75",
             "\1\76",
             "\1\57\21\uffff\1\54\1\55\1\56",
-            "\1\100\1\101\1\77",
-            "\1\100\1\101\1\77",
-            "\1\100\1\101\1\77",
-            "\1\100\1\101\1\77",
-            "\1\100\1\101\1\77",
-            "\1\100\1\101\1\77",
+            "\1\100\1\77\1\101",
+            "\1\100\1\77\1\101",
+            "\1\100\1\77\1\101",
+            "\1\100\1\77\1\101",
+            "\1\100\1\77\1\101",
+            "\1\100\1\77\1\101",
             "\1\102\1\103\1\104\1\105\1\106\1\107\1\110",
             "\1\111\6\uffff\1\112",
             "\1\111\6\uffff\1\112",
@@ -9014,12 +9014,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2\1\u00a3",
             "\1\u00a4",
             "\1\122\15\uffff\1\121\3\uffff\1\u0093\1\u0094\1\u0095\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
-            "\1\u00a6\1\u00a7\1\u00a5",
-            "\1\u00a6\1\u00a7\1\u00a5",
-            "\1\u00a6\1\u00a7\1\u00a5",
-            "\1\u00a6\1\u00a7\1\u00a5",
-            "\1\u00a6\1\u00a7\1\u00a5",
-            "\1\u00a6\1\u00a7\1\u00a5",
+            "\1\u00a6\1\u00a5\1\u00a7",
+            "\1\u00a6\1\u00a5\1\u00a7",
+            "\1\u00a6\1\u00a5\1\u00a7",
+            "\1\u00a6\1\u00a5\1\u00a7",
+            "\1\u00a6\1\u00a5\1\u00a7",
+            "\1\u00a6\1\u00a5\1\u00a7",
             "\1\u00a8\1\u00a9\1\u00aa\1\u00ab\1\u00ac\1\u00ad\1\u00ae",
             "\1\u00af\6\uffff\1\u00b0",
             "\1\u00af\6\uffff\1\u00b0",
@@ -9029,12 +9029,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\u00af\6\uffff\1\u00b0",
             "\1\u00af\6\uffff\1\u00b0",
             "\1\u00b1",
-            "\1\u00b3\1\u00b4\1\u00b2",
-            "\1\u00b3\1\u00b4\1\u00b2",
-            "\1\u00b3\1\u00b4\1\u00b2",
-            "\1\u00b3\1\u00b4\1\u00b2",
-            "\1\u00b3\1\u00b4\1\u00b2",
-            "\1\u00b3\1\u00b4\1\u00b2",
+            "\1\u00b3\1\u00b2\1\u00b4",
+            "\1\u00b3\1\u00b2\1\u00b4",
+            "\1\u00b3\1\u00b2\1\u00b4",
+            "\1\u00b3\1\u00b2\1\u00b4",
+            "\1\u00b3\1\u00b2\1\u00b4",
+            "\1\u00b3\1\u00b2\1\u00b4",
             "\1\u00b5\1\u00b6\1\u00b7\1\u00b8\1\u00b9\1\u00ba\1\u00bb",
             "\1\u00bc\1\u00bd\1\uffff\1\u00be\1\uffff\1\u00bf\1\u00c1\1\u00c0",
             "\1\u00bc\1\u00bd\1\uffff\1\u00be\1\uffff\1\u00bf\1\u00c1\1\u00c0",
@@ -9138,12 +9138,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\u0116\1\u0117\1\u0118\1\u0119\1\u011a\1\u011b\1\u011c",
             "\1\u011d",
             "\1\122\15\uffff\1\121\3\uffff\1\u0093\1\u0094\1\u0095\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
-            "\1\u011f\1\u0120\1\u011e",
-            "\1\u011f\1\u0120\1\u011e",
-            "\1\u011f\1\u0120\1\u011e",
-            "\1\u011f\1\u0120\1\u011e",
-            "\1\u011f\1\u0120\1\u011e",
-            "\1\u011f\1\u0120\1\u011e",
+            "\1\u011f\1\u011e\1\u0120",
+            "\1\u011f\1\u011e\1\u0120",
+            "\1\u011f\1\u011e\1\u0120",
+            "\1\u011f\1\u011e\1\u0120",
+            "\1\u011f\1\u011e\1\u0120",
+            "\1\u011f\1\u011e\1\u0120",
             "\1\u0121\1\u0122\1\u0123\1\u0124\1\u0125\1\u0126\1\u0127",
             "\1\u0128\6\uffff\1\u0129",
             "\1\u0128\6\uffff\1\u0129",
@@ -9153,12 +9153,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\u0128\6\uffff\1\u0129",
             "\1\u0128\6\uffff\1\u0129",
             "\1\u012a",
-            "\1\u012c\1\u012d\1\u012b",
-            "\1\u012c\1\u012d\1\u012b",
-            "\1\u012c\1\u012d\1\u012b",
-            "\1\u012c\1\u012d\1\u012b",
-            "\1\u012c\1\u012d\1\u012b",
-            "\1\u012c\1\u012d\1\u012b",
+            "\1\u012c\1\u012b\1\u012d",
+            "\1\u012c\1\u012b\1\u012d",
+            "\1\u012c\1\u012b\1\u012d",
+            "\1\u012c\1\u012b\1\u012d",
+            "\1\u012c\1\u012b\1\u012d",
+            "\1\u012c\1\u012b\1\u012d",
             "\1\u012e\1\u012f\1\u0130\1\u0131\1\u0132\1\u0133\1\u0134",
             "\1\u0135",
             "\1\u0135",
@@ -9231,12 +9231,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\u0155\6\uffff\1\u015c\5\uffff\1\u0156\1\u0157\1\u0158\1\u0159\1\u015a\1\u015b",
             "\1\u012a",
             "\1\u015d",
-            "\1\u015f\1\u0160\1\u015e",
-            "\1\u015f\1\u0160\1\u015e",
-            "\1\u015f\1\u0160\1\u015e",
-            "\1\u015f\1\u0160\1\u015e",
-            "\1\u015f\1\u0160\1\u015e",
-            "\1\u015f\1\u0160\1\u015e",
+            "\1\u015f\1\u015e\1\u0160",
+            "\1\u015f\1\u015e\1\u0160",
+            "\1\u015f\1\u015e\1\u0160",
+            "\1\u015f\1\u015e\1\u0160",
+            "\1\u015f\1\u015e\1\u0160",
+            "\1\u015f\1\u015e\1\u0160",
             "\1\u0161\1\u0162\1\u0163\1\u0164\1\u0165\1\u0166\1\u0167",
             "\1\122\15\uffff\1\121\3\uffff\1\u0093\1\u0094\1\u0095\1\113\1\114\1\uffff\1\115\1\uffff\1\116\1\120\1\117",
             "\1\u0169\6\uffff\1\u0168",
@@ -9290,8 +9290,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         }
     }
     static final String dfa_8s = "\15\uffff";
-    static final String dfa_9s = "\1\55\1\41\1\5\1\120\7\42\2\uffff";
-    static final String dfa_10s = "\1\55\1\41\1\5\1\126\7\51\2\uffff";
+    static final String dfa_9s = "\1\55\1\41\1\6\1\120\7\42\2\uffff";
+    static final String dfa_10s = "\1\55\1\41\1\6\1\126\7\51\2\uffff";
     static final String dfa_11s = "\13\uffff\1\2\1\1";
     static final String dfa_12s = "\15\uffff}>";
     static final String[] dfa_13s = {
@@ -9335,8 +9335,8 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
         }
     }
     static final String dfa_14s = "\23\uffff";
-    static final String dfa_15s = "\1\56\1\41\1\6\1\42\6\4\2\uffff\3\42\2\uffff\1\4\1\42";
-    static final String dfa_16s = "\1\56\1\41\1\6\1\64\6\6\2\uffff\1\51\1\101\1\51\2\uffff\1\4\1\101";
+    static final String dfa_15s = "\1\56\1\41\1\5\1\42\6\4\2\uffff\3\42\2\uffff\1\4\1\42";
+    static final String dfa_16s = "\1\56\1\41\1\5\1\64\6\6\2\uffff\1\51\1\101\1\51\2\uffff\1\4\1\101";
     static final String dfa_17s = "\12\uffff\1\2\1\1\3\uffff\1\4\1\3\2\uffff";
     static final String dfa_18s = "\23\uffff}>";
     static final String[] dfa_19s = {
@@ -9344,12 +9344,12 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
             "\1\2",
             "\1\3",
             "\1\13\6\uffff\1\12\5\uffff\1\4\1\5\1\6\1\7\1\10\1\11",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
-            "\1\15\1\16\1\14",
+            "\1\15\1\14\1\16",
+            "\1\15\1\14\1\16",
+            "\1\15\1\14\1\16",
+            "\1\15\1\14\1\16",
+            "\1\15\1\14\1\16",
+            "\1\15\1\14\1\16",
             "",
             "",
             "\1\20\6\uffff\1\17",
@@ -9392,7 +9392,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     static final String dfa_24s = "\1\uffff\1\1\1\2\2\uffff\1\3\1\4\1\uffff";
     static final String dfa_25s = "\10\uffff}>";
     static final String[] dfa_26s = {
-            "\1\3\1\1\1\2",
+            "\1\3\1\2\1\1",
             "",
             "",
             "\1\5\14\uffff\2\5\16\uffff\1\6\1\5\1\uffff\2\5\11\uffff\6\5\2\uffff\2\5\1\uffff\7\5\1\4",
@@ -9443,7 +9443,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000C00000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000040010L});
@@ -9464,7 +9464,7 @@ public class InternalSmartCEParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000100000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000000000000040L});
     public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000020000000000L});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000000000000000L,0x00000000007F0000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000000000000000L,0x000000000000FE00L});

@@ -1,6 +1,6 @@
 //@version - jabuti 0.1.0 
 
-Contract RequestWorks{
+contract RequestWorks{
 
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
@@ -14,7 +14,7 @@ Contract RequestWorks{
 	
 	clauses{
 
-		Right requestAllWorks {
+		right requestAllWorks {
 			rolePlayer = process
 			operation = request
 			condition {
@@ -25,7 +25,7 @@ Contract RequestWorks{
 			onBreach (EventLog("Conditions do not meet"))
 		}
 		
-		Obligation responseWorks {
+		obligation responseWorks {
 	
 			//Send the requested works
 			rolePlayer = application

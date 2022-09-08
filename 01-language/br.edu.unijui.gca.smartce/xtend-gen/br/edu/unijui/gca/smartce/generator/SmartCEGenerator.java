@@ -170,7 +170,7 @@ public class SmartCEGenerator extends AbstractGenerator {
         {
           if ((c instanceof Timeout)) {
             _builder.append("Timeout public timeout = Timeout(");
-            int _value = ((Timeout)c).getValue();
+            String _value = ((Timeout)c).getValue();
             _builder.append(_value);
             _builder.append(", 0);");
             _builder.newLineIfNotEmpty();

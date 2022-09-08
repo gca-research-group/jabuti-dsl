@@ -1,6 +1,6 @@
 ///@version - jabuti 0.1.0 
 
-Contract ApiExpandedBasicPlan {
+contract ApiExpandedBasicPlan {
 
 	dates{ 	
 		beginDate = "2022-01-01 08:00:00" 
@@ -18,7 +18,7 @@ Contract ApiExpandedBasicPlan {
 
 	clauses{	
 
-		Right requestDocuments {
+		right requestDocuments {
 			rolePlayer = process
 			operation = request
 			condition {
@@ -29,12 +29,12 @@ Contract ApiExpandedBasicPlan {
 			onBreach(EventLog("Exceded number of docuemnts"))
 		}
 		
-		Obligation responseWithDocuments {
+		obligation responseWithDocuments {
 	
 			rolePlayer =  application
 			operation =  response
 			condition{
-				Timeout(60) 
+				Timeout("60") 
 			}
 			onBreach(EventLog("Conditon not meet"))
 		}

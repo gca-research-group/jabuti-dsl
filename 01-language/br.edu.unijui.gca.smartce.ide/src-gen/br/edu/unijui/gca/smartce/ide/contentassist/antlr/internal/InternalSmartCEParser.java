@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Right'", "'Prohibition'", "'Obligation'", "'process'", "'application'", "'AND'", "'OR'", "'NOT'", "'+'", "'-'", "'*'", "'/'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'", "'import'", "'Contract'", "'{'", "'dates'", "'beginDate'", "'='", "'dueDate'", "'}'", "'parties'", "'clauses'", "'variables'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "')'", "'do'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'MessageContent'", "','", "'.'", "'.*'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'BusinessAction'", "'EventLog'", "'&&'", "'||'", "'!'", "'is'", "'as'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_ID", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'right'", "'prohibition'", "'obligation'", "'process'", "'application'", "'AND'", "'OR'", "'NOT'", "'+'", "'-'", "'*'", "'/'", "'push'", "'poll'", "'write'", "'read'", "'request'", "'response'", "'Sunday'", "'Monday'", "'Tuesday'", "'Wednesday'", "'Thursday'", "'Friday'", "'Saturday'", "'Second'", "'Minute'", "'Hour'", "'Day'", "'Week'", "'Month'", "'Year'", "'import'", "'contract'", "'{'", "'dates'", "'beginDate'", "'='", "'dueDate'", "'}'", "'parties'", "'clauses'", "'variables'", "'rolePlayer'", "'operation'", "'condition'", "'onBreach'", "'onSuccess'", "'when'", "'('", "')'", "'do'", "'Timeout'", "'OperationLimit'", "'by'", "'BusinessDay'", "'to'", "'TimeInterval'", "'SessionInterval'", "'MessageContent'", "','", "'.'", "'.*'", "'<='", "'>='", "'>'", "'<'", "'!='", "'=='", "'BusinessAction'", "'EventLog'", "'&&'", "'||'", "'!'", "'is'", "'as'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -3725,13 +3725,13 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__Alternatives_0"
-    // InternalSmartCE.g:1221:1: rule__Clause__Alternatives_0 : ( ( 'Right' ) | ( 'Prohibition' ) | ( 'Obligation' ) );
+    // InternalSmartCE.g:1221:1: rule__Clause__Alternatives_0 : ( ( 'right' ) | ( 'prohibition' ) | ( 'obligation' ) );
     public final void rule__Clause__Alternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:1225:1: ( ( 'Right' ) | ( 'Prohibition' ) | ( 'Obligation' ) )
+            // InternalSmartCE.g:1225:1: ( ( 'right' ) | ( 'prohibition' ) | ( 'obligation' ) )
             int alt2=3;
             switch ( input.LA(1) ) {
             case 11:
@@ -3758,10 +3758,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
             switch (alt2) {
                 case 1 :
-                    // InternalSmartCE.g:1226:2: ( 'Right' )
+                    // InternalSmartCE.g:1226:2: ( 'right' )
                     {
-                    // InternalSmartCE.g:1226:2: ( 'Right' )
-                    // InternalSmartCE.g:1227:3: 'Right'
+                    // InternalSmartCE.g:1226:2: ( 'right' )
+                    // InternalSmartCE.g:1227:3: 'right'
                     {
                      before(grammarAccess.getClauseAccess().getRightKeyword_0_0()); 
                     match(input,11,FOLLOW_2); 
@@ -3773,10 +3773,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:1232:2: ( 'Prohibition' )
+                    // InternalSmartCE.g:1232:2: ( 'prohibition' )
                     {
-                    // InternalSmartCE.g:1232:2: ( 'Prohibition' )
-                    // InternalSmartCE.g:1233:3: 'Prohibition'
+                    // InternalSmartCE.g:1232:2: ( 'prohibition' )
+                    // InternalSmartCE.g:1233:3: 'prohibition'
                     {
                      before(grammarAccess.getClauseAccess().getProhibitionKeyword_0_1()); 
                     match(input,12,FOLLOW_2); 
@@ -3788,10 +3788,10 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
                     }
                     break;
                 case 3 :
-                    // InternalSmartCE.g:1238:2: ( 'Obligation' )
+                    // InternalSmartCE.g:1238:2: ( 'obligation' )
                     {
-                    // InternalSmartCE.g:1238:2: ( 'Obligation' )
-                    // InternalSmartCE.g:1239:3: 'Obligation'
+                    // InternalSmartCE.g:1238:2: ( 'obligation' )
+                    // InternalSmartCE.g:1239:3: 'obligation'
                     {
                      before(grammarAccess.getClauseAccess().getObligationKeyword_0_2()); 
                     match(input,13,FOLLOW_2); 
@@ -7025,17 +7025,17 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__Group__0__Impl"
-    // InternalSmartCE.g:2064:1: rule__Contract__Group__0__Impl : ( 'Contract' ) ;
+    // InternalSmartCE.g:2064:1: rule__Contract__Group__0__Impl : ( 'contract' ) ;
     public final void rule__Contract__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:2068:1: ( ( 'Contract' ) )
-            // InternalSmartCE.g:2069:1: ( 'Contract' )
+            // InternalSmartCE.g:2068:1: ( ( 'contract' ) )
+            // InternalSmartCE.g:2069:1: ( 'contract' )
             {
-            // InternalSmartCE.g:2069:1: ( 'Contract' )
-            // InternalSmartCE.g:2070:2: 'Contract'
+            // InternalSmartCE.g:2069:1: ( 'contract' )
+            // InternalSmartCE.g:2070:2: 'contract'
             {
              before(grammarAccess.getContractAccess().getContractKeyword_0()); 
             match(input,44,FOLLOW_2); 
@@ -12815,7 +12815,7 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
             // InternalSmartCE.g:4027:1: ( rule__Timeout__Group__1__Impl rule__Timeout__Group__2 )
             // InternalSmartCE.g:4028:2: rule__Timeout__Group__1__Impl rule__Timeout__Group__2
             {
-            pushFollow(FOLLOW_38);
+            pushFollow(FOLLOW_16);
             rule__Timeout__Group__1__Impl();
 
             state._fsp--;
@@ -22801,21 +22801,21 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__ValueAssignment_2"
-    // InternalSmartCE.g:7467:1: rule__Timeout__ValueAssignment_2 : ( RULE_INT ) ;
+    // InternalSmartCE.g:7467:1: rule__Timeout__ValueAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Timeout__ValueAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSmartCE.g:7471:1: ( ( RULE_INT ) )
-            // InternalSmartCE.g:7472:2: ( RULE_INT )
+            // InternalSmartCE.g:7471:1: ( ( RULE_STRING ) )
+            // InternalSmartCE.g:7472:2: ( RULE_STRING )
             {
-            // InternalSmartCE.g:7472:2: ( RULE_INT )
-            // InternalSmartCE.g:7473:3: RULE_INT
+            // InternalSmartCE.g:7472:2: ( RULE_STRING )
+            // InternalSmartCE.g:7473:3: RULE_STRING
             {
-             before(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0()); 
+             before(grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0()); 
 
             }
 
@@ -25501,8 +25501,8 @@ public class InternalSmartCEParser extends AbstractInternalContentAssistParser {
     protected DFA20 dfa20 = new DFA20(this);
     static final String dfa_1s = "\u0175\uffff";
     static final String dfa_2s = "\31\uffff\1\54\12\uffff\1\54\10\uffff\3\122\31\uffff\1\54\11\uffff\5\54\36\uffff\1\54\1\uffff\1\122\12\uffff\1\122\54\uffff\1\122\12\uffff\1\54\6\uffff\3\122\1\uffff\1\122\1\uffff\1\122\50\uffff\1\122\2\uffff\1\122\11\uffff\1\122\52\uffff\1\122\12\uffff\4\122\1\uffff\1\122\1\uffff\1\122\26\uffff\1\122\24\uffff\1\122\15\uffff";
-    static final String dfa_3s = "\1\77\6\74\2\4\1\35\2\6\1\4\1\75\1\101\10\103\1\75\1\44\1\20\1\44\1\35\1\6\1\44\6\4\1\20\7\75\1\uffff\3\62\31\75\1\20\1\106\6\74\2\uffff\5\20\1\44\1\5\1\74\2\4\1\35\2\6\1\4\10\75\1\6\1\75\1\101\10\103\1\75\1\44\1\20\1\75\1\20\1\44\1\35\1\6\6\4\1\44\1\20\7\75\1\44\6\4\1\75\3\77\31\75\1\106\1\20\12\75\1\20\6\74\3\20\1\44\1\20\1\5\1\20\1\74\1\75\1\44\1\75\1\5\2\4\1\35\2\6\1\4\10\75\1\6\11\75\1\101\10\103\1\75\1\44\1\20\2\75\1\20\1\44\1\35\1\6\6\4\1\20\1\44\7\75\6\4\1\44\32\75\1\106\1\20\12\75\4\20\1\44\1\20\1\5\1\20\1\74\1\75\1\44\1\5\11\75\1\6\10\75\1\20\2\75\6\4\1\44\13\75\1\20\1\75\1\44\1\5\12\75";
-    static final String dfa_4s = "\1\106\6\74\2\4\1\43\2\6\1\4\1\75\1\101\10\103\1\117\1\52\1\62\1\52\1\43\1\6\1\52\6\6\1\62\7\101\1\uffff\3\106\26\75\1\101\1\110\1\101\1\62\1\106\6\74\2\uffff\5\62\1\52\1\5\1\74\2\4\1\43\2\6\1\4\7\75\1\110\1\6\1\75\1\101\10\103\1\117\1\52\1\62\1\117\1\106\1\52\1\43\7\6\1\52\1\106\7\101\1\52\6\6\1\75\3\106\17\75\1\101\1\110\1\101\7\75\2\106\7\75\1\101\1\110\1\101\1\62\6\74\3\106\1\52\1\106\1\5\1\106\1\74\1\75\1\52\1\75\1\5\2\4\1\43\2\6\1\4\7\75\1\110\1\6\7\75\1\110\1\75\1\101\10\103\1\117\1\52\1\106\1\117\1\75\1\106\1\52\1\43\7\6\1\106\1\52\7\101\6\6\1\52\20\75\1\101\1\110\1\101\7\75\2\106\1\101\1\110\1\101\7\75\4\106\1\52\1\106\1\5\1\106\1\74\1\75\1\52\1\5\10\75\1\110\1\6\7\75\1\110\1\106\1\117\1\75\6\6\1\52\1\75\1\101\1\110\1\101\7\75\1\106\1\75\1\52\1\5\10\75\1\110\1\75";
+    static final String dfa_3s = "\1\77\6\74\1\6\1\4\1\35\2\6\1\4\1\75\1\101\10\103\1\75\1\44\1\20\1\44\1\35\1\6\1\44\6\4\1\20\7\75\1\uffff\3\62\31\75\1\20\1\106\6\74\2\uffff\5\20\1\44\1\5\1\74\1\6\1\4\1\35\2\6\1\4\10\75\1\6\1\75\1\101\10\103\1\75\1\44\1\20\1\75\1\20\1\44\1\35\1\6\6\4\1\44\1\20\7\75\1\44\6\4\1\75\3\77\31\75\1\106\1\20\12\75\1\20\6\74\3\20\1\44\1\20\1\5\1\20\1\74\1\75\1\44\1\75\1\5\1\6\1\4\1\35\2\6\1\4\10\75\1\6\11\75\1\101\10\103\1\75\1\44\1\20\2\75\1\20\1\44\1\35\1\6\6\4\1\20\1\44\7\75\6\4\1\44\32\75\1\106\1\20\12\75\4\20\1\44\1\20\1\5\1\20\1\74\1\75\1\44\1\5\11\75\1\6\10\75\1\20\2\75\6\4\1\44\13\75\1\20\1\75\1\44\1\5\12\75";
+    static final String dfa_4s = "\1\106\6\74\1\6\1\4\1\43\2\6\1\4\1\75\1\101\10\103\1\117\1\52\1\62\1\52\1\43\1\6\1\52\6\6\1\62\7\101\1\uffff\3\106\26\75\1\101\1\110\1\101\1\62\1\106\6\74\2\uffff\5\62\1\52\1\5\1\74\1\6\1\4\1\43\2\6\1\4\7\75\1\110\1\6\1\75\1\101\10\103\1\117\1\52\1\62\1\117\1\106\1\52\1\43\7\6\1\52\1\106\7\101\1\52\6\6\1\75\3\106\17\75\1\101\1\110\1\101\7\75\2\106\7\75\1\101\1\110\1\101\1\62\6\74\3\106\1\52\1\106\1\5\1\106\1\74\1\75\1\52\1\75\1\5\1\6\1\4\1\43\2\6\1\4\7\75\1\110\1\6\7\75\1\110\1\75\1\101\10\103\1\117\1\52\1\106\1\117\1\75\1\106\1\52\1\43\7\6\1\106\1\52\7\101\6\6\1\52\20\75\1\101\1\110\1\101\7\75\2\106\1\101\1\110\1\101\7\75\4\106\1\52\1\106\1\5\1\106\1\74\1\75\1\52\1\5\10\75\1\110\1\6\7\75\1\110\1\106\1\117\1\75\6\6\1\52\1\75\1\101\1\110\1\101\7\75\1\106\1\75\1\52\1\5\10\75\1\110\1\75";
     static final String dfa_5s = "\54\uffff\1\1\44\uffff\1\3\1\2\u0122\uffff";
     static final String dfa_6s = "\u0175\uffff}>";
     static final String[] dfa_7s = {

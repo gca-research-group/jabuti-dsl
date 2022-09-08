@@ -100,9 +100,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
         eType="#//Expression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//BusinessRule">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//BusinessRule"/>
   <eClassifiers xsi:type="ecore:EClass" name="OperationLimit" eSuperTypes="#//BusinessRule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationsNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
@@ -152,7 +150,9 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperators" upperBound="-1"
         eType="#//LogicalOperator" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BusinessRule" abstract="true" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessRule" abstract="true" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BusinessAction" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventLog" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="LogicalOperator">

@@ -1090,17 +1090,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getTimeout_Value()
-	{
-		return (EAttribute)timeoutEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getOperationLimit()
 	{
 		return operationLimitEClass;
@@ -1313,6 +1302,17 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 	public EClass getBusinessRule()
 	{
 		return businessRuleEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getBusinessRule_Value()
+	{
+		return (EAttribute)businessRuleEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1682,7 +1682,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEReference(conditionEClass, CONDITION__EXPRESSION);
 
 		timeoutEClass = createEClass(TIMEOUT);
-		createEAttribute(timeoutEClass, TIMEOUT__VALUE);
 
 		operationLimitEClass = createEClass(OPERATION_LIMIT);
 		createEAttribute(operationLimitEClass, OPERATION_LIMIT__OPERATIONS_NUMBER);
@@ -1709,6 +1708,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		createEReference(compositeConditionEClass, COMPOSITE_CONDITION__LOGICAL_OPERATORS);
 
 		businessRuleEClass = createEClass(BUSINESS_RULE);
+		createEAttribute(businessRuleEClass, BUSINESS_RULE__VALUE);
 
 		businessActionEClass = createEClass(BUSINESS_ACTION);
 
@@ -1877,7 +1877,6 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEReference(getCondition_Expression(), this.getExpression(), null, "expression", null, 0, -1, Condition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeoutEClass, Timeout.class, "Timeout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimeout_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Timeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(operationLimitEClass, OperationLimit.class, "OperationLimit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOperationLimit_OperationsNumber(), ecorePackage.getEInt(), "operationsNumber", null, 0, 1, OperationLimit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1904,6 +1903,7 @@ public class SmartCEPackageImpl extends EPackageImpl implements SmartCEPackage
 		initEReference(getCompositeCondition_LogicalOperators(), this.getLogicalOperator(), null, "logicalOperators", null, 0, -1, CompositeCondition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessRuleEClass, BusinessRule.class, "BusinessRule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBusinessRule_Value(), ecorePackage.getEString(), "value", null, 0, 1, BusinessRule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(businessActionEClass, BusinessAction.class, "BusinessAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

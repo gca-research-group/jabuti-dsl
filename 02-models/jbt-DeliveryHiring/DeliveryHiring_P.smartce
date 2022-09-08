@@ -1,6 +1,6 @@
 //@version - jabuti 0.1.0 
 
-Contract DeliveryHiring_P  { 
+contract DeliveryHiring_P  { 
 
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
@@ -13,7 +13,7 @@ Contract DeliveryHiring_P  {
 	}
 
 	clauses{
-		Prohibition requestDelivery {
+		prohibition requestDelivery {
 			/*Setting the prohibition regarding to the days and hours to request a delivery,
 			 the maximum request operation by minute and number of address by request"*/
 			rolePlayer = process
