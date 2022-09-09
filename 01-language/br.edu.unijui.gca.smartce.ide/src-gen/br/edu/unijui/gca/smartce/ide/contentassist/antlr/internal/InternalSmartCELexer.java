@@ -1697,10 +1697,10 @@ public class InternalSmartCELexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSmartCE.g:8526:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalSmartCE.g:8526:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSmartCE.g:8778:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSmartCE.g:8778:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalSmartCE.g:8526:11: ( '^' )?
+            // InternalSmartCE.g:8778:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -1709,7 +1709,7 @@ public class InternalSmartCELexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalSmartCE.g:8526:11: '^'
+                    // InternalSmartCE.g:8778:11: '^'
                     {
                     match('^'); 
 
@@ -1727,7 +1727,7 @@ public class InternalSmartCELexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalSmartCE.g:8526:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSmartCE.g:8778:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1776,10 +1776,10 @@ public class InternalSmartCELexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSmartCE.g:8528:10: ( ( '0' .. '9' )+ )
-            // InternalSmartCE.g:8528:12: ( '0' .. '9' )+
+            // InternalSmartCE.g:8780:10: ( ( '0' .. '9' )+ )
+            // InternalSmartCE.g:8780:12: ( '0' .. '9' )+
             {
-            // InternalSmartCE.g:8528:12: ( '0' .. '9' )+
+            // InternalSmartCE.g:8780:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1793,7 +1793,7 @@ public class InternalSmartCELexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalSmartCE.g:8528:13: '0' .. '9'
+            	    // InternalSmartCE.g:8780:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1825,10 +1825,10 @@ public class InternalSmartCELexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSmartCE.g:8530:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalSmartCE.g:8530:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSmartCE.g:8782:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalSmartCE.g:8782:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalSmartCE.g:8530:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSmartCE.g:8782:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1846,10 +1846,10 @@ public class InternalSmartCELexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSmartCE.g:8530:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalSmartCE.g:8782:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalSmartCE.g:8530:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalSmartCE.g:8782:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1865,7 +1865,7 @@ public class InternalSmartCELexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalSmartCE.g:8530:21: '\\\\' .
+                    	    // InternalSmartCE.g:8782:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1873,7 +1873,7 @@ public class InternalSmartCELexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSmartCE.g:8530:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalSmartCE.g:8782:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1898,10 +1898,10 @@ public class InternalSmartCELexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalSmartCE.g:8530:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalSmartCE.g:8782:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalSmartCE.g:8530:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalSmartCE.g:8782:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1917,7 +1917,7 @@ public class InternalSmartCELexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalSmartCE.g:8530:54: '\\\\' .
+                    	    // InternalSmartCE.g:8782:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1925,7 +1925,7 @@ public class InternalSmartCELexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSmartCE.g:8530:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalSmartCE.g:8782:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1968,12 +1968,12 @@ public class InternalSmartCELexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSmartCE.g:8532:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalSmartCE.g:8532:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalSmartCE.g:8784:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSmartCE.g:8784:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalSmartCE.g:8532:24: ( options {greedy=false; } : . )*
+            // InternalSmartCE.g:8784:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1998,7 +1998,7 @@ public class InternalSmartCELexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalSmartCE.g:8532:52: .
+            	    // InternalSmartCE.g:8784:52: .
             	    {
             	    matchAny(); 
 
@@ -2028,12 +2028,12 @@ public class InternalSmartCELexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSmartCE.g:8534:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalSmartCE.g:8534:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalSmartCE.g:8786:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalSmartCE.g:8786:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalSmartCE.g:8534:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalSmartCE.g:8786:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -2046,7 +2046,7 @@ public class InternalSmartCELexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSmartCE.g:8534:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalSmartCE.g:8786:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -2066,7 +2066,7 @@ public class InternalSmartCELexer extends Lexer {
                 }
             } while (true);
 
-            // InternalSmartCE.g:8534:40: ( ( '\\r' )? '\\n' )?
+            // InternalSmartCE.g:8786:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -2075,9 +2075,9 @@ public class InternalSmartCELexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalSmartCE.g:8534:41: ( '\\r' )? '\\n'
+                    // InternalSmartCE.g:8786:41: ( '\\r' )? '\\n'
                     {
-                    // InternalSmartCE.g:8534:41: ( '\\r' )?
+                    // InternalSmartCE.g:8786:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -2086,7 +2086,7 @@ public class InternalSmartCELexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalSmartCE.g:8534:41: '\\r'
+                            // InternalSmartCE.g:8786:41: '\\r'
                             {
                             match('\r'); 
 
@@ -2118,10 +2118,10 @@ public class InternalSmartCELexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSmartCE.g:8536:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalSmartCE.g:8536:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSmartCE.g:8788:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalSmartCE.g:8788:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalSmartCE.g:8536:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSmartCE.g:8788:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -2175,8 +2175,8 @@ public class InternalSmartCELexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSmartCE.g:8538:16: ( . )
-            // InternalSmartCE.g:8538:18: .
+            // InternalSmartCE.g:8790:16: ( . )
+            // InternalSmartCE.g:8790:18: .
             {
             matchAny(); 
 

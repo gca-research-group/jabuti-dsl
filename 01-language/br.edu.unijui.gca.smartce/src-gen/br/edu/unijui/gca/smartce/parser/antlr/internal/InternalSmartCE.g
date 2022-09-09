@@ -1503,6 +1503,71 @@ ruleSessionInterval returns [EObject current=null]
 				newLeafNode(otherlv_11, grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_1_4());
 			}
 		)
+		    |
+		(
+			(
+				otherlv_12='SessionInterval'
+				{
+					newLeafNode(otherlv_12, grammarAccess.getSessionIntervalAccess().getSessionIntervalKeyword_2_0_0());
+				}
+				otherlv_13='('
+				{
+					newLeafNode(otherlv_13, grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_2_0_1());
+				}
+				(
+					(
+						lv_frequency_14_0=RULE_INT
+						{
+							newLeafNode(lv_frequency_14_0, grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_2_0_2_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getSessionIntervalRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"frequency",
+								lv_frequency_14_0,
+								"org.eclipse.xtext.common.Terminals.INT");
+						}
+					)
+				)
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_2_0_3_0());
+						}
+						lv_timeUnit_15_0=ruleTimeUnit
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getSessionIntervalRule());
+							}
+							set(
+								$current,
+								"timeUnit",
+								lv_timeUnit_15_0,
+								"br.edu.unijui.gca.smartce.SmartCE.TimeUnit");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				otherlv_16='by'
+				{
+					newLeafNode(otherlv_16, grammarAccess.getSessionIntervalAccess().getByKeyword_2_0_4());
+				}
+				{
+					newCompositeNode(grammarAccess.getSessionIntervalAccess().getQualifiedNameParserRuleCall_2_0_5());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
+				}
+			)
+			otherlv_18=')'
+			{
+				newLeafNode(otherlv_18, grammarAccess.getSessionIntervalAccess().getRightParenthesisKeyword_2_1());
+			}
+		)
 	)
 ;
 

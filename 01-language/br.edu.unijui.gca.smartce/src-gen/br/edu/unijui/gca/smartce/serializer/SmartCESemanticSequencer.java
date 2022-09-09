@@ -633,7 +633,7 @@ public class SmartCESemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     SessionInterval returns SessionInterval
 	 *
 	 * Constraint:
-	 *     ((frequency=INT timeUnit=TimeUnit messagecontent=MessageContent) | (frequency=INT timeUnit=TimeUnit))
+	 *     ((frequency=INT timeUnit=TimeUnit messagecontent=MessageContent) | (frequency=INT timeUnit=TimeUnit) | (frequency=INT timeUnit=TimeUnit))
 	 * </pre>
 	 */
 	protected void sequence_SessionInterval(ISerializationContext context, SessionInterval semanticObject) {

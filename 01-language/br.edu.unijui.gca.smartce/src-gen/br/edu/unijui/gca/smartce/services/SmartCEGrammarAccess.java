@@ -884,15 +884,28 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		private final Assignment cTimeUnitAssignment_1_3 = (Assignment)cGroup_1.eContents().get(3);
 		private final RuleCall cTimeUnitTimeUnitEnumRuleCall_1_3_0 = (RuleCall)cTimeUnitAssignment_1_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Group cGroup_2_0 = (Group)cGroup_2.eContents().get(0);
+		private final Keyword cSessionIntervalKeyword_2_0_0 = (Keyword)cGroup_2_0.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2_0_1 = (Keyword)cGroup_2_0.eContents().get(1);
+		private final Assignment cFrequencyAssignment_2_0_2 = (Assignment)cGroup_2_0.eContents().get(2);
+		private final RuleCall cFrequencyINTTerminalRuleCall_2_0_2_0 = (RuleCall)cFrequencyAssignment_2_0_2.eContents().get(0);
+		private final Assignment cTimeUnitAssignment_2_0_3 = (Assignment)cGroup_2_0.eContents().get(3);
+		private final RuleCall cTimeUnitTimeUnitEnumRuleCall_2_0_3_0 = (RuleCall)cTimeUnitAssignment_2_0_3.eContents().get(0);
+		private final Keyword cByKeyword_2_0_4 = (Keyword)cGroup_2_0.eContents().get(4);
+		private final RuleCall cQualifiedNameParserRuleCall_2_0_5 = (RuleCall)cGroup_2_0.eContents().get(5);
+		private final Keyword cRightParenthesisKeyword_2_1 = (Keyword)cGroup_2.eContents().get(1);
 		
 		//SessionInterval:
 		//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messagecontent=MessageContent  ) ')'|
-		//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit')')
+		//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
+		//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' QualifiedName  ) ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messagecontent=MessageContent  ) ')'|
-		//('SessionInterval' '('frequency=INT timeUnit=TimeUnit')')
+		//('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
+		//('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' QualifiedName  ) ')'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messagecontent=MessageContent  ) ')'
@@ -954,6 +967,39 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_1_4() { return cRightParenthesisKeyword_1_4; }
+		
+		//('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' QualifiedName  ) ')'
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' QualifiedName  )
+		public Group getGroup_2_0() { return cGroup_2_0; }
+		
+		//'SessionInterval'
+		public Keyword getSessionIntervalKeyword_2_0_0() { return cSessionIntervalKeyword_2_0_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2_0_1() { return cLeftParenthesisKeyword_2_0_1; }
+		
+		//frequency=INT
+		public Assignment getFrequencyAssignment_2_0_2() { return cFrequencyAssignment_2_0_2; }
+		
+		//INT
+		public RuleCall getFrequencyINTTerminalRuleCall_2_0_2_0() { return cFrequencyINTTerminalRuleCall_2_0_2_0; }
+		
+		//timeUnit=TimeUnit
+		public Assignment getTimeUnitAssignment_2_0_3() { return cTimeUnitAssignment_2_0_3; }
+		
+		//TimeUnit
+		public RuleCall getTimeUnitTimeUnitEnumRuleCall_2_0_3_0() { return cTimeUnitTimeUnitEnumRuleCall_2_0_3_0; }
+		
+		//'by'
+		public Keyword getByKeyword_2_0_4() { return cByKeyword_2_0_4; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_2_0_5() { return cQualifiedNameParserRuleCall_2_0_5; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_2_1() { return cRightParenthesisKeyword_2_1; }
 	}
 	public class MessageContentElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.smartce.SmartCE.MessageContent");
@@ -2615,7 +2661,8 @@ public class SmartCEGrammarAccess extends AbstractElementFinder.AbstractGrammarE
 	
 	//SessionInterval:
 	//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messagecontent=MessageContent  ) ')'|
-	//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit')')
+	//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
+	//    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' QualifiedName  ) ')'
 	//;
 	public SessionIntervalElements getSessionIntervalAccess() {
 		return pSessionInterval;

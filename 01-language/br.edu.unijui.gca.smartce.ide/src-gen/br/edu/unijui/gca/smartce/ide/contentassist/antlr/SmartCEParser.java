@@ -74,6 +74,8 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSessionIntervalAccess().getGroup_0(), "rule__SessionInterval__Group_0__0");
 			builder.put(grammarAccess.getSessionIntervalAccess().getGroup_0_0(), "rule__SessionInterval__Group_0_0__0");
 			builder.put(grammarAccess.getSessionIntervalAccess().getGroup_1(), "rule__SessionInterval__Group_1__0");
+			builder.put(grammarAccess.getSessionIntervalAccess().getGroup_2(), "rule__SessionInterval__Group_2__0");
+			builder.put(grammarAccess.getSessionIntervalAccess().getGroup_2_0(), "rule__SessionInterval__Group_2_0__0");
 			builder.put(grammarAccess.getMessageContentAccess().getGroup_0(), "rule__MessageContent__Group_0__0");
 			builder.put(grammarAccess.getMessageContentAccess().getGroup_1(), "rule__MessageContent__Group_1__0");
 			builder.put(grammarAccess.getMessageContentAccess().getGroup_2(), "rule__MessageContent__Group_2__0");
@@ -137,6 +139,8 @@ public class SmartCEParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSessionIntervalAccess().getMessagecontentAssignment_0_0_5(), "rule__SessionInterval__MessagecontentAssignment_0_0_5");
 			builder.put(grammarAccess.getSessionIntervalAccess().getFrequencyAssignment_1_2(), "rule__SessionInterval__FrequencyAssignment_1_2");
 			builder.put(grammarAccess.getSessionIntervalAccess().getTimeUnitAssignment_1_3(), "rule__SessionInterval__TimeUnitAssignment_1_3");
+			builder.put(grammarAccess.getSessionIntervalAccess().getFrequencyAssignment_2_0_2(), "rule__SessionInterval__FrequencyAssignment_2_0_2");
+			builder.put(grammarAccess.getSessionIntervalAccess().getTimeUnitAssignment_2_0_3(), "rule__SessionInterval__TimeUnitAssignment_2_0_3");
 			builder.put(grammarAccess.getMessageContentAccess().getContentAssignment_0_2(), "rule__MessageContent__ContentAssignment_0_2");
 			builder.put(grammarAccess.getMessageContentAccess().getContentAssignment_1_2(), "rule__MessageContent__ContentAssignment_1_2");
 			builder.put(grammarAccess.getMessageContentAccess().getTimeUnitAssignment_1_4(), "rule__MessageContent__TimeUnitAssignment_1_4");

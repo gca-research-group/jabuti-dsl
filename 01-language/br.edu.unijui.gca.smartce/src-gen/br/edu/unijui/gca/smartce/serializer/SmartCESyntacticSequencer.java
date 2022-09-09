@@ -44,9 +44,20 @@ public class SmartCESyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getQualifiedNameRule())
+			return getQualifiedNameToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * QualifiedName:
+	 * 	ID ('.' ID)*;
+	 */
+	protected String getQualifiedNameToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

@@ -105,13 +105,15 @@ TimeInterval:
 
 SessionInterval: 
 	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messagecontent=MessageContent  ) ')'|
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')')
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' QualifiedName  ) ')'
 ; 
+
 MessageContent:
 	('MessageContent' '(' content=STRING ')') | /* Add an user help -> This field requires an xpath expression */	
 	('MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')') |
 	('MessageContent' '(' content=STRING binaryOperator=BinaryOperator (stringValue=StringValue | variableValue=VariableValue |numericValue=NumericValue)')' )|
-	('MessageContent' '(' content=STRING binaryOperator=BinaryOperator (stringValue=StringValue | variableValue=VariableValue |numericValue=NumericValue) 'by' timeUnit=TimeUnit')' )
+	('MessageContent' '(' content=STRING binaryOperator=BinaryOperator (stringValue=StringValue | variableValue=VariableValue |numericValue=NumericValue) 'by' timeUnit=TimeUnit')' ) 
 ;
 
 // ----------------- Add the binary operator -------------------------

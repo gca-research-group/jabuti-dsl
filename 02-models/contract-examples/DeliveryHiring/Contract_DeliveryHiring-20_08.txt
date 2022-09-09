@@ -1,0 +1,144 @@
+Contract DeliveryHiring {
+
+
+	beginDate = "2021-08-20 17:00:00"
+	dueDate =   "2022-08-19 12:00:00"
+	
+	application =  "Delivery System"
+	process =	   "Integration Process"	
+
+	// variavel
+	deliveryDeadline: Date = Date.now()
+	
+	Right requestDelivery  {
+		description= “Setting the days and hours to request a delivery and the maximum delivery distance”	
+		rolePlayer = process
+		rolePlayer.perform(Operation.REQUEST)  
+		
+		condition{
+			BusinessTime.setBusinessDay(Period.businessDay()) AND
+			BusinessTime.setHours(Period.specificTimeGap("8:00", "18:00")) OR
+			MessageContent.evaluate("XPATH_EXPRESSION -> //distance <  200")
+		}
+		onBreach(notifyFailing, "Request made outside of allowed hours or distance limit exceeded")		
+		deliveryDeadline.addDays("XPATH_EXPRESSION -> //delivery_time")		
+	}
+
+	Obligation responseOrder {
+		description: "Setting the time limit for responding to a resquest"
+		rolePlayer: application
+		rolePlayer.perform(Operation.RESPONSE)  
+		
+		condition{
+			Timeout(60) AND
+			MessageContent.evaluate(content(xmlFileResponder.delivery) < deliveryDeadline)
+		}		
+		onBreach(notifyFailing, "The timeout exceeded or inconsistent response message")			
+	}
+
+	Action notifyFailing(message : String){
+			notifyParties(message)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#possibilidades para trabalhar com xml
+MessageContent.evaluate(xmlFile.distance.all() <  200) // retorna a lista de distancias existentes no arquivo xml. A condição define que sejam menores que 200
+MessageContent.evaluate(xmlFile.distance <  200) // retorna um elemento, e a condição define que seja menor que 200
+MessageContent.evaluate(xml.distance.first() < 200)		// retorna o primeiro elemento e define que seja menor que 200
+MessageContent.evaluate(xml.distance.last() < 200)		// retorna o último elemento e define que seja menor que 200
+MessageContent.evaluate(xml.distance.ocurrence(3) < 200)// retorna a terceira ocorrencia do elemento distancia e define que seja menor que 200
+
+MessageContent.evaluate(xml.city.state(RS).population<100)
+
+
+MessageContent.evaluate("state == RS", "city == a*", "population < 100000")
+MessageContent.evaluate(("state == RS", "city == a*", "population < 100000")
+
+
+
+
+false
+false
+true
+true
+
+//UF/city/population
+<result>
+	<population>150_000</population>
+	<population>250_000</population>
+	<population>50_000</population>
+	<population>50_000</population>
+</result>
+
+<UF name="RS">
+	<city>
+		<population>150_000</population>
+	</city>
+	<city>
+		<population>250_000</population>
+	</city>
+		<city>
+		<population>50_000</population>
+	</city>
+	<city>
+		<population>50_000</population>
+	</city>
+	
+</UF>
+
+<UF name="SC">
+	<city>
+		<population>50_000</population>
+		
+	</city>
+	<regiao></regiao>
+	<city>
+		<population>50_000</population>
+	</city>
+	
+</UF>
+
+
+
+#MessageContent.evaluate("distance SHOULD_BE <d 200")		
+
+
+MessageContent.evaluate("//delivery/distance/text() <  200")
+
+<nome firstName="Ana", lastname="Silva"/>
+
+option_01
+xmlFile: FileXML = "c:\xmlFiles\population.xml" 
+MessageContent.evaluate(xmlFile..nome.getAtribute("firstName")  < "Ana")
+MessageContent.evaluate(xmlFile.UF.city.population < 100_000)
+
+option_02
+MessageContent.evaluate("population" IN "city" INTO "UF" == "RS" SHOULD_BE < 100_000")
+
+option_03
+MessageContent.evaluate("pessoa/sexo==Feminino", "nome == Ana")
+
+
+

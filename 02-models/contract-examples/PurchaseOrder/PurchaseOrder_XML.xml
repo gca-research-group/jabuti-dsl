@@ -1,0 +1,23 @@
+<purchaseOrder id="001">
+	
+	<product cod="00102" name="Tshirt">					
+		<items>30</items>		
+		<unitaryValue>50</unitaryValue>
+		<amoutValue>1500</amoutValue>	
+	</product>
+		
+	<product cod="00202" name="Sneakers">					
+		<items>20</items>
+		<unitaryValue>210</unitaryValue>
+		<amoutValue>2200</amoutValue>	
+	</product>
+	
+	<product cod="00302" name="Shorts">		
+		<items>20</items>		
+		<unitaryValue>25</unitaryValue>
+		<amoutValue>500</amoutValue>	
+	</product>
+	
+	<orderValue>2400</orderValue>
+	
+</purchaseOrder>
