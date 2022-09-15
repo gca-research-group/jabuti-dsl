@@ -1,9 +1,9 @@
 //@version -  0.1.0  
 
-contract sendMessageWhatsapp {
+contract sendMessageWhatsapp { 
+ 
 
-
-	dates{
+	dates{ 
 		beginDate = "2022-01-01 08:00:00" 
 		dueDate = "2022-12-31 18:00:00" 
 	}
