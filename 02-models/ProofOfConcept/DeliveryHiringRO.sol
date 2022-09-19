@@ -63,7 +63,7 @@ contract DeliveryHiring is EAI_Domain{
 		if(!isTimeout(_accessDateTime, timeout[0].endTime)&&
 		evaluateMessageContent(messageContent_response[0], _xPathContent[0]))
 		{
-			operationLimit[0].counter+=1;// increment the request counter if the response was correctly performed
+			operationLimit[0].requestsPerformed+=1;// increment the request counter if the response was correctly performed
 	        return true;
 	    }
 	   	emit failEvent("Exceeded response time or message content mismatch");

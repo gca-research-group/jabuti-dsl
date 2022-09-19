@@ -35,7 +35,7 @@ uint constant SUNDAY=7;
         uint requestsLimit;
         uint frequencyTime;        
         uint timeout;
-        uint counter;
+        uint requestsPerformed;
     }
 
     struct DateInterval{
@@ -68,6 +68,18 @@ uint constant SUNDAY=7;
 	    uint accumulatedValue;
 	}
  
+ 
+	 struct SessionInterval {
+		uint duration;
+		uint timeUint;
+		string refereceValue;	     
+	 }
+	 
+	 function isSessionActive(SessionInterval memory session, uint timeStamp )internal pure returns(bool){
+	     //TODO
+	     return true;
+	 }
+	 
     function evaluateMessageContent(MessageContent memory msgContent, string memory value ) internal pure returns (bool){
         //TODO
 

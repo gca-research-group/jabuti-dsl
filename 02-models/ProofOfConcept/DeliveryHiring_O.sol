@@ -43,7 +43,7 @@ contract DeliveryHiring is EAI_Domain{
 			!isOperationLimitReached(_accessDateTime, operationLimit[0]) &&
 			evaluateMessageContent(messageContent[0], _xPathContent[0]))
 			{
-			    operationLimit[0].counter+=1;// increment the request counter if the response was correctly performed
+			    operationLimit[0].requestsPerformed+=1;// increment the request counter if the response was correctly performed
 	        	return true;
 	    	}
 	    
