@@ -16,14 +16,14 @@ Require-Bundle: org.eclipse.xtext,
  org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
 Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: br.edu.unijui.gca.jabuti,
- br.edu.unijui.gca.services,
- br.edu.unijui.gca.validation,
- br.edu.unijui.gca,
- br.edu.unijui.gca.jabuti.util,
- br.edu.unijui.gca.serializer,
- br.edu.unijui.gca.parser.antlr.internal,
- br.edu.unijui.gca.scoping,
- br.edu.unijui.gca.jabuti.impl,
- br.edu.unijui.gca.parser.antlr,
- br.edu.unijui.gca.generator
+ br.edu.unijui.gca.jabuti.services,
+ br.edu.unijui.gca.jabuti.jabuti.util,
+ br.edu.unijui.gca.jabuti.parser.antlr.internal,
+ br.edu.unijui.gca.jabuti.parser.antlr,
+ br.edu.unijui.gca.jabuti.jabuti,
+ br.edu.unijui.gca.jabuti.jabuti.impl,
+ br.edu.unijui.gca.jabuti.scoping,
+ br.edu.unijui.gca.jabuti.generator,
+ br.edu.unijui.gca.jabuti.validation,
+ br.edu.unijui.gca.jabuti.serializer
 Import-Package: org.apache.log4j

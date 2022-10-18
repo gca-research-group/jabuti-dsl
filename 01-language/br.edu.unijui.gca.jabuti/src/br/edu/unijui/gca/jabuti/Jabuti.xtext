@@ -1,0 +1,11 @@
+grammar br.edu.unijui.gca.jabuti.Jabuti with org.eclipse.xtext.common.Terminals
+
+import "http://www.edu.br/unijui/gca/jabuti/Jabuti"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!'
+	'description' desc=STRING;
+	

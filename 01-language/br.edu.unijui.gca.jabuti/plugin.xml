@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="windows-1252"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <plugin>
 	<extension point="org.eclipse.emf.ecore.generated_package">
 		<package
-			uri = "http://www.edu.br/unijui/gca/Jabuti"
-			class = "br.edu.unijui.gca.jabuti.JabutiPackage"
+			uri = "http://www.edu.br/unijui/gca/jabuti/Jabuti"
+			class = "br.edu.unijui.gca.jabuti.jabuti.JabutiPackage"
 			genModel = "model/custom/Jabuti.genmodel" />
 	</extension>
 </plugin>

@@ -1,51 +1,51 @@
-<?xml version="1.0" encoding="windows-1252"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <plugin>
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.XtextEditor"
 			contributorClass="org.eclipse.ui.editors.text.TextEditorActionContributor"
 			default="true"
 			extensions="jabuti"
-			id="br.edu.unijui.gca.Jabuti"
+			id="br.edu.unijui.gca.jabuti.Jabuti"
 			name="Jabuti Editor">
 		</editor>
 	</extension>
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclarationHandler"
 			commandId="org.eclipse.xtext.ui.editor.hyperlinking.OpenDeclaration">
 			<activeWhen>
 				<reference
-					definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+					definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
-			commandId="br.edu.unijui.gca.Jabuti.validate">
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.handler.ValidateActionHandler"
+			commandId="br.edu.unijui.gca.jabuti.Jabuti.validate">
 			<activeWhen>
 				<reference
-					definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+					definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
 		<!-- copy qualified name -->
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName">
 			<activeWhen>
-				<reference definitionId="br.edu.unijui.gca.Jabuti.Editor.opened" />
+				<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened" />
 			</activeWhen>
 		</handler>
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedNameHandler"
 			commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.OutlineCopyQualifiedName">
 			<activeWhen>
 				<and>
-					<reference definitionId="br.edu.unijui.gca.Jabuti.XtextEditor.opened" />
+					<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.XtextEditor.opened" />
 					<iterate>
 						<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 					</iterate>
@@ -54,22 +54,22 @@
 		</handler>
 	</extension>
 	<extension point="org.eclipse.core.expressions.definitions">
-		<definition id="br.edu.unijui.gca.Jabuti.Editor.opened">
+		<definition id="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 			<and>
 				<reference definitionId="isActiveEditorAnInstanceOfXtextEditor"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="br.edu.unijui.gca.Jabuti"
+						value="br.edu.unijui.gca.jabuti.Jabuti"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
 		</definition>
-		<definition id="br.edu.unijui.gca.Jabuti.XtextEditor.opened">
+		<definition id="br.edu.unijui.gca.jabuti.Jabuti.XtextEditor.opened">
 			<and>
 				<reference definitionId="isXtextEditorActive"/>
 				<with variable="activeEditor">
 					<test property="org.eclipse.xtext.ui.editor.XtextEditor.languageName"
-						value="br.edu.unijui.gca.Jabuti"
+						value="br.edu.unijui.gca.jabuti.Jabuti"
 						forcePluginActivation="true"/>
 				</with>
 			</and>
@@ -78,33 +78,33 @@
 	<extension
 			point="org.eclipse.ui.preferencePages">
 		<page
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="br.edu.unijui.gca.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti"
 			name="Jabuti">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 		</page>
 		<page
-			category="br.edu.unijui.gca.Jabuti"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
-			id="br.edu.unijui.gca.Jabuti.coloring"
+			category="br.edu.unijui.gca.jabuti.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.syntaxcoloring.SyntaxColoringPreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti.coloring"
 			name="Syntax Coloring">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 		</page>
 		<page
-			category="br.edu.unijui.gca.Jabuti"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
-			id="br.edu.unijui.gca.Jabuti.templates"
+			category="br.edu.unijui.gca.jabuti.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.templates.XtextTemplatePreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti.templates"
 			name="Templates">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 		</page>
 	</extension>
 	<extension
 			point="org.eclipse.ui.propertyPages">
 		<page
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
-			id="br.edu.unijui.gca.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.preferences.LanguageRootPreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti"
 			name="Jabuti">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -114,14 +114,14 @@
 	<extension
 		point="org.eclipse.ui.keywords">
 		<keyword
-			id="br.edu.unijui.gca.ui.keyword_Jabuti"
+			id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"
 			label="Jabuti"/>
 	</extension>
 	<extension
 		point="org.eclipse.ui.commands">
 		<command
 			description="Trigger expensive validation"
-			id="br.edu.unijui.gca.Jabuti.validate"
+			id="br.edu.unijui.gca.jabuti.Jabuti.validate"
 			name="Validate">
 		</command>
 		<!-- copy qualified name -->
@@ -142,12 +142,12 @@
 		<menuContribution
 			locationURI="popup:#TextEditorContext?after=group.edit">
 			<command
-				commandId="br.edu.unijui.gca.Jabuti.validate"
+				commandId="br.edu.unijui.gca.jabuti.Jabuti.validate"
 				style="push"
 				tooltip="Trigger expensive validation">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+						definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -157,7 +157,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="br.edu.unijui.gca.Jabuti.Editor.opened" />
+					<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -165,7 +165,7 @@
 			<command commandId="org.eclipse.xtext.ui.editor.copyqualifiedname.EditorCopyQualifiedName"
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="br.edu.unijui.gca.Jabuti.Editor.opened" />
+					<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
@@ -174,7 +174,7 @@
 				style="push" tooltip="Copy Qualified Name">
 				<visibleWhen checkEnabled="false">
 					<and>
-						<reference definitionId="br.edu.unijui.gca.Jabuti.XtextEditor.opened" />
+						<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.XtextEditor.opened" />
 						<iterate>
 							<adapt type="org.eclipse.xtext.ui.editor.outline.IOutlineNode" />
 						</iterate>
@@ -187,7 +187,7 @@
 		<menuContribution locationURI="popup:#TextEditorContext?endof=group.find">
 			<command commandId="org.eclipse.xtext.ui.editor.FindReferences">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+					<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -195,11 +195,11 @@
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.findrefs.FindReferencesHandler"
 			commandId="org.eclipse.xtext.ui.editor.FindReferences">
 			<activeWhen>
 				<reference
-					definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+					definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -208,7 +208,7 @@
 		<content-type
 			base-type="org.eclipse.core.runtime.text"
 			file-extensions="jabuti"
-			id="br.edu.unijui.gca.Jabuti.contenttype"
+			id="br.edu.unijui.gca.jabuti.Jabuti.contenttype"
 			name="Jabuti File"
 			priority="normal">
 		</content-type>
@@ -217,17 +217,17 @@
 	<extension
 		point="org.eclipse.emf.ecore.extension_parser">
 		<parser
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.resource.IResourceFactory"
 			type="jabuti">
 		</parser>
 	</extension>
 	<extension point="org.eclipse.xtext.extension_resourceServiceProvider">
 		<resourceServiceProvider
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.resource.IResourceUIServiceProvider"
 			uriExtension="jabuti">
 		</resourceServiceProvider>
 	</extension>
-	<!-- marker definitions for br.edu.unijui.gca.Jabuti -->
+	<!-- marker definitions for br.edu.unijui.gca.jabuti.Jabuti -->
 	<extension
 			id="jabuti.check.fast"
 			name="Jabuti Problem"
@@ -251,34 +251,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="br.edu.unijui.gca.Jabuti"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
-			id="br.edu.unijui.gca.Jabuti.validator.preferencePage"
+			category="br.edu.unijui.gca.jabuti.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.validation.ValidatorPreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti.validator.preferencePage"
 			name="Errors/Warnings">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.xtext.builder.participant">
 		<participant
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.builder.IXtextBuilderParticipant"
 			fileExtensions="jabuti"/>
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="br.edu.unijui.gca.Jabuti"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="br.edu.unijui.gca.Jabuti.compiler.preferencePage"
+			category="br.edu.unijui.gca.jabuti.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti.compiler.preferencePage"
 			name="Compiler">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.ui.propertyPages">
 		<page
-			category="br.edu.unijui.gca.Jabuti"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
-			id="br.edu.unijui.gca.Jabuti.compiler.propertyPage"
+			category="br.edu.unijui.gca.jabuti.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.builder.preferences.BuilderPreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti.compiler.propertyPage"
 			name="Compiler">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 			<enabledWhen>
 				<adapt type="org.eclipse.core.resources.IProject"/>
 			</enabledWhen>
@@ -289,20 +289,20 @@
 		<menuContribution locationURI="popup:#TextEditorContext?after=xtext.ui.openDeclaration">
 			<command
 				commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand"
-				id="br.edu.unijui.gca.Jabuti.OpenGeneratedCode"
+				id="br.edu.unijui.gca.jabuti.Jabuti.OpenGeneratedCode"
 				style="push">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="br.edu.unijui.gca.Jabuti.Editor.opened" />
+					<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened" />
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.generator.trace.OpenGeneratedFileHandler"
 			commandId="org.eclipse.xtext.ui.OpenGeneratedFileCommand">
 			<activeWhen>
-				<reference definitionId="br.edu.unijui.gca.Jabuti.Editor.opened" />
+				<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened" />
 			</activeWhen>
 		</handler>
 	</extension>
@@ -310,11 +310,11 @@
 	<extension
 		point="org.eclipse.ui.handlers">
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.outline.quickoutline.ShowQuickOutlineActionHandler"
 			commandId="org.eclipse.xtext.ui.editor.outline.QuickOutline">
 			<activeWhen>
 				<reference
-					definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+					definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -334,16 +334,16 @@
 				style="push"
 				tooltip="Open Quick Outline">
 				<visibleWhen checkEnabled="false">
-					<reference definitionId="br.edu.unijui.gca.Jabuti.Editor.opened"/>
+					<reference definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened"/>
 				</visibleWhen>
 			</command>
 		</menuContribution>
 	</extension>
-	<!-- quickfix marker resolution generator for br.edu.unijui.gca.Jabuti -->
+	<!-- quickfix marker resolution generator for br.edu.unijui.gca.jabuti.Jabuti -->
 	<extension
 			point="org.eclipse.ui.ide.markerResolution">
 		<markerResolutionGenerator
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="br.edu.unijui.gca.jabuti.ui.jabuti.check.fast">
 			<attribute
 				name="FIXABLE_KEY"
@@ -351,7 +351,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="br.edu.unijui.gca.jabuti.ui.jabuti.check.normal">
 			<attribute
 				name="FIXABLE_KEY"
@@ -359,7 +359,7 @@
 			</attribute>
 		</markerResolutionGenerator>
 		<markerResolutionGenerator
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.quickfix.MarkerResolutionGenerator"
 			markerType="br.edu.unijui.gca.jabuti.ui.jabuti.check.expensive">
 			<attribute
 				name="FIXABLE_KEY"
@@ -370,11 +370,11 @@
 	<!-- Rename Refactoring -->
 	<extension point="org.eclipse.ui.handlers">
 		<handler
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.DefaultRenameElementHandler"
 			commandId="org.eclipse.xtext.ui.refactoring.RenameElement">
 			<activeWhen>
 				<reference
-					definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+					definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 				</reference>
 			</activeWhen>
 		</handler>
@@ -386,7 +386,7 @@
 				style="push">
 				<visibleWhen checkEnabled="false">
 					<reference
-						definitionId="br.edu.unijui.gca.Jabuti.Editor.opened">
+						definitionId="br.edu.unijui.gca.jabuti.Jabuti.Editor.opened">
 					</reference>
 				</visibleWhen>
 			</command>
@@ -394,34 +394,34 @@
 	</extension>
 	<extension point="org.eclipse.ui.preferencePages">
 		<page
-			category="br.edu.unijui.gca.Jabuti"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
-			id="br.edu.unijui.gca.Jabuti.refactoring"
+			category="br.edu.unijui.gca.jabuti.Jabuti"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.refactoring.ui.RefactoringPreferencePage"
+			id="br.edu.unijui.gca.jabuti.Jabuti.refactoring"
 			name="Refactoring">
-			<keywordReference id="br.edu.unijui.gca.ui.keyword_Jabuti"/>
+			<keywordReference id="br.edu.unijui.gca.jabuti.ui.keyword_Jabuti"/>
 		</page>
 	</extension>
 	<extension point="org.eclipse.compare.contentViewers">
-		<viewer id="br.edu.unijui.gca.Jabuti.compare.contentViewers"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="br.edu.unijui.gca.jabuti.Jabuti.compare.contentViewers"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="jabuti">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="br.edu.unijui.gca.Jabuti.contenttype"
-			contentViewerId="br.edu.unijui.gca.Jabuti.compare.contentViewers" />
+			contentTypeId="br.edu.unijui.gca.jabuti.Jabuti.contenttype"
+			contentViewerId="br.edu.unijui.gca.jabuti.Jabuti.compare.contentViewers" />
 	</extension>
 	<extension point="org.eclipse.compare.contentMergeViewers">
-		<viewer id="br.edu.unijui.gca.Jabuti.compare.contentMergeViewers"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
+		<viewer id="br.edu.unijui.gca.jabuti.Jabuti.compare.contentMergeViewers"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.compare.InjectableViewerCreator"
 			extensions="jabuti" label="Jabuti Compare">
 		</viewer>
 		<contentTypeBinding
-			contentTypeId="br.edu.unijui.gca.Jabuti.contenttype"
-			contentMergeViewerId="br.edu.unijui.gca.Jabuti.compare.contentMergeViewers" />
+			contentTypeId="br.edu.unijui.gca.jabuti.Jabuti.contenttype"
+			contentMergeViewerId="br.edu.unijui.gca.jabuti.Jabuti.compare.contentMergeViewers" />
 	</extension>
 	<extension point="org.eclipse.ui.editors.documentProviders">
-		<provider id="br.edu.unijui.gca.Jabuti.editors.documentProviders"
-			class="br.edu.unijui.gca.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
+		<provider id="br.edu.unijui.gca.jabuti.Jabuti.editors.documentProviders"
+			class="br.edu.unijui.gca.jabuti.ui.JabutiExecutableExtensionFactory:org.eclipse.xtext.ui.editor.model.XtextDocumentProvider"
 			extensions="jabuti">
 		</provider>
 	</extension>

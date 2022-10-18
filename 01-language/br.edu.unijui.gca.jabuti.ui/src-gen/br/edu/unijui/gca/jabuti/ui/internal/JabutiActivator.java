@@ -3,8 +3,8 @@
  */
 package br.edu.unijui.gca.jabuti.ui.internal;
 
-import br.edu.unijui.gca.JabutiRuntimeModule;
-import br.edu.unijui.gca.ui.JabutiUiModule;
+import br.edu.unijui.gca.jabuti.JabutiRuntimeModule;
+import br.edu.unijui.gca.jabuti.ui.JabutiUiModule;
 import com.google.common.collect.Maps;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
@@ -23,7 +23,7 @@ import org.osgi.framework.BundleContext;
 public class JabutiActivator extends AbstractUIPlugin {
 
 	public static final String PLUGIN_ID = "br.edu.unijui.gca.jabuti.ui";
-	public static final String BR_EDU_UNIJUI_GCA_JABUTI = "br.edu.unijui.gca.Jabuti";
+	public static final String BR_EDU_UNIJUI_GCA_JABUTI_JABUTI = "br.edu.unijui.gca.jabuti.Jabuti";
 	
 	private static final Logger logger = Logger.getLogger(JabutiActivator.class);
 	
@@ -73,14 +73,14 @@ public class JabutiActivator extends AbstractUIPlugin {
 	}
 	
 	protected com.google.inject.Module getRuntimeModule(String grammar) {
-		if (BR_EDU_UNIJUI_GCA_JABUTI.equals(grammar)) {
+		if (BR_EDU_UNIJUI_GCA_JABUTI_JABUTI.equals(grammar)) {
 			return new JabutiRuntimeModule();
 		}
 		throw new IllegalArgumentException(grammar);
 	}
 	
 	protected com.google.inject.Module getUiModule(String grammar) {
-		if (BR_EDU_UNIJUI_GCA_JABUTI.equals(grammar)) {
+		if (BR_EDU_UNIJUI_GCA_JABUTI_JABUTI.equals(grammar)) {
 			return new JabutiUiModule(this);
 		}
 		throw new IllegalArgumentException(grammar);
