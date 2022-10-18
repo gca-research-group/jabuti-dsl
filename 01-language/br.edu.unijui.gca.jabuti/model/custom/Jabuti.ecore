@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="jabuti" nsURI="http://www.edu.br/unijui/gca/Jabuti" nsPrefix="jabuti">
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contracts" upperBound="-1"
+        eType="#//Contract" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Contract">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="beginDate" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dueDate" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="application" eType="#//Application"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" eType="#//Process"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" upperBound="-1"
+        eType="#//Variable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clauses" upperBound="-1"
+        eType="#//Clause" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Variable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessRule" upperBound="-1"
+        eType="#//BusinessRule" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clause">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//Operation"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" eType="#//Condition"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onBreach" eType="#//OnBreach"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onSuccess" eType="#//OnSuccess"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Operation">
+    <eLiterals name="PUSH" literal="push"/>
+    <eLiterals name="POLL" value="1" literal="poll"/>
+    <eLiterals name="WRITE" value="2" literal="write"/>
+    <eLiterals name="READ" value="3" literal="read"/>
+    <eLiterals name="REQUEST" value="4" literal="request"/>
+    <eLiterals name="RESPONSE" value="5" literal="response"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessRule" eSuperTypes="#//Condition"/>
+  <eClassifiers xsi:type="ecore:EClass" name="CompositeCondition" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//BusinessRule" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperators" upperBound="-1"
+        eType="#//LogicalOperator" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//Condition">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditions" upperBound="-1"
+        eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LogicalOperator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OperationLimit" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationsNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessDay" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//WeekDay"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="#//WeekDay"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="WeekDay">
+    <eLiterals name="SUNDAY" literal="Sunday"/>
+    <eLiterals name="MONDAY" value="1" literal="Monday"/>
+    <eLiterals name="TUESDAY" value="2" literal="Tuesday"/>
+    <eLiterals name="WEDNESDAY" value="3" literal="Wednesday"/>
+    <eLiterals name="THURSDAY" value="4" literal="Thursday"/>
+    <eLiterals name="FRIDAY" value="5" literal="Friday"/>
+    <eLiterals name="SATURDAY" value="6" literal="Saturday"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TimeUnit">
+    <eLiterals name="SECOND" literal="Second"/>
+    <eLiterals name="MINUTE" value="1" literal="Minute"/>
+    <eLiterals name="HOUR" value="2" literal="Hour"/>
+    <eLiterals name="DAY" value="3" literal="Day"/>
+    <eLiterals name="WEEK" value="4" literal="Week"/>
+    <eLiterals name="MONTH" value="5" literal="Month"/>
+    <eLiterals name="YEAR" value="6" literal="Year"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeInterval" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SessionInterval" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="messagecontent" eType="#//MessageContent"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//BusinessRule">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="binaryOperator" eType="#//BinaryOperator"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stringValue" eType="#//StringValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//VariableValue"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="numericValue" eType="#//NumericValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryOperator" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Party">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//Party"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Party"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OnSuccess">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnBreach">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="message" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BusinessAction" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventLog" eSuperTypes="#//Action"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralValue" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumericValue" eSuperTypes="#//LiteralValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StringValue" eSuperTypes="#//LiteralValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VariableValue" eSuperTypes="#//LiteralValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionCall" eSuperTypes="#//LiteralValue">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//Expression" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryOperator" eSuperTypes="#//Expression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Right" eSuperTypes="#//Clause"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Obligation" eSuperTypes="#//Clause"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Prohibition" eSuperTypes="#//Clause"/>
+</ecore:EPackage>
