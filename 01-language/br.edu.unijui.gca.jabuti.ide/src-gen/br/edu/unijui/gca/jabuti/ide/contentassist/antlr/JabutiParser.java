@@ -31,10 +31,34 @@ public class JabutiParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, JabutiGrammarAccess grammarAccess) {
-			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-			builder.put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-			builder.put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
-			builder.put(grammarAccess.getGreetingAccess().getDescAssignment_4(), "rule__Greeting__DescAssignment_4");
+			builder.put(grammarAccess.getClauseAccess().getAlternatives_0(), "rule__Clause__Alternatives_0");
+			builder.put(grammarAccess.getPartyAccess().getAlternatives(), "rule__Party__Alternatives");
+			builder.put(grammarAccess.getRolePlayerAccess().getAlternatives(), "rule__RolePlayer__Alternatives");
+			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+			builder.put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
+			builder.put(grammarAccess.getContractAccess().getGroup(), "rule__Contract__Group__0");
+			builder.put(grammarAccess.getClauseAccess().getGroup(), "rule__Clause__Group__0");
+			builder.put(grammarAccess.getRightAccess().getGroup(), "rule__Right__Group__0");
+			builder.put(grammarAccess.getObligationAccess().getGroup(), "rule__Obligation__Group__0");
+			builder.put(grammarAccess.getProhibitionAccess().getGroup(), "rule__Prohibition__Group__0");
+			builder.put(grammarAccess.getApplicationAccess().getGroup(), "rule__Application__Group__0");
+			builder.put(grammarAccess.getProcessAccess().getGroup(), "rule__Process__Group__0");
+			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
+			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
+			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
+			builder.put(grammarAccess.getModelAccess().getImportsAssignment_0(), "rule__Model__ImportsAssignment_0");
+			builder.put(grammarAccess.getModelAccess().getContractAssignment_1(), "rule__Model__ContractAssignment_1");
+			builder.put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
+			builder.put(grammarAccess.getContractAccess().getNameAssignment_1(), "rule__Contract__NameAssignment_1");
+			builder.put(grammarAccess.getContractAccess().getApplicationAssignment_5(), "rule__Contract__ApplicationAssignment_5");
+			builder.put(grammarAccess.getContractAccess().getProcessAssignment_6(), "rule__Contract__ProcessAssignment_6");
+			builder.put(grammarAccess.getContractAccess().getClausesAssignment_10(), "rule__Contract__ClausesAssignment_10");
+			builder.put(grammarAccess.getClauseAccess().getRoleplayerAssignment_4(), "rule__Clause__RoleplayerAssignment_4");
+			builder.put(grammarAccess.getRightAccess().getNameAssignment_1(), "rule__Right__NameAssignment_1");
+			builder.put(grammarAccess.getObligationAccess().getNameAssignment_1(), "rule__Obligation__NameAssignment_1");
+			builder.put(grammarAccess.getProhibitionAccess().getNameAssignment_1(), "rule__Prohibition__NameAssignment_1");
+			builder.put(grammarAccess.getApplicationAccess().getNameAssignment_2(), "rule__Application__NameAssignment_2");
+			builder.put(grammarAccess.getProcessAccess().getNameAssignment_2(), "rule__Process__NameAssignment_2");
 		}
 	}
 	

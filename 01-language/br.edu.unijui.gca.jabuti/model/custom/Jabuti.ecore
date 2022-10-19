@@ -2,11 +2,37 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="jabuti" nsURI="http://www.edu.br/unijui/gca/jabuti/Jabuti" nsPrefix="jabuti">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="greetings" upperBound="-1"
-        eType="#//Greeting" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="imports" upperBound="-1"
+        eType="#//Import" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contract" lowerBound="1"
+        eType="#//Contract" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Greeting">
+  <eClassifiers xsi:type="ecore:EClass" name="Import">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="importedNamespace" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Contract">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="desc" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="clauses" lowerBound="1"
+        upperBound="-1" eType="#//Clause" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="process" lowerBound="1"
+        eType="#//Process" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="application" lowerBound="1"
+        eType="#//Application" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Clause">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleplayer" eType="#//RolePlayer"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Party">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//Party"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Process" eSuperTypes="#//Party"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Right" eSuperTypes="#//Clause"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Obligation" eSuperTypes="#//Clause"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Prohibition" eSuperTypes="#//Clause"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="RolePlayer">
+    <eLiterals name="PROCESS"/>
+    <eLiterals name="APPLICATION" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

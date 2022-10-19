@@ -3,7 +3,16 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.util;
 
-import br.edu.unijui.gca.jabuti.jabuti.*;
+import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Import;
+import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.Obligation;
+import br.edu.unijui.gca.jabuti.jabuti.Party;
+import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
+import br.edu.unijui.gca.jabuti.jabuti.Right;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -80,10 +89,71 @@ public class JabutiSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case JabutiPackage.GREETING:
+			case JabutiPackage.IMPORT:
 			{
-				Greeting greeting = (Greeting)theEObject;
-				T result = caseGreeting(greeting);
+				Import import_ = (Import)theEObject;
+				T result = caseImport(import_);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.CONTRACT:
+			{
+				Contract contract = (Contract)theEObject;
+				T result = caseContract(contract);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.CLAUSE:
+			{
+				Clause clause = (Clause)theEObject;
+				T result = caseClause(clause);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.PARTY:
+			{
+				Party party = (Party)theEObject;
+				T result = caseParty(party);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.APPLICATION:
+			{
+				Application application = (Application)theEObject;
+				T result = caseApplication(application);
+				if (result == null) result = caseParty(application);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.PROCESS:
+			{
+				br.edu.unijui.gca.jabuti.jabuti.Process process = (br.edu.unijui.gca.jabuti.jabuti.Process)theEObject;
+				T result = caseProcess(process);
+				if (result == null) result = caseParty(process);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.RIGHT:
+			{
+				Right right = (Right)theEObject;
+				T result = caseRight(right);
+				if (result == null) result = caseClause(right);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.OBLIGATION:
+			{
+				Obligation obligation = (Obligation)theEObject;
+				T result = caseObligation(obligation);
+				if (result == null) result = caseClause(obligation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.PROHIBITION:
+			{
+				Prohibition prohibition = (Prohibition)theEObject;
+				T result = caseProhibition(prohibition);
+				if (result == null) result = caseClause(prohibition);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -108,17 +178,145 @@ public class JabutiSwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Import</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Import</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseGreeting(Greeting object)
+	public T caseImport(Import object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Contract</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Contract</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseContract(Contract object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Clause</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Clause</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseClause(Clause object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Party</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseParty(Party object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Application</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Application</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseApplication(Application object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Process</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProcess(br.edu.unijui.gca.jabuti.jabuti.Process object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Right</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Right</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRight(Right object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Obligation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Obligation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseObligation(Obligation object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Prohibition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Prohibition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseProhibition(Prohibition object)
 	{
 		return null;
 	}

@@ -1,0 +1,12 @@
+contract CredityAgency{
+	parties{
+		application = "Eldair"
+		process = "Fabricio"
+	}
+	clauses {
+		obligation comprar {
+			rolePlayer = process
+		}	
+	}
+	
+}

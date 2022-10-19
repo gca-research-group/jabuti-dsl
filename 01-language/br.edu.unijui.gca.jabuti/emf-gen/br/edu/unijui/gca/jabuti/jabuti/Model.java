@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Model#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Model#getImports <em>Imports</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Model#getContract <em>Contract</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getModel()
@@ -26,15 +27,37 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.Greeting}.
+	 * Returns the value of the '<em><b>Imports</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.Import}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Greetings</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getModel_Greetings()
+	 * @return the value of the '<em>Imports</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getModel_Imports()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Greeting> getGreetings();
+	EList<Import> getImports();
+
+	/**
+	 * Returns the value of the '<em><b>Contract</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Contract</em>' containment reference.
+	 * @see #setContract(Contract)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getModel_Contract()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Contract getContract();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Model#getContract <em>Contract</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Contract</em>' containment reference.
+	 * @see #getContract()
+	 * @generated
+	 */
+	void setContract(Contract value);
 
 } // Model

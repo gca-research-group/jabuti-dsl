@@ -3,7 +3,16 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.util;
 
-import br.edu.unijui.gca.jabuti.jabuti.*;
+import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Import;
+import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.Obligation;
+import br.edu.unijui.gca.jabuti.jabuti.Party;
+import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
+import br.edu.unijui.gca.jabuti.jabuti.Right;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -81,9 +90,49 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 				return createModelAdapter();
 			}
 			@Override
-			public Adapter caseGreeting(Greeting object)
+			public Adapter caseImport(Import object)
 			{
-				return createGreetingAdapter();
+				return createImportAdapter();
+			}
+			@Override
+			public Adapter caseContract(Contract object)
+			{
+				return createContractAdapter();
+			}
+			@Override
+			public Adapter caseClause(Clause object)
+			{
+				return createClauseAdapter();
+			}
+			@Override
+			public Adapter caseParty(Party object)
+			{
+				return createPartyAdapter();
+			}
+			@Override
+			public Adapter caseApplication(Application object)
+			{
+				return createApplicationAdapter();
+			}
+			@Override
+			public Adapter caseProcess(br.edu.unijui.gca.jabuti.jabuti.Process object)
+			{
+				return createProcessAdapter();
+			}
+			@Override
+			public Adapter caseRight(Right object)
+			{
+				return createRightAdapter();
+			}
+			@Override
+			public Adapter caseObligation(Obligation object)
+			{
+				return createObligationAdapter();
+			}
+			@Override
+			public Adapter caseProhibition(Prohibition object)
+			{
+				return createProhibitionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -123,16 +172,136 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Greeting <em>Greeting</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Import <em>Import</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Greeting
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Import
 	 * @generated
 	 */
-	public Adapter createGreetingAdapter()
+	public Adapter createImportAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Contract <em>Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract
+	 * @generated
+	 */
+	public Adapter createContractAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Clause <em>Clause</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause
+	 * @generated
+	 */
+	public Adapter createClauseAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Party <em>Party</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Party
+	 * @generated
+	 */
+	public Adapter createPartyAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Application <em>Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Application
+	 * @generated
+	 */
+	public Adapter createApplicationAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Process <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Process
+	 * @generated
+	 */
+	public Adapter createProcessAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Right <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Right
+	 * @generated
+	 */
+	public Adapter createRightAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Obligation <em>Obligation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Obligation
+	 * @generated
+	 */
+	public Adapter createObligationAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Prohibition <em>Prohibition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Prohibition
+	 * @generated
+	 */
+	public Adapter createProhibitionAdapter()
 	{
 		return null;
 	}

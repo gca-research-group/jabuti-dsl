@@ -5,6 +5,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -68,13 +69,22 @@ public interface JabutiPackage extends EPackage
 	int MODEL = 0;
 
 	/**
-	 * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Imports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL__GREETINGS = 0;
+	int MODEL__IMPORTS = 0;
+
+	/**
+	 * The feature id for the '<em><b>Contract</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODEL__CONTRACT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Model</em>' class.
@@ -83,17 +93,45 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = 1;
+	int MODEL_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.GreetingImpl <em>Greeting</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ImportImpl <em>Import</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.GreetingImpl
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getGreeting()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ImportImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getImport()
 	 * @generated
 	 */
-	int GREETING = 1;
+	int IMPORT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT__IMPORTED_NAMESPACE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Import</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IMPORT_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl <em>Contract</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getContract()
+	 * @generated
+	 */
+	int CONTRACT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,25 +140,285 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int GREETING__NAME = 0;
+	int CONTRACT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Desc</b></em>' attribute.
+	 * The feature id for the '<em><b>Clauses</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GREETING__DESC = 1;
+	int CONTRACT__CLAUSES = 1;
 
 	/**
-	 * The number of structural features of the '<em>Greeting</em>' class.
+	 * The feature id for the '<em><b>Process</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GREETING_FEATURE_COUNT = 2;
+	int CONTRACT__PROCESS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Application</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__APPLICATION = 3;
+
+	/**
+	 * The number of structural features of the '<em>Contract</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT_FEATURE_COUNT = 4;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl <em>Clause</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getClause()
+	 * @generated
+	 */
+	int CLAUSE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__ROLEPLAYER = 1;
+
+	/**
+	 * The number of structural features of the '<em>Clause</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE_FEATURE_COUNT = 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl <em>Party</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getParty()
+	 * @generated
+	 */
+	int PARTY = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY__NAME = 0;
+
+	/**
+	 * The number of structural features of the '<em>Party</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARTY_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ApplicationImpl <em>Application</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ApplicationImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getApplication()
+	 * @generated
+	 */
+	int APPLICATION = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION__NAME = PARTY__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Application</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int APPLICATION_FEATURE_COUNT = PARTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ProcessImpl <em>Process</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ProcessImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getProcess()
+	 * @generated
+	 */
+	int PROCESS = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS__NAME = PARTY__NAME;
+
+	/**
+	 * The number of structural features of the '<em>Process</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROCESS_FEATURE_COUNT = PARTY_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.RightImpl <em>Right</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.RightImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRight()
+	 * @generated
+	 */
+	int RIGHT = 7;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT__NAME = CLAUSE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT__ROLEPLAYER = CLAUSE__ROLEPLAYER;
+
+	/**
+	 * The number of structural features of the '<em>Right</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT_FEATURE_COUNT = CLAUSE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ObligationImpl <em>Obligation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ObligationImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getObligation()
+	 * @generated
+	 */
+	int OBLIGATION = 8;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION__NAME = CLAUSE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION__ROLEPLAYER = CLAUSE__ROLEPLAYER;
+
+	/**
+	 * The number of structural features of the '<em>Obligation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION_FEATURE_COUNT = CLAUSE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ProhibitionImpl <em>Prohibition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ProhibitionImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getProhibition()
+	 * @generated
+	 */
+	int PROHIBITION = 9;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION__NAME = CLAUSE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION__ROLEPLAYER = CLAUSE__ROLEPLAYER;
+
+	/**
+	 * The number of structural features of the '<em>Prohibition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION_FEATURE_COUNT = CLAUSE_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRolePlayer()
+	 * @generated
+	 */
+	int ROLE_PLAYER = 10;
 
 
 	/**
@@ -134,47 +432,214 @@ public interface JabutiPackage extends EPackage
 	EClass getModel();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Model#getGreetings <em>Greetings</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Model#getImports <em>Imports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Greetings</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Model#getGreetings()
+	 * @return the meta object for the containment reference list '<em>Imports</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Model#getImports()
 	 * @see #getModel()
 	 * @generated
 	 */
-	EReference getModel_Greetings();
+	EReference getModel_Imports();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Greeting <em>Greeting</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Model#getContract <em>Contract</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Greeting</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Greeting
+	 * @return the meta object for the containment reference '<em>Contract</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Model#getContract()
+	 * @see #getModel()
 	 * @generated
 	 */
-	EClass getGreeting();
+	EReference getModel_Contract();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Greeting#getName <em>Name</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Import <em>Import</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Import</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Import
+	 * @generated
+	 */
+	EClass getImport();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Import#getImportedNamespace <em>Imported Namespace</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Imported Namespace</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Import#getImportedNamespace()
+	 * @see #getImport()
+	 * @generated
+	 */
+	EAttribute getImport_ImportedNamespace();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Contract <em>Contract</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Contract</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract
+	 * @generated
+	 */
+	EClass getContract();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Greeting#getName()
-	 * @see #getGreeting()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract#getName()
+	 * @see #getContract()
 	 * @generated
 	 */
-	EAttribute getGreeting_Name();
+	EAttribute getContract_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Greeting#getDesc <em>Desc</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getClauses <em>Clauses</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Desc</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Greeting#getDesc()
-	 * @see #getGreeting()
+	 * @return the meta object for the containment reference list '<em>Clauses</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract#getClauses()
+	 * @see #getContract()
 	 * @generated
 	 */
-	EAttribute getGreeting_Desc();
+	EReference getContract_Clauses();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getProcess <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Process</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract#getProcess()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EReference getContract_Process();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getApplication <em>Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Application</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract#getApplication()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EReference getContract_Application();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Clause <em>Clause</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Clause</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause
+	 * @generated
+	 */
+	EClass getClause();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getName()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRoleplayer <em>Roleplayer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Roleplayer</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getRoleplayer()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_Roleplayer();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Party <em>Party</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Party</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Party
+	 * @generated
+	 */
+	EClass getParty();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Party#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Party#getName()
+	 * @see #getParty()
+	 * @generated
+	 */
+	EAttribute getParty_Name();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Application <em>Application</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Application</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Application
+	 * @generated
+	 */
+	EClass getApplication();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Process <em>Process</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Process</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Process
+	 * @generated
+	 */
+	EClass getProcess();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Right <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Right</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Right
+	 * @generated
+	 */
+	EClass getRight();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Obligation <em>Obligation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Obligation</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Obligation
+	 * @generated
+	 */
+	EClass getObligation();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Prohibition <em>Prohibition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Prohibition</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Prohibition
+	 * @generated
+	 */
+	EClass getProhibition();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Role Player</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
+	 * @generated
+	 */
+	EEnum getRolePlayer();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -210,22 +675,48 @@ public interface JabutiPackage extends EPackage
 		EClass MODEL = eINSTANCE.getModel();
 
 		/**
-		 * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Imports</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+		EReference MODEL__IMPORTS = eINSTANCE.getModel_Imports();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.GreetingImpl <em>Greeting</em>}' class.
+		 * The meta object literal for the '<em><b>Contract</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.GreetingImpl
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getGreeting()
 		 * @generated
 		 */
-		EClass GREETING = eINSTANCE.getGreeting();
+		EReference MODEL__CONTRACT = eINSTANCE.getModel_Contract();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ImportImpl <em>Import</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ImportImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getImport()
+		 * @generated
+		 */
+		EClass IMPORT = eINSTANCE.getImport();
+
+		/**
+		 * The meta object literal for the '<em><b>Imported Namespace</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IMPORT__IMPORTED_NAMESPACE = eINSTANCE.getImport_ImportedNamespace();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl <em>Contract</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getContract()
+		 * @generated
+		 */
+		EClass CONTRACT = eINSTANCE.getContract();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -233,15 +724,135 @@ public interface JabutiPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+		EAttribute CONTRACT__NAME = eINSTANCE.getContract_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Desc</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Clauses</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute GREETING__DESC = eINSTANCE.getGreeting_Desc();
+		EReference CONTRACT__CLAUSES = eINSTANCE.getContract_Clauses();
+
+		/**
+		 * The meta object literal for the '<em><b>Process</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT__PROCESS = eINSTANCE.getContract_Process();
+
+		/**
+		 * The meta object literal for the '<em><b>Application</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT__APPLICATION = eINSTANCE.getContract_Application();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl <em>Clause</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getClause()
+		 * @generated
+		 */
+		EClass CLAUSE = eINSTANCE.getClause();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__NAME = eINSTANCE.getClause_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Roleplayer</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__ROLEPLAYER = eINSTANCE.getClause_Roleplayer();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl <em>Party</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getParty()
+		 * @generated
+		 */
+		EClass PARTY = eINSTANCE.getParty();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARTY__NAME = eINSTANCE.getParty_Name();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ApplicationImpl <em>Application</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ApplicationImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getApplication()
+		 * @generated
+		 */
+		EClass APPLICATION = eINSTANCE.getApplication();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ProcessImpl <em>Process</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ProcessImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getProcess()
+		 * @generated
+		 */
+		EClass PROCESS = eINSTANCE.getProcess();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.RightImpl <em>Right</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.RightImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRight()
+		 * @generated
+		 */
+		EClass RIGHT = eINSTANCE.getRight();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ObligationImpl <em>Obligation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ObligationImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getObligation()
+		 * @generated
+		 */
+		EClass OBLIGATION = eINSTANCE.getObligation();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ProhibitionImpl <em>Prohibition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ProhibitionImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getProhibition()
+		 * @generated
+		 */
+		EClass PROHIBITION = eINSTANCE.getProhibition();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRolePlayer()
+		 * @generated
+		 */
+		EEnum ROLE_PLAYER = eINSTANCE.getRolePlayer();
 
 	}
 

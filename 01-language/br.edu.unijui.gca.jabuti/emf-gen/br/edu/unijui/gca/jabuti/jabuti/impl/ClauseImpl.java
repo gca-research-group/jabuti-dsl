@@ -3,8 +3,9 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.Greeting;
+import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -15,19 +16,19 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Greeting</b></em>'.
+ * An implementation of the model object '<em><b>Clause</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.GreetingImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.GreetingImpl#getDesc <em>Desc</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getName <em>Name</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getRoleplayer <em>Roleplayer</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeting
+public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -50,31 +51,31 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+	 * The default value of the '{@link #getRoleplayer() <em>Roleplayer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDesc()
+	 * @see #getRoleplayer()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DESC_EDEFAULT = null;
+	protected static final RolePlayer ROLEPLAYER_EDEFAULT = RolePlayer.PROCESS;
 
 	/**
-	 * The cached value of the '{@link #getDesc() <em>Desc</em>}' attribute.
+	 * The cached value of the '{@link #getRoleplayer() <em>Roleplayer</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDesc()
+	 * @see #getRoleplayer()
 	 * @generated
 	 * @ordered
 	 */
-	protected String desc = DESC_EDEFAULT;
+	protected RolePlayer roleplayer = ROLEPLAYER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GreetingImpl()
+	protected ClauseImpl()
 	{
 		super();
 	}
@@ -87,7 +88,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	@Override
 	protected EClass eStaticClass()
 	{
-		return JabutiPackage.Literals.GREETING;
+		return JabutiPackage.Literals.CLAUSE;
 	}
 
 	/**
@@ -112,7 +113,7 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.GREETING__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__NAME, oldName, name));
 	}
 
 	/**
@@ -121,9 +122,9 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	 * @generated
 	 */
 	@Override
-	public String getDesc()
+	public RolePlayer getRoleplayer()
 	{
-		return desc;
+		return roleplayer;
 	}
 
 	/**
@@ -132,12 +133,12 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	 * @generated
 	 */
 	@Override
-	public void setDesc(String newDesc)
+	public void setRoleplayer(RolePlayer newRoleplayer)
 	{
-		String oldDesc = desc;
-		desc = newDesc;
+		RolePlayer oldRoleplayer = roleplayer;
+		roleplayer = newRoleplayer == null ? ROLEPLAYER_EDEFAULT : newRoleplayer;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.GREETING__DESC, oldDesc, desc));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__ROLEPLAYER, oldRoleplayer, roleplayer));
 	}
 
 	/**
@@ -150,10 +151,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.GREETING__NAME:
+			case JabutiPackage.CLAUSE__NAME:
 				return getName();
-			case JabutiPackage.GREETING__DESC:
-				return getDesc();
+			case JabutiPackage.CLAUSE__ROLEPLAYER:
+				return getRoleplayer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -168,11 +169,11 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.GREETING__NAME:
+			case JabutiPackage.CLAUSE__NAME:
 				setName((String)newValue);
 				return;
-			case JabutiPackage.GREETING__DESC:
-				setDesc((String)newValue);
+			case JabutiPackage.CLAUSE__ROLEPLAYER:
+				setRoleplayer((RolePlayer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -188,11 +189,11 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.GREETING__NAME:
+			case JabutiPackage.CLAUSE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case JabutiPackage.GREETING__DESC:
-				setDesc(DESC_EDEFAULT);
+			case JabutiPackage.CLAUSE__ROLEPLAYER:
+				setRoleplayer(ROLEPLAYER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -208,10 +209,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.GREETING__NAME:
+			case JabutiPackage.CLAUSE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case JabutiPackage.GREETING__DESC:
-				return DESC_EDEFAULT == null ? desc != null : !DESC_EDEFAULT.equals(desc);
+			case JabutiPackage.CLAUSE__ROLEPLAYER:
+				return roleplayer != ROLEPLAYER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -229,10 +230,10 @@ public class GreetingImpl extends MinimalEObjectImpl.Container implements Greeti
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", desc: ");
-		result.append(desc);
+		result.append(", roleplayer: ");
+		result.append(roleplayer);
 		result.append(')');
 		return result.toString();
 	}
 
-} //GreetingImpl
+} //ClauseImpl

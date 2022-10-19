@@ -6,12 +6,34 @@
     complianceLevel="8.0" copyrightFields="false" runtimeVersion="2.20">
   <genPackages prefix="Jabuti" basePackage="br.edu.unijui.gca.jabuti" disposableProviderFactory="true"
       fileExtensions="jabuti" ecorePackage="Jabuti.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//RolePlayer">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//RolePlayer/PROCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//RolePlayer/APPLICATION"/>
+    </genEnums>
     <genClasses ecoreClass="Jabuti.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/imports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/contract"/>
     </genClasses>
-    <genClasses ecoreClass="Jabuti.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Greeting/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Greeting/desc"/>
+    <genClasses ecoreClass="Jabuti.ecore#//Import">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Import/importedNamespace"/>
     </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//Contract">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Contract/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Contract/clauses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Contract/process"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Contract/application"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//Clause">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Clause/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Clause/roleplayer"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//Party">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Party/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//Application"/>
+    <genClasses ecoreClass="Jabuti.ecore#//Process"/>
+    <genClasses ecoreClass="Jabuti.ecore#//Right"/>
+    <genClasses ecoreClass="Jabuti.ecore#//Obligation"/>
+    <genClasses ecoreClass="Jabuti.ecore#//Prohibition"/>
   </genPackages>
 </genmodel:GenModel>

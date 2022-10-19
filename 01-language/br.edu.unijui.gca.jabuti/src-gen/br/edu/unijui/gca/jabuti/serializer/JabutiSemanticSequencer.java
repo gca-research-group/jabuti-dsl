@@ -3,9 +3,14 @@
  */
 package br.edu.unijui.gca.jabuti.serializer;
 
-import br.edu.unijui.gca.jabuti.jabuti.Greeting;
+import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.Obligation;
+import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
+import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.services.JabutiGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -33,12 +38,51 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == JabutiPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case JabutiPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case JabutiPackage.APPLICATION:
+				sequence_Application(context, (Application) semanticObject); 
+				return; 
+			case JabutiPackage.CONTRACT:
+				sequence_Contract(context, (Contract) semanticObject); 
+				return; 
+			case JabutiPackage.IMPORT:
+				sequence_Import(context, (Import) semanticObject); 
 				return; 
 			case JabutiPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
+			case JabutiPackage.OBLIGATION:
+				if (rule == grammarAccess.getClauseRule()) {
+					sequence_Clause_Obligation(context, (Obligation) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getObligationRule()) {
+					sequence_Obligation(context, (Obligation) semanticObject); 
+					return; 
+				}
+				else break;
+			case JabutiPackage.PROCESS:
+				sequence_Process(context, (br.edu.unijui.gca.jabuti.jabuti.Process) semanticObject); 
+				return; 
+			case JabutiPackage.PROHIBITION:
+				if (rule == grammarAccess.getClauseRule()) {
+					sequence_Clause_Prohibition(context, (Prohibition) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getProhibitionRule()) {
+					sequence_Prohibition(context, (Prohibition) semanticObject); 
+					return; 
+				}
+				else break;
+			case JabutiPackage.RIGHT:
+				if (rule == grammarAccess.getClauseRule()) {
+					sequence_Clause_Right(context, (Right) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getRightRule()) {
+					sequence_Right(context, (Right) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -47,22 +91,123 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     Party returns Application
+	 *     Application returns Application
 	 *
 	 * Constraint:
-	 *     (name=ID desc=STRING)
+	 *     name=STRING
 	 * </pre>
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_Application(ISerializationContext context, Application semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.GREETING__NAME));
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.GREETING__DESC) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.GREETING__DESC));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.PARTY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.PARTY__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getGreetingAccess().getDescSTRINGTerminalRuleCall_4_0(), semanticObject.getDesc());
+		feeder.accept(grammarAccess.getApplicationAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Clause returns Obligation
+	 *
+	 * Constraint:
+	 *     (name=ID roleplayer=RolePlayer)
+	 * </pre>
+	 */
+	protected void sequence_Clause_Obligation(ISerializationContext context, Obligation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__NAME));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__ROLEPLAYER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__ROLEPLAYER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getObligationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClauseAccess().getRoleplayerRolePlayerEnumRuleCall_4_0(), semanticObject.getRoleplayer());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Clause returns Prohibition
+	 *
+	 * Constraint:
+	 *     (name=ID roleplayer=RolePlayer)
+	 * </pre>
+	 */
+	protected void sequence_Clause_Prohibition(ISerializationContext context, Prohibition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__NAME));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__ROLEPLAYER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__ROLEPLAYER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProhibitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClauseAccess().getRoleplayerRolePlayerEnumRuleCall_4_0(), semanticObject.getRoleplayer());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Clause returns Right
+	 *
+	 * Constraint:
+	 *     (name=ID roleplayer=RolePlayer)
+	 * </pre>
+	 */
+	protected void sequence_Clause_Right(ISerializationContext context, Right semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__NAME));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__ROLEPLAYER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__ROLEPLAYER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRightAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getClauseAccess().getRoleplayerRolePlayerEnumRuleCall_4_0(), semanticObject.getRoleplayer());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Contract returns Contract
+	 *
+	 * Constraint:
+	 *     (name=ID application=Application process=Process clauses+=Clause*)
+	 * </pre>
+	 */
+	protected void sequence_Contract(ISerializationContext context, Contract semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Import returns Import
+	 *
+	 * Constraint:
+	 *     importedNamespace=QualifiedNameWithWildcard
+	 * </pre>
+	 */
+	protected void sequence_Import(ISerializationContext context, Import semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.IMPORT__IMPORTED_NAMESPACE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.IMPORT__IMPORTED_NAMESPACE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0(), semanticObject.getImportedNamespace());
 		feeder.finish();
 	}
 	
@@ -73,11 +218,92 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     (imports+=Import* contract=Contract)
 	 * </pre>
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Obligation returns Obligation
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_Obligation(ISerializationContext context, Obligation semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getObligationAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Party returns Process
+	 *     Process returns Process
+	 *
+	 * Constraint:
+	 *     name=STRING
+	 * </pre>
+	 */
+	protected void sequence_Process(ISerializationContext context, br.edu.unijui.gca.jabuti.jabuti.Process semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.PARTY__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.PARTY__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProcessAccess().getNameSTRINGTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Prohibition returns Prohibition
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_Prohibition(ISerializationContext context, Prohibition semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getProhibitionAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Right returns Right
+	 *
+	 * Constraint:
+	 *     name=ID
+	 * </pre>
+	 */
+	protected void sequence_Right(ISerializationContext context, Right semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.CLAUSE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.CLAUSE__NAME));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getRightAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
 	}
 	
 	

@@ -3,12 +3,14 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.Greeting;
+import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -16,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,7 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ModelImpl#getImports <em>Imports</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ModelImpl#getContract <em>Contract</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +41,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
 	/**
-	 * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+	 * The cached value of the '{@link #getImports() <em>Imports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getGreetings()
+	 * @see #getImports()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Greeting> greetings;
+	protected EList<Import> imports;
+
+	/**
+	 * The cached value of the '{@link #getContract() <em>Contract</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getContract()
+	 * @generated
+	 * @ordered
+	 */
+	protected Contract contract;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -73,13 +87,63 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	 * @generated
 	 */
 	@Override
-	public EList<Greeting> getGreetings()
+	public EList<Import> getImports()
 	{
-		if (greetings == null)
+		if (imports == null)
 		{
-			greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, JabutiPackage.MODEL__GREETINGS);
+			imports = new EObjectContainmentEList<Import>(Import.class, this, JabutiPackage.MODEL__IMPORTS);
 		}
-		return greetings;
+		return imports;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Contract getContract()
+	{
+		return contract;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetContract(Contract newContract, NotificationChain msgs)
+	{
+		Contract oldContract = contract;
+		contract = newContract;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MODEL__CONTRACT, oldContract, newContract);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setContract(Contract newContract)
+	{
+		if (newContract != contract)
+		{
+			NotificationChain msgs = null;
+			if (contract != null)
+				msgs = ((InternalEObject)contract).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MODEL__CONTRACT, null, msgs);
+			if (newContract != null)
+				msgs = ((InternalEObject)newContract).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MODEL__CONTRACT, null, msgs);
+			msgs = basicSetContract(newContract, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MODEL__CONTRACT, newContract, newContract));
 	}
 
 	/**
@@ -92,8 +156,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MODEL__GREETINGS:
-				return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.MODEL__IMPORTS:
+				return ((InternalEList<?>)getImports()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.MODEL__CONTRACT:
+				return basicSetContract(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -108,8 +174,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MODEL__GREETINGS:
-				return getGreetings();
+			case JabutiPackage.MODEL__IMPORTS:
+				return getImports();
+			case JabutiPackage.MODEL__CONTRACT:
+				return getContract();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -125,9 +193,12 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MODEL__GREETINGS:
-				getGreetings().clear();
-				getGreetings().addAll((Collection<? extends Greeting>)newValue);
+			case JabutiPackage.MODEL__IMPORTS:
+				getImports().clear();
+				getImports().addAll((Collection<? extends Import>)newValue);
+				return;
+			case JabutiPackage.MODEL__CONTRACT:
+				setContract((Contract)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -143,8 +214,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MODEL__GREETINGS:
-				getGreetings().clear();
+			case JabutiPackage.MODEL__IMPORTS:
+				getImports().clear();
+				return;
+			case JabutiPackage.MODEL__CONTRACT:
+				setContract((Contract)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -160,8 +234,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MODEL__GREETINGS:
-				return greetings != null && !greetings.isEmpty();
+			case JabutiPackage.MODEL__IMPORTS:
+				return imports != null && !imports.isEmpty();
+			case JabutiPackage.MODEL__CONTRACT:
+				return contract != null;
 		}
 		return super.eIsSet(featureID);
 	}

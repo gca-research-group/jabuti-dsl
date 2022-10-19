@@ -3,13 +3,22 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.Greeting;
+import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiFactory;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.Obligation;
+import br.edu.unijui.gca.jabuti.jabuti.Party;
+import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
+import br.edu.unijui.gca.jabuti.jabuti.Right;
+import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -35,7 +44,70 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass greetingEClass = null;
+	private EClass importEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass contractEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass clauseEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass partyEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass applicationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass processEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass rightEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass obligationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass prohibitionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum rolePlayerEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -116,7 +188,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getModel_Greetings()
+	public EReference getModel_Imports()
 	{
 		return (EReference)modelEClass.getEStructuralFeatures().get(0);
 	}
@@ -127,9 +199,9 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getGreeting()
+	public EReference getModel_Contract()
 	{
-		return greetingEClass;
+		return (EReference)modelEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -138,9 +210,9 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGreeting_Name()
+	public EClass getImport()
 	{
-		return (EAttribute)greetingEClass.getEStructuralFeatures().get(0);
+		return importEClass;
 	}
 
 	/**
@@ -149,9 +221,185 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getGreeting_Desc()
+	public EAttribute getImport_ImportedNamespace()
 	{
-		return (EAttribute)greetingEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)importEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContract()
+	{
+		return contractEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getContract_Name()
+	{
+		return (EAttribute)contractEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContract_Clauses()
+	{
+		return (EReference)contractEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContract_Process()
+	{
+		return (EReference)contractEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getContract_Application()
+	{
+		return (EReference)contractEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getClause()
+	{
+		return clauseEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getClause_Name()
+	{
+		return (EAttribute)clauseEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getClause_Roleplayer()
+	{
+		return (EAttribute)clauseEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getParty()
+	{
+		return partyEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getParty_Name()
+	{
+		return (EAttribute)partyEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getApplication()
+	{
+		return applicationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getProcess()
+	{
+		return processEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getRight()
+	{
+		return rightEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getObligation()
+	{
+		return obligationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getProhibition()
+	{
+		return prohibitionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getRolePlayer()
+	{
+		return rolePlayerEEnum;
 	}
 
 	/**
@@ -186,11 +434,37 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 
 		// Create classes and their features
 		modelEClass = createEClass(MODEL);
-		createEReference(modelEClass, MODEL__GREETINGS);
+		createEReference(modelEClass, MODEL__IMPORTS);
+		createEReference(modelEClass, MODEL__CONTRACT);
 
-		greetingEClass = createEClass(GREETING);
-		createEAttribute(greetingEClass, GREETING__NAME);
-		createEAttribute(greetingEClass, GREETING__DESC);
+		importEClass = createEClass(IMPORT);
+		createEAttribute(importEClass, IMPORT__IMPORTED_NAMESPACE);
+
+		contractEClass = createEClass(CONTRACT);
+		createEAttribute(contractEClass, CONTRACT__NAME);
+		createEReference(contractEClass, CONTRACT__CLAUSES);
+		createEReference(contractEClass, CONTRACT__PROCESS);
+		createEReference(contractEClass, CONTRACT__APPLICATION);
+
+		clauseEClass = createEClass(CLAUSE);
+		createEAttribute(clauseEClass, CLAUSE__NAME);
+		createEAttribute(clauseEClass, CLAUSE__ROLEPLAYER);
+
+		partyEClass = createEClass(PARTY);
+		createEAttribute(partyEClass, PARTY__NAME);
+
+		applicationEClass = createEClass(APPLICATION);
+
+		processEClass = createEClass(PROCESS);
+
+		rightEClass = createEClass(RIGHT);
+
+		obligationEClass = createEClass(OBLIGATION);
+
+		prohibitionEClass = createEClass(PROHIBITION);
+
+		// Create enums
+		rolePlayerEEnum = createEEnum(ROLE_PLAYER);
 	}
 
 	/**
@@ -222,14 +496,47 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		applicationEClass.getESuperTypes().add(this.getParty());
+		processEClass.getESuperTypes().add(this.getParty());
+		rightEClass.getESuperTypes().add(this.getClause());
+		obligationEClass.getESuperTypes().add(this.getClause());
+		prohibitionEClass.getESuperTypes().add(this.getClause());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Imports(), this.getImport(), null, "imports", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModel_Contract(), this.getContract(), null, "contract", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getGreeting_Name(), ecorePackage.getEString(), "name", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getGreeting_Desc(), ecorePackage.getEString(), "desc", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(importEClass, Import.class, "Import", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getImport_ImportedNamespace(), ecorePackage.getEString(), "importedNamespace", null, 0, 1, Import.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(contractEClass, Contract.class, "Contract", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getContract_Name(), ecorePackage.getEString(), "name", null, 0, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_Clauses(), this.getClause(), null, "clauses", null, 1, -1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_Process(), this.getProcess(), null, "process", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContract_Application(), this.getApplication(), null, "application", null, 1, 1, Contract.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(clauseEClass, Clause.class, "Clause", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getClause_Name(), ecorePackage.getEString(), "name", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getClause_Roleplayer(), this.getRolePlayer(), "roleplayer", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(partyEClass, Party.class, "Party", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParty_Name(), ecorePackage.getEString(), "name", null, 0, 1, Party.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(applicationEClass, Application.class, "Application", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(processEClass, br.edu.unijui.gca.jabuti.jabuti.Process.class, "Process", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(rightEClass, Right.class, "Right", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(obligationEClass, Obligation.class, "Obligation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(prohibitionEClass, Prohibition.class, "Prohibition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		// Initialize enums and add enum literals
+		initEEnum(rolePlayerEEnum, RolePlayer.class, "RolePlayer");
+		addEEnumLiteral(rolePlayerEEnum, RolePlayer.PROCESS);
+		addEEnumLiteral(rolePlayerEEnum, RolePlayer.APPLICATION);
 
 		// Create resource
 		createResource(eNS_URI);

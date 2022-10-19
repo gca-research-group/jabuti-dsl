@@ -3,9 +3,70 @@ grammar br.edu.unijui.gca.jabuti.Jabuti with org.eclipse.xtext.common.Terminals
 import "http://www.edu.br/unijui/gca/jabuti/Jabuti"
 
 Model:
-	greetings+=Greeting*;
+	imports+=Import*
+	contract=Contract;
+
+Import:
+    'import' importedNamespace=QualifiedNameWithWildcard
+;
 	
-Greeting:
-	'Hello' name=ID '!'
-	'description' desc=STRING;
+// ########### CONTRACT STRUCTURE ####################
+Contract: 
+	'contract' name=ID '{'
 	
+	'parties' '{'
+			application=Application
+			process=Process
+		'}'
+	
+		'clauses' '{'
+			clauses+=Clause*
+		'}'
+				
+	'}'; 
+	
+	
+// ########### CLAUSE STRUCTURE AND CLAUSE SUBTYPES ####################
+Clause: 
+	(Right | Prohibition | Obligation) '{'
+		'rolePlayer' '=' roleplayer=RolePlayer
+	 '}' 
+;
+
+Right:
+	'right' name=ID
+;
+Obligation:
+	'obligation' name=ID
+;
+Prohibition:
+	'prohibition' name=ID
+;	
+
+
+// ########### PARTY AND SUBTYPES ####################
+
+Party: 
+	(Application | Process) 
+;
+
+Application:
+	'application' '=' name=STRING
+;
+
+Process:
+	'process' '=' name=STRING
+;
+
+enum RolePlayer:
+	APPLICATION='application' | PROCESS='process'
+;
+
+// #######################################################
+
+//por que utilizar um qualifiedName e como ID ?
+QualifiedName:
+	ID ('.' ID)*;
+	
+QualifiedNameWithWildcard:
+	QualifiedName '.*'; 

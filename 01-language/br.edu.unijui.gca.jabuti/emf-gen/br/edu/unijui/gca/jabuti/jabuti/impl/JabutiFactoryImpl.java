@@ -3,9 +3,21 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.*;
+import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Import;
+import br.edu.unijui.gca.jabuti.jabuti.JabutiFactory;
+import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.Obligation;
+import br.edu.unijui.gca.jabuti.jabuti.Party;
+import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
+import br.edu.unijui.gca.jabuti.jabuti.Right;
+import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -66,9 +78,51 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 		switch (eClass.getClassifierID())
 		{
 			case JabutiPackage.MODEL: return createModel();
-			case JabutiPackage.GREETING: return createGreeting();
+			case JabutiPackage.IMPORT: return createImport();
+			case JabutiPackage.CONTRACT: return createContract();
+			case JabutiPackage.CLAUSE: return createClause();
+			case JabutiPackage.PARTY: return createParty();
+			case JabutiPackage.APPLICATION: return createApplication();
+			case JabutiPackage.PROCESS: return createProcess();
+			case JabutiPackage.RIGHT: return createRight();
+			case JabutiPackage.OBLIGATION: return createObligation();
+			case JabutiPackage.PROHIBITION: return createProhibition();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue)
+	{
+		switch (eDataType.getClassifierID())
+		{
+			case JabutiPackage.ROLE_PLAYER:
+				return createRolePlayerFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue)
+	{
+		switch (eDataType.getClassifierID())
+		{
+			case JabutiPackage.ROLE_PLAYER:
+				return convertRolePlayerToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -90,10 +144,128 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public Greeting createGreeting()
+	public Import createImport()
 	{
-		GreetingImpl greeting = new GreetingImpl();
-		return greeting;
+		ImportImpl import_ = new ImportImpl();
+		return import_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Contract createContract()
+	{
+		ContractImpl contract = new ContractImpl();
+		return contract;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Clause createClause()
+	{
+		ClauseImpl clause = new ClauseImpl();
+		return clause;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Party createParty()
+	{
+		PartyImpl party = new PartyImpl();
+		return party;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Application createApplication()
+	{
+		ApplicationImpl application = new ApplicationImpl();
+		return application;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public br.edu.unijui.gca.jabuti.jabuti.Process createProcess()
+	{
+		ProcessImpl process = new ProcessImpl();
+		return process;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Right createRight()
+	{
+		RightImpl right = new RightImpl();
+		return right;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Obligation createObligation()
+	{
+		ObligationImpl obligation = new ObligationImpl();
+		return obligation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Prohibition createProhibition()
+	{
+		ProhibitionImpl prohibition = new ProhibitionImpl();
+		return prohibition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RolePlayer createRolePlayerFromString(EDataType eDataType, String initialValue)
+	{
+		RolePlayer result = RolePlayer.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRolePlayerToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

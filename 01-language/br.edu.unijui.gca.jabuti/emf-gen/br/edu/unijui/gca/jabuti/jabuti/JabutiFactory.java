@@ -33,13 +33,85 @@ public interface JabutiFactory extends EFactory
 	Model createModel();
 
 	/**
-	 * Returns a new object of class '<em>Greeting</em>'.
+	 * Returns a new object of class '<em>Import</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Greeting</em>'.
+	 * @return a new object of class '<em>Import</em>'.
 	 * @generated
 	 */
-	Greeting createGreeting();
+	Import createImport();
+
+	/**
+	 * Returns a new object of class '<em>Contract</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Contract</em>'.
+	 * @generated
+	 */
+	Contract createContract();
+
+	/**
+	 * Returns a new object of class '<em>Clause</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Clause</em>'.
+	 * @generated
+	 */
+	Clause createClause();
+
+	/**
+	 * Returns a new object of class '<em>Party</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Party</em>'.
+	 * @generated
+	 */
+	Party createParty();
+
+	/**
+	 * Returns a new object of class '<em>Application</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Application</em>'.
+	 * @generated
+	 */
+	Application createApplication();
+
+	/**
+	 * Returns a new object of class '<em>Process</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Process</em>'.
+	 * @generated
+	 */
+	Process createProcess();
+
+	/**
+	 * Returns a new object of class '<em>Right</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Right</em>'.
+	 * @generated
+	 */
+	Right createRight();
+
+	/**
+	 * Returns a new object of class '<em>Obligation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Obligation</em>'.
+	 * @generated
+	 */
+	Obligation createObligation();
+
+	/**
+	 * Returns a new object of class '<em>Prohibition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Prohibition</em>'.
+	 * @generated
+	 */
+	Prohibition createProhibition();
 
 	/**
 	 * Returns the package supported by this factory.
