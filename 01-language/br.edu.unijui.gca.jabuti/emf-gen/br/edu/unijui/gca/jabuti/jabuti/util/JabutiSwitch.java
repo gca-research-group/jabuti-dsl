@@ -4,15 +4,24 @@
 package br.edu.unijui.gca.jabuti.jabuti.util;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Expression;
+import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.LiteralValue;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
+import br.edu.unijui.gca.jabuti.jabuti.StringValue;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
+import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -154,6 +163,80 @@ public class JabutiSwitch<T> extends Switch<T>
 				Prohibition prohibition = (Prohibition)theEObject;
 				T result = caseProhibition(prohibition);
 				if (result == null) result = caseClause(prohibition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.EXPRESSION:
+			{
+				Expression expression = (Expression)theEObject;
+				T result = caseExpression(expression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.NUMERIC_VALUE:
+			{
+				NumericValue numericValue = (NumericValue)theEObject;
+				T result = caseNumericValue(numericValue);
+				if (result == null) result = caseLiteralValue(numericValue);
+				if (result == null) result = caseExpression(numericValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.UNARY_OPERATOR:
+			{
+				UnaryOperator unaryOperator = (UnaryOperator)theEObject;
+				T result = caseUnaryOperator(unaryOperator);
+				if (result == null) result = caseExpression(unaryOperator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.BINARY_OPERATOR:
+			{
+				BinaryOperator binaryOperator = (BinaryOperator)theEObject;
+				T result = caseBinaryOperator(binaryOperator);
+				if (result == null) result = caseExpression(binaryOperator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.LITERAL_VALUE:
+			{
+				LiteralValue literalValue = (LiteralValue)theEObject;
+				T result = caseLiteralValue(literalValue);
+				if (result == null) result = caseExpression(literalValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.VARIABLE_VALUE:
+			{
+				VariableValue variableValue = (VariableValue)theEObject;
+				T result = caseVariableValue(variableValue);
+				if (result == null) result = caseLiteralValue(variableValue);
+				if (result == null) result = caseExpression(variableValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.STRING_VALUE:
+			{
+				StringValue stringValue = (StringValue)theEObject;
+				T result = caseStringValue(stringValue);
+				if (result == null) result = caseLiteralValue(stringValue);
+				if (result == null) result = caseExpression(stringValue);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.FUNCTION_CALL:
+			{
+				FunctionCall functionCall = (FunctionCall)theEObject;
+				T result = caseFunctionCall(functionCall);
+				if (result == null) result = caseLiteralValue(functionCall);
+				if (result == null) result = caseExpression(functionCall);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.VARIABLE:
+			{
+				Variable variable = (Variable)theEObject;
+				T result = caseVariable(variable);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -317,6 +400,150 @@ public class JabutiSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseProhibition(Prohibition object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseExpression(Expression object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Numeric Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Numeric Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNumericValue(NumericValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Unary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Unary Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUnaryOperator(UnaryOperator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Binary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Binary Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBinaryOperator(BinaryOperator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Literal Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Literal Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLiteralValue(LiteralValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariableValue(VariableValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Value</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringValue(StringValue object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Function Call</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseFunctionCall(FunctionCall object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseVariable(Variable object)
 	{
 		return null;
 	}

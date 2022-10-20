@@ -45,7 +45,7 @@ public interface Model extends EObject
 	 * @return the value of the '<em>Contract</em>' containment reference.
 	 * @see #setContract(Contract)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getModel_Contract()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Contract getContract();

@@ -10,17 +10,36 @@ contract DeliveryHiring_O {
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
+
+	variables{
+		dateTimeCompra = "//dateCompra/text()"  + " " + "//HourCompra/text()"
+		
+	}
 	
 	clauses{	
 		right respondIntervalAndLimit {
 			rolePlayer = application
 			operation = request
 			condition {
-					SessionInterval(24 Day) AND
+					SessionInterval(7 Day) AND
 					 OperationLimit(1000 by Month)
+					 timout(10 Minute)
 			} 
 			onBreach (EventLog(""))
 		}
 	
+		
+
+		right cancelNFE{
+			rolePlayer = application
+				operation = request
+				condition{
+					MessageContent(dateTimeCompra - currentTime <= 24 Hour )
+					sessionToCancelNFE
+				}
+		}
 	}
+
+
+
 }

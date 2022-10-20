@@ -114,6 +114,87 @@ public interface JabutiFactory extends EFactory
 	Prohibition createProhibition();
 
 	/**
+	 * Returns a new object of class '<em>Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Expression</em>'.
+	 * @generated
+	 */
+	Expression createExpression();
+
+	/**
+	 * Returns a new object of class '<em>Numeric Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Numeric Value</em>'.
+	 * @generated
+	 */
+	NumericValue createNumericValue();
+
+	/**
+	 * Returns a new object of class '<em>Unary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Unary Operator</em>'.
+	 * @generated
+	 */
+	UnaryOperator createUnaryOperator();
+
+	/**
+	 * Returns a new object of class '<em>Binary Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Binary Operator</em>'.
+	 * @generated
+	 */
+	BinaryOperator createBinaryOperator();
+
+	/**
+	 * Returns a new object of class '<em>Literal Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Literal Value</em>'.
+	 * @generated
+	 */
+	LiteralValue createLiteralValue();
+
+	/**
+	 * Returns a new object of class '<em>Variable Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable Value</em>'.
+	 * @generated
+	 */
+	VariableValue createVariableValue();
+
+	/**
+	 * Returns a new object of class '<em>String Value</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>String Value</em>'.
+	 * @generated
+	 */
+	StringValue createStringValue();
+
+	/**
+	 * Returns a new object of class '<em>Function Call</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Function Call</em>'.
+	 * @generated
+	 */
+	FunctionCall createFunctionCall();
+
+	/**
+	 * Returns a new object of class '<em>Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Variable</em>'.
+	 * @generated
+	 */
+	Variable createVariable();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

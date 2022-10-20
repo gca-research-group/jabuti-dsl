@@ -7,6 +7,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
 
 import java.util.Collection;
 
@@ -36,6 +37,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl#getClauses <em>Clauses</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl#getProcess <em>Process</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl#getApplication <em>Application</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl#getBeginDate <em>Begin Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ContractImpl#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @generated
@@ -91,6 +95,56 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 	 * @ordered
 	 */
 	protected Application application;
+
+	/**
+	 * The default value of the '{@link #getBeginDate() <em>Begin Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBeginDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BEGIN_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getBeginDate() <em>Begin Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBeginDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected String beginDate = BEGIN_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDueDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String DUE_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getDueDate() <em>Due Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDueDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected String dueDate = DUE_DATE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariables()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Variable> variables;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -259,6 +313,71 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 	 * @generated
 	 */
 	@Override
+	public String getBeginDate()
+	{
+		return beginDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBeginDate(String newBeginDate)
+	{
+		String oldBeginDate = beginDate;
+		beginDate = newBeginDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONTRACT__BEGIN_DATE, oldBeginDate, beginDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String getDueDate()
+	{
+		return dueDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDueDate(String newDueDate)
+	{
+		String oldDueDate = dueDate;
+		dueDate = newDueDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONTRACT__DUE_DATE, oldDueDate, dueDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<Variable> getVariables()
+	{
+		if (variables == null)
+		{
+			variables = new EObjectContainmentEList<Variable>(Variable.class, this, JabutiPackage.CONTRACT__VARIABLES);
+		}
+		return variables;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -269,6 +388,8 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return basicSetProcess(null, msgs);
 			case JabutiPackage.CONTRACT__APPLICATION:
 				return basicSetApplication(null, msgs);
+			case JabutiPackage.CONTRACT__VARIABLES:
+				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -291,6 +412,12 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return getProcess();
 			case JabutiPackage.CONTRACT__APPLICATION:
 				return getApplication();
+			case JabutiPackage.CONTRACT__BEGIN_DATE:
+				return getBeginDate();
+			case JabutiPackage.CONTRACT__DUE_DATE:
+				return getDueDate();
+			case JabutiPackage.CONTRACT__VARIABLES:
+				return getVariables();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -319,6 +446,16 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 			case JabutiPackage.CONTRACT__APPLICATION:
 				setApplication((Application)newValue);
 				return;
+			case JabutiPackage.CONTRACT__BEGIN_DATE:
+				setBeginDate((String)newValue);
+				return;
+			case JabutiPackage.CONTRACT__DUE_DATE:
+				setDueDate((String)newValue);
+				return;
+			case JabutiPackage.CONTRACT__VARIABLES:
+				getVariables().clear();
+				getVariables().addAll((Collection<? extends Variable>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -345,6 +482,15 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 			case JabutiPackage.CONTRACT__APPLICATION:
 				setApplication((Application)null);
 				return;
+			case JabutiPackage.CONTRACT__BEGIN_DATE:
+				setBeginDate(BEGIN_DATE_EDEFAULT);
+				return;
+			case JabutiPackage.CONTRACT__DUE_DATE:
+				setDueDate(DUE_DATE_EDEFAULT);
+				return;
+			case JabutiPackage.CONTRACT__VARIABLES:
+				getVariables().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -367,6 +513,12 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 				return process != null;
 			case JabutiPackage.CONTRACT__APPLICATION:
 				return application != null;
+			case JabutiPackage.CONTRACT__BEGIN_DATE:
+				return BEGIN_DATE_EDEFAULT == null ? beginDate != null : !BEGIN_DATE_EDEFAULT.equals(beginDate);
+			case JabutiPackage.CONTRACT__DUE_DATE:
+				return DUE_DATE_EDEFAULT == null ? dueDate != null : !DUE_DATE_EDEFAULT.equals(dueDate);
+			case JabutiPackage.CONTRACT__VARIABLES:
+				return variables != null && !variables.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -384,6 +536,10 @@ public class ContractImpl extends MinimalEObjectImpl.Container implements Contra
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", beginDate: ");
+		result.append(beginDate);
+		result.append(", dueDate: ");
+		result.append(dueDate);
 		result.append(')');
 		return result.toString();
 	}

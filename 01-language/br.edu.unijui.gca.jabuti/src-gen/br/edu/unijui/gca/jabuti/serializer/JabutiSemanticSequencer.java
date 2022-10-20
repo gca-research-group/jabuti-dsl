@@ -4,13 +4,20 @@
 package br.edu.unijui.gca.jabuti.serializer;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
+import br.edu.unijui.gca.jabuti.jabuti.StringValue;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
+import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 import br.edu.unijui.gca.jabuti.services.JabutiGrammarAccess;
 import com.google.inject.Inject;
 import java.util.Set;
@@ -41,14 +48,23 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case JabutiPackage.APPLICATION:
 				sequence_Application(context, (Application) semanticObject); 
 				return; 
+			case JabutiPackage.BINARY_OPERATOR:
+				sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
+				return; 
 			case JabutiPackage.CONTRACT:
 				sequence_Contract(context, (Contract) semanticObject); 
+				return; 
+			case JabutiPackage.FUNCTION_CALL:
+				sequence_FunctionCall(context, (FunctionCall) semanticObject); 
 				return; 
 			case JabutiPackage.IMPORT:
 				sequence_Import(context, (Import) semanticObject); 
 				return; 
 			case JabutiPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
+				return; 
+			case JabutiPackage.NUMERIC_VALUE:
+				sequence_NumericValue(context, (NumericValue) semanticObject); 
 				return; 
 			case JabutiPackage.OBLIGATION:
 				if (rule == grammarAccess.getClauseRule()) {
@@ -83,6 +99,18 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 					return; 
 				}
 				else break;
+			case JabutiPackage.STRING_VALUE:
+				sequence_StringValue(context, (StringValue) semanticObject); 
+				return; 
+			case JabutiPackage.UNARY_OPERATOR:
+				sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
+				return; 
+			case JabutiPackage.VARIABLE:
+				sequence_Variable(context, (Variable) semanticObject); 
+				return; 
+			case JabutiPackage.VARIABLE_VALUE:
+				sequence_VariableValue(context, (VariableValue) semanticObject); 
+				return; 
 			}
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
@@ -181,13 +209,89 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Expression returns BinaryOperator
+	 *     Expression.BinaryOperator_1_0 returns BinaryOperator
+	 *     Negation returns BinaryOperator
+	 *     Comparison returns BinaryOperator
+	 *     Comparison.BinaryOperator_1_0 returns BinaryOperator
+	 *     Plus returns BinaryOperator
+	 *     Plus.BinaryOperator_1_0 returns BinaryOperator
+	 *     Factor returns BinaryOperator
+	 *     Factor.BinaryOperator_1_0 returns BinaryOperator
+	 *     Negative returns BinaryOperator
+	 *     Primary returns BinaryOperator
+	 *
+	 * Constraint:
+	 *     (
+	 *         (left=Expression_BinaryOperator_1_0 (symbol='AND' | symbol='&&' | symbol='||' | symbol='OR') right=Negation) | 
+	 *         (
+	 *             left=Comparison_BinaryOperator_1_0 
+	 *             (
+	 *                 symbol='&lt;=' | 
+	 *                 symbol='&gt;=' | 
+	 *                 symbol='&gt;' | 
+	 *                 symbol='&lt;' | 
+	 *                 symbol='!=' | 
+	 *                 symbol='==' | 
+	 *                 symbol='is' | 
+	 *                 symbol='as'
+	 *             ) 
+	 *             right=Plus
+	 *         ) | 
+	 *         (left=Plus_BinaryOperator_1_0 right=Factor) | 
+	 *         (left=Factor_BinaryOperator_1_0 right=Negative)
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Comparison_Expression_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Contract returns Contract
 	 *
 	 * Constraint:
-	 *     (name=ID application=Application process=Process clauses+=Clause*)
+	 *     (
+	 *         name=ID 
+	 *         beginDate=STRING 
+	 *         dueDate=STRING 
+	 *         variables+=Variable* 
+	 *         application=Application 
+	 *         process=Process 
+	 *         clauses+=Clause*
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Contract(ISerializationContext context, Contract semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns FunctionCall
+	 *     Expression.BinaryOperator_1_0 returns FunctionCall
+	 *     Negation returns FunctionCall
+	 *     Comparison returns FunctionCall
+	 *     Comparison.BinaryOperator_1_0 returns FunctionCall
+	 *     Plus returns FunctionCall
+	 *     Plus.BinaryOperator_1_0 returns FunctionCall
+	 *     Factor returns FunctionCall
+	 *     Factor.BinaryOperator_1_0 returns FunctionCall
+	 *     Negative returns FunctionCall
+	 *     Primary returns FunctionCall
+	 *     LiteralValue returns FunctionCall
+	 *     FunctionCall returns FunctionCall
+	 *
+	 * Constraint:
+	 *     (name=QualifiedName params+=Expression params+=Expression*)
+	 * </pre>
+	 */
+	protected void sequence_FunctionCall(ISerializationContext context, FunctionCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -223,6 +327,62 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns UnaryOperator
+	 *     Expression.BinaryOperator_1_0 returns UnaryOperator
+	 *     Negation returns UnaryOperator
+	 *     Comparison returns UnaryOperator
+	 *     Comparison.BinaryOperator_1_0 returns UnaryOperator
+	 *     Plus returns UnaryOperator
+	 *     Plus.BinaryOperator_1_0 returns UnaryOperator
+	 *     Factor returns UnaryOperator
+	 *     Factor.BinaryOperator_1_0 returns UnaryOperator
+	 *     Negative returns UnaryOperator
+	 *     Primary returns UnaryOperator
+	 *
+	 * Constraint:
+	 *     ((symbol='!' expression=Comparison) | expression=Primary)
+	 * </pre>
+	 */
+	protected void sequence_Negation_Negative(ISerializationContext context, UnaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns NumericValue
+	 *     Expression.BinaryOperator_1_0 returns NumericValue
+	 *     Negation returns NumericValue
+	 *     Comparison returns NumericValue
+	 *     Comparison.BinaryOperator_1_0 returns NumericValue
+	 *     Plus returns NumericValue
+	 *     Plus.BinaryOperator_1_0 returns NumericValue
+	 *     Factor returns NumericValue
+	 *     Factor.BinaryOperator_1_0 returns NumericValue
+	 *     Negative returns NumericValue
+	 *     Primary returns NumericValue
+	 *     LiteralValue returns NumericValue
+	 *     NumericValue returns NumericValue
+	 *
+	 * Constraint:
+	 *     value=INT
+	 * </pre>
+	 */
+	protected void sequence_NumericValue(ISerializationContext context, NumericValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.NUMERIC_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.NUMERIC_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNumericValueAccess().getValueINTTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 	
 	
@@ -303,6 +463,93 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getRightAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns StringValue
+	 *     Expression.BinaryOperator_1_0 returns StringValue
+	 *     Negation returns StringValue
+	 *     Comparison returns StringValue
+	 *     Comparison.BinaryOperator_1_0 returns StringValue
+	 *     Plus returns StringValue
+	 *     Plus.BinaryOperator_1_0 returns StringValue
+	 *     Factor returns StringValue
+	 *     Factor.BinaryOperator_1_0 returns StringValue
+	 *     Negative returns StringValue
+	 *     Primary returns StringValue
+	 *     LiteralValue returns StringValue
+	 *     StringValue returns StringValue
+	 *
+	 * Constraint:
+	 *     value=STRING
+	 * </pre>
+	 */
+	protected void sequence_StringValue(ISerializationContext context, StringValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.STRING_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.STRING_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns VariableValue
+	 *     Expression.BinaryOperator_1_0 returns VariableValue
+	 *     Negation returns VariableValue
+	 *     Comparison returns VariableValue
+	 *     Comparison.BinaryOperator_1_0 returns VariableValue
+	 *     Plus returns VariableValue
+	 *     Plus.BinaryOperator_1_0 returns VariableValue
+	 *     Factor returns VariableValue
+	 *     Factor.BinaryOperator_1_0 returns VariableValue
+	 *     Negative returns VariableValue
+	 *     Primary returns VariableValue
+	 *     LiteralValue returns VariableValue
+	 *     VariableValue returns VariableValue
+	 *
+	 * Constraint:
+	 *     value=QualifiedName
+	 * </pre>
+	 */
+	protected void sequence_VariableValue(ISerializationContext context, VariableValue semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE_VALUE__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE_VALUE__VALUE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableValueAccess().getValueQualifiedNameParserRuleCall_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Variable returns Variable
+	 *
+	 * Constraint:
+	 *     (name=ID expression=Expression)
+	 * </pre>
+	 */
+	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

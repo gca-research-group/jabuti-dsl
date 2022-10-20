@@ -10,6 +10,24 @@
       <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//RolePlayer/PROCESS"/>
       <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//RolePlayer/APPLICATION"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//WeekDay">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//WeekDay/SUNDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//WeekDay/MONDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//WeekDay/TUESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//WeekDay/WEDNESDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//WeekDay/THURSDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//WeekDay/FRIDAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//WeekDay/SATURDAY"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//TimeUnit">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//TimeUnit/SECOND"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//TimeUnit/MINUTE"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//TimeUnit/HOUR"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//TimeUnit/DAY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//TimeUnit/WEEK"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//TimeUnit/MONTH"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//TimeUnit/YEAR"/>
+    </genEnums>
     <genClasses ecoreClass="Jabuti.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/contract"/>
@@ -22,6 +40,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Contract/clauses"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Contract/process"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Contract/application"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Contract/beginDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Contract/dueDate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Contract/variables"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//Clause">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Clause/name"/>
@@ -35,5 +56,33 @@
     <genClasses ecoreClass="Jabuti.ecore#//Right"/>
     <genClasses ecoreClass="Jabuti.ecore#//Obligation"/>
     <genClasses ecoreClass="Jabuti.ecore#//Prohibition"/>
+    <genClasses ecoreClass="Jabuti.ecore#//Expression"/>
+    <genClasses ecoreClass="Jabuti.ecore#//NumericValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//NumericValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//UnaryOperator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//UnaryOperator/expression"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//UnaryOperator/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//BinaryOperator">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//BinaryOperator/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//BinaryOperator/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//BinaryOperator/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//LiteralValue"/>
+    <genClasses ecoreClass="Jabuti.ecore#//VariableValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//VariableValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//StringValue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//StringValue/value"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//FunctionCall">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//FunctionCall/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//FunctionCall/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Variable/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Variable/expression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -4,17 +4,28 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Expression;
+import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiFactory;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.LiteralValue;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
+import br.edu.unijui.gca.jabuti.jabuti.StringValue;
+import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
+import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
+import br.edu.unijui.gca.jabuti.jabuti.WeekDay;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -87,6 +98,15 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.RIGHT: return createRight();
 			case JabutiPackage.OBLIGATION: return createObligation();
 			case JabutiPackage.PROHIBITION: return createProhibition();
+			case JabutiPackage.EXPRESSION: return createExpression();
+			case JabutiPackage.NUMERIC_VALUE: return createNumericValue();
+			case JabutiPackage.UNARY_OPERATOR: return createUnaryOperator();
+			case JabutiPackage.BINARY_OPERATOR: return createBinaryOperator();
+			case JabutiPackage.LITERAL_VALUE: return createLiteralValue();
+			case JabutiPackage.VARIABLE_VALUE: return createVariableValue();
+			case JabutiPackage.STRING_VALUE: return createStringValue();
+			case JabutiPackage.FUNCTION_CALL: return createFunctionCall();
+			case JabutiPackage.VARIABLE: return createVariable();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -104,6 +124,10 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 		{
 			case JabutiPackage.ROLE_PLAYER:
 				return createRolePlayerFromString(eDataType, initialValue);
+			case JabutiPackage.WEEK_DAY:
+				return createWeekDayFromString(eDataType, initialValue);
+			case JabutiPackage.TIME_UNIT:
+				return createTimeUnitFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -121,6 +145,10 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 		{
 			case JabutiPackage.ROLE_PLAYER:
 				return convertRolePlayerToString(eDataType, instanceValue);
+			case JabutiPackage.WEEK_DAY:
+				return convertWeekDayToString(eDataType, instanceValue);
+			case JabutiPackage.TIME_UNIT:
+				return convertTimeUnitToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -251,6 +279,114 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public Expression createExpression()
+	{
+		ExpressionImpl expression = new ExpressionImpl();
+		return expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NumericValue createNumericValue()
+	{
+		NumericValueImpl numericValue = new NumericValueImpl();
+		return numericValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UnaryOperator createUnaryOperator()
+	{
+		UnaryOperatorImpl unaryOperator = new UnaryOperatorImpl();
+		return unaryOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BinaryOperator createBinaryOperator()
+	{
+		BinaryOperatorImpl binaryOperator = new BinaryOperatorImpl();
+		return binaryOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LiteralValue createLiteralValue()
+	{
+		LiteralValueImpl literalValue = new LiteralValueImpl();
+		return literalValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public VariableValue createVariableValue()
+	{
+		VariableValueImpl variableValue = new VariableValueImpl();
+		return variableValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public StringValue createStringValue()
+	{
+		StringValueImpl stringValue = new StringValueImpl();
+		return stringValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public FunctionCall createFunctionCall()
+	{
+		FunctionCallImpl functionCall = new FunctionCallImpl();
+		return functionCall;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Variable createVariable()
+	{
+		VariableImpl variable = new VariableImpl();
+		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RolePlayer createRolePlayerFromString(EDataType eDataType, String initialValue)
 	{
 		RolePlayer result = RolePlayer.get(initialValue);
@@ -264,6 +400,50 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	public String convertRolePlayerToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public WeekDay createWeekDayFromString(EDataType eDataType, String initialValue)
+	{
+		WeekDay result = WeekDay.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertWeekDayToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TimeUnit createTimeUnitFromString(EDataType eDataType, String initialValue)
+	{
+		TimeUnit result = TimeUnit.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTimeUnitToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

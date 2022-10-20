@@ -4,15 +4,24 @@
 package br.edu.unijui.gca.jabuti.jabuti.util;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.Expression;
+import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.LiteralValue;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
+import br.edu.unijui.gca.jabuti.jabuti.StringValue;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
+import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -133,6 +142,51 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseProhibition(Prohibition object)
 			{
 				return createProhibitionAdapter();
+			}
+			@Override
+			public Adapter caseExpression(Expression object)
+			{
+				return createExpressionAdapter();
+			}
+			@Override
+			public Adapter caseNumericValue(NumericValue object)
+			{
+				return createNumericValueAdapter();
+			}
+			@Override
+			public Adapter caseUnaryOperator(UnaryOperator object)
+			{
+				return createUnaryOperatorAdapter();
+			}
+			@Override
+			public Adapter caseBinaryOperator(BinaryOperator object)
+			{
+				return createBinaryOperatorAdapter();
+			}
+			@Override
+			public Adapter caseLiteralValue(LiteralValue object)
+			{
+				return createLiteralValueAdapter();
+			}
+			@Override
+			public Adapter caseVariableValue(VariableValue object)
+			{
+				return createVariableValueAdapter();
+			}
+			@Override
+			public Adapter caseStringValue(StringValue object)
+			{
+				return createStringValueAdapter();
+			}
+			@Override
+			public Adapter caseFunctionCall(FunctionCall object)
+			{
+				return createFunctionCallAdapter();
+			}
+			@Override
+			public Adapter caseVariable(Variable object)
+			{
+				return createVariableAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -302,6 +356,141 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createProhibitionAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Expression
+	 * @generated
+	 */
+	public Adapter createExpressionAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.NumericValue <em>Numeric Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.NumericValue
+	 * @generated
+	 */
+	public Adapter createNumericValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryOperator <em>Unary Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryOperator
+	 * @generated
+	 */
+	public Adapter createUnaryOperatorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperator <em>Binary Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperator
+	 * @generated
+	 */
+	public Adapter createBinaryOperatorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.LiteralValue <em>Literal Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LiteralValue
+	 * @generated
+	 */
+	public Adapter createLiteralValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.VariableValue <em>Variable Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.VariableValue
+	 * @generated
+	 */
+	public Adapter createVariableValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.StringValue <em>String Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.StringValue
+	 * @generated
+	 */
+	public Adapter createStringValueAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.FunctionCall <em>Function Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.FunctionCall
+	 * @generated
+	 */
+	public Adapter createFunctionCallAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Variable
+	 * @generated
+	 */
+	public Adapter createVariableAdapter()
 	{
 		return null;
 	}

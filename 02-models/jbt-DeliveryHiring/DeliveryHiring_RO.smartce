@@ -1,6 +1,7 @@
 //@version - jabuti 0.1.0 
 
 contract DeliveryHiring_RO {  
+	
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
 		dueDate = "2022-12-31 18:00:00"
@@ -9,6 +10,14 @@ contract DeliveryHiring_RO {
 	parties{
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
+	}
+
+	variables{
+		numberOfAddress = "count(//body/perosonalInformation/address/cep)" 
+		manha = TimeInterval("08:30:00" to "12:00:00")
+		numberOfAddres = MessageContent("count(//address)" >= 1)
+		maxNumberOfOp = 10
+		idPerson = MessageContent("count(//id)")
 	}
 
 	clauses{
@@ -21,13 +30,31 @@ contract DeliveryHiring_RO {
 			condition {
 				BusinessDay(Monday to Friday) AND
 				TimeInterval("08:30:00" to "18:30:00") AND
-				OperationLimit(5 by Day) AND
-				MessageContent("count(//address)" >= 1) AND
-				MessageContent("count(//address)" <= 3) AND
-				MessageContent("count(//address)" <= 200 by Month)
+				MessageContent("count(//address)" >= "1") AND
+				MessageContent(numberOfAddress <= maxNumberOfOp) AND
+				MessageContent("count(//id)" <= 200 by Month)
+				Session(24 hour by idPerson)
+				when (manha AND maxNumberOfAddres){
+
+				}
+
+				when(
+				TimeInterval("08:30:00" to "12:00:00") AND  		MessageContent("count(//address)" >= "1") 
+				) do{
+					OperationLimit("5" by Day) 
+				} AND
+				
+				when(TimeInterval("12:00:00" to "18:30:00") ) do {
+					OperationLimit("10" by Day) 
+				}
+
+				(
+				(OperationLimit(10 by Day) AND TimeInterval("08:30:00" to "12:00:00")) or
+				(OperationLimit(10 by Day) AND TimeInterval("12:00:00" to "18:30:00"))
+				)
 			}
 		
-			onBreach(EventLog("Request operation performed outside of allowed hours or limit operation exceeded") )
+			onBreach(EventLog("Houve uma violação da clausula de direito requestDelivery: requisição realizada fora do horario permitido") )
 		}
 	
 		obligation responseOrder{

@@ -20,6 +20,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getClauses <em>Clauses</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getProcess <em>Process</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getApplication <em>Application</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getBeginDate <em>Begin Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getDueDate <em>Due Date</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getVariables <em>Variables</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getContract()
@@ -57,7 +60,7 @@ public interface Contract extends EObject
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Clauses</em>' containment reference list.
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getContract_Clauses()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	EList<Clause> getClauses();
@@ -69,7 +72,7 @@ public interface Contract extends EObject
 	 * @return the value of the '<em>Process</em>' containment reference.
 	 * @see #setProcess(br.edu.unijui.gca.jabuti.jabuti.Process)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getContract_Process()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	br.edu.unijui.gca.jabuti.jabuti.Process getProcess();
@@ -91,7 +94,7 @@ public interface Contract extends EObject
 	 * @return the value of the '<em>Application</em>' containment reference.
 	 * @see #setApplication(Application)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getContract_Application()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	Application getApplication();
@@ -105,5 +108,61 @@ public interface Contract extends EObject
 	 * @generated
 	 */
 	void setApplication(Application value);
+
+	/**
+	 * Returns the value of the '<em><b>Begin Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Begin Date</em>' attribute.
+	 * @see #setBeginDate(String)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getContract_BeginDate()
+	 * @model
+	 * @generated
+	 */
+	String getBeginDate();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getBeginDate <em>Begin Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Begin Date</em>' attribute.
+	 * @see #getBeginDate()
+	 * @generated
+	 */
+	void setBeginDate(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Due Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Due Date</em>' attribute.
+	 * @see #setDueDate(String)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getContract_DueDate()
+	 * @model
+	 * @generated
+	 */
+	String getDueDate();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getDueDate <em>Due Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Due Date</em>' attribute.
+	 * @see #getDueDate()
+	 * @generated
+	 */
+	void setDueDate(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.Variable}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variables</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getContract_Variables()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Variable> getVariables();
 
 } // Contract

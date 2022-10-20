@@ -170,13 +170,40 @@ public interface JabutiPackage extends EPackage
 	int CONTRACT__APPLICATION = 3;
 
 	/**
+	 * The feature id for the '<em><b>Begin Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__BEGIN_DATE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Due Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__DUE_DATE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTRACT__VARIABLES = 6;
+
+	/**
 	 * The number of structural features of the '<em>Contract</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRACT_FEATURE_COUNT = 4;
+	int CONTRACT_FEATURE_COUNT = 7;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl <em>Clause</em>}' class.
@@ -411,6 +438,285 @@ public interface JabutiPackage extends EPackage
 	int PROHIBITION_FEATURE_COUNT = CLAUSE_FEATURE_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionImpl <em>Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getExpression()
+	 * @generated
+	 */
+	int EXPRESSION = 10;
+
+	/**
+	 * The number of structural features of the '<em>Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EXPRESSION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.LiteralValueImpl <em>Literal Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.LiteralValueImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getLiteralValue()
+	 * @generated
+	 */
+	int LITERAL_VALUE = 14;
+
+	/**
+	 * The number of structural features of the '<em>Literal Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LITERAL_VALUE_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.NumericValueImpl <em>Numeric Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.NumericValueImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getNumericValue()
+	 * @generated
+	 */
+	int NUMERIC_VALUE = 11;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_VALUE__VALUE = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Numeric Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_VALUE_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryOperatorImpl <em>Unary Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.UnaryOperatorImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getUnaryOperator()
+	 * @generated
+	 */
+	int UNARY_OPERATOR = 12;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR__SYMBOL = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Unary Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNARY_OPERATOR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.BinaryOperatorImpl <em>Binary Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.BinaryOperatorImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getBinaryOperator()
+	 * @generated
+	 */
+	int BINARY_OPERATOR = 13;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__LEFT = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR__SYMBOL = EXPRESSION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Binary Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BINARY_OPERATOR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.VariableValueImpl <em>Variable Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.VariableValueImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getVariableValue()
+	 * @generated
+	 */
+	int VARIABLE_VALUE = 15;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_VALUE__VALUE = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Variable Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_VALUE_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.StringValueImpl <em>String Value</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.StringValueImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getStringValue()
+	 * @generated
+	 */
+	int STRING_VALUE = 16;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE__VALUE = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>String Value</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VALUE_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.FunctionCallImpl <em>Function Call</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.FunctionCallImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getFunctionCall()
+	 * @generated
+	 */
+	int FUNCTION_CALL = 17;
+
+	/**
+	 * The feature id for the '<em><b>Params</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__PARAMS = LITERAL_VALUE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL__NAME = LITERAL_VALUE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Function Call</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FUNCTION_CALL_FEATURE_COUNT = LITERAL_VALUE_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.VariableImpl <em>Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.VariableImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getVariable()
+	 * @generated
+	 */
+	int VARIABLE = 18;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__EXPRESSION = 1;
+
+	/**
+	 * The number of structural features of the '<em>Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE_FEATURE_COUNT = 2;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,7 +724,27 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRolePlayer()
 	 * @generated
 	 */
-	int ROLE_PLAYER = 10;
+	int ROLE_PLAYER = 19;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDay <em>Week Day</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.WeekDay
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getWeekDay()
+	 * @generated
+	 */
+	int WEEK_DAY = 20;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit <em>Time Unit</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnit
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeUnit()
+	 * @generated
+	 */
+	int TIME_UNIT = 21;
 
 
 	/**
@@ -529,6 +855,39 @@ public interface JabutiPackage extends EPackage
 	EReference getContract_Application();
 
 	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getBeginDate <em>Begin Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Begin Date</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract#getBeginDate()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EAttribute getContract_BeginDate();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getDueDate <em>Due Date</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Due Date</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract#getDueDate()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EAttribute getContract_DueDate();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Contract#getVariables <em>Variables</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Variables</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Contract#getVariables()
+	 * @see #getContract()
+	 * @generated
+	 */
+	EReference getContract_Variables();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Clause <em>Clause</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -632,6 +991,228 @@ public interface JabutiPackage extends EPackage
 	EClass getProhibition();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Expression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Expression
+	 * @generated
+	 */
+	EClass getExpression();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.NumericValue <em>Numeric Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Numeric Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.NumericValue
+	 * @generated
+	 */
+	EClass getNumericValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.NumericValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.NumericValue#getValue()
+	 * @see #getNumericValue()
+	 * @generated
+	 */
+	EAttribute getNumericValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryOperator <em>Unary Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Unary Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryOperator
+	 * @generated
+	 */
+	EClass getUnaryOperator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryOperator#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryOperator#getExpression()
+	 * @see #getUnaryOperator()
+	 * @generated
+	 */
+	EReference getUnaryOperator_Expression();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryOperator#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryOperator#getSymbol()
+	 * @see #getUnaryOperator()
+	 * @generated
+	 */
+	EAttribute getUnaryOperator_Symbol();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperator <em>Binary Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Binary Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperator
+	 * @generated
+	 */
+	EClass getBinaryOperator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperator#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Left</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperator#getLeft()
+	 * @see #getBinaryOperator()
+	 * @generated
+	 */
+	EReference getBinaryOperator_Left();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperator#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Right</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperator#getRight()
+	 * @see #getBinaryOperator()
+	 * @generated
+	 */
+	EReference getBinaryOperator_Right();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperator#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperator#getSymbol()
+	 * @see #getBinaryOperator()
+	 * @generated
+	 */
+	EAttribute getBinaryOperator_Symbol();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.LiteralValue <em>Literal Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Literal Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LiteralValue
+	 * @generated
+	 */
+	EClass getLiteralValue();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.VariableValue <em>Variable Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.VariableValue
+	 * @generated
+	 */
+	EClass getVariableValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.VariableValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.VariableValue#getValue()
+	 * @see #getVariableValue()
+	 * @generated
+	 */
+	EAttribute getVariableValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.StringValue <em>String Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.StringValue
+	 * @generated
+	 */
+	EClass getStringValue();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.StringValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.StringValue#getValue()
+	 * @see #getStringValue()
+	 * @generated
+	 */
+	EAttribute getStringValue_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.FunctionCall <em>Function Call</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Function Call</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.FunctionCall
+	 * @generated
+	 */
+	EClass getFunctionCall();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.FunctionCall#getParams <em>Params</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Params</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.FunctionCall#getParams()
+	 * @see #getFunctionCall()
+	 * @generated
+	 */
+	EReference getFunctionCall_Params();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.FunctionCall#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.FunctionCall#getName()
+	 * @see #getFunctionCall()
+	 * @generated
+	 */
+	EAttribute getFunctionCall_Name();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Variable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Variable</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Variable
+	 * @generated
+	 */
+	EClass getVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Variable#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Variable#getName()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EAttribute getVariable_Name();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Variable#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Variable#getExpression()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EReference getVariable_Expression();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -640,6 +1221,26 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getRolePlayer();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDay <em>Week Day</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Week Day</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.WeekDay
+	 * @generated
+	 */
+	EEnum getWeekDay();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnit
+	 * @generated
+	 */
+	EEnum getTimeUnit();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -751,6 +1352,30 @@ public interface JabutiPackage extends EPackage
 		EReference CONTRACT__APPLICATION = eINSTANCE.getContract_Application();
 
 		/**
+		 * The meta object literal for the '<em><b>Begin Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT__BEGIN_DATE = eINSTANCE.getContract_BeginDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Due Date</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CONTRACT__DUE_DATE = eINSTANCE.getContract_DueDate();
+
+		/**
+		 * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTRACT__VARIABLES = eINSTANCE.getContract_Variables();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl <em>Clause</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -845,6 +1470,192 @@ public interface JabutiPackage extends EPackage
 		EClass PROHIBITION = eINSTANCE.getProhibition();
 
 		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionImpl <em>Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getExpression()
+		 * @generated
+		 */
+		EClass EXPRESSION = eINSTANCE.getExpression();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.NumericValueImpl <em>Numeric Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.NumericValueImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getNumericValue()
+		 * @generated
+		 */
+		EClass NUMERIC_VALUE = eINSTANCE.getNumericValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_VALUE__VALUE = eINSTANCE.getNumericValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryOperatorImpl <em>Unary Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.UnaryOperatorImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getUnaryOperator()
+		 * @generated
+		 */
+		EClass UNARY_OPERATOR = eINSTANCE.getUnaryOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference UNARY_OPERATOR__EXPRESSION = eINSTANCE.getUnaryOperator_Expression();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNARY_OPERATOR__SYMBOL = eINSTANCE.getUnaryOperator_Symbol();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.BinaryOperatorImpl <em>Binary Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.BinaryOperatorImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getBinaryOperator()
+		 * @generated
+		 */
+		EClass BINARY_OPERATOR = eINSTANCE.getBinaryOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARY_OPERATOR__LEFT = eINSTANCE.getBinaryOperator_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BINARY_OPERATOR__RIGHT = eINSTANCE.getBinaryOperator_Right();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BINARY_OPERATOR__SYMBOL = eINSTANCE.getBinaryOperator_Symbol();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.LiteralValueImpl <em>Literal Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.LiteralValueImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getLiteralValue()
+		 * @generated
+		 */
+		EClass LITERAL_VALUE = eINSTANCE.getLiteralValue();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.VariableValueImpl <em>Variable Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.VariableValueImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getVariableValue()
+		 * @generated
+		 */
+		EClass VARIABLE_VALUE = eINSTANCE.getVariableValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE_VALUE__VALUE = eINSTANCE.getVariableValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.StringValueImpl <em>String Value</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.StringValueImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getStringValue()
+		 * @generated
+		 */
+		EClass STRING_VALUE = eINSTANCE.getStringValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_VALUE__VALUE = eINSTANCE.getStringValue_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.FunctionCallImpl <em>Function Call</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.FunctionCallImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getFunctionCall()
+		 * @generated
+		 */
+		EClass FUNCTION_CALL = eINSTANCE.getFunctionCall();
+
+		/**
+		 * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FUNCTION_CALL__PARAMS = eINSTANCE.getFunctionCall_Params();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FUNCTION_CALL__NAME = eINSTANCE.getFunctionCall_Name();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.VariableImpl <em>Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.VariableImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getVariable()
+		 * @generated
+		 */
+		EClass VARIABLE = eINSTANCE.getVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE__EXPRESSION = eINSTANCE.getVariable_Expression();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -853,6 +1664,26 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EEnum ROLE_PLAYER = eINSTANCE.getRolePlayer();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDay <em>Week Day</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.WeekDay
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getWeekDay()
+		 * @generated
+		 */
+		EEnum WEEK_DAY = eINSTANCE.getWeekDay();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit <em>Time Unit</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnit
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeUnit()
+		 * @generated
+		 */
+		EEnum TIME_UNIT = eINSTANCE.getTimeUnit();
 
 	}
 

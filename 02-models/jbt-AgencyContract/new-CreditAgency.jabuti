@@ -1,12 +1,16 @@
-contract CredityAgency{
-	parties{
-		application = "Eldair"
-		process = "Fabricio"
-	}
-	clauses {
-		obligation comprar {
-			rolePlayer = process
-		}	
+contract compra {
+	
+	dates {
+		beginDate = "2022-01-01 08:00:00"
+		dueDate = 	"2023-01-01 :07:59:59"
 	}
 	
+	variables {
+	 variavel_1 = true	
+	}
+	
+	parties{
+		application = "teste"
+		process = "teste"
+	}
 }
