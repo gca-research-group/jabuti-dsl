@@ -41,7 +41,7 @@ Clause:
 		'rolePlayer' '=' roleplayer=RolePlayer
 		'operation' '=' operation=Operation
 		'condition' '{' 
-			condition= Condition			
+			condition = Condition			
 		'}'
 		eventLog+=EventLog*
 	'}' 
@@ -131,31 +131,71 @@ FunctionCall:
 ;
 
 Variable:
-	(name=ID '=' expression=Expression) |
-	(name=ID '=' term=Term)
+	(name=ID '=' expression=Expression) 
+//	|	(name=ID '=' term=Term)
 ;
 
 
 // #################### CONDITION AND TERMS ####################
 
-Condition: 
-	Term | CompositeCondition | ConditionalExpression
+// ----------------- inicio versão antiga -----------------
+//Condition: 
+//	Term | CompositeCondition | ConditionalExpression
+//;
+//
+//Term:
+//	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
+//;
+//
+//CompositeCondition:	
+//	conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*
+//;
+//
+//ConditionalExpression: 
+//	conditions+=CompositeCondition
+//	'when' '(' expression=Expression ')' 'do' '{'
+//		conditions+=CompositeCondition
+//	'}'
+//;
+
+// ----------------- fim - versão antiga -----------------
+
+
+
+//------------------ Inicio - versão nova ----------------
+
+
+Condition:
+	(conditionTerm += ConditionTerm |
+	conditionalExpression+=ConditionalExpression)*
 ;
 
-Term:
-	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
-;
-
-CompositeCondition:	
-	conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*
-;
-
-ConditionalExpression: 
-	conditions+=CompositeCondition
-	'when' '(' expression=Expression ')' 'do' '{'
-		conditions+=CompositeCondition
+ConditionalExpression :
+	(beforeSymbol = LogicalOperator)?
+	'when' '('  conditionParam=ConditionTerm')' 'do' '{'
+		conditionTerm=ConditionTerm
 	'}'
+	(aftetrSymbol = LogicalOperator)?
 ;
+
+
+ConditionTerm:
+	CompositeCondition
+;
+
+CompositeCondition returns ConditionTerm:
+	NegationTerm ({BinaryTermOperator.left=current} (symbol='AND' | symbol='OR'  ) right=NegationTerm)*;
+
+NegationTerm returns ConditionTerm:
+	Term | {UnaryTermOperator} symbol='NOT' conditionTerm=Term;
+	
+Term returns ConditionTerm:
+	'(' ConditionTerm ')' |
+	SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+;
+
+
+//  ----------------- fim - versão nova  -----------------
 
 LogicalOperator:
 	symbol=('AND' | 'OR' | 'NOT')
@@ -176,7 +216,7 @@ Timeout:
 ;
 
 MaxNumberOfOperation:
-	'MaxNumberOfOperation' '(' operationNumber=INT 'by' timeUnit=TimeUnit  ')'
+	'MaxNumberOfOperation' '(' operationsNumber=INT 'by' timeUnit=TimeUnit  ')'
 ;
 
 WeekDaysInterval:

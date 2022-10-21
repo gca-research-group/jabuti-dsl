@@ -3,26 +3,28 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
+import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
-import br.edu.unijui.gca.jabuti.jabuti.Term;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Term</b></em>'.
+ * An implementation of the model object '<em><b>Condition Term</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class TermImpl extends ConditionTermImpl implements Term
+public class ConditionTermImpl extends MinimalEObjectImpl.Container implements ConditionTerm
 {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TermImpl()
+	protected ConditionTermImpl()
 	{
 		super();
 	}
@@ -35,7 +37,7 @@ public class TermImpl extends ConditionTermImpl implements Term
 	@Override
 	protected EClass eStaticClass()
 	{
-		return JabutiPackage.Literals.TERM;
+		return JabutiPackage.Literals.CONDITION_TERM;
 	}
 
-} //TermImpl
+} //ConditionTermImpl

@@ -5,8 +5,9 @@ package br.edu.unijui.gca.jabuti.serializer;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
+import br.edu.unijui.gca.jabuti.jabuti.Condition;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
@@ -27,6 +28,7 @@ import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval;
@@ -63,11 +65,14 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case JabutiPackage.BINARY_OPERATOR:
 				sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
 				return; 
+			case JabutiPackage.BINARY_TERM_OPERATOR:
+				sequence_CompositeCondition(context, (BinaryTermOperator) semanticObject); 
+				return; 
 			case JabutiPackage.COMPARISON_OPERATOR:
 				sequence_ComparisonOperator(context, (ComparisonOperator) semanticObject); 
 				return; 
-			case JabutiPackage.COMPOSITE_CONDITION:
-				sequence_CompositeCondition(context, (CompositeCondition) semanticObject); 
+			case JabutiPackage.CONDITION:
+				sequence_Condition(context, (Condition) semanticObject); 
 				return; 
 			case JabutiPackage.CONDITIONAL_EXPRESSION:
 				sequence_ConditionalExpression(context, (ConditionalExpression) semanticObject); 
@@ -149,6 +154,9 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case JabutiPackage.UNARY_OPERATOR:
 				sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
+				return; 
+			case JabutiPackage.UNARY_TERM_OPERATOR:
+				sequence_NegationTerm(context, (UnaryTermOperator) semanticObject); 
 				return; 
 			case JabutiPackage.VARIABLE:
 				sequence_Variable(context, (Variable) semanticObject); 
@@ -293,14 +301,17 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns CompositeCondition
-	 *     CompositeCondition returns CompositeCondition
+	 *     ConditionTerm returns BinaryTermOperator
+	 *     CompositeCondition returns BinaryTermOperator
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns BinaryTermOperator
+	 *     NegationTerm returns BinaryTermOperator
+	 *     Term returns BinaryTermOperator
 	 *
 	 * Constraint:
-	 *     (conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*)
+	 *     (left=CompositeCondition_BinaryTermOperator_1_0 (symbol='AND' | symbol='OR') right=NegationTerm)
 	 * </pre>
 	 */
-	protected void sequence_CompositeCondition(ISerializationContext context, CompositeCondition semanticObject) {
+	protected void sequence_CompositeCondition(ISerializationContext context, BinaryTermOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -308,11 +319,24 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns ConditionalExpression
+	 *     Condition returns Condition
+	 *
+	 * Constraint:
+	 *     (conditionTerm+=ConditionTerm | conditionalExpression+=ConditionalExpression)+
+	 * </pre>
+	 */
+	protected void sequence_Condition(ISerializationContext context, Condition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     ConditionalExpression returns ConditionalExpression
 	 *
 	 * Constraint:
-	 *     (conditions+=CompositeCondition expression=Expression conditions+=CompositeCondition)
+	 *     (beforeSymbol=LogicalOperator? conditionParam=ConditionTerm conditionTerm=ConditionTerm aftetrSymbol=LogicalOperator?)
 	 * </pre>
 	 */
 	protected void sequence_ConditionalExpression(ISerializationContext context, ConditionalExpression semanticObject) {
@@ -405,23 +429,26 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns MaxNumberOfOperation
+	 *     ConditionTerm returns MaxNumberOfOperation
+	 *     CompositeCondition returns MaxNumberOfOperation
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns MaxNumberOfOperation
+	 *     NegationTerm returns MaxNumberOfOperation
 	 *     Term returns MaxNumberOfOperation
 	 *     MaxNumberOfOperation returns MaxNumberOfOperation
 	 *
 	 * Constraint:
-	 *     (operationNumber=INT timeUnit=TimeUnit)
+	 *     (operationsNumber=INT timeUnit=TimeUnit)
 	 * </pre>
 	 */
 	protected void sequence_MaxNumberOfOperation(ISerializationContext context, MaxNumberOfOperation semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER));
 			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__TIME_UNIT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__TIME_UNIT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMaxNumberOfOperationAccess().getOperationNumberINTTerminalRuleCall_2_0(), semanticObject.getOperationNumber());
+		feeder.accept(grammarAccess.getMaxNumberOfOperationAccess().getOperationsNumberINTTerminalRuleCall_2_0(), semanticObject.getOperationsNumber());
 		feeder.accept(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitTimeUnitEnumRuleCall_4_0(), semanticObject.getTimeUnit());
 		feeder.finish();
 	}
@@ -430,7 +457,10 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns MessageContent
+	 *     ConditionTerm returns MessageContent
+	 *     CompositeCondition returns MessageContent
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns MessageContent
+	 *     NegationTerm returns MessageContent
 	 *     Term returns MessageContent
 	 *     MessageContent returns MessageContent
 	 *
@@ -459,6 +489,33 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ConditionTerm returns UnaryTermOperator
+	 *     CompositeCondition returns UnaryTermOperator
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns UnaryTermOperator
+	 *     NegationTerm returns UnaryTermOperator
+	 *     Term returns UnaryTermOperator
+	 *
+	 * Constraint:
+	 *     (symbol='NOT' conditionTerm=Term)
+	 * </pre>
+	 */
+	protected void sequence_NegationTerm(ISerializationContext context, UnaryTermOperator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.UNARY_TERM_OPERATOR__SYMBOL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.UNARY_TERM_OPERATOR__SYMBOL));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.UNARY_TERM_OPERATOR__CONDITION_TERM) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.UNARY_TERM_OPERATOR__CONDITION_TERM));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNegationTermAccess().getSymbolNOTKeyword_1_1_0(), semanticObject.getSymbol());
+		feeder.accept(grammarAccess.getNegationTermAccess().getConditionTermTermParserRuleCall_1_2_0(), semanticObject.getConditionTerm());
+		feeder.finish();
 	}
 	
 	
@@ -644,7 +701,10 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns SessionInterval
+	 *     ConditionTerm returns SessionInterval
+	 *     CompositeCondition returns SessionInterval
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns SessionInterval
+	 *     NegationTerm returns SessionInterval
 	 *     Term returns SessionInterval
 	 *     SessionInterval returns SessionInterval
 	 *
@@ -696,7 +756,10 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns TimeInterval
+	 *     ConditionTerm returns TimeInterval
+	 *     CompositeCondition returns TimeInterval
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns TimeInterval
+	 *     NegationTerm returns TimeInterval
 	 *     Term returns TimeInterval
 	 *     TimeInterval returns TimeInterval
 	 *
@@ -721,7 +784,10 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns Timeout
+	 *     ConditionTerm returns Timeout
+	 *     CompositeCondition returns Timeout
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns Timeout
+	 *     NegationTerm returns Timeout
 	 *     Term returns Timeout
 	 *     Timeout returns Timeout
 	 *
@@ -778,18 +844,30 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     ((name=ID expression=Expression) | (name=ID term=Term))
+	 *     (name=ID expression=Expression)
 	 * </pre>
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__NAME));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.finish();
 	}
 	
 	
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Condition returns WeekDaysInterval
+	 *     ConditionTerm returns WeekDaysInterval
+	 *     CompositeCondition returns WeekDaysInterval
+	 *     CompositeCondition.BinaryTermOperator_1_0 returns WeekDaysInterval
+	 *     NegationTerm returns WeekDaysInterval
 	 *     Term returns WeekDaysInterval
 	 *     WeekDaysInterval returns WeekDaysInterval
 	 *

@@ -4,21 +4,60 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Condition;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Condition</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl#getConditionalExpression <em>Conditional Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl#getConditionTerm <em>Condition Term</em>}</li>
+ * </ul>
  *
  * @generated
  */
 public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
 {
+	/**
+	 * The cached value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConditionalExpression()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConditionalExpression> conditionalExpression;
+
+	/**
+	 * The cached value of the '{@link #getConditionTerm() <em>Condition Term</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConditionTerm()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ConditionTerm> conditionTerm;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -38,6 +77,133 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	protected EClass eStaticClass()
 	{
 		return JabutiPackage.Literals.CONDITION;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ConditionalExpression> getConditionalExpression()
+	{
+		if (conditionalExpression == null)
+		{
+			conditionalExpression = new EObjectContainmentEList<ConditionalExpression>(ConditionalExpression.class, this, JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION);
+		}
+		return conditionalExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<ConditionTerm> getConditionTerm()
+	{
+		if (conditionTerm == null)
+		{
+			conditionTerm = new EObjectContainmentEList<ConditionTerm>(ConditionTerm.class, this, JabutiPackage.CONDITION__CONDITION_TERM);
+		}
+		return conditionTerm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+				return ((InternalEList<?>)getConditionalExpression()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.CONDITION__CONDITION_TERM:
+				return ((InternalEList<?>)getConditionTerm()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+				return getConditionalExpression();
+			case JabutiPackage.CONDITION__CONDITION_TERM:
+				return getConditionTerm();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+				getConditionalExpression().clear();
+				getConditionalExpression().addAll((Collection<? extends ConditionalExpression>)newValue);
+				return;
+			case JabutiPackage.CONDITION__CONDITION_TERM:
+				getConditionTerm().clear();
+				getConditionTerm().addAll((Collection<? extends ConditionTerm>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+				getConditionalExpression().clear();
+				return;
+			case JabutiPackage.CONDITION__CONDITION_TERM:
+				getConditionTerm().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+				return conditionalExpression != null && !conditionalExpression.isEmpty();
+			case JabutiPackage.CONDITION__CONDITION_TERM:
+				return conditionTerm != null && !conditionTerm.isEmpty();
+		}
+		return super.eIsSet(featureID);
 	}
 
 } //ConditionImpl

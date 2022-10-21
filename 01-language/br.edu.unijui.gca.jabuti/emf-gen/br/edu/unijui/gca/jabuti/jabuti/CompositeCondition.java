@@ -14,38 +14,25 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getConditions <em>Conditions</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getLogicalOperators <em>Logical Operators</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getConditionTerm <em>Condition Term</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getCompositeCondition()
  * @model
  * @generated
  */
-public interface CompositeCondition extends Condition
+public interface CompositeCondition extends ConditionTerm
 {
 	/**
-	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.Condition}.
+	 * Returns the value of the '<em><b>Condition Term</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.ConditionTerm}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Conditions</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getCompositeCondition_Conditions()
+	 * @return the value of the '<em>Condition Term</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getCompositeCondition_ConditionTerm()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Condition> getConditions();
-
-	/**
-	 * Returns the value of the '<em><b>Logical Operators</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Logical Operators</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getCompositeCondition_LogicalOperators()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<LogicalOperator> getLogicalOperators();
+	EList<ConditionTerm> getConditionTerm();
 
 } // CompositeCondition

@@ -8,8 +8,24 @@ contract DeliveryHiring_O is EAI_Domain{
 	Party deliverySystem;
 	Party integrationProcess;
 	
-	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(1000, MONTH, 0, 0);
-	Timeout public timeout = Timeout(2, 0);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(2, HOUR, 0, 0);
+	TimeInterval public timeInterval = TimeInterval(8:00:00, 12:00:00);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(5, HOUR, 0, 0);
+	TimeInterval public timeInterval = TimeInterval(Start, End);
+	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(SATURDAY, SUNDAY);
+	MessageContent public messageContent = MessageContent("Content");
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(2, HOUR, 0, 0);
+	TimeInterval public timeInterval = TimeInterval(8:00:00, 12:00:00);
+	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(SATURDAY, SUNDAY);
+	MessageContent public messageContent = MessageContent("Content");
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(2, HOUR, 0, 0);
+	TimeInterval public timeInterval = TimeInterval(8:00:00, 12:00:00);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(5, HOUR, 0, 0);
+	TimeInterval public timeInterval = TimeInterval(Start, End);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(5, HOUR, 0, 0);
+	Timeout public timeout = Timeout(50, 0);
+	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(SATURDAY, SUNDAY);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(2, HOUR, 0, 0);
 	
 	event respondIntervalAndLimitevent(string _logMessage);
 	
@@ -24,7 +40,21 @@ contract DeliveryHiring_O is EAI_Domain{
 		bool isBreached=false;
 		
 		if(!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		isIntoTimeInterval(_accessDateTime, timeInterval) &&
+		!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		isIntoTimeInterval(_accessDateTime, timeInterval) &&
+		isBusinessDay(_accessDateTime, businessDay) &&
+		!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		isIntoTimeInterval(_accessDateTime, timeInterval) &&
+		isBusinessDay(_accessDateTime, businessDay) &&
+		!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		isIntoTimeInterval(_accessDateTime, timeInterval) &&
+		!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		isIntoTimeInterval(_accessDateTime, timeInterval) &&
+		!isOperationLimitReached(_accessDateTime, operationLimit) &&
 		!isTimeout(_accessDateTime, timeout.endTime) &&
+		isBusinessDay(_accessDateTime, businessDay) &&
+		!isOperationLimitReached(_accessDateTime, operationLimit) &&
 		) {
 			operationLimit.requestsPerformed+=1;
         	return true;	

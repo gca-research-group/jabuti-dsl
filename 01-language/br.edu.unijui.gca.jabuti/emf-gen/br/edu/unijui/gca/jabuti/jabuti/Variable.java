@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Variable#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Variable#getExpression <em>Expression</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Variable#getTerm <em>Term</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getVariable()
@@ -68,27 +67,5 @@ public interface Variable extends EObject
 	 * @generated
 	 */
 	void setExpression(Expression value);
-
-	/**
-	 * Returns the value of the '<em><b>Term</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Term</em>' containment reference.
-	 * @see #setTerm(Term)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getVariable_Term()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Term getTerm();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Variable#getTerm <em>Term</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Term</em>' containment reference.
-	 * @see #getTerm()
-	 * @generated
-	 */
-	void setTerm(Term value);
 
 } // Variable

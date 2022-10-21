@@ -27,8 +27,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getIntValue <em>Int Value</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getStrValue <em>Str Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getIntValue <em>Int Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,26 +86,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int INT_VALUE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected int intValue = INT_VALUE_EDEFAULT;
-
-	/**
 	 * The default value of the '{@link #getStrValue() <em>Str Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -124,6 +104,26 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @ordered
 	 */
 	protected String strValue = STR_VALUE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int INT_VALUE_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIntValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected int intValue = INT_VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,31 +252,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public int getIntValue()
-	{
-		return intValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setIntValue(int newIntValue)
-	{
-		int oldIntValue = intValue;
-		intValue = newIntValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__INT_VALUE, oldIntValue, intValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public String getStrValue()
 	{
 		return strValue;
@@ -294,6 +269,31 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 		strValue = newStrValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__STR_VALUE, oldStrValue, strValue));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public int getIntValue()
+	{
+		return intValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setIntValue(int newIntValue)
+	{
+		int oldIntValue = intValue;
+		intValue = newIntValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__INT_VALUE, oldIntValue, intValue));
 	}
 
 	/**
@@ -328,10 +328,10 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return getContent();
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				return getTimeUnit();
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				return getIntValue();
 			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
 				return getStrValue();
+			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
+				return getIntValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -355,11 +355,11 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				setTimeUnit((TimeUnit)newValue);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				setIntValue((Integer)newValue);
-				return;
 			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
 				setStrValue((String)newValue);
+				return;
+			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
+				setIntValue((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,11 +384,11 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				setTimeUnit(TIME_UNIT_EDEFAULT);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				setIntValue(INT_VALUE_EDEFAULT);
-				return;
 			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
 				setStrValue(STR_VALUE_EDEFAULT);
+				return;
+			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
+				setIntValue(INT_VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -410,10 +410,10 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				return timeUnit != TIME_UNIT_EDEFAULT;
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				return intValue != INT_VALUE_EDEFAULT;
 			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
 				return STR_VALUE_EDEFAULT == null ? strValue != null : !STR_VALUE_EDEFAULT.equals(strValue);
+			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
+				return intValue != INT_VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -433,10 +433,10 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 		result.append(content);
 		result.append(", timeUnit: ");
 		result.append(timeUnit);
-		result.append(", intValue: ");
-		result.append(intValue);
 		result.append(", strValue: ");
 		result.append(strValue);
+		result.append(", intValue: ");
+		result.append(intValue);
 		result.append(')');
 		return result.toString();
 	}

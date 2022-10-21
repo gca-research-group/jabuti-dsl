@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl#getOperationNumber <em>Operation Number</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl#getOperationsNumber <em>Operations Number</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl#getTimeUnit <em>Time Unit</em>}</li>
  * </ul>
  *
@@ -30,24 +30,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOperation
 {
 	/**
-	 * The default value of the '{@link #getOperationNumber() <em>Operation Number</em>}' attribute.
+	 * The default value of the '{@link #getOperationsNumber() <em>Operations Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOperationNumber()
+	 * @see #getOperationsNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int OPERATION_NUMBER_EDEFAULT = 0;
+	protected static final int OPERATIONS_NUMBER_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getOperationNumber() <em>Operation Number</em>}' attribute.
+	 * The cached value of the '{@link #getOperationsNumber() <em>Operations Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getOperationNumber()
+	 * @see #getOperationsNumber()
 	 * @generated
 	 * @ordered
 	 */
-	protected int operationNumber = OPERATION_NUMBER_EDEFAULT;
+	protected int operationsNumber = OPERATIONS_NUMBER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
@@ -96,9 +96,9 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	 * @generated
 	 */
 	@Override
-	public int getOperationNumber()
+	public int getOperationsNumber()
 	{
-		return operationNumber;
+		return operationsNumber;
 	}
 
 	/**
@@ -107,12 +107,12 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	 * @generated
 	 */
 	@Override
-	public void setOperationNumber(int newOperationNumber)
+	public void setOperationsNumber(int newOperationsNumber)
 	{
-		int oldOperationNumber = operationNumber;
-		operationNumber = newOperationNumber;
+		int oldOperationsNumber = operationsNumber;
+		operationsNumber = newOperationsNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER, oldOperationNumber, operationNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER, oldOperationsNumber, operationsNumber));
 	}
 
 	/**
@@ -150,8 +150,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER:
-				return getOperationNumber();
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
+				return getOperationsNumber();
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
 				return getTimeUnit();
 		}
@@ -168,8 +168,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER:
-				setOperationNumber((Integer)newValue);
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
+				setOperationsNumber((Integer)newValue);
 				return;
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
 				setTimeUnit((TimeUnit)newValue);
@@ -188,8 +188,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER:
-				setOperationNumber(OPERATION_NUMBER_EDEFAULT);
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
+				setOperationsNumber(OPERATIONS_NUMBER_EDEFAULT);
 				return;
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
 				setTimeUnit(TIME_UNIT_EDEFAULT);
@@ -208,8 +208,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER:
-				return operationNumber != OPERATION_NUMBER_EDEFAULT;
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
+				return operationsNumber != OPERATIONS_NUMBER_EDEFAULT;
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
 				return timeUnit != TIME_UNIT_EDEFAULT;
 		}
@@ -227,8 +227,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (operationNumber: ");
-		result.append(operationNumber);
+		result.append(" (operationsNumber: ");
+		result.append(operationsNumber);
 		result.append(", timeUnit: ");
 		result.append(timeUnit);
 		result.append(')');

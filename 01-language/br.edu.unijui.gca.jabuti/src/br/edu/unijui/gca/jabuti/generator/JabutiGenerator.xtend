@@ -91,7 +91,7 @@ class JabutiGenerator extends AbstractGenerator {
 				«ELSEIF(c instanceof TimeInterval)»
 					TimeInterval public timeInterval = TimeInterval(«c.start», «c.end»);
 				«ELSEIF(c instanceof MaxNumberOfOperation)»
-					MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(«c.operationNumber», «c.timeUnit», 0, 0);
+					MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(«c.operationsNumber», «c.timeUnit», 0, 0);
 				«ELSEIF(c instanceof MessageContent)»
 					MessageContent public messageContent = MessageContent("«c.content»");
 				«ENDIF»

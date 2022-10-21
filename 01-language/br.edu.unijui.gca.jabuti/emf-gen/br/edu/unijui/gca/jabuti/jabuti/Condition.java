@@ -3,6 +3,8 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -10,6 +12,13 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Condition</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Condition#getConditionalExpression <em>Conditional Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Condition#getConditionTerm <em>Condition Term</em>}</li>
+ * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getCondition()
  * @model
@@ -17,4 +26,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Condition extends EObject
 {
+	/**
+	 * Returns the value of the '<em><b>Conditional Expression</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Conditional Expression</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getCondition_ConditionalExpression()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ConditionalExpression> getConditionalExpression();
+
+	/**
+	 * Returns the value of the '<em><b>Condition Term</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.ConditionTerm}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition Term</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getCondition_ConditionTerm()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ConditionTerm> getConditionTerm();
+
 } // Condition

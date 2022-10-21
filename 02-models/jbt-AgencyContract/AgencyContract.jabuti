@@ -5,40 +5,39 @@ contract DeliveryHiring_O {
 		beginDate = "2022-01-01 08:00:00" 
 		dueDate = "2022-12-31 18:00:00"
 	}	
-
 	parties{
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
-
 	variables{
-		dateTimeCompra = "//dateCompra/text()"  + " " + "//HourCompra/text()"
-		
+		dateTimeCompra = "//dateCompra/text()"  + " " + "//HourCompra/text()"		
 	}
-	
 	clauses{	
 		right respondIntervalAndLimit {
 			rolePlayer = application
-			operation = request
-			condition {
-					SessionInterval(7 Day) AND 
-					MaxNumberOfOperation(1000 by Month)AND
-					Timeout(2)
-			} 
-			onBreach (log(" resgistra falha...."))
-		}
-	
-		
-
-		right cancelNFE{
-			rolePlayer = application
-				operation = request
-				condition{
-					MessageContent("dateTimeCompra" <= 24 by Month)
+			operation = request		
+			condition {			
+				(NOT ((MaxNumberOfOperation( 2 by Hour ) AND TimeInterval("8:00:00" to "12:00:00")) OR
+						(MaxNumberOfOperation( 5 by Hour ) AND TimeInterval("Start" to "End") )) AND 					
+						MaxNumberOfOperation( 5 by Hour ) AND						
+						Timeout(50) 
+						) 	AND
+				when(SessionInterval( 24 Hour by MessageContent("Content"))) do {
+					(MaxNumberOfOperation( 2 by Hour ) AND TimeInterval("8:00:00" to "12:00:00")) OR
+					(MaxNumberOfOperation( 5 by Hour ) AND TimeInterval("Start" to "End") ) AND 
+					NOT WeekDaysInterval(Saturday to Sunday)
+				}AND  
+					NOT WeekDaysInterval(Saturday to Sunday)
+				AND 				
+				when(SessionInterval( 24 Hour by MessageContent("Content"))) do {
+					(MaxNumberOfOperation( 2 by Hour ) AND TimeInterval("8:00:00" to "12:00:00")) AND 
+					NOT WeekDaysInterval(Saturday to Sunday)
 				}
+				OR
+				MaxNumberOfOperation( 2 by Hour )
+			} 
+			onBreach (log(" resgistrar falha...."))
 		}
 	}
-
-
-
 }
+

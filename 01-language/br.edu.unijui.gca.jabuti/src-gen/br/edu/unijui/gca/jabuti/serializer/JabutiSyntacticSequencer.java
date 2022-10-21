@@ -27,6 +27,8 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
+	protected AbstractElementAlias match_Term_LeftParenthesisKeyword_0_0_a;
+	protected AbstractElementAlias match_Term_LeftParenthesisKeyword_0_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -36,6 +38,8 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1()), new TokenAlias(false, false, grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0()));
 		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
+		match_Term_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getTermAccess().getLeftParenthesisKeyword_0_0());
+		match_Term_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getTermAccess().getLeftParenthesisKeyword_0_0());
 	}
 	
 	@Override
@@ -60,6 +64,10 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_Primary_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_1_0_p.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Term_LeftParenthesisKeyword_0_0_a.equals(syntax))
+				emit_Term_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Term_LeftParenthesisKeyword_0_0_p.equals(syntax))
+				emit_Term_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -140,6 +148,42 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Primary_LeftParenthesisKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '('*
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) 'MaxNumberOfOperation' '(' operationsNumber=INT
+	 *     (rule start) (ambiguity) 'MessageContent' '(' content=STRING
+	 *     (rule start) (ambiguity) 'SessionInterval' '(' frequency=INT
+	 *     (rule start) (ambiguity) 'TimeInterval' '(' start=STRING
+	 *     (rule start) (ambiguity) 'Timeout' '(' value=INT
+	 *     (rule start) (ambiguity) 'WeekDaysInterval' '(' start=WeekDay
+	 *     (rule start) (ambiguity) symbol='NOT'
+	 *     (rule start) (ambiguity) {BinaryTermOperator.left=}
+	 
+	 * </pre>
+	 */
+	protected void emit_Term_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     '('+
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) (ambiguity) symbol='NOT'
+	 *     (rule start) (ambiguity) {BinaryTermOperator.left=}
+	 
+	 * </pre>
+	 */
+	protected void emit_Term_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
