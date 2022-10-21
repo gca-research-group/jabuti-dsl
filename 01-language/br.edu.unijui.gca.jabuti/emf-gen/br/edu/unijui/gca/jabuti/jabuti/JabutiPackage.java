@@ -234,13 +234,40 @@ public interface JabutiPackage extends EPackage
 	int CLAUSE__ROLEPLAYER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__EVENT_LOG = 2;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__OPERATION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__CONDITION = 4;
+
+	/**
 	 * The number of structural features of the '<em>Clause</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE_FEATURE_COUNT = 2;
+	int CLAUSE_FEATURE_COUNT = 5;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl <em>Party</em>}' class.
@@ -355,6 +382,33 @@ public interface JabutiPackage extends EPackage
 	int RIGHT__ROLEPLAYER = CLAUSE__ROLEPLAYER;
 
 	/**
+	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT__EVENT_LOG = CLAUSE__EVENT_LOG;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT__OPERATION = CLAUSE__OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT__CONDITION = CLAUSE__CONDITION;
+
+	/**
 	 * The number of structural features of the '<em>Right</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -392,6 +446,33 @@ public interface JabutiPackage extends EPackage
 	int OBLIGATION__ROLEPLAYER = CLAUSE__ROLEPLAYER;
 
 	/**
+	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION__EVENT_LOG = CLAUSE__EVENT_LOG;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION__OPERATION = CLAUSE__OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION__CONDITION = CLAUSE__CONDITION;
+
+	/**
 	 * The number of structural features of the '<em>Obligation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -427,6 +508,33 @@ public interface JabutiPackage extends EPackage
 	 * @ordered
 	 */
 	int PROHIBITION__ROLEPLAYER = CLAUSE__ROLEPLAYER;
+
+	/**
+	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION__EVENT_LOG = CLAUSE__EVENT_LOG;
+
+	/**
+	 * The feature id for the '<em><b>Operation</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION__OPERATION = CLAUSE__OPERATION;
+
+	/**
+	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION__CONDITION = CLAUSE__CONDITION;
 
 	/**
 	 * The number of structural features of the '<em>Prohibition</em>' class.
@@ -717,6 +825,516 @@ public interface JabutiPackage extends EPackage
 	int VARIABLE_FEATURE_COUNT = 2;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.EventLogImpl <em>Event Log</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.EventLogImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getEventLog()
+	 * @generated
+	 */
+	int EVENT_LOG = 19;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_LOG__MESSAGE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Event Log</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EVENT_LOG_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.OnBreachImpl <em>On Breach</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.OnBreachImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOnBreach()
+	 * @generated
+	 */
+	int ON_BREACH = 20;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_BREACH__MESSAGE = EVENT_LOG__MESSAGE;
+
+	/**
+	 * The number of structural features of the '<em>On Breach</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_BREACH_FEATURE_COUNT = EVENT_LOG_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.OnSuccessImpl <em>On Success</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.OnSuccessImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOnSuccess()
+	 * @generated
+	 */
+	int ON_SUCCESS = 21;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_SUCCESS__MESSAGE = EVENT_LOG__MESSAGE;
+
+	/**
+	 * The number of structural features of the '<em>On Success</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ON_SUCCESS_FEATURE_COUNT = EVENT_LOG_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl <em>Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCondition()
+	 * @generated
+	 */
+	int CONDITION = 22;
+
+	/**
+	 * The number of structural features of the '<em>Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITION_FEATURE_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCompositeCondition()
+	 * @generated
+	 */
+	int COMPOSITE_CONDITION = 23;
+
+	/**
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONDITION__CONDITIONS = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Logical Operators</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONDITION__LOGICAL_OPERATORS = CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Composite Condition</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_CONDITION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl <em>Term</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTerm()
+	 * @generated
+	 */
+	int TERM = 24;
+
+	/**
+	 * The number of structural features of the '<em>Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TERM_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl <em>Session Interval</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getSessionInterval()
+	 * @generated
+	 */
+	int SESSION_INTERVAL = 25;
+
+	/**
+	 * The feature id for the '<em><b>Frequency</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__FREQUENCY = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__TIME_UNIT = TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__VALUE = TERM_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Message Content</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__MESSAGE_CONTENT = TERM_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Session Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getWeekDaysInterval()
+	 * @generated
+	 */
+	int WEEK_DAYS_INTERVAL = 26;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEEK_DAYS_INTERVAL__START = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEEK_DAYS_INTERVAL__END = TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Week Days Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEEK_DAYS_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TimeIntervalImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeInterval()
+	 * @generated
+	 */
+	int TIME_INTERVAL = 27;
+
+	/**
+	 * The feature id for the '<em><b>Start</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL__START = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>End</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL__END = TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Time Interval</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeoutImpl <em>Timeout</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TimeoutImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeout()
+	 * @generated
+	 */
+	int TIMEOUT = 28;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT__VALUE = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Timeout</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIMEOUT_FEATURE_COUNT = TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl <em>Max Number Of Operation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getMaxNumberOfOperation()
+	 * @generated
+	 */
+	int MAX_NUMBER_OF_OPERATION = 29;
+
+	/**
+	 * The feature id for the '<em><b>Operation Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_NUMBER_OF_OPERATION__TIME_UNIT = TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Max Number Of Operation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAX_NUMBER_OF_OPERATION_FEATURE_COUNT = TERM_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl <em>Message Content</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getMessageContent()
+	 * @generated
+	 */
+	int MESSAGE_CONTENT = 30;
+
+	/**
+	 * The feature id for the '<em><b>Comparison Operator</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__COMPARISON_OPERATOR = TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__CONTENT = TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__TIME_UNIT = TERM_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__VALUE = TERM_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Message Content</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getComparisonOperator()
+	 * @generated
+	 */
+	int COMPARISON_OPERATOR = 31;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARISON_OPERATOR__SYMBOL = 0;
+
+	/**
+	 * The number of structural features of the '<em>Comparison Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPARISON_OPERATOR_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionalExpression()
+	 * @generated
+	 */
+	int CONDITIONAL_EXPRESSION = 32;
+
+	/**
+	 * The feature id for the '<em><b>Conditions</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__CONDITIONS = CONDITION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Logical Operator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = CONDITION_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__EXPRESSION = CONDITION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Conditional Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = CONDITION_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.LogicalOperatorImpl <em>Logical Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.LogicalOperatorImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getLogicalOperator()
+	 * @generated
+	 */
+	int LOGICAL_OPERATOR = 33;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_OPERATOR__SYMBOL = 0;
+
+	/**
+	 * The number of structural features of the '<em>Logical Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOGICAL_OPERATOR_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -724,7 +1342,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRolePlayer()
 	 * @generated
 	 */
-	int ROLE_PLAYER = 19;
+	int ROLE_PLAYER = 34;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDay <em>Week Day</em>}' enum.
@@ -734,7 +1352,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAY = 20;
+	int WEEK_DAY = 35;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit <em>Time Unit</em>}' enum.
@@ -744,7 +1362,17 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 21;
+	int TIME_UNIT = 36;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.Operation <em>Operation</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Operation
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOperation()
+	 * @generated
+	 */
+	int OPERATION = 37;
 
 
 	/**
@@ -918,6 +1546,39 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getClause_Roleplayer();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog <em>Event Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Event Log</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_EventLog();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOperation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operation</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getOperation()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_Operation();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Condition</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_Condition();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Party <em>Party</em>}'.
@@ -1213,6 +1874,409 @@ public interface JabutiPackage extends EPackage
 	EReference getVariable_Expression();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.EventLog <em>Event Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Event Log</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.EventLog
+	 * @generated
+	 */
+	EClass getEventLog();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.EventLog#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.EventLog#getMessage()
+	 * @see #getEventLog()
+	 * @generated
+	 */
+	EAttribute getEventLog_Message();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.OnBreach <em>On Breach</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>On Breach</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.OnBreach
+	 * @generated
+	 */
+	EClass getOnBreach();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.OnSuccess <em>On Success</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>On Success</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.OnSuccess
+	 * @generated
+	 */
+	EClass getOnSuccess();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Condition</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Condition
+	 * @generated
+	 */
+	EClass getCondition();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition <em>Composite Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Composite Condition</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeCondition
+	 * @generated
+	 */
+	EClass getCompositeCondition();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getConditions <em>Conditions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getConditions()
+	 * @see #getCompositeCondition()
+	 * @generated
+	 */
+	EReference getCompositeCondition_Conditions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getLogicalOperators <em>Logical Operators</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Logical Operators</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getLogicalOperators()
+	 * @see #getCompositeCondition()
+	 * @generated
+	 */
+	EReference getCompositeCondition_LogicalOperators();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Term <em>Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Term
+	 * @generated
+	 */
+	EClass getTerm();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval <em>Session Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Session Interval</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval
+	 * @generated
+	 */
+	EClass getSessionInterval();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getFrequency <em>Frequency</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Frequency</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getFrequency()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EAttribute getSessionInterval_Frequency();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getTimeUnit()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EAttribute getSessionInterval_TimeUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getValue()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EAttribute getSessionInterval_Value();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getMessageContent <em>Message Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Message Content</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getMessageContent()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EReference getSessionInterval_MessageContent();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval <em>Week Days Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Week Days Interval</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
+	 * @generated
+	 */
+	EClass getWeekDaysInterval();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval#getStart()
+	 * @see #getWeekDaysInterval()
+	 * @generated
+	 */
+	EAttribute getWeekDaysInterval_Start();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval#getEnd <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>End</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval#getEnd()
+	 * @see #getWeekDaysInterval()
+	 * @generated
+	 */
+	EAttribute getWeekDaysInterval_End();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.TimeInterval <em>Time Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time Interval</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeInterval
+	 * @generated
+	 */
+	EClass getTimeInterval();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.TimeInterval#getStart <em>Start</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Start</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeInterval#getStart()
+	 * @see #getTimeInterval()
+	 * @generated
+	 */
+	EAttribute getTimeInterval_Start();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.TimeInterval#getEnd <em>End</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>End</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeInterval#getEnd()
+	 * @see #getTimeInterval()
+	 * @generated
+	 */
+	EAttribute getTimeInterval_End();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout <em>Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Timeout</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Timeout
+	 * @generated
+	 */
+	EClass getTimeout();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Timeout#getValue()
+	 * @see #getTimeout()
+	 * @generated
+	 */
+	EAttribute getTimeout_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation <em>Max Number Of Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Max Number Of Operation</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation
+	 * @generated
+	 */
+	EClass getMaxNumberOfOperation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getOperationNumber <em>Operation Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Operation Number</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getOperationNumber()
+	 * @see #getMaxNumberOfOperation()
+	 * @generated
+	 */
+	EAttribute getMaxNumberOfOperation_OperationNumber();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getTimeUnit()
+	 * @see #getMaxNumberOfOperation()
+	 * @generated
+	 */
+	EAttribute getMaxNumberOfOperation_TimeUnit();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent <em>Message Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Message Content</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent
+	 * @generated
+	 */
+	EClass getMessageContent();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getComparisonOperator <em>Comparison Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Comparison Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getComparisonOperator()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EReference getMessageContent_ComparisonOperator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getContent()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EAttribute getMessageContent_Content();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EAttribute getMessageContent_TimeUnit();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getValue()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EAttribute getMessageContent_Value();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator <em>Comparison Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Comparison Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator
+	 * @generated
+	 */
+	EClass getComparisonOperator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator#getSymbol()
+	 * @see #getComparisonOperator()
+	 * @generated
+	 */
+	EAttribute getComparisonOperator_Symbol();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression <em>Conditional Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Conditional Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
+	 * @generated
+	 */
+	EClass getConditionalExpression();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditions <em>Conditions</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Conditions</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditions()
+	 * @see #getConditionalExpression()
+	 * @generated
+	 */
+	EReference getConditionalExpression_Conditions();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Logical Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator()
+	 * @see #getConditionalExpression()
+	 * @generated
+	 */
+	EReference getConditionalExpression_LogicalOperator();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpression()
+	 * @see #getConditionalExpression()
+	 * @generated
+	 */
+	EReference getConditionalExpression_Expression();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Logical Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperator
+	 * @generated
+	 */
+	EClass getLogicalOperator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator#getSymbol <em>Symbol</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Symbol</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperator#getSymbol()
+	 * @see #getLogicalOperator()
+	 * @generated
+	 */
+	EAttribute getLogicalOperator_Symbol();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,6 +2305,16 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getTimeUnit();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.Operation <em>Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Operation</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Operation
+	 * @generated
+	 */
+	EEnum getOperation();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1400,6 +2474,30 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute CLAUSE__ROLEPLAYER = eINSTANCE.getClause_Roleplayer();
+
+		/**
+		 * The meta object literal for the '<em><b>Event Log</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__EVENT_LOG = eINSTANCE.getClause_EventLog();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__OPERATION = eINSTANCE.getClause_Operation();
+
+		/**
+		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__CONDITION = eINSTANCE.getClause_Condition();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl <em>Party</em>}' class.
@@ -1656,6 +2754,340 @@ public interface JabutiPackage extends EPackage
 		EReference VARIABLE__EXPRESSION = eINSTANCE.getVariable_Expression();
 
 		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.EventLogImpl <em>Event Log</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.EventLogImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getEventLog()
+		 * @generated
+		 */
+		EClass EVENT_LOG = eINSTANCE.getEventLog();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EVENT_LOG__MESSAGE = eINSTANCE.getEventLog_Message();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.OnBreachImpl <em>On Breach</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.OnBreachImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOnBreach()
+		 * @generated
+		 */
+		EClass ON_BREACH = eINSTANCE.getOnBreach();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.OnSuccessImpl <em>On Success</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.OnSuccessImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOnSuccess()
+		 * @generated
+		 */
+		EClass ON_SUCCESS = eINSTANCE.getOnSuccess();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl <em>Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCondition()
+		 * @generated
+		 */
+		EClass CONDITION = eINSTANCE.getCondition();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCompositeCondition()
+		 * @generated
+		 */
+		EClass COMPOSITE_CONDITION = eINSTANCE.getCompositeCondition();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_CONDITION__CONDITIONS = eINSTANCE.getCompositeCondition_Conditions();
+
+		/**
+		 * The meta object literal for the '<em><b>Logical Operators</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSITE_CONDITION__LOGICAL_OPERATORS = eINSTANCE.getCompositeCondition_LogicalOperators();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl <em>Term</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTerm()
+		 * @generated
+		 */
+		EClass TERM = eINSTANCE.getTerm();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl <em>Session Interval</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getSessionInterval()
+		 * @generated
+		 */
+		EClass SESSION_INTERVAL = eINSTANCE.getSessionInterval();
+
+		/**
+		 * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SESSION_INTERVAL__FREQUENCY = eINSTANCE.getSessionInterval_Frequency();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SESSION_INTERVAL__TIME_UNIT = eINSTANCE.getSessionInterval_TimeUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SESSION_INTERVAL__VALUE = eINSTANCE.getSessionInterval_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Content</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SESSION_INTERVAL__MESSAGE_CONTENT = eINSTANCE.getSessionInterval_MessageContent();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getWeekDaysInterval()
+		 * @generated
+		 */
+		EClass WEEK_DAYS_INTERVAL = eINSTANCE.getWeekDaysInterval();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEEK_DAYS_INTERVAL__START = eINSTANCE.getWeekDaysInterval_Start();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEEK_DAYS_INTERVAL__END = eINSTANCE.getWeekDaysInterval_End();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeIntervalImpl <em>Time Interval</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TimeIntervalImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeInterval()
+		 * @generated
+		 */
+		EClass TIME_INTERVAL = eINSTANCE.getTimeInterval();
+
+		/**
+		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_INTERVAL__START = eINSTANCE.getTimeInterval_Start();
+
+		/**
+		 * The meta object literal for the '<em><b>End</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_INTERVAL__END = eINSTANCE.getTimeInterval_End();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeoutImpl <em>Timeout</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TimeoutImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeout()
+		 * @generated
+		 */
+		EClass TIMEOUT = eINSTANCE.getTimeout();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIMEOUT__VALUE = eINSTANCE.getTimeout_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl <em>Max Number Of Operation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getMaxNumberOfOperation()
+		 * @generated
+		 */
+		EClass MAX_NUMBER_OF_OPERATION = eINSTANCE.getMaxNumberOfOperation();
+
+		/**
+		 * The meta object literal for the '<em><b>Operation Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAX_NUMBER_OF_OPERATION__OPERATION_NUMBER = eINSTANCE.getMaxNumberOfOperation_OperationNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAX_NUMBER_OF_OPERATION__TIME_UNIT = eINSTANCE.getMaxNumberOfOperation_TimeUnit();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl <em>Message Content</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getMessageContent()
+		 * @generated
+		 */
+		EClass MESSAGE_CONTENT = eINSTANCE.getMessageContent();
+
+		/**
+		 * The meta object literal for the '<em><b>Comparison Operator</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_CONTENT__COMPARISON_OPERATOR = eINSTANCE.getMessageContent_ComparisonOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_CONTENT__CONTENT = eINSTANCE.getMessageContent_Content();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_CONTENT__TIME_UNIT = eINSTANCE.getMessageContent_TimeUnit();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_CONTENT__VALUE = eINSTANCE.getMessageContent_Value();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getComparisonOperator()
+		 * @generated
+		 */
+		EClass COMPARISON_OPERATOR = eINSTANCE.getComparisonOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPARISON_OPERATOR__SYMBOL = eINSTANCE.getComparisonOperator_Symbol();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionalExpression()
+		 * @generated
+		 */
+		EClass CONDITIONAL_EXPRESSION = eINSTANCE.getConditionalExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Conditions</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_EXPRESSION__CONDITIONS = eINSTANCE.getConditionalExpression_Conditions();
+
+		/**
+		 * The meta object literal for the '<em><b>Logical Operator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = eINSTANCE.getConditionalExpression_LogicalOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_EXPRESSION__EXPRESSION = eINSTANCE.getConditionalExpression_Expression();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.LogicalOperatorImpl <em>Logical Operator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.LogicalOperatorImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getLogicalOperator()
+		 * @generated
+		 */
+		EClass LOGICAL_OPERATOR = eINSTANCE.getLogicalOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute LOGICAL_OPERATOR__SYMBOL = eINSTANCE.getLogicalOperator_Symbol();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1684,6 +3116,16 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EEnum TIME_UNIT = eINSTANCE.getTimeUnit();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.Operation <em>Operation</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.Operation
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOperation()
+		 * @generated
+		 */
+		EEnum OPERATION = eINSTANCE.getOperation();
 
 	}
 

@@ -6,22 +6,37 @@ package br.edu.unijui.gca.jabuti.jabuti.util;
 import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
+import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
+import br.edu.unijui.gca.jabuti.jabuti.Condition;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.LiteralValue;
+import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
+import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation;
+import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
 import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
+import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
+import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
+import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
+import br.edu.unijui.gca.jabuti.jabuti.Term;
+import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
+import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
+import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -187,6 +202,81 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseVariable(Variable object)
 			{
 				return createVariableAdapter();
+			}
+			@Override
+			public Adapter caseEventLog(EventLog object)
+			{
+				return createEventLogAdapter();
+			}
+			@Override
+			public Adapter caseOnBreach(OnBreach object)
+			{
+				return createOnBreachAdapter();
+			}
+			@Override
+			public Adapter caseOnSuccess(OnSuccess object)
+			{
+				return createOnSuccessAdapter();
+			}
+			@Override
+			public Adapter caseCondition(Condition object)
+			{
+				return createConditionAdapter();
+			}
+			@Override
+			public Adapter caseCompositeCondition(CompositeCondition object)
+			{
+				return createCompositeConditionAdapter();
+			}
+			@Override
+			public Adapter caseTerm(Term object)
+			{
+				return createTermAdapter();
+			}
+			@Override
+			public Adapter caseSessionInterval(SessionInterval object)
+			{
+				return createSessionIntervalAdapter();
+			}
+			@Override
+			public Adapter caseWeekDaysInterval(WeekDaysInterval object)
+			{
+				return createWeekDaysIntervalAdapter();
+			}
+			@Override
+			public Adapter caseTimeInterval(TimeInterval object)
+			{
+				return createTimeIntervalAdapter();
+			}
+			@Override
+			public Adapter caseTimeout(Timeout object)
+			{
+				return createTimeoutAdapter();
+			}
+			@Override
+			public Adapter caseMaxNumberOfOperation(MaxNumberOfOperation object)
+			{
+				return createMaxNumberOfOperationAdapter();
+			}
+			@Override
+			public Adapter caseMessageContent(MessageContent object)
+			{
+				return createMessageContentAdapter();
+			}
+			@Override
+			public Adapter caseComparisonOperator(ComparisonOperator object)
+			{
+				return createComparisonOperatorAdapter();
+			}
+			@Override
+			public Adapter caseConditionalExpression(ConditionalExpression object)
+			{
+				return createConditionalExpressionAdapter();
+			}
+			@Override
+			public Adapter caseLogicalOperator(LogicalOperator object)
+			{
+				return createLogicalOperatorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -491,6 +581,231 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createVariableAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.EventLog <em>Event Log</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.EventLog
+	 * @generated
+	 */
+	public Adapter createEventLogAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.OnBreach <em>On Breach</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.OnBreach
+	 * @generated
+	 */
+	public Adapter createOnBreachAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.OnSuccess <em>On Success</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.OnSuccess
+	 * @generated
+	 */
+	public Adapter createOnSuccessAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Condition <em>Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Condition
+	 * @generated
+	 */
+	public Adapter createConditionAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition <em>Composite Condition</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeCondition
+	 * @generated
+	 */
+	public Adapter createCompositeConditionAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Term <em>Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Term
+	 * @generated
+	 */
+	public Adapter createTermAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval <em>Session Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval
+	 * @generated
+	 */
+	public Adapter createSessionIntervalAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval <em>Week Days Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
+	 * @generated
+	 */
+	public Adapter createWeekDaysIntervalAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.TimeInterval <em>Time Interval</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeInterval
+	 * @generated
+	 */
+	public Adapter createTimeIntervalAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout <em>Timeout</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Timeout
+	 * @generated
+	 */
+	public Adapter createTimeoutAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation <em>Max Number Of Operation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation
+	 * @generated
+	 */
+	public Adapter createMaxNumberOfOperationAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent <em>Message Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent
+	 * @generated
+	 */
+	public Adapter createMessageContentAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator <em>Comparison Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator
+	 * @generated
+	 */
+	public Adapter createComparisonOperatorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression <em>Conditional Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
+	 * @generated
+	 */
+	public Adapter createConditionalExpressionAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperator
+	 * @generated
+	 */
+	public Adapter createLogicalOperatorAdapter()
 	{
 		return null;
 	}

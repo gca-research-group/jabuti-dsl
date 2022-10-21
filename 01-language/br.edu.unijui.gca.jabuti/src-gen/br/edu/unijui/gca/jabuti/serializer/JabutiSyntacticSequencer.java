@@ -12,6 +12,7 @@ import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AlternativeAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
@@ -21,6 +22,7 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected JabutiGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q;
 	protected AbstractElementAlias match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1;
 	protected AbstractElementAlias match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
@@ -29,6 +31,7 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (JabutiGrammarAccess) access;
+		match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContractAccess().getVariablesKeyword_17_0()), new TokenAlias(false, false, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_17_1()), new TokenAlias(false, false, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_17_3()));
 		match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getAsteriskKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getSolidusKeyword_1_1_1()));
 		match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1()), new TokenAlias(false, false, grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0()));
 		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
@@ -47,7 +50,9 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1.equals(syntax))
+			if (match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q.equals(syntax))
+				emit_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1.equals(syntax))
 				emit_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0.equals(syntax))
 				emit_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -59,6 +64,21 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     ('variables' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     process=Process '}' (ambiguity) 'clauses' '{' '}' '}' (rule end)
+	 *     process=Process '}' (ambiguity) 'clauses' '{' clauses+=Clause
+	 
+	 * </pre>
+	 */
+	protected void emit_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:

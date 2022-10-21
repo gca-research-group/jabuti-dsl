@@ -18,19 +18,19 @@ Contract:
 			'beginDate' '=' beginDate=STRING
 			'dueDate' '=' dueDate=STRING
 		'}'
-		
-		'variables' '{'
-			variables+=Variable*
-		'}'
-		
+			
 		'parties' '{'
 				application=Application
 				process=Process
 		'}'
-	
+
+		('variables' '{'
+			variables+=Variable*
+		'}')?
+		
 		'clauses' '{'
 			clauses+=Clause*
-		'}'
+		'}'		
 				
 	'}'; 
 	
@@ -39,7 +39,12 @@ Contract:
 Clause: 
 	(Right | Prohibition | Obligation) '{'
 		'rolePlayer' '=' roleplayer=RolePlayer
-	 '}' 
+		'operation' '=' operation=Operation
+		'condition' '{' 
+			condition= Condition			
+		'}'
+		eventLog+=EventLog*
+	'}' 
 ;
 
 Right:
@@ -68,11 +73,25 @@ Process:
 ;
 
 
+// #################### EventLog onBreach and onSuccess ####################
+
+
+EventLog:
+	OnSuccess | OnBreach
+;
+OnSuccess:
+	'onSuccess' '(' 'log(' message=STRING ')' ')' 
+;
+
+OnBreach:
+	 'onBreach' '(' 'log(' message=STRING ')' ')' 
+;
+
 // #################### EXPRESSION GROUP - CLASSES AND SUBCLASSES ####################
 
 Expression:
-	Negation ({BinaryOperator.left=current} (symbol='AND' | symbol='&&' | symbol="||" | symbol='OR'  ) right=Negation)*;
-
+	Negation ({BinaryOperator.left=current} (symbol='AND' | symbol='&&' | symbol="||" | symbol='OR'  ) right=Negation)*
+;
 
 Negation returns Expression:
 	Comparison | {UnaryOperator} symbol='!' expression=Comparison;
@@ -115,8 +134,70 @@ Variable:
 	(name=ID '=' expression=Expression) 
 	//|(name=ID '=' businessRule+=BusinessRule)
 ;
-// #######################################################
 
+
+// #################### CONDITION AND TERMS ####################
+
+Condition: 
+	Term | CompositeCondition | ConditionalExpression
+;
+
+Term returns Condition:
+	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
+;
+
+CompositeCondition:	
+	conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*
+;
+
+ConditionalExpression: 
+	conditions+=CompositeCondition
+	'when' '(' expression=Expression ')' 'do' '{'
+		conditions+=CompositeCondition
+	'}'
+;
+
+LogicalOperator:
+	symbol=('AND' | 'OR' | 'NOT')
+;
+
+TimeInterval: 
+	'TimeInterval' '(' start=STRING 'to' end=STRING')'
+; 
+
+SessionInterval: 
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messageContent=MessageContent  ) ')'|
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
+	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' value=STRING  ) ')'
+; 
+
+Timeout:
+	'Timeout' '(' value=STRING ')'
+;
+
+MaxNumberOfOperation:
+	'MaxNumberOfOperation' '(' operationNumber=INT 'by' timeUnit=TimeUnit  ')'
+;
+
+WeekDaysInterval:
+	('WeekDaysInterval' '(' start=WeekDay 'to' end=WeekDay ')')
+;
+
+MessageContent:
+	('MessageContent' '(' content=STRING ')') | 	
+	('MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')') |
+	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator value=STRING')' )|
+	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator value=STRING 'by' timeUnit=TimeUnit')' ) 
+;
+
+
+ComparisonOperator:
+	symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='	| symbol='==' 
+;
+
+
+
+//############################################
 //por que utilizar um qualifiedName e como ID ?
 QualifiedName:
 	ID ('.' ID)*;
@@ -132,6 +213,10 @@ enum RolePlayer:
 	APPLICATION='application' | PROCESS='process'
 ;
 
+enum Operation:
+    PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
+;
+
 enum WeekDay:
     SUNDAY='Sunday' | MONDAY='Monday' | TUESDAY='Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY='Thursday' | FRIDAY='Friday' | SATURDAY='Saturday'
 ;
@@ -139,6 +224,7 @@ enum WeekDay:
 enum TimeUnit:
     SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='Day' | WEEK='Week' | MONTH='Month' | YEAR='Year'
 ;
+
 
 // ########### ENUM SECTION ####################
 

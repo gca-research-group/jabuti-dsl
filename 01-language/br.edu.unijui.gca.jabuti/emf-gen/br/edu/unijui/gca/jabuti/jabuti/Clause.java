@@ -3,6 +3,8 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,6 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRoleplayer <em>Roleplayer</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog <em>Event Log</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOperation <em>Operation</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause()
@@ -48,6 +53,7 @@ public interface Clause extends EObject
 
 	/**
 	 * Returns the value of the '<em><b>Roleplayer</b></em>' attribute.
+	 * The default value is <code>""</code>.
 	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -55,7 +61,7 @@ public interface Clause extends EObject
 	 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
 	 * @see #setRoleplayer(RolePlayer)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Roleplayer()
-	 * @model
+	 * @model default=""
 	 * @generated
 	 */
 	RolePlayer getRoleplayer();
@@ -70,5 +76,65 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setRoleplayer(RolePlayer value);
+
+	/**
+	 * Returns the value of the '<em><b>Event Log</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.EventLog}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Event Log</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_EventLog()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<EventLog> getEventLog();
+
+	/**
+	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
+	 * The default value is <code>""</code>.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.Operation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Operation</em>' attribute.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Operation
+	 * @see #setOperation(Operation)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Operation()
+	 * @model default=""
+	 * @generated
+	 */
+	Operation getOperation();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOperation <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Operation</em>' attribute.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Operation
+	 * @see #getOperation()
+	 * @generated
+	 */
+	void setOperation(Operation value);
+
+	/**
+	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition</em>' containment reference.
+	 * @see #setCondition(Condition)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Condition()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	Condition getCondition();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition <em>Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Condition</em>' containment reference.
+	 * @see #getCondition()
+	 * @generated
+	 */
+	void setCondition(Condition value);
 
 } // Clause

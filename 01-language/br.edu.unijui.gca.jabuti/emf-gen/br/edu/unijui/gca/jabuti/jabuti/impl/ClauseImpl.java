@@ -4,15 +4,27 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.Condition;
+import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Operation;
 import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +36,9 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getRoleplayer <em>Roleplayer</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getEventLog <em>Event Log</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getOperation <em>Operation</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getCondition <em>Condition</em>}</li>
  * </ul>
  *
  * @generated
@@ -69,6 +84,46 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @ordered
 	 */
 	protected RolePlayer roleplayer = ROLEPLAYER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getEventLog() <em>Event Log</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEventLog()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EventLog> eventLog;
+
+	/**
+	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperation()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Operation OPERATION_EDEFAULT = Operation.PUSH;
+
+	/**
+	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOperation()
+	 * @generated
+	 * @ordered
+	 */
+	protected Operation operation = OPERATION_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCondition()
+	 * @generated
+	 * @ordered
+	 */
+	protected Condition condition;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -147,6 +202,114 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
+	public EList<EventLog> getEventLog()
+	{
+		if (eventLog == null)
+		{
+			eventLog = new EObjectContainmentEList<EventLog>(EventLog.class, this, JabutiPackage.CLAUSE__EVENT_LOG);
+		}
+		return eventLog;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Operation getOperation()
+	{
+		return operation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOperation(Operation newOperation)
+	{
+		Operation oldOperation = operation;
+		operation = newOperation == null ? OPERATION_EDEFAULT : newOperation;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__OPERATION, oldOperation, operation));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Condition getCondition()
+	{
+		return condition;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCondition(Condition newCondition, NotificationChain msgs)
+	{
+		Condition oldCondition = condition;
+		condition = newCondition;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__CONDITION, oldCondition, newCondition);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setCondition(Condition newCondition)
+	{
+		if (newCondition != condition)
+		{
+			NotificationChain msgs = null;
+			if (condition != null)
+				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__CONDITION, null, msgs);
+			if (newCondition != null)
+				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__CONDITION, null, msgs);
+			msgs = basicSetCondition(newCondition, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__CONDITION, newCondition, newCondition));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.CLAUSE__EVENT_LOG:
+				return ((InternalEList<?>)getEventLog()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.CLAUSE__CONDITION:
+				return basicSetCondition(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType)
 	{
 		switch (featureID)
@@ -155,6 +318,12 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return getName();
 			case JabutiPackage.CLAUSE__ROLEPLAYER:
 				return getRoleplayer();
+			case JabutiPackage.CLAUSE__EVENT_LOG:
+				return getEventLog();
+			case JabutiPackage.CLAUSE__OPERATION:
+				return getOperation();
+			case JabutiPackage.CLAUSE__CONDITION:
+				return getCondition();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -164,6 +333,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
@@ -174,6 +344,16 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return;
 			case JabutiPackage.CLAUSE__ROLEPLAYER:
 				setRoleplayer((RolePlayer)newValue);
+				return;
+			case JabutiPackage.CLAUSE__EVENT_LOG:
+				getEventLog().clear();
+				getEventLog().addAll((Collection<? extends EventLog>)newValue);
+				return;
+			case JabutiPackage.CLAUSE__OPERATION:
+				setOperation((Operation)newValue);
+				return;
+			case JabutiPackage.CLAUSE__CONDITION:
+				setCondition((Condition)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -195,6 +375,15 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case JabutiPackage.CLAUSE__ROLEPLAYER:
 				setRoleplayer(ROLEPLAYER_EDEFAULT);
 				return;
+			case JabutiPackage.CLAUSE__EVENT_LOG:
+				getEventLog().clear();
+				return;
+			case JabutiPackage.CLAUSE__OPERATION:
+				setOperation(OPERATION_EDEFAULT);
+				return;
+			case JabutiPackage.CLAUSE__CONDITION:
+				setCondition((Condition)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -213,6 +402,12 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case JabutiPackage.CLAUSE__ROLEPLAYER:
 				return roleplayer != ROLEPLAYER_EDEFAULT;
+			case JabutiPackage.CLAUSE__EVENT_LOG:
+				return eventLog != null && !eventLog.isEmpty();
+			case JabutiPackage.CLAUSE__OPERATION:
+				return operation != OPERATION_EDEFAULT;
+			case JabutiPackage.CLAUSE__CONDITION:
+				return condition != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -232,6 +427,8 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		result.append(name);
 		result.append(", roleplayer: ");
 		result.append(roleplayer);
+		result.append(", operation: ");
+		result.append(operation);
 		result.append(')');
 		return result.toString();
 	}

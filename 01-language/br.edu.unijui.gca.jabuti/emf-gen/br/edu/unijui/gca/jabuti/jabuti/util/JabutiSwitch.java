@@ -6,22 +6,37 @@ package br.edu.unijui.gca.jabuti.jabuti.util;
 import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
+import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
+import br.edu.unijui.gca.jabuti.jabuti.Condition;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.LiteralValue;
+import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
+import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation;
+import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
 import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
+import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
+import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
+import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
+import br.edu.unijui.gca.jabuti.jabuti.Term;
+import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
+import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
+import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -237,6 +252,128 @@ public class JabutiSwitch<T> extends Switch<T>
 			{
 				Variable variable = (Variable)theEObject;
 				T result = caseVariable(variable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.EVENT_LOG:
+			{
+				EventLog eventLog = (EventLog)theEObject;
+				T result = caseEventLog(eventLog);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.ON_BREACH:
+			{
+				OnBreach onBreach = (OnBreach)theEObject;
+				T result = caseOnBreach(onBreach);
+				if (result == null) result = caseEventLog(onBreach);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.ON_SUCCESS:
+			{
+				OnSuccess onSuccess = (OnSuccess)theEObject;
+				T result = caseOnSuccess(onSuccess);
+				if (result == null) result = caseEventLog(onSuccess);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.CONDITION:
+			{
+				Condition condition = (Condition)theEObject;
+				T result = caseCondition(condition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.COMPOSITE_CONDITION:
+			{
+				CompositeCondition compositeCondition = (CompositeCondition)theEObject;
+				T result = caseCompositeCondition(compositeCondition);
+				if (result == null) result = caseCondition(compositeCondition);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.TERM:
+			{
+				Term term = (Term)theEObject;
+				T result = caseTerm(term);
+				if (result == null) result = caseCondition(term);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.SESSION_INTERVAL:
+			{
+				SessionInterval sessionInterval = (SessionInterval)theEObject;
+				T result = caseSessionInterval(sessionInterval);
+				if (result == null) result = caseTerm(sessionInterval);
+				if (result == null) result = caseCondition(sessionInterval);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.WEEK_DAYS_INTERVAL:
+			{
+				WeekDaysInterval weekDaysInterval = (WeekDaysInterval)theEObject;
+				T result = caseWeekDaysInterval(weekDaysInterval);
+				if (result == null) result = caseTerm(weekDaysInterval);
+				if (result == null) result = caseCondition(weekDaysInterval);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.TIME_INTERVAL:
+			{
+				TimeInterval timeInterval = (TimeInterval)theEObject;
+				T result = caseTimeInterval(timeInterval);
+				if (result == null) result = caseTerm(timeInterval);
+				if (result == null) result = caseCondition(timeInterval);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.TIMEOUT:
+			{
+				Timeout timeout = (Timeout)theEObject;
+				T result = caseTimeout(timeout);
+				if (result == null) result = caseTerm(timeout);
+				if (result == null) result = caseCondition(timeout);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION:
+			{
+				MaxNumberOfOperation maxNumberOfOperation = (MaxNumberOfOperation)theEObject;
+				T result = caseMaxNumberOfOperation(maxNumberOfOperation);
+				if (result == null) result = caseTerm(maxNumberOfOperation);
+				if (result == null) result = caseCondition(maxNumberOfOperation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.MESSAGE_CONTENT:
+			{
+				MessageContent messageContent = (MessageContent)theEObject;
+				T result = caseMessageContent(messageContent);
+				if (result == null) result = caseTerm(messageContent);
+				if (result == null) result = caseCondition(messageContent);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.COMPARISON_OPERATOR:
+			{
+				ComparisonOperator comparisonOperator = (ComparisonOperator)theEObject;
+				T result = caseComparisonOperator(comparisonOperator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.CONDITIONAL_EXPRESSION:
+			{
+				ConditionalExpression conditionalExpression = (ConditionalExpression)theEObject;
+				T result = caseConditionalExpression(conditionalExpression);
+				if (result == null) result = caseCondition(conditionalExpression);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.LOGICAL_OPERATOR:
+			{
+				LogicalOperator logicalOperator = (LogicalOperator)theEObject;
+				T result = caseLogicalOperator(logicalOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -544,6 +681,246 @@ public class JabutiSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseVariable(Variable object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Event Log</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Event Log</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEventLog(EventLog object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>On Breach</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>On Breach</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOnBreach(OnBreach object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>On Success</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>On Success</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOnSuccess(OnSuccess object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCondition(Condition object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Condition</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCompositeCondition(CompositeCondition object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Term</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Term</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTerm(Term object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Session Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Session Interval</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseSessionInterval(SessionInterval object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Week Days Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Week Days Interval</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseWeekDaysInterval(WeekDaysInterval object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Time Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Time Interval</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimeInterval(TimeInterval object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Timeout</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Timeout</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimeout(Timeout object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Max Number Of Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Max Number Of Operation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMaxNumberOfOperation(MaxNumberOfOperation object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Message Content</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Message Content</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseMessageContent(MessageContent object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Comparison Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Comparison Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComparisonOperator(ComparisonOperator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional Expression</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConditionalExpression(ConditionalExpression object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Logical Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Logical Operator</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseLogicalOperator(LogicalOperator object)
 	{
 		return null;
 	}

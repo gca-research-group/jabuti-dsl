@@ -195,6 +195,141 @@ public interface JabutiFactory extends EFactory
 	Variable createVariable();
 
 	/**
+	 * Returns a new object of class '<em>Event Log</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Event Log</em>'.
+	 * @generated
+	 */
+	EventLog createEventLog();
+
+	/**
+	 * Returns a new object of class '<em>On Breach</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>On Breach</em>'.
+	 * @generated
+	 */
+	OnBreach createOnBreach();
+
+	/**
+	 * Returns a new object of class '<em>On Success</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>On Success</em>'.
+	 * @generated
+	 */
+	OnSuccess createOnSuccess();
+
+	/**
+	 * Returns a new object of class '<em>Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Condition</em>'.
+	 * @generated
+	 */
+	Condition createCondition();
+
+	/**
+	 * Returns a new object of class '<em>Composite Condition</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Composite Condition</em>'.
+	 * @generated
+	 */
+	CompositeCondition createCompositeCondition();
+
+	/**
+	 * Returns a new object of class '<em>Term</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Term</em>'.
+	 * @generated
+	 */
+	Term createTerm();
+
+	/**
+	 * Returns a new object of class '<em>Session Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Session Interval</em>'.
+	 * @generated
+	 */
+	SessionInterval createSessionInterval();
+
+	/**
+	 * Returns a new object of class '<em>Week Days Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Week Days Interval</em>'.
+	 * @generated
+	 */
+	WeekDaysInterval createWeekDaysInterval();
+
+	/**
+	 * Returns a new object of class '<em>Time Interval</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time Interval</em>'.
+	 * @generated
+	 */
+	TimeInterval createTimeInterval();
+
+	/**
+	 * Returns a new object of class '<em>Timeout</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Timeout</em>'.
+	 * @generated
+	 */
+	Timeout createTimeout();
+
+	/**
+	 * Returns a new object of class '<em>Max Number Of Operation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Max Number Of Operation</em>'.
+	 * @generated
+	 */
+	MaxNumberOfOperation createMaxNumberOfOperation();
+
+	/**
+	 * Returns a new object of class '<em>Message Content</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Message Content</em>'.
+	 * @generated
+	 */
+	MessageContent createMessageContent();
+
+	/**
+	 * Returns a new object of class '<em>Comparison Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Comparison Operator</em>'.
+	 * @generated
+	 */
+	ComparisonOperator createComparisonOperator();
+
+	/**
+	 * Returns a new object of class '<em>Conditional Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conditional Expression</em>'.
+	 * @generated
+	 */
+	ConditionalExpression createConditionalExpression();
+
+	/**
+	 * Returns a new object of class '<em>Logical Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logical Operator</em>'.
+	 * @generated
+	 */
+	LogicalOperator createLogicalOperator();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
