@@ -344,6 +344,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	{
 		super(eNS_URI, JabutiFactory.eINSTANCE);
 	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -910,6 +911,17 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
+	public EReference getVariable_Term()
+	{
+		return (EReference)variableEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getEventLog()
 	{
 		return eventLogEClass;
@@ -1229,9 +1241,20 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMessageContent_Value()
+	public EAttribute getMessageContent_IntValue()
 	{
 		return (EAttribute)messageContentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessageContent_StrValue()
+	{
+		return (EAttribute)messageContentEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -1462,6 +1485,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		variableEClass = createEClass(VARIABLE);
 		createEAttribute(variableEClass, VARIABLE__NAME);
 		createEReference(variableEClass, VARIABLE__EXPRESSION);
+		createEReference(variableEClass, VARIABLE__TERM);
 
 		eventLogEClass = createEClass(EVENT_LOG);
 		createEAttribute(eventLogEClass, EVENT_LOG__MESSAGE);
@@ -1503,7 +1527,8 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		createEReference(messageContentEClass, MESSAGE_CONTENT__COMPARISON_OPERATOR);
 		createEAttribute(messageContentEClass, MESSAGE_CONTENT__CONTENT);
 		createEAttribute(messageContentEClass, MESSAGE_CONTENT__TIME_UNIT);
-		createEAttribute(messageContentEClass, MESSAGE_CONTENT__VALUE);
+		createEAttribute(messageContentEClass, MESSAGE_CONTENT__INT_VALUE);
+		createEAttribute(messageContentEClass, MESSAGE_CONTENT__STR_VALUE);
 
 		comparisonOperatorEClass = createEClass(COMPARISON_OPERATOR);
 		createEAttribute(comparisonOperatorEClass, COMPARISON_OPERATOR__SYMBOL);
@@ -1642,6 +1667,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getVariable_Expression(), this.getExpression(), null, "expression", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariable_Term(), this.getTerm(), null, "term", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eventLogEClass, EventLog.class, "EventLog", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEventLog_Message(), ecorePackage.getEString(), "message", null, 0, 1, EventLog.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1673,7 +1699,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEAttribute(getTimeInterval_End(), ecorePackage.getEString(), "end", null, 0, 1, TimeInterval.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(timeoutEClass, Timeout.class, "Timeout", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTimeout_Value(), ecorePackage.getEString(), "value", null, 0, 1, Timeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTimeout_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Timeout.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(maxNumberOfOperationEClass, MaxNumberOfOperation.class, "MaxNumberOfOperation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMaxNumberOfOperation_OperationNumber(), ecorePackage.getEInt(), "operationNumber", null, 0, 1, MaxNumberOfOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1683,7 +1709,8 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEReference(getMessageContent_ComparisonOperator(), this.getComparisonOperator(), null, "comparisonOperator", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageContent_Content(), ecorePackage.getEString(), "content", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageContent_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessageContent_Value(), ecorePackage.getEString(), "value", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageContent_IntValue(), ecorePackage.getEInt(), "intValue", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageContent_StrValue(), ecorePackage.getEString(), "strValue", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comparisonOperatorEClass, ComparisonOperator.class, "ComparisonOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComparisonOperator_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, ComparisonOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

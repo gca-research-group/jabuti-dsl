@@ -8,13 +8,14 @@ contract DeliveryHiring_O is EAI_Domain{
 	Party deliverySystem;
 	Party integrationProcess;
 	
-	OperationLimit public operationLimit = OperationLimit(1000, MONTH, 0, 0);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(1000, MONTH, 0, 0);
+	Timeout public timeout = Timeout(2, 0);
 	
-	event EventLog(string _logMessage);
+	event respondIntervalAndLimitevent(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
-    	deliverySystem = Party(" ", _applicationWallet);
-	    integrationProcess = Party("", _processWallet);
+    	deliverySystem = Party("integrationProcess ", _applicationWallet);
+	    integrationProcess = Party("integrationProcess", _processWallet);
 	}
 	
 	function respondIntervalAndLimit(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
@@ -23,12 +24,13 @@ contract DeliveryHiring_O is EAI_Domain{
 		bool isBreached=false;
 		
 		if(!isOperationLimitReached(_accessDateTime, operationLimit) &&
+		!isTimeout(_accessDateTime, timeout.endTime) &&
 		) {
 			operationLimit.requestsPerformed+=1;
         	return true;	
 		}
 		
-		emit EventLog ("Request made outside of allowed hours or distance limit exceeded");
+		emit respondIntervalAndLimitevent ("Request made outside of allowed hours or distance limit exceeded");
 		return false;
 	}
 }

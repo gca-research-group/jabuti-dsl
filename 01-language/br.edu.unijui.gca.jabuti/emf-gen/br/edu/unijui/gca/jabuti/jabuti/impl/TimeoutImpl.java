@@ -35,7 +35,7 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = null;
+	protected static final int VALUE_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
@@ -45,7 +45,7 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	 * @generated
 	 * @ordered
 	 */
-	protected String value = VALUE_EDEFAULT;
+	protected int value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	 * @generated
 	 */
 	@Override
-	public String getValue()
+	public int getValue()
 	{
 		return value;
 	}
@@ -85,9 +85,9 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	 * @generated
 	 */
 	@Override
-	public void setValue(String newValue)
+	public void setValue(int newValue)
 	{
-		String oldValue = value;
+		int oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.TIMEOUT__VALUE, oldValue, value));
@@ -120,7 +120,7 @@ public class TimeoutImpl extends TermImpl implements Timeout
 		switch (featureID)
 		{
 			case JabutiPackage.TIMEOUT__VALUE:
-				setValue((String)newValue);
+				setValue((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -154,7 +154,7 @@ public class TimeoutImpl extends TermImpl implements Timeout
 		switch (featureID)
 		{
 			case JabutiPackage.TIMEOUT__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

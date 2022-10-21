@@ -438,8 +438,8 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (
 	 *         content=STRING | 
 	 *         (content=STRING timeUnit=TimeUnit) | 
-	 *         (content=STRING comparisonOperator=ComparisonOperator value=STRING) | 
-	 *         (content=STRING comparisonOperator=ComparisonOperator value=STRING timeUnit=TimeUnit)
+	 *         (content=STRING comparisonOperator=ComparisonOperator (strValue=STRING | intValue=INT)) | 
+	 *         (content=STRING comparisonOperator=ComparisonOperator (strValue=STRING | intValue=INT) timeUnit=TimeUnit)
 	 *     )
 	 * </pre>
 	 */
@@ -726,7 +726,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Timeout returns Timeout
 	 *
 	 * Constraint:
-	 *     value=STRING
+	 *     value=INT
 	 * </pre>
 	 */
 	protected void sequence_Timeout(ISerializationContext context, Timeout semanticObject) {
@@ -735,7 +735,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.TIMEOUT__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -778,20 +778,11 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (name=ID expression=Expression)
+	 *     ((name=ID expression=Expression) | (name=ID term=Term))
 	 * </pre>
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

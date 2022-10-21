@@ -16,7 +16,8 @@ package br.edu.unijui.gca.jabuti.jabuti;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getValue <em>Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getStrValue <em>Str Value</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent()
@@ -95,25 +96,47 @@ public interface MessageContent extends Term
 	void setTimeUnit(TimeUnit value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Int Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_Value()
+	 * @return the value of the '<em>Int Value</em>' attribute.
+	 * @see #setIntValue(int)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_IntValue()
 	 * @model
 	 * @generated
 	 */
-	String getValue();
+	int getIntValue();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getIntValue <em>Int Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
+	 * @param value the new value of the '<em>Int Value</em>' attribute.
+	 * @see #getIntValue()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setIntValue(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Str Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Str Value</em>' attribute.
+	 * @see #setStrValue(String)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_StrValue()
+	 * @model
+	 * @generated
+	 */
+	String getStrValue();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getStrValue <em>Str Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Str Value</em>' attribute.
+	 * @see #getStrValue()
+	 * @generated
+	 */
+	void setStrValue(String value);
 
 } // MessageContent

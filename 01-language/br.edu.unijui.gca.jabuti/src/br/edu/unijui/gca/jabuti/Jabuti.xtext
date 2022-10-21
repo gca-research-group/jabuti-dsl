@@ -131,8 +131,8 @@ FunctionCall:
 ;
 
 Variable:
-	(name=ID '=' expression=Expression) 
-	//|(name=ID '=' businessRule+=BusinessRule)
+	(name=ID '=' expression=Expression) |
+	(name=ID '=' term=Term)
 ;
 
 
@@ -142,7 +142,7 @@ Condition:
 	Term | CompositeCondition | ConditionalExpression
 ;
 
-Term returns Condition:
+Term:
 	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
 ;
 
@@ -172,7 +172,7 @@ SessionInterval:
 ; 
 
 Timeout:
-	'Timeout' '(' value=STRING ')'
+	'Timeout' '(' value=INT ')'
 ;
 
 MaxNumberOfOperation:
@@ -186,16 +186,13 @@ WeekDaysInterval:
 MessageContent:
 	('MessageContent' '(' content=STRING ')') | 	
 	('MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')') |
-	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator value=STRING')' )|
-	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator value=STRING 'by' timeUnit=TimeUnit')' ) 
+	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator ( strValue=STRING | intValue=INT )')' )|
+	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator ( strValue=STRING | intValue=INT ) 'by' timeUnit=TimeUnit')' ) 
 ;
-
 
 ComparisonOperator:
 	symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='	| symbol='==' 
 ;
-
-
 
 //############################################
 //por que utilizar um qualifiedName e como ID ?
@@ -204,8 +201,6 @@ QualifiedName:
 	
 QualifiedNameWithWildcard:
 	QualifiedName '.*'; 
-	
-	
 	
 // #################### ENUM SECTION ####################
 

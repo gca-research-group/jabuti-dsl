@@ -27,12 +27,12 @@ public interface Timeout extends Term
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
+	 * @see #setValue(int)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getTimeout_Value()
 	 * @model
 	 * @generated
 	 */
-	String getValue();
+	int getValue();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getValue <em>Value</em>}' attribute.
@@ -42,6 +42,6 @@ public interface Timeout extends Term
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setValue(int value);
 
 } // Timeout

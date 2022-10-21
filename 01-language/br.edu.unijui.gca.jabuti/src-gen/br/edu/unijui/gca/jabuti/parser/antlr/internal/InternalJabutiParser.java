@@ -4469,86 +4469,209 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariable"
-    // InternalJabuti.g:1770:1: ruleVariable returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) ;
+    // InternalJabuti.g:1770:1: ruleVariable returns [EObject current=null] : ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) | ( ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '=' ( (lv_term_5_0= ruleTerm ) ) ) ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
         Token lv_name_0_0=null;
         Token otherlv_1=null;
+        Token lv_name_3_0=null;
+        Token otherlv_4=null;
         EObject lv_expression_2_0 = null;
+
+        EObject lv_term_5_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJabuti.g:1776:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) )
-            // InternalJabuti.g:1777:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
+            // InternalJabuti.g:1776:2: ( ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) | ( ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '=' ( (lv_term_5_0= ruleTerm ) ) ) ) )
+            // InternalJabuti.g:1777:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) | ( ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '=' ( (lv_term_5_0= ruleTerm ) ) ) )
             {
-            // InternalJabuti.g:1777:2: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
-            // InternalJabuti.g:1778:3: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) )
-            {
-            // InternalJabuti.g:1778:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalJabuti.g:1779:4: (lv_name_0_0= RULE_ID )
-            {
-            // InternalJabuti.g:1779:4: (lv_name_0_0= RULE_ID )
-            // InternalJabuti.g:1780:5: lv_name_0_0= RULE_ID
-            {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+            // InternalJabuti.g:1777:2: ( ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) ) | ( ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '=' ( (lv_term_5_0= ruleTerm ) ) ) )
+            int alt21=2;
+            int LA21_0 = input.LA(1);
 
-            					newLeafNode(lv_name_0_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0());
-            				
+            if ( (LA21_0==RULE_ID) ) {
+                int LA21_1 = input.LA(2);
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getVariableRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"name",
-            						lv_name_0_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
+                if ( (LA21_1==16) ) {
+                    int LA21_2 = input.LA(3);
 
+                    if ( (LA21_2==56||LA21_2==58||(LA21_2>=60 && LA21_2<=63)) ) {
+                        alt21=2;
+                    }
+                    else if ( ((LA21_2>=RULE_ID && LA21_2<=RULE_INT)||LA21_2==31||LA21_2==39||LA21_2==49) ) {
+                        alt21=1;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 21, 2, input);
+
+                        throw nvae;
+                    }
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 21, 1, input);
+
+                    throw nvae;
+                }
             }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 21, 0, input);
 
-
+                throw nvae;
             }
+            switch (alt21) {
+                case 1 :
+                    // InternalJabuti.g:1778:3: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
+                    {
+                    // InternalJabuti.g:1778:3: ( ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) ) )
+                    // InternalJabuti.g:1779:4: ( (lv_name_0_0= RULE_ID ) ) otherlv_1= '=' ( (lv_expression_2_0= ruleExpression ) )
+                    {
+                    // InternalJabuti.g:1779:4: ( (lv_name_0_0= RULE_ID ) )
+                    // InternalJabuti.g:1780:5: (lv_name_0_0= RULE_ID )
+                    {
+                    // InternalJabuti.g:1780:5: (lv_name_0_0= RULE_ID )
+                    // InternalJabuti.g:1781:6: lv_name_0_0= RULE_ID
+                    {
+                    lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_8); 
 
-            otherlv_1=(Token)match(input,16,FOLLOW_30); 
+                    						newLeafNode(lv_name_0_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0_0());
+                    					
 
-            			newLeafNode(otherlv_1, grammarAccess.getVariableAccess().getEqualsSignKeyword_1());
-            		
-            // InternalJabuti.g:1800:3: ( (lv_expression_2_0= ruleExpression ) )
-            // InternalJabuti.g:1801:4: (lv_expression_2_0= ruleExpression )
-            {
-            // InternalJabuti.g:1801:4: (lv_expression_2_0= ruleExpression )
-            // InternalJabuti.g:1802:5: lv_expression_2_0= ruleExpression
-            {
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getVariableRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"name",
+                    							lv_name_0_0,
+                    							"org.eclipse.xtext.common.Terminals.ID");
+                    					
 
-            					newCompositeNode(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0());
-            				
-            pushFollow(FOLLOW_2);
-            lv_expression_2_0=ruleExpression();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getVariableRule());
-            					}
-            					set(
-            						current,
-            						"expression",
-            						lv_expression_2_0,
-            						"br.edu.unijui.gca.jabuti.Jabuti.Expression");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
+                    }
 
 
-            }
+                    }
 
+                    otherlv_1=(Token)match(input,16,FOLLOW_30); 
+
+                    				newLeafNode(otherlv_1, grammarAccess.getVariableAccess().getEqualsSignKeyword_0_1());
+                    			
+                    // InternalJabuti.g:1801:4: ( (lv_expression_2_0= ruleExpression ) )
+                    // InternalJabuti.g:1802:5: (lv_expression_2_0= ruleExpression )
+                    {
+                    // InternalJabuti.g:1802:5: (lv_expression_2_0= ruleExpression )
+                    // InternalJabuti.g:1803:6: lv_expression_2_0= ruleExpression
+                    {
+
+                    						newCompositeNode(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_0_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_expression_2_0=ruleExpression();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getVariableRule());
+                    						}
+                    						set(
+                    							current,
+                    							"expression",
+                    							lv_expression_2_0,
+                    							"br.edu.unijui.gca.jabuti.Jabuti.Expression");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalJabuti.g:1822:3: ( ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '=' ( (lv_term_5_0= ruleTerm ) ) )
+                    {
+                    // InternalJabuti.g:1822:3: ( ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '=' ( (lv_term_5_0= ruleTerm ) ) )
+                    // InternalJabuti.g:1823:4: ( (lv_name_3_0= RULE_ID ) ) otherlv_4= '=' ( (lv_term_5_0= ruleTerm ) )
+                    {
+                    // InternalJabuti.g:1823:4: ( (lv_name_3_0= RULE_ID ) )
+                    // InternalJabuti.g:1824:5: (lv_name_3_0= RULE_ID )
+                    {
+                    // InternalJabuti.g:1824:5: (lv_name_3_0= RULE_ID )
+                    // InternalJabuti.g:1825:6: lv_name_3_0= RULE_ID
+                    {
+                    lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_8); 
+
+                    						newLeafNode(lv_name_3_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_1_0_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getVariableRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"name",
+                    							lv_name_3_0,
+                    							"org.eclipse.xtext.common.Terminals.ID");
+                    					
+
+                    }
+
+
+                    }
+
+                    otherlv_4=(Token)match(input,16,FOLLOW_24); 
+
+                    				newLeafNode(otherlv_4, grammarAccess.getVariableAccess().getEqualsSignKeyword_1_1());
+                    			
+                    // InternalJabuti.g:1845:4: ( (lv_term_5_0= ruleTerm ) )
+                    // InternalJabuti.g:1846:5: (lv_term_5_0= ruleTerm )
+                    {
+                    // InternalJabuti.g:1846:5: (lv_term_5_0= ruleTerm )
+                    // InternalJabuti.g:1847:6: lv_term_5_0= ruleTerm
+                    {
+
+                    						newCompositeNode(grammarAccess.getVariableAccess().getTermTermParserRuleCall_1_2_0());
+                    					
+                    pushFollow(FOLLOW_2);
+                    lv_term_5_0=ruleTerm();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getVariableRule());
+                    						}
+                    						set(
+                    							current,
+                    							"term",
+                    							lv_term_5_0,
+                    							"br.edu.unijui.gca.jabuti.Jabuti.Term");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
 
             }
 
@@ -4572,7 +4695,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCondition"
-    // InternalJabuti.g:1823:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
+    // InternalJabuti.g:1869:1: entryRuleCondition returns [EObject current=null] : iv_ruleCondition= ruleCondition EOF ;
     public final EObject entryRuleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -4580,8 +4703,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:1823:50: (iv_ruleCondition= ruleCondition EOF )
-            // InternalJabuti.g:1824:2: iv_ruleCondition= ruleCondition EOF
+            // InternalJabuti.g:1869:50: (iv_ruleCondition= ruleCondition EOF )
+            // InternalJabuti.g:1870:2: iv_ruleCondition= ruleCondition EOF
             {
              newCompositeNode(grammarAccess.getConditionRule()); 
             pushFollow(FOLLOW_1);
@@ -4608,7 +4731,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCondition"
-    // InternalJabuti.g:1830:1: ruleCondition returns [EObject current=null] : (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression ) ;
+    // InternalJabuti.g:1876:1: ruleCondition returns [EObject current=null] : (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression ) ;
     public final EObject ruleCondition() throws RecognitionException {
         EObject current = null;
 
@@ -4623,15 +4746,15 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:1836:2: ( (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression ) )
-            // InternalJabuti.g:1837:2: (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression )
+            // InternalJabuti.g:1882:2: ( (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression ) )
+            // InternalJabuti.g:1883:2: (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression )
             {
-            // InternalJabuti.g:1837:2: (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression )
-            int alt21=3;
-            alt21 = dfa21.predict(input);
-            switch (alt21) {
+            // InternalJabuti.g:1883:2: (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression )
+            int alt22=3;
+            alt22 = dfa22.predict(input);
+            switch (alt22) {
                 case 1 :
-                    // InternalJabuti.g:1838:3: this_Term_0= ruleTerm
+                    // InternalJabuti.g:1884:3: this_Term_0= ruleTerm
                     {
 
                     			newCompositeNode(grammarAccess.getConditionAccess().getTermParserRuleCall_0());
@@ -4649,7 +4772,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:1847:3: this_CompositeCondition_1= ruleCompositeCondition
+                    // InternalJabuti.g:1893:3: this_CompositeCondition_1= ruleCompositeCondition
                     {
 
                     			newCompositeNode(grammarAccess.getConditionAccess().getCompositeConditionParserRuleCall_1());
@@ -4667,7 +4790,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:1856:3: this_ConditionalExpression_2= ruleConditionalExpression
+                    // InternalJabuti.g:1902:3: this_ConditionalExpression_2= ruleConditionalExpression
                     {
 
                     			newCompositeNode(grammarAccess.getConditionAccess().getConditionalExpressionParserRuleCall_2());
@@ -4707,7 +4830,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTerm"
-    // InternalJabuti.g:1868:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
+    // InternalJabuti.g:1914:1: entryRuleTerm returns [EObject current=null] : iv_ruleTerm= ruleTerm EOF ;
     public final EObject entryRuleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -4715,8 +4838,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:1868:45: (iv_ruleTerm= ruleTerm EOF )
-            // InternalJabuti.g:1869:2: iv_ruleTerm= ruleTerm EOF
+            // InternalJabuti.g:1914:45: (iv_ruleTerm= ruleTerm EOF )
+            // InternalJabuti.g:1915:2: iv_ruleTerm= ruleTerm EOF
             {
              newCompositeNode(grammarAccess.getTermRule()); 
             pushFollow(FOLLOW_1);
@@ -4743,7 +4866,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerm"
-    // InternalJabuti.g:1875:1: ruleTerm returns [EObject current=null] : (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) ;
+    // InternalJabuti.g:1921:1: ruleTerm returns [EObject current=null] : (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) ;
     public final EObject ruleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -4764,52 +4887,52 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:1881:2: ( (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) )
-            // InternalJabuti.g:1882:2: (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
+            // InternalJabuti.g:1927:2: ( (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval ) )
+            // InternalJabuti.g:1928:2: (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
             {
-            // InternalJabuti.g:1882:2: (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
-            int alt22=6;
+            // InternalJabuti.g:1928:2: (this_Timeout_0= ruleTimeout | this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation | this_WeekDaysInterval_2= ruleWeekDaysInterval | this_TimeInterval_3= ruleTimeInterval | this_MessageContent_4= ruleMessageContent | this_SessionInterval_5= ruleSessionInterval )
+            int alt23=6;
             switch ( input.LA(1) ) {
             case 60:
                 {
-                alt22=1;
+                alt23=1;
                 }
                 break;
             case 61:
                 {
-                alt22=2;
+                alt23=2;
                 }
                 break;
             case 62:
                 {
-                alt22=3;
+                alt23=3;
                 }
                 break;
             case 56:
                 {
-                alt22=4;
+                alt23=4;
                 }
                 break;
             case 63:
                 {
-                alt22=5;
+                alt23=5;
                 }
                 break;
             case 58:
                 {
-                alt22=6;
+                alt23=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 22, 0, input);
+                    new NoViableAltException("", 23, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt22) {
+            switch (alt23) {
                 case 1 :
-                    // InternalJabuti.g:1883:3: this_Timeout_0= ruleTimeout
+                    // InternalJabuti.g:1929:3: this_Timeout_0= ruleTimeout
                     {
 
                     			newCompositeNode(grammarAccess.getTermAccess().getTimeoutParserRuleCall_0());
@@ -4827,7 +4950,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:1892:3: this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation
+                    // InternalJabuti.g:1938:3: this_MaxNumberOfOperation_1= ruleMaxNumberOfOperation
                     {
 
                     			newCompositeNode(grammarAccess.getTermAccess().getMaxNumberOfOperationParserRuleCall_1());
@@ -4845,7 +4968,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:1901:3: this_WeekDaysInterval_2= ruleWeekDaysInterval
+                    // InternalJabuti.g:1947:3: this_WeekDaysInterval_2= ruleWeekDaysInterval
                     {
 
                     			newCompositeNode(grammarAccess.getTermAccess().getWeekDaysIntervalParserRuleCall_2());
@@ -4863,7 +4986,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJabuti.g:1910:3: this_TimeInterval_3= ruleTimeInterval
+                    // InternalJabuti.g:1956:3: this_TimeInterval_3= ruleTimeInterval
                     {
 
                     			newCompositeNode(grammarAccess.getTermAccess().getTimeIntervalParserRuleCall_3());
@@ -4881,7 +5004,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalJabuti.g:1919:3: this_MessageContent_4= ruleMessageContent
+                    // InternalJabuti.g:1965:3: this_MessageContent_4= ruleMessageContent
                     {
 
                     			newCompositeNode(grammarAccess.getTermAccess().getMessageContentParserRuleCall_4());
@@ -4899,7 +5022,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalJabuti.g:1928:3: this_SessionInterval_5= ruleSessionInterval
+                    // InternalJabuti.g:1974:3: this_SessionInterval_5= ruleSessionInterval
                     {
 
                     			newCompositeNode(grammarAccess.getTermAccess().getSessionIntervalParserRuleCall_5());
@@ -4939,7 +5062,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleCompositeCondition"
-    // InternalJabuti.g:1940:1: entryRuleCompositeCondition returns [EObject current=null] : iv_ruleCompositeCondition= ruleCompositeCondition EOF ;
+    // InternalJabuti.g:1986:1: entryRuleCompositeCondition returns [EObject current=null] : iv_ruleCompositeCondition= ruleCompositeCondition EOF ;
     public final EObject entryRuleCompositeCondition() throws RecognitionException {
         EObject current = null;
 
@@ -4947,8 +5070,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:1940:59: (iv_ruleCompositeCondition= ruleCompositeCondition EOF )
-            // InternalJabuti.g:1941:2: iv_ruleCompositeCondition= ruleCompositeCondition EOF
+            // InternalJabuti.g:1986:59: (iv_ruleCompositeCondition= ruleCompositeCondition EOF )
+            // InternalJabuti.g:1987:2: iv_ruleCompositeCondition= ruleCompositeCondition EOF
             {
              newCompositeNode(grammarAccess.getCompositeConditionRule()); 
             pushFollow(FOLLOW_1);
@@ -4975,7 +5098,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleCompositeCondition"
-    // InternalJabuti.g:1947:1: ruleCompositeCondition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* ) ;
+    // InternalJabuti.g:1993:1: ruleCompositeCondition returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* ) ;
     public final EObject ruleCompositeCondition() throws RecognitionException {
         EObject current = null;
 
@@ -4994,17 +5117,17 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:1953:2: ( ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* ) )
-            // InternalJabuti.g:1954:2: ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* )
+            // InternalJabuti.g:1999:2: ( ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* ) )
+            // InternalJabuti.g:2000:2: ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* )
             {
-            // InternalJabuti.g:1954:2: ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* )
-            // InternalJabuti.g:1955:3: ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )*
+            // InternalJabuti.g:2000:2: ( ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )* )
+            // InternalJabuti.g:2001:3: ( (lv_conditions_0_0= ruleTerm ) ) ( (lv_logicalOperators_1_0= ruleLogicalOperator ) ) ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )*
             {
-            // InternalJabuti.g:1955:3: ( (lv_conditions_0_0= ruleTerm ) )
-            // InternalJabuti.g:1956:4: (lv_conditions_0_0= ruleTerm )
+            // InternalJabuti.g:2001:3: ( (lv_conditions_0_0= ruleTerm ) )
+            // InternalJabuti.g:2002:4: (lv_conditions_0_0= ruleTerm )
             {
-            // InternalJabuti.g:1956:4: (lv_conditions_0_0= ruleTerm )
-            // InternalJabuti.g:1957:5: lv_conditions_0_0= ruleTerm
+            // InternalJabuti.g:2002:4: (lv_conditions_0_0= ruleTerm )
+            // InternalJabuti.g:2003:5: lv_conditions_0_0= ruleTerm
             {
 
             					newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsTermParserRuleCall_0_0());
@@ -5031,11 +5154,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalJabuti.g:1974:3: ( (lv_logicalOperators_1_0= ruleLogicalOperator ) )
-            // InternalJabuti.g:1975:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
+            // InternalJabuti.g:2020:3: ( (lv_logicalOperators_1_0= ruleLogicalOperator ) )
+            // InternalJabuti.g:2021:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
             {
-            // InternalJabuti.g:1975:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
-            // InternalJabuti.g:1976:5: lv_logicalOperators_1_0= ruleLogicalOperator
+            // InternalJabuti.g:2021:4: (lv_logicalOperators_1_0= ruleLogicalOperator )
+            // InternalJabuti.g:2022:5: lv_logicalOperators_1_0= ruleLogicalOperator
             {
 
             					newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_1_0());
@@ -5062,26 +5185,26 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalJabuti.g:1993:3: ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )*
-            loop24:
+            // InternalJabuti.g:2039:3: ( ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )* )*
+            loop25:
             do {
-                int alt24=2;
-                int LA24_0 = input.LA(1);
+                int alt25=2;
+                int LA25_0 = input.LA(1);
 
-                if ( (LA24_0==56||LA24_0==58||(LA24_0>=60 && LA24_0<=63)) ) {
-                    alt24=1;
+                if ( (LA25_0==56||LA25_0==58||(LA25_0>=60 && LA25_0<=63)) ) {
+                    alt25=1;
                 }
 
 
-                switch (alt24) {
+                switch (alt25) {
             	case 1 :
-            	    // InternalJabuti.g:1994:4: ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )*
+            	    // InternalJabuti.g:2040:4: ( (lv_conditions_2_0= ruleTerm ) ) ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )*
             	    {
-            	    // InternalJabuti.g:1994:4: ( (lv_conditions_2_0= ruleTerm ) )
-            	    // InternalJabuti.g:1995:5: (lv_conditions_2_0= ruleTerm )
+            	    // InternalJabuti.g:2040:4: ( (lv_conditions_2_0= ruleTerm ) )
+            	    // InternalJabuti.g:2041:5: (lv_conditions_2_0= ruleTerm )
             	    {
-            	    // InternalJabuti.g:1995:5: (lv_conditions_2_0= ruleTerm )
-            	    // InternalJabuti.g:1996:6: lv_conditions_2_0= ruleTerm
+            	    // InternalJabuti.g:2041:5: (lv_conditions_2_0= ruleTerm )
+            	    // InternalJabuti.g:2042:6: lv_conditions_2_0= ruleTerm
             	    {
 
             	    						newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsTermParserRuleCall_2_0_0());
@@ -5108,26 +5231,26 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             	    }
 
-            	    // InternalJabuti.g:2013:4: ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )*
-            	    loop23:
+            	    // InternalJabuti.g:2059:4: ( ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) ) )*
+            	    loop24:
             	    do {
-            	        int alt23=2;
-            	        int LA23_0 = input.LA(1);
+            	        int alt24=2;
+            	        int LA24_0 = input.LA(1);
 
-            	        if ( (LA23_0==35||LA23_0==38||LA23_0==55) ) {
-            	            alt23=1;
+            	        if ( (LA24_0==35||LA24_0==38||LA24_0==55) ) {
+            	            alt24=1;
             	        }
 
 
-            	        switch (alt23) {
+            	        switch (alt24) {
             	    	case 1 :
-            	    	    // InternalJabuti.g:2014:5: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) )
+            	    	    // InternalJabuti.g:2060:5: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) ) ( (lv_conditions_4_0= ruleTerm ) )
             	    	    {
-            	    	    // InternalJabuti.g:2014:5: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) )
-            	    	    // InternalJabuti.g:2015:6: (lv_logicalOperators_3_0= ruleLogicalOperator )
+            	    	    // InternalJabuti.g:2060:5: ( (lv_logicalOperators_3_0= ruleLogicalOperator ) )
+            	    	    // InternalJabuti.g:2061:6: (lv_logicalOperators_3_0= ruleLogicalOperator )
             	    	    {
-            	    	    // InternalJabuti.g:2015:6: (lv_logicalOperators_3_0= ruleLogicalOperator )
-            	    	    // InternalJabuti.g:2016:7: lv_logicalOperators_3_0= ruleLogicalOperator
+            	    	    // InternalJabuti.g:2061:6: (lv_logicalOperators_3_0= ruleLogicalOperator )
+            	    	    // InternalJabuti.g:2062:7: lv_logicalOperators_3_0= ruleLogicalOperator
             	    	    {
 
             	    	    							newCompositeNode(grammarAccess.getCompositeConditionAccess().getLogicalOperatorsLogicalOperatorParserRuleCall_2_1_0_0());
@@ -5154,11 +5277,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             	    	    }
 
-            	    	    // InternalJabuti.g:2033:5: ( (lv_conditions_4_0= ruleTerm ) )
-            	    	    // InternalJabuti.g:2034:6: (lv_conditions_4_0= ruleTerm )
+            	    	    // InternalJabuti.g:2079:5: ( (lv_conditions_4_0= ruleTerm ) )
+            	    	    // InternalJabuti.g:2080:6: (lv_conditions_4_0= ruleTerm )
             	    	    {
-            	    	    // InternalJabuti.g:2034:6: (lv_conditions_4_0= ruleTerm )
-            	    	    // InternalJabuti.g:2035:7: lv_conditions_4_0= ruleTerm
+            	    	    // InternalJabuti.g:2080:6: (lv_conditions_4_0= ruleTerm )
+            	    	    // InternalJabuti.g:2081:7: lv_conditions_4_0= ruleTerm
             	    	    {
 
             	    	    							newCompositeNode(grammarAccess.getCompositeConditionAccess().getConditionsTermParserRuleCall_2_1_1_0());
@@ -5190,7 +5313,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             	    	    break;
 
             	    	default :
-            	    	    break loop23;
+            	    	    break loop24;
             	        }
             	    } while (true);
 
@@ -5199,7 +5322,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop24;
+            	    break loop25;
                 }
             } while (true);
 
@@ -5226,7 +5349,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConditionalExpression"
-    // InternalJabuti.g:2058:1: entryRuleConditionalExpression returns [EObject current=null] : iv_ruleConditionalExpression= ruleConditionalExpression EOF ;
+    // InternalJabuti.g:2104:1: entryRuleConditionalExpression returns [EObject current=null] : iv_ruleConditionalExpression= ruleConditionalExpression EOF ;
     public final EObject entryRuleConditionalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5234,8 +5357,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2058:62: (iv_ruleConditionalExpression= ruleConditionalExpression EOF )
-            // InternalJabuti.g:2059:2: iv_ruleConditionalExpression= ruleConditionalExpression EOF
+            // InternalJabuti.g:2104:62: (iv_ruleConditionalExpression= ruleConditionalExpression EOF )
+            // InternalJabuti.g:2105:2: iv_ruleConditionalExpression= ruleConditionalExpression EOF
             {
              newCompositeNode(grammarAccess.getConditionalExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -5262,7 +5385,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConditionalExpression"
-    // InternalJabuti.g:2065:1: ruleConditionalExpression returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' ) ;
+    // InternalJabuti.g:2111:1: ruleConditionalExpression returns [EObject current=null] : ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' ) ;
     public final EObject ruleConditionalExpression() throws RecognitionException {
         EObject current = null;
 
@@ -5283,17 +5406,17 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2071:2: ( ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' ) )
-            // InternalJabuti.g:2072:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' )
+            // InternalJabuti.g:2117:2: ( ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' ) )
+            // InternalJabuti.g:2118:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' )
             {
-            // InternalJabuti.g:2072:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' )
-            // InternalJabuti.g:2073:3: ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}'
+            // InternalJabuti.g:2118:2: ( ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}' )
+            // InternalJabuti.g:2119:3: ( (lv_conditions_0_0= ruleCompositeCondition ) ) otherlv_1= 'when' otherlv_2= '(' ( (lv_expression_3_0= ruleExpression ) ) otherlv_4= ')' otherlv_5= 'do' otherlv_6= '{' ( (lv_conditions_7_0= ruleCompositeCondition ) ) otherlv_8= '}'
             {
-            // InternalJabuti.g:2073:3: ( (lv_conditions_0_0= ruleCompositeCondition ) )
-            // InternalJabuti.g:2074:4: (lv_conditions_0_0= ruleCompositeCondition )
+            // InternalJabuti.g:2119:3: ( (lv_conditions_0_0= ruleCompositeCondition ) )
+            // InternalJabuti.g:2120:4: (lv_conditions_0_0= ruleCompositeCondition )
             {
-            // InternalJabuti.g:2074:4: (lv_conditions_0_0= ruleCompositeCondition )
-            // InternalJabuti.g:2075:5: lv_conditions_0_0= ruleCompositeCondition
+            // InternalJabuti.g:2120:4: (lv_conditions_0_0= ruleCompositeCondition )
+            // InternalJabuti.g:2121:5: lv_conditions_0_0= ruleCompositeCondition
             {
 
             					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_0_0());
@@ -5328,11 +5451,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_2, grammarAccess.getConditionalExpressionAccess().getLeftParenthesisKeyword_2());
             		
-            // InternalJabuti.g:2100:3: ( (lv_expression_3_0= ruleExpression ) )
-            // InternalJabuti.g:2101:4: (lv_expression_3_0= ruleExpression )
+            // InternalJabuti.g:2146:3: ( (lv_expression_3_0= ruleExpression ) )
+            // InternalJabuti.g:2147:4: (lv_expression_3_0= ruleExpression )
             {
-            // InternalJabuti.g:2101:4: (lv_expression_3_0= ruleExpression )
-            // InternalJabuti.g:2102:5: lv_expression_3_0= ruleExpression
+            // InternalJabuti.g:2147:4: (lv_expression_3_0= ruleExpression )
+            // InternalJabuti.g:2148:5: lv_expression_3_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getExpressionExpressionParserRuleCall_3_0());
@@ -5371,11 +5494,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_6, grammarAccess.getConditionalExpressionAccess().getLeftCurlyBracketKeyword_6());
             		
-            // InternalJabuti.g:2131:3: ( (lv_conditions_7_0= ruleCompositeCondition ) )
-            // InternalJabuti.g:2132:4: (lv_conditions_7_0= ruleCompositeCondition )
+            // InternalJabuti.g:2177:3: ( (lv_conditions_7_0= ruleCompositeCondition ) )
+            // InternalJabuti.g:2178:4: (lv_conditions_7_0= ruleCompositeCondition )
             {
-            // InternalJabuti.g:2132:4: (lv_conditions_7_0= ruleCompositeCondition )
-            // InternalJabuti.g:2133:5: lv_conditions_7_0= ruleCompositeCondition
+            // InternalJabuti.g:2178:4: (lv_conditions_7_0= ruleCompositeCondition )
+            // InternalJabuti.g:2179:5: lv_conditions_7_0= ruleCompositeCondition
             {
 
             					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getConditionsCompositeConditionParserRuleCall_7_0());
@@ -5429,7 +5552,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLogicalOperator"
-    // InternalJabuti.g:2158:1: entryRuleLogicalOperator returns [EObject current=null] : iv_ruleLogicalOperator= ruleLogicalOperator EOF ;
+    // InternalJabuti.g:2204:1: entryRuleLogicalOperator returns [EObject current=null] : iv_ruleLogicalOperator= ruleLogicalOperator EOF ;
     public final EObject entryRuleLogicalOperator() throws RecognitionException {
         EObject current = null;
 
@@ -5437,8 +5560,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2158:56: (iv_ruleLogicalOperator= ruleLogicalOperator EOF )
-            // InternalJabuti.g:2159:2: iv_ruleLogicalOperator= ruleLogicalOperator EOF
+            // InternalJabuti.g:2204:56: (iv_ruleLogicalOperator= ruleLogicalOperator EOF )
+            // InternalJabuti.g:2205:2: iv_ruleLogicalOperator= ruleLogicalOperator EOF
             {
              newCompositeNode(grammarAccess.getLogicalOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -5465,7 +5588,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLogicalOperator"
-    // InternalJabuti.g:2165:1: ruleLogicalOperator returns [EObject current=null] : ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) ) ;
+    // InternalJabuti.g:2211:1: ruleLogicalOperator returns [EObject current=null] : ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) ) ;
     public final EObject ruleLogicalOperator() throws RecognitionException {
         EObject current = null;
 
@@ -5477,43 +5600,43 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2171:2: ( ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) ) )
-            // InternalJabuti.g:2172:2: ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) )
+            // InternalJabuti.g:2217:2: ( ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) ) )
+            // InternalJabuti.g:2218:2: ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) )
             {
-            // InternalJabuti.g:2172:2: ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) )
-            // InternalJabuti.g:2173:3: ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) )
+            // InternalJabuti.g:2218:2: ( ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) ) )
+            // InternalJabuti.g:2219:3: ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) )
             {
-            // InternalJabuti.g:2173:3: ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) )
-            // InternalJabuti.g:2174:4: (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' )
+            // InternalJabuti.g:2219:3: ( (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' ) )
+            // InternalJabuti.g:2220:4: (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' )
             {
-            // InternalJabuti.g:2174:4: (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' )
-            int alt25=3;
+            // InternalJabuti.g:2220:4: (lv_symbol_0_1= 'AND' | lv_symbol_0_2= 'OR' | lv_symbol_0_3= 'NOT' )
+            int alt26=3;
             switch ( input.LA(1) ) {
             case 35:
                 {
-                alt25=1;
+                alt26=1;
                 }
                 break;
             case 38:
                 {
-                alt25=2;
+                alt26=2;
                 }
                 break;
             case 55:
                 {
-                alt25=3;
+                alt26=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 26, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt25) {
+            switch (alt26) {
                 case 1 :
-                    // InternalJabuti.g:2175:5: lv_symbol_0_1= 'AND'
+                    // InternalJabuti.g:2221:5: lv_symbol_0_1= 'AND'
                     {
                     lv_symbol_0_1=(Token)match(input,35,FOLLOW_2); 
 
@@ -5529,7 +5652,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:2186:5: lv_symbol_0_2= 'OR'
+                    // InternalJabuti.g:2232:5: lv_symbol_0_2= 'OR'
                     {
                     lv_symbol_0_2=(Token)match(input,38,FOLLOW_2); 
 
@@ -5545,7 +5668,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:2197:5: lv_symbol_0_3= 'NOT'
+                    // InternalJabuti.g:2243:5: lv_symbol_0_3= 'NOT'
                     {
                     lv_symbol_0_3=(Token)match(input,55,FOLLOW_2); 
 
@@ -5589,7 +5712,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTimeInterval"
-    // InternalJabuti.g:2213:1: entryRuleTimeInterval returns [EObject current=null] : iv_ruleTimeInterval= ruleTimeInterval EOF ;
+    // InternalJabuti.g:2259:1: entryRuleTimeInterval returns [EObject current=null] : iv_ruleTimeInterval= ruleTimeInterval EOF ;
     public final EObject entryRuleTimeInterval() throws RecognitionException {
         EObject current = null;
 
@@ -5597,8 +5720,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2213:53: (iv_ruleTimeInterval= ruleTimeInterval EOF )
-            // InternalJabuti.g:2214:2: iv_ruleTimeInterval= ruleTimeInterval EOF
+            // InternalJabuti.g:2259:53: (iv_ruleTimeInterval= ruleTimeInterval EOF )
+            // InternalJabuti.g:2260:2: iv_ruleTimeInterval= ruleTimeInterval EOF
             {
              newCompositeNode(grammarAccess.getTimeIntervalRule()); 
             pushFollow(FOLLOW_1);
@@ -5625,7 +5748,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeInterval"
-    // InternalJabuti.g:2220:1: ruleTimeInterval returns [EObject current=null] : (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) ;
+    // InternalJabuti.g:2266:1: ruleTimeInterval returns [EObject current=null] : (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) ;
     public final EObject ruleTimeInterval() throws RecognitionException {
         EObject current = null;
 
@@ -5640,11 +5763,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2226:2: ( (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) )
-            // InternalJabuti.g:2227:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
+            // InternalJabuti.g:2272:2: ( (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' ) )
+            // InternalJabuti.g:2273:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
             {
-            // InternalJabuti.g:2227:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
-            // InternalJabuti.g:2228:3: otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')'
+            // InternalJabuti.g:2273:2: (otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')' )
+            // InternalJabuti.g:2274:3: otherlv_0= 'TimeInterval' otherlv_1= '(' ( (lv_start_2_0= RULE_STRING ) ) otherlv_3= 'to' ( (lv_end_4_0= RULE_STRING ) ) otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,56,FOLLOW_26); 
 
@@ -5654,11 +5777,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getTimeIntervalAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalJabuti.g:2236:3: ( (lv_start_2_0= RULE_STRING ) )
-            // InternalJabuti.g:2237:4: (lv_start_2_0= RULE_STRING )
+            // InternalJabuti.g:2282:3: ( (lv_start_2_0= RULE_STRING ) )
+            // InternalJabuti.g:2283:4: (lv_start_2_0= RULE_STRING )
             {
-            // InternalJabuti.g:2237:4: (lv_start_2_0= RULE_STRING )
-            // InternalJabuti.g:2238:5: lv_start_2_0= RULE_STRING
+            // InternalJabuti.g:2283:4: (lv_start_2_0= RULE_STRING )
+            // InternalJabuti.g:2284:5: lv_start_2_0= RULE_STRING
             {
             lv_start_2_0=(Token)match(input,RULE_STRING,FOLLOW_42); 
 
@@ -5684,11 +5807,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getTimeIntervalAccess().getToKeyword_3());
             		
-            // InternalJabuti.g:2258:3: ( (lv_end_4_0= RULE_STRING ) )
-            // InternalJabuti.g:2259:4: (lv_end_4_0= RULE_STRING )
+            // InternalJabuti.g:2304:3: ( (lv_end_4_0= RULE_STRING ) )
+            // InternalJabuti.g:2305:4: (lv_end_4_0= RULE_STRING )
             {
-            // InternalJabuti.g:2259:4: (lv_end_4_0= RULE_STRING )
-            // InternalJabuti.g:2260:5: lv_end_4_0= RULE_STRING
+            // InternalJabuti.g:2305:4: (lv_end_4_0= RULE_STRING )
+            // InternalJabuti.g:2306:5: lv_end_4_0= RULE_STRING
             {
             lv_end_4_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
 
@@ -5737,7 +5860,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSessionInterval"
-    // InternalJabuti.g:2284:1: entryRuleSessionInterval returns [EObject current=null] : iv_ruleSessionInterval= ruleSessionInterval EOF ;
+    // InternalJabuti.g:2330:1: entryRuleSessionInterval returns [EObject current=null] : iv_ruleSessionInterval= ruleSessionInterval EOF ;
     public final EObject entryRuleSessionInterval() throws RecognitionException {
         EObject current = null;
 
@@ -5745,8 +5868,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2284:56: (iv_ruleSessionInterval= ruleSessionInterval EOF )
-            // InternalJabuti.g:2285:2: iv_ruleSessionInterval= ruleSessionInterval EOF
+            // InternalJabuti.g:2330:56: (iv_ruleSessionInterval= ruleSessionInterval EOF )
+            // InternalJabuti.g:2331:2: iv_ruleSessionInterval= ruleSessionInterval EOF
             {
              newCompositeNode(grammarAccess.getSessionIntervalRule()); 
             pushFollow(FOLLOW_1);
@@ -5773,7 +5896,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSessionInterval"
-    // InternalJabuti.g:2291:1: ruleSessionInterval returns [EObject current=null] : ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) ) ;
+    // InternalJabuti.g:2337:1: ruleSessionInterval returns [EObject current=null] : ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) ) ;
     public final EObject ruleSessionInterval() throws RecognitionException {
         EObject current = null;
 
@@ -5805,21 +5928,21 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2297:2: ( ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) ) )
-            // InternalJabuti.g:2298:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) )
+            // InternalJabuti.g:2343:2: ( ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) ) )
+            // InternalJabuti.g:2344:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) )
             {
-            // InternalJabuti.g:2298:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) )
-            int alt26=3;
-            alt26 = dfa26.predict(input);
-            switch (alt26) {
+            // InternalJabuti.g:2344:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) )
+            int alt27=3;
+            alt27 = dfa27.predict(input);
+            switch (alt27) {
                 case 1 :
-                    // InternalJabuti.g:2299:3: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' )
+                    // InternalJabuti.g:2345:3: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' )
                     {
-                    // InternalJabuti.g:2299:3: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' )
-                    // InternalJabuti.g:2300:4: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')'
+                    // InternalJabuti.g:2345:3: ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' )
+                    // InternalJabuti.g:2346:4: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')'
                     {
-                    // InternalJabuti.g:2300:4: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) )
-                    // InternalJabuti.g:2301:5: otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) )
+                    // InternalJabuti.g:2346:4: (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) )
+                    // InternalJabuti.g:2347:5: otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) )
                     {
                     otherlv_0=(Token)match(input,58,FOLLOW_26); 
 
@@ -5829,11 +5952,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     					newLeafNode(otherlv_1, grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_0_0_1());
                     				
-                    // InternalJabuti.g:2309:5: ( (lv_frequency_2_0= RULE_INT ) )
-                    // InternalJabuti.g:2310:6: (lv_frequency_2_0= RULE_INT )
+                    // InternalJabuti.g:2355:5: ( (lv_frequency_2_0= RULE_INT ) )
+                    // InternalJabuti.g:2356:6: (lv_frequency_2_0= RULE_INT )
                     {
-                    // InternalJabuti.g:2310:6: (lv_frequency_2_0= RULE_INT )
-                    // InternalJabuti.g:2311:7: lv_frequency_2_0= RULE_INT
+                    // InternalJabuti.g:2356:6: (lv_frequency_2_0= RULE_INT )
+                    // InternalJabuti.g:2357:7: lv_frequency_2_0= RULE_INT
                     {
                     lv_frequency_2_0=(Token)match(input,RULE_INT,FOLLOW_44); 
 
@@ -5855,11 +5978,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalJabuti.g:2327:5: ( (lv_timeUnit_3_0= ruleTimeUnit ) )
-                    // InternalJabuti.g:2328:6: (lv_timeUnit_3_0= ruleTimeUnit )
+                    // InternalJabuti.g:2373:5: ( (lv_timeUnit_3_0= ruleTimeUnit ) )
+                    // InternalJabuti.g:2374:6: (lv_timeUnit_3_0= ruleTimeUnit )
                     {
-                    // InternalJabuti.g:2328:6: (lv_timeUnit_3_0= ruleTimeUnit )
-                    // InternalJabuti.g:2329:7: lv_timeUnit_3_0= ruleTimeUnit
+                    // InternalJabuti.g:2374:6: (lv_timeUnit_3_0= ruleTimeUnit )
+                    // InternalJabuti.g:2375:7: lv_timeUnit_3_0= ruleTimeUnit
                     {
 
                     							newCompositeNode(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_0_0_3_0());
@@ -5890,11 +6013,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     					newLeafNode(otherlv_4, grammarAccess.getSessionIntervalAccess().getByKeyword_0_0_4());
                     				
-                    // InternalJabuti.g:2350:5: ( (lv_messageContent_5_0= ruleMessageContent ) )
-                    // InternalJabuti.g:2351:6: (lv_messageContent_5_0= ruleMessageContent )
+                    // InternalJabuti.g:2396:5: ( (lv_messageContent_5_0= ruleMessageContent ) )
+                    // InternalJabuti.g:2397:6: (lv_messageContent_5_0= ruleMessageContent )
                     {
-                    // InternalJabuti.g:2351:6: (lv_messageContent_5_0= ruleMessageContent )
-                    // InternalJabuti.g:2352:7: lv_messageContent_5_0= ruleMessageContent
+                    // InternalJabuti.g:2397:6: (lv_messageContent_5_0= ruleMessageContent )
+                    // InternalJabuti.g:2398:7: lv_messageContent_5_0= ruleMessageContent
                     {
 
                     							newCompositeNode(grammarAccess.getSessionIntervalAccess().getMessageContentMessageContentParserRuleCall_0_0_5_0());
@@ -5935,10 +6058,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:2376:3: (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' )
+                    // InternalJabuti.g:2422:3: (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' )
                     {
-                    // InternalJabuti.g:2376:3: (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' )
-                    // InternalJabuti.g:2377:4: otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')'
+                    // InternalJabuti.g:2422:3: (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' )
+                    // InternalJabuti.g:2423:4: otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')'
                     {
                     otherlv_7=(Token)match(input,58,FOLLOW_26); 
 
@@ -5948,11 +6071,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_8, grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_1_1());
                     			
-                    // InternalJabuti.g:2385:4: ( (lv_frequency_9_0= RULE_INT ) )
-                    // InternalJabuti.g:2386:5: (lv_frequency_9_0= RULE_INT )
+                    // InternalJabuti.g:2431:4: ( (lv_frequency_9_0= RULE_INT ) )
+                    // InternalJabuti.g:2432:5: (lv_frequency_9_0= RULE_INT )
                     {
-                    // InternalJabuti.g:2386:5: (lv_frequency_9_0= RULE_INT )
-                    // InternalJabuti.g:2387:6: lv_frequency_9_0= RULE_INT
+                    // InternalJabuti.g:2432:5: (lv_frequency_9_0= RULE_INT )
+                    // InternalJabuti.g:2433:6: lv_frequency_9_0= RULE_INT
                     {
                     lv_frequency_9_0=(Token)match(input,RULE_INT,FOLLOW_44); 
 
@@ -5974,11 +6097,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalJabuti.g:2403:4: ( (lv_timeUnit_10_0= ruleTimeUnit ) )
-                    // InternalJabuti.g:2404:5: (lv_timeUnit_10_0= ruleTimeUnit )
+                    // InternalJabuti.g:2449:4: ( (lv_timeUnit_10_0= ruleTimeUnit ) )
+                    // InternalJabuti.g:2450:5: (lv_timeUnit_10_0= ruleTimeUnit )
                     {
-                    // InternalJabuti.g:2404:5: (lv_timeUnit_10_0= ruleTimeUnit )
-                    // InternalJabuti.g:2405:6: lv_timeUnit_10_0= ruleTimeUnit
+                    // InternalJabuti.g:2450:5: (lv_timeUnit_10_0= ruleTimeUnit )
+                    // InternalJabuti.g:2451:6: lv_timeUnit_10_0= ruleTimeUnit
                     {
 
                     						newCompositeNode(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_1_3_0());
@@ -6016,13 +6139,13 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:2428:3: ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' )
+                    // InternalJabuti.g:2474:3: ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' )
                     {
-                    // InternalJabuti.g:2428:3: ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' )
-                    // InternalJabuti.g:2429:4: (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')'
+                    // InternalJabuti.g:2474:3: ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' )
+                    // InternalJabuti.g:2475:4: (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')'
                     {
-                    // InternalJabuti.g:2429:4: (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) )
-                    // InternalJabuti.g:2430:5: otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) )
+                    // InternalJabuti.g:2475:4: (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) )
+                    // InternalJabuti.g:2476:5: otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) )
                     {
                     otherlv_12=(Token)match(input,58,FOLLOW_26); 
 
@@ -6032,11 +6155,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     					newLeafNode(otherlv_13, grammarAccess.getSessionIntervalAccess().getLeftParenthesisKeyword_2_0_1());
                     				
-                    // InternalJabuti.g:2438:5: ( (lv_frequency_14_0= RULE_INT ) )
-                    // InternalJabuti.g:2439:6: (lv_frequency_14_0= RULE_INT )
+                    // InternalJabuti.g:2484:5: ( (lv_frequency_14_0= RULE_INT ) )
+                    // InternalJabuti.g:2485:6: (lv_frequency_14_0= RULE_INT )
                     {
-                    // InternalJabuti.g:2439:6: (lv_frequency_14_0= RULE_INT )
-                    // InternalJabuti.g:2440:7: lv_frequency_14_0= RULE_INT
+                    // InternalJabuti.g:2485:6: (lv_frequency_14_0= RULE_INT )
+                    // InternalJabuti.g:2486:7: lv_frequency_14_0= RULE_INT
                     {
                     lv_frequency_14_0=(Token)match(input,RULE_INT,FOLLOW_44); 
 
@@ -6058,11 +6181,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalJabuti.g:2456:5: ( (lv_timeUnit_15_0= ruleTimeUnit ) )
-                    // InternalJabuti.g:2457:6: (lv_timeUnit_15_0= ruleTimeUnit )
+                    // InternalJabuti.g:2502:5: ( (lv_timeUnit_15_0= ruleTimeUnit ) )
+                    // InternalJabuti.g:2503:6: (lv_timeUnit_15_0= ruleTimeUnit )
                     {
-                    // InternalJabuti.g:2457:6: (lv_timeUnit_15_0= ruleTimeUnit )
-                    // InternalJabuti.g:2458:7: lv_timeUnit_15_0= ruleTimeUnit
+                    // InternalJabuti.g:2503:6: (lv_timeUnit_15_0= ruleTimeUnit )
+                    // InternalJabuti.g:2504:7: lv_timeUnit_15_0= ruleTimeUnit
                     {
 
                     							newCompositeNode(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_2_0_3_0());
@@ -6093,11 +6216,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     					newLeafNode(otherlv_16, grammarAccess.getSessionIntervalAccess().getByKeyword_2_0_4());
                     				
-                    // InternalJabuti.g:2479:5: ( (lv_value_17_0= RULE_STRING ) )
-                    // InternalJabuti.g:2480:6: (lv_value_17_0= RULE_STRING )
+                    // InternalJabuti.g:2525:5: ( (lv_value_17_0= RULE_STRING ) )
+                    // InternalJabuti.g:2526:6: (lv_value_17_0= RULE_STRING )
                     {
-                    // InternalJabuti.g:2480:6: (lv_value_17_0= RULE_STRING )
-                    // InternalJabuti.g:2481:7: lv_value_17_0= RULE_STRING
+                    // InternalJabuti.g:2526:6: (lv_value_17_0= RULE_STRING )
+                    // InternalJabuti.g:2527:7: lv_value_17_0= RULE_STRING
                     {
                     lv_value_17_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
 
@@ -6155,7 +6278,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTimeout"
-    // InternalJabuti.g:2507:1: entryRuleTimeout returns [EObject current=null] : iv_ruleTimeout= ruleTimeout EOF ;
+    // InternalJabuti.g:2553:1: entryRuleTimeout returns [EObject current=null] : iv_ruleTimeout= ruleTimeout EOF ;
     public final EObject entryRuleTimeout() throws RecognitionException {
         EObject current = null;
 
@@ -6163,8 +6286,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2507:48: (iv_ruleTimeout= ruleTimeout EOF )
-            // InternalJabuti.g:2508:2: iv_ruleTimeout= ruleTimeout EOF
+            // InternalJabuti.g:2553:48: (iv_ruleTimeout= ruleTimeout EOF )
+            // InternalJabuti.g:2554:2: iv_ruleTimeout= ruleTimeout EOF
             {
              newCompositeNode(grammarAccess.getTimeoutRule()); 
             pushFollow(FOLLOW_1);
@@ -6191,7 +6314,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeout"
-    // InternalJabuti.g:2514:1: ruleTimeout returns [EObject current=null] : (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' ) ;
+    // InternalJabuti.g:2560:1: ruleTimeout returns [EObject current=null] : (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) ;
     public final EObject ruleTimeout() throws RecognitionException {
         EObject current = null;
 
@@ -6204,29 +6327,29 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2520:2: ( (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' ) )
-            // InternalJabuti.g:2521:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' )
+            // InternalJabuti.g:2566:2: ( (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' ) )
+            // InternalJabuti.g:2567:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
             {
-            // InternalJabuti.g:2521:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')' )
-            // InternalJabuti.g:2522:3: otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_STRING ) ) otherlv_3= ')'
+            // InternalJabuti.g:2567:2: (otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')' )
+            // InternalJabuti.g:2568:3: otherlv_0= 'Timeout' otherlv_1= '(' ( (lv_value_2_0= RULE_INT ) ) otherlv_3= ')'
             {
             otherlv_0=(Token)match(input,60,FOLLOW_26); 
 
             			newLeafNode(otherlv_0, grammarAccess.getTimeoutAccess().getTimeoutKeyword_0());
             		
-            otherlv_1=(Token)match(input,31,FOLLOW_9); 
+            otherlv_1=(Token)match(input,31,FOLLOW_43); 
 
             			newLeafNode(otherlv_1, grammarAccess.getTimeoutAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalJabuti.g:2530:3: ( (lv_value_2_0= RULE_STRING ) )
-            // InternalJabuti.g:2531:4: (lv_value_2_0= RULE_STRING )
+            // InternalJabuti.g:2576:3: ( (lv_value_2_0= RULE_INT ) )
+            // InternalJabuti.g:2577:4: (lv_value_2_0= RULE_INT )
             {
-            // InternalJabuti.g:2531:4: (lv_value_2_0= RULE_STRING )
-            // InternalJabuti.g:2532:5: lv_value_2_0= RULE_STRING
+            // InternalJabuti.g:2577:4: (lv_value_2_0= RULE_INT )
+            // InternalJabuti.g:2578:5: lv_value_2_0= RULE_INT
             {
-            lv_value_2_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
+            lv_value_2_0=(Token)match(input,RULE_INT,FOLLOW_28); 
 
-            					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueSTRINGTerminalRuleCall_2_0());
+            					newLeafNode(lv_value_2_0, grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -6236,7 +6359,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             						current,
             						"value",
             						lv_value_2_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
+            						"org.eclipse.xtext.common.Terminals.INT");
             				
 
             }
@@ -6271,7 +6394,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMaxNumberOfOperation"
-    // InternalJabuti.g:2556:1: entryRuleMaxNumberOfOperation returns [EObject current=null] : iv_ruleMaxNumberOfOperation= ruleMaxNumberOfOperation EOF ;
+    // InternalJabuti.g:2602:1: entryRuleMaxNumberOfOperation returns [EObject current=null] : iv_ruleMaxNumberOfOperation= ruleMaxNumberOfOperation EOF ;
     public final EObject entryRuleMaxNumberOfOperation() throws RecognitionException {
         EObject current = null;
 
@@ -6279,8 +6402,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2556:61: (iv_ruleMaxNumberOfOperation= ruleMaxNumberOfOperation EOF )
-            // InternalJabuti.g:2557:2: iv_ruleMaxNumberOfOperation= ruleMaxNumberOfOperation EOF
+            // InternalJabuti.g:2602:61: (iv_ruleMaxNumberOfOperation= ruleMaxNumberOfOperation EOF )
+            // InternalJabuti.g:2603:2: iv_ruleMaxNumberOfOperation= ruleMaxNumberOfOperation EOF
             {
              newCompositeNode(grammarAccess.getMaxNumberOfOperationRule()); 
             pushFollow(FOLLOW_1);
@@ -6307,7 +6430,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMaxNumberOfOperation"
-    // InternalJabuti.g:2563:1: ruleMaxNumberOfOperation returns [EObject current=null] : (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) ;
+    // InternalJabuti.g:2609:1: ruleMaxNumberOfOperation returns [EObject current=null] : (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) ;
     public final EObject ruleMaxNumberOfOperation() throws RecognitionException {
         EObject current = null;
 
@@ -6323,11 +6446,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2569:2: ( (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) )
-            // InternalJabuti.g:2570:2: (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
+            // InternalJabuti.g:2615:2: ( (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' ) )
+            // InternalJabuti.g:2616:2: (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
             {
-            // InternalJabuti.g:2570:2: (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
-            // InternalJabuti.g:2571:3: otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')'
+            // InternalJabuti.g:2616:2: (otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')' )
+            // InternalJabuti.g:2617:3: otherlv_0= 'MaxNumberOfOperation' otherlv_1= '(' ( (lv_operationNumber_2_0= RULE_INT ) ) otherlv_3= 'by' ( (lv_timeUnit_4_0= ruleTimeUnit ) ) otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,61,FOLLOW_26); 
 
@@ -6337,11 +6460,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getMaxNumberOfOperationAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalJabuti.g:2579:3: ( (lv_operationNumber_2_0= RULE_INT ) )
-            // InternalJabuti.g:2580:4: (lv_operationNumber_2_0= RULE_INT )
+            // InternalJabuti.g:2625:3: ( (lv_operationNumber_2_0= RULE_INT ) )
+            // InternalJabuti.g:2626:4: (lv_operationNumber_2_0= RULE_INT )
             {
-            // InternalJabuti.g:2580:4: (lv_operationNumber_2_0= RULE_INT )
-            // InternalJabuti.g:2581:5: lv_operationNumber_2_0= RULE_INT
+            // InternalJabuti.g:2626:4: (lv_operationNumber_2_0= RULE_INT )
+            // InternalJabuti.g:2627:5: lv_operationNumber_2_0= RULE_INT
             {
             lv_operationNumber_2_0=(Token)match(input,RULE_INT,FOLLOW_45); 
 
@@ -6367,11 +6490,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getMaxNumberOfOperationAccess().getByKeyword_3());
             		
-            // InternalJabuti.g:2601:3: ( (lv_timeUnit_4_0= ruleTimeUnit ) )
-            // InternalJabuti.g:2602:4: (lv_timeUnit_4_0= ruleTimeUnit )
+            // InternalJabuti.g:2647:3: ( (lv_timeUnit_4_0= ruleTimeUnit ) )
+            // InternalJabuti.g:2648:4: (lv_timeUnit_4_0= ruleTimeUnit )
             {
-            // InternalJabuti.g:2602:4: (lv_timeUnit_4_0= ruleTimeUnit )
-            // InternalJabuti.g:2603:5: lv_timeUnit_4_0= ruleTimeUnit
+            // InternalJabuti.g:2648:4: (lv_timeUnit_4_0= ruleTimeUnit )
+            // InternalJabuti.g:2649:5: lv_timeUnit_4_0= ruleTimeUnit
             {
 
             					newCompositeNode(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitTimeUnitEnumRuleCall_4_0());
@@ -6425,7 +6548,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleWeekDaysInterval"
-    // InternalJabuti.g:2628:1: entryRuleWeekDaysInterval returns [EObject current=null] : iv_ruleWeekDaysInterval= ruleWeekDaysInterval EOF ;
+    // InternalJabuti.g:2674:1: entryRuleWeekDaysInterval returns [EObject current=null] : iv_ruleWeekDaysInterval= ruleWeekDaysInterval EOF ;
     public final EObject entryRuleWeekDaysInterval() throws RecognitionException {
         EObject current = null;
 
@@ -6433,8 +6556,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2628:57: (iv_ruleWeekDaysInterval= ruleWeekDaysInterval EOF )
-            // InternalJabuti.g:2629:2: iv_ruleWeekDaysInterval= ruleWeekDaysInterval EOF
+            // InternalJabuti.g:2674:57: (iv_ruleWeekDaysInterval= ruleWeekDaysInterval EOF )
+            // InternalJabuti.g:2675:2: iv_ruleWeekDaysInterval= ruleWeekDaysInterval EOF
             {
              newCompositeNode(grammarAccess.getWeekDaysIntervalRule()); 
             pushFollow(FOLLOW_1);
@@ -6461,7 +6584,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWeekDaysInterval"
-    // InternalJabuti.g:2635:1: ruleWeekDaysInterval returns [EObject current=null] : (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) ;
+    // InternalJabuti.g:2681:1: ruleWeekDaysInterval returns [EObject current=null] : (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) ;
     public final EObject ruleWeekDaysInterval() throws RecognitionException {
         EObject current = null;
 
@@ -6478,11 +6601,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2641:2: ( (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) )
-            // InternalJabuti.g:2642:2: (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
+            // InternalJabuti.g:2687:2: ( (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' ) )
+            // InternalJabuti.g:2688:2: (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
             {
-            // InternalJabuti.g:2642:2: (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
-            // InternalJabuti.g:2643:3: otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')'
+            // InternalJabuti.g:2688:2: (otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')' )
+            // InternalJabuti.g:2689:3: otherlv_0= 'WeekDaysInterval' otherlv_1= '(' ( (lv_start_2_0= ruleWeekDay ) ) otherlv_3= 'to' ( (lv_end_4_0= ruleWeekDay ) ) otherlv_5= ')'
             {
             otherlv_0=(Token)match(input,62,FOLLOW_26); 
 
@@ -6492,11 +6615,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_1, grammarAccess.getWeekDaysIntervalAccess().getLeftParenthesisKeyword_1());
             		
-            // InternalJabuti.g:2651:3: ( (lv_start_2_0= ruleWeekDay ) )
-            // InternalJabuti.g:2652:4: (lv_start_2_0= ruleWeekDay )
+            // InternalJabuti.g:2697:3: ( (lv_start_2_0= ruleWeekDay ) )
+            // InternalJabuti.g:2698:4: (lv_start_2_0= ruleWeekDay )
             {
-            // InternalJabuti.g:2652:4: (lv_start_2_0= ruleWeekDay )
-            // InternalJabuti.g:2653:5: lv_start_2_0= ruleWeekDay
+            // InternalJabuti.g:2698:4: (lv_start_2_0= ruleWeekDay )
+            // InternalJabuti.g:2699:5: lv_start_2_0= ruleWeekDay
             {
 
             					newCompositeNode(grammarAccess.getWeekDaysIntervalAccess().getStartWeekDayEnumRuleCall_2_0());
@@ -6527,11 +6650,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getWeekDaysIntervalAccess().getToKeyword_3());
             		
-            // InternalJabuti.g:2674:3: ( (lv_end_4_0= ruleWeekDay ) )
-            // InternalJabuti.g:2675:4: (lv_end_4_0= ruleWeekDay )
+            // InternalJabuti.g:2720:3: ( (lv_end_4_0= ruleWeekDay ) )
+            // InternalJabuti.g:2721:4: (lv_end_4_0= ruleWeekDay )
             {
-            // InternalJabuti.g:2675:4: (lv_end_4_0= ruleWeekDay )
-            // InternalJabuti.g:2676:5: lv_end_4_0= ruleWeekDay
+            // InternalJabuti.g:2721:4: (lv_end_4_0= ruleWeekDay )
+            // InternalJabuti.g:2722:5: lv_end_4_0= ruleWeekDay
             {
 
             					newCompositeNode(grammarAccess.getWeekDaysIntervalAccess().getEndWeekDayEnumRuleCall_4_0());
@@ -6585,7 +6708,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMessageContent"
-    // InternalJabuti.g:2701:1: entryRuleMessageContent returns [EObject current=null] : iv_ruleMessageContent= ruleMessageContent EOF ;
+    // InternalJabuti.g:2747:1: entryRuleMessageContent returns [EObject current=null] : iv_ruleMessageContent= ruleMessageContent EOF ;
     public final EObject entryRuleMessageContent() throws RecognitionException {
         EObject current = null;
 
@@ -6593,8 +6716,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2701:55: (iv_ruleMessageContent= ruleMessageContent EOF )
-            // InternalJabuti.g:2702:2: iv_ruleMessageContent= ruleMessageContent EOF
+            // InternalJabuti.g:2747:55: (iv_ruleMessageContent= ruleMessageContent EOF )
+            // InternalJabuti.g:2748:2: iv_ruleMessageContent= ruleMessageContent EOF
             {
              newCompositeNode(grammarAccess.getMessageContentRule()); 
             pushFollow(FOLLOW_1);
@@ -6621,7 +6744,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMessageContent"
-    // InternalJabuti.g:2708:1: ruleMessageContent returns [EObject current=null] : ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')' ) | (otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')' ) ) ;
+    // InternalJabuti.g:2754:1: ruleMessageContent returns [EObject current=null] : ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')' ) | (otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')' ) ) ;
     public final EObject ruleMessageContent() throws RecognitionException {
         EObject current = null;
 
@@ -6637,39 +6760,41 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         Token otherlv_10=null;
         Token otherlv_11=null;
         Token lv_content_12_0=null;
-        Token lv_value_14_0=null;
-        Token otherlv_15=null;
+        Token lv_strValue_14_0=null;
+        Token lv_intValue_15_0=null;
         Token otherlv_16=null;
         Token otherlv_17=null;
-        Token lv_content_18_0=null;
-        Token lv_value_20_0=null;
-        Token otherlv_21=null;
+        Token otherlv_18=null;
+        Token lv_content_19_0=null;
+        Token lv_strValue_21_0=null;
+        Token lv_intValue_22_0=null;
         Token otherlv_23=null;
+        Token otherlv_25=null;
         Enumerator lv_timeUnit_8_0 = null;
 
         EObject lv_comparisonOperator_13_0 = null;
 
-        EObject lv_comparisonOperator_19_0 = null;
+        EObject lv_comparisonOperator_20_0 = null;
 
-        Enumerator lv_timeUnit_22_0 = null;
+        Enumerator lv_timeUnit_24_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalJabuti.g:2714:2: ( ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')' ) | (otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')' ) ) )
-            // InternalJabuti.g:2715:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')' ) | (otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')' ) )
+            // InternalJabuti.g:2760:2: ( ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')' ) | (otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')' ) ) )
+            // InternalJabuti.g:2761:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')' ) | (otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')' ) )
             {
-            // InternalJabuti.g:2715:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')' ) | (otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')' ) )
-            int alt27=4;
-            alt27 = dfa27.predict(input);
-            switch (alt27) {
+            // InternalJabuti.g:2761:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')' ) | (otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')' ) )
+            int alt30=4;
+            alt30 = dfa30.predict(input);
+            switch (alt30) {
                 case 1 :
-                    // InternalJabuti.g:2716:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
+                    // InternalJabuti.g:2762:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
                     {
-                    // InternalJabuti.g:2716:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
-                    // InternalJabuti.g:2717:4: otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')'
+                    // InternalJabuti.g:2762:3: (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' )
+                    // InternalJabuti.g:2763:4: otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')'
                     {
                     otherlv_0=(Token)match(input,63,FOLLOW_26); 
 
@@ -6679,11 +6804,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_1, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_0_1());
                     			
-                    // InternalJabuti.g:2725:4: ( (lv_content_2_0= RULE_STRING ) )
-                    // InternalJabuti.g:2726:5: (lv_content_2_0= RULE_STRING )
+                    // InternalJabuti.g:2771:4: ( (lv_content_2_0= RULE_STRING ) )
+                    // InternalJabuti.g:2772:5: (lv_content_2_0= RULE_STRING )
                     {
-                    // InternalJabuti.g:2726:5: (lv_content_2_0= RULE_STRING )
-                    // InternalJabuti.g:2727:6: lv_content_2_0= RULE_STRING
+                    // InternalJabuti.g:2772:5: (lv_content_2_0= RULE_STRING )
+                    // InternalJabuti.g:2773:6: lv_content_2_0= RULE_STRING
                     {
                     lv_content_2_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
 
@@ -6716,10 +6841,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:2749:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
+                    // InternalJabuti.g:2795:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
                     {
-                    // InternalJabuti.g:2749:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
-                    // InternalJabuti.g:2750:4: otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')'
+                    // InternalJabuti.g:2795:3: (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' )
+                    // InternalJabuti.g:2796:4: otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')'
                     {
                     otherlv_4=(Token)match(input,63,FOLLOW_26); 
 
@@ -6729,11 +6854,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_5, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1_1());
                     			
-                    // InternalJabuti.g:2758:4: ( (lv_content_6_0= RULE_STRING ) )
-                    // InternalJabuti.g:2759:5: (lv_content_6_0= RULE_STRING )
+                    // InternalJabuti.g:2804:4: ( (lv_content_6_0= RULE_STRING ) )
+                    // InternalJabuti.g:2805:5: (lv_content_6_0= RULE_STRING )
                     {
-                    // InternalJabuti.g:2759:5: (lv_content_6_0= RULE_STRING )
-                    // InternalJabuti.g:2760:6: lv_content_6_0= RULE_STRING
+                    // InternalJabuti.g:2805:5: (lv_content_6_0= RULE_STRING )
+                    // InternalJabuti.g:2806:6: lv_content_6_0= RULE_STRING
                     {
                     lv_content_6_0=(Token)match(input,RULE_STRING,FOLLOW_45); 
 
@@ -6759,11 +6884,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_7, grammarAccess.getMessageContentAccess().getByKeyword_1_3());
                     			
-                    // InternalJabuti.g:2780:4: ( (lv_timeUnit_8_0= ruleTimeUnit ) )
-                    // InternalJabuti.g:2781:5: (lv_timeUnit_8_0= ruleTimeUnit )
+                    // InternalJabuti.g:2826:4: ( (lv_timeUnit_8_0= ruleTimeUnit ) )
+                    // InternalJabuti.g:2827:5: (lv_timeUnit_8_0= ruleTimeUnit )
                     {
-                    // InternalJabuti.g:2781:5: (lv_timeUnit_8_0= ruleTimeUnit )
-                    // InternalJabuti.g:2782:6: lv_timeUnit_8_0= ruleTimeUnit
+                    // InternalJabuti.g:2827:5: (lv_timeUnit_8_0= ruleTimeUnit )
+                    // InternalJabuti.g:2828:6: lv_timeUnit_8_0= ruleTimeUnit
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_1_4_0());
@@ -6801,10 +6926,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:2805:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')' )
+                    // InternalJabuti.g:2851:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')' )
                     {
-                    // InternalJabuti.g:2805:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')' )
-                    // InternalJabuti.g:2806:4: otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')'
+                    // InternalJabuti.g:2851:3: (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')' )
+                    // InternalJabuti.g:2852:4: otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')'
                     {
                     otherlv_10=(Token)match(input,63,FOLLOW_26); 
 
@@ -6814,11 +6939,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     				newLeafNode(otherlv_11, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_2_1());
                     			
-                    // InternalJabuti.g:2814:4: ( (lv_content_12_0= RULE_STRING ) )
-                    // InternalJabuti.g:2815:5: (lv_content_12_0= RULE_STRING )
+                    // InternalJabuti.g:2860:4: ( (lv_content_12_0= RULE_STRING ) )
+                    // InternalJabuti.g:2861:5: (lv_content_12_0= RULE_STRING )
                     {
-                    // InternalJabuti.g:2815:5: (lv_content_12_0= RULE_STRING )
-                    // InternalJabuti.g:2816:6: lv_content_12_0= RULE_STRING
+                    // InternalJabuti.g:2861:5: (lv_content_12_0= RULE_STRING )
+                    // InternalJabuti.g:2862:6: lv_content_12_0= RULE_STRING
                     {
                     lv_content_12_0=(Token)match(input,RULE_STRING,FOLLOW_48); 
 
@@ -6840,16 +6965,16 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalJabuti.g:2832:4: ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) )
-                    // InternalJabuti.g:2833:5: (lv_comparisonOperator_13_0= ruleComparisonOperator )
+                    // InternalJabuti.g:2878:4: ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) )
+                    // InternalJabuti.g:2879:5: (lv_comparisonOperator_13_0= ruleComparisonOperator )
                     {
-                    // InternalJabuti.g:2833:5: (lv_comparisonOperator_13_0= ruleComparisonOperator )
-                    // InternalJabuti.g:2834:6: lv_comparisonOperator_13_0= ruleComparisonOperator
+                    // InternalJabuti.g:2879:5: (lv_comparisonOperator_13_0= ruleComparisonOperator )
+                    // InternalJabuti.g:2880:6: lv_comparisonOperator_13_0= ruleComparisonOperator
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getComparisonOperatorComparisonOperatorParserRuleCall_2_3_0());
                     					
-                    pushFollow(FOLLOW_9);
+                    pushFollow(FOLLOW_49);
                     lv_comparisonOperator_13_0=ruleComparisonOperator();
 
                     state._fsp--;
@@ -6871,35 +6996,93 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalJabuti.g:2851:4: ( (lv_value_14_0= RULE_STRING ) )
-                    // InternalJabuti.g:2852:5: (lv_value_14_0= RULE_STRING )
-                    {
-                    // InternalJabuti.g:2852:5: (lv_value_14_0= RULE_STRING )
-                    // InternalJabuti.g:2853:6: lv_value_14_0= RULE_STRING
-                    {
-                    lv_value_14_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
+                    // InternalJabuti.g:2897:4: ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) )
+                    int alt28=2;
+                    int LA28_0 = input.LA(1);
 
-                    						newLeafNode(lv_value_14_0, grammarAccess.getMessageContentAccess().getValueSTRINGTerminalRuleCall_2_4_0());
-                    					
+                    if ( (LA28_0==RULE_STRING) ) {
+                        alt28=1;
+                    }
+                    else if ( (LA28_0==RULE_INT) ) {
+                        alt28=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 28, 0, input);
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getMessageContentRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"value",
-                    							lv_value_14_0,
-                    							"org.eclipse.xtext.common.Terminals.STRING");
-                    					
+                        throw nvae;
+                    }
+                    switch (alt28) {
+                        case 1 :
+                            // InternalJabuti.g:2898:5: ( (lv_strValue_14_0= RULE_STRING ) )
+                            {
+                            // InternalJabuti.g:2898:5: ( (lv_strValue_14_0= RULE_STRING ) )
+                            // InternalJabuti.g:2899:6: (lv_strValue_14_0= RULE_STRING )
+                            {
+                            // InternalJabuti.g:2899:6: (lv_strValue_14_0= RULE_STRING )
+                            // InternalJabuti.g:2900:7: lv_strValue_14_0= RULE_STRING
+                            {
+                            lv_strValue_14_0=(Token)match(input,RULE_STRING,FOLLOW_28); 
+
+                            							newLeafNode(lv_strValue_14_0, grammarAccess.getMessageContentAccess().getStrValueSTRINGTerminalRuleCall_2_4_0_0());
+                            						
+
+                            							if (current==null) {
+                            								current = createModelElement(grammarAccess.getMessageContentRule());
+                            							}
+                            							setWithLastConsumed(
+                            								current,
+                            								"strValue",
+                            								lv_strValue_14_0,
+                            								"org.eclipse.xtext.common.Terminals.STRING");
+                            						
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalJabuti.g:2917:5: ( (lv_intValue_15_0= RULE_INT ) )
+                            {
+                            // InternalJabuti.g:2917:5: ( (lv_intValue_15_0= RULE_INT ) )
+                            // InternalJabuti.g:2918:6: (lv_intValue_15_0= RULE_INT )
+                            {
+                            // InternalJabuti.g:2918:6: (lv_intValue_15_0= RULE_INT )
+                            // InternalJabuti.g:2919:7: lv_intValue_15_0= RULE_INT
+                            {
+                            lv_intValue_15_0=(Token)match(input,RULE_INT,FOLLOW_28); 
+
+                            							newLeafNode(lv_intValue_15_0, grammarAccess.getMessageContentAccess().getIntValueINTTerminalRuleCall_2_4_1_0());
+                            						
+
+                            							if (current==null) {
+                            								current = createModelElement(grammarAccess.getMessageContentRule());
+                            							}
+                            							setWithLastConsumed(
+                            								current,
+                            								"intValue",
+                            								lv_intValue_15_0,
+                            								"org.eclipse.xtext.common.Terminals.INT");
+                            						
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
 
                     }
 
+                    otherlv_16=(Token)match(input,33,FOLLOW_2); 
 
-                    }
-
-                    otherlv_15=(Token)match(input,33,FOLLOW_2); 
-
-                    				newLeafNode(otherlv_15, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_2_5());
+                    				newLeafNode(otherlv_16, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_2_5());
                     			
 
                     }
@@ -6908,28 +7091,28 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJabuti.g:2875:3: (otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')' )
+                    // InternalJabuti.g:2942:3: (otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')' )
                     {
-                    // InternalJabuti.g:2875:3: (otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')' )
-                    // InternalJabuti.g:2876:4: otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')'
+                    // InternalJabuti.g:2942:3: (otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')' )
+                    // InternalJabuti.g:2943:4: otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')'
                     {
-                    otherlv_16=(Token)match(input,63,FOLLOW_26); 
+                    otherlv_17=(Token)match(input,63,FOLLOW_26); 
 
-                    				newLeafNode(otherlv_16, grammarAccess.getMessageContentAccess().getMessageContentKeyword_3_0());
+                    				newLeafNode(otherlv_17, grammarAccess.getMessageContentAccess().getMessageContentKeyword_3_0());
                     			
-                    otherlv_17=(Token)match(input,31,FOLLOW_9); 
+                    otherlv_18=(Token)match(input,31,FOLLOW_9); 
 
-                    				newLeafNode(otherlv_17, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_3_1());
+                    				newLeafNode(otherlv_18, grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_3_1());
                     			
-                    // InternalJabuti.g:2884:4: ( (lv_content_18_0= RULE_STRING ) )
-                    // InternalJabuti.g:2885:5: (lv_content_18_0= RULE_STRING )
+                    // InternalJabuti.g:2951:4: ( (lv_content_19_0= RULE_STRING ) )
+                    // InternalJabuti.g:2952:5: (lv_content_19_0= RULE_STRING )
                     {
-                    // InternalJabuti.g:2885:5: (lv_content_18_0= RULE_STRING )
-                    // InternalJabuti.g:2886:6: lv_content_18_0= RULE_STRING
+                    // InternalJabuti.g:2952:5: (lv_content_19_0= RULE_STRING )
+                    // InternalJabuti.g:2953:6: lv_content_19_0= RULE_STRING
                     {
-                    lv_content_18_0=(Token)match(input,RULE_STRING,FOLLOW_48); 
+                    lv_content_19_0=(Token)match(input,RULE_STRING,FOLLOW_48); 
 
-                    						newLeafNode(lv_content_18_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_3_2_0());
+                    						newLeafNode(lv_content_19_0, grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_3_2_0());
                     					
 
                     						if (current==null) {
@@ -6938,7 +7121,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     						setWithLastConsumed(
                     							current,
                     							"content",
-                    							lv_content_18_0,
+                    							lv_content_19_0,
                     							"org.eclipse.xtext.common.Terminals.STRING");
                     					
 
@@ -6947,17 +7130,17 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalJabuti.g:2902:4: ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) )
-                    // InternalJabuti.g:2903:5: (lv_comparisonOperator_19_0= ruleComparisonOperator )
+                    // InternalJabuti.g:2969:4: ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) )
+                    // InternalJabuti.g:2970:5: (lv_comparisonOperator_20_0= ruleComparisonOperator )
                     {
-                    // InternalJabuti.g:2903:5: (lv_comparisonOperator_19_0= ruleComparisonOperator )
-                    // InternalJabuti.g:2904:6: lv_comparisonOperator_19_0= ruleComparisonOperator
+                    // InternalJabuti.g:2970:5: (lv_comparisonOperator_20_0= ruleComparisonOperator )
+                    // InternalJabuti.g:2971:6: lv_comparisonOperator_20_0= ruleComparisonOperator
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getComparisonOperatorComparisonOperatorParserRuleCall_3_3_0());
                     					
-                    pushFollow(FOLLOW_9);
-                    lv_comparisonOperator_19_0=ruleComparisonOperator();
+                    pushFollow(FOLLOW_49);
+                    lv_comparisonOperator_20_0=ruleComparisonOperator();
 
                     state._fsp--;
 
@@ -6968,7 +7151,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"comparisonOperator",
-                    							lv_comparisonOperator_19_0,
+                    							lv_comparisonOperator_20_0,
                     							"br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
                     						afterParserOrEnumRuleCall();
                     					
@@ -6978,47 +7161,105 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalJabuti.g:2921:4: ( (lv_value_20_0= RULE_STRING ) )
-                    // InternalJabuti.g:2922:5: (lv_value_20_0= RULE_STRING )
-                    {
-                    // InternalJabuti.g:2922:5: (lv_value_20_0= RULE_STRING )
-                    // InternalJabuti.g:2923:6: lv_value_20_0= RULE_STRING
-                    {
-                    lv_value_20_0=(Token)match(input,RULE_STRING,FOLLOW_45); 
+                    // InternalJabuti.g:2988:4: ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) )
+                    int alt29=2;
+                    int LA29_0 = input.LA(1);
 
-                    						newLeafNode(lv_value_20_0, grammarAccess.getMessageContentAccess().getValueSTRINGTerminalRuleCall_3_4_0());
-                    					
+                    if ( (LA29_0==RULE_STRING) ) {
+                        alt29=1;
+                    }
+                    else if ( (LA29_0==RULE_INT) ) {
+                        alt29=2;
+                    }
+                    else {
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 29, 0, input);
 
-                    						if (current==null) {
-                    							current = createModelElement(grammarAccess.getMessageContentRule());
-                    						}
-                    						setWithLastConsumed(
-                    							current,
-                    							"value",
-                    							lv_value_20_0,
-                    							"org.eclipse.xtext.common.Terminals.STRING");
-                    					
+                        throw nvae;
+                    }
+                    switch (alt29) {
+                        case 1 :
+                            // InternalJabuti.g:2989:5: ( (lv_strValue_21_0= RULE_STRING ) )
+                            {
+                            // InternalJabuti.g:2989:5: ( (lv_strValue_21_0= RULE_STRING ) )
+                            // InternalJabuti.g:2990:6: (lv_strValue_21_0= RULE_STRING )
+                            {
+                            // InternalJabuti.g:2990:6: (lv_strValue_21_0= RULE_STRING )
+                            // InternalJabuti.g:2991:7: lv_strValue_21_0= RULE_STRING
+                            {
+                            lv_strValue_21_0=(Token)match(input,RULE_STRING,FOLLOW_45); 
+
+                            							newLeafNode(lv_strValue_21_0, grammarAccess.getMessageContentAccess().getStrValueSTRINGTerminalRuleCall_3_4_0_0());
+                            						
+
+                            							if (current==null) {
+                            								current = createModelElement(grammarAccess.getMessageContentRule());
+                            							}
+                            							setWithLastConsumed(
+                            								current,
+                            								"strValue",
+                            								lv_strValue_21_0,
+                            								"org.eclipse.xtext.common.Terminals.STRING");
+                            						
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
+                        case 2 :
+                            // InternalJabuti.g:3008:5: ( (lv_intValue_22_0= RULE_INT ) )
+                            {
+                            // InternalJabuti.g:3008:5: ( (lv_intValue_22_0= RULE_INT ) )
+                            // InternalJabuti.g:3009:6: (lv_intValue_22_0= RULE_INT )
+                            {
+                            // InternalJabuti.g:3009:6: (lv_intValue_22_0= RULE_INT )
+                            // InternalJabuti.g:3010:7: lv_intValue_22_0= RULE_INT
+                            {
+                            lv_intValue_22_0=(Token)match(input,RULE_INT,FOLLOW_45); 
+
+                            							newLeafNode(lv_intValue_22_0, grammarAccess.getMessageContentAccess().getIntValueINTTerminalRuleCall_3_4_1_0());
+                            						
+
+                            							if (current==null) {
+                            								current = createModelElement(grammarAccess.getMessageContentRule());
+                            							}
+                            							setWithLastConsumed(
+                            								current,
+                            								"intValue",
+                            								lv_intValue_22_0,
+                            								"org.eclipse.xtext.common.Terminals.INT");
+                            						
+
+                            }
+
+
+                            }
+
+
+                            }
+                            break;
 
                     }
 
+                    otherlv_23=(Token)match(input,59,FOLLOW_44); 
 
-                    }
-
-                    otherlv_21=(Token)match(input,59,FOLLOW_44); 
-
-                    				newLeafNode(otherlv_21, grammarAccess.getMessageContentAccess().getByKeyword_3_5());
+                    				newLeafNode(otherlv_23, grammarAccess.getMessageContentAccess().getByKeyword_3_5());
                     			
-                    // InternalJabuti.g:2943:4: ( (lv_timeUnit_22_0= ruleTimeUnit ) )
-                    // InternalJabuti.g:2944:5: (lv_timeUnit_22_0= ruleTimeUnit )
+                    // InternalJabuti.g:3031:4: ( (lv_timeUnit_24_0= ruleTimeUnit ) )
+                    // InternalJabuti.g:3032:5: (lv_timeUnit_24_0= ruleTimeUnit )
                     {
-                    // InternalJabuti.g:2944:5: (lv_timeUnit_22_0= ruleTimeUnit )
-                    // InternalJabuti.g:2945:6: lv_timeUnit_22_0= ruleTimeUnit
+                    // InternalJabuti.g:3032:5: (lv_timeUnit_24_0= ruleTimeUnit )
+                    // InternalJabuti.g:3033:6: lv_timeUnit_24_0= ruleTimeUnit
                     {
 
                     						newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_3_6_0());
                     					
                     pushFollow(FOLLOW_28);
-                    lv_timeUnit_22_0=ruleTimeUnit();
+                    lv_timeUnit_24_0=ruleTimeUnit();
 
                     state._fsp--;
 
@@ -7029,7 +7270,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     						set(
                     							current,
                     							"timeUnit",
-                    							lv_timeUnit_22_0,
+                    							lv_timeUnit_24_0,
                     							"br.edu.unijui.gca.jabuti.Jabuti.TimeUnit");
                     						afterParserOrEnumRuleCall();
                     					
@@ -7039,9 +7280,9 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_23=(Token)match(input,33,FOLLOW_2); 
+                    otherlv_25=(Token)match(input,33,FOLLOW_2); 
 
-                    				newLeafNode(otherlv_23, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_3_7());
+                    				newLeafNode(otherlv_25, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_3_7());
                     			
 
                     }
@@ -7072,7 +7313,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleComparisonOperator"
-    // InternalJabuti.g:2971:1: entryRuleComparisonOperator returns [EObject current=null] : iv_ruleComparisonOperator= ruleComparisonOperator EOF ;
+    // InternalJabuti.g:3059:1: entryRuleComparisonOperator returns [EObject current=null] : iv_ruleComparisonOperator= ruleComparisonOperator EOF ;
     public final EObject entryRuleComparisonOperator() throws RecognitionException {
         EObject current = null;
 
@@ -7080,8 +7321,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:2971:59: (iv_ruleComparisonOperator= ruleComparisonOperator EOF )
-            // InternalJabuti.g:2972:2: iv_ruleComparisonOperator= ruleComparisonOperator EOF
+            // InternalJabuti.g:3059:59: (iv_ruleComparisonOperator= ruleComparisonOperator EOF )
+            // InternalJabuti.g:3060:2: iv_ruleComparisonOperator= ruleComparisonOperator EOF
             {
              newCompositeNode(grammarAccess.getComparisonOperatorRule()); 
             pushFollow(FOLLOW_1);
@@ -7108,7 +7349,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleComparisonOperator"
-    // InternalJabuti.g:2978:1: ruleComparisonOperator returns [EObject current=null] : ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) ;
+    // InternalJabuti.g:3066:1: ruleComparisonOperator returns [EObject current=null] : ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) ;
     public final EObject ruleComparisonOperator() throws RecognitionException {
         EObject current = null;
 
@@ -7123,58 +7364,58 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:2984:2: ( ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) )
-            // InternalJabuti.g:2985:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
+            // InternalJabuti.g:3072:2: ( ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) ) )
+            // InternalJabuti.g:3073:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
             {
-            // InternalJabuti.g:2985:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
-            int alt28=6;
+            // InternalJabuti.g:3073:2: ( ( (lv_symbol_0_0= '<=' ) ) | ( (lv_symbol_1_0= '>=' ) ) | ( (lv_symbol_2_0= '>' ) ) | ( (lv_symbol_3_0= '<' ) ) | ( (lv_symbol_4_0= '!=' ) ) | ( (lv_symbol_5_0= '==' ) ) )
+            int alt31=6;
             switch ( input.LA(1) ) {
             case 40:
                 {
-                alt28=1;
+                alt31=1;
                 }
                 break;
             case 41:
                 {
-                alt28=2;
+                alt31=2;
                 }
                 break;
             case 42:
                 {
-                alt28=3;
+                alt31=3;
                 }
                 break;
             case 43:
                 {
-                alt28=4;
+                alt31=4;
                 }
                 break;
             case 44:
                 {
-                alt28=5;
+                alt31=5;
                 }
                 break;
             case 45:
                 {
-                alt28=6;
+                alt31=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 28, 0, input);
+                    new NoViableAltException("", 31, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt28) {
+            switch (alt31) {
                 case 1 :
-                    // InternalJabuti.g:2986:3: ( (lv_symbol_0_0= '<=' ) )
+                    // InternalJabuti.g:3074:3: ( (lv_symbol_0_0= '<=' ) )
                     {
-                    // InternalJabuti.g:2986:3: ( (lv_symbol_0_0= '<=' ) )
-                    // InternalJabuti.g:2987:4: (lv_symbol_0_0= '<=' )
+                    // InternalJabuti.g:3074:3: ( (lv_symbol_0_0= '<=' ) )
+                    // InternalJabuti.g:3075:4: (lv_symbol_0_0= '<=' )
                     {
-                    // InternalJabuti.g:2987:4: (lv_symbol_0_0= '<=' )
-                    // InternalJabuti.g:2988:5: lv_symbol_0_0= '<='
+                    // InternalJabuti.g:3075:4: (lv_symbol_0_0= '<=' )
+                    // InternalJabuti.g:3076:5: lv_symbol_0_0= '<='
                     {
                     lv_symbol_0_0=(Token)match(input,40,FOLLOW_2); 
 
@@ -7196,13 +7437,13 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:3001:3: ( (lv_symbol_1_0= '>=' ) )
+                    // InternalJabuti.g:3089:3: ( (lv_symbol_1_0= '>=' ) )
                     {
-                    // InternalJabuti.g:3001:3: ( (lv_symbol_1_0= '>=' ) )
-                    // InternalJabuti.g:3002:4: (lv_symbol_1_0= '>=' )
+                    // InternalJabuti.g:3089:3: ( (lv_symbol_1_0= '>=' ) )
+                    // InternalJabuti.g:3090:4: (lv_symbol_1_0= '>=' )
                     {
-                    // InternalJabuti.g:3002:4: (lv_symbol_1_0= '>=' )
-                    // InternalJabuti.g:3003:5: lv_symbol_1_0= '>='
+                    // InternalJabuti.g:3090:4: (lv_symbol_1_0= '>=' )
+                    // InternalJabuti.g:3091:5: lv_symbol_1_0= '>='
                     {
                     lv_symbol_1_0=(Token)match(input,41,FOLLOW_2); 
 
@@ -7224,13 +7465,13 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:3016:3: ( (lv_symbol_2_0= '>' ) )
+                    // InternalJabuti.g:3104:3: ( (lv_symbol_2_0= '>' ) )
                     {
-                    // InternalJabuti.g:3016:3: ( (lv_symbol_2_0= '>' ) )
-                    // InternalJabuti.g:3017:4: (lv_symbol_2_0= '>' )
+                    // InternalJabuti.g:3104:3: ( (lv_symbol_2_0= '>' ) )
+                    // InternalJabuti.g:3105:4: (lv_symbol_2_0= '>' )
                     {
-                    // InternalJabuti.g:3017:4: (lv_symbol_2_0= '>' )
-                    // InternalJabuti.g:3018:5: lv_symbol_2_0= '>'
+                    // InternalJabuti.g:3105:4: (lv_symbol_2_0= '>' )
+                    // InternalJabuti.g:3106:5: lv_symbol_2_0= '>'
                     {
                     lv_symbol_2_0=(Token)match(input,42,FOLLOW_2); 
 
@@ -7252,13 +7493,13 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJabuti.g:3031:3: ( (lv_symbol_3_0= '<' ) )
+                    // InternalJabuti.g:3119:3: ( (lv_symbol_3_0= '<' ) )
                     {
-                    // InternalJabuti.g:3031:3: ( (lv_symbol_3_0= '<' ) )
-                    // InternalJabuti.g:3032:4: (lv_symbol_3_0= '<' )
+                    // InternalJabuti.g:3119:3: ( (lv_symbol_3_0= '<' ) )
+                    // InternalJabuti.g:3120:4: (lv_symbol_3_0= '<' )
                     {
-                    // InternalJabuti.g:3032:4: (lv_symbol_3_0= '<' )
-                    // InternalJabuti.g:3033:5: lv_symbol_3_0= '<'
+                    // InternalJabuti.g:3120:4: (lv_symbol_3_0= '<' )
+                    // InternalJabuti.g:3121:5: lv_symbol_3_0= '<'
                     {
                     lv_symbol_3_0=(Token)match(input,43,FOLLOW_2); 
 
@@ -7280,13 +7521,13 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalJabuti.g:3046:3: ( (lv_symbol_4_0= '!=' ) )
+                    // InternalJabuti.g:3134:3: ( (lv_symbol_4_0= '!=' ) )
                     {
-                    // InternalJabuti.g:3046:3: ( (lv_symbol_4_0= '!=' ) )
-                    // InternalJabuti.g:3047:4: (lv_symbol_4_0= '!=' )
+                    // InternalJabuti.g:3134:3: ( (lv_symbol_4_0= '!=' ) )
+                    // InternalJabuti.g:3135:4: (lv_symbol_4_0= '!=' )
                     {
-                    // InternalJabuti.g:3047:4: (lv_symbol_4_0= '!=' )
-                    // InternalJabuti.g:3048:5: lv_symbol_4_0= '!='
+                    // InternalJabuti.g:3135:4: (lv_symbol_4_0= '!=' )
+                    // InternalJabuti.g:3136:5: lv_symbol_4_0= '!='
                     {
                     lv_symbol_4_0=(Token)match(input,44,FOLLOW_2); 
 
@@ -7308,13 +7549,13 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalJabuti.g:3061:3: ( (lv_symbol_5_0= '==' ) )
+                    // InternalJabuti.g:3149:3: ( (lv_symbol_5_0= '==' ) )
                     {
-                    // InternalJabuti.g:3061:3: ( (lv_symbol_5_0= '==' ) )
-                    // InternalJabuti.g:3062:4: (lv_symbol_5_0= '==' )
+                    // InternalJabuti.g:3149:3: ( (lv_symbol_5_0= '==' ) )
+                    // InternalJabuti.g:3150:4: (lv_symbol_5_0= '==' )
                     {
-                    // InternalJabuti.g:3062:4: (lv_symbol_5_0= '==' )
-                    // InternalJabuti.g:3063:5: lv_symbol_5_0= '=='
+                    // InternalJabuti.g:3150:4: (lv_symbol_5_0= '==' )
+                    // InternalJabuti.g:3151:5: lv_symbol_5_0= '=='
                     {
                     lv_symbol_5_0=(Token)match(input,45,FOLLOW_2); 
 
@@ -7358,7 +7599,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedName"
-    // InternalJabuti.g:3079:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
+    // InternalJabuti.g:3167:1: entryRuleQualifiedName returns [String current=null] : iv_ruleQualifiedName= ruleQualifiedName EOF ;
     public final String entryRuleQualifiedName() throws RecognitionException {
         String current = null;
 
@@ -7366,8 +7607,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:3079:53: (iv_ruleQualifiedName= ruleQualifiedName EOF )
-            // InternalJabuti.g:3080:2: iv_ruleQualifiedName= ruleQualifiedName EOF
+            // InternalJabuti.g:3167:53: (iv_ruleQualifiedName= ruleQualifiedName EOF )
+            // InternalJabuti.g:3168:2: iv_ruleQualifiedName= ruleQualifiedName EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameRule()); 
             pushFollow(FOLLOW_1);
@@ -7394,7 +7635,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedName"
-    // InternalJabuti.g:3086:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // InternalJabuti.g:3174:1: ruleQualifiedName returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedName() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7406,40 +7647,40 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:3092:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // InternalJabuti.g:3093:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalJabuti.g:3180:2: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // InternalJabuti.g:3181:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // InternalJabuti.g:3093:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // InternalJabuti.g:3094:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // InternalJabuti.g:3181:2: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // InternalJabuti.g:3182:3: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_49); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_50); 
 
             			current.merge(this_ID_0);
             		
 
             			newLeafNode(this_ID_0, grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0());
             		
-            // InternalJabuti.g:3101:3: (kw= '.' this_ID_2= RULE_ID )*
-            loop29:
+            // InternalJabuti.g:3189:3: (kw= '.' this_ID_2= RULE_ID )*
+            loop32:
             do {
-                int alt29=2;
-                int LA29_0 = input.LA(1);
+                int alt32=2;
+                int LA32_0 = input.LA(1);
 
-                if ( (LA29_0==64) ) {
-                    alt29=1;
+                if ( (LA32_0==64) ) {
+                    alt32=1;
                 }
 
 
-                switch (alt29) {
+                switch (alt32) {
             	case 1 :
-            	    // InternalJabuti.g:3102:4: kw= '.' this_ID_2= RULE_ID
+            	    // InternalJabuti.g:3190:4: kw= '.' this_ID_2= RULE_ID
             	    {
             	    kw=(Token)match(input,64,FOLLOW_4); 
 
             	    				current.merge(kw);
             	    				newLeafNode(kw, grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0());
             	    			
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_49); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_50); 
 
             	    				current.merge(this_ID_2);
             	    			
@@ -7451,7 +7692,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop29;
+            	    break loop32;
                 }
             } while (true);
 
@@ -7478,7 +7719,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleQualifiedNameWithWildcard"
-    // InternalJabuti.g:3119:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
+    // InternalJabuti.g:3207:1: entryRuleQualifiedNameWithWildcard returns [String current=null] : iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF ;
     public final String entryRuleQualifiedNameWithWildcard() throws RecognitionException {
         String current = null;
 
@@ -7486,8 +7727,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalJabuti.g:3119:65: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
-            // InternalJabuti.g:3120:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
+            // InternalJabuti.g:3207:65: (iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF )
+            // InternalJabuti.g:3208:2: iv_ruleQualifiedNameWithWildcard= ruleQualifiedNameWithWildcard EOF
             {
              newCompositeNode(grammarAccess.getQualifiedNameWithWildcardRule()); 
             pushFollow(FOLLOW_1);
@@ -7514,7 +7755,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleQualifiedNameWithWildcard"
-    // InternalJabuti.g:3126:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) ;
+    // InternalJabuti.g:3214:1: ruleQualifiedNameWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) ;
     public final AntlrDatatypeRuleToken ruleQualifiedNameWithWildcard() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -7526,16 +7767,16 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:3132:2: ( (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) )
-            // InternalJabuti.g:3133:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
+            // InternalJabuti.g:3220:2: ( (this_QualifiedName_0= ruleQualifiedName kw= '.*' ) )
+            // InternalJabuti.g:3221:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
             {
-            // InternalJabuti.g:3133:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
-            // InternalJabuti.g:3134:3: this_QualifiedName_0= ruleQualifiedName kw= '.*'
+            // InternalJabuti.g:3221:2: (this_QualifiedName_0= ruleQualifiedName kw= '.*' )
+            // InternalJabuti.g:3222:3: this_QualifiedName_0= ruleQualifiedName kw= '.*'
             {
 
             			newCompositeNode(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0());
             		
-            pushFollow(FOLLOW_50);
+            pushFollow(FOLLOW_51);
             this_QualifiedName_0=ruleQualifiedName();
 
             state._fsp--;
@@ -7574,7 +7815,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleRolePlayer"
-    // InternalJabuti.g:3153:1: ruleRolePlayer returns [Enumerator current=null] : ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) ) ;
+    // InternalJabuti.g:3241:1: ruleRolePlayer returns [Enumerator current=null] : ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) ) ;
     public final Enumerator ruleRolePlayer() throws RecognitionException {
         Enumerator current = null;
 
@@ -7585,31 +7826,31 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:3159:2: ( ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) ) )
-            // InternalJabuti.g:3160:2: ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) )
+            // InternalJabuti.g:3247:2: ( ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) ) )
+            // InternalJabuti.g:3248:2: ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) )
             {
-            // InternalJabuti.g:3160:2: ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) )
-            int alt30=2;
-            int LA30_0 = input.LA(1);
+            // InternalJabuti.g:3248:2: ( (enumLiteral_0= 'application' ) | (enumLiteral_1= 'process' ) )
+            int alt33=2;
+            int LA33_0 = input.LA(1);
 
-            if ( (LA30_0==28) ) {
-                alt30=1;
+            if ( (LA33_0==28) ) {
+                alt33=1;
             }
-            else if ( (LA30_0==29) ) {
-                alt30=2;
+            else if ( (LA33_0==29) ) {
+                alt33=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 30, 0, input);
+                    new NoViableAltException("", 33, 0, input);
 
                 throw nvae;
             }
-            switch (alt30) {
+            switch (alt33) {
                 case 1 :
-                    // InternalJabuti.g:3161:3: (enumLiteral_0= 'application' )
+                    // InternalJabuti.g:3249:3: (enumLiteral_0= 'application' )
                     {
-                    // InternalJabuti.g:3161:3: (enumLiteral_0= 'application' )
-                    // InternalJabuti.g:3162:4: enumLiteral_0= 'application'
+                    // InternalJabuti.g:3249:3: (enumLiteral_0= 'application' )
+                    // InternalJabuti.g:3250:4: enumLiteral_0= 'application'
                     {
                     enumLiteral_0=(Token)match(input,28,FOLLOW_2); 
 
@@ -7623,10 +7864,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:3169:3: (enumLiteral_1= 'process' )
+                    // InternalJabuti.g:3257:3: (enumLiteral_1= 'process' )
                     {
-                    // InternalJabuti.g:3169:3: (enumLiteral_1= 'process' )
-                    // InternalJabuti.g:3170:4: enumLiteral_1= 'process'
+                    // InternalJabuti.g:3257:3: (enumLiteral_1= 'process' )
+                    // InternalJabuti.g:3258:4: enumLiteral_1= 'process'
                     {
                     enumLiteral_1=(Token)match(input,29,FOLLOW_2); 
 
@@ -7662,7 +7903,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleOperation"
-    // InternalJabuti.g:3180:1: ruleOperation returns [Enumerator current=null] : ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) ;
+    // InternalJabuti.g:3268:1: ruleOperation returns [Enumerator current=null] : ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) ;
     public final Enumerator ruleOperation() throws RecognitionException {
         Enumerator current = null;
 
@@ -7677,55 +7918,55 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:3186:2: ( ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) )
-            // InternalJabuti.g:3187:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
+            // InternalJabuti.g:3274:2: ( ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) ) )
+            // InternalJabuti.g:3275:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
             {
-            // InternalJabuti.g:3187:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
-            int alt31=6;
+            // InternalJabuti.g:3275:2: ( (enumLiteral_0= 'push' ) | (enumLiteral_1= 'poll' ) | (enumLiteral_2= 'write' ) | (enumLiteral_3= 'read' ) | (enumLiteral_4= 'request' ) | (enumLiteral_5= 'response' ) )
+            int alt34=6;
             switch ( input.LA(1) ) {
             case 66:
                 {
-                alt31=1;
+                alt34=1;
                 }
                 break;
             case 67:
                 {
-                alt31=2;
+                alt34=2;
                 }
                 break;
             case 68:
                 {
-                alt31=3;
+                alt34=3;
                 }
                 break;
             case 69:
                 {
-                alt31=4;
+                alt34=4;
                 }
                 break;
             case 70:
                 {
-                alt31=5;
+                alt34=5;
                 }
                 break;
             case 71:
                 {
-                alt31=6;
+                alt34=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 31, 0, input);
+                    new NoViableAltException("", 34, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt31) {
+            switch (alt34) {
                 case 1 :
-                    // InternalJabuti.g:3188:3: (enumLiteral_0= 'push' )
+                    // InternalJabuti.g:3276:3: (enumLiteral_0= 'push' )
                     {
-                    // InternalJabuti.g:3188:3: (enumLiteral_0= 'push' )
-                    // InternalJabuti.g:3189:4: enumLiteral_0= 'push'
+                    // InternalJabuti.g:3276:3: (enumLiteral_0= 'push' )
+                    // InternalJabuti.g:3277:4: enumLiteral_0= 'push'
                     {
                     enumLiteral_0=(Token)match(input,66,FOLLOW_2); 
 
@@ -7739,10 +7980,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:3196:3: (enumLiteral_1= 'poll' )
+                    // InternalJabuti.g:3284:3: (enumLiteral_1= 'poll' )
                     {
-                    // InternalJabuti.g:3196:3: (enumLiteral_1= 'poll' )
-                    // InternalJabuti.g:3197:4: enumLiteral_1= 'poll'
+                    // InternalJabuti.g:3284:3: (enumLiteral_1= 'poll' )
+                    // InternalJabuti.g:3285:4: enumLiteral_1= 'poll'
                     {
                     enumLiteral_1=(Token)match(input,67,FOLLOW_2); 
 
@@ -7756,10 +7997,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:3204:3: (enumLiteral_2= 'write' )
+                    // InternalJabuti.g:3292:3: (enumLiteral_2= 'write' )
                     {
-                    // InternalJabuti.g:3204:3: (enumLiteral_2= 'write' )
-                    // InternalJabuti.g:3205:4: enumLiteral_2= 'write'
+                    // InternalJabuti.g:3292:3: (enumLiteral_2= 'write' )
+                    // InternalJabuti.g:3293:4: enumLiteral_2= 'write'
                     {
                     enumLiteral_2=(Token)match(input,68,FOLLOW_2); 
 
@@ -7773,10 +8014,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJabuti.g:3212:3: (enumLiteral_3= 'read' )
+                    // InternalJabuti.g:3300:3: (enumLiteral_3= 'read' )
                     {
-                    // InternalJabuti.g:3212:3: (enumLiteral_3= 'read' )
-                    // InternalJabuti.g:3213:4: enumLiteral_3= 'read'
+                    // InternalJabuti.g:3300:3: (enumLiteral_3= 'read' )
+                    // InternalJabuti.g:3301:4: enumLiteral_3= 'read'
                     {
                     enumLiteral_3=(Token)match(input,69,FOLLOW_2); 
 
@@ -7790,10 +8031,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalJabuti.g:3220:3: (enumLiteral_4= 'request' )
+                    // InternalJabuti.g:3308:3: (enumLiteral_4= 'request' )
                     {
-                    // InternalJabuti.g:3220:3: (enumLiteral_4= 'request' )
-                    // InternalJabuti.g:3221:4: enumLiteral_4= 'request'
+                    // InternalJabuti.g:3308:3: (enumLiteral_4= 'request' )
+                    // InternalJabuti.g:3309:4: enumLiteral_4= 'request'
                     {
                     enumLiteral_4=(Token)match(input,70,FOLLOW_2); 
 
@@ -7807,10 +8048,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalJabuti.g:3228:3: (enumLiteral_5= 'response' )
+                    // InternalJabuti.g:3316:3: (enumLiteral_5= 'response' )
                     {
-                    // InternalJabuti.g:3228:3: (enumLiteral_5= 'response' )
-                    // InternalJabuti.g:3229:4: enumLiteral_5= 'response'
+                    // InternalJabuti.g:3316:3: (enumLiteral_5= 'response' )
+                    // InternalJabuti.g:3317:4: enumLiteral_5= 'response'
                     {
                     enumLiteral_5=(Token)match(input,71,FOLLOW_2); 
 
@@ -7846,7 +8087,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleWeekDay"
-    // InternalJabuti.g:3239:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) ;
+    // InternalJabuti.g:3327:1: ruleWeekDay returns [Enumerator current=null] : ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) ;
     public final Enumerator ruleWeekDay() throws RecognitionException {
         Enumerator current = null;
 
@@ -7862,60 +8103,60 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:3245:2: ( ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) )
-            // InternalJabuti.g:3246:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
+            // InternalJabuti.g:3333:2: ( ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) ) )
+            // InternalJabuti.g:3334:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
             {
-            // InternalJabuti.g:3246:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
-            int alt32=7;
+            // InternalJabuti.g:3334:2: ( (enumLiteral_0= 'Sunday' ) | (enumLiteral_1= 'Monday' ) | (enumLiteral_2= 'Tuesday' ) | (enumLiteral_3= 'Wednesday' ) | (enumLiteral_4= 'Thursday' ) | (enumLiteral_5= 'Friday' ) | (enumLiteral_6= 'Saturday' ) )
+            int alt35=7;
             switch ( input.LA(1) ) {
             case 72:
                 {
-                alt32=1;
+                alt35=1;
                 }
                 break;
             case 73:
                 {
-                alt32=2;
+                alt35=2;
                 }
                 break;
             case 74:
                 {
-                alt32=3;
+                alt35=3;
                 }
                 break;
             case 75:
                 {
-                alt32=4;
+                alt35=4;
                 }
                 break;
             case 76:
                 {
-                alt32=5;
+                alt35=5;
                 }
                 break;
             case 77:
                 {
-                alt32=6;
+                alt35=6;
                 }
                 break;
             case 78:
                 {
-                alt32=7;
+                alt35=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 32, 0, input);
+                    new NoViableAltException("", 35, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt32) {
+            switch (alt35) {
                 case 1 :
-                    // InternalJabuti.g:3247:3: (enumLiteral_0= 'Sunday' )
+                    // InternalJabuti.g:3335:3: (enumLiteral_0= 'Sunday' )
                     {
-                    // InternalJabuti.g:3247:3: (enumLiteral_0= 'Sunday' )
-                    // InternalJabuti.g:3248:4: enumLiteral_0= 'Sunday'
+                    // InternalJabuti.g:3335:3: (enumLiteral_0= 'Sunday' )
+                    // InternalJabuti.g:3336:4: enumLiteral_0= 'Sunday'
                     {
                     enumLiteral_0=(Token)match(input,72,FOLLOW_2); 
 
@@ -7929,10 +8170,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:3255:3: (enumLiteral_1= 'Monday' )
+                    // InternalJabuti.g:3343:3: (enumLiteral_1= 'Monday' )
                     {
-                    // InternalJabuti.g:3255:3: (enumLiteral_1= 'Monday' )
-                    // InternalJabuti.g:3256:4: enumLiteral_1= 'Monday'
+                    // InternalJabuti.g:3343:3: (enumLiteral_1= 'Monday' )
+                    // InternalJabuti.g:3344:4: enumLiteral_1= 'Monday'
                     {
                     enumLiteral_1=(Token)match(input,73,FOLLOW_2); 
 
@@ -7946,10 +8187,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:3263:3: (enumLiteral_2= 'Tuesday' )
+                    // InternalJabuti.g:3351:3: (enumLiteral_2= 'Tuesday' )
                     {
-                    // InternalJabuti.g:3263:3: (enumLiteral_2= 'Tuesday' )
-                    // InternalJabuti.g:3264:4: enumLiteral_2= 'Tuesday'
+                    // InternalJabuti.g:3351:3: (enumLiteral_2= 'Tuesday' )
+                    // InternalJabuti.g:3352:4: enumLiteral_2= 'Tuesday'
                     {
                     enumLiteral_2=(Token)match(input,74,FOLLOW_2); 
 
@@ -7963,10 +8204,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJabuti.g:3271:3: (enumLiteral_3= 'Wednesday' )
+                    // InternalJabuti.g:3359:3: (enumLiteral_3= 'Wednesday' )
                     {
-                    // InternalJabuti.g:3271:3: (enumLiteral_3= 'Wednesday' )
-                    // InternalJabuti.g:3272:4: enumLiteral_3= 'Wednesday'
+                    // InternalJabuti.g:3359:3: (enumLiteral_3= 'Wednesday' )
+                    // InternalJabuti.g:3360:4: enumLiteral_3= 'Wednesday'
                     {
                     enumLiteral_3=(Token)match(input,75,FOLLOW_2); 
 
@@ -7980,10 +8221,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalJabuti.g:3279:3: (enumLiteral_4= 'Thursday' )
+                    // InternalJabuti.g:3367:3: (enumLiteral_4= 'Thursday' )
                     {
-                    // InternalJabuti.g:3279:3: (enumLiteral_4= 'Thursday' )
-                    // InternalJabuti.g:3280:4: enumLiteral_4= 'Thursday'
+                    // InternalJabuti.g:3367:3: (enumLiteral_4= 'Thursday' )
+                    // InternalJabuti.g:3368:4: enumLiteral_4= 'Thursday'
                     {
                     enumLiteral_4=(Token)match(input,76,FOLLOW_2); 
 
@@ -7997,10 +8238,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalJabuti.g:3287:3: (enumLiteral_5= 'Friday' )
+                    // InternalJabuti.g:3375:3: (enumLiteral_5= 'Friday' )
                     {
-                    // InternalJabuti.g:3287:3: (enumLiteral_5= 'Friday' )
-                    // InternalJabuti.g:3288:4: enumLiteral_5= 'Friday'
+                    // InternalJabuti.g:3375:3: (enumLiteral_5= 'Friday' )
+                    // InternalJabuti.g:3376:4: enumLiteral_5= 'Friday'
                     {
                     enumLiteral_5=(Token)match(input,77,FOLLOW_2); 
 
@@ -8014,10 +8255,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalJabuti.g:3295:3: (enumLiteral_6= 'Saturday' )
+                    // InternalJabuti.g:3383:3: (enumLiteral_6= 'Saturday' )
                     {
-                    // InternalJabuti.g:3295:3: (enumLiteral_6= 'Saturday' )
-                    // InternalJabuti.g:3296:4: enumLiteral_6= 'Saturday'
+                    // InternalJabuti.g:3383:3: (enumLiteral_6= 'Saturday' )
+                    // InternalJabuti.g:3384:4: enumLiteral_6= 'Saturday'
                     {
                     enumLiteral_6=(Token)match(input,78,FOLLOW_2); 
 
@@ -8053,7 +8294,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTimeUnit"
-    // InternalJabuti.g:3306:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) ;
+    // InternalJabuti.g:3394:1: ruleTimeUnit returns [Enumerator current=null] : ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) ;
     public final Enumerator ruleTimeUnit() throws RecognitionException {
         Enumerator current = null;
 
@@ -8069,60 +8310,60 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalJabuti.g:3312:2: ( ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) )
-            // InternalJabuti.g:3313:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
+            // InternalJabuti.g:3400:2: ( ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) ) )
+            // InternalJabuti.g:3401:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
             {
-            // InternalJabuti.g:3313:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
-            int alt33=7;
+            // InternalJabuti.g:3401:2: ( (enumLiteral_0= 'Second' ) | (enumLiteral_1= 'Minute' ) | (enumLiteral_2= 'Hour' ) | (enumLiteral_3= 'Day' ) | (enumLiteral_4= 'Week' ) | (enumLiteral_5= 'Month' ) | (enumLiteral_6= 'Year' ) )
+            int alt36=7;
             switch ( input.LA(1) ) {
             case 79:
                 {
-                alt33=1;
+                alt36=1;
                 }
                 break;
             case 80:
                 {
-                alt33=2;
+                alt36=2;
                 }
                 break;
             case 81:
                 {
-                alt33=3;
+                alt36=3;
                 }
                 break;
             case 82:
                 {
-                alt33=4;
+                alt36=4;
                 }
                 break;
             case 83:
                 {
-                alt33=5;
+                alt36=5;
                 }
                 break;
             case 84:
                 {
-                alt33=6;
+                alt36=6;
                 }
                 break;
             case 85:
                 {
-                alt33=7;
+                alt36=7;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 33, 0, input);
+                    new NoViableAltException("", 36, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt33) {
+            switch (alt36) {
                 case 1 :
-                    // InternalJabuti.g:3314:3: (enumLiteral_0= 'Second' )
+                    // InternalJabuti.g:3402:3: (enumLiteral_0= 'Second' )
                     {
-                    // InternalJabuti.g:3314:3: (enumLiteral_0= 'Second' )
-                    // InternalJabuti.g:3315:4: enumLiteral_0= 'Second'
+                    // InternalJabuti.g:3402:3: (enumLiteral_0= 'Second' )
+                    // InternalJabuti.g:3403:4: enumLiteral_0= 'Second'
                     {
                     enumLiteral_0=(Token)match(input,79,FOLLOW_2); 
 
@@ -8136,10 +8377,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalJabuti.g:3322:3: (enumLiteral_1= 'Minute' )
+                    // InternalJabuti.g:3410:3: (enumLiteral_1= 'Minute' )
                     {
-                    // InternalJabuti.g:3322:3: (enumLiteral_1= 'Minute' )
-                    // InternalJabuti.g:3323:4: enumLiteral_1= 'Minute'
+                    // InternalJabuti.g:3410:3: (enumLiteral_1= 'Minute' )
+                    // InternalJabuti.g:3411:4: enumLiteral_1= 'Minute'
                     {
                     enumLiteral_1=(Token)match(input,80,FOLLOW_2); 
 
@@ -8153,10 +8394,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalJabuti.g:3330:3: (enumLiteral_2= 'Hour' )
+                    // InternalJabuti.g:3418:3: (enumLiteral_2= 'Hour' )
                     {
-                    // InternalJabuti.g:3330:3: (enumLiteral_2= 'Hour' )
-                    // InternalJabuti.g:3331:4: enumLiteral_2= 'Hour'
+                    // InternalJabuti.g:3418:3: (enumLiteral_2= 'Hour' )
+                    // InternalJabuti.g:3419:4: enumLiteral_2= 'Hour'
                     {
                     enumLiteral_2=(Token)match(input,81,FOLLOW_2); 
 
@@ -8170,10 +8411,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalJabuti.g:3338:3: (enumLiteral_3= 'Day' )
+                    // InternalJabuti.g:3426:3: (enumLiteral_3= 'Day' )
                     {
-                    // InternalJabuti.g:3338:3: (enumLiteral_3= 'Day' )
-                    // InternalJabuti.g:3339:4: enumLiteral_3= 'Day'
+                    // InternalJabuti.g:3426:3: (enumLiteral_3= 'Day' )
+                    // InternalJabuti.g:3427:4: enumLiteral_3= 'Day'
                     {
                     enumLiteral_3=(Token)match(input,82,FOLLOW_2); 
 
@@ -8187,10 +8428,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalJabuti.g:3346:3: (enumLiteral_4= 'Week' )
+                    // InternalJabuti.g:3434:3: (enumLiteral_4= 'Week' )
                     {
-                    // InternalJabuti.g:3346:3: (enumLiteral_4= 'Week' )
-                    // InternalJabuti.g:3347:4: enumLiteral_4= 'Week'
+                    // InternalJabuti.g:3434:3: (enumLiteral_4= 'Week' )
+                    // InternalJabuti.g:3435:4: enumLiteral_4= 'Week'
                     {
                     enumLiteral_4=(Token)match(input,83,FOLLOW_2); 
 
@@ -8204,10 +8445,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalJabuti.g:3354:3: (enumLiteral_5= 'Month' )
+                    // InternalJabuti.g:3442:3: (enumLiteral_5= 'Month' )
                     {
-                    // InternalJabuti.g:3354:3: (enumLiteral_5= 'Month' )
-                    // InternalJabuti.g:3355:4: enumLiteral_5= 'Month'
+                    // InternalJabuti.g:3442:3: (enumLiteral_5= 'Month' )
+                    // InternalJabuti.g:3443:4: enumLiteral_5= 'Month'
                     {
                     enumLiteral_5=(Token)match(input,84,FOLLOW_2); 
 
@@ -8221,10 +8462,10 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalJabuti.g:3362:3: (enumLiteral_6= 'Year' )
+                    // InternalJabuti.g:3450:3: (enumLiteral_6= 'Year' )
                     {
-                    // InternalJabuti.g:3362:3: (enumLiteral_6= 'Year' )
-                    // InternalJabuti.g:3363:4: enumLiteral_6= 'Year'
+                    // InternalJabuti.g:3450:3: (enumLiteral_6= 'Year' )
+                    // InternalJabuti.g:3451:4: enumLiteral_6= 'Year'
                     {
                     enumLiteral_6=(Token)match(input,85,FOLLOW_2); 
 
@@ -8262,9 +8503,9 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
 
 
     protected DFA19 dfa19 = new DFA19(this);
-    protected DFA21 dfa21 = new DFA21(this);
-    protected DFA26 dfa26 = new DFA26(this);
+    protected DFA22 dfa22 = new DFA22(this);
     protected DFA27 dfa27 = new DFA27(this);
+    protected DFA30 dfa30 = new DFA30(this);
     static final String dfa_1s = "\10\uffff";
     static final String dfa_2s = "\3\uffff\1\5\3\uffff\1\5";
     static final String dfa_3s = "\1\4\2\uffff\2\4\2\uffff\1\4";
@@ -8307,12 +8548,12 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             return "1527:2: (this_NumericValue_0= ruleNumericValue | this_StringValue_1= ruleStringValue | this_VariableValue_2= ruleVariableValue | this_FunctionCall_3= ruleFunctionCall )";
         }
     }
-    static final String dfa_8s = "\u0163\uffff";
-    static final String dfa_9s = "\31\uffff\1\54\12\uffff\1\54\10\uffff\3\117\27\uffff\1\54\11\uffff\4\54\1\uffff\1\54\17\uffff\1\54\15\uffff\1\54\1\uffff\1\117\3\uffff\1\117\61\uffff\1\117\10\uffff\1\54\6\uffff\3\117\1\uffff\2\117\22\uffff\1\117\24\uffff\1\117\2\uffff\1\117\3\uffff\1\117\56\uffff\1\117\10\uffff\4\117\1\uffff\2\117\15\uffff\1\117\7\uffff\1\117\12\uffff\1\117\23\uffff";
-    static final String dfa_10s = "\1\70\6\37\1\5\1\6\1\110\2\5\1\6\1\41\1\73\10\71\1\41\1\117\1\22\1\117\1\110\7\5\1\117\1\22\7\41\1\uffff\3\22\27\41\1\22\1\5\6\37\2\uffff\4\22\1\117\1\22\1\41\1\37\1\5\1\6\1\110\2\5\1\6\7\41\1\22\1\5\1\41\1\73\10\71\1\41\1\117\1\22\1\41\1\22\1\117\1\110\1\5\1\22\6\5\1\117\7\41\6\5\1\117\1\41\3\70\27\41\1\5\1\22\10\41\1\22\6\37\3\22\1\117\2\22\1\41\1\37\1\41\1\117\1\41\1\5\1\6\1\110\2\5\1\6\7\41\1\22\1\5\10\41\1\73\10\71\1\41\1\117\1\22\2\41\1\22\1\117\1\110\1\5\1\22\6\5\1\117\7\41\6\5\1\117\30\41\1\5\1\22\10\41\4\22\1\117\2\22\1\37\1\41\1\117\11\41\1\5\1\22\7\41\1\22\3\41\6\5\1\117\1\22\10\41\1\117\12\41";
-    static final String dfa_11s = "\1\77\6\37\1\5\1\6\1\116\2\5\1\6\1\41\1\73\10\71\1\73\1\125\1\67\1\125\1\116\7\5\1\125\1\67\7\73\1\uffff\3\77\17\41\1\73\7\41\1\67\1\77\6\37\2\uffff\4\67\1\125\1\67\1\41\1\37\1\5\1\6\1\116\2\5\1\6\7\41\1\67\1\5\1\41\1\73\10\71\1\73\1\125\1\67\1\73\1\77\1\125\1\116\1\5\1\77\6\5\1\125\7\73\6\5\1\125\1\41\3\77\17\41\1\73\7\41\2\77\1\73\7\41\1\67\6\37\3\77\1\125\2\77\1\41\1\37\1\41\1\125\1\41\1\5\1\6\1\116\2\5\1\6\7\41\1\77\1\5\10\41\1\73\10\71\1\73\1\125\1\77\1\73\1\41\1\77\1\125\1\116\1\5\1\77\6\5\1\125\7\73\6\5\1\125\20\41\1\73\7\41\2\77\1\73\7\41\4\77\1\125\2\77\1\37\1\41\1\125\11\41\1\5\1\77\7\41\1\77\1\73\2\41\6\5\1\125\1\77\1\73\7\41\1\125\12\41";
-    static final String dfa_12s = "\54\uffff\1\1\42\uffff\1\2\1\3\u0112\uffff";
-    static final String dfa_13s = "\u0163\uffff}>";
+    static final String dfa_8s = "\u0169\uffff";
+    static final String dfa_9s = "\31\uffff\1\57\3\uffff\1\57\16\uffff\3\121\32\uffff\1\57\10\uffff\5\57\20\uffff\1\57\15\uffff\1\57\1\uffff\1\121\3\uffff\1\121\62\uffff\1\121\11\uffff\1\57\6\uffff\5\121\23\uffff\1\121\24\uffff\1\121\2\uffff\1\121\3\uffff\1\121\57\uffff\1\121\11\uffff\6\121\15\uffff\1\121\10\uffff\1\121\23\uffff\1\121\13\uffff";
+    static final String dfa_10s = "\1\70\6\37\2\6\1\110\2\5\1\6\1\41\1\73\10\71\1\41\1\117\1\22\1\117\1\110\1\5\1\22\1\117\6\5\7\41\3\22\1\uffff\30\41\1\5\1\22\6\37\2\uffff\5\22\1\117\1\41\1\37\2\6\1\110\2\5\1\6\7\41\1\22\1\5\1\41\1\73\10\71\1\41\1\117\1\22\1\41\1\22\1\117\1\110\1\5\1\22\1\117\6\5\7\41\1\117\6\5\1\41\3\70\30\41\1\5\1\22\11\41\1\22\6\37\5\22\1\117\1\41\1\37\2\41\1\117\2\6\1\110\2\5\1\6\7\41\1\22\1\5\10\41\1\73\10\71\1\41\1\117\1\22\2\41\1\22\1\117\1\110\1\5\1\22\1\117\6\5\7\41\1\117\6\5\31\41\1\5\1\22\11\41\6\22\1\117\1\41\1\37\2\41\1\117\7\41\1\22\1\5\7\41\1\22\2\41\1\117\6\5\12\41\1\22\2\41\1\117\10\41";
+    static final String dfa_11s = "\1\77\6\37\2\6\1\116\2\5\1\6\1\41\1\73\10\71\1\73\1\125\1\67\1\125\1\116\1\5\1\67\1\125\6\6\7\73\3\77\1\uffff\26\41\2\73\1\77\1\67\6\37\2\uffff\5\67\1\125\1\41\1\37\2\6\1\116\2\5\1\6\7\41\1\67\1\5\1\41\1\73\10\71\1\73\1\125\1\67\1\73\1\77\1\125\1\116\1\5\1\77\1\125\6\6\7\73\1\125\6\6\1\41\3\77\26\41\2\73\2\77\7\41\2\73\1\67\6\37\5\77\1\125\1\41\1\37\2\41\1\125\2\6\1\116\2\5\1\6\7\41\1\77\1\5\10\41\1\73\10\71\1\73\1\125\1\77\1\73\1\41\1\77\1\125\1\116\1\5\1\77\1\125\6\6\7\73\1\125\6\6\27\41\2\73\2\77\7\41\2\73\6\77\1\125\1\41\1\37\2\41\1\125\7\41\1\77\1\5\7\41\1\77\1\73\1\41\1\125\6\6\10\41\2\73\1\77\2\41\1\125\10\41";
+    static final String dfa_12s = "\57\uffff\1\1\40\uffff\1\3\1\2\u0117\uffff";
+    static final String dfa_13s = "\u0169\uffff}>";
     static final String[] dfa_14s = {
             "\1\4\1\uffff\1\6\1\uffff\1\1\1\2\1\3\1\5",
             "\1\7",
@@ -8337,38 +8578,31 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             "\1\33",
             "\1\33",
             "\1\34",
-            "\1\44\6\uffff\1\35\1\36\1\37\1\40\1\41\1\42\15\uffff\1\43",
+            "\1\35\6\uffff\1\37\1\40\1\41\1\42\1\43\1\44\15\uffff\1\36",
             "\1\45\1\46\1\47\1\50\1\51\1\52\1\53",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
             "\1\60\1\61\1\62\1\63\1\64\1\65\1\66",
             "\1\67\1\70\1\71\1\72\1\73\1\74\1\75",
             "\1\76",
-            "\1\77",
-            "\1\77",
-            "\1\77",
-            "\1\77",
-            "\1\77",
-            "\1\77",
-            "\1\100\1\101\1\102\1\103\1\104\1\105\1\106",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\107\31\uffff\1\110",
-            "\1\107\31\uffff\1\110",
-            "\1\107\31\uffff\1\110",
-            "\1\107\31\uffff\1\110",
-            "\1\107\31\uffff\1\110",
-            "\1\107\31\uffff\1\110",
-            "\1\107\31\uffff\1\110",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
+            "\1\77\1\100\1\101\1\102\1\103\1\104\1\105",
+            "\1\106\1\107",
+            "\1\106\1\107",
+            "\1\106\1\107",
+            "\1\106\1\107",
+            "\1\106\1\107",
+            "\1\106\1\107",
+            "\1\111\31\uffff\1\110",
+            "\1\111\31\uffff\1\110",
+            "\1\111\31\uffff\1\110",
+            "\1\111\31\uffff\1\110",
+            "\1\111\31\uffff\1\110",
+            "\1\111\31\uffff\1\110",
+            "\1\111\31\uffff\1\110",
+            "\1\121\42\uffff\1\120\2\uffff\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\42\uffff\1\120\2\uffff\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\42\uffff\1\120\2\uffff\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
             "",
-            "\1\117\42\uffff\1\120\2\uffff\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\42\uffff\1\120\2\uffff\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\42\uffff\1\120\2\uffff\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\121",
-            "\1\121",
-            "\1\121",
-            "\1\121",
-            "\1\121",
-            "\1\121",
-            "\1\121",
             "\1\122",
             "\1\122",
             "\1\122",
@@ -8377,165 +8611,166 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             "\1\122",
             "\1\122",
             "\1\123",
-            "\1\124\31\uffff\1\125",
-            "\1\126",
-            "\1\126",
-            "\1\126",
-            "\1\126",
-            "\1\126",
-            "\1\126",
-            "\1\126",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\127\71\uffff\1\130",
-            "\1\131",
+            "\1\123",
+            "\1\123",
+            "\1\123",
+            "\1\123",
+            "\1\123",
+            "\1\123",
+            "\1\124",
+            "\1\125",
+            "\1\125",
+            "\1\125",
+            "\1\125",
+            "\1\125",
+            "\1\125",
+            "\1\125",
+            "\1\126\31\uffff\1\127",
+            "\1\126\31\uffff\1\127",
+            "\1\130\71\uffff\1\131",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
             "\1\132",
             "\1\133",
             "\1\134",
             "\1\135",
             "\1\136",
+            "\1\137",
             "",
             "",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\137\1\140\1\141\1\142\1\143\1\144\1\145",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\146",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
+            "\1\140\1\141\1\142\1\143\1\144\1\145\1\146",
             "\1\147",
             "\1\150",
             "\1\151",
-            "\1\152\1\153\1\154\1\155\1\156\1\157\1\160",
-            "\1\161",
+            "\1\152",
+            "\1\153\1\154\1\155\1\156\1\157\1\160\1\161",
             "\1\162",
             "\1\163",
             "\1\164",
-            "\1\164",
-            "\1\164",
-            "\1\164",
-            "\1\164",
-            "\1\164",
-            "\1\164",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
             "\1\165",
+            "\1\165",
+            "\1\165",
+            "\1\165",
+            "\1\165",
+            "\1\165",
+            "\1\165",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
             "\1\166",
             "\1\167",
             "\1\170",
-            "\1\170",
-            "\1\170",
-            "\1\170",
-            "\1\170",
-            "\1\170",
-            "\1\170",
             "\1\171",
-            "\1\172\6\uffff\1\173\1\174\1\175\1\176\1\177\1\u0080\15\uffff\1\u0081",
-            "\1\u0082\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
-            "\1\u0090\6\uffff\1\u0089\1\u008a\1\u008b\1\u008c\1\u008d\1\u008e\15\uffff\1\u008f",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0094\1\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a",
-            "\1\u009b\1\u009c\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1",
-            "\1\u00a2",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
+            "\1\171",
+            "\1\171",
+            "\1\171",
+            "\1\171",
+            "\1\171",
+            "\1\171",
+            "\1\172",
+            "\1\173\6\uffff\1\175\1\176\1\177\1\u0080\1\u0081\1\u0082\15\uffff\1\174",
+            "\1\u0083\1\u0084\1\u0085\1\u0086\1\u0087\1\u0088\1\u0089",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
+            "\1\u0091\6\uffff\1\u008b\1\u008c\1\u008d\1\u008e\1\u008f\1\u0090\15\uffff\1\u008a",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u0095\1\u0096\1\u0097\1\u0098\1\u0099\1\u009a\1\u009b",
+            "\1\u009c\1\u009d\1\u009e\1\u009f\1\u00a0\1\u00a1\1\u00a2",
             "\1\u00a3",
-            "\1\u00a3",
-            "\1\u00a3",
-            "\1\u00a3",
-            "\1\u00a3",
-            "\1\u00a3",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
             "\1\u00a4\1\u00a5\1\u00a6\1\u00a7\1\u00a8\1\u00a9\1\u00aa",
-            "\1\u00ac\31\uffff\1\u00ab",
-            "\1\u00ac\31\uffff\1\u00ab",
-            "\1\u00ac\31\uffff\1\u00ab",
-            "\1\u00ac\31\uffff\1\u00ab",
-            "\1\u00ac\31\uffff\1\u00ab",
-            "\1\u00ac\31\uffff\1\u00ab",
-            "\1\u00ac\31\uffff\1\u00ab",
-            "\1\u00ad",
-            "\1\u00ad",
-            "\1\u00ad",
-            "\1\u00ad",
-            "\1\u00ad",
-            "\1\u00ad",
-            "\1\u00ae\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4",
-            "\1\u00b5",
-            "\1\u00b9\1\uffff\1\u00bb\1\uffff\1\u00b6\1\u00b7\1\u00b8\1\u00ba",
-            "\1\u00b9\1\uffff\1\u00bb\1\uffff\1\u00b6\1\u00b7\1\u00b8\1\u00ba",
-            "\1\u00b9\1\uffff\1\u00bb\1\uffff\1\u00b6\1\u00b7\1\u00b8\1\u00ba",
-            "\1\u00bc",
-            "\1\u00bc",
-            "\1\u00bc",
-            "\1\u00bc",
-            "\1\u00bc",
-            "\1\u00bc",
-            "\1\u00bc",
-            "\1\u00bd",
-            "\1\u00bd",
-            "\1\u00bd",
-            "\1\u00bd",
-            "\1\u00bd",
-            "\1\u00bd",
-            "\1\u00bd",
-            "\1\u00be",
-            "\1\u00c0\31\uffff\1\u00bf",
+            "\1\u00ab\1\u00ac",
+            "\1\u00ab\1\u00ac",
+            "\1\u00ab\1\u00ac",
+            "\1\u00ab\1\u00ac",
+            "\1\u00ab\1\u00ac",
+            "\1\u00ab\1\u00ac",
+            "\1\u00ae\31\uffff\1\u00ad",
+            "\1\u00ae\31\uffff\1\u00ad",
+            "\1\u00ae\31\uffff\1\u00ad",
+            "\1\u00ae\31\uffff\1\u00ad",
+            "\1\u00ae\31\uffff\1\u00ad",
+            "\1\u00ae\31\uffff\1\u00ad",
+            "\1\u00ae\31\uffff\1\u00ad",
+            "\1\u00af\1\u00b0\1\u00b1\1\u00b2\1\u00b3\1\u00b4\1\u00b5",
+            "\1\u00b6\1\u00b7",
+            "\1\u00b6\1\u00b7",
+            "\1\u00b6\1\u00b7",
+            "\1\u00b6\1\u00b7",
+            "\1\u00b6\1\u00b7",
+            "\1\u00b6\1\u00b7",
+            "\1\u00b8",
+            "\1\u00bc\1\uffff\1\u00be\1\uffff\1\u00b9\1\u00ba\1\u00bb\1\u00bd",
+            "\1\u00bc\1\uffff\1\u00be\1\uffff\1\u00b9\1\u00ba\1\u00bb\1\u00bd",
+            "\1\u00bc\1\uffff\1\u00be\1\uffff\1\u00b9\1\u00ba\1\u00bb\1\u00bd",
+            "\1\u00bf",
+            "\1\u00bf",
+            "\1\u00bf",
+            "\1\u00bf",
+            "\1\u00bf",
+            "\1\u00bf",
+            "\1\u00bf",
+            "\1\u00c0",
+            "\1\u00c0",
+            "\1\u00c0",
+            "\1\u00c0",
+            "\1\u00c0",
+            "\1\u00c0",
+            "\1\u00c0",
             "\1\u00c1",
-            "\1\u00c1",
-            "\1\u00c1",
-            "\1\u00c1",
-            "\1\u00c1",
-            "\1\u00c1",
-            "\1\u00c1",
-            "\1\u00c2\71\uffff\1\u00c3",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u00c4\31\uffff\1\u00c5",
-            "\1\u00c6",
-            "\1\u00c6",
-            "\1\u00c6",
-            "\1\u00c6",
-            "\1\u00c6",
-            "\1\u00c6",
-            "\1\u00c6",
-            "\1\54\20\uffff\1\55\2\uffff\1\56\20\uffff\1\57",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c2",
+            "\1\u00c3\31\uffff\1\u00c4",
+            "\1\u00c3\31\uffff\1\u00c4",
+            "\1\u00c5\71\uffff\1\u00c6",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
             "\1\u00c7",
-            "\1\u00c8",
-            "\1\u00c9",
+            "\1\u00c7",
+            "\1\u00c7",
+            "\1\u00c7",
+            "\1\u00c7",
+            "\1\u00c7",
+            "\1\u00c7",
+            "\1\u00c8\31\uffff\1\u00c9",
+            "\1\u00c8\31\uffff\1\u00c9",
+            "\1\57\20\uffff\1\54\2\uffff\1\55\20\uffff\1\56",
             "\1\u00ca",
             "\1\u00cb",
             "\1\u00cc",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u00cd\1\u00ce\1\u00cf\1\u00d0\1\u00d1\1\u00d2\1\u00d3",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u00d4",
-            "\1\u00d5",
-            "\1\u00b5",
-            "\1\u00d6\1\u00d7\1\u00d8\1\u00d9\1\u00da\1\u00db\1\u00dc",
-            "\1\u00b5",
-            "\1\u00dd",
-            "\1\u00de",
-            "\1\u00df\1\u00e0\1\u00e1\1\u00e2\1\u00e3\1\u00e4\1\u00e5",
-            "\1\u00e6",
-            "\1\u00e7",
-            "\1\u00e8",
+            "\1\u00cd",
+            "\1\u00ce",
+            "\1\u00cf",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u00d0\1\u00d1\1\u00d2\1\u00d3\1\u00d4\1\u00d5\1\u00d6",
+            "\1\u00d7",
+            "\1\u00d8",
+            "\1\u00b8",
+            "\1\u00b8",
+            "\1\u00d9\1\u00da\1\u00db\1\u00dc\1\u00dd\1\u00de\1\u00df",
+            "\1\u00e0",
+            "\1\u00e1",
+            "\1\u00e2\1\u00e3\1\u00e4\1\u00e5\1\u00e6\1\u00e7\1\u00e8",
             "\1\u00e9",
-            "\1\u00e9",
-            "\1\u00e9",
-            "\1\u00e9",
-            "\1\u00e9",
-            "\1\u00e9",
-            "\1\u00e9",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
             "\1\u00ea",
             "\1\u00eb",
-            "\1\u00eb",
-            "\1\u00eb",
-            "\1\u00eb",
-            "\1\u00eb",
-            "\1\u00eb",
-            "\1\u00eb",
             "\1\u00ec",
+            "\1\u00ec",
+            "\1\u00ec",
+            "\1\u00ec",
+            "\1\u00ec",
+            "\1\u00ec",
+            "\1\u00ec",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
             "\1\u00ed",
             "\1\u00ee",
             "\1\u00ee",
@@ -8545,54 +8780,47 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             "\1\u00ee",
             "\1\u00ee",
             "\1\u00ef",
-            "\1\u00f0\6\uffff\1\u00f1\1\u00f2\1\u00f3\1\u00f4\1\u00f5\1\u00f6\15\uffff\1\u00f7",
-            "\1\u00f8\1\u00f9\1\u00fa\1\u00fb\1\u00fc\1\u00fd\1\u00fe",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0106\6\uffff\1\u00ff\1\u0100\1\u0101\1\u0102\1\u0103\1\u0104\15\uffff\1\u0105",
-            "\1\u00b5",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0107\1\u0108\1\u0109\1\u010a\1\u010b\1\u010c\1\u010d",
-            "\1\u010e\1\u010f\1\u0110\1\u0111\1\u0112\1\u0113\1\u0114",
-            "\1\u0115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0116",
-            "\1\u0116",
-            "\1\u0116",
-            "\1\u0116",
-            "\1\u0116",
-            "\1\u0116",
-            "\1\u0117\1\u0118\1\u0119\1\u011a\1\u011b\1\u011c\1\u011d",
-            "\1\u011f\31\uffff\1\u011e",
-            "\1\u011f\31\uffff\1\u011e",
-            "\1\u011f\31\uffff\1\u011e",
-            "\1\u011f\31\uffff\1\u011e",
-            "\1\u011f\31\uffff\1\u011e",
-            "\1\u011f\31\uffff\1\u011e",
-            "\1\u011f\31\uffff\1\u011e",
-            "\1\u0120",
-            "\1\u0120",
-            "\1\u0120",
-            "\1\u0120",
-            "\1\u0120",
-            "\1\u0120",
-            "\1\u0121\1\u0122\1\u0123\1\u0124\1\u0125\1\u0126\1\u0127",
-            "\1\u0128",
-            "\1\u0129",
-            "\1\u0129",
-            "\1\u0129",
-            "\1\u0129",
-            "\1\u0129",
-            "\1\u0129",
-            "\1\u0129",
-            "\1\u012a",
-            "\1\u012a",
-            "\1\u012a",
-            "\1\u012a",
-            "\1\u012a",
-            "\1\u012a",
-            "\1\u012a",
-            "\1\u012b",
-            "\1\u012d\31\uffff\1\u012c",
+            "\1\u00f0",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f1",
+            "\1\u00f2",
+            "\1\u00f3\6\uffff\1\u00f5\1\u00f6\1\u00f7\1\u00f8\1\u00f9\1\u00fa\15\uffff\1\u00f4",
+            "\1\u00fb\1\u00fc\1\u00fd\1\u00fe\1\u00ff\1\u0100\1\u0101",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u0109\6\uffff\1\u0103\1\u0104\1\u0105\1\u0106\1\u0107\1\u0108\15\uffff\1\u0102",
+            "\1\u00b8",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u010a\1\u010b\1\u010c\1\u010d\1\u010e\1\u010f\1\u0110",
+            "\1\u0111\1\u0112\1\u0113\1\u0114\1\u0115\1\u0116\1\u0117",
+            "\1\u0118",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u0119\1\u011a\1\u011b\1\u011c\1\u011d\1\u011e\1\u011f",
+            "\1\u0120\1\u0121",
+            "\1\u0120\1\u0121",
+            "\1\u0120\1\u0121",
+            "\1\u0120\1\u0121",
+            "\1\u0120\1\u0121",
+            "\1\u0120\1\u0121",
+            "\1\u0123\31\uffff\1\u0122",
+            "\1\u0123\31\uffff\1\u0122",
+            "\1\u0123\31\uffff\1\u0122",
+            "\1\u0123\31\uffff\1\u0122",
+            "\1\u0123\31\uffff\1\u0122",
+            "\1\u0123\31\uffff\1\u0122",
+            "\1\u0123\31\uffff\1\u0122",
+            "\1\u0124\1\u0125\1\u0126\1\u0127\1\u0128\1\u0129\1\u012a",
+            "\1\u012b\1\u012c",
+            "\1\u012b\1\u012c",
+            "\1\u012b\1\u012c",
+            "\1\u012b\1\u012c",
+            "\1\u012b\1\u012c",
+            "\1\u012b\1\u012c",
+            "\1\u012d",
             "\1\u012e",
             "\1\u012e",
             "\1\u012e",
@@ -8600,75 +8828,94 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             "\1\u012e",
             "\1\u012e",
             "\1\u012e",
-            "\1\u0130\71\uffff\1\u012f",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0132\31\uffff\1\u0131",
-            "\1\u0133",
-            "\1\u0133",
-            "\1\u0133",
-            "\1\u0133",
-            "\1\u0133",
-            "\1\u0133",
-            "\1\u0133",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0134\1\u0135\1\u0136\1\u0137\1\u0138\1\u0139\1\u013a",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u013b",
-            "\1\u013c",
-            "\1\u013d\1\u013e\1\u013f\1\u0140\1\u0141\1\u0142\1\u0143",
-            "\1\u0128",
-            "\1\u0128",
-            "\1\u0144",
-            "\1\u0144",
-            "\1\u0144",
-            "\1\u0144",
-            "\1\u0144",
-            "\1\u0144",
-            "\1\u0144",
-            "\1\u0145",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0146",
-            "\1\u0146",
-            "\1\u0146",
-            "\1\u0146",
-            "\1\u0146",
-            "\1\u0146",
-            "\1\u0146",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0147\6\uffff\1\u0148\1\u0149\1\u014a\1\u014b\1\u014c\1\u014d\15\uffff\1\u014e",
-            "\1\u0128",
-            "\1\u014f",
-            "\1\u0150",
-            "\1\u0150",
-            "\1\u0150",
-            "\1\u0150",
-            "\1\u0150",
-            "\1\u0150",
-            "\1\u0151\1\u0152\1\u0153\1\u0154\1\u0155\1\u0156\1\u0157",
-            "\1\117\20\uffff\1\u0091\2\uffff\1\u0092\16\uffff\1\120\1\uffff\1\u0093\1\114\1\uffff\1\116\1\uffff\1\111\1\112\1\113\1\115",
-            "\1\u0159\31\uffff\1\u0158",
-            "\1\u015a",
-            "\1\u015a",
-            "\1\u015a",
-            "\1\u015a",
-            "\1\u015a",
-            "\1\u015a",
-            "\1\u015a",
-            "\1\u015b\1\u015c\1\u015d\1\u015e\1\u015f\1\u0160\1\u0161",
-            "\1\u014f",
-            "\1\u014f",
-            "\1\u0162",
-            "\1\u0162",
-            "\1\u0162",
-            "\1\u0162",
-            "\1\u0162",
-            "\1\u0162",
-            "\1\u0162",
-            "\1\u014f"
+            "\1\u012f",
+            "\1\u012f",
+            "\1\u012f",
+            "\1\u012f",
+            "\1\u012f",
+            "\1\u012f",
+            "\1\u012f",
+            "\1\u0130",
+            "\1\u0131",
+            "\1\u0131",
+            "\1\u0131",
+            "\1\u0131",
+            "\1\u0131",
+            "\1\u0131",
+            "\1\u0131",
+            "\1\u0132\31\uffff\1\u0133",
+            "\1\u0132\31\uffff\1\u0133",
+            "\1\u0134\71\uffff\1\u0135",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0136",
+            "\1\u0137\31\uffff\1\u0138",
+            "\1\u0137\31\uffff\1\u0138",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u0139\1\u013a\1\u013b\1\u013c\1\u013d\1\u013e\1\u013f",
+            "\1\u0140",
+            "\1\u0141",
+            "\1\u012d",
+            "\1\u012d",
+            "\1\u0142\1\u0143\1\u0144\1\u0145\1\u0146\1\u0147\1\u0148",
+            "\1\u0149",
+            "\1\u0149",
+            "\1\u0149",
+            "\1\u0149",
+            "\1\u0149",
+            "\1\u0149",
+            "\1\u0149",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u014a",
+            "\1\u014b",
+            "\1\u014b",
+            "\1\u014b",
+            "\1\u014b",
+            "\1\u014b",
+            "\1\u014b",
+            "\1\u014b",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u0153\6\uffff\1\u014d\1\u014e\1\u014f\1\u0150\1\u0151\1\u0152\15\uffff\1\u014c",
+            "\1\u012d",
+            "\1\u0154\1\u0155\1\u0156\1\u0157\1\u0158\1\u0159\1\u015a",
+            "\1\u015b\1\u015c",
+            "\1\u015b\1\u015c",
+            "\1\u015b\1\u015c",
+            "\1\u015b\1\u015c",
+            "\1\u015b\1\u015c",
+            "\1\u015b\1\u015c",
+            "\1\u015d",
+            "\1\u015e",
+            "\1\u015e",
+            "\1\u015e",
+            "\1\u015e",
+            "\1\u015e",
+            "\1\u015e",
+            "\1\u015e",
+            "\1\u015f\31\uffff\1\u0160",
+            "\1\u015f\31\uffff\1\u0160",
+            "\1\121\20\uffff\1\u0092\2\uffff\1\u0093\16\uffff\1\120\1\uffff\1\u0094\1\115\1\uffff\1\117\1\uffff\1\112\1\113\1\114\1\116",
+            "\1\u015d",
+            "\1\u015d",
+            "\1\u0161\1\u0162\1\u0163\1\u0164\1\u0165\1\u0166\1\u0167",
+            "\1\u0168",
+            "\1\u0168",
+            "\1\u0168",
+            "\1\u0168",
+            "\1\u0168",
+            "\1\u0168",
+            "\1\u0168",
+            "\1\u015d"
     };
 
     static final short[] dfa_8 = DFA.unpackEncodedString(dfa_8s);
@@ -8679,11 +8926,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
     static final short[] dfa_13 = DFA.unpackEncodedString(dfa_13s);
     static final short[][] dfa_14 = unpackEncodedStringArray(dfa_14s);
 
-    class DFA21 extends DFA {
+    class DFA22 extends DFA {
 
-        public DFA21(BaseRecognizer recognizer) {
+        public DFA22(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 21;
+            this.decisionNumber = 22;
             this.eot = dfa_8;
             this.eof = dfa_9;
             this.min = dfa_10;
@@ -8693,7 +8940,7 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             this.transition = dfa_14;
         }
         public String getDescription() {
-            return "1837:2: (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression )";
+            return "1883:2: (this_Term_0= ruleTerm | this_CompositeCondition_1= ruleCompositeCondition | this_ConditionalExpression_2= ruleConditionalExpression )";
         }
     }
     static final String dfa_15s = "\17\uffff";
@@ -8726,11 +8973,11 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
     static final short[] dfa_19 = DFA.unpackEncodedString(dfa_19s);
     static final short[][] dfa_20 = unpackEncodedStringArray(dfa_20s);
 
-    class DFA26 extends DFA {
+    class DFA27 extends DFA {
 
-        public DFA26(BaseRecognizer recognizer) {
+        public DFA27(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 26;
+            this.decisionNumber = 27;
             this.eot = dfa_15;
             this.eof = dfa_15;
             this.min = dfa_16;
@@ -8740,49 +8987,55 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
             this.transition = dfa_20;
         }
         public String getDescription() {
-            return "2298:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) )";
+            return "2344:2: ( ( (otherlv_0= 'SessionInterval' otherlv_1= '(' ( (lv_frequency_2_0= RULE_INT ) ) ( (lv_timeUnit_3_0= ruleTimeUnit ) ) otherlv_4= 'by' ( (lv_messageContent_5_0= ruleMessageContent ) ) ) otherlv_6= ')' ) | (otherlv_7= 'SessionInterval' otherlv_8= '(' ( (lv_frequency_9_0= RULE_INT ) ) ( (lv_timeUnit_10_0= ruleTimeUnit ) ) otherlv_11= ')' ) | ( (otherlv_12= 'SessionInterval' otherlv_13= '(' ( (lv_frequency_14_0= RULE_INT ) ) ( (lv_timeUnit_15_0= ruleTimeUnit ) ) otherlv_16= 'by' ( (lv_value_17_0= RULE_STRING ) ) ) otherlv_18= ')' ) )";
         }
     }
-    static final String dfa_21s = "\1\77\1\37\1\5\1\41\6\5\2\uffff\1\41\2\uffff";
-    static final String dfa_22s = "\1\77\1\37\1\5\1\73\6\5\2\uffff\1\73\2\uffff";
-    static final String dfa_23s = "\12\uffff\1\1\1\2\1\uffff\1\4\1\3";
-    static final String[] dfa_24s = {
+    static final String dfa_21s = "\20\uffff";
+    static final String dfa_22s = "\1\77\1\37\1\5\1\41\1\uffff\6\5\1\uffff\2\41\2\uffff";
+    static final String dfa_23s = "\1\77\1\37\1\5\1\73\1\uffff\6\6\1\uffff\2\73\2\uffff";
+    static final String dfa_24s = "\4\uffff\1\2\6\uffff\1\1\2\uffff\1\3\1\4";
+    static final String dfa_25s = "\20\uffff}>";
+    static final String[] dfa_26s = {
             "\1\1",
             "\1\2",
             "\1\3",
-            "\1\12\6\uffff\1\4\1\5\1\6\1\7\1\10\1\11\15\uffff\1\13",
-            "\1\14",
-            "\1\14",
-            "\1\14",
-            "\1\14",
-            "\1\14",
-            "\1\14",
+            "\1\13\6\uffff\1\5\1\6\1\7\1\10\1\11\1\12\15\uffff\1\4",
             "",
+            "\1\14\1\15",
+            "\1\14\1\15",
+            "\1\14\1\15",
+            "\1\14\1\15",
+            "\1\14\1\15",
+            "\1\14\1\15",
             "",
-            "\1\16\31\uffff\1\15",
+            "\1\16\31\uffff\1\17",
+            "\1\16\31\uffff\1\17",
             "",
             ""
     };
-    static final char[] dfa_21 = DFA.unpackEncodedStringToUnsignedChars(dfa_21s);
+
+    static final short[] dfa_21 = DFA.unpackEncodedString(dfa_21s);
     static final char[] dfa_22 = DFA.unpackEncodedStringToUnsignedChars(dfa_22s);
-    static final short[] dfa_23 = DFA.unpackEncodedString(dfa_23s);
-    static final short[][] dfa_24 = unpackEncodedStringArray(dfa_24s);
+    static final char[] dfa_23 = DFA.unpackEncodedStringToUnsignedChars(dfa_23s);
+    static final short[] dfa_24 = DFA.unpackEncodedString(dfa_24s);
+    static final short[] dfa_25 = DFA.unpackEncodedString(dfa_25s);
+    static final short[][] dfa_26 = unpackEncodedStringArray(dfa_26s);
 
-    class DFA27 extends DFA {
+    class DFA30 extends DFA {
 
-        public DFA27(BaseRecognizer recognizer) {
+        public DFA30(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 27;
-            this.eot = dfa_15;
-            this.eof = dfa_15;
-            this.min = dfa_21;
-            this.max = dfa_22;
-            this.accept = dfa_23;
-            this.special = dfa_19;
-            this.transition = dfa_24;
+            this.decisionNumber = 30;
+            this.eot = dfa_21;
+            this.eof = dfa_21;
+            this.min = dfa_22;
+            this.max = dfa_23;
+            this.accept = dfa_24;
+            this.special = dfa_25;
+            this.transition = dfa_26;
         }
         public String getDescription() {
-            return "2715:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( (lv_value_14_0= RULE_STRING ) ) otherlv_15= ')' ) | (otherlv_16= 'MessageContent' otherlv_17= '(' ( (lv_content_18_0= RULE_STRING ) ) ( (lv_comparisonOperator_19_0= ruleComparisonOperator ) ) ( (lv_value_20_0= RULE_STRING ) ) otherlv_21= 'by' ( (lv_timeUnit_22_0= ruleTimeUnit ) ) otherlv_23= ')' ) )";
+            return "2761:2: ( (otherlv_0= 'MessageContent' otherlv_1= '(' ( (lv_content_2_0= RULE_STRING ) ) otherlv_3= ')' ) | (otherlv_4= 'MessageContent' otherlv_5= '(' ( (lv_content_6_0= RULE_STRING ) ) otherlv_7= 'by' ( (lv_timeUnit_8_0= ruleTimeUnit ) ) otherlv_9= ')' ) | (otherlv_10= 'MessageContent' otherlv_11= '(' ( (lv_content_12_0= RULE_STRING ) ) ( (lv_comparisonOperator_13_0= ruleComparisonOperator ) ) ( ( (lv_strValue_14_0= RULE_STRING ) ) | ( (lv_intValue_15_0= RULE_INT ) ) ) otherlv_16= ')' ) | (otherlv_17= 'MessageContent' otherlv_18= '(' ( (lv_content_19_0= RULE_STRING ) ) ( (lv_comparisonOperator_20_0= ruleComparisonOperator ) ) ( ( (lv_strValue_21_0= RULE_STRING ) ) | ( (lv_intValue_22_0= RULE_INT ) ) ) otherlv_23= 'by' ( (lv_timeUnit_24_0= ruleTimeUnit ) ) otherlv_25= ')' ) )";
         }
     }
  
@@ -8835,7 +9088,8 @@ public class InternalJabutiParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x8000000000000000L});
     public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x0000000000000000L,0x0000000000007F00L});
     public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x00003F0000000000L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000001L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
 
 }
