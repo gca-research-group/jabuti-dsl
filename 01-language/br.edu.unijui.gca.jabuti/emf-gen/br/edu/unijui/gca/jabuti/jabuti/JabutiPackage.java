@@ -816,13 +816,22 @@ public interface JabutiPackage extends EPackage
 	int VARIABLE__EXPRESSION = 1;
 
 	/**
+	 * The feature id for the '<em><b>Term</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIABLE__TERM = 2;
+
+	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = 2;
+	int VARIABLE_FEATURE_COUNT = 3;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.EventLogImpl <em>Event Log</em>}' class.
@@ -1224,13 +1233,22 @@ public interface JabutiPackage extends EPackage
 	int SESSION_INTERVAL__MESSAGE_CONTENT = TERM_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Variable Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__VARIABLE_VALUE = TERM_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Session Interval</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
+	int SESSION_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
@@ -1317,13 +1335,13 @@ public interface JabutiPackage extends EPackage
 	int TIMEOUT = 33;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEOUT__VALUE = TERM_FEATURE_COUNT + 0;
+	int TIMEOUT__EXPRESSION = TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Timeout</em>' class.
@@ -1409,22 +1427,22 @@ public interface JabutiPackage extends EPackage
 	int MESSAGE_CONTENT__TIME_UNIT = TERM_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Str Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT__STR_VALUE = TERM_FEATURE_COUNT + 3;
+	int MESSAGE_CONTENT__EXPRESSION = TERM_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Int Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Variable Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT__INT_VALUE = TERM_FEATURE_COUNT + 4;
+	int MESSAGE_CONTENT__VARIABLE_VALUE = TERM_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of structural features of the '<em>Message Content</em>' class.
@@ -2003,6 +2021,17 @@ public interface JabutiPackage extends EPackage
 	EReference getVariable_Expression();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Variable#getTerm <em>Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Variable#getTerm()
+	 * @see #getVariable()
+	 * @generated
+	 */
+	EReference getVariable_Term();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.EventLog <em>Event Log</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2321,6 +2350,17 @@ public interface JabutiPackage extends EPackage
 	EReference getSessionInterval_MessageContent();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariableValue <em>Variable Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Variable Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariableValue()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EReference getSessionInterval_VariableValue();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval <em>Week Days Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2395,15 +2435,15 @@ public interface JabutiPackage extends EPackage
 	EClass getTimeout();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Timeout#getValue()
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Timeout#getExpression()
 	 * @see #getTimeout()
 	 * @generated
 	 */
-	EAttribute getTimeout_Value();
+	EReference getTimeout_Expression();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation <em>Max Number Of Operation</em>}'.
@@ -2481,26 +2521,26 @@ public interface JabutiPackage extends EPackage
 	EAttribute getMessageContent_TimeUnit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getStrValue <em>Str Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Str Value</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getStrValue()
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression()
 	 * @see #getMessageContent()
 	 * @generated
 	 */
-	EAttribute getMessageContent_StrValue();
+	EReference getMessageContent_Expression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getIntValue <em>Int Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Int Value</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getIntValue()
+	 * @return the meta object for the containment reference '<em>Variable Value</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue()
 	 * @see #getMessageContent()
 	 * @generated
 	 */
-	EAttribute getMessageContent_IntValue();
+	EReference getMessageContent_VariableValue();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator <em>Comparison Operator</em>}'.
@@ -3001,6 +3041,14 @@ public interface JabutiPackage extends EPackage
 		EReference VARIABLE__EXPRESSION = eINSTANCE.getVariable_Expression();
 
 		/**
+		 * The meta object literal for the '<em><b>Term</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VARIABLE__TERM = eINSTANCE.getVariable_Term();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.EventLogImpl <em>Event Log</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3265,6 +3313,14 @@ public interface JabutiPackage extends EPackage
 		EReference SESSION_INTERVAL__MESSAGE_CONTENT = eINSTANCE.getSessionInterval_MessageContent();
 
 		/**
+		 * The meta object literal for the '<em><b>Variable Value</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SESSION_INTERVAL__VARIABLE_VALUE = eINSTANCE.getSessionInterval_VariableValue();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3327,12 +3383,12 @@ public interface JabutiPackage extends EPackage
 		EClass TIMEOUT = eINSTANCE.getTimeout();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TIMEOUT__VALUE = eINSTANCE.getTimeout_Value();
+		EReference TIMEOUT__EXPRESSION = eINSTANCE.getTimeout_Expression();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl <em>Max Number Of Operation</em>}' class.
@@ -3395,20 +3451,20 @@ public interface JabutiPackage extends EPackage
 		EAttribute MESSAGE_CONTENT__TIME_UNIT = eINSTANCE.getMessageContent_TimeUnit();
 
 		/**
-		 * The meta object literal for the '<em><b>Str Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE_CONTENT__STR_VALUE = eINSTANCE.getMessageContent_StrValue();
+		EReference MESSAGE_CONTENT__EXPRESSION = eINSTANCE.getMessageContent_Expression();
 
 		/**
-		 * The meta object literal for the '<em><b>Int Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Variable Value</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MESSAGE_CONTENT__INT_VALUE = eINSTANCE.getMessageContent_IntValue();
+		EReference MESSAGE_CONTENT__VARIABLE_VALUE = eINSTANCE.getMessageContent_VariableValue();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.

@@ -3,12 +3,15 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
+import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -20,7 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeoutImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeoutImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +31,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class TimeoutImpl extends TermImpl implements Timeout
 {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getValue()
+	 * @see #getExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int VALUE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected int value = VALUE_EDEFAULT;
+	protected Expression expression;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,9 +67,26 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	 * @generated
 	 */
 	@Override
-	public int getValue()
+	public Expression getExpression()
 	{
-		return value;
+		return expression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+	{
+		Expression oldExpression = expression;
+		expression = newExpression;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.TIMEOUT__EXPRESSION, oldExpression, newExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -85,12 +95,36 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	 * @generated
 	 */
 	@Override
-	public void setValue(int newValue)
+	public void setExpression(Expression newExpression)
 	{
-		int oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.TIMEOUT__VALUE, oldValue, value));
+		if (newExpression != expression)
+		{
+			NotificationChain msgs = null;
+			if (expression != null)
+				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.TIMEOUT__EXPRESSION, null, msgs);
+			if (newExpression != null)
+				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.TIMEOUT__EXPRESSION, null, msgs);
+			msgs = basicSetExpression(newExpression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.TIMEOUT__EXPRESSION, newExpression, newExpression));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.TIMEOUT__EXPRESSION:
+				return basicSetExpression(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -103,8 +137,8 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.TIMEOUT__VALUE:
-				return getValue();
+			case JabutiPackage.TIMEOUT__EXPRESSION:
+				return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -119,8 +153,8 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.TIMEOUT__VALUE:
-				setValue((Integer)newValue);
+			case JabutiPackage.TIMEOUT__EXPRESSION:
+				setExpression((Expression)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,8 +170,8 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.TIMEOUT__VALUE:
-				setValue(VALUE_EDEFAULT);
+			case JabutiPackage.TIMEOUT__EXPRESSION:
+				setExpression((Expression)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -153,27 +187,10 @@ public class TimeoutImpl extends TermImpl implements Timeout
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.TIMEOUT__VALUE:
-				return value != VALUE_EDEFAULT;
+			case JabutiPackage.TIMEOUT__EXPRESSION:
+				return expression != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString()
-	{
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TimeoutImpl

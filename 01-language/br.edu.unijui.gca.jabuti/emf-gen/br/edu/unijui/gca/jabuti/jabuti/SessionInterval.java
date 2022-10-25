@@ -17,6 +17,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getValue <em>Value</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getMessageContent <em>Message Content</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getSessionInterval()
@@ -115,5 +116,27 @@ public interface SessionInterval extends Term
 	 * @generated
 	 */
 	void setMessageContent(MessageContent value);
+
+	/**
+	 * Returns the value of the '<em><b>Variable Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variable Value</em>' containment reference.
+	 * @see #setVariableValue(VariableValue)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getSessionInterval_VariableValue()
+	 * @model containment="true"
+	 * @generated
+	 */
+	VariableValue getVariableValue();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariableValue <em>Variable Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Variable Value</em>' containment reference.
+	 * @see #getVariableValue()
+	 * @generated
+	 */
+	void setVariableValue(VariableValue value);
 
 } // SessionInterval

@@ -85,7 +85,7 @@ class JabutiGenerator extends AbstractGenerator {
 		'''
 			«FOR c: condition.eAllContents.toIterable»
 				«IF(c instanceof Timeout)»
-					Timeout public timeout = Timeout(«c.value», 0);
+					Timeout public timeout = Timeout(«c.expression», 0);
 				«ELSEIF(c instanceof WeekDaysInterval)»
 					WeekDaysInterval public weekDaysInterval = WeekDaysInterval(«c.start», «c.end»);
 				«ELSEIF(c instanceof TimeInterval)»

@@ -1,9 +1,15 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
 
-import "./libs/EAI_Domain.sol";
+import "../../libs/eai/WeekDaysInterval.sol";
+import "../../libs/eai/TimeInterval.sol";
+import "../../libs/eai/MaxNumberOfOperation.sol";
+import "../../libs/eai/MessageContent.sol";
+import "../../libs/eai/Party.sol";
+import "../../libs/util/TimeUnit.sol";
+import "../../libs/util/WeekDay.sol";
 
-contract DeliveryHiring is EAI_Domain{
+contract DeliveryHiring{
 	
 	uint32 beginDate = 1641024000;
 	uint32 dueDate = 1672509600;
@@ -12,9 +18,9 @@ contract DeliveryHiring is EAI_Domain{
 	Party integrationProcess;
 	
 	// variables referring to the requestDeliver clause	
-	BusinessDay[] public businessDay;
+	WeekDaysInterval[] public businessDay;
 	TimeInterval[] public timeInterval;
-	OperationLimit[] public operationLimit;
+	MaxNumberOfOperation[] public operationLimit;
 	MessageContent[] public messageContent_request;
    
     event failEvent(string message);
@@ -23,7 +29,7 @@ contract DeliveryHiring is EAI_Domain{
 	    deliverySystem = Party("Delivery system", _applicationWallet);
 	    integrationProcess = Party("Integration process", _processWallet);
 			
-		businessDay.push(BusinessDay(MONDAY, FRIDAY));
+		businessDay.push(WeekDaysInterval(MONDAY, FRIDAY));
 
 		timeInterval.push(TimeInterval(28800,64800));
 		operationLimit.push(OperationLimit(5, DAY,0,0));

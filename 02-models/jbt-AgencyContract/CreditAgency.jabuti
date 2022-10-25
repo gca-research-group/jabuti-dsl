@@ -40,7 +40,7 @@ contract CreditAgency {
 			operation = response
 			
 			condition{
-				Timeout("60") 
+				Timeout(60) 
 			}
 			onBreach( log("Timeout for replying has been exceeded") )
 		}

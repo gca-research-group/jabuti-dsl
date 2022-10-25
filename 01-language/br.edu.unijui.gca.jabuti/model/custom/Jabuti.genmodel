@@ -94,6 +94,7 @@
     <genClasses ecoreClass="Jabuti.ecore#//Variable">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Variable/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Variable/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Variable/term"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//EventLog">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//EventLog/message"/>
@@ -132,6 +133,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//SessionInterval/timeUnit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//SessionInterval/value"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//SessionInterval/messageContent"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//SessionInterval/variableValue"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//WeekDaysInterval">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//WeekDaysInterval/start"/>
@@ -142,7 +144,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//TimeInterval/end"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//Timeout">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//Timeout/value"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Timeout/expression"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//MaxNumberOfOperation">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MaxNumberOfOperation/operationsNumber"/>
@@ -152,8 +154,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//MessageContent/comparisonOperator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MessageContent/content"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MessageContent/timeUnit"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MessageContent/strValue"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MessageContent/intValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//MessageContent/expression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//MessageContent/variableValue"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//ComparisonOperator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//ComparisonOperator/symbol"/>

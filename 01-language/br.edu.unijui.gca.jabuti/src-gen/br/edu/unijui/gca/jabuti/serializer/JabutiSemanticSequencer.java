@@ -437,20 +437,11 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     MaxNumberOfOperation returns MaxNumberOfOperation
 	 *
 	 * Constraint:
-	 *     (operationsNumber=INT timeUnit=TimeUnit)
+	 *     (operationsNumber=INT timeUnit=TimeUnit?)
 	 * </pre>
 	 */
 	protected void sequence_MaxNumberOfOperation(ISerializationContext context, MaxNumberOfOperation semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER));
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__TIME_UNIT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.MAX_NUMBER_OF_OPERATION__TIME_UNIT));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMaxNumberOfOperationAccess().getOperationsNumberINTTerminalRuleCall_2_0(), semanticObject.getOperationsNumber());
-		feeder.accept(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitTimeUnitEnumRuleCall_4_0(), semanticObject.getTimeUnit());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -466,11 +457,10 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *
 	 * Constraint:
 	 *     (
-	 *         content=STRING | 
-	 *         (content=STRING timeUnit=TimeUnit) | 
-	 *         (content=STRING comparisonOperator=ComparisonOperator (strValue=STRING | intValue=INT)) | 
-	 *         (content=STRING comparisonOperator=ComparisonOperator (strValue=STRING | intValue=INT) timeUnit=TimeUnit)
-	 *     )
+	 *         (content=STRING? comparisonOperator=ComparisonOperator expression=Expression timeUnit=TimeUnit) | 
+	 *         (content=STRING? timeUnit=TimeUnit) | 
+	 *         timeUnit=TimeUnit
+	 *     )?
 	 * </pre>
 	 */
 	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {
@@ -709,11 +699,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     SessionInterval returns SessionInterval
 	 *
 	 * Constraint:
-	 *     (
-	 *         (frequency=INT timeUnit=TimeUnit messageContent=MessageContent) | 
-	 *         (frequency=INT timeUnit=TimeUnit) | 
-	 *         (frequency=INT timeUnit=TimeUnit value=STRING)
-	 *     )
+	 *     (frequency=INT timeUnit=TimeUnit (messageContent=MessageContent | value=STRING)?)
 	 * </pre>
 	 */
 	protected void sequence_SessionInterval(ISerializationContext context, SessionInterval semanticObject) {
@@ -792,16 +778,16 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Timeout returns Timeout
 	 *
 	 * Constraint:
-	 *     value=INT
+	 *     expression=Expression
 	 * </pre>
 	 */
 	protected void sequence_Timeout(ISerializationContext context, Timeout semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.TIMEOUT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.TIMEOUT__VALUE));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.TIMEOUT__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.TIMEOUT__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTimeoutAccess().getValueINTTerminalRuleCall_2_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getTimeoutAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -844,20 +830,11 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (name=ID expression=Expression)
+	 *     (name=ID (expression=Expression | term=MessageContent | term=TimeInterval | term=Timeout))
 	 * </pre>
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__NAME));
-			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE__EXPRESSION));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

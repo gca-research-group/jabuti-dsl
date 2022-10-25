@@ -8,16 +8,16 @@ contract DeliveryHiring_P is EAI_Domain{
 	Party deliverySystem;
 	Party integrationProcess;
 	
-	BusinessDay public businessDay = BusinessDay(SATURDAY, SUNDAY);
+	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(SATURDAY, SUNDAY);
 	TimeInterval public timeInterval = TimeInterval(18:30:00, 08:30:00);
-	OperationLimit public operationLimit = OperationLimit(6, MINUTE, 0, 0);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(6, MINUTE, 0, 0);
 	MessageContent public messageContent = MessageContent("count(//address)");
 	
-	event EventLog(string _logMessage);
+	event requestDeliveryevent(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
-    	deliverySystem = Party(" ", _applicationWallet);
-	    integrationProcess = Party("", _processWallet);
+    	deliverySystem = Party("integrationProcess ", _applicationWallet);
+	    integrationProcess = Party("integrationProcess", _processWallet);
 	}
 	
 	function requestDelivery(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
@@ -33,7 +33,7 @@ contract DeliveryHiring_P is EAI_Domain{
         	return true;	
 		}
 		
-		emit EventLog ("Request made outside of allowed hours or distance limit exceeded");
+		emit requestDeliveryevent ("Request made outside of allowed hours or distance limit exceeded");
 		return false;
 	}
 }

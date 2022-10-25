@@ -16,8 +16,8 @@ package br.edu.unijui.gca.jabuti.jabuti;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getStrValue <em>Str Value</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent()
@@ -96,47 +96,47 @@ public interface MessageContent extends Term
 	void setTimeUnit(TimeUnit value);
 
 	/**
-	 * Returns the value of the '<em><b>Str Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Str Value</em>' attribute.
-	 * @see #setStrValue(String)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_StrValue()
-	 * @model
+	 * @return the value of the '<em>Expression</em>' containment reference.
+	 * @see #setExpression(Expression)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_Expression()
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getStrValue();
+	Expression getExpression();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getStrValue <em>Str Value</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Str Value</em>' attribute.
-	 * @see #getStrValue()
+	 * @param value the new value of the '<em>Expression</em>' containment reference.
+	 * @see #getExpression()
 	 * @generated
 	 */
-	void setStrValue(String value);
+	void setExpression(Expression value);
 
 	/**
-	 * Returns the value of the '<em><b>Int Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Variable Value</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Int Value</em>' attribute.
-	 * @see #setIntValue(int)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_IntValue()
-	 * @model
+	 * @return the value of the '<em>Variable Value</em>' containment reference.
+	 * @see #setVariableValue(VariableValue)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_VariableValue()
+	 * @model containment="true"
 	 * @generated
 	 */
-	int getIntValue();
+	VariableValue getVariableValue();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getIntValue <em>Int Value</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Int Value</em>' attribute.
-	 * @see #getIntValue()
+	 * @param value the new value of the '<em>Variable Value</em>' containment reference.
+	 * @see #getVariableValue()
 	 * @generated
 	 */
-	void setIntValue(int value);
+	void setVariableValue(VariableValue value);
 
 } // MessageContent

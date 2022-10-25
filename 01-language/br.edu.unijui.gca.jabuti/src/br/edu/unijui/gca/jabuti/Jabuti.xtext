@@ -131,8 +131,7 @@ FunctionCall:
 ;
 
 Variable:
-	(name=ID '=' expression=Expression) 
-//	|	(name=ID '=' term=Term)
+	name=ID '=' (expression=Expression | term = (MessageContent | TimeInterval | Timeout )) 
 ;
 
 
@@ -167,7 +166,7 @@ Variable:
 
 Condition:
 	(conditionTerm += ConditionTerm |
-	conditionalExpression+=ConditionalExpression)*
+	conditionalExpression+=ConditionalExpression)+
 ;
 
 ConditionalExpression :
@@ -206,17 +205,17 @@ TimeInterval:
 ; 
 
 SessionInterval: 
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messageContent=MessageContent  ) ')'|
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' value=STRING  ) ')'
+	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | QualifiedName ) )? ')'
+//	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
+//	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'per' value=STRING  ) ')'
 ; 
 
 Timeout:
-	'Timeout' '(' value=INT ')'
+	'Timeout' '(' expression=Expression ')'
 ;
 
 MaxNumberOfOperation:
-	'MaxNumberOfOperation' '(' operationsNumber=INT 'by' timeUnit=TimeUnit  ')'
+	'MaxNumberOfOperation' '(' operationsNumber=INT ('per' timeUnit=TimeUnit)?  ')'
 ;
 
 WeekDaysInterval:
@@ -224,10 +223,7 @@ WeekDaysInterval:
 ;
 
 MessageContent:
-	('MessageContent' '(' content=STRING ')') | 	
-	('MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')') |
-	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator ( strValue=STRING | intValue=INT )')' )|
-	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator ( strValue=STRING | intValue=INT ) 'by' timeUnit=TimeUnit')' ) 
+	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression )? ('per' timeUnit=TimeUnit)? ')' )
 ;
 
 ComparisonOperator:

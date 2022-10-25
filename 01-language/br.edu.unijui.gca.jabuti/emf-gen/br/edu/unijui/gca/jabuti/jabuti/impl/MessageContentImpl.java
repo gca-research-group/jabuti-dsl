@@ -4,9 +4,11 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
+import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -27,8 +29,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getStrValue <em>Str Value</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getIntValue <em>Int Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,44 +88,24 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getStrValue() <em>Str Value</em>}' attribute.
+	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStrValue()
+	 * @see #getExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String STR_VALUE_EDEFAULT = null;
+	protected Expression expression;
 
 	/**
-	 * The cached value of the '{@link #getStrValue() <em>Str Value</em>}' attribute.
+	 * The cached value of the '{@link #getVariableValue() <em>Variable Value</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getStrValue()
+	 * @see #getVariableValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected String strValue = STR_VALUE_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final int INT_VALUE_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getIntValue() <em>Int Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIntValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected int intValue = INT_VALUE_EDEFAULT;
+	protected VariableValue variableValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -252,9 +234,9 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public String getStrValue()
+	public Expression getExpression()
 	{
-		return strValue;
+		return expression;
 	}
 
 	/**
@@ -262,13 +244,16 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public void setStrValue(String newStrValue)
+	public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
 	{
-		String oldStrValue = strValue;
-		strValue = newStrValue;
+		Expression oldExpression = expression;
+		expression = newExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__STR_VALUE, oldStrValue, strValue));
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__EXPRESSION, oldExpression, newExpression);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -277,9 +262,20 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public int getIntValue()
+	public void setExpression(Expression newExpression)
 	{
-		return intValue;
+		if (newExpression != expression)
+		{
+			NotificationChain msgs = null;
+			if (expression != null)
+				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__EXPRESSION, null, msgs);
+			if (newExpression != null)
+				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__EXPRESSION, null, msgs);
+			msgs = basicSetExpression(newExpression, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__EXPRESSION, newExpression, newExpression));
 	}
 
 	/**
@@ -288,12 +284,48 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public void setIntValue(int newIntValue)
+	public VariableValue getVariableValue()
 	{
-		int oldIntValue = intValue;
-		intValue = newIntValue;
+		return variableValue;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetVariableValue(VariableValue newVariableValue, NotificationChain msgs)
+	{
+		VariableValue oldVariableValue = variableValue;
+		variableValue = newVariableValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__INT_VALUE, oldIntValue, intValue));
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, oldVariableValue, newVariableValue);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVariableValue(VariableValue newVariableValue)
+	{
+		if (newVariableValue != variableValue)
+		{
+			NotificationChain msgs = null;
+			if (variableValue != null)
+				msgs = ((InternalEObject)variableValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, null, msgs);
+			if (newVariableValue != null)
+				msgs = ((InternalEObject)newVariableValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, null, msgs);
+			msgs = basicSetVariableValue(newVariableValue, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, newVariableValue, newVariableValue));
 	}
 
 	/**
@@ -308,6 +340,10 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 		{
 			case JabutiPackage.MESSAGE_CONTENT__COMPARISON_OPERATOR:
 				return basicSetComparisonOperator(null, msgs);
+			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
+				return basicSetExpression(null, msgs);
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				return basicSetVariableValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -328,10 +364,10 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return getContent();
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				return getTimeUnit();
-			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
-				return getStrValue();
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				return getIntValue();
+			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
+				return getExpression();
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				return getVariableValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -355,11 +391,11 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				setTimeUnit((TimeUnit)newValue);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
-				setStrValue((String)newValue);
+			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
+				setExpression((Expression)newValue);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				setIntValue((Integer)newValue);
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				setVariableValue((VariableValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -384,11 +420,11 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				setTimeUnit(TIME_UNIT_EDEFAULT);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
-				setStrValue(STR_VALUE_EDEFAULT);
+			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
+				setExpression((Expression)null);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				setIntValue(INT_VALUE_EDEFAULT);
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				setVariableValue((VariableValue)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -410,10 +446,10 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
 			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
 				return timeUnit != TIME_UNIT_EDEFAULT;
-			case JabutiPackage.MESSAGE_CONTENT__STR_VALUE:
-				return STR_VALUE_EDEFAULT == null ? strValue != null : !STR_VALUE_EDEFAULT.equals(strValue);
-			case JabutiPackage.MESSAGE_CONTENT__INT_VALUE:
-				return intValue != INT_VALUE_EDEFAULT;
+			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
+				return expression != null;
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
+				return variableValue != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -433,10 +469,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 		result.append(content);
 		result.append(", timeUnit: ");
 		result.append(timeUnit);
-		result.append(", strValue: ");
-		result.append(strValue);
-		result.append(", intValue: ");
-		result.append(intValue);
 		result.append(')');
 		return result.toString();
 	}
