@@ -120,7 +120,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionParam" eType="#//ConditionTerm"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="aftetrSymbol" eType="#//LogicalOperator"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="afterSymbol" eType="#//LogicalOperator"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="beforeSymbol" eType="#//LogicalOperator"
         containment="true"/>

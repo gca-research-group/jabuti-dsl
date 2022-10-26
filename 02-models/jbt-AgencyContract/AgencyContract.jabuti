@@ -11,31 +11,23 @@ contract DeliveryHiring_O {
 	}
 	variables{
 		dateTimeCompra = "//dateCompra/text()"  + " " + "//HourCompra/text()"		
+		var1="//dateCompra/text()/dateCompra/text()dateCompra/text()ateCompra/text()"
 	}
 	clauses{	
 		right respondIntervalAndLimit {
 			rolePlayer = application
-			operation = request		
-			condition {			
-				(NOT ((MaxNumberOfOperation( 2 by Hour ) AND TimeInterval("8:00:00" to "12:00:00")) OR
-						(MaxNumberOfOperation( 5 by Hour ) AND TimeInterval("Start" to "End") )) AND 					
-						MaxNumberOfOperation( 5 by Hour ) AND						
-						Timeout(50) 
-						) 	AND
-				when(SessionInterval( 24 Hour by MessageContent("Content"))) do {
-					(MaxNumberOfOperation( 2 by Hour ) AND TimeInterval("8:00:00" to "12:00:00")) OR
-					(MaxNumberOfOperation( 5 by Hour ) AND TimeInterval("Start" to "End") ) AND 
-					NOT WeekDaysInterval(Saturday to Sunday)
-				}AND  
-					NOT WeekDaysInterval(Saturday to Sunday)
-				AND 				
-				when(SessionInterval( 24 Hour by MessageContent("Content"))) do {
-					(MaxNumberOfOperation( 2 by Hour ) AND TimeInterval("8:00:00" to "12:00:00")) AND 
-					NOT WeekDaysInterval(Saturday to Sunday)
-				}
-				OR
-				MaxNumberOfOperation( 2 by Hour )
-			} 
+			operation = request	
+		
+			terms {
+				WeekDaysInterval(Monday to Wednesday) OR WeekDaysInterval(Friday to Saturday),
+				MaxNumberOfOperation( 2 per Hour ),
+				TimeInterval("8:00:00" to "12:00:00"),
+				when(SessionInterval(1 Day))do{
+					MessageContent( "Content" )	
+				},
+				TimeInterval("8:00:00" to "12:00:00")
+			}
+			
 			onBreach (log(" resgistrar falha...."))
 		}
 	}

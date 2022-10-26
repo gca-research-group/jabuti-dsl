@@ -274,7 +274,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cEqualsSignKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cOperationAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cOperationOperationEnumRuleCall_7_0 = (RuleCall)cOperationAssignment_7.eContents().get(0);
-		private final Keyword cConditionKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cTermsKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cConditionAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cConditionConditionParserRuleCall_10_0 = (RuleCall)cConditionAssignment_10.eContents().get(0);
@@ -288,7 +288,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//    (Right | Prohibition | Obligation) '{'
 		//        'rolePlayer' '=' roleplayer=RolePlayer
 		//        'operation' '=' operation=Operation
-		//        'condition' '{'
+		//        'terms' '{'
 		//            condition = Condition
 		//        '}'
 		//        eventLog+=EventLog*
@@ -299,7 +299,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//(Right | Prohibition | Obligation) '{'
 		//    'rolePlayer' '=' roleplayer=RolePlayer
 		//    'operation' '=' operation=Operation
-		//    'condition' '{'
+		//    'terms' '{'
 		//        condition = Condition
 		//    '}'
 		//    eventLog+=EventLog*
@@ -345,8 +345,8 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Operation
 		public RuleCall getOperationOperationEnumRuleCall_7_0() { return cOperationOperationEnumRuleCall_7_0; }
 		
-		//'condition'
-		public Keyword getConditionKeyword_8() { return cConditionKeyword_8; }
+		//'terms'
+		public Keyword getTermsKeyword_8() { return cTermsKeyword_8; }
 		
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
@@ -1191,7 +1191,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		////    '}'
 		////;
 		//// ----------------- fim - versão antiga -----------------
-		////------------------ Inicio - versão nova ----------------
+		////------------------ start of new version ----------------
 		//Condition:
 		//    (conditionTerm += ConditionTerm |
 		//    conditionalExpression+=ConditionalExpression)+
@@ -1229,15 +1229,15 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Assignment cConditionTermAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cConditionTermConditionTermParserRuleCall_7_0 = (RuleCall)cConditionTermAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cAftetrSymbolAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cAftetrSymbolLogicalOperatorParserRuleCall_9_0 = (RuleCall)cAftetrSymbolAssignment_9.eContents().get(0);
+		private final Assignment cAfterSymbolAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cAfterSymbolLogicalOperatorParserRuleCall_9_0 = (RuleCall)cAfterSymbolAssignment_9.eContents().get(0);
 		
 		//ConditionalExpression :
 		//    (beforeSymbol = LogicalOperator)?
 		//    'when' '('  conditionParam=ConditionTerm')' 'do' '{'
 		//        conditionTerm=ConditionTerm
 		//    '}'
-		//    (aftetrSymbol = LogicalOperator)?
+		//    (afterSymbol = LogicalOperator)?
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1245,7 +1245,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'when' '('  conditionParam=ConditionTerm')' 'do' '{'
 		//    conditionTerm=ConditionTerm
 		//'}'
-		//(aftetrSymbol = LogicalOperator)?
+		//(afterSymbol = LogicalOperator)?
 		public Group getGroup() { return cGroup; }
 		
 		//(beforeSymbol = LogicalOperator)?
@@ -1284,11 +1284,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 		
-		//(aftetrSymbol = LogicalOperator)?
-		public Assignment getAftetrSymbolAssignment_9() { return cAftetrSymbolAssignment_9; }
+		//(afterSymbol = LogicalOperator)?
+		public Assignment getAfterSymbolAssignment_9() { return cAfterSymbolAssignment_9; }
 		
 		//LogicalOperator
-		public RuleCall getAftetrSymbolLogicalOperatorParserRuleCall_9_0() { return cAftetrSymbolLogicalOperatorParserRuleCall_9_0; }
+		public RuleCall getAfterSymbolLogicalOperatorParserRuleCall_9_0() { return cAfterSymbolLogicalOperatorParserRuleCall_9_0; }
 	}
 	public class ConditionTermElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ConditionTerm");
@@ -1310,36 +1310,36 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Action cBinaryTermOperatorLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Alternatives cAlternatives_1_1 = (Alternatives)cGroup_1.eContents().get(1);
 		private final Assignment cSymbolAssignment_1_1_0 = (Assignment)cAlternatives_1_1.eContents().get(0);
-		private final Keyword cSymbolANDKeyword_1_1_0_0 = (Keyword)cSymbolAssignment_1_1_0.eContents().get(0);
+		private final Keyword cSymbolCommaKeyword_1_1_0_0 = (Keyword)cSymbolAssignment_1_1_0.eContents().get(0);
 		private final Assignment cSymbolAssignment_1_1_1 = (Assignment)cAlternatives_1_1.eContents().get(1);
 		private final Keyword cSymbolORKeyword_1_1_1_0 = (Keyword)cSymbolAssignment_1_1_1.eContents().get(0);
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightNegationTermParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
 		//CompositeCondition returns ConditionTerm:
-		//    NegationTerm ({BinaryTermOperator.left=current} (symbol='AND' | symbol='OR'  ) right=NegationTerm)*;
+		//    NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NegationTerm ({BinaryTermOperator.left=current} (symbol='AND' | symbol='OR'  ) right=NegationTerm)*
+		//NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*
 		public Group getGroup() { return cGroup; }
 		
 		//NegationTerm
 		public RuleCall getNegationTermParserRuleCall_0() { return cNegationTermParserRuleCall_0; }
 		
-		//({BinaryTermOperator.left=current} (symbol='AND' | symbol='OR'  ) right=NegationTerm)*
+		//({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*
 		public Group getGroup_1() { return cGroup_1; }
 		
 		//{BinaryTermOperator.left=current}
 		public Action getBinaryTermOperatorLeftAction_1_0() { return cBinaryTermOperatorLeftAction_1_0; }
 		
-		//(symbol='AND' | symbol='OR'  )
+		//(symbol=',' | symbol='OR'  )
 		public Alternatives getAlternatives_1_1() { return cAlternatives_1_1; }
 		
-		//symbol='AND'
+		//symbol=','
 		public Assignment getSymbolAssignment_1_1_0() { return cSymbolAssignment_1_1_0; }
 		
-		//'AND'
-		public Keyword getSymbolANDKeyword_1_1_0_0() { return cSymbolANDKeyword_1_1_0_0; }
+		//','
+		public Keyword getSymbolCommaKeyword_1_1_0_0() { return cSymbolCommaKeyword_1_1_0_0; }
 		
 		//symbol='OR'
 		public Assignment getSymbolAssignment_1_1_1() { return cSymbolAssignment_1_1_1; }
@@ -1450,24 +1450,24 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
 		private final Assignment cSymbolAssignment = (Assignment)rule.eContents().get(1);
 		private final Alternatives cSymbolAlternatives_0 = (Alternatives)cSymbolAssignment.eContents().get(0);
-		private final Keyword cSymbolANDKeyword_0_0 = (Keyword)cSymbolAlternatives_0.eContents().get(0);
+		private final Keyword cSymbolCommaKeyword_0_0 = (Keyword)cSymbolAlternatives_0.eContents().get(0);
 		private final Keyword cSymbolORKeyword_0_1 = (Keyword)cSymbolAlternatives_0.eContents().get(1);
 		private final Keyword cSymbolNOTKeyword_0_2 = (Keyword)cSymbolAlternatives_0.eContents().get(2);
 		
-		////  ----------------- fim - versão nova  -----------------
+		////  ----------------- end new version proposal  -----------------
 		//LogicalOperator:
-		//    symbol=('AND' | 'OR' | 'NOT')
+		//    symbol=(',' | 'OR' | 'NOT')
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//symbol=('AND' | 'OR' | 'NOT')
+		//symbol=(',' | 'OR' | 'NOT')
 		public Assignment getSymbolAssignment() { return cSymbolAssignment; }
 		
-		//('AND' | 'OR' | 'NOT')
+		//(',' | 'OR' | 'NOT')
 		public Alternatives getSymbolAlternatives_0() { return cSymbolAlternatives_0; }
 		
-		//'AND'
-		public Keyword getSymbolANDKeyword_0_0() { return cSymbolANDKeyword_0_0; }
+		//','
+		public Keyword getSymbolCommaKeyword_0_0() { return cSymbolCommaKeyword_0_0; }
 		
 		//'OR'
 		public Keyword getSymbolORKeyword_0_1() { return cSymbolORKeyword_0_1; }
@@ -1540,8 +1540,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//SessionInterval:
 		//    'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | QualifiedName ) )? ')'
-		////    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
-		////    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'per' value=STRING  ) ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1731,18 +1729,21 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cComparisonOperatorComparisonOperatorParserRuleCall_3_0_0 = (RuleCall)cComparisonOperatorAssignment_3_0.eContents().get(0);
 		private final Assignment cExpressionAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final RuleCall cExpressionExpressionParserRuleCall_3_1_0 = (RuleCall)cExpressionAssignment_3_1.eContents().get(0);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cPerKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cTimeUnitAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cTimeUnitTimeUnitEnumRuleCall_4_1_0 = (RuleCall)cTimeUnitAssignment_4_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cPerKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cTimeUnitAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cTimeUnitTimeUnitEnumRuleCall_3_2_1_0 = (RuleCall)cTimeUnitAssignment_3_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//MessageContent:
-		//    ('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression )? ('per' timeUnit=TimeUnit)? ')' )
+		//    ('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)? )?  ')' )
+		////    'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
+		////    x (',' x)*
+		//// ver sobre o validation. Validar se uma variavel(referencia) foi criada
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression )? ('per' timeUnit=TimeUnit)? ')' )
+		//('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)? )?  ')' )
 		public Group getGroup() { return cGroup; }
 		
 		//'MessageContent'
@@ -1763,7 +1764,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//QualifiedName
 		public RuleCall getQualifiedNameParserRuleCall_2_1() { return cQualifiedNameParserRuleCall_2_1; }
 		
-		//(comparisonOperator=ComparisonOperator expression=Expression )?
+		//(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)? )?
 		public Group getGroup_3() { return cGroup_3; }
 		
 		//comparisonOperator=ComparisonOperator
@@ -1779,19 +1780,19 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		public RuleCall getExpressionExpressionParserRuleCall_3_1_0() { return cExpressionExpressionParserRuleCall_3_1_0; }
 		
 		//('per' timeUnit=TimeUnit)?
-		public Group getGroup_4() { return cGroup_4; }
+		public Group getGroup_3_2() { return cGroup_3_2; }
 		
 		//'per'
-		public Keyword getPerKeyword_4_0() { return cPerKeyword_4_0; }
+		public Keyword getPerKeyword_3_2_0() { return cPerKeyword_3_2_0; }
 		
 		//timeUnit=TimeUnit
-		public Assignment getTimeUnitAssignment_4_1() { return cTimeUnitAssignment_4_1; }
+		public Assignment getTimeUnitAssignment_3_2_1() { return cTimeUnitAssignment_3_2_1; }
 		
 		//TimeUnit
-		public RuleCall getTimeUnitTimeUnitEnumRuleCall_4_1_0() { return cTimeUnitTimeUnitEnumRuleCall_4_1_0; }
+		public RuleCall getTimeUnitTimeUnitEnumRuleCall_3_2_1_0() { return cTimeUnitTimeUnitEnumRuleCall_3_2_1_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 	}
 	public class ComparisonOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
@@ -2312,7 +2313,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//    (Right | Prohibition | Obligation) '{'
 	//        'rolePlayer' '=' roleplayer=RolePlayer
 	//        'operation' '=' operation=Operation
-	//        'condition' '{'
+	//        'terms' '{'
 	//            condition = Condition
 	//        '}'
 	//        eventLog+=EventLog*
@@ -2583,7 +2584,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	////    '}'
 	////;
 	//// ----------------- fim - versão antiga -----------------
-	////------------------ Inicio - versão nova ----------------
+	////------------------ start of new version ----------------
 	//Condition:
 	//    (conditionTerm += ConditionTerm |
 	//    conditionalExpression+=ConditionalExpression)+
@@ -2601,7 +2602,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//    'when' '('  conditionParam=ConditionTerm')' 'do' '{'
 	//        conditionTerm=ConditionTerm
 	//    '}'
-	//    (aftetrSymbol = LogicalOperator)?
+	//    (afterSymbol = LogicalOperator)?
 	//;
 	public ConditionalExpressionElements getConditionalExpressionAccess() {
 		return pConditionalExpression;
@@ -2623,7 +2624,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//CompositeCondition returns ConditionTerm:
-	//    NegationTerm ({BinaryTermOperator.left=current} (symbol='AND' | symbol='OR'  ) right=NegationTerm)*;
+	//    NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
 	public CompositeConditionElements getCompositeConditionAccess() {
 		return pCompositeCondition;
 	}
@@ -2654,9 +2655,9 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getTermAccess().getRule();
 	}
 	
-	////  ----------------- fim - versão nova  -----------------
+	////  ----------------- end new version proposal  -----------------
 	//LogicalOperator:
-	//    symbol=('AND' | 'OR' | 'NOT')
+	//    symbol=(',' | 'OR' | 'NOT')
 	//;
 	public LogicalOperatorElements getLogicalOperatorAccess() {
 		return pLogicalOperator;
@@ -2679,8 +2680,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//SessionInterval:
 	//    'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | QualifiedName ) )? ')'
-	////    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
-	////    ('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'per' value=STRING  ) ')'
 	//;
 	public SessionIntervalElements getSessionIntervalAccess() {
 		return pSessionInterval;
@@ -2724,7 +2723,10 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//MessageContent:
-	//    ('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression )? ('per' timeUnit=TimeUnit)? ')' )
+	//    ('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)? )?  ')' )
+	////    'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
+	////    x (',' x)*
+	//// ver sobre o validation. Validar se uma variavel(referencia) foi criada
 	//;
 	public MessageContentElements getMessageContentAccess() {
 		return pMessageContent;

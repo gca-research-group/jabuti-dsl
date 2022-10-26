@@ -188,7 +188,6 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'MaxNumberOfOperation' '(' operationsNumber=INT
 	 *     (rule start) (ambiguity) 'MessageContent' '(' QualifiedName ')' (rule start)
-	 *     (rule start) (ambiguity) 'MessageContent' '(' QualifiedName 'per' timeUnit=TimeUnit
 	 *     (rule start) (ambiguity) 'MessageContent' '(' QualifiedName comparisonOperator=ComparisonOperator
 	 *     (rule start) (ambiguity) 'MessageContent' '(' content=STRING
 	 *     (rule start) (ambiguity) 'SessionInterval' '(' frequency=INT

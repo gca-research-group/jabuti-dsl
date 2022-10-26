@@ -308,7 +308,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Term returns BinaryTermOperator
 	 *
 	 * Constraint:
-	 *     (left=CompositeCondition_BinaryTermOperator_1_0 (symbol='AND' | symbol='OR') right=NegationTerm)
+	 *     (left=CompositeCondition_BinaryTermOperator_1_0 (symbol=',' | symbol='OR') right=NegationTerm)
 	 * </pre>
 	 */
 	protected void sequence_CompositeCondition(ISerializationContext context, BinaryTermOperator semanticObject) {
@@ -336,7 +336,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     ConditionalExpression returns ConditionalExpression
 	 *
 	 * Constraint:
-	 *     (beforeSymbol=LogicalOperator? conditionParam=ConditionTerm conditionTerm=ConditionTerm aftetrSymbol=LogicalOperator?)
+	 *     (beforeSymbol=LogicalOperator? conditionParam=ConditionTerm conditionTerm=ConditionTerm afterSymbol=LogicalOperator?)
 	 * </pre>
 	 */
 	protected void sequence_ConditionalExpression(ISerializationContext context, ConditionalExpression semanticObject) {
@@ -418,7 +418,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     LogicalOperator returns LogicalOperator
 	 *
 	 * Constraint:
-	 *     (symbol='AND' | symbol='OR' | symbol='NOT')
+	 *     (symbol=',' | symbol='OR' | symbol='NOT')
 	 * </pre>
 	 */
 	protected void sequence_LogicalOperator(ISerializationContext context, LogicalOperator semanticObject) {
@@ -456,11 +456,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     MessageContent returns MessageContent
 	 *
 	 * Constraint:
-	 *     (
-	 *         (content=STRING? comparisonOperator=ComparisonOperator expression=Expression timeUnit=TimeUnit) | 
-	 *         (content=STRING? timeUnit=TimeUnit) | 
-	 *         timeUnit=TimeUnit
-	 *     )?
+	 *     (content=STRING | (content=STRING comparisonOperator=ComparisonOperator expression=Expression timeUnit=TimeUnit?))?
 	 * </pre>
 	 */
 	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {

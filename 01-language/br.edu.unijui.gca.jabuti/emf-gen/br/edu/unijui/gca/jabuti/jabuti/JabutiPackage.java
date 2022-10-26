@@ -993,13 +993,13 @@ public interface JabutiPackage extends EPackage
 	int CONDITIONAL_EXPRESSION__CONDITION_PARAM = 1;
 
 	/**
-	 * The feature id for the '<em><b>Aftetr Symbol</b></em>' containment reference.
+	 * The feature id for the '<em><b>After Symbol</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__AFTETR_SYMBOL = 2;
+	int CONDITIONAL_EXPRESSION__AFTER_SYMBOL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Before Symbol</b></em>' containment reference.
@@ -2136,15 +2136,15 @@ public interface JabutiPackage extends EPackage
 	EReference getConditionalExpression_ConditionParam();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAftetrSymbol <em>Aftetr Symbol</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Aftetr Symbol</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAftetrSymbol()
+	 * @return the meta object for the containment reference '<em>After Symbol</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol()
 	 * @see #getConditionalExpression()
 	 * @generated
 	 */
-	EReference getConditionalExpression_AftetrSymbol();
+	EReference getConditionalExpression_AfterSymbol();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}'.
@@ -3141,12 +3141,12 @@ public interface JabutiPackage extends EPackage
 		EReference CONDITIONAL_EXPRESSION__CONDITION_PARAM = eINSTANCE.getConditionalExpression_ConditionParam();
 
 		/**
-		 * The meta object literal for the '<em><b>Aftetr Symbol</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>After Symbol</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL_EXPRESSION__AFTETR_SYMBOL = eINSTANCE.getConditionalExpression_AftetrSymbol();
+		EReference CONDITIONAL_EXPRESSION__AFTER_SYMBOL = eINSTANCE.getConditionalExpression_AfterSymbol();
 
 		/**
 		 * The meta object literal for the '<em><b>Before Symbol</b></em>' containment reference feature.

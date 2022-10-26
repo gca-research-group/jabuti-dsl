@@ -489,9 +489,9 @@ ruleClause returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_10='condition'
+		otherlv_10='terms'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getClauseAccess().getConditionKeyword_8());
+			newLeafNode(otherlv_10, grammarAccess.getClauseAccess().getTermsKeyword_8());
 		}
 		otherlv_11='{'
 		{
@@ -2033,17 +2033,17 @@ ruleConditionalExpression returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getAftetrSymbolLogicalOperatorParserRuleCall_9_0());
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getAfterSymbolLogicalOperatorParserRuleCall_9_0());
 				}
-				lv_aftetrSymbol_9_0=ruleLogicalOperator
+				lv_afterSymbol_9_0=ruleLogicalOperator
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
 					}
 					set(
 						$current,
-						"aftetrSymbol",
-						lv_aftetrSymbol_9_0,
+						"afterSymbol",
+						lv_afterSymbol_9_0,
 						"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
 					afterParserOrEnumRuleCall();
 				}
@@ -2112,15 +2112,15 @@ ruleCompositeCondition returns [EObject current=null]
 			(
 				(
 					(
-						lv_symbol_2_0='AND'
+						lv_symbol_2_0=','
 						{
-							newLeafNode(lv_symbol_2_0, grammarAccess.getCompositeConditionAccess().getSymbolANDKeyword_1_1_0_0());
+							newLeafNode(lv_symbol_2_0, grammarAccess.getCompositeConditionAccess().getSymbolCommaKeyword_1_1_0_0());
 						}
 						{
 							if ($current==null) {
 								$current = createModelElement(grammarAccess.getCompositeConditionRule());
 							}
-							setWithLastConsumed($current, "symbol", lv_symbol_2_0, "AND");
+							setWithLastConsumed($current, "symbol", lv_symbol_2_0, ",");
 						}
 					)
 				)
@@ -2342,9 +2342,9 @@ ruleLogicalOperator returns [EObject current=null]
 	(
 		(
 			(
-				lv_symbol_0_1='AND'
+				lv_symbol_0_1=','
 				{
-					newLeafNode(lv_symbol_0_1, grammarAccess.getLogicalOperatorAccess().getSymbolANDKeyword_0_0());
+					newLeafNode(lv_symbol_0_1, grammarAccess.getLogicalOperatorAccess().getSymbolCommaKeyword_0_0());
 				}
 				{
 					if ($current==null) {
@@ -2860,35 +2860,35 @@ ruleMessageContent returns [EObject current=null]
 					}
 				)
 			)
-		)?
-		(
-			otherlv_6='per'
-			{
-				newLeafNode(otherlv_6, grammarAccess.getMessageContentAccess().getPerKeyword_4_0());
-			}
 			(
+				otherlv_6='per'
+				{
+					newLeafNode(otherlv_6, grammarAccess.getMessageContentAccess().getPerKeyword_3_2_0());
+				}
 				(
-					{
-						newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_4_1_0());
-					}
-					lv_timeUnit_7_0=ruleTimeUnit
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMessageContentRule());
+					(
+						{
+							newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitTimeUnitEnumRuleCall_3_2_1_0());
 						}
-						set(
-							$current,
-							"timeUnit",
-							lv_timeUnit_7_0,
-							"br.edu.unijui.gca.jabuti.Jabuti.TimeUnit");
-						afterParserOrEnumRuleCall();
-					}
+						lv_timeUnit_7_0=ruleTimeUnit
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getMessageContentRule());
+							}
+							set(
+								$current,
+								"timeUnit",
+								lv_timeUnit_7_0,
+								"br.edu.unijui.gca.jabuti.Jabuti.TimeUnit");
+							afterParserOrEnumRuleCall();
+						}
+					)
 				)
-			)
+			)?
 		)?
 		otherlv_8=')'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_5());
+			newLeafNode(otherlv_8, grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;

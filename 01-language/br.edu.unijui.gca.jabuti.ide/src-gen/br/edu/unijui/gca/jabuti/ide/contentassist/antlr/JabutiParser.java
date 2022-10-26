@@ -96,7 +96,7 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getWeekDaysIntervalAccess().getGroup(), "rule__WeekDaysInterval__Group__0");
 			builder.put(grammarAccess.getMessageContentAccess().getGroup(), "rule__MessageContent__Group__0");
 			builder.put(grammarAccess.getMessageContentAccess().getGroup_3(), "rule__MessageContent__Group_3__0");
-			builder.put(grammarAccess.getMessageContentAccess().getGroup_4(), "rule__MessageContent__Group_4__0");
+			builder.put(grammarAccess.getMessageContentAccess().getGroup_3_2(), "rule__MessageContent__Group_3_2__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup(), "rule__QualifiedName__Group__0");
 			builder.put(grammarAccess.getQualifiedNameAccess().getGroup_1(), "rule__QualifiedName__Group_1__0");
 			builder.put(grammarAccess.getQualifiedNameWithWildcardAccess().getGroup(), "rule__QualifiedNameWithWildcard__Group__0");
@@ -154,7 +154,7 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConditionalExpressionAccess().getBeforeSymbolAssignment_0(), "rule__ConditionalExpression__BeforeSymbolAssignment_0");
 			builder.put(grammarAccess.getConditionalExpressionAccess().getConditionParamAssignment_3(), "rule__ConditionalExpression__ConditionParamAssignment_3");
 			builder.put(grammarAccess.getConditionalExpressionAccess().getConditionTermAssignment_7(), "rule__ConditionalExpression__ConditionTermAssignment_7");
-			builder.put(grammarAccess.getConditionalExpressionAccess().getAftetrSymbolAssignment_9(), "rule__ConditionalExpression__AftetrSymbolAssignment_9");
+			builder.put(grammarAccess.getConditionalExpressionAccess().getAfterSymbolAssignment_9(), "rule__ConditionalExpression__AfterSymbolAssignment_9");
 			builder.put(grammarAccess.getCompositeConditionAccess().getSymbolAssignment_1_1_0(), "rule__CompositeCondition__SymbolAssignment_1_1_0");
 			builder.put(grammarAccess.getCompositeConditionAccess().getSymbolAssignment_1_1_1(), "rule__CompositeCondition__SymbolAssignment_1_1_1");
 			builder.put(grammarAccess.getCompositeConditionAccess().getRightAssignment_1_2(), "rule__CompositeCondition__RightAssignment_1_2");
@@ -175,7 +175,7 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMessageContentAccess().getContentAssignment_2_0(), "rule__MessageContent__ContentAssignment_2_0");
 			builder.put(grammarAccess.getMessageContentAccess().getComparisonOperatorAssignment_3_0(), "rule__MessageContent__ComparisonOperatorAssignment_3_0");
 			builder.put(grammarAccess.getMessageContentAccess().getExpressionAssignment_3_1(), "rule__MessageContent__ExpressionAssignment_3_1");
-			builder.put(grammarAccess.getMessageContentAccess().getTimeUnitAssignment_4_1(), "rule__MessageContent__TimeUnitAssignment_4_1");
+			builder.put(grammarAccess.getMessageContentAccess().getTimeUnitAssignment_3_2_1(), "rule__MessageContent__TimeUnitAssignment_3_2_1");
 			builder.put(grammarAccess.getComparisonOperatorAccess().getSymbolAssignment_0(), "rule__ComparisonOperator__SymbolAssignment_0");
 			builder.put(grammarAccess.getComparisonOperatorAccess().getSymbolAssignment_1(), "rule__ComparisonOperator__SymbolAssignment_1");
 			builder.put(grammarAccess.getComparisonOperatorAccess().getSymbolAssignment_2(), "rule__ComparisonOperator__SymbolAssignment_2");

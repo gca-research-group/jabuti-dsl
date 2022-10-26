@@ -1,11 +1,11 @@
 //SPDX-License-Identifier: MIT
 pragma solidity >= 0.6.0 < 0.9.0;
 pragma experimental 'ABIEncoderV2';
-import "./SafeMath.sol";
-import "./DateTimeLibrary.sol";
-import "./UsefulFunctions.sol";
+// import "./SafeMath.sol";
+// import "./DateTimeLibrary.sol";
+// import "./UsefulFunctions.sol";
 
-contract EAI_Domain{
+// contract EAI_Domain{
 
 
 //uint constant SECOND = 1;
@@ -178,5 +178,5 @@ contract EAI_Domain{
 //    	return false;            
 //    }
  
-}
+// }
 

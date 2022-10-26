@@ -43,7 +43,6 @@
 'as'=47
 'beginDate'=15
 'clauses'=21
-'condition'=24
 'contract'=12
 'dates'=14
 'do'=54
@@ -66,6 +65,7 @@
 'response'=71
 'right'=25
 'rolePlayer'=22
+'terms'=24
 'to'=57
 'variables'=20
 'when'=53

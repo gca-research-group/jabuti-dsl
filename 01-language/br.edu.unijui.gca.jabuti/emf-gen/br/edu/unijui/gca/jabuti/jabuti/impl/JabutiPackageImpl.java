@@ -1056,7 +1056,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EReference getConditionalExpression_AftetrSymbol()
+	public EReference getConditionalExpression_AfterSymbol()
 	{
 		return (EReference)conditionalExpressionEClass.getEStructuralFeatures().get(2);
 	}
@@ -1647,7 +1647,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		conditionalExpressionEClass = createEClass(CONDITIONAL_EXPRESSION);
 		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__CONDITION_TERM);
 		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__CONDITION_PARAM);
-		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__AFTETR_SYMBOL);
+		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__AFTER_SYMBOL);
 		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__BEFORE_SYMBOL);
 
 		conditionEClass = createEClass(CONDITION);
@@ -1844,7 +1844,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEClass(conditionalExpressionEClass, ConditionalExpression.class, "ConditionalExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConditionalExpression_ConditionTerm(), this.getConditionTerm(), null, "conditionTerm", null, 0, 1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditionalExpression_ConditionParam(), this.getConditionTerm(), null, "conditionParam", null, 0, 1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConditionalExpression_AftetrSymbol(), this.getLogicalOperator(), null, "aftetrSymbol", null, 0, 1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditionalExpression_AfterSymbol(), this.getLogicalOperator(), null, "afterSymbol", null, 0, 1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditionalExpression_BeforeSymbol(), this.getLogicalOperator(), null, "beforeSymbol", null, 0, 1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(conditionEClass, Condition.class, "Condition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

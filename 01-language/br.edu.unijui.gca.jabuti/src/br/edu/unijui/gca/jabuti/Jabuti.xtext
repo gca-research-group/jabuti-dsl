@@ -34,13 +34,12 @@ Contract:
 				
 	'}'; 
 	
-	
 // #################### CLAUSE STRUCTURE AND CLAUSE SUBTYPES ####################
 Clause: 
 	(Right | Prohibition | Obligation) '{'
 		'rolePlayer' '=' roleplayer=RolePlayer
 		'operation' '=' operation=Operation
-		'condition' '{' 
+		'terms' '{' 
 			condition = Condition			
 		'}'
 		eventLog+=EventLog*
@@ -161,7 +160,7 @@ Variable:
 
 
 
-//------------------ Inicio - versão nova ----------------
+//------------------ start of new version ----------------
 
 
 Condition:
@@ -174,7 +173,7 @@ ConditionalExpression :
 	'when' '('  conditionParam=ConditionTerm')' 'do' '{'
 		conditionTerm=ConditionTerm
 	'}'
-	(aftetrSymbol = LogicalOperator)?
+	(afterSymbol = LogicalOperator)?
 ;
 
 
@@ -183,7 +182,7 @@ ConditionTerm:
 ;
 
 CompositeCondition returns ConditionTerm:
-	NegationTerm ({BinaryTermOperator.left=current} (symbol='AND' | symbol='OR'  ) right=NegationTerm)*;
+	NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
 
 NegationTerm returns ConditionTerm:
 	Term | {UnaryTermOperator} symbol='NOT' conditionTerm=Term;
@@ -194,10 +193,10 @@ Term returns ConditionTerm:
 ;
 
 
-//  ----------------- fim - versão nova  -----------------
+//  ----------------- end new version proposal  -----------------
 
 LogicalOperator:
-	symbol=('AND' | 'OR' | 'NOT')
+	symbol=(',' | 'OR' | 'NOT')
 ;
 
 TimeInterval: 
@@ -206,8 +205,6 @@ TimeInterval:
 
 SessionInterval: 
 	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | QualifiedName ) )? ')'
-//	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
-//	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'per' value=STRING  ) ')'
 ; 
 
 Timeout:
@@ -223,7 +220,11 @@ WeekDaysInterval:
 ;
 
 MessageContent:
-	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression )? ('per' timeUnit=TimeUnit)? ')' )
+	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)? )?  ')' )
+
+//	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
+//	x (',' x)*
+// ver sobre o validation. Validar se uma variavel(referencia) foi criada 
 ;
 
 ComparisonOperator:

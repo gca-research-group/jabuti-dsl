@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionTerm <em>Condition Term</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAftetrSymbol <em>Aftetr Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}</li>
  * </ul>
  *
@@ -71,26 +71,26 @@ public interface ConditionalExpression extends EObject
 	void setConditionParam(ConditionTerm value);
 
 	/**
-	 * Returns the value of the '<em><b>Aftetr Symbol</b></em>' containment reference.
+	 * Returns the value of the '<em><b>After Symbol</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Aftetr Symbol</em>' containment reference.
-	 * @see #setAftetrSymbol(LogicalOperator)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_AftetrSymbol()
+	 * @return the value of the '<em>After Symbol</em>' containment reference.
+	 * @see #setAfterSymbol(LogicalOperator)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_AfterSymbol()
 	 * @model containment="true"
 	 * @generated
 	 */
-	LogicalOperator getAftetrSymbol();
+	LogicalOperator getAfterSymbol();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAftetrSymbol <em>Aftetr Symbol</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Aftetr Symbol</em>' containment reference.
-	 * @see #getAftetrSymbol()
+	 * @param value the new value of the '<em>After Symbol</em>' containment reference.
+	 * @see #getAfterSymbol()
 	 * @generated
 	 */
-	void setAftetrSymbol(LogicalOperator value);
+	void setAfterSymbol(LogicalOperator value);
 
 	/**
 	 * Returns the value of the '<em><b>Before Symbol</b></em>' containment reference.

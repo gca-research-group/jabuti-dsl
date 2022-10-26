@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getConditionTerm <em>Condition Term</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getConditionParam <em>Condition Param</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getAftetrSymbol <em>Aftetr Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getAfterSymbol <em>After Symbol</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getBeforeSymbol <em>Before Symbol</em>}</li>
  * </ul>
  *
@@ -56,14 +56,14 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	protected ConditionTerm conditionParam;
 
 	/**
-	 * The cached value of the '{@link #getAftetrSymbol() <em>Aftetr Symbol</em>}' containment reference.
+	 * The cached value of the '{@link #getAfterSymbol() <em>After Symbol</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAftetrSymbol()
+	 * @see #getAfterSymbol()
 	 * @generated
 	 * @ordered
 	 */
-	protected LogicalOperator aftetrSymbol;
+	protected LogicalOperator afterSymbol;
 
 	/**
 	 * The cached value of the '{@link #getBeforeSymbol() <em>Before Symbol</em>}' containment reference.
@@ -202,9 +202,9 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
-	public LogicalOperator getAftetrSymbol()
+	public LogicalOperator getAfterSymbol()
 	{
-		return aftetrSymbol;
+		return afterSymbol;
 	}
 
 	/**
@@ -212,13 +212,13 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAftetrSymbol(LogicalOperator newAftetrSymbol, NotificationChain msgs)
+	public NotificationChain basicSetAfterSymbol(LogicalOperator newAfterSymbol, NotificationChain msgs)
 	{
-		LogicalOperator oldAftetrSymbol = aftetrSymbol;
-		aftetrSymbol = newAftetrSymbol;
+		LogicalOperator oldAfterSymbol = afterSymbol;
+		afterSymbol = newAfterSymbol;
 		if (eNotificationRequired())
 		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL, oldAftetrSymbol, newAftetrSymbol);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, oldAfterSymbol, newAfterSymbol);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -230,20 +230,20 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
-	public void setAftetrSymbol(LogicalOperator newAftetrSymbol)
+	public void setAfterSymbol(LogicalOperator newAfterSymbol)
 	{
-		if (newAftetrSymbol != aftetrSymbol)
+		if (newAfterSymbol != afterSymbol)
 		{
 			NotificationChain msgs = null;
-			if (aftetrSymbol != null)
-				msgs = ((InternalEObject)aftetrSymbol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL, null, msgs);
-			if (newAftetrSymbol != null)
-				msgs = ((InternalEObject)newAftetrSymbol).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL, null, msgs);
-			msgs = basicSetAftetrSymbol(newAftetrSymbol, msgs);
+			if (afterSymbol != null)
+				msgs = ((InternalEObject)afterSymbol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, null, msgs);
+			if (newAfterSymbol != null)
+				msgs = ((InternalEObject)newAfterSymbol).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, null, msgs);
+			msgs = basicSetAfterSymbol(newAfterSymbol, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL, newAftetrSymbol, newAftetrSymbol));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, newAfterSymbol, newAfterSymbol));
 	}
 
 	/**
@@ -310,8 +310,8 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 				return basicSetConditionTerm(null, msgs);
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
 				return basicSetConditionParam(null, msgs);
-			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL:
-				return basicSetAftetrSymbol(null, msgs);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				return basicSetAfterSymbol(null, msgs);
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				return basicSetBeforeSymbol(null, msgs);
 		}
@@ -332,8 +332,8 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 				return getConditionTerm();
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
 				return getConditionParam();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL:
-				return getAftetrSymbol();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				return getAfterSymbol();
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				return getBeforeSymbol();
 		}
@@ -356,8 +356,8 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
 				setConditionParam((ConditionTerm)newValue);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL:
-				setAftetrSymbol((LogicalOperator)newValue);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				setAfterSymbol((LogicalOperator)newValue);
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				setBeforeSymbol((LogicalOperator)newValue);
@@ -382,8 +382,8 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
 				setConditionParam((ConditionTerm)null);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL:
-				setAftetrSymbol((LogicalOperator)null);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				setAfterSymbol((LogicalOperator)null);
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				setBeforeSymbol((LogicalOperator)null);
@@ -406,8 +406,8 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 				return conditionTerm != null;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
 				return conditionParam != null;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTETR_SYMBOL:
-				return aftetrSymbol != null;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				return afterSymbol != null;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				return beforeSymbol != null;
 		}
