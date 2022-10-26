@@ -13,7 +13,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getValue <em>Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getExpression <em>Expression</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getTimeout()
@@ -23,25 +23,25 @@ package br.edu.unijui.gca.jabuti.jabuti;
 public interface Timeout extends Term
 {
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getTimeout_Value()
-	 * @model
+	 * @return the value of the '<em>Expression</em>' containment reference.
+	 * @see #setExpression(Expression)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getTimeout_Expression()
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getValue();
+	Expression getExpression();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getExpression <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
+	 * @param value the new value of the '<em>Expression</em>' containment reference.
+	 * @see #getExpression()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setExpression(Expression value);
 
 } // Timeout

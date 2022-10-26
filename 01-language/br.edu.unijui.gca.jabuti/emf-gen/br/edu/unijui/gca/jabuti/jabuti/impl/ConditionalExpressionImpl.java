@@ -3,26 +3,19 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.Condition;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
-import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -32,44 +25,55 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getConditions <em>Conditions</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getLogicalOperator <em>Logical Operator</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getConditionTerm <em>Condition Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getConditionParam <em>Condition Param</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getAfterSymbol <em>After Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getBeforeSymbol <em>Before Symbol</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConditionalExpressionImpl extends ConditionImpl implements ConditionalExpression
+public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container implements ConditionalExpression
 {
 	/**
-	 * The cached value of the '{@link #getConditions() <em>Conditions</em>}' containment reference list.
+	 * The cached value of the '{@link #getConditionTerm() <em>Condition Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConditions()
+	 * @see #getConditionTerm()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Condition> conditions;
+	protected ConditionTerm conditionTerm;
 
 	/**
-	 * The cached value of the '{@link #getLogicalOperator() <em>Logical Operator</em>}' containment reference list.
+	 * The cached value of the '{@link #getConditionParam() <em>Condition Param</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLogicalOperator()
+	 * @see #getConditionParam()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<LogicalOperator> logicalOperator;
+	protected ConditionTerm conditionParam;
 
 	/**
-	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+	 * The cached value of the '{@link #getAfterSymbol() <em>After Symbol</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getExpression()
+	 * @see #getAfterSymbol()
 	 * @generated
 	 * @ordered
 	 */
-	protected Expression expression;
+	protected LogicalOperator afterSymbol;
+
+	/**
+	 * The cached value of the '{@link #getBeforeSymbol() <em>Before Symbol</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBeforeSymbol()
+	 * @generated
+	 * @ordered
+	 */
+	protected LogicalOperator beforeSymbol;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -98,13 +102,9 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	 * @generated
 	 */
 	@Override
-	public EList<Condition> getConditions()
+	public ConditionTerm getConditionTerm()
 	{
-		if (conditions == null)
-		{
-			conditions = new EObjectContainmentEList<Condition>(Condition.class, this, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITIONS);
-		}
-		return conditions;
+		return conditionTerm;
 	}
 
 	/**
@@ -112,39 +112,13 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public EList<LogicalOperator> getLogicalOperator()
+	public NotificationChain basicSetConditionTerm(ConditionTerm newConditionTerm, NotificationChain msgs)
 	{
-		if (logicalOperator == null)
-		{
-			logicalOperator = new EObjectContainmentEList<LogicalOperator>(LogicalOperator.class, this, JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR);
-		}
-		return logicalOperator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Expression getExpression()
-	{
-		return expression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
-	{
-		Expression oldExpression = expression;
-		expression = newExpression;
+		ConditionTerm oldConditionTerm = conditionTerm;
+		conditionTerm = newConditionTerm;
 		if (eNotificationRequired())
 		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION, oldExpression, newExpression);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM, oldConditionTerm, newConditionTerm);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -156,20 +130,170 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	 * @generated
 	 */
 	@Override
-	public void setExpression(Expression newExpression)
+	public void setConditionTerm(ConditionTerm newConditionTerm)
 	{
-		if (newExpression != expression)
+		if (newConditionTerm != conditionTerm)
 		{
 			NotificationChain msgs = null;
-			if (expression != null)
-				msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION, null, msgs);
-			if (newExpression != null)
-				msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION, null, msgs);
-			msgs = basicSetExpression(newExpression, msgs);
+			if (conditionTerm != null)
+				msgs = ((InternalEObject)conditionTerm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM, null, msgs);
+			if (newConditionTerm != null)
+				msgs = ((InternalEObject)newConditionTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM, null, msgs);
+			msgs = basicSetConditionTerm(newConditionTerm, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION, newExpression, newExpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM, newConditionTerm, newConditionTerm));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConditionTerm getConditionParam()
+	{
+		return conditionParam;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetConditionParam(ConditionTerm newConditionParam, NotificationChain msgs)
+	{
+		ConditionTerm oldConditionParam = conditionParam;
+		conditionParam = newConditionParam;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, oldConditionParam, newConditionParam);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setConditionParam(ConditionTerm newConditionParam)
+	{
+		if (newConditionParam != conditionParam)
+		{
+			NotificationChain msgs = null;
+			if (conditionParam != null)
+				msgs = ((InternalEObject)conditionParam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, null, msgs);
+			if (newConditionParam != null)
+				msgs = ((InternalEObject)newConditionParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, null, msgs);
+			msgs = basicSetConditionParam(newConditionParam, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, newConditionParam, newConditionParam));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LogicalOperator getAfterSymbol()
+	{
+		return afterSymbol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetAfterSymbol(LogicalOperator newAfterSymbol, NotificationChain msgs)
+	{
+		LogicalOperator oldAfterSymbol = afterSymbol;
+		afterSymbol = newAfterSymbol;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, oldAfterSymbol, newAfterSymbol);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setAfterSymbol(LogicalOperator newAfterSymbol)
+	{
+		if (newAfterSymbol != afterSymbol)
+		{
+			NotificationChain msgs = null;
+			if (afterSymbol != null)
+				msgs = ((InternalEObject)afterSymbol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, null, msgs);
+			if (newAfterSymbol != null)
+				msgs = ((InternalEObject)newAfterSymbol).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, null, msgs);
+			msgs = basicSetAfterSymbol(newAfterSymbol, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL, newAfterSymbol, newAfterSymbol));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LogicalOperator getBeforeSymbol()
+	{
+		return beforeSymbol;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetBeforeSymbol(LogicalOperator newBeforeSymbol, NotificationChain msgs)
+	{
+		LogicalOperator oldBeforeSymbol = beforeSymbol;
+		beforeSymbol = newBeforeSymbol;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL, oldBeforeSymbol, newBeforeSymbol);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setBeforeSymbol(LogicalOperator newBeforeSymbol)
+	{
+		if (newBeforeSymbol != beforeSymbol)
+		{
+			NotificationChain msgs = null;
+			if (beforeSymbol != null)
+				msgs = ((InternalEObject)beforeSymbol).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL, null, msgs);
+			if (newBeforeSymbol != null)
+				msgs = ((InternalEObject)newBeforeSymbol).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL, null, msgs);
+			msgs = basicSetBeforeSymbol(newBeforeSymbol, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL, newBeforeSymbol, newBeforeSymbol));
 	}
 
 	/**
@@ -182,12 +306,14 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITIONS:
-				return ((InternalEList<?>)getConditions()).basicRemove(otherEnd, msgs);
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
-				return ((InternalEList<?>)getLogicalOperator()).basicRemove(otherEnd, msgs);
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION:
-				return basicSetExpression(null, msgs);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM:
+				return basicSetConditionTerm(null, msgs);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
+				return basicSetConditionParam(null, msgs);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				return basicSetAfterSymbol(null, msgs);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
+				return basicSetBeforeSymbol(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -202,12 +328,14 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITIONS:
-				return getConditions();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
-				return getLogicalOperator();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION:
-				return getExpression();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM:
+				return getConditionTerm();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
+				return getConditionParam();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				return getAfterSymbol();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
+				return getBeforeSymbol();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -217,22 +345,22 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITIONS:
-				getConditions().clear();
-				getConditions().addAll((Collection<? extends Condition>)newValue);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM:
+				setConditionTerm((ConditionTerm)newValue);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
-				getLogicalOperator().clear();
-				getLogicalOperator().addAll((Collection<? extends LogicalOperator>)newValue);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
+				setConditionParam((ConditionTerm)newValue);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION:
-				setExpression((Expression)newValue);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				setAfterSymbol((LogicalOperator)newValue);
+				return;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
+				setBeforeSymbol((LogicalOperator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -248,14 +376,17 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITIONS:
-				getConditions().clear();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM:
+				setConditionTerm((ConditionTerm)null);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
-				getLogicalOperator().clear();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
+				setConditionParam((ConditionTerm)null);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION:
-				setExpression((Expression)null);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				setAfterSymbol((LogicalOperator)null);
+				return;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
+				setBeforeSymbol((LogicalOperator)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -271,12 +402,14 @@ public class ConditionalExpressionImpl extends ConditionImpl implements Conditio
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITIONS:
-				return conditions != null && !conditions.isEmpty();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
-				return logicalOperator != null && !logicalOperator.isEmpty();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION:
-				return expression != null;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM:
+				return conditionTerm != null;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
+				return conditionParam != null;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
+				return afterSymbol != null;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
+				return beforeSymbol != null;
 		}
 		return super.eIsSet(featureID);
 	}

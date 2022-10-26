@@ -42,9 +42,7 @@
 'application'=28
 'as'=47
 'beginDate'=15
-'by'=59
 'clauses'=21
-'condition'=24
 'contract'=12
 'dates'=14
 'do'=54
@@ -57,6 +55,7 @@
 'onSuccess'=30
 'operation'=23
 'parties'=19
+'per'=59
 'poll'=67
 'process'=29
 'prohibition'=27
@@ -66,6 +65,7 @@
 'response'=71
 'right'=25
 'rolePlayer'=22
+'terms'=24
 'to'=57
 'variables'=20
 'when'=53

@@ -1,0 +1,61 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_operations",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_timeUnit",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"libs/eai/MaxNumberOfOperation.sol": "MaxNumberOfOperation"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"libs/eai/MaxNumberOfOperation.sol": {
+			"keccak256": "0x639d5c997aa5fd81bc6f9a37a8ca1becae44a76da9a7384804dfb4af2cdf9f5c",
+			"urls": [
+				"bzz-raw://f6206f7b4b247c1e7be1a39452672c981232c261140769b32ff2b0120b1c9315",
+				"dweb:/ipfs/QmWRZyQ7EXDwFhYD3uwCLkMfc4bS9Ec4V9TfpPsMPJinWc"
+			]
+		}
+	},
+	"version": 1
+}

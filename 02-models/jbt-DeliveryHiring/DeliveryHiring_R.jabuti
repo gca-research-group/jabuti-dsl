@@ -11,6 +11,10 @@ contract DeliveryHiring_R {
 		process  	= "integrationProcess" 
 	}
 
+	variables{
+		numberOfAddresses = "count(//body/perosonalInformation/address/cep)" 
+	}
+	
 	clauses{
 		right requestDelivery {
 			/*Setting the days and hours to request a delivery,
@@ -20,15 +24,15 @@ contract DeliveryHiring_R {
 			operation = request
 			
 			condition {
-				BusinessDay(Monday to Friday) AND
+				WeekDaysInterval(Monday to Friday) AND
 				TimeInterval("08:30:00" to "18:30:00") AND
-				OperationLimit(5 by Day) AND
-				MessageContent("count(//address)" >= 1) AND 
-				MessageContent("count(//address)" <= 3) AND
-				MessageContent("count(//address)" <= 1000 by Month) 
+				MaxNumberOfOperation(5 per Day) AND
+				MessageContent(numberOfAddresses >= 1) AND 
+				MessageContent(numberOfAddresses <= 3) AND
+				MessageContent(numberOfAddresses <= 1000 per Month) 
 			}
 			// the onSuccess is optional
-			onBreach(EventLog("Request operation performed outside of allowed hours or limit operation exceeded"))
+			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))			
 		}
 	}
 }

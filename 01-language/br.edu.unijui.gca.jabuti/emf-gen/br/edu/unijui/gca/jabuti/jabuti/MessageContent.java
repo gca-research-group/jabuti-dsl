@@ -16,7 +16,8 @@ package br.edu.unijui.gca.jabuti.jabuti;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getValue <em>Value</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent()
@@ -95,25 +96,47 @@ public interface MessageContent extends Term
 	void setTimeUnit(TimeUnit value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_Value()
-	 * @model
+	 * @return the value of the '<em>Expression</em>' containment reference.
+	 * @see #setExpression(Expression)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_Expression()
+	 * @model containment="true"
 	 * @generated
 	 */
-	String getValue();
+	Expression getExpression();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
+	 * @param value the new value of the '<em>Expression</em>' containment reference.
+	 * @see #getExpression()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setExpression(Expression value);
+
+	/**
+	 * Returns the value of the '<em><b>Variable Value</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variable Value</em>' containment reference.
+	 * @see #setVariableValue(VariableValue)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_VariableValue()
+	 * @model containment="true"
+	 * @generated
+	 */
+	VariableValue getVariableValue();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Variable Value</em>' containment reference.
+	 * @see #getVariableValue()
+	 * @generated
+	 */
+	void setVariableValue(VariableValue value);
 
 } // MessageContent

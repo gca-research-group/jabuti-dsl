@@ -222,6 +222,33 @@ public interface JabutiFactory extends EFactory
 	OnSuccess createOnSuccess();
 
 	/**
+	 * Returns a new object of class '<em>Condition Term</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Condition Term</em>'.
+	 * @generated
+	 */
+	ConditionTerm createConditionTerm();
+
+	/**
+	 * Returns a new object of class '<em>Logical Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Logical Operator</em>'.
+	 * @generated
+	 */
+	LogicalOperator createLogicalOperator();
+
+	/**
+	 * Returns a new object of class '<em>Conditional Expression</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Conditional Expression</em>'.
+	 * @generated
+	 */
+	ConditionalExpression createConditionalExpression();
+
+	/**
 	 * Returns a new object of class '<em>Condition</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -247,6 +274,24 @@ public interface JabutiFactory extends EFactory
 	 * @generated
 	 */
 	Term createTerm();
+
+	/**
+	 * Returns a new object of class '<em>Unary Term Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Unary Term Operator</em>'.
+	 * @generated
+	 */
+	UnaryTermOperator createUnaryTermOperator();
+
+	/**
+	 * Returns a new object of class '<em>Binary Term Operator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Binary Term Operator</em>'.
+	 * @generated
+	 */
+	BinaryTermOperator createBinaryTermOperator();
 
 	/**
 	 * Returns a new object of class '<em>Session Interval</em>'.
@@ -310,24 +355,6 @@ public interface JabutiFactory extends EFactory
 	 * @generated
 	 */
 	ComparisonOperator createComparisonOperator();
-
-	/**
-	 * Returns a new object of class '<em>Conditional Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Conditional Expression</em>'.
-	 * @generated
-	 */
-	ConditionalExpression createConditionalExpression();
-
-	/**
-	 * Returns a new object of class '<em>Logical Operator</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Logical Operator</em>'.
-	 * @generated
-	 */
-	LogicalOperator createLogicalOperator();
 
 	/**
 	 * Returns the package supported by this factory.

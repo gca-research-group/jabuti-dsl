@@ -34,14 +34,13 @@ Contract:
 				
 	'}'; 
 	
-	
 // #################### CLAUSE STRUCTURE AND CLAUSE SUBTYPES ####################
 Clause: 
 	(Right | Prohibition | Obligation) '{'
 		'rolePlayer' '=' roleplayer=RolePlayer
 		'operation' '=' operation=Operation
-		'condition' '{' 
-			condition= Condition			
+		'terms' '{' 
+			condition = Condition			
 		'}'
 		eventLog+=EventLog*
 	'}' 
@@ -131,34 +130,73 @@ FunctionCall:
 ;
 
 Variable:
-	(name=ID '=' expression=Expression) 
-	//|(name=ID '=' businessRule+=BusinessRule)
+	name=ID '=' (expression=Expression | term = (MessageContent | TimeInterval | Timeout )) 
 ;
 
 
 // #################### CONDITION AND TERMS ####################
 
-Condition: 
-	Term | CompositeCondition | ConditionalExpression
+// ----------------- inicio versão antiga -----------------
+//Condition: 
+//	Term | CompositeCondition | ConditionalExpression
+//;
+//
+//Term:
+//	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
+//;
+//
+//CompositeCondition:	
+//	conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*
+//;
+//
+//ConditionalExpression: 
+//	conditions+=CompositeCondition
+//	'when' '(' expression=Expression ')' 'do' '{'
+//		conditions+=CompositeCondition
+//	'}'
+//;
+
+// ----------------- fim - versão antiga -----------------
+
+
+
+//------------------ start of new version ----------------
+
+
+Condition:
+	(conditionTerm += ConditionTerm |
+	conditionalExpression+=ConditionalExpression)+
 ;
 
-Term returns Condition:
-	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
-;
-
-CompositeCondition:	
-	conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*
-;
-
-ConditionalExpression: 
-	conditions+=CompositeCondition
-	'when' '(' expression=Expression ')' 'do' '{'
-		conditions+=CompositeCondition
+ConditionalExpression :
+	(beforeSymbol = LogicalOperator)?
+	'when' '('  conditionParam=ConditionTerm')' 'do' '{'
+		conditionTerm=ConditionTerm
 	'}'
+	(afterSymbol = LogicalOperator)?
 ;
+
+
+ConditionTerm:
+	CompositeCondition
+;
+
+CompositeCondition returns ConditionTerm:
+	NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
+
+NegationTerm returns ConditionTerm:
+	Term | {UnaryTermOperator} symbol='NOT' conditionTerm=Term;
+	
+Term returns ConditionTerm:
+	'(' ConditionTerm ')' |
+	SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+;
+
+
+//  ----------------- end new version proposal  -----------------
 
 LogicalOperator:
-	symbol=('AND' | 'OR' | 'NOT')
+	symbol=(',' | 'OR' | 'NOT')
 ;
 
 TimeInterval: 
@@ -166,17 +204,15 @@ TimeInterval:
 ; 
 
 SessionInterval: 
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' messageContent=MessageContent  ) ')'|
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit')') |
-	('SessionInterval' '('frequency=INT timeUnit=TimeUnit 'by' value=STRING  ) ')'
+	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | QualifiedName ) )? ')'
 ; 
 
 Timeout:
-	'Timeout' '(' value=STRING ')'
+	'Timeout' '(' expression=Expression ')'
 ;
 
 MaxNumberOfOperation:
-	'MaxNumberOfOperation' '(' operationNumber=INT 'by' timeUnit=TimeUnit  ')'
+	'MaxNumberOfOperation' '(' operationsNumber=INT ('per' timeUnit=TimeUnit)?  ')'
 ;
 
 WeekDaysInterval:
@@ -184,18 +220,16 @@ WeekDaysInterval:
 ;
 
 MessageContent:
-	('MessageContent' '(' content=STRING ')') | 	
-	('MessageContent' '(' content=STRING 'by' timeUnit=TimeUnit')') |
-	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator value=STRING')' )|
-	('MessageContent' '(' content=STRING comparisonOperator=ComparisonOperator value=STRING 'by' timeUnit=TimeUnit')' ) 
-;
+	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)? )?  ')' )
 
+//	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
+//	x (',' x)*
+// ver sobre o validation. Validar se uma variavel(referencia) foi criada 
+;
 
 ComparisonOperator:
 	symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='	| symbol='==' 
 ;
-
-
 
 //############################################
 //por que utilizar um qualifiedName e como ID ?
@@ -204,8 +238,6 @@ QualifiedName:
 	
 QualifiedNameWithWildcard:
 	QualifiedName '.*'; 
-	
-	
 	
 // #################### ENUM SECTION ####################
 

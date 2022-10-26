@@ -11,7 +11,7 @@ contract DeliveryHiring_P  {
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
-
+	
 	clauses{
 		prohibition requestDelivery {
 			/*Setting the prohibition regarding to the days and hours to request a delivery,
@@ -20,12 +20,12 @@ contract DeliveryHiring_P  {
 			operation = request
 			
 			condition {
-				BusinessDay(Saturday to Sunday) OR
-				TimeInterval("18:30:00" to "08:30:00") OR
-				OperationLimit(6 by Minute) OR
-				MessageContent("count(//address)"!= 1)		
+				WeekDaysInterval(Saturday to Sunday)
+				TimeInterval("18:30:00" to "08:30:00")
+				MaxNumberOfOperation(6 per Minute)
+				MessageContent("count(//address)" != 1 )				
 			}
-			onBreach(EventLog("Request operation performed outside of allowed hours or limit operation exceeded"))
+			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))
 		}
 	}
 }

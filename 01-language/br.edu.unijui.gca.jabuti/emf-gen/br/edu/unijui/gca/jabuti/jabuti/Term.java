@@ -14,6 +14,6 @@ package br.edu.unijui.gca.jabuti.jabuti;
  * @model
  * @generated
  */
-public interface Term extends Condition
+public interface Term extends ConditionTerm
 {
 } // Term

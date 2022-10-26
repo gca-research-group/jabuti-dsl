@@ -5,10 +5,12 @@ package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
 import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
 import br.edu.unijui.gca.jabuti.jabuti.Condition;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
@@ -38,6 +40,7 @@ import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 import br.edu.unijui.gca.jabuti.jabuti.WeekDay;
@@ -126,9 +129,14 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.EVENT_LOG: return createEventLog();
 			case JabutiPackage.ON_BREACH: return createOnBreach();
 			case JabutiPackage.ON_SUCCESS: return createOnSuccess();
+			case JabutiPackage.CONDITION_TERM: return createConditionTerm();
+			case JabutiPackage.LOGICAL_OPERATOR: return createLogicalOperator();
+			case JabutiPackage.CONDITIONAL_EXPRESSION: return createConditionalExpression();
 			case JabutiPackage.CONDITION: return createCondition();
 			case JabutiPackage.COMPOSITE_CONDITION: return createCompositeCondition();
 			case JabutiPackage.TERM: return createTerm();
+			case JabutiPackage.UNARY_TERM_OPERATOR: return createUnaryTermOperator();
+			case JabutiPackage.BINARY_TERM_OPERATOR: return createBinaryTermOperator();
 			case JabutiPackage.SESSION_INTERVAL: return createSessionInterval();
 			case JabutiPackage.WEEK_DAYS_INTERVAL: return createWeekDaysInterval();
 			case JabutiPackage.TIME_INTERVAL: return createTimeInterval();
@@ -136,8 +144,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION: return createMaxNumberOfOperation();
 			case JabutiPackage.MESSAGE_CONTENT: return createMessageContent();
 			case JabutiPackage.COMPARISON_OPERATOR: return createComparisonOperator();
-			case JabutiPackage.CONDITIONAL_EXPRESSION: return createConditionalExpression();
-			case JabutiPackage.LOGICAL_OPERATOR: return createLogicalOperator();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -459,6 +465,42 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
+	public ConditionTerm createConditionTerm()
+	{
+		ConditionTermImpl conditionTerm = new ConditionTermImpl();
+		return conditionTerm;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public LogicalOperator createLogicalOperator()
+	{
+		LogicalOperatorImpl logicalOperator = new LogicalOperatorImpl();
+		return logicalOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ConditionalExpression createConditionalExpression()
+	{
+		ConditionalExpressionImpl conditionalExpression = new ConditionalExpressionImpl();
+		return conditionalExpression;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Condition createCondition()
 	{
 		ConditionImpl condition = new ConditionImpl();
@@ -487,6 +529,30 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	{
 		TermImpl term = new TermImpl();
 		return term;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public UnaryTermOperator createUnaryTermOperator()
+	{
+		UnaryTermOperatorImpl unaryTermOperator = new UnaryTermOperatorImpl();
+		return unaryTermOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public BinaryTermOperator createBinaryTermOperator()
+	{
+		BinaryTermOperatorImpl binaryTermOperator = new BinaryTermOperatorImpl();
+		return binaryTermOperator;
 	}
 
 	/**
@@ -571,30 +637,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	{
 		ComparisonOperatorImpl comparisonOperator = new ComparisonOperatorImpl();
 		return comparisonOperator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public ConditionalExpression createConditionalExpression()
-	{
-		ConditionalExpressionImpl conditionalExpression = new ConditionalExpressionImpl();
-		return conditionalExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public LogicalOperator createLogicalOperator()
-	{
-		LogicalOperatorImpl logicalOperator = new LogicalOperatorImpl();
-		return logicalOperator;
 	}
 
 	/**

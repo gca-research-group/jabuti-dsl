@@ -1,9 +1,15 @@
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
 
-import "./libs/EAI_Domain.sol";
+// import "../../libs/eai/WeekDaysInterval.sol";
+import "../../libs/eai/TimeInterval.sol";
+import "../../libs/eai/MaxNumberOfOperation.sol";
+import "../../libs/eai/MessageContent.sol";
+import "../../libs/eai/Party.sol";
+import "../../libs/util/TimeUnit.sol";
+// import "../../libs/util/WeekDays.sol";
 
-contract DeliveryHiring is EAI_Domain{
+contract DeliveryHiring{
 	
 	uint32 beginDate = 1641024000;
 	uint32 dueDate = 1672509600;
@@ -12,21 +18,21 @@ contract DeliveryHiring is EAI_Domain{
 	Party integrationProcess;
 	
 	// variables referring to the requestDeliver clause	
-	BusinessDay[] public businessDay;
-	TimeInterval[] public timeInterval;
-	OperationLimit[] public operationLimit;
+	WeekDaysInterval[] public weekDaysInterval_request;
+	TimeInterval[] public timeInterval_request;
+	MaxNumberOfOperation[] public MaxNumberOfOperation_request;
 	MessageContent[] public messageContent_request;
    
-    event failEvent(string message);
+  event onBreach_01(string message);
 
 	constructor(address _applicationWallet, address _processWallet){
 	    deliverySystem = Party("Delivery system", _applicationWallet);
 	    integrationProcess = Party("Integration process", _processWallet);
 			
-		businessDay.push(BusinessDay(MONDAY, FRIDAY));
+		weekDaysInterval_request.push(WeekDaysInterval(Monday, FRIDAY));
 
-		timeInterval.push(TimeInterval(28800,64800));
-		operationLimit.push(OperationLimit(5, DAY,0,0));
+		timeInterval_request.push(TimeInterval(28800,64800));
+		MaxNumberOfOperation_request.push(MaxNumberOfOperation(5, MONDAY, 0, 0));
 		messageContent_request.push(MessageContent("count(//address)",">=","1",0,0,0));
 		messageContent_request.push(MessageContent("count(//address)","<=","3",0,0,0));
 		messageContent_request.push(MessageContent("count(//address)","<=","200",MONTH, setEndOfInterval(beginDate, MONTH), 0)); 

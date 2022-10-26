@@ -5,10 +5,12 @@ package br.edu.unijui.gca.jabuti.jabuti.util;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
 import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
 import br.edu.unijui.gca.jabuti.jabuti.Condition;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
@@ -34,6 +36,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Term;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval;
@@ -219,6 +222,21 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 				return createOnSuccessAdapter();
 			}
 			@Override
+			public Adapter caseConditionTerm(ConditionTerm object)
+			{
+				return createConditionTermAdapter();
+			}
+			@Override
+			public Adapter caseLogicalOperator(LogicalOperator object)
+			{
+				return createLogicalOperatorAdapter();
+			}
+			@Override
+			public Adapter caseConditionalExpression(ConditionalExpression object)
+			{
+				return createConditionalExpressionAdapter();
+			}
+			@Override
 			public Adapter caseCondition(Condition object)
 			{
 				return createConditionAdapter();
@@ -232,6 +250,16 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseTerm(Term object)
 			{
 				return createTermAdapter();
+			}
+			@Override
+			public Adapter caseUnaryTermOperator(UnaryTermOperator object)
+			{
+				return createUnaryTermOperatorAdapter();
+			}
+			@Override
+			public Adapter caseBinaryTermOperator(BinaryTermOperator object)
+			{
+				return createBinaryTermOperatorAdapter();
 			}
 			@Override
 			public Adapter caseSessionInterval(SessionInterval object)
@@ -267,16 +295,6 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseComparisonOperator(ComparisonOperator object)
 			{
 				return createComparisonOperatorAdapter();
-			}
-			@Override
-			public Adapter caseConditionalExpression(ConditionalExpression object)
-			{
-				return createConditionalExpressionAdapter();
-			}
-			@Override
-			public Adapter caseLogicalOperator(LogicalOperator object)
-			{
-				return createLogicalOperatorAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -631,6 +649,51 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionTerm <em>Condition Term</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionTerm
+	 * @generated
+	 */
+	public Adapter createConditionTermAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperator
+	 * @generated
+	 */
+	public Adapter createLogicalOperatorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression <em>Conditional Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
+	 * @generated
+	 */
+	public Adapter createConditionalExpressionAdapter()
+	{
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Condition <em>Condition</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -671,6 +734,36 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createTermAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator <em>Unary Term Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator
+	 * @generated
+	 */
+	public Adapter createUnaryTermOperatorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator <em>Binary Term Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator
+	 * @generated
+	 */
+	public Adapter createBinaryTermOperatorAdapter()
 	{
 		return null;
 	}
@@ -776,36 +869,6 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createComparisonOperatorAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression <em>Conditional Expression</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
-	 * @generated
-	 */
-	public Adapter createConditionalExpressionAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator <em>Logical Operator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperator
-	 * @generated
-	 */
-	public Adapter createLogicalOperatorAdapter()
 	{
 		return null;
 	}

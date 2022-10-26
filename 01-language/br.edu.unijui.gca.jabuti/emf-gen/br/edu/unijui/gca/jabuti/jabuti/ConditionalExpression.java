@@ -3,7 +3,7 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti;
 
-import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,61 +14,104 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditions <em>Conditions</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator <em>Logical Operator</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionTerm <em>Condition Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression()
  * @model
  * @generated
  */
-public interface ConditionalExpression extends Condition
+public interface ConditionalExpression extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Conditions</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.Condition}.
+	 * Returns the value of the '<em><b>Condition Term</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Conditions</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_Conditions()
+	 * @return the value of the '<em>Condition Term</em>' containment reference.
+	 * @see #setConditionTerm(ConditionTerm)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ConditionTerm()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Condition> getConditions();
+	ConditionTerm getConditionTerm();
 
 	/**
-	 * Returns the value of the '<em><b>Logical Operator</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator}.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionTerm <em>Condition Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Logical Operator</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_LogicalOperator()
+	 * @param value the new value of the '<em>Condition Term</em>' containment reference.
+	 * @see #getConditionTerm()
+	 * @generated
+	 */
+	void setConditionTerm(ConditionTerm value);
+
+	/**
+	 * Returns the value of the '<em><b>Condition Param</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Condition Param</em>' containment reference.
+	 * @see #setConditionParam(ConditionTerm)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ConditionParam()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<LogicalOperator> getLogicalOperator();
+	ConditionTerm getConditionParam();
 
 	/**
-	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Expression</em>' containment reference.
-	 * @see #setExpression(Expression)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_Expression()
+	 * @param value the new value of the '<em>Condition Param</em>' containment reference.
+	 * @see #getConditionParam()
+	 * @generated
+	 */
+	void setConditionParam(ConditionTerm value);
+
+	/**
+	 * Returns the value of the '<em><b>After Symbol</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>After Symbol</em>' containment reference.
+	 * @see #setAfterSymbol(LogicalOperator)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_AfterSymbol()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Expression getExpression();
+	LogicalOperator getAfterSymbol();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpression <em>Expression</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Expression</em>' containment reference.
-	 * @see #getExpression()
+	 * @param value the new value of the '<em>After Symbol</em>' containment reference.
+	 * @see #getAfterSymbol()
 	 * @generated
 	 */
-	void setExpression(Expression value);
+	void setAfterSymbol(LogicalOperator value);
+
+	/**
+	 * Returns the value of the '<em><b>Before Symbol</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Before Symbol</em>' containment reference.
+	 * @see #setBeforeSymbol(LogicalOperator)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_BeforeSymbol()
+	 * @model containment="true"
+	 * @generated
+	 */
+	LogicalOperator getBeforeSymbol();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Before Symbol</em>' containment reference.
+	 * @see #getBeforeSymbol()
+	 * @generated
+	 */
+	void setBeforeSymbol(LogicalOperator value);
 
 } // ConditionalExpression

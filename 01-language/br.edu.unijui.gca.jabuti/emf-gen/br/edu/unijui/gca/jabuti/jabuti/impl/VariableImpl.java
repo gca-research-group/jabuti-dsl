@@ -5,6 +5,7 @@ package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Term;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.VariableImpl#getName <em>Name</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.VariableImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.VariableImpl#getTerm <em>Term</em>}</li>
  * </ul>
  *
  * @generated
@@ -61,6 +63,16 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @ordered
 	 */
 	protected Expression expression;
+
+	/**
+	 * The cached value of the '{@link #getTerm() <em>Term</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTerm()
+	 * @generated
+	 * @ordered
+	 */
+	protected Term term;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,12 +176,64 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 	 * @generated
 	 */
 	@Override
+	public Term getTerm()
+	{
+		return term;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTerm(Term newTerm, NotificationChain msgs)
+	{
+		Term oldTerm = term;
+		term = newTerm;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.VARIABLE__TERM, oldTerm, newTerm);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTerm(Term newTerm)
+	{
+		if (newTerm != term)
+		{
+			NotificationChain msgs = null;
+			if (term != null)
+				msgs = ((InternalEObject)term).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.VARIABLE__TERM, null, msgs);
+			if (newTerm != null)
+				msgs = ((InternalEObject)newTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.VARIABLE__TERM, null, msgs);
+			msgs = basicSetTerm(newTerm, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.VARIABLE__TERM, newTerm, newTerm));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
 		{
 			case JabutiPackage.VARIABLE__EXPRESSION:
 				return basicSetExpression(null, msgs);
+			case JabutiPackage.VARIABLE__TERM:
+				return basicSetTerm(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -188,6 +252,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 				return getName();
 			case JabutiPackage.VARIABLE__EXPRESSION:
 				return getExpression();
+			case JabutiPackage.VARIABLE__TERM:
+				return getTerm();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,6 +273,9 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 				return;
 			case JabutiPackage.VARIABLE__EXPRESSION:
 				setExpression((Expression)newValue);
+				return;
+			case JabutiPackage.VARIABLE__TERM:
+				setTerm((Term)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,6 +297,9 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 			case JabutiPackage.VARIABLE__EXPRESSION:
 				setExpression((Expression)null);
 				return;
+			case JabutiPackage.VARIABLE__TERM:
+				setTerm((Term)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,6 +318,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case JabutiPackage.VARIABLE__EXPRESSION:
 				return expression != null;
+			case JabutiPackage.VARIABLE__TERM:
+				return term != null;
 		}
 		return super.eIsSet(featureID);
 	}

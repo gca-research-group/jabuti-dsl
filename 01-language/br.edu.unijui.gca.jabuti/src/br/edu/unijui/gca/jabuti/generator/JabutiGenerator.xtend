@@ -7,6 +7,16 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import java.sql.Timestamp
+
+import br.edu.unijui.gca.jabuti.jabuti.Contract
+
+import br.edu.unijui.gca.jabuti.jabuti.Timeout
+import br.edu.unijui.gca.jabuti.jabuti.Condition
+import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
+import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation
+import br.edu.unijui.gca.jabuti.jabuti.MessageContent
+import br.edu.unijui.gca.jabuti.jabuti.TimeInterval
 
 /**
  * Generates code from your model files on save.
@@ -15,11 +25,97 @@ import org.eclipse.xtext.generator.IGeneratorContext
  */
 class JabutiGenerator extends AbstractGenerator {
 
+//	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+////		fsa.generateFile('greetings.txt', 'People to greet: ' + 
+////			resource.allContents
+////				.filter(Greeting)
+////				.map[name]
+////				.join(', '))
+//	}
+	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		for (c : resource.allContents.filter(Contract).toIterable) {
+			fsa.generateFile(c.name + '.sol', generateSolCode(c))
+		}
 	}
+
+	def generateSolCode(Contract c) {
+		'''
+			//SPDX-License-Identifier: MIT
+			pragma solidity ^0.8.14;
+			
+			import "./libs/EAI_Domain.sol";
+			
+			contract «c.name» is EAI_Domain{
+				
+				Party «c.application.name»;
+				Party «c.process.name»;
+				
+				«getConditions(c.clauses.get(0).condition)»
+				
+				event «c.clauses.get(0).name+"event"»(string _logMessage);
+				
+				constructor(address _applicationWallet, address _processWallet){
+			    	«c.application.name» = Party("«c.process.name» ", _applicationWallet);
+				    «c.process.name» = Party("«c.process.name»", _processWallet);
+				}
+				
+				function «c.clauses.get(0).name»(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
+								
+					
+					bool isBreached=false;
+					
+					if(«getConditionals(c.clauses.get(0).condition)») {
+						operationLimit.requestsPerformed+=1;
+			        	return true;	
+					}
+					
+					emit «c.clauses.get(0).name+"event"» ("Request made outside of allowed hours or distance limit exceeded");
+					return false;
+				}
+			}
+		'''
+	}
+
+	def getTS(String date){
+		return (Timestamp.valueOf(date).getTime()/1000);
+	}
+	
+	def getConditions(Condition condition){
+		'''
+			«FOR c: condition.eAllContents.toIterable»
+				«IF(c instanceof Timeout)»
+					Timeout public timeout = Timeout(«c.expression», 0);
+				«ELSEIF(c instanceof WeekDaysInterval)»
+					WeekDaysInterval public weekDaysInterval = WeekDaysInterval(«c.start», «c.end»);
+				«ELSEIF(c instanceof TimeInterval)»
+					TimeInterval public timeInterval = TimeInterval(«c.start», «c.end»);
+				«ELSEIF(c instanceof MaxNumberOfOperation)»
+					MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(«c.operationsNumber», «c.timeUnit», 0, 0);
+				«ELSEIF(c instanceof MessageContent)»
+					MessageContent public messageContent = MessageContent("«c.content»");
+				«ENDIF»
+			«ENDFOR»
+		'''
+	}
+	
+	def getConditionals(Condition condition){
+		'''	
+		«FOR c: condition.eAllContents.toIterable»
+			«IF(c instanceof Timeout)»
+				!isTimeout(_accessDateTime, timeout.endTime) &&
+			«ELSEIF(c instanceof WeekDaysInterval)»
+				isBusinessDay(_accessDateTime, businessDay) &&
+			«ELSEIF(c instanceof TimeInterval)»
+				isIntoTimeInterval(_accessDateTime, timeInterval) &&
+			«ELSEIF(c instanceof MaxNumberOfOperation)»
+				!isOperationLimitReached(_accessDateTime, operationLimit) &&
+			«ENDIF»
+		«ENDFOR»
+		'''
+	}
+	
 }
+	
+	
+//}

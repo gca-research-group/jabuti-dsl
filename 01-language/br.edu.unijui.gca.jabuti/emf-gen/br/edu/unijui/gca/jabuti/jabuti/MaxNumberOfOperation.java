@@ -13,7 +13,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getOperationNumber <em>Operation Number</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getOperationsNumber <em>Operations Number</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getTimeUnit <em>Time Unit</em>}</li>
  * </ul>
  *
@@ -24,26 +24,26 @@ package br.edu.unijui.gca.jabuti.jabuti;
 public interface MaxNumberOfOperation extends Term
 {
 	/**
-	 * Returns the value of the '<em><b>Operation Number</b></em>' attribute.
+	 * Returns the value of the '<em><b>Operations Number</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Operation Number</em>' attribute.
-	 * @see #setOperationNumber(int)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMaxNumberOfOperation_OperationNumber()
+	 * @return the value of the '<em>Operations Number</em>' attribute.
+	 * @see #setOperationsNumber(int)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMaxNumberOfOperation_OperationsNumber()
 	 * @model
 	 * @generated
 	 */
-	int getOperationNumber();
+	int getOperationsNumber();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getOperationNumber <em>Operation Number</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getOperationsNumber <em>Operations Number</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Operation Number</em>' attribute.
-	 * @see #getOperationNumber()
+	 * @param value the new value of the '<em>Operations Number</em>' attribute.
+	 * @see #getOperationsNumber()
 	 * @generated
 	 */
-	void setOperationNumber(int value);
+	void setOperationsNumber(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Time Unit</b></em>' attribute.
