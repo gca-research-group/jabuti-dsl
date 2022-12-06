@@ -29,7 +29,10 @@ library EAI{
     uint8 constant MONTH= 5;
     uint8 constant YEAR= 6;
 
-
+    // Interval in milliseconds between the min and max hour 
+    // allowed to use in a contract(0 to 23:59:59.999)
+    uint32 constant MIN_HOUR = 0;
+    uint32 constant MAX_HOUR= 86399999; 
 
 /* ========================================================================== */
 /*                                     PARTY                                  */
@@ -102,7 +105,7 @@ library EAI{
    function isIntoWeekDaysIntervals(
     uint8 _weekDay, 
     WeekDaysInterval [] memory _wdInterval
-    ) internal pure returns(bool){
+    ) internal pure onlyValidDay(_weekDay) returns(bool){
         // bool flagReturn = false;
         uint vLength = _wdInterval.length;
         for(uint i=0; i<vLength; i++){
@@ -145,6 +148,82 @@ library EAI{
     }
 
 
+/* ========================================================================== */
+/*                                    TIME INTERVAL                            */
+/* ========================================================================== */
+    // the hours are storage in milliseconds
+    struct  TimeInterval{
+        uint32 start;
+        uint32 end;
+    } 
+
+    function createTimeInterval(
+        uint32 _start, 
+        uint32 _end
+        ) internal pure onlyValidHours(_start, _end) returns ( TimeInterval memory){
+        return TimeInterval(_start, _end);
+    } 
+
+    function setTimeInterval( 
+        TimeInterval storage _ti,
+        uint32 _start,
+        uint32 _end
+        ) internal onlyValidHours(_start, _end){
+        _ti.start= _start;
+        _ti.end = _end;     
+    }
+
+    function getOneTimeInterval( TimeInterval memory _ti )internal pure returns(uint32 start, uint32 end){
+            return (_ti.start, _ti.end);
+    }
+    
+    function getAllTimeIntervals(TimeInterval[] memory _ti) internal pure returns(TimeInterval[] memory){
+        return _ti;
+    }
+
+   // check into a set of TimeIntervals
+   function isIntoTimeIntervals(
+    uint32 _timeAccess, 
+    TimeInterval [] memory _ti
+    ) internal pure  onlyValidHour(_timeAccess)returns(bool){
+        uint vLength = _ti.length;
+        for(uint i=0; i<vLength; i++){
+               if(isIntoTimeInterval(_timeAccess, _ti[i])){                
+                return true; 
+               }
+        }
+        return false; 
+    }
+
+    // check into one weekDaysInterval
+    function isIntoTimeInterval(
+        uint32 _timeAccess,
+        TimeInterval memory _ti
+        ) internal pure returns(bool){
+       
+        if(_ti.start < _ti.end ){
+                if(_timeAccess >= _ti.start &&  _timeAccess <= _ti.end){
+                return true;
+            }
+        }else{
+             if(_timeAccess >= _ti.start ||  _timeAccess <=_ti.end){
+                return true;
+            }   
+        }        
+       return false;
+   }
+
+   /* ---------------------- modifiers from the weekDaysInterval ----------- */ 
+    modifier onlyValidHours(uint32 _startHr, uint32 _endHr) {
+        require( _startHr >= MIN_HOUR && _startHr <= MAX_HOUR, "The _startDay not represents a valid day");
+        require(_endHr >= MIN_HOUR && _endHr <= MAX_HOUR,  "The _endDay not represents a valid day");
+        _;
+    }
+    
+    modifier onlyValidHour(uint32 _hour) {
+        require((_hour >= MIN_HOUR && _hour <= MAX_HOUR), "The given number/day not represents a valid day");
+        _;
+    }
 
 /* ========================================================================== */
 /*                                   UTILITIES                                */

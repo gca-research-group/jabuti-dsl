@@ -11,16 +11,15 @@ contract DeliveryHiring_O {
 		process  	= "integrationProcess" 
 	}
 
-	clauses{	
+	clauses{
 		obligation responseOrder{
-				/* Setting the time limit for responding to a request */
-				rolePlayer = application
-				operation = response
-				condition { 
-					Timeout("180") AND
-					MessageContent("//budget/id/text()" != "") 						
-				}
-				onBreach(log("Request made outside of allowed hours or distance limit exceeded"))
+			rolePlayer = application
+			operation = response
+			terms {
+				Timeout("180"),
+				MessageContent('//budget/id/text()" != "')				
 			}
+			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
+		}			
 	}
 }

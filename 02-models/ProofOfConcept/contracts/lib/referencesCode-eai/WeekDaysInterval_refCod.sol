@@ -8,11 +8,6 @@ contract WeekDaysInterval_refCod{
     EAI.Party application;
     EAI.WeekDaysInterval[] public weekDaysInterval;
 
-    // the follow flag is use just for testing in truffle, 
-    // the methods that use this flag should, should be change to
-    //  view or pure, and the flag into the method should be deleted
-    bool flagTruffleTesting=false;
-
     constructor (){
         weekDaysInterval.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.TUESDAY));
         weekDaysInterval.push(EAI.createWeekDaysInterval(EAI.THURSDAY, EAI.SATURDAY));
@@ -31,8 +26,7 @@ contract WeekDaysInterval_refCod{
     }
 
     // check into a set of weekDaysIntervals
-    function isIntoWeekDaysIntervals( uint8 _weekDay) public  returns(bool){
-        flagTruffleTesting = true; 
+    function isIntoWeekDaysIntervals( uint8 _weekDay) public view returns(bool){
         return EAI.isIntoWeekDaysIntervals(_weekDay, weekDaysInterval); 
     } 
 

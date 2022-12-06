@@ -25,12 +25,12 @@ contract DeliveryHiring_RO {
 			rolePlayer = application
 			operation = request
 			
-			condition {
-				WeekDaysInterval(Monday to Friday) AND
-				TimeInterval("08:30:00" to "18:30:00") AND
-				MaxNumberOfOperation(5 per Day) AND
-				MessageContent(numberOfAddresses >= 1) AND 
-				MessageContent(numberOfAddresses <= 3) AND
+			terms {
+				WeekDaysInterval(Monday to Friday),
+				TimeInterval("08:30:00" to "18:30:00"),
+				MaxNumberOfOperation(5 per Day),
+				MessageContent(numberOfAddresses >= 1), 
+				MessageContent(numberOfAddresses <= 3),
 				MessageContent(numberOfAddresses <= 1000 per Month) 
 			}
 			// the onSuccess is optional
@@ -42,8 +42,8 @@ contract DeliveryHiring_RO {
 			/* Setting the time limit for responding to a request */
 			rolePlayer = application
 			operation = response
-			condition { 
-				Timeout("180") AND
+			terms { 
+				Timeout("180"),
 				MessageContent("//budget/id/text()" != "") 						
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))

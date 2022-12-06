@@ -19,10 +19,10 @@ contract DeliveryHiring_P  {
 			rolePlayer = process
 			operation = request
 			
-			condition {
-				WeekDaysInterval(Saturday to Sunday)
-				TimeInterval("18:30:00" to "08:30:00")
-				MaxNumberOfOperation(6 per Minute)
+			terms {
+				WeekDaysInterval(Saturday to Sunday),
+				TimeInterval("18:30:00" to "08:30:00"),
+				MaxNumberOfOperation(6 per Minute),
 				MessageContent("count(//address)" != 1 )				
 			}
 			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))
