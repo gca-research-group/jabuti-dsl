@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/lib/eai/EAI.sol": "EAI"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0xe90f4aedf3321dc65a98193d8e2576dedcc14df3651ea67310ba03b9beeb1599",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://94f666b1528eda3846aecdad498ae7ac500dc9dc2a944187776122529df965bf",
+				"dweb:/ipfs/QmPX3DLSrftJnMk5GvbQr3JBAbTNCDjCLN8v5gfL26yR7c"
+			]
+		}
+	},
+	"version": 1
+}

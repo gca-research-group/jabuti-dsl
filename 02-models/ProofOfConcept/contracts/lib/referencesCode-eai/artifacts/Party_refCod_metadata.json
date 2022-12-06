@@ -1,0 +1,152 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_applicationAddress",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_walletAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeApplicationParty",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getApplicationAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_walletAddress",
+						"type": "address"
+					}
+				],
+				"name": "getParty",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "walletAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "aware",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct EAI.Party",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProcessAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "signContract",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/lib/referencesCode-eai/Party_refCod.sol": "Party_refCod"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0x8f80e69e5f0d9eb5e55f3fd2746c0584212c7609b6cc89d12b3f3e14b558cc92",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c0ffb7dd25661b42ff5e245371063d9ddcfa7519c72f0b1fd888aa11708951a0",
+				"dweb:/ipfs/QmQQi6espNDQ4QhY5eN6fksk2xRePT8jZBwDmVVbydc7AC"
+			]
+		},
+		"contracts/lib/referencesCode-eai/Party_refCod.sol": {
+			"keccak256": "0x7692340048ebd43284af7a4b2d2cac870c12eb18b4f3d777f918f0e5172f1593",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8d5dd62dc5a72840c4e4b0a6ea574c20ac029f184d98f0e63d42313417011f3c",
+				"dweb:/ipfs/Qmc86PB8LcEhL1gKg2aXHvsMgfVBPz1PCDxGiQHnbjGEGd"
+			]
+		}
+	},
+	"version": 1
+}
