@@ -1,6 +1,7 @@
 
 //SPDX-License-Identifier: MIT
-pragma solidity  ^0.8.13;
+pragma solidity >0.8.4 < 0.8.14;
+
 
 // pragma experimental 'ABIEncoderV2';
 
@@ -29,10 +30,10 @@ library EAI{
     uint8 constant MONTH= 5;
     uint8 constant YEAR= 6;
 
-    // Interval in milliseconds between the min and max hour 
-    // allowed to use in a contract(0 to 23:59:59.999)
+    // Interval in seconds between the min and max hour 
+    // allowed to use in a contract(0 to 23:59:59)
     uint32 constant MIN_HOUR = 0;
-    uint32 constant MAX_HOUR= 86399999; 
+    uint32 constant MAX_HOUR= 86399; 
 
 /* ========================================================================== */
 /*                                     PARTY                                  */
@@ -226,6 +227,33 @@ library EAI{
     }
 
 /* ========================================================================== */
+/*                                    TIME OUT                                */
+/* ========================================================================== */
+    struct Timeout{
+        uint32 endTime;
+        uint32 timeIncrement;
+    }
+
+    function createTimeout(uint32 _timeIncrement) internal pure returns (Timeout memory ){
+        return Timeout(0, _timeIncrement);
+    }
+    
+    function isTimeoutEnded(Timeout memory _timeout, uint32 _accessTime) internal pure onlyValidAccessTime(_accessTime) returns(bool){        
+        require(_timeout.endTime > 0, "There is no endTime set in timeout");
+        return _accessTime > _timeout.endTime;
+    }
+
+    function setEndTimeInTimeout(Timeout storage _timeout, uint32 _startTime)internal onlyValidAccessTime(_startTime){      
+        _timeout.endTime = _startTime + _timeout.timeIncrement; 
+    }
+
+    modifier onlyValidAccessTime(uint32 _time){
+        string memory strTime  = uint2String(_time);
+        require(bytes(strTime).length <= 10);// epoch time in seconds
+        _;
+    }
+
+/* ========================================================================== */
 /*                                   UTILITIES                                */
 /* ========================================================================== */
 
@@ -298,7 +326,6 @@ function getSubstring(string memory _str, uint _left, uint _right)internal pure 
         }
         return string(buffer);
     }
-
 
     // function getAllWeekDaysIntervals(WeekDaysInterval[] memory _wdi) internal pure returns(string memory) {
     //     uint vLength = _wdi.length;

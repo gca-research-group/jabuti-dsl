@@ -1,0 +1,157 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getAllTimeouts",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "timeIncrement",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.Timeout[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getOneTimeout",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "timeIncrement",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.Timeout",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "_idTimeout",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessTime",
+						"type": "uint32"
+					}
+				],
+				"name": "isTimeoutEnded",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_idTimeout",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_startTime",
+						"type": "uint32"
+					}
+				],
+				"name": "setTimeoutEnd",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/lib/referencesCode-eai/Timeout_refCod.sol": "Timeout_refCod"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0x233c3d698bf6a71d3d3158e9fb4914eb95a504131227cd9dd8c07f26eb20c8f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c7db85b5101c3c06e24e9d55534d9addc3f727a65e0a3e65136b31968f252f84",
+				"dweb:/ipfs/QmcFi1ehJWJ9wi4e4Pts3vtt47H7dPdjkfM8yQw1a4CVtY"
+			]
+		},
+		"contracts/lib/referencesCode-eai/Timeout_refCod.sol": {
+			"keccak256": "0x6ad07ab52f4c21f2673f8c619fe2dc5e3a026397203faf9f6639f0fa17170d20",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0c0dae510fc905e36f3f5dcadb3dcd71e6d8781a81af3eb00b4623b363204888",
+				"dweb:/ipfs/QmVyTrezQL18B5UHooXwzVeFSxzRUnA45DNUJEAeHcJBuv"
+			]
+		}
+	},
+	"version": 1
+}

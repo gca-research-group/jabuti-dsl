@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: MIT
-pragma solidity  ^0.8.13;
+pragma solidity >0.8.4 < 0.8.14;
 // pragma experimental 'ABIEncoderV2';
 import "../eai/EAI.sol";
 
@@ -8,6 +8,7 @@ contract Party_refCod{
     using EAI for EAI.Party;
     EAI.Party process;
     EAI.Party application;
+
 
     mapping(address=>EAI.Party) public mapParty;
 

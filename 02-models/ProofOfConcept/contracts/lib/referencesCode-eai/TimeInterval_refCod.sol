@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT 
-pragma solidity >=0.8.13 <=0.8.17;
+pragma solidity >0.8.4 < 0.8.14;
 
 import "../eai/EAI.sol";
 
@@ -11,9 +11,9 @@ contract TimeInterval_refCod{
     
     constructor(){
         // 10:00:00 to 14:00:00
-        timeInterval.push(EAI.createTimeInterval(36000000,50400000));
+        timeInterval.push(EAI.createTimeInterval(36000,50400));
         // 22:00:00 to 02:00:00
-        timeInterval.push(EAI.createTimeInterval(79200000, 7200000));
+        timeInterval.push(EAI.createTimeInterval(79200, 7200));
     }
 
     function setTimeInterval(uint  _idTi, uint32 _startHour, uint32 _endHour)public {
