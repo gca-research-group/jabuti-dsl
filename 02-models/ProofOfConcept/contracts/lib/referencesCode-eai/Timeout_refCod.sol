@@ -3,10 +3,6 @@ pragma solidity >0.8.4 < 0.8.14;
 
 import "../eai/EAI.sol";
 
-// startTime: 1670530986
-// timeout: 50 seconds
-// endTime:  1670531036
-
 contract  Timeout_refCod{
     using EAI for EAI.Timeout;
     EAI.Timeout [] timeout;

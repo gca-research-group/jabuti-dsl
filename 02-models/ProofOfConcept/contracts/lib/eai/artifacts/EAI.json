@@ -34,18 +34,18 @@
 			"functionDebugData": {},
 			"generatedSources": [],
 			"linkReferences": {},
-			"object": "60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212208c832fb2e0e6a1e44df9967051fde2ffe01d5549e198ada41dff02774240ca8f64736f6c634300080d0033",
-			"opcodes": "PUSH1 0x56 PUSH1 0x50 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x43 JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP13 DUP4 0x2F 0xB2 0xE0 0xE6 LOG1 0xE4 0x4D 0xF9 SWAP7 PUSH17 0x51FDE2FFE01D5549E198ADA41DFF027742 BLOCKHASH 0xCA DUP16 PUSH5 0x736F6C6343 STOP ADDMOD 0xD STOP CALLER ",
-			"sourceMap": "114:11916:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+			"object": "60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202cd4b3ebba798f424443c03d2c32c0cd6a64e79e2b4a60601bdc705ceecee1e664736f6c63430008070033",
+			"opcodes": "PUSH1 0x56 PUSH1 0x50 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x43 JUMPI PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2C 0xD4 0xB3 0xEB 0xBA PUSH26 0x8F424443C03D2C32C0CD6A64E79E2B4A60601BDC705CEECEE1E6 PUSH5 0x736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+			"sourceMap": "114:23752:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
 		},
 		"deployedBytecode": {
 			"functionDebugData": {},
 			"generatedSources": [],
 			"immutableReferences": {},
 			"linkReferences": {},
-			"object": "73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212208c832fb2e0e6a1e44df9967051fde2ffe01d5549e198ada41dff02774240ca8f64736f6c634300080d0033",
-			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 DUP13 DUP4 0x2F 0xB2 0xE0 0xE6 LOG1 0xE4 0x4D 0xF9 SWAP7 PUSH17 0x51FDE2FFE01D5549E198ADA41DFF027742 BLOCKHASH 0xCA DUP16 PUSH5 0x736F6C6343 STOP ADDMOD 0xD STOP CALLER ",
-			"sourceMap": "114:11916:0:-:0;;;;;;;;"
+			"object": "73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212202cd4b3ebba798f424443c03d2c32c0cd6a64e79e2b4a60601bdc705ceecee1e664736f6c63430008070033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 0x2C 0xD4 0xB3 0xEB 0xBA PUSH26 0x8F424443C03D2C32C0CD6A64E79E2B4A60601BDC705CEECEE1E6 PUSH5 0x736F6C6343 STOP ADDMOD SMOD STOP CALLER ",
+			"sourceMap": "114:23752:0:-:0;;;;;;;;"
 		},
 		"gasEstimates": {
 			"creation": {
@@ -55,26 +55,36 @@
 			},
 			"internal": {
 				"becomeAware(struct EAI.Party storage pointer)": "infinite",
+				"calcNextEndTime(uint32,uint8,uint32)": "infinite",
+				"calcNextEndTimeForSecMinHrDayOrWeek(uint8,uint32,uint32)": "infinite",
+				"createMaxNumberOfOperation(uint32)": "infinite",
+				"createMaxNumberOfOperationByTime(uint32,uint8)": "infinite",
 				"createParty(string memory,address,bool)": "infinite",
 				"createTimeInterval(uint32,uint32)": "infinite",
 				"createTimeout(uint32)": "infinite",
 				"createWeekDaysInterval(uint8,uint8)": "infinite",
+				"decreaseNumberOfOperation(struct EAI.MaxNumberOfOperation storage pointer)": "infinite",
+				"decreaseNumberOfOperationByTime(struct EAI.MaxNumberOfOperationByTime storage pointer,uint32)": "infinite",
 				"getAllTimeIntervals(struct EAI.TimeInterval memory[] memory)": "infinite",
 				"getAllWeekDaysIntervals(struct EAI.WeekDaysInterval memory[] memory)": "infinite",
 				"getOneTimeInterval(struct EAI.TimeInterval memory)": "infinite",
 				"getOneWeekDaysInterval(struct EAI.WeekDaysInterval memory)": "infinite",
 				"getSubstring(string memory,uint256,uint256)": "infinite",
+				"getTimeInSeconds(uint8)": "infinite",
+				"isAccessDatetimeOutOfOldInterval(struct EAI.MaxNumberOfOperationByTime storage pointer,uint32)": "infinite",
 				"isIntoTimeInterval(uint32,struct EAI.TimeInterval memory)": "infinite",
 				"isIntoTimeIntervals(uint32,struct EAI.TimeInterval memory[] memory)": "infinite",
 				"isIntoWeekDaysInterval(uint8,struct EAI.WeekDaysInterval memory)": "infinite",
 				"isIntoWeekDaysIntervals(uint8,struct EAI.WeekDaysInterval memory[] memory)": "infinite",
 				"isTimeoutEnded(struct EAI.Timeout memory,uint32)": "infinite",
 				"setEndTimeInTimeout(struct EAI.Timeout storage pointer,uint32)": "infinite",
+				"setNewEndTimeAndRestOfOperations(struct EAI.MaxNumberOfOperationByTime storage pointer,uint32)": "infinite",
 				"setPartyAddress(struct EAI.Party storage pointer,address)": "infinite",
 				"setPartyName(struct EAI.Party storage pointer,string memory)": "infinite",
 				"setTimeInterval(struct EAI.TimeInterval storage pointer,uint32,uint32)": "infinite",
 				"setWeekDayInterval(struct EAI.WeekDaysInterval storage pointer,uint8,uint8)": "infinite",
 				"stringToUint(string memory)": "infinite",
+				"timeStampToDate(uint256)": "infinite",
 				"uint2Str(uint256)": "infinite",
 				"uint2String(uint256)": "infinite"
 			}

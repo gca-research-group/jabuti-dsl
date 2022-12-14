@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.13+commit.abaa5c0e"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0x77de15330d3f0f78531dcef4d788577bbe3e3a578cb25f1573c62ff9ca411662",
+			"keccak256": "0x863841471b00db51c5d4d9a050676f9cb376ca2fa1ea45b234e21f04a1f6e554",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1da58c07f2a8a231021cdb8a1eef69a7f6ea24a07458f34e20eb7898e5ad5491",
-				"dweb:/ipfs/QmZoDTojFYWz1xdK9Mxhov2dEsbRtJvyciVaEyzXqCFn4M"
+				"bzz-raw://9f495ba7253058a126bad9b69e593f1c8e325a089a7ecf6748091309c794eeb0",
+				"dweb:/ipfs/QmUZh9UchxzwtM6Khk4vtZN8XqshXbbqegHuSG6ZJ44r9P"
 			]
 		}
 	},
