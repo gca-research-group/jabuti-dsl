@@ -15,8 +15,8 @@ contract WeekDaysInterval_refCod{
 
     function setWeekDaysInterval(uint _wdi_id, uint8 _start, uint8 _end) public {
         EAI.setWeekDayInterval(weekDaysInterval[_wdi_id] ,_start, _end);
-
     }
+
     function getWeekDaysInterval(uint8 id_weekDaysInterval) public view returns(uint8 start, uint8 end){
         return EAI.getOneWeekDaysInterval(weekDaysInterval[id_weekDaysInterval]);
     }

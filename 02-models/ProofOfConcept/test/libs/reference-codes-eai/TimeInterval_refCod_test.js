@@ -66,6 +66,7 @@ contract("TimeInterval_refCod", (accounts) => {
     }
   });
 });
+
 // function used to catch the error reason when a call() function
 // trows an exception "revert" in solidity
 function getErrorReasonFromCall(err) {

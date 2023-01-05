@@ -33,16 +33,24 @@ contract("WeekDaysInterval_refCod", (accounts) => {
     } catch (error) {
       let isValid = await wdi_instance.isIntoWeekDaysIntervals.call(2);
       assert.equal(isValid, true);
-      //   console.log("catch a new day");
     }
   });
 
   it("Catch a expeption when try to set invalid day in a exist weekDayIntervals", async () => {
     try {
-      let result = await wdi_instance.setWeekDaysInterval(1, 2, 9);
+      let result = await wdi_instance.setWeekDaysInterval.call(1, 2, 9);
       assert.equal(result.receipt.status, false);
     } catch (error) {
-      assert.equal(error.reason, "The _endDay not represents a valid day");
+
+      let errorReason = getErrorReasonFromCall(error)
+      assert.equal(errorReason, "The _endDay not represents a valid day");
     }
   });
 });
+
+function getErrorReasonFromCall(err) {
+  let data = err["data"];
+  let firstKey = Object.keys(data)[0];
+  let error_reason = data[firstKey]["reason"];
+  return error_reason;
+} 

@@ -1,5 +1,6 @@
 // path to test "./test/libs/reference-codes-eai/Party_refCod_test.js"
 const Party_refCod = artifacts.require("Party_refCod");
+const expect = require("chai").expect;
 
 contract("Party_refCod", (accounts) => {
   const processAddress = accounts[0];
@@ -32,14 +33,14 @@ contract("Party_refCod", (accounts) => {
 
   it("Exception caught when one party (no application) try to sing the contract", async () => {
     try {
-      let result = await party_eai_instance.signContract({
+      let result = await party_eai_instance.signContract.call({
         from: processAddress,
       });
-      console.log(result.receipt.status);
       assert.equal(result.receipt.status, false);
     } catch (error) {
+     let errorReason = getErrorReasonFromCall(error);
       assert.equal(
-        error.reason,
+        errorReason,
         "Only the application can execute this operation"
       );
     }
@@ -59,32 +60,16 @@ contract("Party_refCod", (accounts) => {
 
   it("Exception caught when try to sign a signed contract", async () => {
     try {
-      const result = await party_eai_instance.signContract({
+      const result = await party_eai_instance.signContract.call({
         from: applicationAddress,
       });
       assert.equal(result.receipt.status, false);
     } catch (error) {
-      assert.equal(error.reason, "The contract is already signed");
+     let errorReason = getErrorReasonFromCall(error);
+      assert.equal(errorReason, "The contract is already signed");
     }
   });
 
-  it("Exception caught when other party (no process) try to execute the updateParty()", async () => {
-    let app2 = await party_eai_instance.getParty.call(applicationAddress);
-    try {
-      let result = await party_eai_instance.changeApplicationParty(
-        "App_2",
-        applicationAddress2,
-        { from: applicationAddress }
-      );
-      assert.equal(result.receipt.status, false);
-    } catch (error) {
-      assert.equal(error.reason, "Only the process can execute this operation");
-    }
-    // At this time, the aware property has already been set to true in previous tests
-    assert.equal(app2.name, "applicationName");
-    assert.equal(app2.walletAddress, applicationAddress);
-    assert.equal(app2.aware, true);
-  });
 
   it("Update party", async () => {
     await party_eai_instance.changeApplicationParty(
@@ -96,4 +81,40 @@ contract("Party_refCod", (accounts) => {
     assert.equal(app2.walletAddress, applicationAddress2);
     assert.equal(app2.aware, false);
   });
+
+  it("Exception caught when other party (no process) try to execute the updateParty()", async () => {
+    // The application address was updated in the previous method 
+    // In this moment aplication address is the applicationAddress2
+    let app2 = await party_eai_instance.getParty.call(applicationAddress2);
+    assert.equal(app2.name, "App_2");
+    assert.equal(app2.walletAddress, applicationAddress2);
+    assert.equal(app2.aware, false);
+
+    /* let app2 = await party_eai_instance.getParty.call(applicationAddress);
+    assert.equal(app2.name, "applicationName"); */
+    try {
+      let result = await party_eai_instance.changeApplicationParty.call(
+        "App_2",
+        applicationAddress2,
+        { from: applicationAddress }
+      );
+      assert.equal(result.receipt.status, false);
+    } catch (error) {
+     let errorReason = getErrorReasonFromCall(error);
+      assert.equal(errorReason, "Only the process can execute this operation");
+    }
+    // At this time, the aware property is false because in a previous method it was changed the 
+    // application party, then the contract needs to be signed again.
+    assert.equal(app2.name, "App_2");
+    assert.equal(app2.walletAddress, applicationAddress2);
+    assert.equal(app2.aware, false);
+  });
+
 });
+
+ function getErrorReasonFromCall(err) {
+  let data = err["data"];
+  let firstKey = Object.keys(data)[0];
+  let error_reason = data[firstKey]["reason"];
+  return error_reason;
+} 

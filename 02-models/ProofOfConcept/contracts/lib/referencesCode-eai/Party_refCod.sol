@@ -9,7 +9,6 @@ contract Party_refCod{
     EAI.Party process;
     EAI.Party application;
 
-
     mapping(address=>EAI.Party) public mapParty;
 
     constructor(address _applicationAddress){
@@ -25,7 +24,6 @@ contract Party_refCod{
         require(application.aware == false, "The contract is already signed");        
         application.aware = true;  
         updateMapParty(msg.sender, application);
-       
     }
 
     function updateMapParty(address _walletAddress, EAI.Party storage _party)internal{       
@@ -34,10 +32,12 @@ contract Party_refCod{
 
     /* It only possible to change the name and the address of the party. 
     After change the  party, da new party need to sign the contract */
-    function changeApplicationParty(string memory _name, address _walletAddress) public onlyProcess {       
+    function changeApplicationParty(string memory _name, address _walletAddress) public returns(bool) {       
+        require(process.walletAddress == msg.sender, "Only the process can execute this operation");
         delete mapParty[application.walletAddress];
         application = EAI.createParty(_name, _walletAddress, false);          
-        updateMapParty(_walletAddress, application);              
+        updateMapParty(_walletAddress, application);
+        return true;       
     }
 
     function getProcessAddress() public view onlyInvolvedParties returns(address){
