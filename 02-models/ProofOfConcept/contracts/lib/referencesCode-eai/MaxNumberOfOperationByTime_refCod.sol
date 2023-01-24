@@ -8,15 +8,15 @@ using EAI for EAI.MaxNumberOfOperationByTime;
 
 EAI.MaxNumberOfOperationByTime[] maxOp;
 
-constructor (){
-    maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.SECOND));
-    maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.MINUTE));
-    maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.HOUR));
-    maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.DAY));
-    maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.WEEK));
-    maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.MONTH));
-    maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.YEAR));
-}
+    constructor (){
+        maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.SECOND));
+        maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.MINUTE));
+        maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.HOUR));
+        maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.DAY));
+        maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.WEEK));
+        maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.MONTH));
+        maxOp.push( EAI.createMaxNumberOfOperationByTime(2, EAI.YEAR));
+    }
 
     function decreaseOperation(uint8 timeUnit, uint32 _accessTime)public {
         if(timeUnit == EAI.SECOND){
@@ -36,7 +36,7 @@ constructor (){
         }
     }
 
-    function getMaxOp(uint _id) public view returns(EAI.MaxNumberOfOperationByTime memory){
+    function getMaxOpByTime(uint _id) public view returns(EAI.MaxNumberOfOperationByTime memory){
         return maxOp[_id];
     }
 
@@ -44,4 +44,8 @@ constructor (){
         return EAI.timeStampToDate(_timestamp);
     }
 
+    function getAllMaxOpByTime() public view returns(EAI.MaxNumberOfOperationByTime[] memory){
+        return maxOp;
+    }
+    
 }

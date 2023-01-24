@@ -388,7 +388,7 @@ library EAI{
             // for values equal to year or month will be used the unit 1 to increase the endTime 
             auxByTime = 1; 
         }
-        return MaxNumberOfOperationByTime(_amount, _timeUnit, auxByTime, 0, 0);
+        return MaxNumberOfOperationByTime(_amount, _timeUnit, auxByTime, _amount, 0);
     }
 
     function getTimeInSeconds(uint8 timeUnit) private pure returns(uint32){
