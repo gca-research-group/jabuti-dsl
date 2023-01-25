@@ -285,58 +285,6 @@ library EAI{
         _;
     }
 
-/* ========================================================================== */
-/*                      MAX NUMBER OF OPERATION BY TIME                       */
-/* ========================================================================== */
-
-
-    // struct MaxNumberOfOperationByTime{
-    //     uint32 amount;
-    //     uint32 byTime;
-    //     uint32 rest;
-    //     uint32 endTime;
-    // }
-
-    // function createMaxNumberOfOperationByTime(uint32 _amount, uint32 _byTime ) internal pure returns(MaxNumberOfOperationByTime memory){
-    //     return MaxNumberOfOperationByTime(_amount, _byTime, 0, 0); // the rest and endTime will be set when the first decreaseNumber call is done
-    // }
-
-    // function decreaseNumberOfOperationByTime(
-    //     MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
-    //     uint32 _accessDateTime
-    //     )internal  {
-    //         if(isAccessDatetimeOutOfOldInterval(_maxNumberOfOperationByTime, _accessDateTime)){
-    //             setNewEndTimeAndRestOfOperations(_maxNumberOfOperationByTime, _accessDateTime);
-    //         }
-    //         require(_maxNumberOfOperationByTime.rest > 0, "There are no operations available");
-    //          _maxNumberOfOperationByTime.rest -=1;
-    // }
-
-    // // identificar se um novo periodo iniciou para redefinir a propriedade byTime e o rest.
-    // function isAccessDatetimeOutOfOldInterval(
-    //     MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime, 
-    //     uint32 _accessDateTime
-    //     ) internal view returns(bool) {
-    //     return _accessDateTime > _maxNumberOfOperationByTime.endTime;
-    // }
-
-    // function setNewEndTimeAndRestOfOperations(
-    //     MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
-    //     uint32 _accessDateTime
-    //     ) private {
-    //     _maxNumberOfOperationByTime.rest = _maxNumberOfOperationByTime.amount;
-    //     _maxNumberOfOperationByTime.endTime = calcNextEndTime(_maxNumberOfOperationByTime, _accessDateTime);
-    // }
-
-    // function calcNextEndTime(
-    //     MaxNumberOfOperationByTime memory _maxNumberOfOperationByTime,
-    //     uint32 _accessDateTime
-    //     ) private pure returns(uint32){
-
-    //     uint32 mod =  uint32(_accessDateTime % _maxNumberOfOperationByTime.byTime);
-    //     uint32 timeToNextEndTime = _maxNumberOfOperationByTime.byTime - mod;
-    //     return _accessDateTime + timeToNextEndTime;
-    // }
 
 /* ========================================================================== */
 /*                      MAX NUMBER OF OPERATION BY TIME                       */
@@ -349,30 +297,6 @@ library EAI{
         uint32 rest;
         uint32 endTime;
     }
-
-    // function createMaxNumberOfOperationByTime(
-    //     uint32 _amount,
-    //     uint8 _timeUnit
-    //     )internal pure returns(MaxNumberOfOperationByTime memory){
-
-    //     uint32 [] memory auxByTime;// = new uint32[](2) ;
-
-    //     if(_timeUnit == YEAR){
-    //         auxByTime = new uint32[](2);
-    //         auxByTime[0]= 31536000; // 365 dias
-    //         auxByTime[1] = 31622400; // 366 dias
-    //     }else if(_timeUnit == MONTH){
-    //         auxByTime = new uint32[](4);
-    //         auxByTime[0] = 2419200; // 28 dias
-    //         auxByTime[1] = 2505600; // 29 dias
-    //         auxByTime[2] = 2592000; // 30 dias
-    //         auxByTime[3] = 2678400; // 31 dias
-    //     }else{
-    //         auxByTime = new uint32[](1);
-    //         auxByTime[0]= getTimeInSeconds(_timeUnit);
-    //     }
-    //     return MaxNumberOfOperationByTime(_amount, _timeUnit, auxByTime, 0, 0);
-    // }
 
     function createMaxNumberOfOperationByTime(
         uint32 _amount,
@@ -412,33 +336,13 @@ library EAI{
         MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
         uint32 _accessDateTime
         )internal  {
-            if(isAccessDatetimeOutOfOldInterval(_maxNumberOfOperationByTime, _accessDateTime)){
+            if(isAccessDatetimeOutOfOldInterval(_maxNumberOfOperationByTime.timeUnit, _maxNumberOfOperationByTime.endTime, _accessDateTime)){
                 setNewEndTimeAndRestOfOperations(_maxNumberOfOperationByTime, _accessDateTime);
             }
             require(_maxNumberOfOperationByTime.rest > 0, "There are no operations available");
              _maxNumberOfOperationByTime.rest -=1;
     }
 
-    // identificar se um novo periodo iniciou para redefinir a propriedade byTime e o rest.
-    function isAccessDatetimeOutOfOldInterval(
-        MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime, 
-        uint32 _accessDateTime
-        ) internal view returns(bool) {
-        
-        uint8 timeUnit = _maxNumberOfOperationByTime.timeUnit;
-        if(timeUnit <= WEEK){
-            return _accessDateTime >= _maxNumberOfOperationByTime.endTime;
-        } else if(timeUnit == MONTH) {            
-            (,uint32 month,) = timeStampToDate(_accessDateTime);    
-            if((_maxNumberOfOperationByTime.endTime == 13) && (month==1)){
-                return true;
-            }        
-            return month >= _maxNumberOfOperationByTime.endTime;
-        }
-        // else timeUnit == YEAR 
-        (uint32 year, ,) = timeStampToDate(_accessDateTime);
-        return year >= _maxNumberOfOperationByTime.endTime;
-    }
 
     function setNewEndTimeAndRestOfOperations(
         MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
@@ -450,6 +354,46 @@ library EAI{
                                                 _maxNumberOfOperationByTime.timeUnit,
                                                 _accessDateTime
                                                 );
+    }
+
+
+
+/* ========================================================================== */
+/*                                MESSAGE CONTENT                            */
+/* ========================================================================== */
+
+
+
+
+
+
+
+/* ========================================================================== */
+/*                                   UTILITIES                                */
+/* ========================================================================== */
+
+
+
+// --------- FUNCTIONS TO WORK WITH TIME AND DATES ---------
+   
+    // identificar se um novo periodo iniciou para redefinir a propriedade byTime e o rest.
+    function isAccessDatetimeOutOfOldInterval(uint8 _timeUnit, uint32 _endTime, 
+        uint32 _accessDateTime
+        ) internal pure returns(bool) {
+        
+        uint8 timeUnit = _timeUnit;
+        if(timeUnit <= WEEK){
+            return _accessDateTime >= _endTime;
+        } else if(timeUnit == MONTH) {            
+            (,uint32 month,) = timeStampToDate(_accessDateTime);    
+            if((_endTime == 13) && (month==1)){
+                return true;
+            }        
+            return month >= _endTime;
+        }
+        // else timeUnit == YEAR 
+        (uint32 year, ,) = timeStampToDate(_accessDateTime);
+        return year >= _endTime;
     }
 
     function calcNextEndTime(       
@@ -466,7 +410,6 @@ library EAI{
         }else if(_timeUnit == MONTH){
             (,uint currentMonth,) = timeStampToDate(_accessDateTime); 
              return uint32(currentMonth+1);
-            // return uint32((currentMonth==12) ? 1 : currentMonth+1);
         }else{      
             (uint year,,) = timeStampToDate(_accessDateTime);
             return uint32(year + 1);
@@ -489,38 +432,6 @@ library EAI{
         return _accessDateTime + timeToNextEndTime;
     }
 
-    // function getIndexMonth(uint32 _month, uint32 _year) private pure returns(uint8){
-    //     // return 0 for month with 28 day
-    //     // return 1 for month with 29 day
-    //     // return 2 for month with 30 day
-    //     // return 3 for month with 31 day
-    //     if (_month == 1 || _month == 3 || _month == 5 || _month == 7 || _month == 8 || _month == 10 || _month == 12) {
-    //         return 3;
-    //     } else if (_month != 2) {
-    //         return 2;
-    //     } else {
-    //         return  isLeapYear(_year) ? 1 : 0;
-    //     }
-    // }
-
-    // function getIndexYear(uint32 _year) private pure returns(uint8){
-    //     if( isLeapYear(_year)){
-    //         return 1;
-    //     }
-    //     return 0;
-    // }
-    
-    // function isLeapYear(uint32 _year) internal pure returns(bool){
-    //     uint16 anoMod400 = uint16(_year%400); 
-    //     uint16 anoMod4 = uint16(_year%4); 
-    //     uint16 anoMod100 = uint16(_year%100); 
-
-    //     if( (anoMod400 == 0) || ((anoMod4 == 0) && (anoMod100 != 0))){
-    //         return true;
-    //     }
-    //     return false;
-    // }
-
     function timeStampToDate(uint _timestamp) internal pure returns (uint32 year, uint32 month, uint32 day) {
        
         uint32 __days = uint32(_timestamp / SECONDS_PER_DAY);
@@ -540,23 +451,18 @@ library EAI{
         month = uint32(_month);
         day = uint32(_day);
     }
-/* ========================================================================== */
-/*                                MESSAGE CONTENT                            */
-/* ========================================================================== */
 
 
 
-/* ========================================================================== */
-/*                                   UTILITIES                                */
-/* ========================================================================== */
+// --------- FUNCTIONS DO MANIPULATE STRINGS AND CONVERT STRING->INT AND INT->STRING ---------
 
-    function getSubstring(string memory _str, uint _left, uint _right)internal pure returns(string memory){
-        string memory subStr;
-        for(uint i=_left; i<=_right; i++){
-            subStr = string(abi.encodePacked(subStr, bytes(_str)[i]));
-        }
-        return subStr;
-    }
+    // function getSubstring(string memory _str, uint _left, uint _right)internal pure returns(string memory){
+    //     string memory subStr;
+    //     for(uint i=_left; i<=_right; i++){
+    //         subStr = string(abi.encodePacked(subStr, bytes(_str)[i]));
+    //     }
+    //     return subStr;
+    // }
     
     function stringToUint(string memory _s) internal pure returns (uint, bool) { // testado e funcionado
         bool hasError = false;
@@ -579,25 +485,25 @@ library EAI{
         }
         return (result, hasError); 
     }
-
-     function uint2Str(uint _i) internal pure returns (string memory _uintAsString) {
-        if (_i == 0) {
-            return "0";
-        }
-        uint256 j = _i;
-        uint256 len;
-        while (j != 0) {
-            len++;
-            j /= 10;
-        }
-        bytes memory bstr = new bytes(len);
-        uint k = len - 1;
-        while (_i != 0) {
-            bstr[k--] = bytes1(uint8(48 + _i % 10));
-            _i /= 10;
-        }
-        return string(bstr);
-    }
+    //  The uint2str function is commented because it is possibly duplicated, if no error occurs it will be deleted
+    //  function uint2Str(uint _i) internal pure returns (string memory _uintAsString) {
+    //     if (_i == 0) {
+    //         return "0";
+    //     }
+    //     uint256 j = _i;
+    //     uint256 len;
+    //     while (j != 0) {
+    //         len++;
+    //         j /= 10;
+    //     }
+    //     bytes memory bstr = new bytes(len);
+    //     uint k = len - 1;
+    //     while (_i != 0) {
+    //         bstr[k--] = bytes1(uint8(48 + _i % 10));
+    //         _i /= 10;
+    //     }
+    //     return string(bstr);
+    // }
 
     function uint2String(uint256 value) internal pure returns (string memory) {
         
@@ -619,17 +525,6 @@ library EAI{
         return string(buffer);
     }
 
-    // function getAllWeekDaysIntervals(WeekDaysInterval[] memory _wdi) internal pure returns(string memory) {
-    //     uint vLength = _wdi.length;
-    //     string memory aux;
-    //     aux = string( abi.encodePacked(aux, uint2String(_wdi[0].start),","));
-    //     aux = string( abi.encodePacked(aux, uint2String(_wdi[0].end)));
 
-    //     for(uint i=1; i<vLength; i++){
-    //         aux = string( abi.encodePacked( aux," -- ", uint2String(_wdi[i].start),","));
-    //         aux = string( abi.encodePacked(aux, uint2String(_wdi[i].end)));
-    //     } 
-    //     return aux;
-    // }
 
 }
