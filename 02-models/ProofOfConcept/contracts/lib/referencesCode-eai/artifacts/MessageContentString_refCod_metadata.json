@@ -6,14 +6,19 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "str",
+						"name": "cep",
 						"type": "string"
 					}
 				],
-				"name": "isNumber",
+				"name": "verificarCep",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -21,7 +26,7 @@
 						"type": "bool"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -38,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/lib/eai/EAI.sol": "EAI"
+			"contracts/lib/referencesCode-eai/MessageContent_String_refCod.sol": "MessageContentString_refCod"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -58,6 +63,14 @@
 			"urls": [
 				"bzz-raw://170d93fafa4d76d017cd826c21b2348994aa36597fdf720849e22fcfd02860e8",
 				"dweb:/ipfs/QmatSiQvd3GfGMv6y4pZoErC1yTNP1wNaH6uzP8WF2w6mM"
+			]
+		},
+		"contracts/lib/referencesCode-eai/MessageContent_String_refCod.sol": {
+			"keccak256": "0x7a6c0286c740c61babf4ba5aaa4400108e9dae03df62ae27436b9b288f496898",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2221450831d85a2b8cdc861469c3718755e25382e5537bbedff64cf03b1c6996",
+				"dweb:/ipfs/QmfRXJZiaxuLvAsDTSBtmAMpTp4WuLShJWHSKgiTgB45HD"
 			]
 		}
 	},

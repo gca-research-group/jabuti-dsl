@@ -14,7 +14,7 @@ contract sendMessageWhatsapp {
 	}
 	
 	variables{			
-		conversationId = MessageContent("//conversationId/text()")				
+		conversationId = MessageContent("//conversationId/text()")
 		session = SessionInterval(24 Hour by conversationId)		
 		conversationStarter = MessageContent("//conversationStarter/text()") 
 	}

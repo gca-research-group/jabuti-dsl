@@ -1,4 +1,4 @@
-// path to ->  ./test/libs/reference-codes-eai/MaxNumberOfOperationByTime_test.js 
+// path to ->  test ./test/libs/reference-codes-eai/MaxNumberOfOperationByTime_test.js 
 
 const expect =  require('chai').expect;
 

@@ -315,22 +315,6 @@ library EAI{
         return MaxNumberOfOperationByTime(_amount, _timeUnit, auxByTime, _amount, 0);
     }
 
-    function getTimeInSeconds(uint8 timeUnit) private pure returns(uint32){
-        // seconds, // minute // hour // day // week
-        require(timeUnit <= WEEK, "The method getTimeInSeconds doesn't work for MONTH and YEAR");
-
-        if(timeUnit == SECOND){
-            return 1;
-        }else if(timeUnit == MINUTE){
-            return 60;
-        }else if(timeUnit == HOUR ){
-            return 60*60;
-        }else if(timeUnit == DAY){
-            return 60*60*24;
-        }else {
-           return 60*60*24*7; //WEEK
-        }
-    }
 
     function decreaseNumberOfOperationByTime(
         MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
@@ -359,10 +343,85 @@ library EAI{
 
 
 /* ========================================================================== */
-/*                                MESSAGE CONTENT                            */
+/*                              MESSAGE CONTENT STRING                        */
 /* ========================================================================== */
 
+    struct MessageContent_String{
+        string xpath;
+        string op; // comparison operator
+        string value;      
+    }
 
+    function createMessageContent(string memory _xpath, string memory _op, string memory _value ) internal pure returns(MessageContent_String memory){
+        bytes1 char = bytes(_op)[0];
+        require((char == 0x21 || char == 0x3D) ,"Only '!=' or '==' operators is allow to compare strings");
+        return MessageContent_String(_xpath, _op, _value); 
+    }
+
+    function evaluateMessageContent(MessageContent_String memory msgContent, string memory _value) internal pure returns(bool){       
+        if( bytes(msgContent.op)[0] == 0x21){ // if msgContent.op start with '!' enter:
+            if (keccak256(abi.encodePacked(msgContent.value)) != keccak256(abi.encodePacked(_value))) {
+                return true;
+            }            
+        }else{ // else if msgContent.op don't start with '!' enter:
+            if (keccak256(abi.encodePacked(msgContent.value)) == keccak256(abi.encodePacked(_value))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+/* ========================================================================== */
+/*                              MESSAGE CONTENT NUMBER                        */
+/* ========================================================================== */
+
+    struct MessageContent_Number{
+        string xpath;
+        string op; // comparison operator
+        int256 value;      
+    }
+
+    function createMessageContent(string memory _xpath, string memory _op, int256 _value ) internal pure returns(MessageContent_Number memory){        
+        return MessageContent_Number(_xpath, _op, _value); 
+    }
+
+    function evaluateMessageContent(MessageContent_Number memory msgContent, int256 _value) internal pure returns(bool){
+        bytes memory chars = bytes(msgContent.op);
+
+        if( chars[0] ==  0x21 ){// if chars[0] is '!'
+            return msgContent.value != _value;
+       
+        }else if( chars[0] == 0x3D ){ // if chars[0] is '='
+            return msgContent.value == _value;
+        
+        }else if( chars[0] == 0x3C ){// if chars[0] is '<'
+            if(chars.length == 2){// if chars is '<='
+                return msgContent.value <= _value;
+            }else{
+                return msgContent.value < _value;
+            }
+        
+        }else{ // if( chars[0] == 0x3E ){// if chars[0] is '>'
+             if(chars.length == 2){// if chars is '>='
+                return msgContent.value >= _value;
+            }else{
+                return msgContent.value > _value;
+            }
+        }
+
+        // 0x21 : !
+        // 0x3D : =
+        // 0x3C : <
+        // 0x3E : >
+
+    }
+
+
+
+/* ========================================================================== */
+/*                           MESSAGE CONTENT  PER TIME                        */
+/* ========================================================================== */
 
 
 
@@ -432,6 +491,24 @@ library EAI{
         return _accessDateTime + timeToNextEndTime;
     }
 
+    
+    function getTimeInSeconds(uint8 timeUnit) private pure returns(uint32){
+        // seconds, // minute // hour // day // week
+        require(timeUnit <= WEEK, "The method getTimeInSeconds doesn't work for MONTH and YEAR");
+
+        if(timeUnit == SECOND){
+            return 1;
+        }else if(timeUnit == MINUTE){
+            return 60;
+        }else if(timeUnit == HOUR ){
+            return 60*60;
+        }else if(timeUnit == DAY){
+            return 60*60*24;
+        }else {
+           return 60*60*24*7; //WEEK
+        }
+    }
+
     function timeStampToDate(uint _timestamp) internal pure returns (uint32 year, uint32 month, uint32 day) {
        
         uint32 __days = uint32(_timestamp / SECONDS_PER_DAY);
@@ -462,6 +539,20 @@ library EAI{
     //         subStr = string(abi.encodePacked(subStr, bytes(_str)[i]));
     //     }
     //     return subStr;
+    // }
+
+    function isNumber(string memory str) public pure returns(bool){
+        bytes1 char = bytes(str)[0];
+        return (char >= 0x30 && char <= 0x39);//9-0
+    }
+    
+    // function isStr(string str) public pure returns (bool){
+    //     bytes1 char = bytes(str)[0];
+
+    //     return !(char >= 0x30 && char <= 0x39);// !(9-0)
+    //     // (char >= 0x41 && char <= 0x5A) | //A-Z
+    //     // (char >= 0x61 && char <= 0x7A) |  //a-z
+    //     // !(char == 0x2E) //.
     // }
     
     function stringToUint(string memory _s) internal pure returns (uint, bool) { // testado e funcionado

@@ -220,7 +220,7 @@ WeekDaysInterval:
 ;
 
 MessageContent:
-	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)? )?  ')' )
+	('MessageContent' '(' (content=STRING | QualifiedName)  comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?  ')' )
 
 //	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
 //	x (',' x)*

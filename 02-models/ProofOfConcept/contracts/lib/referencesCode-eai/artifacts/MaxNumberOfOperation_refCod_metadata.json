@@ -18,6 +18,31 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getAllMaxOperation",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "amount",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "rest",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.MaxNumberOfOperation[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -25,7 +50,7 @@
 						"type": "uint256"
 					}
 				],
-				"name": "getMaxOp",
+				"name": "getMaxOperationById",
 				"outputs": [
 					{
 						"components": [
@@ -43,6 +68,30 @@
 						"internalType": "struct EAI.MaxNumberOfOperation",
 						"name": "",
 						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "maxOp",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "amount",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "rest",
+						"type": "uint32"
 					}
 				],
 				"stateMutability": "view",
@@ -77,19 +126,19 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0x8b415c5fee5ebfb5cc493c4359a6ea4766d4a398444296bc3f3b8c0fa58828db",
+			"keccak256": "0x18db2b74f37cccab64425416f532d839b24ca2619182b7d7ea2a30f03e40a40d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b21bd6a043ee515138ef50da59550e84a7ca912a91a380dacc5781f088cc2000",
-				"dweb:/ipfs/QmRS9ZtHccyvGFrqFTygLLsAsrK5z1oqzSDYsaVWuP1SMb"
+				"bzz-raw://71f107fefbac20b9ed0868874554cd1015e36d22cc0590f9a17b1c86a7840606",
+				"dweb:/ipfs/QmQisDFGGiauxx6UnVCPb1TFihmrD6jRLAAvyQ83VQEEN8"
 			]
 		},
 		"contracts/lib/referencesCode-eai/MaxNumberOfOperation_refCod.sol": {
-			"keccak256": "0x07dfce3a84480ab9a1127e2c0796d0c4b6a03b00b7aadf578e2dc9e20ba25b8c",
+			"keccak256": "0x25a19eac8044fd138597c17a7e2741741cea1115983a6a893d685d5ca7367af4",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a7d407c2507a285b740a76c64f98fbe29a1e13d2d535d570f8a9c6807ed1076c",
-				"dweb:/ipfs/QmNQw6cArKDHAxjGyQVTLAuMVGRTFx6TWGBq7v8W7CQAXS"
+				"bzz-raw://51d33c75a2f07ac7df5478372bd911ce60fb82251c249f63d7d61ff113ba987b",
+				"dweb:/ipfs/QmY2y3dqCVBY7PhgPXBriscU6pbqePfRNKx5LbjG57kYYk"
 			]
 		}
 	},
