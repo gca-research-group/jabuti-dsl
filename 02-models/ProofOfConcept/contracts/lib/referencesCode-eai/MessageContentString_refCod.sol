@@ -10,23 +10,19 @@ contract MessageContentString_refCod{
 
     constructor (){
         msgContent.push(EAI.createMessageContent("//cep/text()", "==", "98700000"));
-         msgContent.push(EAI.createMessageContent("//nome/text()", "!=", "Eldair"));
+        msgContent.push(EAI.createMessageContent("//nome/text()", "!=", "Eldair"));
     }
 
-    function verifyCep(string memory _cep) public view returns(bool){
-        return  msgContent[0].evaluateMessageContent(_cep);        
-    }
-    
-    function verifyName (string memory _name) public view returns(bool){
-        return  msgContent[1].evaluateMessageContent(_name);       
+    function evaluateStringContent(uint _id, string memory _content) public view returns(bool){
+        return  msgContent[_id].evaluateStringContent(_content);        
+    }    
+
+    function getMessageContent_byId(uint _id) public view returns(EAI.MessageContent_String memory){
+        return msgContent[_id];
     }
 
     function getAllMessageContent()public view returns(EAI.MessageContent_String[] memory){
         return msgContent;
     }
     
-    function getMessageContent_byId(uint _id) public view returns(EAI.MessageContent_String memory){
-        return msgContent[_id];
-    }
-
 }

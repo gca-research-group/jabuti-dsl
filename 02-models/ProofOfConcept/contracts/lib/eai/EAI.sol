@@ -349,22 +349,22 @@ library EAI{
     struct MessageContent_String{
         string xpath;
         string op; // comparison operator
-        string value;      
+        string content;      
     }
 
-    function createMessageContent(string memory _xpath, string memory _op, string memory _value ) internal pure returns(MessageContent_String memory){
+    function createMessageContent(string memory _xpath, string memory _op, string memory _content ) internal pure returns(MessageContent_String memory){
         bytes1 char = bytes(_op)[0];
         require((char == 0x21 || char == 0x3D) ,"Only '!=' or '==' operators is allow to compare strings");
-        return MessageContent_String(_xpath, _op, _value); 
+        return MessageContent_String(_xpath, _op, _content); 
     }
 
-    function evaluateMessageContent(MessageContent_String memory msgContent, string memory _value) internal pure returns(bool){       
+    function evaluateStringContent(MessageContent_String memory msgContent, string memory _value) internal pure returns(bool){       
         if( bytes(msgContent.op)[0] == 0x21){ // if msgContent.op start with '!' enter:
-            if (keccak256(abi.encodePacked(msgContent.value)) != keccak256(abi.encodePacked(_value))) {
+            if (keccak256(abi.encodePacked(msgContent.content)) != keccak256(abi.encodePacked(_value))) {
                 return true;
             }            
         }else{ // else if msgContent.op don't start with '!' enter:
-            if (keccak256(abi.encodePacked(msgContent.value)) == keccak256(abi.encodePacked(_value))) {
+            if (keccak256(abi.encodePacked(msgContent.content)) == keccak256(abi.encodePacked(_value))) {
                 return true;
             }
         }
@@ -379,34 +379,34 @@ library EAI{
     struct MessageContent_Number{
         string xpath;
         string op; // comparison operator
-        int256 value;      
+        int256 content;      
     }
 
-    function createMessageContent(string memory _xpath, string memory _op, int256 _value ) internal pure returns(MessageContent_Number memory){        
-        return MessageContent_Number(_xpath, _op, _value); 
+    function createMessageContent(string memory _xpath, string memory _op, int256 _content ) internal pure returns(MessageContent_Number memory){        
+        return MessageContent_Number(_xpath, _op, _content); 
     }
 
-    function evaluateMessageContent(MessageContent_Number memory msgContent, int256 _value) internal pure returns(bool){
+    function evaluateNumberContent(MessageContent_Number memory msgContent, int256 _content) internal pure returns(bool){
         bytes memory chars = bytes(msgContent.op);
 
         if( chars[0] ==  0x21 ){// if chars[0] is '!'
-            return msgContent.value != _value;
+            return msgContent.content != _content;
        
         }else if( chars[0] == 0x3D ){ // if chars[0] is '='
-            return msgContent.value == _value;
+            return msgContent.content == _content;
         
         }else if( chars[0] == 0x3C ){// if chars[0] is '<'
             if(chars.length == 2){// if chars is '<='
-                return msgContent.value <= _value;
+                return msgContent.content <= _content;
             }else{
-                return msgContent.value < _value;
+                return msgContent.content < _content;
             }
         
         }else{ // if( chars[0] == 0x3E ){// if chars[0] is '>'
              if(chars.length == 2){// if chars is '>='
-                return msgContent.value >= _value;
+                return msgContent.content >= _content;
             }else{
-                return msgContent.value > _value;
+                return msgContent.content > _content;
             }
         }
 
