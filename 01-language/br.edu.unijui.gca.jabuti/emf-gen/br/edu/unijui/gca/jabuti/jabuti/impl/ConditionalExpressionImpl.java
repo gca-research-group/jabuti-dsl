@@ -3,19 +3,27 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
+import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,6 +37,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getConditionParam <em>Condition Param</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getAfterSymbol <em>After Symbol</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getBeforeSymbol <em>Before Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getComparisonOperator <em>Comparison Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getLogicalOperator <em>Logical Operator</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,14 +56,14 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	protected ConditionTerm conditionTerm;
 
 	/**
-	 * The cached value of the '{@link #getConditionParam() <em>Condition Param</em>}' containment reference.
+	 * The cached value of the '{@link #getConditionParam() <em>Condition Param</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getConditionParam()
 	 * @generated
 	 * @ordered
 	 */
-	protected ConditionTerm conditionParam;
+	protected EList<ConditionTerm> conditionParam;
 
 	/**
 	 * The cached value of the '{@link #getAfterSymbol() <em>After Symbol</em>}' containment reference.
@@ -74,6 +84,26 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * @ordered
 	 */
 	protected LogicalOperator beforeSymbol;
+
+	/**
+	 * The cached value of the '{@link #getComparisonOperator() <em>Comparison Operator</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComparisonOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ComparisonOperator> comparisonOperator;
+
+	/**
+	 * The cached value of the '{@link #getLogicalOperator() <em>Logical Operator</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLogicalOperator()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<LogicalOperator> logicalOperator;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,48 +182,13 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
-	public ConditionTerm getConditionParam()
+	public EList<ConditionTerm> getConditionParam()
 	{
+		if (conditionParam == null)
+		{
+			conditionParam = new EObjectContainmentEList<ConditionTerm>(ConditionTerm.class, this, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM);
+		}
 		return conditionParam;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetConditionParam(ConditionTerm newConditionParam, NotificationChain msgs)
-	{
-		ConditionTerm oldConditionParam = conditionParam;
-		conditionParam = newConditionParam;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, oldConditionParam, newConditionParam);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setConditionParam(ConditionTerm newConditionParam)
-	{
-		if (newConditionParam != conditionParam)
-		{
-			NotificationChain msgs = null;
-			if (conditionParam != null)
-				msgs = ((InternalEObject)conditionParam).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, null, msgs);
-			if (newConditionParam != null)
-				msgs = ((InternalEObject)newConditionParam).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, null, msgs);
-			msgs = basicSetConditionParam(newConditionParam, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM, newConditionParam, newConditionParam));
 	}
 
 	/**
@@ -302,6 +297,36 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * @generated
 	 */
 	@Override
+	public EList<ComparisonOperator> getComparisonOperator()
+	{
+		if (comparisonOperator == null)
+		{
+			comparisonOperator = new EObjectContainmentEList<ComparisonOperator>(ComparisonOperator.class, this, JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR);
+		}
+		return comparisonOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EList<LogicalOperator> getLogicalOperator()
+	{
+		if (logicalOperator == null)
+		{
+			logicalOperator = new EObjectContainmentEList<LogicalOperator>(LogicalOperator.class, this, JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR);
+		}
+		return logicalOperator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -309,11 +334,15 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM:
 				return basicSetConditionTerm(null, msgs);
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
-				return basicSetConditionParam(null, msgs);
+				return ((InternalEList<?>)getConditionParam()).basicRemove(otherEnd, msgs);
 			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
 				return basicSetAfterSymbol(null, msgs);
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				return basicSetBeforeSymbol(null, msgs);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+				return ((InternalEList<?>)getComparisonOperator()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+				return ((InternalEList<?>)getLogicalOperator()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -336,6 +365,10 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 				return getAfterSymbol();
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				return getBeforeSymbol();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+				return getComparisonOperator();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+				return getLogicalOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -345,6 +378,7 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
@@ -354,13 +388,22 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 				setConditionTerm((ConditionTerm)newValue);
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
-				setConditionParam((ConditionTerm)newValue);
+				getConditionParam().clear();
+				getConditionParam().addAll((Collection<? extends ConditionTerm>)newValue);
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
 				setAfterSymbol((LogicalOperator)newValue);
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				setBeforeSymbol((LogicalOperator)newValue);
+				return;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+				getComparisonOperator().clear();
+				getComparisonOperator().addAll((Collection<? extends ComparisonOperator>)newValue);
+				return;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+				getLogicalOperator().clear();
+				getLogicalOperator().addAll((Collection<? extends LogicalOperator>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -380,13 +423,19 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 				setConditionTerm((ConditionTerm)null);
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
-				setConditionParam((ConditionTerm)null);
+				getConditionParam().clear();
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
 				setAfterSymbol((LogicalOperator)null);
 				return;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				setBeforeSymbol((LogicalOperator)null);
+				return;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+				getComparisonOperator().clear();
+				return;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+				getLogicalOperator().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -405,11 +454,15 @@ public class ConditionalExpressionImpl extends MinimalEObjectImpl.Container impl
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_TERM:
 				return conditionTerm != null;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__CONDITION_PARAM:
-				return conditionParam != null;
+				return conditionParam != null && !conditionParam.isEmpty();
 			case JabutiPackage.CONDITIONAL_EXPRESSION__AFTER_SYMBOL:
 				return afterSymbol != null;
 			case JabutiPackage.CONDITIONAL_EXPRESSION__BEFORE_SYMBOL:
 				return beforeSymbol != null;
+			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+				return comparisonOperator != null && !comparisonOperator.isEmpty();
+			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+				return logicalOperator != null && !logicalOperator.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -130,7 +130,7 @@ FunctionCall:
 ;
 
 Variable:
-	name=ID '=' (expression=Expression | term = (MessageContent | TimeInterval | Timeout )) 
+	name=ID '=' (expression=Expression | term = (SessionInterval | MessageContent | TimeInterval | Timeout )) 
 ;
 
 
@@ -170,7 +170,7 @@ Condition:
 
 ConditionalExpression :
 	(beforeSymbol = LogicalOperator)?
-	'when' '('  conditionParam=ConditionTerm')' 'do' '{'
+	'when' '(' ((QualifiedName | conditionParam+=ConditionTerm ) (comparisonOperator+=ComparisonOperator (QualifiedName | STRING | conditionParam+=ConditionTerm))?) (logicalOperator+=LogicalOperator QualifiedName (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)*')' 'do' '{'
 		conditionTerm=ConditionTerm
 	'}'
 	(afterSymbol = LogicalOperator)?
@@ -196,7 +196,7 @@ Term returns ConditionTerm:
 //  ----------------- end new version proposal  -----------------
 
 LogicalOperator:
-	symbol=(',' | 'OR' | 'NOT')
+	symbol=(',' | 'AND'| 'OR' | 'NOT')
 ;
 
 TimeInterval: 
@@ -220,7 +220,7 @@ WeekDaysInterval:
 ;
 
 MessageContent:
-	('MessageContent' '(' (content=STRING | QualifiedName)  comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?  ')' )
+	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' )
 
 //	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
 //	x (',' x)*

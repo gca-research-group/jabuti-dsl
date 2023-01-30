@@ -15,7 +15,7 @@ contract sendMessageWhatsapp {
 	
 	variables{			
 		conversationId = MessageContent("//conversationId/text()")
-		session = SessionInterval(24 Hour by conversationId)		
+		session = SessionInterval(24 Hour per conversationId)			
 		conversationStarter = MessageContent("//conversationStarter/text()") 
 	}
 
@@ -24,13 +24,13 @@ contract sendMessageWhatsapp {
 		right sendMessage{
 			rolePlayer = process
 			operation = write		
-			condition {
-				BusinessDay(Monday to Friday)  AND			 			 	
-				when(session == "CLOSED" AND conversationStarter == "Business-initiated") do {				
-					 	OperationLimit(10000 by Month)		
-				}	 	
+			terms{
+				WeekDaysInterval(Monday to Friday),			 			 	
+				when(session == "CLOSED" AND conversationStarter == "Business-initiated" ) do {				
+					 	MaxNumberOfOperation(10000 per Month)		
+				}					 
 			}				
-			onBreach( EventLog("Request operation performed outside of allowed hours or limit operation exceeded"))
+			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))
 		}
 	}	
 }

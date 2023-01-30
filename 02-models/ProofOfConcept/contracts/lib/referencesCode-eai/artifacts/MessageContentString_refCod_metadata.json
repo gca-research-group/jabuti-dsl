@@ -13,12 +13,17 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
 						"internalType": "string",
-						"name": "cep",
+						"name": "_content",
 						"type": "string"
 					}
 				],
-				"name": "verificarCep",
+				"name": "evaluateStringContent",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -27,6 +32,91 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllMessageContent",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "xpath",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "op",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "content",
+								"type": "string"
+							}
+						],
+						"internalType": "struct EAI.MessageContent_String[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getMessageContent_byId",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "xpath",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "op",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "content",
+								"type": "string"
+							}
+						],
+						"internalType": "struct EAI.MessageContent_String",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					}
+				],
+				"name": "testKeccakInt",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -43,7 +133,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/lib/referencesCode-eai/MessageContent_String_refCod.sol": "MessageContentString_refCod"
+			"contracts/lib/referencesCode-eai/MessageContentString_refCod.sol": "MessageContentString_refCod"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -58,19 +148,19 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0xca35273f50afbbda4f86852979e8450f2db3d497cbfaac30755e8d5f71e3ce74",
+			"keccak256": "0x9e2193d03c1691b04b6da5fb593f8c87ddc63667c0682a08e339aec9bb44afdd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://170d93fafa4d76d017cd826c21b2348994aa36597fdf720849e22fcfd02860e8",
-				"dweb:/ipfs/QmatSiQvd3GfGMv6y4pZoErC1yTNP1wNaH6uzP8WF2w6mM"
+				"bzz-raw://b7f44e703ec5e6cd88f4cf5ffb41c52114f2e803cca015ac9a00368624c93fb7",
+				"dweb:/ipfs/QmXnN2FLBETjc2GpZszao62mjdnC8woJDJ6mHKzCf95uGp"
 			]
 		},
-		"contracts/lib/referencesCode-eai/MessageContent_String_refCod.sol": {
-			"keccak256": "0x7a6c0286c740c61babf4ba5aaa4400108e9dae03df62ae27436b9b288f496898",
+		"contracts/lib/referencesCode-eai/MessageContentString_refCod.sol": {
+			"keccak256": "0xbd480b01bbfaa9bcc91cc4bb551a1657619a86f658aed1958d7251c3bbe4c132",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2221450831d85a2b8cdc861469c3718755e25382e5537bbedff64cf03b1c6996",
-				"dweb:/ipfs/QmfRXJZiaxuLvAsDTSBtmAMpTp4WuLShJWHSKgiTgB45HD"
+				"bzz-raw://64b0b4edcc184f4a0c154907bd5ce9ba73f688a9004641a9ad1f7af491e9b1f3",
+				"dweb:/ipfs/QmQ5pxqMZHns6SH3kPiidRFb2gumLjmz8PRvmZv9ezahs4"
 			]
 		}
 	},

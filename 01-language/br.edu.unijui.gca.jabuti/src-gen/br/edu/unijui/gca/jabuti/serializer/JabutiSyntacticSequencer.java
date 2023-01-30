@@ -22,6 +22,8 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected JabutiGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1;
+	protected AbstractElementAlias match_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1;
 	protected AbstractElementAlias match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q;
 	protected AbstractElementAlias match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1;
 	protected AbstractElementAlias match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0;
@@ -34,6 +36,8 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (JabutiGrammarAccess) access;
+		match_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_3_1_1_0()), new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_3_1_1_1()));
+		match_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_4_2_1_0()), new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_4_2_1_1()));
 		match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContractAccess().getVariablesKeyword_17_0()), new TokenAlias(false, false, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_17_1()), new TokenAlias(false, false, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_17_3()));
 		match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getAsteriskKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getSolidusKeyword_1_1_1()));
 		match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1()), new TokenAlias(false, false, grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0()));
@@ -48,6 +52,8 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getQualifiedNameRule())
 			return getQualifiedNameToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSTRINGRule())
+			return getSTRINGToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -61,13 +67,29 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 		return "";
 	}
 	
+	/**
+	 * terminal STRING:
+	 * 			'"' ( '\\' .  | !('\\'|'"') )* '"' |
+	 * 			"'" ( '\\' .  | !('\\'|"'") )* "'"
+	 * 		;
+	 */
+	protected String getSTRINGToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "\"\"";
+	}
+	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
 		if (transition.getAmbiguousSyntaxes().isEmpty()) return;
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if (match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q.equals(syntax))
+			if (match_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1.equals(syntax))
+				emit_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1.equals(syntax))
+				emit_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q.equals(syntax))
 				emit_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1.equals(syntax))
 				emit_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
@@ -87,6 +109,36 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 		}
 	}
 
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     QualifiedName | STRING
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     comparisonOperator+=ComparisonOperator (ambiguity) ')' 'do' '{' conditionTerm=ConditionTerm
+	 *     comparisonOperator+=ComparisonOperator (ambiguity) logicalOperator+=LogicalOperator
+	 
+	 * </pre>
+	 */
+	protected void emit_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * <pre>
+	 * Ambiguous syntax:
+	 *     QualifiedName | STRING
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     comparisonOperator+=ComparisonOperator (ambiguity) ')' 'do' '{' conditionTerm=ConditionTerm
+	 *     comparisonOperator+=ComparisonOperator (ambiguity) logicalOperator+=LogicalOperator
+	 
+	 * </pre>
+	 */
+	protected void emit_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
@@ -187,6 +239,7 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'MaxNumberOfOperation' '(' operationsNumber=INT
+	 *     (rule start) (ambiguity) 'MessageContent' '(' QualifiedName ')' (rule start)
 	 *     (rule start) (ambiguity) 'MessageContent' '(' QualifiedName comparisonOperator=ComparisonOperator
 	 *     (rule start) (ambiguity) 'MessageContent' '(' content=STRING
 	 *     (rule start) (ambiguity) 'SessionInterval' '(' frequency=INT

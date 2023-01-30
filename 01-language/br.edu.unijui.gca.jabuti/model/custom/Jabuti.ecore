@@ -118,12 +118,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTerm" eType="#//ConditionTerm"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionParam" eType="#//ConditionTerm"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionParam" upperBound="-1"
+        eType="#//ConditionTerm" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="afterSymbol" eType="#//LogicalOperator"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="beforeSymbol" eType="#//LogicalOperator"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="comparisonOperator" upperBound="-1"
+        eType="#//ComparisonOperator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperator" upperBound="-1"
+        eType="#//LogicalOperator" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Condition">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalExpression"

@@ -336,7 +336,14 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     ConditionalExpression returns ConditionalExpression
 	 *
 	 * Constraint:
-	 *     (beforeSymbol=LogicalOperator? conditionParam=ConditionTerm conditionTerm=ConditionTerm afterSymbol=LogicalOperator?)
+	 *     (
+	 *         beforeSymbol=LogicalOperator? 
+	 *         conditionParam+=ConditionTerm? 
+	 *         (comparisonOperator+=ComparisonOperator conditionParam+=ConditionTerm?)? 
+	 *         (logicalOperator+=LogicalOperator comparisonOperator+=ComparisonOperator?)* 
+	 *         conditionTerm=ConditionTerm 
+	 *         afterSymbol=LogicalOperator?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_ConditionalExpression(ISerializationContext context, ConditionalExpression semanticObject) {
@@ -418,7 +425,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     LogicalOperator returns LogicalOperator
 	 *
 	 * Constraint:
-	 *     (symbol=',' | symbol='OR' | symbol='NOT')
+	 *     (symbol=',' | symbol='AND' | symbol='OR' | symbol='NOT')
 	 * </pre>
 	 */
 	protected void sequence_LogicalOperator(ISerializationContext context, LogicalOperator semanticObject) {
@@ -456,7 +463,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     MessageContent returns MessageContent
 	 *
 	 * Constraint:
-	 *     (content=STRING? comparisonOperator=ComparisonOperator expression=Expression timeUnit=TimeUnit?)
+	 *     (content=STRING | (content=STRING comparisonOperator=ComparisonOperator expression=Expression timeUnit=TimeUnit?))?
 	 * </pre>
 	 */
 	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {
@@ -826,7 +833,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (name=ID (expression=Expression | term=MessageContent | term=TimeInterval | term=Timeout))
+	 *     (name=ID (expression=Expression | term=SessionInterval | term=MessageContent | term=TimeInterval | term=Timeout))
 	 * </pre>
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {

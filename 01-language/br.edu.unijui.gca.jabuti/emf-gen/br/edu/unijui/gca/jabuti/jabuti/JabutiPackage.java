@@ -984,7 +984,7 @@ public interface JabutiPackage extends EPackage
 	int CONDITIONAL_EXPRESSION__CONDITION_TERM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Condition Param</b></em>' containment reference.
+	 * The feature id for the '<em><b>Condition Param</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1011,13 +1011,31 @@ public interface JabutiPackage extends EPackage
 	int CONDITIONAL_EXPRESSION__BEFORE_SYMBOL = 3;
 
 	/**
+	 * The feature id for the '<em><b>Comparison Operator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = 4;
+
+	/**
+	 * The feature id for the '<em><b>Logical Operator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = 5;
+
+	/**
 	 * The number of structural features of the '<em>Conditional Expression</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = 4;
+	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl <em>Condition</em>}' class.
@@ -2125,10 +2143,10 @@ public interface JabutiPackage extends EPackage
 	EReference getConditionalExpression_ConditionTerm();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition Param</em>'.
+	 * @return the meta object for the containment reference list '<em>Condition Param</em>'.
 	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam()
 	 * @see #getConditionalExpression()
 	 * @generated
@@ -2156,6 +2174,28 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EReference getConditionalExpression_BeforeSymbol();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator <em>Comparison Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Comparison Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator()
+	 * @see #getConditionalExpression()
+	 * @generated
+	 */
+	EReference getConditionalExpression_ComparisonOperator();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator <em>Logical Operator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Logical Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator()
+	 * @see #getConditionalExpression()
+	 * @generated
+	 */
+	EReference getConditionalExpression_LogicalOperator();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Condition <em>Condition</em>}'.
@@ -3133,7 +3173,7 @@ public interface JabutiPackage extends EPackage
 		EReference CONDITIONAL_EXPRESSION__CONDITION_TERM = eINSTANCE.getConditionalExpression_ConditionTerm();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition Param</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Condition Param</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -3155,6 +3195,22 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EReference CONDITIONAL_EXPRESSION__BEFORE_SYMBOL = eINSTANCE.getConditionalExpression_BeforeSymbol();
+
+		/**
+		 * The meta object literal for the '<em><b>Comparison Operator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = eINSTANCE.getConditionalExpression_ComparisonOperator();
+
+		/**
+		 * The meta object literal for the '<em><b>Logical Operator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = eINSTANCE.getConditionalExpression_LogicalOperator();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl <em>Condition</em>}' class.

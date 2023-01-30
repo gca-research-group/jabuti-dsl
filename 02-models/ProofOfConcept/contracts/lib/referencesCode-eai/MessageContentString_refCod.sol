@@ -25,4 +25,7 @@ contract MessageContentString_refCod{
         return msgContent;
     }
     
+    function testKeccak256Int(uint a) public pure returns(bool){
+        return ( keccak256(abi.encodePacked(new bytes(41))) == keccak256(new bytes(a)));
+    }
 }

@@ -3,6 +3,8 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,6 +20,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator <em>Comparison Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator <em>Logical Operator</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression()
@@ -49,26 +53,16 @@ public interface ConditionalExpression extends EObject
 	void setConditionTerm(ConditionTerm value);
 
 	/**
-	 * Returns the value of the '<em><b>Condition Param</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Condition Param</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.ConditionTerm}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition Param</em>' containment reference.
-	 * @see #setConditionParam(ConditionTerm)
+	 * @return the value of the '<em>Condition Param</em>' containment reference list.
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ConditionParam()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ConditionTerm getConditionParam();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Condition Param</em>' containment reference.
-	 * @see #getConditionParam()
-	 * @generated
-	 */
-	void setConditionParam(ConditionTerm value);
+	EList<ConditionTerm> getConditionParam();
 
 	/**
 	 * Returns the value of the '<em><b>After Symbol</b></em>' containment reference.
@@ -113,5 +107,29 @@ public interface ConditionalExpression extends EObject
 	 * @generated
 	 */
 	void setBeforeSymbol(LogicalOperator value);
+
+	/**
+	 * Returns the value of the '<em><b>Comparison Operator</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comparison Operator</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ComparisonOperator()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<ComparisonOperator> getComparisonOperator();
+
+	/**
+	 * Returns the value of the '<em><b>Logical Operator</b></em>' containment reference list.
+	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Logical Operator</em>' containment reference list.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_LogicalOperator()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<LogicalOperator> getLogicalOperator();
 
 } // ConditionalExpression

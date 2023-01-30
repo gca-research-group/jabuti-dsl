@@ -343,6 +343,18 @@ library EAI{
 
 
 /* ========================================================================== */
+/*                              MESSAGE CONTENT BOOLEAN                        */
+/* ========================================================================== */
+
+    struct MessageContent_onlyXPath{
+        string xpath;        
+    }
+
+    function createMessageContent_onlyXPath(string memory _xpath) internal pure returns(MessageContent_onlyXPath memory){
+        return MessageContent_onlyXPath(_xpath);
+    }
+
+/* ========================================================================== */
 /*                              MESSAGE CONTENT STRING                        */
 /* ========================================================================== */
 
