@@ -360,11 +360,11 @@ library EAI{
 
     function evaluateStringContent(MessageContent_String memory msgContent, string memory _value) internal pure returns(bool){       
         if( bytes(msgContent.op)[0] == 0x21){ // if msgContent.op start with '!' enter:
-            if (keccak256(abi.encodePacked(msgContent.content)) != keccak256(abi.encodePacked(_value))) {
+            if (keccak256(abi.encodePacked(_value)) != keccak256(abi.encodePacked(msgContent.content)) ) {
                 return true;
             }            
         }else{ // else if msgContent.op don't start with '!' enter:
-            if (keccak256(abi.encodePacked(msgContent.content)) == keccak256(abi.encodePacked(_value))) {
+            if (keccak256(abi.encodePacked(_value)) == keccak256(abi.encodePacked(msgContent.content)) ) {
                 return true;
             }
         }
@@ -390,26 +390,29 @@ library EAI{
         bytes memory chars = bytes(msgContent.op);
 
         if( chars[0] ==  0x21 ){// if chars[0] is '!'
-            return msgContent.content != _content;
+            return _content != msgContent.content;
        
         }else if( chars[0] == 0x3D ){ // if chars[0] is '='
-            return msgContent.content == _content;
+            return _content == msgContent.content;
         
         }else if( chars[0] == 0x3C ){// if chars[0] is '<'
-            if(chars.length == 2){// if chars is '<='
-                return msgContent.content <= _content;
+            if(chars.length == 2){// if chars is '<='                
+                return _content <= msgContent.content;               
             }else{
-                return msgContent.content < _content;
-            }
-        
-        }else{ // if( chars[0] == 0x3E ){// if chars[0] is '>'
-             if(chars.length == 2){// if chars is '>='
-                return msgContent.content >= _content;
-            }else{
-                return msgContent.content > _content;
+                return _content < msgContent.content;
+            }    
+        }else if( chars[0] == 0x3E ){ // if( chars[0] == 0x3E ){// if chars[0] is '>'
+             if(chars.length == 2){// if chars is '>='              
+                return _content >= msgContent.content;                
+            }else{               
+                return _content > msgContent.content;                
             }
         }
-
+        
+       
+        
+        require(false, "Comparison symbol is not valid");
+        return false;
         // 0x21 : !
         // 0x3D : =
         // 0x3C : <
@@ -423,7 +426,80 @@ library EAI{
 /*                           MESSAGE CONTENT  PER TIME                        */
 /* ========================================================================== */
 
+    struct MessageContent_NumberPerTime{
+        string xpath;
+        string op; // // the comparison operator (op) will receive only '<' or '<='
+        uint32 amount;
+        uint8 timeUnit;
+        uint32 byTime;
+        uint32 rest;
+        uint32 endTime;
+             
+    }
 
+    function createMessageContent_NumberPerTime(
+        string memory _xpath,
+        string memory _op, 
+        uint32 _amount,
+        uint8 _timeUnit
+        )internal pure returns(MessageContent_NumberPerTime memory){
+
+        uint32 auxByTime;
+
+        if(_timeUnit <= WEEK){
+            // for value equal a week or less, will be used the time in seconds to increase the endTime 
+            auxByTime= getTimeInSeconds(_timeUnit);
+        }else{
+            // for values equal to year or month will be used the unit 1 to increase the endTime 
+            auxByTime = 1; 
+        }
+        return MessageContent_NumberPerTime(_xpath, _op, _amount, _timeUnit, auxByTime, _amount, 0);
+    }
+
+
+    // cath da value from message content and decrease from the amount
+    function decreaseNumberPerTime(
+        MessageContent_NumberPerTime storage msgContent_NumberPerTime,
+        uint32 _accessDateTime,
+        uint32 _content
+        )internal  {
+            require(_content>0, "The result of the xpath should be more than 0");
+            if(isAccessDatetimeOutOfOldInterval(msgContent_NumberPerTime.timeUnit, msgContent_NumberPerTime.endTime, _accessDateTime)){
+                msgContent_NumberPerTime.rest = msgContent_NumberPerTime.amount;
+                msgContent_NumberPerTime.endTime = calcNextEndTime(
+                                                msgContent_NumberPerTime.byTime,
+                                                msgContent_NumberPerTime.timeUnit,
+                                                _accessDateTime
+                                                );
+            }
+            
+            string memory revertMessage =  string(abi.encodePacked(
+                "You have only ", uint2String(msgContent_NumberPerTime.rest), 
+                " from ", uint2String(msgContent_NumberPerTime.amount)," resting, and the message contet xpath result is ", uint2String(_content)));
+            
+            // the comparison opraton operator (op) always will be  '<' or '<='
+            bytes memory chars = bytes(msgContent_NumberPerTime.op);
+            if(chars.length == 2){// if chars is '<='                                    
+                require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
+            }else{
+                require(_content < msgContent_NumberPerTime.rest, revertMessage);   
+            }   
+            
+                   
+            msgContent_NumberPerTime.rest -= _content;
+    }
+
+    // function setNewEndTimeAndRestFromAmout(
+    //     MessageContent_NumberPerTime storage msgContent_NumberPerTime,
+    //     uint32 _accessDateTime
+    //     ) private {
+    //     msgContent_NumberPerTime.rest = msgContent_NumberPerTime.amount;
+    //     msgContent_NumberPerTime.endTime = calcNextEndTime(
+    //                                             msgContent_NumberPerTime.byTime,
+    //                                             msgContent_NumberPerTime.timeUnit,
+    //                                             _accessDateTime
+    //                                             );
+    // }
 
 
 
