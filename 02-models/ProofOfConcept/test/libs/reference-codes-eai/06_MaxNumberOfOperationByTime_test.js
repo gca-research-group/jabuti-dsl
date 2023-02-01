@@ -319,7 +319,7 @@ contract('MaxNumberOfOperationByTime', async()=>{
     it('getMaxOpByTime properties', async()=>{
       let maxOpByTime = await instance.getMaxOpByTime.call(5); // the position 2 contains a timeUnit HOUR
       expect(+maxOpByTime.amount).to.equal(2);     // number of operation
-      expect(+maxOpByTime.timeUnit).to.equal(5);   // 4 = EAI.MONTH
+      expect(+maxOpByTime.timeUnit).to.equal(5);   // 5 = EAI.MONTH
       expect(+maxOpByTime.byTime).to.equal(1);     // 1 MONTH  o mês não é medido em segundos, mas sim, em unidades de 1 a 12
       expect(+maxOpByTime.rest).to.equal(2);       // operation remaining number
       expect(+maxOpByTime.endTime).to.equal(0);    // the endTime will be set after the first operation drecrease

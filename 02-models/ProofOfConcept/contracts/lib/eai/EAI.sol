@@ -446,7 +446,6 @@ library EAI{
         uint32 byTime;
         uint32 rest;
         uint32 endTime;
-             
     }
 
     function createMessageContent_NumberPerTime(
@@ -465,6 +464,12 @@ library EAI{
             // for values equal to year or month will be used the unit 1 to increase the endTime 
             auxByTime = 1; 
         }
+
+        if(bytes(_op).length==1){
+            _op = "<=";
+            _amount = (_amount-1);
+        }
+
         return MessageContent_NumberPerTime(_xpath, _op, _amount, _timeUnit, auxByTime, _amount, 0);
     }
 
@@ -490,13 +495,16 @@ library EAI{
                 " from ", uint2String(msgContent_NumberPerTime.amount)," resting, and the message contet xpath result is ", uint2String(_content)));
             
             // the comparison opraton operator (op) always will be  '<' or '<='
-            bytes memory chars = bytes(msgContent_NumberPerTime.op);
-            if(chars.length == 2){// if chars is '<='                                    
-                require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
-            }else{
-                require(_content < msgContent_NumberPerTime.rest, revertMessage);   
-            }   
-            
+            // bytes memory chars = bytes(msgContent_NumberPerTime.op);
+            // if(chars.length == 2){// if chars is '<='                                    
+            //     require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
+            // }else{
+            //     require(_content < msgContent_NumberPerTime.rest, revertMessage);   
+            // }   
+            // the block 'if' is not necessary, because the operator '<' was replaced for '<=' in 
+            // createMessageContent_NumberPerTime method, and the amount was decreased in 1 unit
+             require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
+
                    
             msgContent_NumberPerTime.rest -= _content;
     }

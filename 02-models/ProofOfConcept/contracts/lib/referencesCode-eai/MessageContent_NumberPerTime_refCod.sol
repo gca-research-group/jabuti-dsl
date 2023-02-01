@@ -11,17 +11,29 @@ contract MessageContent_NumberPerTime_refCod{
     EAI.MessageContent_NumberPerTime[] msgContent;
 
     constructor(){
-        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//address)", "<=", 2, EAI.MINUTE));
+
+        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//address)", "<", 3, EAI.SECOND));
+        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//cep)", "<=", 3, EAI.MINUTE));
+        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//address)", "<", 5, EAI.HOUR));
+        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//address)", "<=", 4, EAI.DAY));
+        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//address)", "<", 4, EAI.WEEK));
+        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//address)", "<=", 5, EAI.MONTH));
+        msgContent.push(EAI.createMessageContent_NumberPerTime("count(//address)", "<=", 2, EAI.YEAR));
     }
 
     function getAllmsgContent()public view returns(EAI.MessageContent_NumberPerTime[] memory){
         return msgContent;
     }
 
+    function getMessageContentById(uint _id) public view returns(EAI.MessageContent_NumberPerTime memory){
+        return msgContent[_id];
+    }
+
     function decreaseMsgContentResultXpathFromAmount(uint _id, 
         uint32 _accessTime, 
         uint32 _resultFromXpath
         )public returns(EAI.MessageContent_NumberPerTime memory){
+
         msgContent[_id].decreaseNumberPerTime(_accessTime, _resultFromXpath);
         return msgContent[_id];
     }
