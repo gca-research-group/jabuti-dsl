@@ -525,7 +525,7 @@ library EAI{
 /* ========================================================================== */
 /*                      SESSION INTERVAL SINGLE                     */
 /* ========================================================================== */
-
+    // the session interval accept only from SECOND to WEEK timeUnit
     struct SessionInterval{
         uint8 duration;
         uint8 timeUnit;   
@@ -559,24 +559,6 @@ library EAI{
            _session.endTime = _accessDateTime + _session.durationInSeconds;
         }               
     }
-
-
-
-/* ========================================================================== */
-/*                      SESSION INTERVAL BY ID REFERENCE                      */
-/* ========================================================================== */
-
-    struct SessionInterval_TimeByIdReference{
-        uint32 duration;
-        uint8 timeUnit;
-        string idReference;
-        uint32 endTime;
-    }
-
-    function createSessionInteval(uint32 _duration, uint8 _timeUnit, string memory _idReference)internal pure returns (SessionInterval_TimeByIdReference memory){
-        return SessionInterval_TimeByIdReference(_duration, _timeUnit, _idReference, 0);
-    }
-
 
 /* ========================================================================== */
 /*                                   UTILITIES                                */

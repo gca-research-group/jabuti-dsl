@@ -11,81 +11,14 @@
 				"type": "constructor"
 			},
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "getAllSessionIntervalByRef",
+				"outputs": [
 					{
-						"internalType": "string",
-						"name": "_mapIdRef",
-						"type": "string"
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
 					},
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
-					}
-				],
-				"name": "createSessionIntevalByIdRef",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "string",
-						"name": "_idRef",
-						"type": "string"
-					}
-				],
-				"name": "deleteSessionInterval_idRef",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getAllSessionInterval",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "uint8",
-								"name": "duration",
-								"type": "uint8"
-							},
-							{
-								"internalType": "uint8",
-								"name": "timeUnit",
-								"type": "uint8"
-							},
-							{
-								"internalType": "uint32",
-								"name": "durationInSeconds",
-								"type": "uint32"
-							},
-							{
-								"internalType": "uint32",
-								"name": "endTime",
-								"type": "uint32"
-							}
-						],
-						"internalType": "struct EAI.SessionInterval[]",
-						"name": "",
-						"type": "tuple[]"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getAllSessionInterval_mapping",
-				"outputs": [
 					{
 						"internalType": "string[]",
 						"name": "",
@@ -125,9 +58,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "_k1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_k2",
+						"type": "string"
 					}
 				],
 				"name": "getSessionIntervalById",
@@ -167,48 +105,12 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_mapIdRef",
+						"name": "_k1",
 						"type": "string"
-					}
-				],
-				"name": "getSessionIntervalByIdRef",
-				"outputs": [
-					{
-						"components": [
-							{
-								"internalType": "uint8",
-								"name": "duration",
-								"type": "uint8"
-							},
-							{
-								"internalType": "uint8",
-								"name": "timeUnit",
-								"type": "uint8"
-							},
-							{
-								"internalType": "uint32",
-								"name": "durationInSeconds",
-								"type": "uint32"
-							},
-							{
-								"internalType": "uint32",
-								"name": "endTime",
-								"type": "uint32"
-							}
-						],
-						"internalType": "struct EAI.SessionInterval",
-						"name": "",
-						"type": "tuple"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
+					},
 					{
 						"internalType": "string",
-						"name": "_idRef",
+						"name": "_k2",
 						"type": "string"
 					},
 					{
@@ -232,49 +134,17 @@
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_id",
+						"name": "_idSingleSession",
 						"type": "uint256"
 					},
 					{
-						"internalType": "uint32",
-						"name": "_accessDateTime",
-						"type": "uint32"
-					}
-				],
-				"name": "isTheSessionIdOpen",
-				"outputs": [
-					{
 						"internalType": "string",
-						"name": "",
+						"name": "_k1",
 						"type": "string"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_id",
-						"type": "uint256"
 					},
 					{
-						"internalType": "uint32",
-						"name": "_accessDateTime",
-						"type": "uint32"
-					}
-				],
-				"name": "startNewSection",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
-						"name": "_idRef",
+						"name": "_k2",
 						"type": "string"
 					},
 					{
@@ -283,7 +153,7 @@
 						"type": "uint32"
 					}
 				],
-				"name": "startNewSessionIntervalByIdRef",
+				"name": "startSection",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -302,7 +172,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": "SessionInterval_refCod"
+			"contracts/lib/referencesCode-eai/011_SessionInterval_byIdRef_refCod.sol": "SessionInterval_refCod"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -317,19 +187,19 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0x58dd5daa85db4c94c5669b645810f8a78e52a64928e824544897d6230941bc7e",
+			"keccak256": "0xa0ee8cd8c94e65b133669708da61209cc1e4663eb9c2a5b6739025e5310f7ec5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://4426cd0add670b8298f2bb2f447fc7514534ac2ff6325c6ad2197a49d766b619",
-				"dweb:/ipfs/QmUTxC3WZo4NZXANWn94JPwtYYJYggTfmiduSTbsiVjGZG"
+				"bzz-raw://2d69b04001fce3fbbbbd01d8305d99856771c1ae8cd3109986de0d1365db4c53",
+				"dweb:/ipfs/QmYZSqrxnMBgDadEs3JemZWoXHKnFf3MQwGLTpPkdx361p"
 			]
 		},
-		"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": {
-			"keccak256": "0x6786b103de80deeca68567466c3c31884c9ae6e9e2967b715d17bb46cb62392a",
+		"contracts/lib/referencesCode-eai/011_SessionInterval_byIdRef_refCod.sol": {
+			"keccak256": "0xa88a2b41ff9c43a5d81df86b8e763023165102cedc63b3a6c8691d206af87356",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f7cf88fa0b50c30dab5ade7eb9bf688255dcea8bc9b36230877a7d3e8e05db04",
-				"dweb:/ipfs/QmRiujRydgjEQgFHmvqgKSqANenag1wZ3Y9ebgx13XJRfX"
+				"bzz-raw://f9fa15871af01e274ff24781a4a125aa66e853858258912b601dca30c9c3bdc7",
+				"dweb:/ipfs/QmdjwQdGYvvC7aQQMbKFkadef6i9wpC8qnoUJoT7Qbs2vB"
 			]
 		}
 	},
