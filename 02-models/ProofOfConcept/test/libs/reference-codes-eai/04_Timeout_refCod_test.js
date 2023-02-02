@@ -1,4 +1,4 @@
-// path to test "./test/libs/reference-codes-eai/Timeout_refCod_test.js"
+// test ./test/libs/reference-codes-eai/04_Timeout_refCod_test.js
 
 // startTime: 1670530986
 // timeout: 50 seconds

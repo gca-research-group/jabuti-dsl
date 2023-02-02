@@ -1,4 +1,4 @@
-// path to test "./test/libs/reference-codes-eai/TimeInterval_refCod_test.js"
+//test ./test/libs/reference-codes-eai/03_TimeInterval_refCod_test.js
 
 //horas definidas no teste
 // 10:00:00 to 14:00:00 -> 36000000,50400000

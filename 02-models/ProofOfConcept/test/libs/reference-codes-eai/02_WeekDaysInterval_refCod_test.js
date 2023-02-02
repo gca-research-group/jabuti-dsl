@@ -1,4 +1,4 @@
-// path to test "./test/libs/reference-codes-eai/WeekDaysInterval_refCod_test.js"
+// path to test ./test/libs/reference-codes-eai/02_WeekDaysInterval_refCod_test.js
 const wdi_refCod = artifacts.require("WeekDaysInterval_refCod");
 
 contract("WeekDaysInterval_refCod", (accounts) => {

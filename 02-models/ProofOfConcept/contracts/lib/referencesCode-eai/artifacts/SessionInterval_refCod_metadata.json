@@ -1,0 +1,337 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_mapIdRef",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "createSessionIntevalByIdRef",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_idRef",
+						"type": "string"
+					}
+				],
+				"name": "deleteSessionInterval_idRef",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllSessionInterval",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint8",
+								"name": "duration",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "timeUnit",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint32",
+								"name": "durationInSeconds",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.SessionInterval[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllSessionInterval_mapping",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint8",
+								"name": "duration",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "timeUnit",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint32",
+								"name": "durationInSeconds",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.SessionInterval[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getSessionIntervalById",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint8",
+								"name": "duration",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "timeUnit",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint32",
+								"name": "durationInSeconds",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.SessionInterval",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_mapIdRef",
+						"type": "string"
+					}
+				],
+				"name": "getSessionIntervalByIdRef",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint8",
+								"name": "duration",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "timeUnit",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint32",
+								"name": "durationInSeconds",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.SessionInterval",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_idRef",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					}
+				],
+				"name": "isTheSessionIdOpen",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					}
+				],
+				"name": "isTheSessionIdOpen",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					}
+				],
+				"name": "startNewSection",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_idRef",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					}
+				],
+				"name": "startNewSessionIntervalByIdRef",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": "SessionInterval_refCod"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0x58dd5daa85db4c94c5669b645810f8a78e52a64928e824544897d6230941bc7e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4426cd0add670b8298f2bb2f447fc7514534ac2ff6325c6ad2197a49d766b619",
+				"dweb:/ipfs/QmUTxC3WZo4NZXANWn94JPwtYYJYggTfmiduSTbsiVjGZG"
+			]
+		},
+		"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": {
+			"keccak256": "0x6786b103de80deeca68567466c3c31884c9ae6e9e2967b715d17bb46cb62392a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f7cf88fa0b50c30dab5ade7eb9bf688255dcea8bc9b36230877a7d3e8e05db04",
+				"dweb:/ipfs/QmRiujRydgjEQgFHmvqgKSqANenag1wZ3Y9ebgx13XJRfX"
+			]
+		}
+	},
+	"version": 1
+}

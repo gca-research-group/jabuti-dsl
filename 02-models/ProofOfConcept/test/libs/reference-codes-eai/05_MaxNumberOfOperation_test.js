@@ -1,4 +1,4 @@
-// path to -> test ./test/libs/reference-codes-eai/MaxNumberOfOperation_test.js
+// path to -> test ./test/libs/reference-codes-eai/05_MaxNumberOfOperation_test.js
 
 const expect = require("chai").expect;
 const MaxNumberOfOperation = artifacts.require("MaxNumberOfOperation_refCod");

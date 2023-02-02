@@ -343,7 +343,7 @@ library EAI{
 
 
 /* ========================================================================== */
-/*                              MESSAGE CONTENT BOOLEAN                        */
+/*                            MESSAGE CONTENT ONLY XPATH                      */
 /* ========================================================================== */
 
     struct MessageContent_onlyXPath{
@@ -522,6 +522,61 @@ library EAI{
     // }
 
 
+/* ========================================================================== */
+/*                      SESSION INTERVAL SINGLE                     */
+/* ========================================================================== */
+
+    struct SessionInterval{
+        uint8 duration;
+        uint8 timeUnit;   
+        uint32 durationInSeconds;// durantionInSeconds is used only for timeUnit: second, minute, hour, day and week. For timeUnit month and year, this variable will be 0 (not used)
+        uint32 endTime;        
+    }
+
+    function createSessionInteval(uint8 _duration, uint8 _timeUnit)internal pure returns (SessionInterval memory){
+        uint32 _durationInSeconds = 0;
+        if(_timeUnit <= WEEK){
+            _durationInSeconds = getIntervalInSeconds(_duration, _timeUnit);
+        }
+        return SessionInterval(_duration, _timeUnit, _durationInSeconds, 0);
+    }
+
+
+    function createSessionInterval_Copy(SessionInterval memory _session) internal pure returns(SessionInterval memory){
+        return SessionInterval(_session.duration, _session.timeUnit, _session.durationInSeconds, _session.endTime);
+    }
+
+    function isItOpen(SessionInterval memory _session, uint32 _accessDateTime) internal  pure returns(string memory){        
+        if ((_session.endTime == 0) || (_accessDateTime >= _session.endTime)){         
+            return "CLOSED";
+        }        
+        return "OPEN";        
+    }
+
+    // a new section will be create just if the end time is equal '0' or if the _accessDateTime was bigger than the current endTime
+    function startNewSessionInterval(SessionInterval storage _session, uint32 _accessDateTime)internal{       
+        if ((_session.endTime == 0) || (_accessDateTime >= _session.endTime)){         
+           _session.endTime = _accessDateTime + _session.durationInSeconds;
+        }               
+    }
+
+
+
+/* ========================================================================== */
+/*                      SESSION INTERVAL BY ID REFERENCE                      */
+/* ========================================================================== */
+
+    struct SessionInterval_TimeByIdReference{
+        uint32 duration;
+        uint8 timeUnit;
+        string idReference;
+        uint32 endTime;
+    }
+
+    function createSessionInteval(uint32 _duration, uint8 _timeUnit, string memory _idReference)internal pure returns (SessionInterval_TimeByIdReference memory){
+        return SessionInterval_TimeByIdReference(_duration, _timeUnit, _idReference, 0);
+    }
+
 
 /* ========================================================================== */
 /*                                   UTILITIES                                */
@@ -603,6 +658,11 @@ library EAI{
         }else {
            return 60*60*24*7; //WEEK
         }
+    }
+        
+    function getIntervalInSeconds(uint32 _duration, uint8 _timeUnit)internal pure returns(uint32){
+       uint32 timeUnitInSeconds =  getTimeInSeconds(_timeUnit);
+       return _duration * timeUnitInSeconds;
     }
 
     function timeStampToDate(uint _timestamp) internal pure returns (uint32 year, uint32 month, uint32 day) {

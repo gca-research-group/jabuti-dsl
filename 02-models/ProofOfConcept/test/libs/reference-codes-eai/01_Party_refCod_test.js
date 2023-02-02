@@ -1,4 +1,4 @@
-// path to test "./test/libs/reference-codes-eai/Party_refCod_test.js"
+// path to test ./test/libs/reference-codes-eai/01_Party_refCod_test.js
 const Party_refCod = artifacts.require("Party_refCod");
 const expect = require("chai").expect;
 

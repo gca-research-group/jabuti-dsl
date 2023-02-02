@@ -53,11 +53,11 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0xa8836b4e12e3d68b736963bf58c702133c5e54a97d9d69dbadf0a5ba5a5d7076",
+			"keccak256": "0x58dd5daa85db4c94c5669b645810f8a78e52a64928e824544897d6230941bc7e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://527ad27e38ff81959b6bdd67de33a1272b331a44d770c1f7ccd14ee46e356db7",
-				"dweb:/ipfs/QmewmrYrfYpzfSZPSMXmFhuBeUz3fE6VYx1VWsnAHZUp8J"
+				"bzz-raw://4426cd0add670b8298f2bb2f447fc7514534ac2ff6325c6ad2197a49d766b619",
+				"dweb:/ipfs/QmUTxC3WZo4NZXANWn94JPwtYYJYggTfmiduSTbsiVjGZG"
 			]
 		}
 	},

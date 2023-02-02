@@ -1,4 +1,4 @@
-// path to test: test ./test/libs/reference-codes-eai/09_MessageContent_NumberPerTime_refCod_test.js
+// test ./test/libs/reference-codes-eai/09_MessageContent_NumberPerTime_refCod_test.js
 
 const expect = require('chai').expect;
 
