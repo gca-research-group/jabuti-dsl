@@ -542,9 +542,9 @@ library EAI{
     }
 
 
-    function createSessionInterval_Copy(SessionInterval memory _session) internal pure returns(SessionInterval memory){
-        return SessionInterval(_session.duration, _session.timeUnit, _session.durationInSeconds, _session.endTime);
-    }
+    // function createSessionInterval_Copy(SessionInterval memory _session) internal pure returns(SessionInterval memory){
+    //     return SessionInterval(_session.duration, _session.timeUnit, _session.durationInSeconds, _session.endTime);
+    // }
 
     function isItOpen(SessionInterval memory _session, uint32 _accessDateTime) internal  pure returns(string memory){        
         if ((_session.endTime == 0) || (_accessDateTime >= _session.endTime)){         
@@ -557,7 +557,10 @@ library EAI{
     function startNewSessionInterval(SessionInterval storage _session, uint32 _accessDateTime)internal{       
         if ((_session.endTime == 0) || (_accessDateTime >= _session.endTime)){         
            _session.endTime = _accessDateTime + _session.durationInSeconds;
-        }               
+        } 
+        //  else {
+        //     require(false, "This section is open" );
+        // }             
     }
 
 /* ========================================================================== */

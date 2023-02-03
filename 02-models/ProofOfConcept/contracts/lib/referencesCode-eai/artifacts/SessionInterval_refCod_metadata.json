@@ -172,7 +172,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/lib/referencesCode-eai/011_SessionInterval_byIdRef_refCod.sol": "SessionInterval_refCod"
+			"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": "SessionInterval_refCod"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -187,19 +187,19 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0xa0ee8cd8c94e65b133669708da61209cc1e4663eb9c2a5b6739025e5310f7ec5",
+			"keccak256": "0x161e100153f29272d8689abdeb3ec133fd9a7e56e6d8d3adb01fe715d64c1daf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2d69b04001fce3fbbbbd01d8305d99856771c1ae8cd3109986de0d1365db4c53",
-				"dweb:/ipfs/QmYZSqrxnMBgDadEs3JemZWoXHKnFf3MQwGLTpPkdx361p"
+				"bzz-raw://cb500e6ab376e38b44a6f16323855d797ebd21f107f6fdf16272e26be195d538",
+				"dweb:/ipfs/QmbVrpa9ScvFH2M8kRNYSqgJrojmEbUBYc1S1BJdwaRreS"
 			]
 		},
-		"contracts/lib/referencesCode-eai/011_SessionInterval_byIdRef_refCod.sol": {
-			"keccak256": "0xa88a2b41ff9c43a5d81df86b8e763023165102cedc63b3a6c8691d206af87356",
+		"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": {
+			"keccak256": "0x047929afa97768b8a8ec8d643ecc4ff2e3cb13187a82af828807029fac56f69c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f9fa15871af01e274ff24781a4a125aa66e853858258912b601dca30c9c3bdc7",
-				"dweb:/ipfs/QmdjwQdGYvvC7aQQMbKFkadef6i9wpC8qnoUJoT7Qbs2vB"
+				"bzz-raw://3903d1f97d92966a27db3ab5c20991ba4967384d431aeb2859d4ba2e54ee6b86",
+				"dweb:/ipfs/QmPT13VgFDgQUTwYQGsHppUaZbuYKRYw3FtPKMiyX3gYTu"
 			]
 		}
 	},
