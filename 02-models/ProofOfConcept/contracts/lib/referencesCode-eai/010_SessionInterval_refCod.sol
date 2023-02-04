@@ -27,7 +27,7 @@ contract SessionInterval_refCod{
 
         sessionInterval.push(EAI.createSessionInteval(2, EAI.HOUR)); //[2]              
 
-        sessionInterval.push(EAI.createSessionInteval(2, EAI.DAY)); //[3]
+        sessionInterval.push(EAI.createSessionInteval(2, EAI.DAY));  //[3]
 
         keys_k1.push("nome"); // 0
         keys_k1.push("cidade");// 1
