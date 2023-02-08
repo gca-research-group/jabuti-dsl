@@ -3,23 +3,75 @@
  */
 package br.edu.unijui.gca.jabuti.validation;
 
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.validation.CheckType;
+
+import com.google.common.base.Objects;
+
+import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 
 /**
- * This class contains custom validation rules. 
+ * This class contains custom validation rules.
  *
- * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
+ * See
+ * https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class JabutiValidator extends AbstractJabutiValidator {
-	
-//	public static final String INVALID_NAME = "invalidName";
-//
-//	@Check
-//	public void checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.getName().charAt(0))) {
-//			warning("Name should start with a capital",
-//					JabutiPackage.Literals.GREETING__NAME,
-//					INVALID_NAME);
-//		}
-//	}
-	
+
+	public static final String INVALID_NAME = "invalidName";
+	public static final String DUPLICATE_NAME = "Duplicated name";
+
+	@Check
+	public void checkNameStartsWithCapital(Contract contract) {
+		if (!Character.isUpperCase(contract.getName().charAt(0))) {
+			warning("Name should start with a capital", JabutiPackage.Literals.CONTRACT__NAME, INVALID_NAME);
+		}
+	}
+
+	@Check
+	public void checkNameStartsWithLowerCase(Clause clause) {
+		if (!Character.isLowerCase(clause.getName().charAt(0))) {
+			warning("Name should not start with a capital", JabutiPackage.Literals.CLAUSE__NAME, INVALID_NAME);
+		}
+	}
+
+	@Check
+	public void checkClauseNameIsUnique(Clause clause) {
+
+		if (clause != null) {
+			EList<Clause> clauses = ((Contract) clause.eContainer()).getClauses();
+			int count = 0;
+			for (Clause otherClause : clauses) {
+				if (Objects.equal(otherClause.getName(), clause.getName())) {
+					count += 1;
+					if (count == 2) {
+						error(DUPLICATE_NAME, JabutiPackage.Literals.CLAUSE__NAME);
+					}
+				}
+			}
+		}
+	}
+
+	@Check(CheckType.NORMAL)
+	public void checkDate(Contract contract) {
+
+		String beginDate = contract.getBeginDate();
+		String dueDate = contract.getDueDate();
+
+		if (beginDate != null) {
+			if (!beginDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")) {
+				error("Date is not valid. Check the date and its format: YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__BEGIN_DATE);
+			}
+		}
+		
+		if (dueDate != null) {
+			if (!dueDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")) {
+				error("Date is not valid. Check the format: YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__DUE_DATE);
+			}
+		}
+	}
+
 }

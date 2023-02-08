@@ -377,11 +377,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Right:
-		//    'right' name=ID
+		//    'right'  name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'right' name=ID
+		//'right'  name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'right'
@@ -401,11 +401,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Obligation:
-		//    'obligation' name=ID
+		//    'obligation'   name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'obligation' name=ID
+		//'obligation'   name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'obligation'
@@ -425,11 +425,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		
 		//Prohibition:
-		//    'prohibition' name=ID
+		//    'prohibition'  name=ID
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'prohibition' name=ID
+		//'prohibition'  name=ID
 		public Group getGroup() { return cGroup; }
 		
 		//'prohibition'
@@ -2420,7 +2420,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Right:
-	//    'right' name=ID
+	//    'right'  name=ID
 	//;
 	public RightElements getRightAccess() {
 		return pRight;
@@ -2431,7 +2431,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Obligation:
-	//    'obligation' name=ID
+	//    'obligation'   name=ID
 	//;
 	public ObligationElements getObligationAccess() {
 		return pObligation;
@@ -2442,7 +2442,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Prohibition:
-	//    'prohibition' name=ID
+	//    'prohibition'  name=ID
 	//;
 	public ProhibitionElements getProhibitionAccess() {
 		return pProhibition;

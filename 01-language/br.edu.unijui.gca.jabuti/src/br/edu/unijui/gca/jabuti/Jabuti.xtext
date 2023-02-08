@@ -47,13 +47,13 @@ Clause:
 ;
 
 Right:
-	'right' name=ID
+	'right'  name=ID 
 ;
 Obligation:
-	'obligation' name=ID
+	'obligation'   name=ID 
 ;
 Prohibition:
-	'prohibition' name=ID
+	'prohibition'  name=ID 
 ;	
 
 

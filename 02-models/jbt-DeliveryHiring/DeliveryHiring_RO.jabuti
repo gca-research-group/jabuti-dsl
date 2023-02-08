@@ -1,10 +1,8 @@
-//@version - jabuti 0.1.0 
-
 contract DeliveryHiring_RO {  
 	
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
-		dueDate = "2022-12-31 18:00:00"
+		dueDate = "2022-12-31 18:00:00" 
 	}	
 
 	parties{
@@ -18,7 +16,7 @@ contract DeliveryHiring_RO {
 	
 	clauses{
 	
-			right requestDelivery {
+			right requestDelivery       {
 			/*Setting the days and hours to request a delivery,
 			the maximum request operation by minute and number of address by request*/
 		
@@ -38,7 +36,7 @@ contract DeliveryHiring_RO {
 			
 		}
 	
-		obligation responseOrder{
+		obligation responseDelivery  {
 			/* Setting the time limit for responding to a request */
 			rolePlayer = application
 			operation = response
@@ -48,6 +46,7 @@ contract DeliveryHiring_RO {
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))
 		}
+		
 		
 		
 	}
