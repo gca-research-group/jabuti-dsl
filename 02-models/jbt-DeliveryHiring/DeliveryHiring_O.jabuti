@@ -1,7 +1,7 @@
 contract DeliveryHiring_O {   
 	dates{
-		beginDate = "2022-01-01 08:30:00"   
-		dueDate =  "2022-01-01 08:30:00"   			  	 
+		beginDate = "2023-01-01 08:30:00"   
+		dueDate =  "2024-01-01 08:30:00"   			  	 
 	}	
   
 	parties{
@@ -14,12 +14,10 @@ contract DeliveryHiring_O {
 			operation = response
 			terms {
 				Timeout(180),
-				MessageContent('//budget/id/text()" != "')				
+				MessageContent('//budget/id/text()' != "")	 		
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
 		}	
-		
-		
-				
+			
 	}
 }

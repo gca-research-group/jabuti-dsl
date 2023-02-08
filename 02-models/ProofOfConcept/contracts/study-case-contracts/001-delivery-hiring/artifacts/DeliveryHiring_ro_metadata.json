@@ -8,17 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_applicationAddress",
-						"type": "address"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -103,38 +92,15 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "mapParty",
+				"inputs": [],
+				"name": "signContract",
 				"outputs": [
 					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "walletAddress",
-						"type": "address"
-					},
-					{
 						"internalType": "bool",
-						"name": "aware",
+						"name": "",
 						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "signContract",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -152,7 +118,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/lib/referencesCode-eai/001_Party_refCod.sol": "Party_refCod"
+			"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_P.sol": "DeliveryHiring_RO"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -174,12 +140,12 @@
 				"dweb:/ipfs/QmYDgJnWXhQ5WqiQYiFKAdZKiTHpSDAkwcYxomibsU1PdM"
 			]
 		},
-		"contracts/lib/referencesCode-eai/001_Party_refCod.sol": {
-			"keccak256": "0xfc5be23d4170ae5e853b168ad91962d58ddbb028ed172177cff44677aa2df24b",
+		"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_P.sol": {
+			"keccak256": "0xfe6f69b45b96e08ef1efa1bbde8411eaff2f547949b9582c086932634c47ac9b",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5c2245a981e1b490c3d88bd12a1d696166af6dedca481977e2074e8f0c0d69d9",
-				"dweb:/ipfs/QmTtaYAvKfHphgpLBKDnC8LxMJyX1xkkLJ9nq9x1Bu5shv"
+				"bzz-raw://607a062ba4fc7e43c052207ffb1d61381a4bc49f402299b2e8c7a5645c5a6dd9",
+				"dweb:/ipfs/QmWectirjnq8B65kPbi45BQzYCwhrmoGiVm78sfcJvo8hU"
 			]
 		}
 	},

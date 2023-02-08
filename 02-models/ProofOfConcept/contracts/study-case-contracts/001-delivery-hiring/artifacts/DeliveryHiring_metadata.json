@@ -9,12 +9,38 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "_applicationAddress",
+						"name": "_applicationWallet",
 						"type": "address"
 					}
 				],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_logMessage",
+						"type": "string"
+					}
+				],
+				"name": "failEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_logMessage",
+						"type": "string"
+					}
+				],
+				"name": "successEvent",
+				"type": "event"
 			},
 			{
 				"inputs": [
@@ -105,36 +131,50 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
 					}
 				],
-				"name": "mapParty",
+				"name": "onlyForTest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_xPathContent",
+						"type": "string[]"
+					}
+				],
+				"name": "responderOrder",
 				"outputs": [
 					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "walletAddress",
-						"type": "address"
-					},
-					{
 						"internalType": "bool",
-						"name": "aware",
+						"name": "",
 						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
 				"name": "signContract",
-				"outputs": [],
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -152,7 +192,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/lib/referencesCode-eai/001_Party_refCod.sol": "Party_refCod"
+			"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_O.sol": "DeliveryHiring"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -174,12 +214,12 @@
 				"dweb:/ipfs/QmYDgJnWXhQ5WqiQYiFKAdZKiTHpSDAkwcYxomibsU1PdM"
 			]
 		},
-		"contracts/lib/referencesCode-eai/001_Party_refCod.sol": {
-			"keccak256": "0xfc5be23d4170ae5e853b168ad91962d58ddbb028ed172177cff44677aa2df24b",
+		"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_O.sol": {
+			"keccak256": "0xecb1f797f17c2ba30dfbba23f247e905a71dfe3a96c797eac5e8b2ebca89322e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5c2245a981e1b490c3d88bd12a1d696166af6dedca481977e2074e8f0c0d69d9",
-				"dweb:/ipfs/QmTtaYAvKfHphgpLBKDnC8LxMJyX1xkkLJ9nq9x1Bu5shv"
+				"bzz-raw://885b21ef2009a3d8a2e43a1693387563bb71e8d051673136d3a301aedc9b355b",
+				"dweb:/ipfs/QmbEQjiJAKAPGqvk3DuZQ65etPgKs7sGHRxyGxqQ33xBog"
 			]
 		}
 	},

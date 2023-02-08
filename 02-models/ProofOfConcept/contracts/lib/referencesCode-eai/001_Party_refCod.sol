@@ -8,7 +8,6 @@ contract Party_refCod{
     using EAI for EAI.Party;
     EAI.Party process;
     EAI.Party application;
-
     mapping(address=>EAI.Party) public mapParty;
 
     constructor(address _applicationAddress){

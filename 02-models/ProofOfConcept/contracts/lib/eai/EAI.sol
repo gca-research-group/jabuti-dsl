@@ -70,6 +70,10 @@ library EAI{
         _party.aware = true;
     }
 
+    function isAware(Party memory _party) internal pure returns(bool){
+        return _party.aware;
+    }
+
 
 /* ========================================================================== */
 /*                             WEEK_DAYS_INTERVAL                     */
@@ -383,7 +387,7 @@ library EAI{
         return false;
     }
 
-
+ 
 /* ========================================================================== */
 /*                              MESSAGE CONTENT NUMBER                        */
 /* ========================================================================== */

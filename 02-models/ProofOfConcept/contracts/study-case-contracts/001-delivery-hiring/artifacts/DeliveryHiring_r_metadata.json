@@ -8,17 +8,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "_applicationAddress",
-						"type": "address"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "string",
 						"name": "_name",
 						"type": "string"
@@ -103,38 +92,15 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "mapParty",
+				"inputs": [],
+				"name": "signContract",
 				"outputs": [
 					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "address",
-						"name": "walletAddress",
-						"type": "address"
-					},
-					{
 						"internalType": "bool",
-						"name": "aware",
+						"name": "",
 						"type": "bool"
 					}
 				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "signContract",
-				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -152,7 +118,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/lib/referencesCode-eai/001_Party_refCod.sol": "Party_refCod"
+			"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_R.sol": "DeliveryHiring_R"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -174,12 +140,12 @@
 				"dweb:/ipfs/QmYDgJnWXhQ5WqiQYiFKAdZKiTHpSDAkwcYxomibsU1PdM"
 			]
 		},
-		"contracts/lib/referencesCode-eai/001_Party_refCod.sol": {
-			"keccak256": "0xfc5be23d4170ae5e853b168ad91962d58ddbb028ed172177cff44677aa2df24b",
+		"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_R.sol": {
+			"keccak256": "0x4619b6addc26cb03fdddd5c4296e6e3501d86f4452cbcf6814d599ea1f111152",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5c2245a981e1b490c3d88bd12a1d696166af6dedca481977e2074e8f0c0d69d9",
-				"dweb:/ipfs/QmTtaYAvKfHphgpLBKDnC8LxMJyX1xkkLJ9nq9x1Bu5shv"
+				"bzz-raw://8fd7cf0a9b47c370f1069d83f677f6abd4dcd6ce08d255df712e9a6bca7f6f97",
+				"dweb:/ipfs/QmSomdZPVjD8wJCiJ2HksUuMpKvFh9zPWyAfNGSot1qgxt"
 			]
 		}
 	},
