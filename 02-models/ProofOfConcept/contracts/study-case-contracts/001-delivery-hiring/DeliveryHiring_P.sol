@@ -9,8 +9,7 @@ contract DeliveryHiring_P{
     /* ============================ CODES FOR ALL CONTRACTS ============================== */
  
     using EAI for EAI.Party;
-    using EAI for EAI.Timeout;
-    using EAI for EAI.MessageContent_String;
+   
 
     EAI.Party process;
     EAI.Party application;
@@ -21,28 +20,50 @@ contract DeliveryHiring_P{
    /* --------------------------------   END   ------------------------------------------ */
 
 
+
+
     /* ==================================  BEGIN  ======================================= */
     /* =================== CODES GENERATED BASED IN JABUTI CONTRACT ===================== */
- 
- 	// EAI.Timeout[]  timeout; 	
-	// EAI.MessageContent_String[]  messageContent;
+    
+
+    
+    using EAI for EAI.WeekDaysInterval;
+    using EAI for EAI.TimeInterval;
+    using EAI for EAI.MaxNumberOfOperation;
+    using EAI for EAI.MessageContent_Number;
+    using EAI for EAI.MessageContent_NumberPerTime;
+
+
+    string numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
+
+
+ 	EAI.WeekDaysInterval[]  weekDaysInterval; 	
+	EAI.TimeInterval[] timeInterval;
+    EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime;
+    EAI.MessageContent_Number[] msgContent_number;
+    EAI.MessageContent_NumberPerTime[] msgContent_numberPerTime;
+
 	
-	// event failEvent(string _logMessage);
-    // event successEvent(string _logMessage);
+	event failEvent(string _logMessage);
+    event successEvent(string _logMessage);
 	
-	// constructor(address _applicationWallet){
-	//  	beginDate = 1672561800;
-	//     dueDate = 1704097800;
+	constructor(address _applicationWallet){
+	 	beginDate = 1672561800;
+	    dueDate = 1704097800;
          
-    //     process = EAI.createParty("Integration Process", msg.sender, true);
-	//     application = EAI.createParty("Delivery System", _applicationWallet, false);        
-    //     mapParty[msg.sender] = process;
-    //     mapParty[_applicationWallet] = application;
+        process = EAI.createParty("Integration Process", msg.sender, true);
+	    application = EAI.createParty("Delivery System", _applicationWallet, false);        
+        mapParty[msg.sender] = process;
+        mapParty[_applicationWallet] = application;
 
+        weekDaysInterval.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.FRIDAY));
+        timeInterval.push(EAI.createTimeInterval(30600,66600)); //TimeInterval("08:30:00" to "18:30:00")
+        maxNumberOfOperationByTime.push(EAI.createMaxNumberOfOperationByTime(5, EAI.DAY));
+		msgContent_number.push(EAI.createMessageContent(numberOfAddresses, ">=", 1));        
+        msgContent_number.push(EAI.createMessageContent(numberOfAddresses, "<=", 3));        
+        msgContent_numberPerTime.push(EAI.createMessageContent_NumberPerTime(numberOfAddresses, "<=", 1000, EAI.MONTH));
 
-	// 	timeout.push(EAI.createTimeout(40));	   				
-	// 	messageContent.push(EAI.createMessageContent("//budget/id/text()", "!=", ""));        
-	// }
+	}
 	
 
     // function onlyForTest(uint32 _accessDateTime) public onlyProcess() {
@@ -68,6 +89,11 @@ contract DeliveryHiring_P{
   
     /* ================== CODES GENERATED BASED IN JABUTI CONTRACT ======================= */
     /* --------------------------------   END   ------------------------------------------ */
+
+
+
+
+
 
 
 
