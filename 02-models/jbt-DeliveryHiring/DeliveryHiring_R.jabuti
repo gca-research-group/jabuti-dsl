@@ -19,7 +19,7 @@ contract DeliveryHiring_R {
 		right requestDelivery {
 			/*Setting the days and hours to request a delivery,
 			the maximum request operation by minute and number of address by request*/
-			rolePlayer = application
+			rolePlayer = process
 			operation = request
 			
 			terms {

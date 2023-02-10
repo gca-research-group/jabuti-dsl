@@ -32,10 +32,10 @@ contract MessageContent_NumberPerTime_refCod{
     function decreaseMsgContentResultXpathFromAmount(uint _id, 
         uint32 _accessTime, 
         uint32 _resultFromXpath
-        )public returns(EAI.MessageContent_NumberPerTime memory){
-
-        msgContent[_id].decreaseNumberPerTime(_accessTime, _resultFromXpath);
+        )public returns(EAI.MessageContent_NumberPerTime memory){                        
+        msgContent[_id].evaluateAndDecreaseNumberPerTime(_accessTime, _resultFromXpath);
         return msgContent[_id];
+
     }
 
 }

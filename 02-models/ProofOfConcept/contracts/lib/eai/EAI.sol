@@ -118,7 +118,7 @@ library EAI{
         uint vLength = _wdInterval.length;
         for(uint i=0; i<vLength; i++){
             //    flagReturn = isIntoWeekDaysInterval(_weekDay, _wdInterval[i]); 
-               if(isIntoWeekDaysInterval(_weekDay, _wdInterval[i])){                
+               if(isIntoWeekDaysInterval(_wdInterval[i], _weekDay)){                
                 return true; 
                }
         }
@@ -126,9 +126,9 @@ library EAI{
     }
 
     // check into one weekDaysInterval
-    function isIntoWeekDaysInterval(
-        uint8 _weekDayAccess,
-        WeekDaysInterval memory _wdInterval
+    function isIntoWeekDaysInterval(       
+        WeekDaysInterval memory _wdInterval,
+        uint8 _weekDayAccess
         ) internal pure returns(bool){
        
         if(_wdInterval.start < _wdInterval.end ){
@@ -196,7 +196,7 @@ library EAI{
     ) internal pure  onlyValidHour(_timeAccess)returns(bool){
         uint vLength = _ti.length;
         for(uint i=0; i<vLength; i++){
-               if(isIntoTimeInterval(_timeAccess, _ti[i])){                
+               if(isIntoTimeInterval(_ti[i],_timeAccess)){                
                 return true; 
                }
         }
@@ -205,8 +205,8 @@ library EAI{
 
     // check into one weekDaysInterval
     function isIntoTimeInterval(
-        uint32 _timeAccess,
-        TimeInterval memory _ti
+        TimeInterval memory _ti,
+        uint32 _timeAccess        
         ) internal pure returns(bool){
        
         if(_ti.start < _ti.end ){
@@ -445,17 +445,17 @@ library EAI{
     struct MessageContent_NumberPerTime{
         string xpath;
         string op; // // the comparison operator (op) will receive only '<' or '<='
-        uint32 amount;
+        uint256 amount;
         uint8 timeUnit;
         uint32 byTime;
-        uint32 rest;
+        uint256 rest;
         uint32 endTime;
     }
 
     function createMessageContent_NumberPerTime(
         string memory _xpath,
         string memory _op, 
-        uint32 _amount,
+        uint256 _amount,
         uint8 _timeUnit
         )internal pure returns(MessageContent_NumberPerTime memory){
 
@@ -479,11 +479,11 @@ library EAI{
 
 
     // cath da value from message content and decrease from the amount
-    function decreaseNumberPerTime(
+    function evaluateAndDecreaseNumberPerTime(
         MessageContent_NumberPerTime storage msgContent_NumberPerTime,
         uint32 _accessDateTime,
-        uint32 _content
-        )internal  {
+        uint256 _content
+        )internal returns(bool) {
             require(_content>0, "The result of the xpath should be more than 0");
             if(isAccessDatetimeOutOfOldInterval(msgContent_NumberPerTime.timeUnit, msgContent_NumberPerTime.endTime, _accessDateTime)){
                 msgContent_NumberPerTime.rest = msgContent_NumberPerTime.amount;
@@ -511,7 +511,10 @@ library EAI{
 
                    
             msgContent_NumberPerTime.rest -= _content;
+            
+            return true;
     }
+    
 
     // function setNewEndTimeAndRestFromAmout(
     //     MessageContent_NumberPerTime storage msgContent_NumberPerTime,

@@ -9,8 +9,7 @@ contract DeliveryHiring_R{
     /* ============================ CODES FOR ALL CONTRACTS ============================== */
  
     using EAI for EAI.Party;
-    using EAI for EAI.Timeout;
-    using EAI for EAI.MessageContent_String;
+   
 
     EAI.Party process;
     EAI.Party application;
@@ -18,56 +17,91 @@ contract DeliveryHiring_R{
 
     uint32 beginDate; 
 	uint32 dueDate; 	
+
+    event failEvent(string _logMessage);
+    event successEvent(string _logMessage);
+
    /* --------------------------------   END   ------------------------------------------ */
+
+
 
 
     /* ==================================  BEGIN  ======================================= */
     /* =================== CODES GENERATED BASED IN JABUTI CONTRACT ===================== */
- 
- 	// EAI.Timeout[]  timeout; 	
-	// EAI.MessageContent_String[]  messageContent;
-	
-	// event failEvent(string _logMessage);
-    // event successEvent(string _logMessage);
-	
-	// constructor(address _applicationWallet){
-	//  	beginDate = 1672561800;
-	//     dueDate = 1704097800;
+    
+
+    // ------------------ Automated code generation - 1º step ------------------ 
+    using EAI for EAI.WeekDaysInterval;
+    using EAI for EAI.TimeInterval;
+    using EAI for EAI.MaxNumberOfOperation;
+    using EAI for EAI.MessageContent_Number;
+    using EAI for EAI.MessageContent_NumberPerTime;
+
+
+    // ------------------ Automated code generation - 2º step ------------------ 
+    string numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
+
+    // ------------------ Automated code generation - 3º step ------------------ 
+ 	EAI.WeekDaysInterval[]  weekDaysInterval; 	
+	EAI.TimeInterval[] timeInterval;
+    EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime;
+    EAI.MessageContent_Number[] msgContent_number;
+    EAI.MessageContent_NumberPerTime[] msgContent_numberPerTime;
+
+    // ------------------ Automated code generation - 4º step ------------------ 
+	constructor(address _applicationWallet){
+	 	beginDate = 1672561800;
+	    dueDate = 1704097800;
          
-    //     process = EAI.createParty("Integration Process", msg.sender, true);
-	//     application = EAI.createParty("Delivery System", _applicationWallet, false);        
-    //     mapParty[msg.sender] = process;
-    //     mapParty[_applicationWallet] = application;
+        process = EAI.createParty("Integration Process", msg.sender, true);
+	    application = EAI.createParty("Delivery System", _applicationWallet, false);        
+        mapParty[msg.sender] = process;
+        mapParty[_applicationWallet] = application;
 
+        // ------------------ Automated code generation - 5º step ------------------ 
+        weekDaysInterval.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.FRIDAY));
+        timeInterval.push(EAI.createTimeInterval(30600,66600)); //TimeInterval("08:30:00" to "18:30:00")
+        maxNumberOfOperationByTime.push(EAI.createMaxNumberOfOperationByTime(5, EAI.DAY));
+		msgContent_number.push(EAI.createMessageContent(numberOfAddresses, ">=", 1));        
+        msgContent_number.push(EAI.createMessageContent(numberOfAddresses, "<=", 3));        
+        msgContent_numberPerTime.push(EAI.createMessageContent_NumberPerTime(numberOfAddresses, "<=", 1000, EAI.MONTH));
 
-	// 	timeout.push(EAI.createTimeout(40));	   				
-	// 	messageContent.push(EAI.createMessageContent("//budget/id/text()", "!=", ""));        
-	// }
+	}
 	
+    // ------------------ Automated code generation - 6º step ------------------ 
+    // - translate clauses to functions
 
-    // function onlyForTest(uint32 _accessDateTime) public onlyProcess() {
-    //     timeout[0].setEndTimeInTimeout(_accessDateTime);
-    // }
+    function right_requestDelivery(
+        uint32 _accessDateTime, 
+        uint8 _weekDay, 
+        uint32 _hourOfDay, 
+        int256[] memory _resultFromXpath
+        ) public onlyProcess() returns(bool){
 
-	// function responderOrder(uint32 _accessDateTime, string[] memory _xPathContent) public onlyApplication() returns(bool){
+        weekDaysInterval[0].getOneWeekDaysInterval();
 
-	//    	// Setting the time limit for responding to a request
-	//    	require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
-	    
-	// 	if(!timeout[0].isTimeoutEnded(_accessDateTime)  &&			
-	// 		messageContent[0].evaluateStringContent(_xPathContent[0])
-    //         )
-	// 		{			    
-    //             emit successEvent("Successful execution!");
-	//         	return true;
-	//     	}
-	    
-	//    	emit failEvent("Request made outside of allowed hours or distance limit exceeded");
-	// 	return false;
-	// }
-  
+        if(weekDaysInterval[0].isIntoWeekDaysInterval(_weekDay) &&
+           timeInterval[0].isIntoTimeInterval(_hourOfDay) &&
+           msgContent_number[0].evaluateNumberContent(_resultFromXpath[0]) &&
+           msgContent_number[1].evaluateNumberContent(_resultFromXpath[0]) &&
+           msgContent_numberPerTime[0].evaluateAndDecreaseNumberPerTime(_accessDateTime, uint256(_resultFromXpath[0]))
+        ){
+            emit successEvent("Successful execution!");
+            return true;
+        }    
+	   	emit failEvent("Request operation performed outside of allowed hours or limit operation exceeded");
+		return false;
+    }
+    
+    
+   
     /* ================== CODES GENERATED BASED IN JABUTI CONTRACT ======================= */
     /* --------------------------------   END   ------------------------------------------ */
+
+
+
+
+
 
 
 

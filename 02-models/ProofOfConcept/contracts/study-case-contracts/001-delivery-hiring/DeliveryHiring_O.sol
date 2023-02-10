@@ -10,7 +10,7 @@ contract DeliveryHiring_O{
  
     using EAI for EAI.Party;
     using EAI for EAI.Timeout;
-    using EAI for EAI.MessageContent_String;
+    using EAI for EAI.MessageContent_Number;
 
     EAI.Party process;
     EAI.Party application;
@@ -25,7 +25,7 @@ contract DeliveryHiring_O{
     /* =================== CODES GENERATED BASED IN JABUTI CONTRACT ===================== */
  
  	EAI.Timeout[]  timeout; 	
-	EAI.MessageContent_String[]  messageContent;
+	EAI.MessageContent_Number[]  messageContent;
 	
 	event failEvent(string _logMessage);
     event successEvent(string _logMessage);
@@ -39,8 +39,8 @@ contract DeliveryHiring_O{
         mapParty[msg.sender] = process;
         mapParty[_applicationWallet] = application;
 
-		timeout.push(EAI.createTimeout(40));	   				
-		messageContent.push(EAI.createMessageContent("//budget/id/text()", "!=", ""));        
+		timeout.push(EAI.createTimeout(30));	   				
+		messageContent.push(EAI.createMessageContent("//budget/id/text()", ">=", 0));        
 	}
 	
 
@@ -48,13 +48,13 @@ contract DeliveryHiring_O{
         timeout[0].setEndTimeInTimeout(_accessDateTime);
     }
 
-	function responderOrder(uint32 _accessDateTime, string[] memory _xPathContent) public onlyApplication() returns(bool){
+	function responderOrder(uint32 _accessDateTime, int[] memory _xPathContent) public onlyApplication() returns(bool){
 
 	   	// Setting the time limit for responding to a request
 	   	require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
 	    
 		if(!timeout[0].isTimeoutEnded(_accessDateTime)  &&			
-			messageContent[0].evaluateStringContent(_xPathContent[0])
+			messageContent[0].evaluateNumberContent(_xPathContent[0])
             )
 			{			    
                 emit successEvent("Successful execution!");

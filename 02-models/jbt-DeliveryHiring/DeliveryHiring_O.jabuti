@@ -13,8 +13,8 @@ contract DeliveryHiring_O {
 			rolePlayer = application
 			operation = response
 			terms {
-				Timeout(180),
-				MessageContent('//budget/id/text()' != "")	 		
+				Timeout(30),
+				MessageContent('//budget/id/text()' >= 0)	 		
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
 		}	

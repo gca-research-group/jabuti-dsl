@@ -6,7 +6,7 @@ contract WeekDaysInterval_refCod{
     using EAI for EAI.WeekDaysInterval;
     using EAI for EAI.Party;
     EAI.Party application;
-    EAI.WeekDaysInterval[] public weekDaysInterval;
+    EAI.WeekDaysInterval[] weekDaysInterval;
 
     constructor (){
         weekDaysInterval.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.TUESDAY));
