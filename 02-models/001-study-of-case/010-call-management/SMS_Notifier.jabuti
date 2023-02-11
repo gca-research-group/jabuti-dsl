@@ -1,0 +1,37 @@
+contract SMSNotifier {
+
+	dates{
+		beginDate = "2021-09-23 17:00:00"
+		dueDate =   "2022-09-23 12:00:00"
+	}	
+	
+	parties{
+		application=  "SMS Notifier"
+		process=	  "Integration Process"	
+	}
+	
+	clauses{
+		right writeSMS_R{
+			//Setting the days and hours to write in SMS Notifier database	
+			rolePlayer = process
+			operation = write	
+			
+			terms{
+				WeekDaysInterval(Sunday to Saturday),
+				TimeInterval("08:00:00" to "18:00:00")	
+			}
+			onBreach (log("Request made outside of allowed hours"))
+		}
+	
+		prohibition writeSMS_P{
+			//Setting the days and hours that is prohibited to write in SMS Notifier database	
+			rolePlayer = process
+			operation = write	 
+			
+			terms{
+				TimeInterval("18:00:01" to "07:59:59")	
+			}
+			onBreach (log("Request made outside of allowed hours"))
+		}
+	}	
+}

@@ -1,0 +1,146 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "decreaseOperation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllMaxOperation",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "amount",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "rest",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.MaxNumberOfOperation[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getMaxOperationById",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "amount",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "rest",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.MaxNumberOfOperation",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "maxOp",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "amount",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "rest",
+						"type": "uint32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/lib/referencesCode-eai/MaxNumberOfOperation_refCod.sol": "MaxNumberOfOperation_refCod"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0x18db2b74f37cccab64425416f532d839b24ca2619182b7d7ea2a30f03e40a40d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://71f107fefbac20b9ed0868874554cd1015e36d22cc0590f9a17b1c86a7840606",
+				"dweb:/ipfs/QmQisDFGGiauxx6UnVCPb1TFihmrD6jRLAAvyQ83VQEEN8"
+			]
+		},
+		"contracts/lib/referencesCode-eai/MaxNumberOfOperation_refCod.sol": {
+			"keccak256": "0x25a19eac8044fd138597c17a7e2741741cea1115983a6a893d685d5ca7367af4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://51d33c75a2f07ac7df5478372bd911ce60fb82251c249f63d7d61ff113ba987b",
+				"dweb:/ipfs/QmY2y3dqCVBY7PhgPXBriscU6pbqePfRNKx5LbjG57kYYk"
+			]
+		}
+	},
+	"version": 1
+}

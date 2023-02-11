@@ -1,0 +1,63 @@
+contract Citizen_RS {
+
+	dates{
+		beginDate = "2021-10-01 17:00:00"
+		dueDate =   "2022-10-01 12:00:00"
+	}
+	parties{
+		application =  "Citizen Database"
+		process =	  "Integration Process"	
+	}
+	
+	clauses{
+		right requestPhoneNumber_r {
+			//"Setting the days and hours allowed to request citizen's phone number" 				
+			rolePlayer = process
+			operation = request	
+		
+			terms {
+					( TimeInterval ("00:00:00" to "05:59:59"),
+						MaxNumberOfOperation(700 per Minute)
+					) OR ( TimeInterval("06:00:00" to "23:59:59"),
+						MaxNumberOfOperation(400 per Minute)
+					)			
+			}
+			onBreach(log("Service suspended for 8 hours due to operation limit exceeded"))	
+		}	
+		
+		prohibition requestPhoneNumber_p {		
+			//"Setting the number of user by request" 				
+			rolePlayer = process          						
+			operation = request		
+			
+			terms {
+				MessageContent("XPATH_EXPRESSION") //consultar o numero de telefone de mais de um usuario por vez	
+			}
+			onBreach (log("It's not allowed more then one cpf by request"))		
+		}	
+	
+		obligation reponseWithPhoneNumber{		
+			// Setting the days and hours of availability system database 
+			rolePlayer = application          						
+			operation = response
+			
+			terms {
+				WeekDaysInterval(Sunday to Saturday),
+				TimeInterval("00:00:00" to"23:59:59"),
+				Timeout(1)	// verificar a questão de gargalo.		
+			}
+			onBreach (log("Server not available error"))		
+		}	
+		
+	}
+	
+}
+ 
+
+
+
+
+
+
+
+

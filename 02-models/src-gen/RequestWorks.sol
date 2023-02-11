@@ -8,15 +8,15 @@ contract RequestWorks is EAI_Domain{
 	Party Orcid;
 	Party integrationProcess;
 	
-	BusinessDay public businessDay = BusinessDay(MONDAY, SUNDAY);
+	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(MONDAY, SUNDAY);
 	TimeInterval public timeInterval = TimeInterval(00:00:00, 23:59:59);
-	OperationLimit public operationLimit = OperationLimit(24, SECOND, 0, 0);
+	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(24, SECOND, 0, 0);
 	
-	event EventLog(string _logMessage);
+	event requestAllWorksevent(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
-    	Orcid = Party(" ", _applicationWallet);
-	    integrationProcess = Party("", _processWallet);
+    	Orcid = Party("integrationProcess ", _applicationWallet);
+	    integrationProcess = Party("integrationProcess", _processWallet);
 	}
 	
 	function requestAllWorks(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
@@ -32,7 +32,7 @@ contract RequestWorks is EAI_Domain{
         	return true;	
 		}
 		
-		emit EventLog ("Request made outside of allowed hours or distance limit exceeded");
+		emit requestAllWorksevent ("Request made outside of allowed hours or distance limit exceeded");
 		return false;
 	}
 }

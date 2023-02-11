@@ -1,0 +1,30 @@
+contract PurchaseOrderProvider {
+		   
+	dates{
+		beginDate = "2021-10-01 17:00:00"
+		dueDate =   "2022-10-01 12:00:00"
+	}
+	
+	parties{
+		application = "Supplier System Database"
+		process =	 "Integration Process"
+	}
+	clauses{
+		right writeData {
+			//"Setting the days and hours to write on sales system database" 		
+			rolePlayer = process          						
+			operation = write		
+			
+			terms{
+				WeekDaysInterval(Monday to Friday),
+				
+				MessageContent("//Tshirt/totalItems/text()">30),
+				MessageContent("//Tshirt/totalItems/text()"<50), 
+				
+				MessageContent(" //purchaseOrder/orderValue/text()" >  2000),   
+				MessageContent(" //purchaseOrder/orderValue/text()" <  5000)    
+			}			
+			onBreach (log("orderValue or items is outside the allowed range"))	
+		}
+	}
+}

@@ -1,0 +1,38 @@
+contract RequestWorks{
+
+	dates{
+		beginDate = "2022-01-01 08:00:00" 
+		dueDate = "2022-12-31 18:00:00"
+	}	
+
+	parties{	
+		application = "Orcid" 
+		process  	= "integrationProcess" 
+	}
+	
+	clauses{
+
+		right requestAllWorks {
+			rolePlayer = process
+			operation = request
+			terms {
+				WeekDaysInterval(Monday to Sunday),
+				TimeInterval ("00:00:00" to "23:59:59"),
+				MaxNumberOfOperation (24 per Second)
+			}
+			onBreach (log("Conditions do not meet"))
+		}
+		
+		obligation responseWorks {
+	
+			//Send the requested works
+			rolePlayer = application
+			operation = response
+			terms {
+				MessageContent("count(//body/request/document)" == "count(//body/response/document)")
+			}
+			onBreach (log("Conditions do not meet"))
+		}
+	}
+}
+	

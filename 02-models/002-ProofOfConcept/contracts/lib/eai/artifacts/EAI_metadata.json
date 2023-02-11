@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "str",
+						"type": "string"
+					}
+				],
+				"name": "isNumber",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/lib/eai/EAI.sol": "EAI"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0xbc489cdb5a821d6577aeff4b818eb9d175489c62b7d0be08aa9be362dea656ce",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d686adf8a9e8026c3596eb39a1ac6efa1c8c8156cdd64920329fb7db913867ca",
+				"dweb:/ipfs/QmSfomWm83KnKsGuDiW7eSCK1fmp14KaRN7C99zfSYVtX6"
+			]
+		}
+	},
+	"version": 1
+}

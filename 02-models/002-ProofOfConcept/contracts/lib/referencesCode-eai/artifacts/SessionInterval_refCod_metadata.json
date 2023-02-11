@@ -1,0 +1,207 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getAllSessionIntervalByRef",
+				"outputs": [
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "",
+						"type": "string[]"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint8",
+								"name": "duration",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "timeUnit",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint32",
+								"name": "durationInSeconds",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.SessionInterval[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_k1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_k2",
+						"type": "string"
+					}
+				],
+				"name": "getSessionIntervalById",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint8",
+								"name": "duration",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint8",
+								"name": "timeUnit",
+								"type": "uint8"
+							},
+							{
+								"internalType": "uint32",
+								"name": "durationInSeconds",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							}
+						],
+						"internalType": "struct EAI.SessionInterval",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_k1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_k2",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					}
+				],
+				"name": "isTheSessionIdOpen",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_idSingleSession",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "_k1",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_k2",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					}
+				],
+				"name": "startSection",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": "SessionInterval_refCod"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0x161e100153f29272d8689abdeb3ec133fd9a7e56e6d8d3adb01fe715d64c1daf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cb500e6ab376e38b44a6f16323855d797ebd21f107f6fdf16272e26be195d538",
+				"dweb:/ipfs/QmbVrpa9ScvFH2M8kRNYSqgJrojmEbUBYc1S1BJdwaRreS"
+			]
+		},
+		"contracts/lib/referencesCode-eai/010_SessionInterval_refCod.sol": {
+			"keccak256": "0x047929afa97768b8a8ec8d643ecc4ff2e3cb13187a82af828807029fac56f69c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3903d1f97d92966a27db3ab5c20991ba4967384d431aeb2859d4ba2e54ee6b86",
+				"dweb:/ipfs/QmPT13VgFDgQUTwYQGsHppUaZbuYKRYw3FtPKMiyX3gYTu"
+			]
+		}
+	},
+	"version": 1
+}
