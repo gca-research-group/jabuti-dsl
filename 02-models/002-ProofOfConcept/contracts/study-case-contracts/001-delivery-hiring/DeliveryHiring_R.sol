@@ -1,90 +1,89 @@
+/* ========================== BEGIN: code for all contracts ====================== */
 //SPDX-License-Identifier: MIT
 pragma solidity >0.8.4 < 0.8.14;
 
 import "../../lib/eai/EAI.sol";
 
-contract DeliveryHiring_R{
-	
-    /* ==================================  BEGIN  ======================================== */
-    /* ============================ CODES FOR ALL CONTRACTS ============================== */
+contract DeliveryHiring_R {
  
+    uint32 beginDate; 
+	uint32 dueDate; 	
     using EAI for EAI.Party;
-   
-
+       
     EAI.Party application;
     EAI.Party process;
     mapping(address=>EAI.Party) mapParty;
 
-    uint32 beginDate; 
-	uint32 dueDate; 	
-
     event failEvent(string _logMessage);
     event successEvent(string _logMessage);
 
-   /* --------------------------------   END   ------------------------------------------ */
+/* --------------------------- END: code for all contracts ----------------------- */  
 
 
-
-
-    /* ==================================  BEGIN  ======================================= */
-    /* =================== CODES GENERATED BASED IN JABUTI CONTRACT ===================== */
-    
-
-    // ------------------ Automated code generation - 1º step ------------------ 
+/* =========== BEGIN: codes generated based in specific jabuti contract =================== */
+    	
+//  1º STEP:  Import library to conditions/terms  ---------------------------------- 
     using EAI for EAI.WeekDaysInterval;
     using EAI for EAI.TimeInterval;
     using EAI for EAI.MaxNumberOfOperationByTime;
     using EAI for EAI.MessageContent_Number;
     using EAI for EAI.MessageContent_NumberPerTime;
+// ----------------------------------------------------------------------------------
 
 
-    // ------------------ Automated code generation - 2º step ------------------ 
+
+
+// 2º STEP: Identify and create the variables  from " variable block" ---------------  
     string numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
+// ----------------------------------------------------------------------------------
 
-    // ------------------ Automated code generation - 3º step ------------------ 
- 	EAI.WeekDaysInterval[]  weekDaysInterval; 	
-	EAI.TimeInterval[] timeInterval;
-    EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime;
-    EAI.MessageContent_Number[] msgContent_number;
-    EAI.MessageContent_NumberPerTime[] msgContent_numberPerTime;
+
+// 3º STEP: Identify and create variables referring to the clauses terms ------------
+ 	EAI.WeekDaysInterval[]  weekDaysInterval_C1; 	
+	EAI.TimeInterval[] timeInterval_C1;
+    EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
+    EAI.MessageContent_Number[] msgContent_number_C1;
+    EAI.MessageContent_NumberPerTime[] msgContent_numberPerTime_C1;
+// -----------------------------------------------------------------------------------
 
     // ------------------ Automated code generation - 4º step ------------------ 
 	constructor(address _applicationWallet){
+
+        // Catch the date from jabuti contract
 	 	beginDate = 1672561800;
 	    dueDate = 1704097800;
-        
+        // Catch the name of the part for creaty the parties
         application = EAI.createParty("Delivery System", _applicationWallet, false);        
         process = EAI.createParty("Integration Process", msg.sender, true);
         mapParty[msg.sender] = process;
         mapParty[_applicationWallet] = application;
 
-        // ------------------ Automated code generation - 5º step ------------------ 
-        weekDaysInterval.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.FRIDAY));
-        timeInterval.push(EAI.createTimeInterval(30600,66600)); //TimeInterval("08:30:00" to "18:30:00")
-        maxNumberOfOperationByTime.push(EAI.createMaxNumberOfOperationByTime(5, EAI.DAY));
-		msgContent_number.push(EAI.createMessageContent(numberOfAddresses, ">=", 1));        
-        msgContent_number.push(EAI.createMessageContent(numberOfAddresses, "<=", 3));        
-        msgContent_numberPerTime.push(EAI.createMessageContent_NumberPerTime(numberOfAddresses, "<=", 1000, EAI.MONTH));
+// 5º STEP: Create the terms of the clauses, (check if some of them use a variable from variable block)
+        weekDaysInterval_C1.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.FRIDAY));
+        timeInterval_C1.push(EAI.createTimeInterval(30600,66600)); //TimeInterval("08:30:00" to "18:30:00")
+        maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime(5, EAI.DAY));
+		msgContent_number_C1.push(EAI.createMessageContent(numberOfAddresses, ">=", 1));        
+        msgContent_number_C1.push(EAI.createMessageContent(numberOfAddresses, "<=", 3));        
+        msgContent_numberPerTime_C1.push(EAI.createMessageContent_NumberPerTime(numberOfAddresses, "<=", 1000, EAI.MONTH));
 
 	}
 	
-    // ------------------ Automated code generation - 6º step ------------------ 
-    // - translate clauses to functions
-
+// 6º STEP: Translate the clauses to functions
+   
     function right_requestDelivery(
         uint32 _accessDateTime, 
         uint8 _weekDay, 
         uint32 _hourOfDay, 
          int256[] memory _resultFromXpath,
-        int256[] memory _resultFromXpath_numberPerTime
+        uint256[] memory _resultFromXpath_numberPerTime
         ) public onlyProcess() returns(bool){
 
-        if(weekDaysInterval[0].isIntoWeekDaysInterval(_weekDay) &&
-           timeInterval[0].isIntoTimeInterval(_hourOfDay) &&
-           maxNumberOfOperationByTime[0].hasAvailableOperations_ByTime(_accessDateTime)&&
-           msgContent_number[0].evaluateNumberContent(_resultFromXpath[0]) &&
-           msgContent_number[1].evaluateNumberContent(_resultFromXpath[1]) &&
-           msgContent_numberPerTime[0].evaluateAndDecreaseNumberPerTime(_accessDateTime, uint256(_resultFromXpath_numberPerTime[0]))
+        if(weekDaysInterval_C1[0].isIntoWeekDaysInterval(_weekDay) &&
+           timeInterval_C1[0].isIntoTimeInterval(_hourOfDay) &&
+           maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime)&&
+           msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath[0]) &&
+           msgContent_number_C1[1].evaluateNumberContent(_resultFromXpath[1]) &&
+           msgContent_numberPerTime_C1[0].evaluateAndDecreaseNumberPerTime(_accessDateTime, _resultFromXpath_numberPerTime[0])
         ){
             emit successEvent("Successful execution!");
             return true;
@@ -93,25 +92,20 @@ contract DeliveryHiring_R{
 		    return false;
         }
     }
-    
-    
-   
-    /* ================== CODES GENERATED BASED IN JABUTI CONTRACT ======================= */
-    /* --------------------------------   END   ------------------------------------------ */
+         
+    function onlyForTest_decreaseOperation() public returns(uint32) {
+        maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime();         
+        return maxNumberOfOperationByTime_C1[0].rest;    
+    }
+
+/* -------------- END: codes generated based in specific jabuti contract ------------- */
 
 
+/* ========================== BEGIN: code for all contracts ====================== */
 
-
-
-
-
-
-    /* =================================================================================== */
-    /* ============================ CODES FOR ALL CONTRACTS ============================== */
-    
     /* the process sign the contract by default, the function signContract 
     is used to get the applicationParty signature*/      
-    function signContract() public onlyApplication() returns(bool){
+    function signContract() public onlyApplication() returns(bool) {
         require(application.aware == false, "The contract is already signed");        
         application.aware = true;  
         updateMapParty(msg.sender, application);
@@ -144,10 +138,8 @@ contract DeliveryHiring_R{
     function getParty(address _walletAddress) public view onlyInvolvedParties returns(EAI.Party memory){
         return mapParty[_walletAddress];
     }
-
-    /* =================================================================================== */
-    /* ==================================== MODIFIERS ==================================== */
-    /* ----------------------------------------------------------------------------------- */
+    
+    /* ==================================== MODIFIERS ==================================== */    
     
     modifier onlyApplication(){
         require(application.walletAddress == msg.sender, "Only the application can execute this operation");
@@ -166,6 +158,5 @@ contract DeliveryHiring_R{
         _;
     }
 
-    /* ============================ CODES FOR ALL CONTRACTS ============================== */
-    /* ----------------------------------   END   ---------------------------------------- */
 }
+/* --------------------------- END: code for all contracts ----------------------- */  

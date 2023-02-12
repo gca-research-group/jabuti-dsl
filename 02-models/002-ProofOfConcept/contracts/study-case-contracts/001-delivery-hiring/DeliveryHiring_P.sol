@@ -36,10 +36,10 @@ contract DeliveryHiring_P {
 
 
 // 3º STEP: Identify and create variables referring to the clauses terms ------------
- 	EAI.WeekDaysInterval[]  weekDaysInterval; 	
-	EAI.TimeInterval[] timeInterval;
-    EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime;
-    EAI.MessageContent_Number[] msgContent_number;    
+ 	EAI.WeekDaysInterval[]  weekDaysInterval_C1; 	
+	EAI.TimeInterval[] timeInterval_C1;
+    EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
+    EAI.MessageContent_Number[] msgContent_number_C1;    
 // -----------------------------------------------------------------------------------
 
 
@@ -56,17 +56,13 @@ constructor(address _applicationWallet){
         mapParty[_applicationWallet] = application;
 
 // 5º STEP: Create the terms of the clauses, (check if some of them use a variable from variable block)
-        weekDaysInterval.push(EAI.createWeekDaysInterval(EAI.SATURDAY, EAI.SUNDAY));
-        timeInterval.push(EAI.createTimeInterval(66600,30600)); //TimeInterval("18:30:00" to "08:30:00")
-        maxNumberOfOperationByTime.push(EAI.createMaxNumberOfOperationByTime(5, EAI.MINUTE));// prohibition is 6 operation then the rule is 5 operation
-		msgContent_number.push(EAI.createMessageContent("count(//address)", "<=", 1));               
+        weekDaysInterval_C1.push(EAI.createWeekDaysInterval(EAI.SATURDAY, EAI.SUNDAY));
+        timeInterval_C1.push(EAI.createTimeInterval(66600,30600)); //TimeInterval("18:30:00" to "08:30:00")
+        maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime(5, EAI.DAY));// will be reject operation after the operation 5, that means, 6,7,8...
+		msgContent_number_C1.push(EAI.createMessageContent("count(//address)", "<=", 1));               
 	}
-
-
-
+ 
 // 6º STEP: Translate the clauses to functions
-
-   // - translate clauses to functions
 
     function prohibition_requestDelivery(
         uint8 _weekDay, 
@@ -76,15 +72,15 @@ constructor(address _applicationWallet){
         ) public onlyProcess() returns(bool){
 
         if(
-            weekDaysInterval[0].isIntoWeekDaysInterval(_weekDay) ||
-            timeInterval[0].isIntoTimeInterval(_hourOfDay) ||
-            !maxNumberOfOperationByTime[0].hasAvailableOperations_ByTime(_accessDateTime) ||
-            msgContent_number[0].evaluateNumberContent(_resultFromXpath[0])
+            weekDaysInterval_C1[0].isIntoWeekDaysInterval(_weekDay) ||
+            timeInterval_C1[0].isIntoTimeInterval(_hourOfDay) ||
+            !maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime) ||
+            msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath[0])
         ){     
             emit failEvent("Request operation performed outside of allowed hours or limit operation exceeded");
 		    return false;         
         } else {
-            maxNumberOfOperationByTime[0].decreaseOneOperation_ByTime(); 
+            maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(); 
             emit successEvent("Successful execution!");
             return true;
         }
@@ -133,10 +129,9 @@ constructor(address _applicationWallet){
         return mapParty[_walletAddress];
     }
 
-    /* =================================================================================== */
-    /* ==================================== MODIFIERS ==================================== */
-    /* ----------------------------------------------------------------------------------- */
     
+    /* ==================================== MODIFIERS ==================================== */
+       
     modifier onlyApplication(){
         require(application.walletAddress == msg.sender, "Only the application can execute this operation");
         _;

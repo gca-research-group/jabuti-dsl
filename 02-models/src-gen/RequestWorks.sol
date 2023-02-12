@@ -6,7 +6,7 @@ import "./libs/EAI_Domain.sol";
 contract RequestWorks is EAI_Domain{
 	
 	Party Orcid;
-	Party integrationProcess;
+	Party Integration Process;
 	
 	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(MONDAY, SUNDAY);
 	TimeInterval public timeInterval = TimeInterval(00:00:00, 23:59:59);
@@ -15,8 +15,8 @@ contract RequestWorks is EAI_Domain{
 	event requestAllWorksevent(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
-    	Orcid = Party("integrationProcess ", _applicationWallet);
-	    integrationProcess = Party("integrationProcess", _processWallet);
+    	Orcid = Party("Integration Process ", _applicationWallet);
+	    Integration Process = Party("Integration Process", _processWallet);
 	}
 	
 	function requestAllWorks(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){

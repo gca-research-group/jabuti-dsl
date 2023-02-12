@@ -1,13 +1,13 @@
 contract RequestWorks{
 
 	dates{
-		beginDate = "2022-01-01 08:00:00" 
-		dueDate = "2022-12-31 18:00:00"
+		beginDate = "2023-01-01 08:00:00" // 1672560000
+		dueDate = "2023-12-31 18:00:00"   // 1735603200
 	}	
 
 	parties{	
 		application = "Orcid" 
-		process  	= "integrationProcess" 
+		process  	= "Integration Process" 
 	}
 	
 	clauses{
@@ -17,7 +17,7 @@ contract RequestWorks{
 			operation = request
 			terms {
 				WeekDaysInterval(Monday to Sunday),
-				TimeInterval ("00:00:00" to "23:59:59"),
+				TimeInterval ("00:00:00" to "23:59:59"), // 0, 86399
 				MaxNumberOfOperation (24 per Second)
 			}
 			onBreach (log("Conditions do not meet"))
@@ -29,6 +29,7 @@ contract RequestWorks{
 			rolePlayer = application
 			operation = response
 			terms {
+				Timeout(60),
 				MessageContent("count(//body/request/document)" == "count(//body/response/document)")
 			}
 			onBreach (log("Conditions do not meet"))

@@ -1,51 +1,64 @@
+/* ========================== BEGIN: code for all contracts ====================== */
 //SPDX-License-Identifier: MIT
 pragma solidity >0.8.4 < 0.8.14;
 
 import "../../lib/eai/EAI.sol";
 
-contract DeliveryHiring_O{
-	
-    /* ==================================  BEGIN  ======================================== */
-    /* ============================ CODES FOR ALL CONTRACTS ============================== */
+contract DeliveryHiring_O {
  
-    using EAI for EAI.Party;
-    using EAI for EAI.Timeout;
-    using EAI for EAI.MessageContent_Number;
-
-    EAI.Party process;
-    EAI.Party application;
-    mapping(address=>EAI.Party) mapParty;
-
     uint32 beginDate; 
 	uint32 dueDate; 	
-   /* --------------------------------   END   ------------------------------------------ */
+    using EAI for EAI.Party;
+       
+    EAI.Party application;
+    EAI.Party process;
+    mapping(address=>EAI.Party) mapParty;
 
-
-    /* ==================================  BEGIN  ======================================= */
-    /* =================== CODES GENERATED BASED IN JABUTI CONTRACT ===================== */
- 
- 	EAI.Timeout[]  timeout; 	
-	EAI.MessageContent_Number[]  messageContent;
-	
-	event failEvent(string _logMessage);
+    event failEvent(string _logMessage);
     event successEvent(string _logMessage);
+/* --------------------------- END: code for all contracts ----------------------- */  
+
+
+/* =========== BEGIN: codes generated based in specific jabuti contract =================== */
+    	
+//  1º STEP:  Import library to conditions/terms  ---------------------------------- 
+    using EAI for EAI.Timeout;
+    using EAI for EAI.MessageContent_Number;
+// ----------------------------------------------------------------------------------
+
+// 2º STEP: Identify and create the variables  from " variable block" ---------------  
+// - there are no variable block in this contracts
+// ----------------------------------------------------------------------------------
+
+
+// 3º STEP: Identify and create variables referring to the clauses terms ------------
 	
+    EAI.Timeout[]  timeout_C1; 	
+	EAI.MessageContent_Number[]  messageContent_C1;
+// -----------------------------------------------------------------------------------
+
+
+// 4º STEP: Create the constructor method --------------------------------------------
 	constructor(address _applicationWallet){
-	 	beginDate = 1672561800;
+	 	
+        // Catch the date from jabuti contract 
+        beginDate = 1672561800;
 	    dueDate = 1704097800;
-         
-        process = EAI.createParty("Integration Process", msg.sender, true);
+        // Catch the name of the part for creaty the parties         
 	    application = EAI.createParty("Delivery System", _applicationWallet, false);        
+        process = EAI.createParty("Integration Process", msg.sender, true);
         mapParty[msg.sender] = process;
         mapParty[_applicationWallet] = application;
-
-		timeout.push(EAI.createTimeout(30));	   				
-		messageContent.push(EAI.createMessageContent("//budget/id/text()", ">=", 0));        
+ 
+// 5º STEP: Create the terms of the clauses, (check if some of them use a variable from variable block)
+		timeout_C1.push(EAI.createTimeout(30));	   				
+		messageContent_C1.push(EAI.createMessageContent("//budget/id/text()", ">=", 0));        
 	}
 	
+// 6º STEP: Translate the clauses to functions
 
     function onlyForTest(uint32 _accessDateTime) public onlyProcess() {
-        timeout[0].setEndTimeInTimeout(_accessDateTime);
+        timeout_C1[0].setEndTimeInTimeout(_accessDateTime);
     }
 
 	function responderOrder(uint32 _accessDateTime, int[] memory _xPathContent) public onlyApplication() returns(bool){
@@ -53,8 +66,8 @@ contract DeliveryHiring_O{
 	   	// Setting the time limit for responding to a request
 	   	require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
 	    
-		if(!timeout[0].isTimeoutEnded(_accessDateTime)  &&			
-			messageContent[0].evaluateNumberContent(_xPathContent[0])
+		if(!timeout_C1[0].isTimeoutEnded(_accessDateTime)  &&			
+			messageContent_C1[0].evaluateNumberContent(_xPathContent[0])
             )
 			{			    
                 emit successEvent("Successful execution!");
@@ -65,17 +78,15 @@ contract DeliveryHiring_O{
 		return false;
 	}
   
-    /* ================== CODES GENERATED BASED IN JABUTI CONTRACT ======================= */
-    /* --------------------------------   END   ------------------------------------------ */
+
+/* -------------- END: codes generated based in specific jabuti contract ------------- */
 
 
+/* ========================== BEGIN: code for all contracts ====================== */
 
-    /* =================================================================================== */
-    /* ============================ CODES FOR ALL CONTRACTS ============================== */
-    
     /* the process sign the contract by default, the function signContract 
     is used to get the applicationParty signature*/      
-    function signContract() public onlyApplication() returns(bool){
+    function signContract() public onlyApplication() returns(bool) {
         require(application.aware == false, "The contract is already signed");        
         application.aware = true;  
         updateMapParty(msg.sender, application);
@@ -109,9 +120,7 @@ contract DeliveryHiring_O{
         return mapParty[_walletAddress];
     }
 
-    /* =================================================================================== */
     /* ==================================== MODIFIERS ==================================== */
-    /* ----------------------------------------------------------------------------------- */
     
     modifier onlyApplication(){
         require(application.walletAddress == msg.sender, "Only the application can execute this operation");
@@ -130,6 +139,7 @@ contract DeliveryHiring_O{
         _;
     }
 
-    /* ============================ CODES FOR ALL CONTRACTS ============================== */
-    /* ----------------------------------   END   ---------------------------------------- */
 }
+/* --------------------------- END: code for all contracts ----------------------- */  
+
+

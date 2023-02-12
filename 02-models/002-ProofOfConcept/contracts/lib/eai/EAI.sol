@@ -42,7 +42,7 @@ library EAI{
 /*                                     PARTY                                  */
 /* ========================================================================== */
   
-       struct Party{
+    struct Party{
         string name;
         address walletAddress;
         bool aware;
@@ -250,6 +250,10 @@ library EAI{
         return _accessTime > _timeout.endTime;
     }
 
+    function resetEndTimeInTimeout(Timeout storage _timeout) internal{                
+        _timeout.endTime=0;        
+    }
+
     function setEndTimeInTimeout(Timeout storage _timeout, uint32 _startTime)internal onlyValidAccessTime(_startTime){      
         _timeout.endTime = _startTime + _timeout.timeIncrement; 
     }
@@ -319,7 +323,7 @@ library EAI{
         }
         return MaxNumberOfOperationByTime(_amount, _timeUnit, auxByTime, _amount, 0);
     }
-             
+           
     function hasAvailableOperations_ByTime(
         MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
         uint32 _accessDateTime
@@ -335,24 +339,15 @@ library EAI{
         return false;
     }
 
+    function increaseOneOperation_ByTime(MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime) internal  {
+        _maxNumberOfOperationByTime.rest +=1;
+    }
+
     function decreaseOneOperation_ByTime(MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime) internal  {
         _maxNumberOfOperationByTime.rest -=1;
     }
 
-    function increaseOneOperation_ByTime(MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime) internal  {
-        _maxNumberOfOperationByTime.rest -=1;
-    }
-
-    // function decreaseNumberOfOperationByTime(
-    //     MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
-    //     uint32 _accessDateTime
-    //     )internal  {
-    //         if(isAccessDatetimeOutOfOldInterval(_maxNumberOfOperationByTime.timeUnit, _maxNumberOfOperationByTime.endTime, _accessDateTime)){
-    //             setNewEndTimeAndRestOfOperations(_maxNumberOfOperationByTime, _accessDateTime);
-    //         }
-    //         require(_maxNumberOfOperationByTime.rest > 0, "There are no operations available");
-    //         _maxNumberOfOperationByTime.rest -=1;
-    // }
+   
 
 
 
