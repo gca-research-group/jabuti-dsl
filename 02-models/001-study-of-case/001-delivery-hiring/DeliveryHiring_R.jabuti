@@ -24,7 +24,7 @@ contract DeliveryHiring_R {
 			
 			terms {
 				WeekDaysInterval(Monday to Friday),
-				TimeInterval("08:30:00" to "18:30:00"), 
+				TimeInterval("08:30:00" to "18:30:00"),
 				MaxNumberOfOperation(5 per Day),
 				MessageContent(numberOfAddresses >= 1), 
 				MessageContent(numberOfAddresses <= 3),

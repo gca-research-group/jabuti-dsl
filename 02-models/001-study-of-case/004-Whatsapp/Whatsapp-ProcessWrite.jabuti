@@ -4,18 +4,17 @@ contract SendMessageWhatsapp {
  
 
 	dates{ 
-		beginDate = "2022-01-01 08:00:00" 
-		dueDate = "2022-12-31 18:00:00" 
+		beginDate = "2023-01-01 08:00:00" 
+		dueDate = "2023-12-31 18:00:00" 
 	}
 	
 	parties{
-		application = "whatsapp" 
-		process = "integrationProcess" 
+		application = "Whatsapp" 
+		process = "Integration Process" 
 	}
 	
-	variables{			
-		conversationId = MessageContent("//conversationId/text()")
-		session = SessionInterval(24 Hour per conversationId)			
+	variables{					
+		session = SessionInterval(24 Hour per "//conversationId/text()")			
 		conversationStarter = MessageContent("//conversationStarter/text()") 
 	}
 

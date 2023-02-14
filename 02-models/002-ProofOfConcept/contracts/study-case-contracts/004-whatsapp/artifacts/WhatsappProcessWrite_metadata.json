@@ -1,0 +1,224 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_applicationWallet",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_logMessage",
+						"type": "string"
+					}
+				],
+				"name": "failEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_logMessage",
+						"type": "string"
+					}
+				],
+				"name": "successEvent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_walletAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeApplicationParty",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getApplicationAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_walletAddress",
+						"type": "address"
+					}
+				],
+				"name": "getParty",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "walletAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "aware",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct EAI.Party",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProcessAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "_weekDayAccess",
+						"type": "uint8"
+					},
+					{
+						"internalType": "string",
+						"name": "_resultXPath_k2",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "string",
+						"name": "_resultXPath_onlyString",
+						"type": "string"
+					}
+				],
+				"name": "rigth_sendMessage",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "signContract",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/study-case-contracts/004-whatsapp/WhatsappProcessWrite.sol": "WhatsappProcessWrite"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0x2ad5993e12f4dfefe072479f7a55e6f63dcf618e8ef1adfac00b90a336cb7f30",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://998a303c8c426b8cc64891476f162125b2557c3f8b1db697fe6a3822ac72bebb",
+				"dweb:/ipfs/Qme5q9oxcKyGL4as6veuFdtxX2ePsrabWxgUqkVWj5vWpb"
+			]
+		},
+		"contracts/study-case-contracts/004-whatsapp/WhatsappProcessWrite.sol": {
+			"keccak256": "0x100b7992c2ee02de5807f57c36e23c5eee584074ab60d59f2efd7a8e3ab87de5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://823cfad6552d9723d80102a194277aa81bc0ee953fa62d84f01b625c237e8098",
+				"dweb:/ipfs/QmPwLzB1be6WB7nrYaMoQpYEAUQo9ypANPvA1E4e36Hcfm"
+			]
+		}
+	},
+	"version": 1
+}

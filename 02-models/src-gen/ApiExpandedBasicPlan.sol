@@ -5,8 +5,8 @@ import "./libs/EAI_Domain.sol";
 
 contract ApiExpandedBasicPlan is EAI_Domain{
 	
-	Party webOfScience;
-	Party integrationProcess;
+	Party Web Of Science;
+	Party Integration Process;
 	
 	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(2, SECOND, 0, 0);
 	MessageContent public messageContent = MessageContent("count(//body/document)");
@@ -15,8 +15,8 @@ contract ApiExpandedBasicPlan is EAI_Domain{
 	event requestDocumentsevent(string _logMessage);
 	
 	constructor(address _applicationWallet, address _processWallet){
-    	webOfScience = Party("integrationProcess ", _applicationWallet);
-	    integrationProcess = Party("integrationProcess", _processWallet);
+    	Web Of Science = Party("Integration Process ", _applicationWallet);
+	    Integration Process = Party("Integration Process", _processWallet);
 	}
 	
 	function requestDocuments(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){

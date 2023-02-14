@@ -1,0 +1,253 @@
+{
+	"compiler": {
+		"version": "0.8.13+commit.abaa5c0e"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_applicationWallet",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_logMessage",
+						"type": "string"
+					}
+				],
+				"name": "failEvent",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "_logMessage",
+						"type": "string"
+					}
+				],
+				"name": "successEvent",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "_walletAddress",
+						"type": "address"
+					}
+				],
+				"name": "changeApplicationParty",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getApplicationAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_walletAddress",
+						"type": "address"
+					}
+				],
+				"name": "getParty",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "address",
+								"name": "walletAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "bool",
+								"name": "aware",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct EAI.Party",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getProcessAddress",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "_resultFromXpath_nc",
+						"type": "int256[]"
+					}
+				],
+				"name": "responderOrder",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint32",
+						"name": "_accessDateTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint8",
+						"name": "_weekDay",
+						"type": "uint8"
+					},
+					{
+						"internalType": "uint32",
+						"name": "_hourOfDay",
+						"type": "uint32"
+					},
+					{
+						"internalType": "int256[]",
+						"name": "_resultFromXpath_nc",
+						"type": "int256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "_resultFromXpath_npt",
+						"type": "uint256[]"
+					}
+				],
+				"name": "right_requestDelivery",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "signContract",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_RO.sol": "DeliveryHiring_RO"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/lib/eai/EAI.sol": {
+			"keccak256": "0x656162b8b719f761c414605bcc7737f06f09670f0b11333377fcd28db0a1f057",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1a9276c739cb482067c79b69aa54a1e113d8af015399feecee144bcd004487cc",
+				"dweb:/ipfs/QmQew9MDEEP1jtS3pvRU8fWTpeE5S9JBJrSqButXFgXVjw"
+			]
+		},
+		"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_RO.sol": {
+			"keccak256": "0x2b0cffb0b99f33859b5781b1d3ee344b3576826fb4d70cad6a46f689ca21491c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b2a175dc69b217abf7dc089fbf9ad0f06f46d30cad41ad6d1476a4a151bece5d",
+				"dweb:/ipfs/QmNZDRs1JcQrdEc3SSJTxLJy25pQnQ8ZuauNB5iKF2Mjni"
+			]
+		}
+	},
+	"version": 1
+}

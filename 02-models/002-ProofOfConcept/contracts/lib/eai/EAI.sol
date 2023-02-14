@@ -11,6 +11,10 @@ library EAI{
 /*                                   CONSTANTS                                */
 /* -------------------------------------------------------------------------- */
 
+    // session status 
+    uint8 constant CLOSED = 0;
+    uint8 constant OPEN = 1;
+
     // weekdays
 
     uint8 constant SUNDAY=0;
@@ -348,9 +352,6 @@ library EAI{
     }
 
    
-
-
-
     function setNewEndTimeAndRestOfOperations(
         MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,
         uint32 _accessDateTime
@@ -364,19 +365,39 @@ library EAI{
     }
 
 
-
 /* ========================================================================== */
-/*                            MESSAGE CONTENT ONLY XPATH                      */
+/*                       MESSAGE CONTENT ONLY XPATH BOOLEAN                   */
 /* ========================================================================== */
 
-    struct MessageContent_onlyXPath{
+    struct MessageContent_onlyXPath_Boolean{
         string xpath;        
     }
 
-    function createMessageContent_onlyXPath(string memory _xpath) internal pure returns(MessageContent_onlyXPath memory){
-        return MessageContent_onlyXPath(_xpath);
+    function createMessageContent_onlyXPath_Boolean(string memory _xpath) internal pure returns(MessageContent_onlyXPath_Boolean memory){
+        return MessageContent_onlyXPath_Boolean(_xpath);
     }
 
+/* ========================================================================== */
+/*                      MESSAGE CONTENT ONLY XPATH NUMBER                     */
+/* ========================================================================== */
+    struct MessageContent_onlyXPath_Number{
+        string xpath;        
+    }
+
+    function createMessageContent_onlyXPath_Number(string memory _xpath) internal pure returns(MessageContent_onlyXPath_Number memory){
+        return MessageContent_onlyXPath_Number(_xpath);
+    }
+
+/* ========================================================================== */
+/*                     MESSAGE CONTENT ONLY XPATH STRING                      */
+/* ========================================================================== */
+    struct MessageContent_onlyXPath_String{
+        string xpath;        
+    }
+
+    function createMessageContent_onlyXPath_String(string memory _xpath) internal pure returns(MessageContent_onlyXPath_String memory){
+        return MessageContent_onlyXPath_String(_xpath);
+    }
 /* ========================================================================== */
 /*                              MESSAGE CONTENT STRING                        */
 /* ========================================================================== */
@@ -406,6 +427,13 @@ library EAI{
         return false;
     }
 
+    function isEqual(string memory str_1, string memory str_2) internal pure returns(bool){
+        if (keccak256(abi.encodePacked(str_1)) == keccak256(abi.encodePacked(str_2)) ) {
+                return true;
+            }else{
+                return false;
+            }
+    }
  
 /* ========================================================================== */
 /*                              MESSAGE CONTENT NUMBER                        */
@@ -466,12 +494,13 @@ library EAI{
         string op; // // the comparison operator (op) will receive only '<' or '<='
         uint256 amount;
         uint8 timeUnit;
-        uint32 byTime;
+        uint32 byTime;        
         uint256 rest;
         uint32 endTime;
+        uint256 lastContent;
     }
-
-    function createMessageContent_NumberPerTime(
+    // function createMessageContent_NumberPerTime(
+    function createMessageContent(
         string memory _xpath,
         string memory _op, 
         uint256 _amount,
@@ -493,19 +522,21 @@ library EAI{
             _amount = (_amount-1);
         }
 
-        return MessageContent_NumberPerTime(_xpath, _op, _amount, _timeUnit, auxByTime, _amount, 0);
+        return MessageContent_NumberPerTime(_xpath, _op, _amount, _timeUnit, auxByTime, _amount, 0, 0);
     }
 
 
     // cath da value from message content and decrease from the amount
-    function evaluateAndDecreaseNumberPerTime(
+    function evaluateNumberPerTime(
         MessageContent_NumberPerTime storage msgContent_NumberPerTime,
         uint32 _accessDateTime,
         uint256 _content
         )internal returns(bool) {
             require(_content>0, "The result of the xpath should be more than 0");
             if(isAccessDatetimeOutOfOldInterval(msgContent_NumberPerTime.timeUnit, msgContent_NumberPerTime.endTime, _accessDateTime)){
+               
                 msgContent_NumberPerTime.rest = msgContent_NumberPerTime.amount;
+               
                 msgContent_NumberPerTime.endTime = calcNextEndTime(
                                                 msgContent_NumberPerTime.byTime,
                                                 msgContent_NumberPerTime.timeUnit,
@@ -513,27 +544,28 @@ library EAI{
                                                 );
             }
             
-            string memory revertMessage =  string(abi.encodePacked(
-                "You have only ", uint2String(msgContent_NumberPerTime.rest), 
-                " from ", uint2String(msgContent_NumberPerTime.amount)," resting, and the message contet xpath result is ", uint2String(_content)));
+            // string memory revertMessage =  string(abi.encodePacked(
+            //     "You have only ", uint2String(msgContent_NumberPerTime.rest), 
+            //     " from ", uint2String(msgContent_NumberPerTime.amount)," resting, and the message contet xpath result is ", uint2String(_content)));
             
-            // the comparison opraton operator (op) always will be  '<' or '<='
-            // bytes memory chars = bytes(msgContent_NumberPerTime.op);
-            // if(chars.length == 2){// if chars is '<='                                    
-            //     require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
-            // }else{
-            //     require(_content < msgContent_NumberPerTime.rest, revertMessage);   
-            // }   
-            // the block 'if' is not necessary, because the operator '<' was replaced for '<=' in 
-            // createMessageContent_NumberPerTime method, and the amount was decreased in 1 unit
-             require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
-
-                   
-            msgContent_NumberPerTime.rest -= _content;
+            // // the comparison operator (op) always will be  '<' or '<='            
+            // require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
             
-            return true;
+            if(_content <= msgContent_NumberPerTime.rest){
+                msgContent_NumberPerTime.lastContent = _content;
+                return true;
+            }else{
+                return false;
+            }
+           
     }
-    
+
+    function decreaseTheLastContentOfRestingAmount( MessageContent_NumberPerTime storage msgContent_NumberPerTime ) internal  {        
+        require(msgContent_NumberPerTime.lastContent > 0, "There in no content to decrease." );
+        require(msgContent_NumberPerTime.lastContent <= msgContent_NumberPerTime.rest, "The message content number is greater than the remaining amount");  
+        msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;
+        msgContent_NumberPerTime.lastContent = 0;
+    }
 
     // function setNewEndTimeAndRestFromAmout(
     //     MessageContent_NumberPerTime storage msgContent_NumberPerTime,
@@ -556,15 +588,16 @@ library EAI{
         uint8 duration;
         uint8 timeUnit;   
         uint32 durationInSeconds;// durantionInSeconds is used only for timeUnit: second, minute, hour, day and week. For timeUnit month and year, this variable will be 0 (not used)
+        string xpath;
         uint32 endTime;        
     }
 
-    function createSessionInteval(uint8 _duration, uint8 _timeUnit)internal pure returns (SessionInterval memory){
+    function createSessionInteval(uint8 _duration, uint8 _timeUnit, string memory _xpath)internal pure returns (SessionInterval memory){
         uint32 _durationInSeconds = 0;
         if(_timeUnit <= WEEK){
             _durationInSeconds = getIntervalInSeconds(_duration, _timeUnit);
         }
-        return SessionInterval(_duration, _timeUnit, _durationInSeconds, 0);
+        return SessionInterval(_duration, _timeUnit, _durationInSeconds, _xpath, 0);
     }
 
 
@@ -572,11 +605,12 @@ library EAI{
     //     return SessionInterval(_session.duration, _session.timeUnit, _session.durationInSeconds, _session.endTime);
     // }
 
-    function isItOpen(SessionInterval memory _session, uint32 _accessDateTime) internal  pure returns(string memory){        
+
+    function sessionStatus(SessionInterval memory _session, uint32 _accessDateTime) internal  pure returns(uint){        
         if ((_session.endTime == 0) || (_accessDateTime >= _session.endTime)){         
-            return "CLOSED";
+            return CLOSED;
         }        
-        return "OPEN";        
+        return OPEN;        
     }
 
     // a new section will be create just if the end time is equal '0' or if the _accessDateTime was bigger than the current endTime

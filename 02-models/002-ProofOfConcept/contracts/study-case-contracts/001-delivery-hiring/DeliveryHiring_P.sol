@@ -5,6 +5,8 @@ pragma solidity >0.8.4 < 0.8.14;
 import "../../lib/eai/EAI.sol";
 
 contract DeliveryHiring_P {
+    
+    bool activated;
  
     uint32 beginDate; 
 	uint32 dueDate; 	
@@ -45,7 +47,7 @@ contract DeliveryHiring_P {
 
 // 4º STEP: Create the constructor method --------------------------------------------
 constructor(address _applicationWallet){
-
+        activated = true;
         // Catch the date from jabuti contract 
         beginDate = 1672561800;
 	    dueDate = 1704097800;                
@@ -129,20 +131,21 @@ constructor(address _applicationWallet){
         return mapParty[_walletAddress];
     }
 
-    
-    /* ==================================== MODIFIERS ==================================== */
-       
-    modifier onlyApplication(){
-        require(application.walletAddress == msg.sender, "Only the application can execute this operation");
-        _;
+     /* ==================================== MODIFIERS ==================================== */
+        modifier onlyApplication(){        
+            require(activated, "This contract is deactivated");            
+            require(application.walletAddress == msg.sender, "Only the application can execute this operation");
+            _;        
     }
 
     modifier onlyProcess(){
+        require(activated, "This contract is deactivated");
         require(process.walletAddress == msg.sender, "Only the process can execute this operation");
         _;
     }
 
     modifier onlyInvolvedParties(){
+        require(activated, "This contract is deactivated");
         require(
             (application.walletAddress == msg.sender || process.walletAddress == msg.sender ) ,
             "Only the process or the application can execute this operation");

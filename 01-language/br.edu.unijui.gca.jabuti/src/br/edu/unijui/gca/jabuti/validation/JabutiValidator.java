@@ -12,6 +12,7 @@ import com.google.common.base.Objects;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 
 /**
  * This class contains custom validation rules.
@@ -55,6 +56,25 @@ public class JabutiValidator extends AbstractJabutiValidator {
 		}
 	}
 
+	
+	@Check
+	public void checkTimeInTimeInterval(TimeInterval time) {
+				
+		String startTime = time.getStart();
+		String endTime =  time.getEnd();
+		
+		if (startTime != null) {
+			if(!startTime.matches("\\d{2}:\\d{2}:\\d{2}")) {
+					error("Time format invalid. Provide the format: HH:mm:ss", JabutiPackage.Literals.TIME_INTERVAL__START); 
+			}	
+		}
+		if(endTime != null) {
+			if(!endTime.matches("\\d{2}:\\d{2}:\\d{2}")) {
+				error("Time format invalid. Provide the format: HH:mm:ss", JabutiPackage.Literals.TIME_INTERVAL__END); 
+			}
+		}
+	}
+	
 	@Check(CheckType.NORMAL)
 	public void checkDate(Contract contract) {
 
@@ -63,13 +83,13 @@ public class JabutiValidator extends AbstractJabutiValidator {
 
 		if (beginDate != null) {
 			if (!beginDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")) {
-				error("Date is not valid. Check the date and its format: YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__BEGIN_DATE);
+				error("DateTime invalid. Provide the format: YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__BEGIN_DATE);
 			}
 		}
 		
 		if (dueDate != null) {
 			if (!dueDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")) {
-				error("Date is not valid. Check the format: YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__DUE_DATE);
+				error("DateTime invalid. Provide the format:  YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__DUE_DATE);
 			}
 		}
 	}

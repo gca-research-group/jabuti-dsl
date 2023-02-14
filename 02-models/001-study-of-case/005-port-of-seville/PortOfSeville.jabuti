@@ -46,7 +46,7 @@ contract DockRequest {
 			operation = request
 			
 			terms{
-				TimeInterval("22:00:00" to "08:00:00"),
+				TimeInterval("22:00:00" to "08:00:00"), 
 				WeekDaysInterval(Sunday to Sunday)					
 			}
 			onBreach(log("Request made outside the valid range"))

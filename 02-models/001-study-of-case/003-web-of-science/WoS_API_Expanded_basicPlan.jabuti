@@ -3,18 +3,15 @@
 contract ApiExpandedBasicPlan {
 
 	dates{ 	
-		beginDate = "2022-01-01 08:00:00" 
-		dueDate = "2022-12-31 18:00:00"
+		beginDate = "2023-01-01 08:00:00" 
+		dueDate = "2023-12-31 18:00:00"
 	}
 
 	parties{
-		application = "webOfScience" 
-		process = "integrationProcess" 
+		application = "Web Of Science" 
+		process = "Integration Process" 
 	}
 
-	variables{
-		test= "teste"
-	}
 
 	clauses{	
 

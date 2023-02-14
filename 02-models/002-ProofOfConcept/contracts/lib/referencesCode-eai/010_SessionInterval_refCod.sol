@@ -10,6 +10,7 @@ contract SessionInterval_refCod{
     
 
     EAI.SessionInterval[] sessionInterval;
+
     //       k1                k2_v       value
     mapping(string => mapping(string=>EAI.SessionInterval)) sessionByVar;
     mapping(string => mapping(string=>bool)) exists_k1mapk2;
@@ -21,13 +22,13 @@ contract SessionInterval_refCod{
         
     constructor(){
         
-        sessionInterval.push(EAI.createSessionInteval(2, EAI.SECOND)); //[0]      
+        sessionInterval.push(EAI.createSessionInteval(2, EAI.SECOND,"")); //[0]      
 
-        sessionInterval.push(EAI.createSessionInteval(2, EAI.MINUTE)); //[1]
+        sessionInterval.push(EAI.createSessionInteval(2, EAI.MINUTE,"")); //[1]
 
-        sessionInterval.push(EAI.createSessionInteval(2, EAI.HOUR)); //[2]              
+        sessionInterval.push(EAI.createSessionInteval(2, EAI.HOUR,"")); //[2]              
 
-        sessionInterval.push(EAI.createSessionInteval(2, EAI.DAY));  //[3]
+        sessionInterval.push(EAI.createSessionInteval(2, EAI.DAY,""));  //[3]
 
         keys_k1.push("nome"); // 0
         keys_k1.push("cidade");// 1

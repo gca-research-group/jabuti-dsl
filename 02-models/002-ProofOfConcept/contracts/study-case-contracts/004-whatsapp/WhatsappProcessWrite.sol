@@ -5,6 +5,8 @@ pragma solidity >0.8.4 < 0.8.14;
 import "../../lib/eai/EAI.sol";
 
 contract WhatsappProcessWrite {
+
+    bool activated;
  
     uint32 beginDate; 
 	uint32 dueDate; 	
@@ -23,13 +25,21 @@ contract WhatsappProcessWrite {
     	
 //  1º STEP:  Import library to conditions/terms  ---------------------------------- 
 
-    // ADD NEW CONTENT HERE
+    using EAI for string;
+    using EAI  for EAI.MessageContent_onlyXPath_String;
+    using EAI for EAI.SessionInterval;
+    using EAI for EAI.WeekDaysInterval;
+    using EAI for EAI.MaxNumberOfOperationByTime;    
+    
 
 // ----------------------------------------------------------------------------------
 
 // 2º STEP: Identify and create the variables  from " variable block" ---------------  
   
     // ADD NEW CONTENT HERE IF EXIST
+    // EAI.MessageContent_onlyXPath_String conversationId;
+    // EAI.SessionInterval session;
+    // EAI.MessageContent_onlyXPath_String conversationStarter;
 
 // ----------------------------------------------------------------------------------
 
@@ -38,24 +48,47 @@ contract WhatsappProcessWrite {
 	
     // ADD NEW CONTENT HERE
 
+    EAI.WeekDaysInterval[] weekDaysInterval_C1;    
+    
+    EAI.SessionInterval[] sessionInterval_C1;
+    mapping(string => mapping(string=>EAI.SessionInterval)) sessionByContent;
+    mapping(string => mapping(string=>bool)) exists_k1mapk2;
+    string[] keys_k1;  // For storing keys 
+    string[] keys_k2;  // For storing keys
+    mapping (string => bool) exists_k1; // Additional Map for checking if key exists
+    mapping (string => bool) exists_k2; // Additional Map for checking if key exists
+    
+    EAI.MessageContent_onlyXPath_String[] msgContent_onlyPath_String_C1;
+    EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
+    
 // -----------------------------------------------------------------------------------
 
 
 // 4º STEP: Create the constructor method --------------------------------------------
 	constructor(address _applicationWallet){
 	 	
+        activated = true;
+        
         // Catch the date from jabuti contract 
-        beginDate = 11111111; // UPDATE THE beginDate AND dueDate
-	    dueDate = 11111111; 
+        beginDate = 1672560000; // "2023-01-01 08:00:00"
+	    dueDate = 1704045600;  // "2023-12-31 18:00:00"
         // Catch the name of the part for creaty the parties         
-	    application = EAI.createParty("*****************", _applicationWallet, false);  // UPDATE THE application NAME
-        process = EAI.createParty("*****************", msg.sender, true);               // UPDATE THE process NAME
+	    application = EAI.createParty("Whatsapp", _applicationWallet, false);  // UPDATE THE application NAME
+        process = EAI.createParty("Integration Process", msg.sender, true);               // UPDATE THE process NAME
         mapParty[msg.sender] = process;
         mapParty[_applicationWallet] = application;
 
 // 5º STEP: Create the terms of the clauses, (check if some of them use a variable from variable block)
 
-         // ADD NEW CONTENT HERE
+        // ADD NEW CONTENT HERE
+        weekDaysInterval_C1.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.FRIDAY));
+        
+        sessionInterval_C1.push(EAI.createSessionInteval(24, EAI.HOUR, "//conversationId/text()"));
+        keys_k1.push(sessionInterval_C1[0].xpath); // 0        
+        exists_k1[sessionInterval_C1[0].xpath] = true;
+
+        msgContent_onlyPath_String_C1.push(EAI.createMessageContent_onlyXPath_String("//conversationStarter/text()"));
+        maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime(10000, EAI.MONTH));
 
 	}
 	
@@ -63,6 +96,32 @@ contract WhatsappProcessWrite {
 
 
     // ADD NEW CONTENT HERE
+    function rigth_sendMessage(uint8 _weekDayAccess, string memory _resultXPath_k2, uint32 _accessDateTime, string memory _resultXPath_onlyString) public onlyProcess() returns(bool){
+
+        if(weekDaysInterval_C1[0].isIntoWeekDaysInterval(_weekDayAccess)){
+            if(!exists_k1mapk2[keys_k1[0]][_resultXPath_k2]){
+                exists_k1mapk2[keys_k1[0]][_resultXPath_k2] = true;
+                keys_k2.push(_resultXPath_k2);
+                sessionByContent[keys_k1[0]][_resultXPath_k2] = sessionInterval_C1[0];
+                sessionByContent[keys_k1[0]][_resultXPath_k2].startNewSessionInterval(_accessDateTime);
+            }
+
+            if(sessionByContent[keys_k1[0]][_resultXPath_k2].sessionStatus(_accessDateTime) == EAI.CLOSED &&
+               _resultXPath_onlyString.isEqual("Business-initiated")
+                //EAI.isEqual(_resultXPath_onlyString, "Business-initiated")            
+            ){
+                if(maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime)){
+                    maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime();
+                    return true;
+                }   
+            }
+        }
+
+        return false;                
+ 
+    }
+
+
 
 
 /* -------------- END: codes generated based in specific jabuti contract ------------- */
@@ -107,18 +166,20 @@ contract WhatsappProcessWrite {
     }
 
     /* ==================================== MODIFIERS ==================================== */
-    
-    modifier onlyApplication(){
+    modifier onlyApplication(){        
+        require(activated, "This contract is deactivated");            
         require(application.walletAddress == msg.sender, "Only the application can execute this operation");
-        _;
+        _;        
     }
 
     modifier onlyProcess(){
+        require(activated, "This contract is deactivated");
         require(process.walletAddress == msg.sender, "Only the process can execute this operation");
         _;
     }
 
     modifier onlyInvolvedParties(){
+        require(activated, "This contract is deactivated");
         require(
             (application.walletAddress == msg.sender || process.walletAddress == msg.sender ) ,
             "Only the process or the application can execute this operation");
@@ -126,6 +187,6 @@ contract WhatsappProcessWrite {
     }
 
 }
-/* --------------------------- END: code for all contracts ----------------------- */  
+/* --------------------------- END: code for all contracts ----------------------- */
 
 

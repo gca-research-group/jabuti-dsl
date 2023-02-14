@@ -6,6 +6,8 @@ import "../../lib/eai/EAI.sol";
 
 contract Orcid {
  
+    bool activated;
+
     uint32 beginDate; 
 	uint32 dueDate; 	
     using EAI for EAI.Party;
@@ -55,7 +57,7 @@ contract Orcid {
 
 // 4º STEP: Create the constructor method --------------------------------------------
 	constructor(address _applicationWallet){
-	 	
+	 	activated = true;
         // Catch the date from jabuti contract 
         beginDate = 1672560000; // UPDATE THE beginDate AND dueDate
 	    dueDate = 1735603200; 
@@ -91,7 +93,7 @@ contract Orcid {
     }
 
     function obligation_responseWorks(uint32 _accessDateTime, bool[] memory _resultFromXpath)public onlyApplication() returns(bool){
-        if(timeout_C2[0].isTimeoutEnded(_accessDateTime) &&
+        if(!timeout_C2[0].isTimeoutEnded(_accessDateTime) &&
             _resultFromXpath[0]
         ){
             maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime();
@@ -143,19 +145,21 @@ contract Orcid {
         return mapParty[_walletAddress];
     }
 
-    /* ==================================== MODIFIERS ==================================== */
-    
-    modifier onlyApplication(){
-        require(application.walletAddress == msg.sender, "Only the application can execute this operation");
-        _;
+/* ==================================== MODIFIERS ==================================== */
+        modifier onlyApplication(){        
+            require(activated, "This contract is deactivated");            
+            require(application.walletAddress == msg.sender, "Only the application can execute this operation");
+            _;        
     }
 
     modifier onlyProcess(){
+        require(activated, "This contract is deactivated");
         require(process.walletAddress == msg.sender, "Only the process can execute this operation");
         _;
     }
 
     modifier onlyInvolvedParties(){
+        require(activated, "This contract is deactivated");
         require(
             (application.walletAddress == msg.sender || process.walletAddress == msg.sender ) ,
             "Only the process or the application can execute this operation");
@@ -163,6 +167,6 @@ contract Orcid {
     }
 
 }
-/* --------------------------- END: code for all contracts ----------------------- */  
+/* --------------------------- END: code for all contracts ----------------------- */ 
 
 

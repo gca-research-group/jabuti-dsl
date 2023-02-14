@@ -223,19 +223,19 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0xb641df194ed16a7742f99b7515e30ce09c947a52d4afd7e243d829d6181bb36b",
+			"keccak256": "0xd9890723646e3aaf54191a7d11f57789d10dccd12abcd1b87b3409a379a130a2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://75a027ed1d49003bbd6327e95751915dd19c3b71ad6d735fb5cab796f8aa20d5",
-				"dweb:/ipfs/QmfGwNVARQ3iS6sk5Le21yp5A27NcB7zFQG54c6WoSMqeu"
+				"bzz-raw://5ae5c8ed9bafe6cd470efb7e86b79049f5e7fc0b53c5d974690a4ee8c5f80354",
+				"dweb:/ipfs/QmNQhH3oVScnCMLxQYFyLnNfhfx84WS7P2DNz4m4Y2hH9h"
 			]
 		},
 		"contracts/study-case-contracts/002-orcid/Orcid.sol": {
-			"keccak256": "0x0d1cc1b3a6f5f521d8252e973bc3644926ac746dd669da278220df190d20377b",
+			"keccak256": "0x66854ab343e9f6231a2df46e81e5f922c41487491ed5c354ebebd49983cea135",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3ae00da0631ed34d99c694119d0de5fae0fcb341a02920c140eb9e63ee7621d4",
-				"dweb:/ipfs/QmUS3jcAKSov3piiTuocvKLVGaPvPM6h22ERy2H2w9WzSA"
+				"bzz-raw://2f798159743efdd5d58bd1a1b2f5c02bd2c36e0829c3e85f5bcd49a43660a0fc",
+				"dweb:/ipfs/Qmdhutocg4BXp5wReWcpaW2iv7SeaMgjAmgCS7XtxSCG3j"
 			]
 		}
 	},

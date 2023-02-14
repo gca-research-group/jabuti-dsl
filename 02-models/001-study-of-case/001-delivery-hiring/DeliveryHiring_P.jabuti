@@ -20,7 +20,7 @@ contract DeliveryHiring_P  {
 			operation = request
 			
 			terms {				
-				TimeInterval("18:30:00" to "08:30:00"),
+				TimeInterval("18:30:00" to "08:30:00"), 
 				WeekDaysInterval(Saturday to Sunday),
 				MaxNumberOfOperation(6 per Minute),
 				MessageContent("count(//address)" <= 1 )				

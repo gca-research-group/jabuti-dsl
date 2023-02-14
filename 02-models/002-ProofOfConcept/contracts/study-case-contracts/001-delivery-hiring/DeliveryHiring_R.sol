@@ -5,6 +5,8 @@ pragma solidity >0.8.4 < 0.8.14;
 import "../../lib/eai/EAI.sol";
 
 contract DeliveryHiring_R {
+    
+    bool activated;
  
     uint32 beginDate; 
 	uint32 dueDate; 	
@@ -48,7 +50,7 @@ contract DeliveryHiring_R {
 
     // ------------------ Automated code generation - 4º step ------------------ 
 	constructor(address _applicationWallet){
-
+        activated = true;
         // Catch the date from jabuti contract
 	 	beginDate = 1672561800;
 	    dueDate = 1704097800;
@@ -64,7 +66,7 @@ contract DeliveryHiring_R {
         maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime(5, EAI.DAY));
 		msgContent_number_C1.push(EAI.createMessageContent(numberOfAddresses, ">=", 1));        
         msgContent_number_C1.push(EAI.createMessageContent(numberOfAddresses, "<=", 3));        
-        msgContent_numberPerTime_C1.push(EAI.createMessageContent_NumberPerTime(numberOfAddresses, "<=", 1000, EAI.MONTH));
+        msgContent_numberPerTime_C1.push(EAI.createMessageContent(numberOfAddresses, "<=", 1000, EAI.MONTH));
 
 	}
 	
@@ -139,19 +141,21 @@ contract DeliveryHiring_R {
         return mapParty[_walletAddress];
     }
     
-    /* ==================================== MODIFIERS ==================================== */    
-    
-    modifier onlyApplication(){
-        require(application.walletAddress == msg.sender, "Only the application can execute this operation");
-        _;
+    /* ==================================== MODIFIERS ==================================== */
+        modifier onlyApplication(){        
+            require(activated, "This contract is deactivated");            
+            require(application.walletAddress == msg.sender, "Only the application can execute this operation");
+            _;        
     }
 
     modifier onlyProcess(){
+        require(activated, "This contract is deactivated");
         require(process.walletAddress == msg.sender, "Only the process can execute this operation");
         _;
     }
 
     modifier onlyInvolvedParties(){
+        require(activated, "This contract is deactivated");
         require(
             (application.walletAddress == msg.sender || process.walletAddress == msg.sender ) ,
             "Only the process or the application can execute this operation");
