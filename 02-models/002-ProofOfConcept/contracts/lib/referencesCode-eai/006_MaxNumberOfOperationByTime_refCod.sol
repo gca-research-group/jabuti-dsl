@@ -19,20 +19,28 @@ EAI.MaxNumberOfOperationByTime[] maxOp;
     }
 
     function decreaseOperation(uint8 timeUnit, uint32 _accessTime)public {
+        bool isTrue = false;
         if(timeUnit == EAI.SECOND){
-            maxOp[0].decreaseNumberOfOperationByTime(_accessTime);
+            isTrue = maxOp[0].decreaseOneOperation_ByTime(_accessTime);            
+            require( isTrue, "There are no operations available" );
         }else if(timeUnit == EAI.MINUTE){
-            maxOp[1].decreaseNumberOfOperationByTime(_accessTime);
+            isTrue = maxOp[1].decreaseOneOperation_ByTime(_accessTime);
+            require( isTrue, "There are no operations available" );
         }else if(timeUnit == EAI.HOUR ){
-            maxOp[2].decreaseNumberOfOperationByTime(_accessTime);
+            isTrue = maxOp[2].decreaseOneOperation_ByTime(_accessTime);
+            require( isTrue, "There are no operations available" );
         }else if(timeUnit == EAI.DAY){
-            maxOp[3].decreaseNumberOfOperationByTime(_accessTime);            
+            isTrue = maxOp[3].decreaseOneOperation_ByTime(_accessTime);     
+            require( isTrue, "There are no operations available" );       
         }else if(timeUnit == EAI.WEEK){
-            maxOp[4].decreaseNumberOfOperationByTime(_accessTime);
+            isTrue = maxOp[4].decreaseOneOperation_ByTime(_accessTime);
+            require( isTrue, "There are no operations available" );
         }else if(timeUnit == EAI.MONTH){
-            maxOp[5].decreaseNumberOfOperationByTime(_accessTime);
+            isTrue = maxOp[5].decreaseOneOperation_ByTime(_accessTime);
+            require( isTrue, "There are no operations available" );
         }else if(timeUnit == EAI.YEAR ){
-            maxOp[6].decreaseNumberOfOperationByTime(_accessTime);
+            isTrue = maxOp[6].decreaseOneOperation_ByTime(_accessTime);
+            require( isTrue, "There are no operations available" );
         }
     }
 

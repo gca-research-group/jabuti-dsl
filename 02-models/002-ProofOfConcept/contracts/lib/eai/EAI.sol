@@ -197,7 +197,7 @@ library EAI{
    function isIntoTimeIntervals(
     uint32 _timeAccess, 
     TimeInterval [] memory _ti
-    ) internal pure  onlyValidHour(_timeAccess)returns(bool){
+    ) internal pure  onlyValidHour(_timeAccess) returns(bool){
         uint vLength = _ti.length;
         for(uint i=0; i<vLength; i++){
                if(isIntoTimeInterval(_ti[i],_timeAccess)){                
@@ -337,6 +337,7 @@ library EAI{
                 setNewEndTimeAndRestOfOperations(_maxNumberOfOperationByTime, _accessDateTime);
         }
         
+        
         if(_maxNumberOfOperationByTime.rest > 0){          
             return true;
         }
@@ -347,8 +348,12 @@ library EAI{
         _maxNumberOfOperationByTime.rest +=1;
     }
 
-    function decreaseOneOperation_ByTime(MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime) internal  {
-        _maxNumberOfOperationByTime.rest -=1;
+    function decreaseOneOperation_ByTime(MaxNumberOfOperationByTime storage _maxNumberOfOperationByTime,  uint32 _accessDateTime) internal  returns(bool){
+        if(hasAvailableOperations_ByTime(_maxNumberOfOperationByTime, _accessDateTime)){
+            _maxNumberOfOperationByTime.rest -=1;
+            return true;
+        }        
+        return false;
     }
 
    
@@ -489,7 +494,7 @@ library EAI{
 /*                           MESSAGE CONTENT  PER TIME                        */
 /* ========================================================================== */
 
-    struct MessageContent_NumberPerTime{
+    struct MessageContent_Number_PerTime{
         string xpath;
         string op; // // the comparison operator (op) will receive only '<' or '<='
         uint256 amount;
@@ -499,13 +504,14 @@ library EAI{
         uint32 endTime;
         uint256 lastContent;
     }
+
     // function createMessageContent_NumberPerTime(
     function createMessageContent(
         string memory _xpath,
         string memory _op, 
         uint256 _amount,
         uint8 _timeUnit
-        )internal pure returns(MessageContent_NumberPerTime memory){
+        )internal pure returns(MessageContent_Number_PerTime memory){
 
         uint32 auxByTime;
 
@@ -522,13 +528,13 @@ library EAI{
             _amount = (_amount-1);
         }
 
-        return MessageContent_NumberPerTime(_xpath, _op, _amount, _timeUnit, auxByTime, _amount, 0, 0);
+        return MessageContent_Number_PerTime(_xpath, _op, _amount, _timeUnit, auxByTime, _amount, 0, 0);
     }
 
 
-    // cath da value from message content and decrease from the amount
+    // catch da value from message content and decrease from the amount
     function evaluateNumberPerTime(
-        MessageContent_NumberPerTime storage msgContent_NumberPerTime,
+        MessageContent_Number_PerTime storage msgContent_NumberPerTime,
         uint32 _accessDateTime,
         uint256 _content
         )internal returns(bool) {
@@ -555,12 +561,13 @@ library EAI{
                 msgContent_NumberPerTime.lastContent = _content;
                 return true;
             }else{
+                msgContent_NumberPerTime.lastContent = _content;
                 return false;
             }
            
     }
 
-    function decreaseTheLastContentOfRestingAmount( MessageContent_NumberPerTime storage msgContent_NumberPerTime ) internal  {        
+    function decreaseTheLastContentOfRestingAmount( MessageContent_Number_PerTime storage msgContent_NumberPerTime ) internal {        
         require(msgContent_NumberPerTime.lastContent > 0, "There in no content to decrease." );
         require(msgContent_NumberPerTime.lastContent <= msgContent_NumberPerTime.rest, "The message content number is greater than the remaining amount");  
         msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;

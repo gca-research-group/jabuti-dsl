@@ -30,7 +30,7 @@ contract('MaxNumberOfOperationByTime', async()=>{
     it('check decreaseOperation', async()=>{
       let maxOpByTime =  await instance.getMaxOpByTime.call(0);
       expect(+maxOpByTime.rest).to.equal(2);
-      await instance.decreaseOperation(0, 1674487942 );
+      await instance.decreaseOperation(0, 1674487942);
       maxOpByTime = await instance.getMaxOpByTime.call(0)
       expect(+maxOpByTime.rest).to.equal(1);
     });
@@ -53,6 +53,7 @@ contract('MaxNumberOfOperationByTime', async()=>{
         let errorReason = getErrorReasonFromCall(error);
         expect(errorReason).to.equal("There are no operations available");
       }
+     
 
     });
 

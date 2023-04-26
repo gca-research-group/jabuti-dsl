@@ -7,3 +7,8 @@
 /DeliveryHiring_RO.sol
 /RequestWorks.sol
 /sendMessageWhatsapp.sol
+/Citizen_RS.sol
+/DockRequest.sol
+/PurchaseOrderProvider.sol
+/SMSNotifier.sol
+/FlightFacade.sol

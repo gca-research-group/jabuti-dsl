@@ -55,12 +55,12 @@ contract SessionInterval_refCod{
     }   
 
     // check if there is a session interval open. return 'OPEN' or 'CLOSED"
-    function isTheSessionByRefOpen(string memory _k1, string memory _k2, uint32 _accessDateTime) public view returns(string memory) {                                           
-        return   sessionByVar[_k1][_k2].isItOpen(_accessDateTime);
+    function isTheSessionByRefOpen(string memory _k1, string memory _k2, uint32 _accessDateTime) public view returns(uint) {                                           
+        return   sessionByVar[_k1][_k2].sessionStatus(_accessDateTime);
     }
 
-     function isTheSessionIdOpen(uint _id, uint32 _accessDateTime) public view returns(string memory) {                                           
-        return  sessionInterval[_id].isItOpen(_accessDateTime);
+     function isTheSessionIdOpen(uint _id, uint32 _accessDateTime) public view returns(uint) {                                           
+        return  sessionInterval[_id].sessionStatus(_accessDateTime);
     }
   
     function getSessionIntervalByRef(string memory _k1, string memory _k2) public view returns (EAI.SessionInterval memory){

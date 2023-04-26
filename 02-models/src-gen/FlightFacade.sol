@@ -9,7 +9,7 @@ contract FlightFacade is EAI_Domain{
 	Party Integration Process;
 	
 	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(SUNDAY, SATURDAY);
-	TimeInterval public timeInterval = TimeInterval(6:00, 22:59);
+	TimeInterval public timeInterval = TimeInterval(06:00:00, 22:59:00);
 	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(100, MINUTE, 0, 0);
 	MessageContent public messageContent = MessageContent("count(//trip/path)");
 	MessageContent public messageContent = MessageContent("//origin/text()");

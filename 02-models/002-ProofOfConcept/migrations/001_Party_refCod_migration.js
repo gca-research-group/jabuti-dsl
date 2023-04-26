@@ -8,9 +8,9 @@ const Party_refCod = artifacts.require("Party_refCod");
 // const procAddr = "0x16e37d1cA1B6fe49aB58bc4ea95a95FBc4cE7EC3";
 // const appAddr = "0xFae0c32A0C5602212c6073DA17f34E720F2C8f82";
 
-// ganache in desktop DELL - GCA 
-const procAddr = "0x61E4Faf8cffa0Be4b4515Fa79e1E34DD3217dfd0";
-const appAddr = "0x247E4F1a18945BFdCB1b61251649f4558AEEc194";
+// servidor - GCA 
+const procAddr = "0x77425a4c279DE94E2bac81fa9869b086b9c44989";
+const appAddr = "0xFfF1AF45A42446f9eAEDf95F962fc58E0a86a2F1";
 
 module.exports = function (deployer) {
   deployer.deploy(Party_refCod, appAddr, { from: procAddr });

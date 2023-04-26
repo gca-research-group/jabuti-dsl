@@ -101,10 +101,10 @@ contract('SessionInterval_refCod_test', async()=>{
 
         it( "Test isOpen sessionInterval by reference (cidade)  ", async()=>{            
             let sessionByInterval = await instance.isTheSessionByRefOpen("cidade", "luis", 1240);
-            expect(sessionByInterval).to.equal('OPEN');
+            expect(+sessionByInterval).to.equal(1);
 
             sessionByInterval = await instance.isTheSessionByRefOpen("cidade", "luis", 1241);
-            expect(sessionByInterval).to.equal('CLOSED');
+            expect(+sessionByInterval).to.equal(0);
 
         });
         

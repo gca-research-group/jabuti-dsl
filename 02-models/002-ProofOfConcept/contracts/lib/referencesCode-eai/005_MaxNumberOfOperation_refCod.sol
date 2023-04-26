@@ -5,17 +5,17 @@ import "../eai/EAI.sol";
 
 contract MaxNumberOfOperation_refCod {   
 
-using EAI for EAI.MaxNumberOfOperation;
+    using EAI for EAI.MaxNumberOfOperation;
 
-EAI.MaxNumberOfOperation[] public maxOp;
+    EAI.MaxNumberOfOperation[] public maxOp;
 
-constructor (){
-    maxOp.push(EAI.createMaxNumberOfOperation(5));
-    maxOp.push(EAI.createMaxNumberOfOperation(3));
-}
+    constructor (){
+        maxOp.push(EAI.createMaxNumberOfOperation(5));
+        maxOp.push(EAI.createMaxNumberOfOperation(3));
+    }
 
     function decreaseOperation()public {
-        maxOp[0].decreaseNumberOfOperation();
+        maxOp[0].decreaseOneOperation();
     }
 
     function getMaxOperationById(uint _id) public view returns(EAI.MaxNumberOfOperation memory){

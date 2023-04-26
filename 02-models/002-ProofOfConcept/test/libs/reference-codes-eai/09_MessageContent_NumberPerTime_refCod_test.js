@@ -58,7 +58,7 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
         expect(result.receipt.status).to.equal(false);
       }catch (error) {
         let errorReason = getErrorReasonFromCall(error);
-        expect(errorReason).to.equal("You have only 0 from 2 resting, and the message contet xpath result is 1");
+        expect(errorReason).to.equal("You have only 0 from 2 resting, and the message content xpath result is 1");
       }
 
     });
@@ -118,7 +118,7 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
         expect(result.receipt.status).to.equal(false);
       }catch (error) {
         let errorReason = getErrorReasonFromCall(error);
-        expect(errorReason).to.equal("You have only 0 from 3 resting, and the message contet xpath result is 2");
+        expect(errorReason).to.equal("You have only 0 from 3 resting, and the message content xpath result is 2");
       }
 
     });
@@ -176,7 +176,7 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
         expect(result.receipt.status).to.equal(false);
       }catch (error) {
         let errorReason = getErrorReasonFromCall(error);
-        expect(errorReason).to.equal("You have only 0 from 4 resting, and the message contet xpath result is 2");
+        expect(errorReason).to.equal("You have only 0 from 4 resting, and the message content xpath result is 2");
       }
 
     });
@@ -226,7 +226,7 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
       // a hora corrente encerrará no segundo 1674432000
     });
 
-    it('catch exception: there are no operation available', async()  =>{
+    it('catch exception: not enough content to discount current content', async()  =>{
       auxValueToDecrease=1;
       await instance.decreaseMsgContentResultXpathFromAmount(3, 1674431999, auxValueToDecrease);
       let msgContent =  await instance.getMessageContentById.call(3);
@@ -238,8 +238,9 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
         expect(result.receipt.status).to.equal(false);
       }catch (error) {
         let errorReason = getErrorReasonFromCall(error);
-        expect(errorReason).to.equal("You have only 1 from 4 resting, and the message contet xpath result is 2");
+        expect(errorReason).to.equal("You have only 1 from 4 resting, and the message content xpath result is 2");
       }
+
     });
 
     it('start new endTime, reset and drecrease an operation', async()=>{
@@ -301,7 +302,7 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
         expect(result.receipt.status).to.equal(false);
       }catch (error) {
         let errorReason = getErrorReasonFromCall(error);
-        expect(errorReason).to.equal("You have only 1 from 3 resting, and the message contet xpath result is 2");
+        expect(errorReason).to.equal("You have only 1 from 3 resting, and the message content xpath result is 2");
       }
     });
 
@@ -363,7 +364,7 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
         expect(result.receipt.status).to.equal(false);
       }catch (error) {
         let errorReason = getErrorReasonFromCall(error);
-        expect(errorReason).to.equal("You have only 0 from 5 resting, and the message contet xpath result is 2");
+        expect(errorReason).to.equal("You have only 0 from 5 resting, and the message content xpath result is 2");
       }
     });
 
@@ -425,7 +426,7 @@ contract('MessageContract_NumberPerTime_refcod', async()=>{
         expect(result.receipt.status).to.equal(false);
       }catch (error) {
         let errorReason = getErrorReasonFromCall(error);
-        expect(errorReason).to.equal("You have only 0 from 2 resting, and the message contet xpath result is 1");
+        expect(errorReason).to.equal("You have only 0 from 2 resting, and the message content xpath result is 1");
       }
     });
 
