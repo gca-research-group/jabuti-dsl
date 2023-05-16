@@ -1,0 +1,22 @@
+
+#contract between the  Integration Process and Provider System Application
+
+Contract: PurchaseOrderProvider{
+		   
+	The contract will be effective from "08/13/2021" to "08/12/2022"	
+	
+	The parties involved in the contract are: "integration process" and "Supplier system database"
+
+	
+	Define a clause to specify the days, hours, and the message content constraints
+		
+	The integration process will be responsible for executing the operation, which will be a write type
+	
+	Orders can be shipped to the supplier from Monday to Friday, between 8:00 and 18:00	
+	The number of T-shirt product items must be greater than 30
+	The order value must be greater than two thousand Dollars and less than twenty thousand
+		
+	
+	In case any condition is not met, an action will be triggered for the treatment
+	
+	

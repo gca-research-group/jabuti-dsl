@@ -1,0 +1,62 @@
+Contract DockRequest {
+	beginDate = "2022-01-28 12:00:00"
+	dueDate =    "2023-01-27 11:59:59"
+	application = "SpanishPortSystem"
+	process =     "Integration Process"
+	
+	#Clause 1 from clauses presented on Section 5 
+	Right requestBerthing {
+		description = "This clause sets the required data to be able to request berthing."		
+		rolePlayer = process
+		rolePlayer.perform(Operation.REQUEST)
+		condition {
+			MessageContent.evaluate('//arriveData != ""') AND
+			MessageContent.evaluate('//departureData != ""') AND
+			MessageContent.evaluate('//MMSI != ""') AND
+			MessageContent.evaluate('//IMO != ""') 	
+		}
+		onBreach(notifyFailing, "Missing required data.")
+	}
+	
+	#Clause 2 from clauses presented on Section 5 
+	Obligation RespondToPortProposal{
+		description = "This clause sets the time limit (in seconds) for responding the port proposal"
+		rolePlayer = application
+		rolePlayer.perform(Operation.RESPONSE)
+		condition {			
+			Timeout(3600)
+			MessageContent.evaluate(//proposalID!="")
+			MessageContent.evaluate(//portServices!="")
+		}
+		onBreach(notifyFailing, "Timeout for replying has been exceeded")
+	}
+	
+	#Clause 3 from clauses presented on Section 5 
+	Prohibition notAllowedRequestBerthing {
+		description = "This clause sets some prohibition conditions on a berthing request."
+		rolePlayer = process
+		rolePlayer.perform(Operation.REQUEST)
+		condition {
+			BusinessTime("22:00:00","08:00:00") AND
+			BusinessDay.specificWeekDays(WeekDay.SUNDAY)					
+		}
+		onBreach(notifyFailing, "Request made outside the valid range")
+	}
+	
+	#Clause 4 from clauses presented on Section 5 
+	Obligation RespondToBerthingRequest{
+		description = "This clause sets the time limit (in seconds) for responding"
+		rolePlayer = application
+		rolePlayer.perform(Operation.RESPONSE)
+		condition {			
+			Timeout(3600)
+		}
+		onBreach(notifyFailing, "Timeout for replying has been exceeded")
+	}
+
+	Action notifyFailing(message : String) {
+		notifyParties(message)
+	}
+}
+
+	

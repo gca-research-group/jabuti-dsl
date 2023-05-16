@@ -1,0 +1,64 @@
+Contract LacenCIDADAORS {
+
+	beginDate = "2021-10-01 17:00:00"
+	dueDate =   "2022-10-01 12:00:00"
+	
+	application =  "Cidadao_RS"
+	process =	  "Integration Process"	
+	
+	Right requestPhoneNumber {
+		description: "Setting the days and hours to write on sales system database" 				
+		rolePlayer = process
+		rolePlayer.perform(Operation.REQUEST)
+	
+		condition {
+			BusinessTime.setBusinessDay(Period.anyDay()) AND
+			(
+				(BusinessTime.setHours(Period.specificTimeGap("00:00", "06:00")) AND
+					OpeationByInterval(700,Period.byMinute()))
+				OR				
+				(BusinessTime.setHours(Period.specificTimeGap("06:01", "23:59")) AND
+					OpeationByInterval(400).bySecond() )
+					//OpeationByInterval(400, Period.BY_SECOND) )
+			)
+		}
+		onBreach(notifyFailing, "Service suspended for 8 hours due to operation limit exceeded");		
+	}	
+	
+	Prohibition requestPhoneNumber {		
+		description: "Setting the number of user by request" 				
+		rolePlayer: process          						
+		rolePlayer.perform(Operation.REQUEST)		
+		
+		condition {
+			MessageContent.evaluate("EXPRESSAO_XPATH") // consultar o numero de telefone de mais de um usuario por vez	
+		}
+		onBreach (notifyFailing, "It's not allowed more then one cpf by request");		
+	}	
+
+
+	Obligation: reponseWithPhoneNumber{		
+		description: "Setting the days and hours of availability system database" 
+		rolePlayer: application          						
+		rolePlayer.perform(Operation.RESPONSE)
+		
+		condition {
+			BusinessTime.setBusinessDay(Period.anyDayAnytime())			
+		}
+		onBreach (notifyFailing,  "Server not available error");		
+	}	
+	
+	Action:  notifyFailing(message : String) {
+		notifyParties(message)
+	}
+		
+}
+ 
+
+
+
+
+
+
+
+

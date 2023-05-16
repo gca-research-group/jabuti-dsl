@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"localhost/OneDrive/_UNIJUI/_Doutorado_2020/Pesquisa/Repositório/Publicações/conferencia/contratos/DateTimeLibrary.sol": "DateTimeLibrary"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"localhost/OneDrive/_UNIJUI/_Doutorado_2020/Pesquisa/Repositório/Publicações/conferencia/contratos/DateTimeLibrary.sol": {
+			"keccak256": "0x2ca83016c938ca234c625ddf042274f39e5bd8635e10fa5c3871c091d892ac56",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9d58017855df17a23f2e5f93d246564c0016449bb12cee9d591a168ca602683a",
+				"dweb:/ipfs/QmchHkcQjWZxZFrLpmNPX483smRFLxwxC6YPzATmEJhimD"
+			]
+		}
+	},
+	"version": 1
+}

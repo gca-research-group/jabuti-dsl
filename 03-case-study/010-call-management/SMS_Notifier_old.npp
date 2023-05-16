@@ -1,0 +1,38 @@
+Contract SMSNotifier {
+
+	beginDate = "2021-09-23 17:00:00"
+	dueDate =   "2022-09-23 12:00:00"
+	
+	application=  "SMS Notifier"
+	process=	  "Integration Process"	
+	
+	Right writeSMS{
+		description= “Setting the days and hours to write in SMS Notifier database”	
+		rolePlayer = process
+		rolePlayer.perform(Operation.WRITE)	
+		
+		condition{
+			BusinessTime.setBusinessDay(Period.anyDay()) AND
+			BusinessTime.setHours(Period.businessTime())	
+		}
+		onBreach (notifyFailing,  "Request made outside of allowed hours")
+	}
+	
+	Prohibition writeSMS{
+		description = “Setting the days and hours that is prohibited to write in SMS Notifier database”	
+		rolePlayer = process
+		rolePlayer.perform(Operation.WRITE)	 
+		condition{
+			BusinessTime.setHours(!Period.businessTime())	
+		}
+		onBreach (notifyFailing,  "Request made outside of allowed hours"))
+	}
+	
+	Action notifyFailing(message : String){
+			notifyParties(message)
+	}
+	
+	
+	
+	
+	
