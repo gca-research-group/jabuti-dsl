@@ -7,7 +7,7 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg2543"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="webOfScience-ip.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,11 +24,11 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="2.0000001"
-     inkscape:cx="606.74998"
-     inkscape:cy="523.74999"
+     inkscape:zoom="1.0000001"
+     inkscape:cx="590.99997"
+     inkscape:cy="513.99997"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -2043,12 +2043,12 @@
          d="m 131.28128,169.2237 v 0.35656 l -0.63149,0.75706 0.63149,0.67955 -0.63149,0.67696 0.63149,0.67903 -0.63149,0.67851 0.63149,0.67748 -0.63149,0.67954 0.63149,0.75706 v 0.35657 h 9.86348 v -2.48357 c 0.12813,-0.0652 0.23485,-0.16583 0.30747,-0.2899 0.13409,-0.23231 0.13409,-0.51854 0,-0.75085 -0.0726,-0.12408 -0.17934,-0.2247 -0.30747,-0.28991 v -2.3058 -0.17828 z m 0.35657,0.35656 h 9.15034 v 5.58519 h -9.15034 z m 1.33893,1.24696 v 1.31723 h 1.51154 v -1.19838 -0.11885 z m 0.23771,0.23771 h 0.18914 v 0.84181 h -0.18914 z m 0.42634,0 h 0.185 v 0.84181 h -0.185 z m 0.42271,0 h 0.18707 v 0.84181 h -0.18707 z m 3.74395,0.83044 v 1.31723 h 1.51154 v -1.31723 z m -1.43867,0.21239 v 0.36587 h -0.95498 v 0.18603 h 0.95498 v 0.36587 l 0.79427,-0.45888 -0.0749,-0.0429 z m -3.40909,0.81907 v 1.35031 h 1.54254 v -1.35031 h -1.40353 z m 0.27853,0.21239 h 0.98547 v 0.16743 h -0.98547 z m 0,0.37982 h 0.98547 v 0.16485 h -0.98547 z m 0,0.37672 h 0.98547 v 0.16899 h -0.98547 z" />
     </g>
     <rect
-       y="99.233086"
-       x="109.2464"
-       height="38.836117"
-       width="115.15263"
+       y="99.250549"
+       x="109.26386"
+       height="38.801186"
+       width="131.58801"
        id="rect13432-4"
-       style="fill:none;stroke:#000000;stroke-width:0.50988;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+       style="fill:none;stroke:#000000;stroke-width:0.544808;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
        inkscape:export-xdpi="200"
        inkscape:export-ydpi="200" />
@@ -2057,7 +2057,7 @@
        id="path852"
        style="stroke-width:0.264583" />
     <path
-       d="m 228.06641,117.30989 10.4921,2e-5 v 0.52917 l -10.4921,-3e-5 z m 10.13934,-0.79373 2.11666,1.05834 -2.11666,1.05833 z"
+       d="m 244.47068,117.30989 10.4921,2e-5 v 0.52917 l -10.4921,-3e-5 z m 10.13934,-0.79373 2.11666,1.05834 -2.11666,1.05833 z"
        id="path866"
        style="stroke-width:0.264583" />
     <path
@@ -2065,7 +2065,7 @@
        id="path868"
        style="stroke-width:0.264583" />
     <path
-       d="m 240.75765,122.07238 h -10.66271 v 0.52916 h 10.66271 z m -10.31002,-0.79375 -2.11667,1.05833 2.11667,1.05833 z"
+       d="m 257.16192,122.07238 h -10.66271 v 0.52916 h 10.66271 z m -10.31002,-0.79375 -2.11667,1.05833 2.11667,1.05833 z"
        id="path874"
        style="stroke-width:0.264583" />
     <text
@@ -2093,13 +2093,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="226.24677"
+       x="242.65071"
        y="113.64472"
        id="text18827"><tspan
          sodipodi:role="line"
          id="tspan18825"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="226.24677"
+         x="242.65071"
          y="113.64472">P2</tspan></text>
     <g
        id="g16124-7"
@@ -2118,7 +2118,7 @@
     </g>
     <g
        id="g16136-0"
-       transform="matrix(-1.1342105,0,0,1.5523048,440.96993,-321.27921)">
+       transform="matrix(-1.1342105,0,0,1.5523048,457.3742,-321.27921)">
       <rect
          style="fill:#ffffff;fill-opacity:0.996479;stroke:none;stroke-width:0.2;stroke-dasharray:none"
          id="rect16132-3"
@@ -2203,7 +2203,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path9583"
-       d="m 111.24713,115.83776 h 4.69595 v -7.0432 h 6.44678"
+       d="m 111.7763,115.83776 h 3.63762 v -7.0432 h 4.85927"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
        inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
        inkscape:export-xdpi="200"
@@ -2212,7 +2212,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path9587"
-       d="m 191.18367,107.38396 h 24.27511 v 9.95362 h 4.54793"
+       d="m 220.81711,107.69096 h 10.51677 v 9.64662 h 5.60626"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
        inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
        inkscape:export-xdpi="200"
@@ -2230,14 +2230,14 @@
        inkscape:connector-curvature="0"
        id="path9645"
        style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.221178"
-       d="m 235.61903,111.6304 h 20.18766 V 99.916752 h -20.18766 z" />
+       d="m 252.0233,111.6304 h 20.18766 V 99.916752 H 252.0233 Z" />
     <path
        style="color:#000000;fill:#ffffff;stroke-width:0.447221;-inkscape-stroke:none"
-       d="m 235.61903,111.6304 h 14.68486 5.5028 V 99.916832 h -20.18766 z"
+       d="m 252.0233,111.6304 h 14.68486 5.5028 V 99.916832 H 252.0233 Z"
        id="path9647" />
     <g
        id="g9669"
-       transform="matrix(1.3886185,0,0,1.3978919,13.046244,-270.88768)">
+       transform="matrix(1.3886185,0,0,1.3978919,29.450421,-270.88768)">
       <g
          id="g9657"
          transform="translate(-0.16370259,-0.12442)">
@@ -2281,7 +2281,7 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.9855px;line-height:0%;font-family:arial;-inkscape-font-specification:arial;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.332125"
-       x="247.81024"
+       x="264.35751"
        y="103.16412"
        id="text9673"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
@@ -2290,11 +2290,11 @@
        transform="scale(0.99133897,1.0087367)"><tspan
          sodipodi:role="line"
          id="tspan9671"
-         x="247.81024"
+         x="264.35751"
          y="103.16412"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47196px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125">Web Of</tspan><tspan
          sodipodi:role="line"
-         x="247.81024"
+         x="264.35751"
          y="107.50407"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47196px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125"
          id="tspan1349">Science</tspan></text>
@@ -2326,11 +2326,11 @@
     <path
        id="path2002"
        style="fill:#000000;stroke-width:0.264583"
-       d="m 153.28131,104.94087 v 0.17828 2.30426 c -0.12827,0.0655 -0.235,0.16649 -0.30748,0.29094 -0.13409,0.23233 -0.13409,0.51853 0,0.75086 0.0725,0.12445 0.17921,0.22545 0.30748,0.29094 v 2.48305 h 9.86347 v -2.48305 c 0.12827,-0.0655 0.235,-0.16649 0.30747,-0.29094 0.1341,-0.23233 0.1341,-0.51853 0,-0.75086 -0.0725,-0.12445 -0.1792,-0.22545 -0.30747,-0.29094 v -2.48254 z m 0.35657,0.35605 h 9.15033 v 5.5852 h -9.15033 z m 3.57911,2.35129 v 0.36535 H 156.262 v 0.18655 h 0.95499 v 0.36587 l 0.79375,-0.45941 -0.0739,-0.0429 z m 3.25973,-0.21653 v 1.35031 h 1.53996 v -1.35031 h -0.11885 z m -1.96627,0.0165 v 0.11886 1.19837 h 1.51101 v -1.31723 z m 2.20399,0.22118 h 1.06453 v 0.17621 h -1.06453 z m -1.96628,0.0165 h 0.18707 v 0.8418 h -0.18707 z m 0.42478,0 h 0.18448 v 0.8418 h -0.18448 z m 0.42219,0 h 0.18861 v 0.8418 h -0.18861 z m 1.11931,0.34984 h 1.06453 v 0.1695 h -1.06453 z m 0,0.36019 h 1.06453 v 0.14831 h -1.06453 z m -6.3833,-0.94768 v 0.11867 1.19867 h 1.51135 v -1.31734 z"
+       d="m 142.04479,105.6354 v 0.17828 2.30426 c -0.12827,0.0655 -0.235,0.16649 -0.30748,0.29094 -0.13409,0.23233 -0.13409,0.51853 0,0.75086 0.0725,0.12445 0.17921,0.22545 0.30748,0.29094 v 2.48305 h 9.86347 v -2.48305 c 0.12827,-0.0655 0.235,-0.16649 0.30747,-0.29094 0.1341,-0.23233 0.1341,-0.51853 0,-0.75086 -0.0725,-0.12445 -0.1792,-0.22545 -0.30747,-0.29094 v -2.48254 z m 0.35657,0.35605 h 9.15033 v 5.5852 h -9.15033 z m 3.57911,2.35129 v 0.36535 h -0.95499 v 0.18655 h 0.95499 v 0.36587 l 0.79375,-0.45941 -0.0739,-0.0429 z m 3.25973,-0.21653 v 1.35031 h 1.53996 v -1.35031 h -0.11885 z m -1.96627,0.0165 v 0.11886 1.19837 h 1.51101 v -1.31723 z m 2.20399,0.22118 h 1.06453 v 0.17621 h -1.06453 z m -1.96628,0.0165 h 0.18707 v 0.8418 h -0.18707 z m 0.42478,0 h 0.18448 v 0.8418 h -0.18448 z m 0.42219,0 h 0.18861 v 0.8418 h -0.18861 z m 1.11931,0.34984 h 1.06453 v 0.1695 h -1.06453 z m 0,0.36019 h 1.06453 v 0.14831 h -1.06453 z m -6.3833,-0.94768 v 0.11867 1.19867 h 1.51135 v -1.31734 z"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     <g
        id="g2025"
-       transform="matrix(-0.26458333,0,0,0.26458333,326.8432,161.63636)">
+       transform="matrix(-0.26458333,0,0,0.26458333,336.76517,161.04507)">
       <path
          id="path2023"
          style="color:#000000;fill:#000000;-inkscape-stroke:none"
@@ -2340,7 +2340,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path2027"
-       d="m 221.3557,121.76263 -4.30941,0.0234 v 6.60327 h -5.26407"
+       d="m 237.76,121.76263 -3.25108,0.0234 v 6.60327 h -3.67657"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
        inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
        inkscape:export-xdpi="200"
@@ -2348,7 +2348,7 @@
     <path
        id="path2520"
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       d="m 180.56225,105.60682 v 0.17829 2.14406 0.13487 c -0.0278,0.0118 -0.055,0.0254 -0.0811,0.0403 -0.002,0.001 -0.003,0.002 -0.005,0.003 -0.0243,0.0142 -0.0477,0.0297 -0.0703,0.0465 h -5.3e-4 c -0.005,0.003 -0.009,0.007 -0.0134,0.0103 -0.0226,0.0177 -0.044,0.0371 -0.0646,0.0574 -10e-4,10e-4 -0.003,0.002 -0.004,0.004 -0.0226,0.0226 -0.0439,0.0463 -0.0636,0.0718 v 5.2e-4 c -0.0201,0.0261 -0.0386,0.0537 -0.0553,0.0827 -0.0168,0.029 -0.0314,0.0589 -0.0439,0.0894 -0.0126,0.0305 -0.0231,0.0615 -0.0315,0.093 -0.008,0.0316 -0.0144,0.0639 -0.0186,0.0961 -0.004,0.0322 -0.007,0.0647 -0.007,0.0971 0,0.0324 0.002,0.0644 0.007,0.0966 0.004,0.0322 0.0102,0.0645 0.0186,0.0961 0.008,0.0316 0.019,0.0625 0.0315,0.093 0.0126,0.0305 0.0272,0.0604 0.0439,0.0894 0.0167,0.0289 0.0352,0.0566 0.0553,0.0827 v 5.3e-4 c 0.0197,0.0256 0.041,0.0493 0.0636,0.0718 0.001,0.001 0.003,0.002 0.004,0.004 0.0205,0.0203 0.042,0.0397 0.0646,0.0574 0.004,0.003 0.009,0.007 0.0134,0.0103 h 5.3e-4 c 0.0226,0.0168 0.046,0.0323 0.0703,0.0465 0.002,0.001 0.003,0.002 0.005,0.003 0.0261,0.015 0.0533,0.0285 0.0811,0.0403 v 0.0594 2.3983 h 9.86348 v -0.49816 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64079 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64079 -0.56947,-0.64027 v -0.41961 z m 0.35656,0.35657 h 9.15035 v 1.44539 1.36634 1.36683 1.40663 h -9.15035 z m 4.53978,0.36742 v 1.11208 h 1.2609 v -1.11208 z m -0.5178,0.71107 -0.0744,0.0429 -0.72244,0.41031 0.31575,0.185 -0.54777,0.93535 h -0.0248 v 0.18604 h 0.0253 l 0.58136,0.87953 -0.30541,0.20154 0.82062,0.40928 -0.005,-0.0858 -0.0496,-0.82941 -0.30489,0.20154 -0.51418,-0.7767 h 2.04432 v 0.36587 l 0.79375,-0.45889 -0.0744,-0.0429 -0.71934,-0.41599 v 0.36586 h -2.05155 l 0.49247,-0.84129 0.31575,0.185 z m 2.61948,1.1033 v 0.12712 0.98754 h 1.26245 v -1.11466 z m -5.72162,0.0305 v 0.12506 0.98753 h 1.26298 v -1.11259 z m 3.64888,1.92081 v 1.10794 h 1.26504 v -1.10794 z" />
+       d="m 181.37205,105.88745 v 0.17829 2.14406 0.13487 c -0.0278,0.0118 -0.055,0.0254 -0.0811,0.0403 -0.002,0.001 -0.003,0.002 -0.005,0.003 -0.0243,0.0142 -0.0477,0.0297 -0.0703,0.0465 h -5.3e-4 c -0.005,0.003 -0.009,0.007 -0.0134,0.0103 -0.0226,0.0177 -0.044,0.0371 -0.0646,0.0574 -0.001,10e-4 -0.003,0.002 -0.004,0.004 -0.0226,0.0226 -0.0439,0.0463 -0.0636,0.0718 v 5.2e-4 c -0.0201,0.0261 -0.0386,0.0537 -0.0553,0.0827 -0.0168,0.029 -0.0314,0.0589 -0.0439,0.0894 -0.0126,0.0305 -0.0231,0.0615 -0.0315,0.093 -0.008,0.0316 -0.0144,0.0639 -0.0186,0.0961 -0.004,0.0322 -0.007,0.0647 -0.007,0.0971 0,0.0324 0.002,0.0644 0.007,0.0966 0.004,0.0322 0.0102,0.0645 0.0186,0.0961 0.008,0.0316 0.019,0.0625 0.0315,0.093 0.0126,0.0305 0.0272,0.0604 0.0439,0.0894 0.0167,0.0289 0.0352,0.0566 0.0553,0.0827 v 5.3e-4 c 0.0197,0.0256 0.041,0.0493 0.0636,0.0718 0.001,0.001 0.003,0.002 0.004,0.004 0.0205,0.0203 0.042,0.0397 0.0646,0.0574 0.004,0.003 0.009,0.007 0.0134,0.0103 h 5.3e-4 c 0.0226,0.0168 0.046,0.0323 0.0703,0.0465 0.002,0.001 0.003,0.002 0.005,0.003 0.0261,0.015 0.0533,0.0285 0.0811,0.0403 v 0.0594 2.3983 h 9.86348 v -0.49816 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64079 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64079 -0.56947,-0.64027 v -0.41961 z m 0.35656,0.35657 h 9.15035 v 1.44539 1.36634 1.36683 1.40663 h -9.15035 z m 4.53978,0.36742 v 1.11208 h 1.2609 v -1.11208 z m -0.5178,0.71107 -0.0744,0.0429 -0.72244,0.41031 0.31575,0.185 -0.54777,0.93535 h -0.0248 v 0.18604 h 0.0253 l 0.58136,0.87953 -0.30541,0.20154 0.82062,0.40928 -0.005,-0.0858 -0.0496,-0.82941 -0.30489,0.20154 -0.51418,-0.7767 h 2.04432 v 0.36587 l 0.79375,-0.45889 -0.0744,-0.0429 -0.71934,-0.41599 v 0.36586 h -2.05155 l 0.49247,-0.84129 0.31575,0.185 z m 2.61948,1.1033 v 0.12712 0.98754 h 1.26245 v -1.11466 z m -5.72162,0.0305 v 0.12506 0.98753 h 1.26298 v -1.11259 z m 3.64888,1.92081 v 1.10794 h 1.26504 v -1.10794 z" />
     <path
        id="path2552"
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
@@ -2375,15 +2375,6 @@
        inkscape:connector-curvature="0"
        id="path3495"
        d="m 160.10316,127.12913 h -6.44678"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path3497"
-       d="m 136.23665,108.75616 h 13.85511"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
        inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
        inkscape:export-xdpi="200"
@@ -2419,7 +2410,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path4362"
-       d="m 191.33306,110.22258 h 5.75428 v 15.34451 h -4.80375"
+       d="m 191.86223,110.22258 h 5.22511 v 15.34451 h -4.80375"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
        inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
        inkscape:export-xdpi="200"
@@ -2435,7 +2426,7 @@
        inkscape:export-ydpi="200" />
     <g
        id="g4792"
-       transform="matrix(0.26458333,0,0,0.26458333,94.008612,137.48554)">
+       transform="matrix(0.26458333,0,0,0.26458333,102.343,140.2802)">
       <path
          id="path4790"
          style="color:#000000;fill:#000000;-inkscape-stroke:none"
@@ -2445,16 +2436,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path4794"
-       d="m 136.23665,108.75616 h 13.85511"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4796"
-       d="M 163.14478,108.75615 H 178.4003"
+       d="m 133.06163,108.75616 h 6.97594"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
        inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
        inkscape:export-xdpi="200"
@@ -2462,114 +2444,114 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="127.83596"
-       y="114.66402"
+       x="125.19013"
+       y="114.76823"
        id="text9837"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan9835"
-         x="127.83596"
-         y="114.66402"
+         x="125.19013"
+         y="114.76823"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="155.68336"
-       y="114.66402"
+       x="145.22107"
+       y="114.78578"
        id="text10357"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan10355"
-         x="155.68336"
-         y="114.66402"
+         x="145.22107"
+         y="114.78578"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="184.32449"
-       y="114.66402"
+       x="164.69485"
+       y="114.76485"
        id="text10361"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan10359"
-         x="184.32449"
-         y="114.66402"
+         x="164.69485"
+         y="114.76485"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="206.22734"
-       y="113.90401"
+       x="183.73776"
+       y="114.76485"
        id="text10365"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan10363"
-         x="206.22734"
-         y="113.90401"
+         x="183.73776"
+         y="114.76485"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T4</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="212.04817"
-       y="136.37267"
+       x="214.16463"
+       y="113.88308"
        id="text10369"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan10367"
-         x="212.04817"
-         y="136.37267"
+         x="214.16463"
+         y="113.88308"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T5</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="184.6638"
-       y="132.68741"
+       x="222.76379"
+       y="134.4072"
        id="text10373"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan10371"
-         x="184.6638"
-         y="132.68741"
+         x="222.76379"
+         y="134.4072"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T6</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="164.95639"
-       y="132.55716"
+       x="202.9073"
+       y="134.27695"
        id="text10377"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan10375"
-         x="164.95639"
-         y="132.55716"
+         x="202.9073"
+         y="134.27695"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T7</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="124.26902"
-       y="133.08632"
+       x="183.9003"
+       y="133.03731"
        id="text10381"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
        inkscape:export-xdpi="88.777161"
        inkscape:export-ydpi="88.777161"><tspan
          sodipodi:role="line"
          id="tspan10379"
-         x="124.26902"
-         y="133.08632"
+         x="183.9003"
+         y="133.03731"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T8</tspan></text>
     <text
        xml:space="preserve"
@@ -2584,7 +2566,7 @@
          y="73.712936" /></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';white-space:pre;inline-size:36.5989;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';white-space:pre;inline-size:36.5989;display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
        x="231.45888"
        y="134.17078"
        id="text2323"
@@ -2594,30 +2576,30 @@
        transform="translate(-85.345683,-62.44871)"><tspan
          x="231.45888"
          y="134.17078"
-         id="tspan5631"><tspan
+         id="tspan2293"><tspan
            style="font-size:2.7659px;line-height:1.25"
-           id="tspan5629">Atualiza o número de </tspan></tspan><tspan
+           id="tspan2291">Atualiza o número de </tspan></tspan><tspan
          x="231.45888"
-         y="137.62816"
-         id="tspan5635"><tspan
+         y="137.62817"
+         id="tspan2297"><tspan
            style="font-size:2.7659px;line-height:1.25"
-           id="tspan5633">citações dos artigos na </tspan></tspan><tspan
+           id="tspan2295">citações dos artigos na </tspan></tspan><tspan
          x="231.45888"
-         y="141.08554"
-         id="tspan5639"><tspan
+         y="141.08555"
+         id="tspan2301"><tspan
            style="font-size:2.7659px;line-height:1.25"
-           id="tspan5637">página do grupo de </tspan></tspan><tspan
+           id="tspan2299">página do grupo de </tspan></tspan><tspan
          x="231.45888"
-         y="144.54292"
-         id="tspan5643"><tspan
+         y="144.54293"
+         id="tspan2305"><tspan
            style="font-size:2.7659px;line-height:1.25"
-           id="tspan5641">pesquisa</tspan></tspan></text>
+           id="tspan2303">pesquisa</tspan></tspan></text>
     <g
        id="g3721"
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\modifiers\modifiers.png"
        inkscape:export-xdpi="90.499077"
        inkscape:export-ydpi="90.499077"
-       transform="matrix(0.18637119,0,0,0.18637119,71.093191,65.074915)">
+       transform="matrix(0.18637119,0,0,0.18637119,69.50569,64.744185)">
       <rect
          y="220.47464"
          x="284.57971"
@@ -2758,28 +2740,6 @@
          sodipodi:arc-type="slice"
          d="m 13.524461,273.50491 a 3.1599207,3.1599207 0 0 1 -1.579961,2.73657 3.1599207,3.1599207 0 0 1 -3.1599203,0 3.1599207,3.1599207 0 0 1 -1.5799603,-2.73657 H 10.36454 Z" />
     </g>
-    <g
-       id="g4534"
-       transform="translate(274.17388,83.103201)">
-      <text
-         xml:space="preserve"
-         style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-         x="-150.88869"
-         y="77.768929"
-         id="text4530"
-         inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\transformers\transformers.png"
-         inkscape:export-xdpi="71.618652"
-         inkscape:export-ydpi="71.618652"><tspan
-           sodipodi:role="line"
-           id="tspan4528"
-           x="-150.88869"
-           y="77.768929"
-           style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">Aggregator</tspan></text>
-      <path
-         id="path4532"
-         d="m -148.03749,68.107248 v 0.17829 2.2996 a 0.75103134,0.75103134 0 0 0 -0.31781,0.2961 0.75103134,0.75103134 0 0 0 0,0.75086 0.75103134,0.75103134 0 0 0 0.31781,0.29611 v 2.47737 h 9.86347 v -2.48771 a 0.75103134,0.75103134 0 0 0 0.29662,-0.28577 0.75103134,0.75103134 0 0 0 0,-0.75086 0.75103134,0.75103134 0 0 0 -0.29662,-0.28577 v -2.48822 z m 0.35657,0.35657 h 9.15033 v 5.58519 h -9.15033 z m 0.67696,2.1792 v 1.3503 h 1.53995 v -1.3503 h -1.4211 z m 1.99471,0.0165 v 0.11885 1.19838 h 1.51153 v -1.31723 z m 4.17958,0 v 1.31723 h 1.51101 v -1.19838 -0.11885 z m -1.23041,0.19998 v 0.36536 h -0.95498 v 0.18655 h 0.95498 v 0.36587 l 0.79426,-0.45889 -0.0744,-0.0434 z m -4.70617,0.0212 h 1.06453 v 0.17674 h -1.06453 z m 1.99471,0.0165 h 0.18707 v 0.84181 h -0.18707 z m 0.42478,0 h 0.18448 v 0.84181 h -0.18448 z m 0.4222,0 h 0.18913 v 0.84181 h -0.18913 z m -2.84169,0.35037 h 1.06453 v 0.1695 h -1.06453 z m 0,0.35967 h 1.06453 v 0.14831 h -1.06453 z"
-         style="stroke-width:0.264583" />
-    </g>
     <path
        id="path4540"
        d="m 151.13965,123.8389 v 0.17829 2.2996 a 0.75103134,0.75103134 0 0 1 0.31781,0.2961 0.75103134,0.75103134 0 0 1 0,0.75086 0.75103134,0.75103134 0 0 1 -0.31781,0.29611 v 2.47737 h -9.86347 v -2.48771 a 0.75103134,0.75103134 0 0 1 -0.29662,-0.28577 0.75103134,0.75103134 0 0 1 0,-0.75086 0.75103134,0.75103134 0 0 1 0.29662,-0.28577 v -2.48822 z m -0.35657,0.35657 h -9.15033 v 5.58519 h 9.15033 z m -0.67696,2.1792 v 1.3503 h -1.53995 v -1.3503 h 1.4211 z m -1.99471,0.0165 v 0.11885 1.19838 h -1.51153 v -1.31723 z m -4.17958,0 v 1.31723 h -1.51101 v -1.19838 -0.11885 z m 1.23041,0.19998 v 0.36536 h 0.95498 v 0.18655 h -0.95498 v 0.36587 l -0.79426,-0.45889 0.0744,-0.0434 z m 4.70617,0.0212 h -1.06453 v 0.17674 h 1.06453 z m -1.99471,0.0165 h -0.18707 v 0.84181 h 0.18707 z m -0.42478,0 h -0.18448 v 0.84181 h 0.18448 z m -0.4222,0 h -0.18913 v 0.84181 h 0.18913 z m 2.84169,0.35037 h -1.06453 v 0.1695 h 1.06453 z m 0,0.35967 h -1.06453 v 0.14831 h 1.06453 z"
@@ -2789,7 +2749,7 @@
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\modifiers\modifiers.png"
        inkscape:export-xdpi="90.499077"
        inkscape:export-ydpi="90.499077"
-       transform="matrix(0.18637119,0,0,0.18637119,112.59321,60.879825)">
+       transform="matrix(0.18637119,0,0,0.18637119,108.87781,64.832073)">
       <rect
          y="220.47464"
          x="284.57971"
@@ -2855,7 +2815,7 @@
        inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\modifiers\modifiers.png"
        inkscape:export-xdpi="90.499077"
        inkscape:export-ydpi="90.499077"
-       transform="matrix(-0.18637119,0,0,0.18637119,258.89821,90.243075)">
+       transform="matrix(-0.18637119,0,0,0.18637119,262.33779,84.422242)">
       <rect
          y="220.47464"
          x="284.57971"
@@ -2916,5 +2876,83 @@
          sodipodi:arc-type="slice"
          d="m 13.524461,273.50491 a 3.1599207,3.1599207 0 0 1 -1.579961,2.73657 3.1599207,3.1599207 0 0 1 -3.1599203,0 3.1599207,3.1599207 0 0 1 -1.5799603,-2.73657 H 10.36454 Z" />
     </g>
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path724"
+       d="m 152.70594,108.8497 h 6.97594"
+       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
+       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path726"
+       d="m 172.30348,108.94324 h 6.97594"
+       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
+       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path728"
+       d="m 191.45269,107.58725 h 16.50094"
+       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
+       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path1215"
+       d="m 218.05393,128.44862 h -6.44678"
+       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6-21)"
+       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
+       inkscape:export-xdpi="200"
+       inkscape:export-ydpi="200" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="164.78792"
+       y="133.03798"
+       id="text1321"
+       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
+       inkscape:export-xdpi="88.777161"
+       inkscape:export-ydpi="88.777161"><tspan
+         sodipodi:role="line"
+         id="tspan1319"
+         x="164.78792"
+         y="133.03798"
+         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T9</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="143.69908"
+       y="133.03664"
+       id="text1325"
+       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
+       inkscape:export-xdpi="88.777161"
+       inkscape:export-ydpi="88.777161"><tspan
+         sodipodi:role="line"
+         id="tspan1323"
+         x="143.69908"
+         y="133.03664"
+         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T10</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="124.20558"
+       y="133.04068"
+       id="text1329"
+       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
+       inkscape:export-xdpi="88.777161"
+       inkscape:export-ydpi="88.777161"><tspan
+         sodipodi:role="line"
+         id="tspan1327"
+         x="124.20558"
+         y="133.04068"
+         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T11</tspan></text>
   </g>
 </svg>
