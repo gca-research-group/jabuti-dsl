@@ -368,7 +368,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	{
 		super(eNS_URI, JabutiFactory.eINSTANCE);
 	}
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

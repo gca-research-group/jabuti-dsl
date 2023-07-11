@@ -5,11 +5,21 @@ import "../eai/EAI.sol";
 
 contract  Timeout_refCod{
     using EAI for EAI.Timeout;
+    
     EAI.Timeout [] timeout;
+    EAI.MaxNumberOfOperation [] maxOp;
 
     constructor(){
-        timeout.push(EAI.createTimeout(50));
-        timeout.push(EAI.createTimeout(30));
+        timeout.push(EAI.createTimeout(10));
+       
+    }
+
+
+    function responseTimeOut( uint8 idTimeOut, uint32 dateTime)public returns  (bool){
+        if(timeout[idTimeOut].isTimeoutEnded(dateTime)){
+            return false;
+        }        
+        return true;        
     }
 
     function setTimeoutEnd(uint _idTimeout, uint32 _startTime) public {

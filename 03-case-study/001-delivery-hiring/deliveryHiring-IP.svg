@@ -7,7 +7,7 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg2543"
-   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="deliveryHiring-IP.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,10 +25,10 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="1.0192758"
-     inkscape:cx="818.228"
-     inkscape:cy="262.44124"
+     inkscape:cx="622.01025"
+     inkscape:cy="421.86815"
      inkscape:window-width="1920"
-     inkscape:window-height="1017"
+     inkscape:window-height="1009"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -1400,375 +1400,6 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1">
-    <rect
-       y="115.90332"
-       x="105.73686"
-       height="49.524498"
-       width="93.403534"
-       id="rect13432-4"
-       style="fill:none;stroke:#000000;stroke-width:0.548;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       style="color:#000000;fill:#000000;stroke-width:0.186371;-inkscape-stroke:none"
-       d="m 266.70251,161.53012 h -1.1768"
-       id="path16175" />
-    <path
-       style="color:#000000;fill:#000000;stroke-width:0.186371;-inkscape-stroke:none"
-       d="m 266.70251,161.17043 h -1.1768"
-       id="path16177" />
-    <path
-       d="m 90.817874,138.07293 h 8.618829 v 0.52917 h -8.618829 z m 8.266139,-0.79375 2.116677,1.05834 -2.116677,1.05833 z"
-       id="path852"
-       style="stroke-width:0.264583" />
-    <path
-       d="m 203.79513,139.13128 10.4921,2e-5 v 0.52917 l -10.4921,-3e-5 z m 10.13934,-0.79373 2.11666,1.05834 -2.11666,1.05833 z"
-       id="path866"
-       style="stroke-width:0.264583" />
-    <path
-       d="m 100.9361,145.21668 -8.618858,-3e-5 v 0.52917 l 8.618858,2e-5 z m -8.266089,-0.79377 -2.116667,1.05832 2.116667,1.05834 z"
-       id="path868"
-       style="stroke-width:0.264583" />
-    <path
-       d="m 216.48637,143.89377 h -10.66271 v 0.52916 h 10.66271 z m -10.31002,-0.79375 -2.11667,1.05833 2.11667,1.05833 z"
-       id="path874"
-       style="stroke-width:0.264583" />
-    <g
-       id="g16124-7"
-       transform="matrix(1.1342105,0,0,1.5523048,-90.123836,-283.99047)">
-      <rect
-         style="fill:#ffffff;fill-opacity:0.996479;stroke:none;stroke-width:0.2;stroke-dasharray:none"
-         id="rect16068-2"
-         width="4.2421198"
-         height="3.1336601"
-         x="170.56355"
-         y="270.64923" />
-      <path
-         id="path14860-4"
-         style="fill:#000000;fill-opacity:0.996479;stroke:none;stroke-width:0.264999"
-         d="m 174.80567,270.64924 v 3.13366 h -4.24212 v -3.13366 z m -0.40463,0.40773 h -3.43286 v 2.32182 h 3.43286 z m -2.35334,0.32401 1.7787,0.82165 -1.7787,0.82166 z" />
-    </g>
-    <g
-       id="g16136-0"
-       transform="matrix(-1.1342105,0,0,1.5523048,415.64031,-299.45782)">
-      <rect
-         style="fill:#ffffff;fill-opacity:0.996479;stroke:none;stroke-width:0.2;stroke-dasharray:none"
-         id="rect16132-3"
-         width="4.25349"
-         height="5.8492498"
-         x="188.59267"
-         y="281.14996" />
-      <path
-         id="path14862-8"
-         style="fill:#000000;fill-opacity:0.996479;stroke:none;stroke-width:0.264999"
-         d="m 188.59267,281.14996 v 5.84925 h 4.25349 v -5.84925 z m 0.41651,0.39532 h 3.42047 v 2.33113 h -3.42047 z m 2.34715,0.33021 -1.77871,0.82166 1.77871,0.82166 z m -2.34715,2.39676 h 3.42047 v 2.33112 h -0.7501 -2.67037 z m 1.07281,0.33021 v 1.64331 l 1.7787,-0.82165 z"
-         sodipodi:nodetypes="cccccccccccccccccccccccc" />
-    </g>
-    <g
-       id="g16130-5"
-       transform="matrix(-1.1342105,0,0,1.5523048,301.59764,-277.85142)">
-      <rect
-         style="fill:#ffffff;fill-opacity:0.996479;stroke:none;stroke-width:0.2;stroke-dasharray:none"
-         id="rect16126-8"
-         width="4.2421198"
-         height="3.1336601"
-         x="170.56355"
-         y="270.64923" />
-      <path
-         id="path16128-2"
-         style="fill:#000000;fill-opacity:0.996479;stroke:none;stroke-width:0.264999"
-         d="m 174.80567,270.64924 v 3.13366 h -4.24212 v -3.13366 z m -0.40463,0.40773 h -3.43286 v 2.32182 h 3.43286 z m -2.35334,0.32401 1.7787,0.82165 -1.7787,0.82166 z" />
-    </g>
-    <path
-       inkscape:connector-curvature="0"
-       id="path13550-8"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.221178"
-       d="M 73.581779,133.61635 H 93.769445 V 121.90273 H 73.581779 Z" />
-    <path
-       style="color:#000000;fill:#ffffff;stroke-width:0.447221;-inkscape-stroke:none"
-       d="m 73.581779,133.61635 h 14.684862 5.502804 V 121.90281 H 73.581779 Z"
-       id="path16310-8" />
-    <g
-       id="g16348-4"
-       transform="matrix(1.3886185,0,0,1.3978919,-148.99086,-248.90174)">
-      <g
-         id="g16306-6"
-         transform="translate(-0.16370259,-0.12442)">
-        <g
-           id="path13562-2">
-          <path
-             style="color:#000000;fill:#ffffff;stroke-width:0.287999;stroke-linecap:square;stroke-linejoin:round;-inkscape-stroke:none"
-             d="m 167.05092,281.37086 c -1.22162,0 -2.21218,-0.99064 -2.21218,-2.21218 0,-1.2218 0.99056,-2.21242 2.21219,-2.21242 1.22257,0 2.21236,0.99062 2.21236,2.21242 0,1.22154 -0.98979,2.21218 -2.21237,2.21218 z"
-             id="path16298-0" />
-          <path
-             style="color:#000000;fill:#000000;stroke-linecap:square;stroke-linejoin:round;-inkscape-stroke:none"
-             d="m 167.05078,276.80273 c -1.29947,0 -2.35547,1.05584 -2.35547,2.35547 0,1.29939 1.056,2.35742 2.35547,2.35742 1.30037,0 2.35742,-1.05809 2.35742,-2.35742 0,-1.29957 -1.05706,-2.35547 -2.35742,-2.35547 z m 0,0.28711 c 1.14478,0 2.06836,0.92433 2.06836,2.06836 0,1.14376 -0.92357,2.06836 -2.06836,2.06836 -1.14377,0 -2.06836,-0.92467 -2.06836,-2.06836 0,-1.14397 0.92458,-2.06836 2.06836,-2.06836 z"
-             id="path16300-0" />
-        </g>
-        <path
-           style="color:#000000;fill:#000000;-inkscape-stroke:none"
-           d="m 166.90722,273.76367 v 3.19141 h 0.28907 v -3.19141 z"
-           id="path13564-9" />
-      </g>
-      <g
-         id="g16336-2">
-        <path
-           style="color:#000000;fill:#000000;-inkscape-stroke:none"
-           d="m 160.12305,265.09961 v 8.69922 h 0.16015 10.57617 4.12305 v -8.69922 z m 0.32031,0.32031 h 14.2168 v 8.0586 h -3.80079 -10.41601 z"
-           id="path16312-6" />
-        <g
-           id="g16330-8">
-          <path
-             inkscape:connector-curvature="0"
-             id="path13556-1"
-             style="fill:#ffffff;stroke:#060000;stroke-width:0.208756;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m 158.47123,270.80196 h 3.1998 v -1.76035 h -3.1998 z" />
-          <path
-             inkscape:connector-curvature="0"
-             id="path16169-1"
-             style="fill:#ffffff;stroke:#060000;stroke-width:0.208756;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m 158.44244,268.26707 h 3.1998 v -1.76035 h -3.1998 z" />
-        </g>
-      </g>
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.9855px;line-height:0%;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.332125"
-       x="84.440582"
-       y="125.38155"
-       id="text16173-8"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"
-       transform="scale(0.99133897,1.0087367)"><tspan
-         sodipodi:role="line"
-         id="tspan16171-7"
-         x="84.440582"
-         y="125.38155"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47196px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125">Sales</tspan><tspan
-         sodipodi:role="line"
-         x="84.440582"
-         y="129.7215"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47196px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125"
-         id="tspan1501">System</tspan></text>
-    <path
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path9583"
-       d="m 115.08297,150.71689 h -2.05012 v -6.24945 h -2.74261"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path9587"
-       d="m 184.98671,130.53999 h 5.22511 v 8.83433 h 4.59471"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path9625"
-       d="M 195.81929,143.66372 H 191.846 v 8.53147 h -5.90592"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       inkscape:connector-curvature="0"
-       id="path9645"
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.221178"
-       d="M 215.05194,133.45179 H 235.2396 V 121.73816 H 215.05194 Z" />
-    <path
-       style="color:#000000;fill:#ffffff;stroke-width:0.447221;-inkscape-stroke:none"
-       d="m 215.05194,133.45179 h 14.68486 5.5028 v -11.71355 h -20.18766 z"
-       id="path9647" />
-    <g
-       id="g9669"
-       transform="matrix(1.3886185,0,0,1.3978919,-7.5207915,-249.06629)">
-      <g
-         id="g9657"
-         transform="translate(-0.16370259,-0.12442)">
-        <g
-           id="g9653">
-          <path
-             style="color:#000000;fill:#ffffff;stroke-width:0.287999;stroke-linecap:square;stroke-linejoin:round;-inkscape-stroke:none"
-             d="m 167.05092,281.37086 c -1.22162,0 -2.21218,-0.99064 -2.21218,-2.21218 0,-1.2218 0.99056,-2.21242 2.21219,-2.21242 1.22257,0 2.21236,0.99062 2.21236,2.21242 0,1.22154 -0.98979,2.21218 -2.21237,2.21218 z"
-             id="path9649" />
-          <path
-             style="color:#000000;fill:#000000;stroke-linecap:square;stroke-linejoin:round;-inkscape-stroke:none"
-             d="m 167.05078,276.80273 c -1.29947,0 -2.35547,1.05584 -2.35547,2.35547 0,1.29939 1.056,2.35742 2.35547,2.35742 1.30037,0 2.35742,-1.05809 2.35742,-2.35742 0,-1.29957 -1.05706,-2.35547 -2.35742,-2.35547 z m 0,0.28711 c 1.14478,0 2.06836,0.92433 2.06836,2.06836 0,1.14376 -0.92357,2.06836 -2.06836,2.06836 -1.14377,0 -2.06836,-0.92467 -2.06836,-2.06836 0,-1.14397 0.92458,-2.06836 2.06836,-2.06836 z"
-             id="path9651" />
-        </g>
-        <path
-           style="color:#000000;fill:#000000;-inkscape-stroke:none"
-           d="m 166.90722,273.76367 v 3.19141 h 0.28907 v -3.19141 z"
-           id="path9655" />
-      </g>
-      <g
-         id="g9667">
-        <path
-           style="color:#000000;fill:#000000;-inkscape-stroke:none"
-           d="m 160.12305,265.09961 v 8.69922 h 0.16015 10.57617 4.12305 v -8.69922 z m 0.32031,0.32031 h 14.2168 v 8.0586 h -3.80079 -10.41601 z"
-           id="path9659" />
-        <g
-           id="g9665">
-          <path
-             inkscape:connector-curvature="0"
-             id="path9661"
-             style="fill:#ffffff;stroke:#060000;stroke-width:0.208756;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m 158.47123,270.80196 h 3.1998 v -1.76035 h -3.1998 z" />
-          <path
-             inkscape:connector-curvature="0"
-             id="path9663"
-             style="fill:#ffffff;stroke:#060000;stroke-width:0.208756;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-             d="m 158.44244,268.26707 h 3.1998 v -1.76035 h -3.1998 z" />
-        </g>
-      </g>
-    </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.9855px;line-height:0%;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.332125"
-       x="227.3942"
-       y="125.32712"
-       id="text9673"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"
-       transform="scale(0.99133897,1.0087367)"><tspan
-         sodipodi:role="line"
-         id="tspan9671"
-         x="227.3942"
-         y="125.32712"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47196px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125">Delivery</tspan><tspan
-         sodipodi:role="line"
-         x="227.3942"
-         y="129.66707"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47196px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125"
-         id="tspan1534">System</tspan></text>
-    <path
-       id="path1540"
-       style="fill:#000000;stroke-width:0.264583"
-       d="m 126.46899,129.14178 v 0.17828 2.30425 c -0.12827,0.0655 -0.235,0.16649 -0.30748,0.29094 -0.13409,0.23233 -0.13409,0.51853 0,0.75086 0.0725,0.12445 0.17921,0.22545 0.30748,0.29094 v 2.48305 h 9.86347 v -2.48305 c 0.12827,-0.0655 0.235,-0.16649 0.30747,-0.29094 0.1341,-0.23233 0.1341,-0.51853 0,-0.75086 -0.0725,-0.12445 -0.1792,-0.22545 -0.30747,-0.29094 v -2.48253 z m 0.35657,0.35605 h 9.15034 v 5.58519 h -9.15033 z m 3.57911,2.35128 v 0.36535 h -0.95499 v 0.18655 h 0.95499 v 0.36587 l 0.79375,-0.45941 -0.0739,-0.0429 z m 3.25973,-0.21653 v 1.35031 h 1.53996 v -1.35031 h -0.11885 z m -1.96627,0.0165 v 0.11886 1.19837 h 1.51101 v -1.31723 z m 2.20399,0.22118 h 1.06453 v 0.17621 h -1.06453 z m -1.96628,0.0165 h 0.18707 v 0.8418 h -0.18707 z m 0.42478,0 h 0.18448 v 0.8418 h -0.18448 z m 0.42219,0 h 0.18861 v 0.8418 h -0.18861 z m 1.11931,0.34984 h 1.06453 v 0.1695 h -1.06453 z m 0,0.36019 h 1.06453 v 0.14831 h -1.06453 z m -6.3833,-0.94768 v 0.11867 1.19867 h 1.51135 v -1.31734 z"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
-    <path
-       id="path1653"
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       d="m 154.65886,129.14178 v 0.17829 2.14405 0.13488 c -0.0278,0.0118 -0.055,0.0254 -0.0811,0.0403 -0.002,0.001 -0.003,0.002 -0.005,0.003 -0.0243,0.0142 -0.0477,0.0297 -0.0703,0.0465 h -5.3e-4 c -0.005,0.003 -0.009,0.007 -0.0134,0.0103 -0.0226,0.0177 -0.044,0.0371 -0.0646,0.0574 -0.001,0.001 -0.003,0.002 -0.004,0.004 -0.0226,0.0226 -0.0439,0.0463 -0.0636,0.0718 v 5.3e-4 c -0.0201,0.0261 -0.0386,0.0537 -0.0553,0.0827 -0.0168,0.029 -0.0314,0.0589 -0.0439,0.0894 -0.0126,0.0305 -0.0231,0.0615 -0.0315,0.093 -0.008,0.0316 -0.0144,0.0639 -0.0186,0.0961 -0.004,0.0322 -0.007,0.0647 -0.007,0.0971 0,0.0324 0.002,0.0644 0.007,0.0966 0.004,0.0322 0.0102,0.0645 0.0186,0.0961 0.008,0.0316 0.019,0.0625 0.0315,0.093 0.0126,0.0305 0.0272,0.0604 0.0439,0.0894 0.0167,0.0289 0.0352,0.0566 0.0553,0.0827 v 5.3e-4 c 0.0197,0.0256 0.041,0.0493 0.0636,0.0718 0.001,0.001 0.003,0.002 0.004,0.004 0.0205,0.0203 0.042,0.0397 0.0646,0.0574 0.004,0.003 0.009,0.007 0.0134,0.0103 h 5.3e-4 c 0.0226,0.0168 0.046,0.0323 0.0703,0.0465 0.002,0.001 0.003,0.002 0.005,0.003 0.0261,0.015 0.0533,0.0285 0.0811,0.0403 v 0.0594 2.39829 h 9.86348 v -0.49815 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64079 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64079 -0.56947,-0.64027 v -0.41961 z m 0.35656,0.35657 h 9.15035 v 1.44539 1.36633 1.36684 1.40663 h -9.15035 z m 4.53978,0.36742 v 1.11208 h 1.2609 v -1.11208 z m -0.5178,0.71107 -0.0744,0.0429 -0.72244,0.41031 0.31575,0.185 -0.54777,0.93534 h -0.0248 v 0.18604 h 0.0253 l 0.58136,0.87953 -0.30541,0.20154 0.82062,0.40928 -0.005,-0.0858 -0.0496,-0.82941 -0.30489,0.20154 -0.51418,-0.7767 h 2.04432 v 0.36587 l 0.79375,-0.45889 -0.0744,-0.0429 -0.71934,-0.41599 v 0.36586 h -2.05155 l 0.49247,-0.84129 0.31575,0.185 z m 2.61948,1.10329 v 0.12712 0.98754 h 1.26245 v -1.11466 z m -5.72162,0.0305 v 0.12506 0.98753 h 1.26298 v -1.11259 z m 3.64888,1.92081 v 1.10794 h 1.26504 v -1.10794 z" />
-    <g
-       id="g1666"
-       style="fill:#000000"
-       transform="matrix(-0.26458333,0,0,0.26458333,156.13318,183.48877)">
-      <path
-         id="path1664"
-         style="color:#000000;fill:#000000;-inkscape-stroke:none"
-         d="m -4.0585941,-120.90234 v 0.44921 4.5293 H 1.654297 v -4.97851 z m 0.898438,0.89843 h 3.91601507 v 3.18164 H -3.1601561 Z m -0.903233,-11.66526 v 0.44922 4.5293 H 1.649502 v -4.97852 z m -23.6944239,10.76683 v 0.44921 4.5293 h 5.712891 v -4.97851 z m 0.898438,0.89843 h 3.916015 v 3.18164 h -3.916015 z m -0.898438,-11.66992 v 0.44922 4.5293 h 5.712891 v -4.97852 z m 13.480469,0.58777 v 13.99219 h 2.722656 v -13.99219 z m -17.435547,-4.56445 v 0.67383 0.91992 l -2.146484,2.41211 2.146484,2.41211 v 0.34375 l -2.146484,2.41015 2.146484,2.41016 v 0.34375 l -2.146484,2.41211 2.146484,2.41015 v 0.34375 l -2.146484,2.41016 2.146484,2.41211 v 1.89258 H 5.566406 v -1.86328 l 2.171875,-2.43946 -2.171875,-2.43945 v -0.28516 l 2.171875,-2.43945 -2.171875,-2.44141 v -0.28515 l 2.171875,-2.43945 -2.171875,-2.43946 v -0.28515 l 2.171875,-2.44141 -2.171875,-2.43945 v -1.56836 z m 1.347656,1.34765 H 4.21875 v 21.11133 h -34.583985 v -5.52344 l 0.0059,-0.0156 -0.0059,-0.0137 v -5.13672 l 0.0059,-0.0156 -0.0059,-0.0176 v -5.12891 l 0.0059,-0.0176 -0.0059,-0.0195 z m 9.980469,4.87891 -0.345703,0.61328 2.941406,1.65235 -0.677734,1.20507 3.464844,-0.043 -0.166016,-0.27929 -1.599609,-2.70313 -0.677735,1.20703 z m 0.0071,11.53046 -0.345703,-0.61328 2.941406,-1.65235 -0.677734,-1.20507 3.464844,0.043 -0.166016,0.27929 -1.599609,2.70313 -0.677735,-1.20703 z m 9.806164,-8.11272 -0.345703,-0.61328 2.9414059,-1.65235 -0.677734,-1.20507 3.464844,0.043 -0.166016,0.27929 -1.599609,2.70313 -0.677735,-1.20703 z m -8.02e-4,4.33226 -0.345703,0.61328 2.9414059,1.65235 -0.677734,1.20507 3.464844,-0.043 -0.166016,-0.27929 -1.599609,-2.70313 -0.677735,1.20703 z" />
-    </g>
-    <path
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path4679"
-       d="m 165.4049,133.79499 h 4.16679 v 15.52357 h -3.04018"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4681"
-       d="m 172.81067,152.16216 h -6.20326"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4750"
-       d="m 165.0918,130.57182 h 6.20326"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       id="path19486-2"
-       d="m 145.02013,147.59791 v 0.17829 2.2996 a 0.75103134,0.75103134 0 0 1 0.31781,0.2961 0.75103134,0.75103134 0 0 1 0,0.75086 0.75103134,0.75103134 0 0 1 -0.31781,0.29611 v 2.47737 h -9.86347 v -2.48771 a 0.75103134,0.75103134 0 0 1 -0.29662,-0.28577 0.75103134,0.75103134 0 0 1 0,-0.75086 0.75103134,0.75103134 0 0 1 0.29662,-0.28577 v -2.48822 z m -0.35657,0.35657 h -9.15033 v 5.58519 h 9.15033 z m -0.67696,2.1792 v 1.3503 h -1.53995 v -1.3503 h 1.4211 z m -1.99471,0.0165 v 0.11885 1.19838 h -1.51153 v -1.31723 z m -4.17958,0 v 1.31723 h -1.51101 v -1.19838 -0.11885 z m 1.23041,0.19998 v 0.36536 h 0.95498 v 0.18655 h -0.95498 v 0.36587 l -0.79426,-0.45889 0.0744,-0.0434 z m 4.70617,0.0212 h -1.06453 v 0.17674 h 1.06453 z m -1.99471,0.0165 h -0.18707 v 0.84181 h 0.18707 z m -0.42478,0 h -0.18448 v 0.84181 h 0.18448 z m -0.4222,0 h -0.18913 v 0.84181 h 0.18913 z m 2.84169,0.35037 h -1.06453 v 0.1695 h 1.06453 z m 0,0.35967 h -1.06453 v 0.14831 h 1.06453 z"
-       style="stroke-width:0.264583" />
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4792"
-       d="m 153.63408,149.09188 h -6.20326"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4794"
-       d="m 153.63408,152.36044 h -6.20326"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4798"
-       d="m 134.14138,150.74707 h -6.20326"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <path
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       id="path4800"
-       d="m 109.10883,138.49864 h 7.34178 v -6.24945 h 8.03428"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <g
-       id="g4845"
-       transform="matrix(-0.26458333,0,0,0.26458333,233.72698,183.35441)">
-      <path
-         id="path4843"
-         style="color:#000000;fill:#000000;-inkscape-stroke:none"
-         d="m 414.98047,-125.6582 v 0.44922 4.52929 h 5.71289 v -4.97851 z m 13.87695,0.80066 v 1.38086 h -6.78125 v 0.70507 h 6.78125 v 1.38282 l 3,-1.73438 -0.28125,-0.16406 z m 4.72266,-0.80078 v 0.44921 4.5293 h 5.71289 v -4.97851 z m 0.89844,0.89843 h 0.70703 v 3.18164 h -0.70703 z m 1.60546,0 h 0.69727 v 3.18164 h -0.69727 z m 1.59571,0 h 0.71484 v 3.18164 h -0.71484 z M 408.375,-135.1427 v 0.67188 8.69726 a 2.8385437,2.8385437 0 0 0 -1.1875,1.11328 2.8385437,2.8385437 0 0 0 0,2.83789 2.8385437,2.8385437 0 0 0 1.1875,1.11328 v 9.3711 h 37.2793 v -9.39649 a 2.8385437,2.8385437 0 0 0 1.13672,-1.08789 2.8385437,2.8385437 0 0 0 0,-2.83789 2.8385437,2.8385437 0 0 0 -1.13672,-1.08789 v -9.39453 z m 1.34766,1.3457 h 34.58593 v 21.11133 h -34.58593 z" />
-    </g>
-    <path
-       sodipodi:nodetypes="cc"
-       inkscape:connector-curvature="0"
-       id="path4873"
-       d="m 137.2048,132.29094 h 15.19909"
-       style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
-       inkscape:export-filename="D:\UserData\WindowsUserData\Desktop\solution_b.png"
-       inkscape:export-xdpi="200"
-       inkscape:export-ydpi="200" />
-    <g
-       id="g4879"
-       transform="matrix(-0.26458333,0,0,0.26458333,291.82159,184.77884)">
-      <path
-         id="path4877"
-         style="color:#000000;fill:#000000;-inkscape-stroke:none"
-         d="m 414.98047,-125.6582 v 0.44922 4.52929 h 5.71289 v -4.97851 z m 13.87695,0.80066 v 1.38086 h -6.78125 v 0.70507 h 6.78125 v 1.38282 l 3,-1.73438 -0.28125,-0.16406 z m 4.72266,-0.80078 v 0.44921 4.5293 h 5.71289 v -4.97851 z m 0.89844,0.89843 h 0.70703 v 3.18164 h -0.70703 z m 1.60546,0 h 0.69727 v 3.18164 h -0.69727 z m 1.59571,0 h 0.71484 v 3.18164 h -0.71484 z M 408.375,-135.1427 v 0.67188 8.69726 a 2.8385437,2.8385437 0 0 0 -1.1875,1.11328 2.8385437,2.8385437 0 0 0 0,2.83789 2.8385437,2.8385437 0 0 0 1.1875,1.11328 v 9.3711 h 37.2793 v -9.39649 a 2.8385437,2.8385437 0 0 0 1.13672,-1.08789 2.8385437,2.8385437 0 0 0 0,-2.83789 2.8385437,2.8385437 0 0 0 -1.13672,-1.08789 v -9.39453 z m 1.34766,1.3457 h 34.58593 v 21.11133 h -34.58593 z" />
-    </g>
-    <g
-       id="g4883"
-       transform="matrix(0.26458333,0,0,0.26458333,66.013428,163.17917)">
-      <path
-         id="path4881"
-         style="color:#000000;fill:#000000;-inkscape-stroke:none"
-         d="m 414.98047,-125.6582 v 0.44922 4.52929 h 5.71289 v -4.97851 z m 13.87695,0.80066 v 1.38086 h -6.78125 v 0.70507 h 6.78125 v 1.38282 l 3,-1.73438 -0.28125,-0.16406 z m 4.72266,-0.80078 v 0.44921 4.5293 h 5.71289 v -4.97851 z m 0.89844,0.89843 h 0.70703 v 3.18164 h -0.70703 z m 1.60546,0 h 0.69727 v 3.18164 h -0.69727 z m 1.59571,0 h 0.71484 v 3.18164 h -0.71484 z M 408.375,-135.1427 v 0.67188 8.69726 a 2.8385437,2.8385437 0 0 0 -1.1875,1.11328 2.8385437,2.8385437 0 0 0 0,2.83789 2.8385437,2.8385437 0 0 0 1.1875,1.11328 v 9.3711 h 37.2793 v -9.39649 a 2.8385437,2.8385437 0 0 0 1.13672,-1.08789 2.8385437,2.8385437 0 0 0 0,-2.83789 2.8385437,2.8385437 0 0 0 -1.13672,-1.08789 v -9.39453 z m 1.34766,1.3457 h 34.58593 v 21.11133 h -34.58593 z" />
-    </g>
     <g
        id="g13588"
        transform="translate(223.16308,127.65537)">
@@ -2117,14 +1748,6 @@
          style="fill:#000000;fill-opacity:0.996479;stroke:none;stroke-width:0.264999"
          d="m 174.80567,270.64924 v 3.13366 h -4.24212 v -3.13366 z m -0.40463,0.40773 h -3.43286 v 2.32182 h 3.43286 z m -2.35334,0.32401 1.7787,0.82165 -1.7787,0.82166 z" />
     </g>
-    <path
-       style="color:#000000;fill:#000000;stroke-width:0.186371;-inkscape-stroke:none"
-       d="m 266.70252,161.25319 h -1.1768"
-       id="path16175-8" />
-    <path
-       style="color:#000000;fill:#000000;stroke-width:0.186371;-inkscape-stroke:none"
-       d="m 266.70252,160.8935 h -1.1768"
-       id="path16177-1" />
     <g
        id="g9727"
        transform="translate(5.8105469e-6,-3.9810997)">
@@ -2312,208 +1935,9 @@
          style="color:#000000;fill:#000000;stroke-width:0.186371;-inkscape-stroke:none"
          d="m 131.28128,169.2237 v 0.35656 l -0.63149,0.75706 0.63149,0.67955 -0.63149,0.67696 0.63149,0.67903 -0.63149,0.67851 0.63149,0.67748 -0.63149,0.67954 0.63149,0.75706 v 0.35657 h 9.86348 v -2.48357 c 0.12813,-0.0652 0.23485,-0.16583 0.30747,-0.2899 0.13409,-0.23231 0.13409,-0.51854 0,-0.75085 -0.0726,-0.12408 -0.17934,-0.2247 -0.30747,-0.28991 v -2.3058 -0.17828 z m 0.35657,0.35656 h 9.15034 v 5.58519 h -9.15034 z m 1.33893,1.24696 v 1.31723 h 1.51154 v -1.19838 -0.11885 z m 0.23771,0.23771 h 0.18914 v 0.84181 h -0.18914 z m 0.42634,0 h 0.185 v 0.84181 h -0.185 z m 0.42271,0 h 0.18707 v 0.84181 h -0.18707 z m 3.74395,0.83044 v 1.31723 h 1.51154 v -1.31723 z m -1.43867,0.21239 v 0.36587 h -0.95498 v 0.18603 h 0.95498 v 0.36587 l 0.79427,-0.45888 -0.0749,-0.0429 z m -3.40909,0.81907 v 1.35031 h 1.54254 v -1.35031 h -1.40353 z m 0.27853,0.21239 h 0.98547 v 0.16743 h -0.98547 z m 0,0.37982 h 0.98547 v 0.16485 h -0.98547 z m 0,0.37672 h 0.98547 v 0.16899 h -0.98547 z" />
     </g>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="98.659073"
-       y="134.39635"
-       id="text15184-1"><tspan
-         sodipodi:role="line"
-         id="tspan15182-2"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="98.659073"
-         y="134.39635">P1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="201.4371"
-       y="135.69174"
-       id="text2662"><tspan
-         sodipodi:role="line"
-         id="tspan2660"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="201.4371"
-         y="135.69174">P2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="98.564339"
-       y="151.4803"
-       id="text2768"><tspan
-         sodipodi:role="line"
-         id="tspan2766"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="98.564339"
-         y="151.4803">P3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="129.81654"
-       y="138.13213"
-       id="text9837"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"><tspan
-         sodipodi:role="line"
-         id="tspan9835"
-         x="129.81654"
-         y="138.13213"
-         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T1</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="158.00433"
-       y="138.16724"
-       id="text10357"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"><tspan
-         sodipodi:role="line"
-         id="tspan10355"
-         x="158.00433"
-         y="138.16724"
-         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T2</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="177.36026"
-       y="136.53069"
-       id="text10361"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"><tspan
-         sodipodi:role="line"
-         id="tspan10359"
-         x="177.36026"
-         y="136.53069"
-         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T3</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="177.18282"
-       y="158.02924"
-       id="text10365"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"><tspan
-         sodipodi:role="line"
-         id="tspan10363"
-         x="177.18282"
-         y="158.02924"
-         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T4</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="157.95531"
-       y="156.68538"
-       id="text10369"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"><tspan
-         sodipodi:role="line"
-         id="tspan10367"
-         x="157.95531"
-         y="156.68538"
-         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T5</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="138.44255"
-       y="156.7043"
-       id="text10373"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"><tspan
-         sodipodi:role="line"
-         id="tspan10371"
-         x="138.44255"
-         y="156.7043"
-         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T6</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="119.10847"
-       y="156.7063"
-       id="text10377"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"><tspan
-         sodipodi:role="line"
-         id="tspan10375"
-         x="119.10847"
-         y="156.7063"
-         style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T7</tspan></text>
     <rect
-       style="fill:none;stroke:#ff0000;stroke-width:0.496861;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect421"
-       width="21.270655"
-       height="17.865181"
-       x="147.13953"
-       y="124.74812" />
-    <rect
-       style="fill:none;stroke:#ff0000;stroke-width:0.573962;stroke-miterlimit:4;stroke-dasharray:none"
-       id="rect1920"
-       width="35.680965"
-       height="14.211747"
-       x="132.75459"
-       y="142.97902" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';white-space:pre;inline-size:36.5989;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="231.45888"
-       y="134.17078"
-       id="text2323"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"
-       transform="translate(-0.29212072,22.883899)"><tspan
-         x="231.45888"
-         y="134.17078"
-         id="tspan8294"><tspan
-           style="font-size:2.7659px;line-height:1.25"
-           id="tspan8292">Talvez mudar o caso de </tspan></tspan><tspan
-         x="231.45888"
-         y="137.62816"
-         id="tspan8298"><tspan
-           style="font-size:2.7659px;line-height:1.25"
-           id="tspan8296">estudo para  fazer a </tspan></tspan><tspan
-         x="231.45888"
-         y="141.08554"
-         id="tspan8302"><tspan
-           style="font-size:2.7659px;line-height:1.25"
-           id="tspan8300">consulta em duas ou mais </tspan></tspan><tspan
-         x="231.45888"
-         y="144.54292"
-         id="tspan8306"><tspan
-           style="font-size:2.7659px;line-height:1.25"
-           id="tspan8304">empresas  de delivery</tspan></tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';white-space:pre;inline-size:36.5989;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="231.45888"
-       y="134.17078"
-       id="text14081"
-       inkscape:export-filename="C:\guarana\javadoc\doc-files\tasks\routers\routers.png"
-       inkscape:export-xdpi="88.777161"
-       inkscape:export-ydpi="88.777161"
-       transform="translate(-101.59693,-24.639847)"><tspan
-         x="231.45888"
-         y="134.17078"
-         id="tspan8310"><tspan
-           style="font-size:2.7659px;line-height:1.25"
-           id="tspan8308">Talvez não seja </tspan></tspan><tspan
-         x="231.45888"
-         y="137.62816"
-         id="tspan8314"><tspan
-           style="font-size:2.7659px;line-height:1.25"
-           id="tspan8312">necessário</tspan></tspan></text>
-    <path
-       style="fill:#ff0000;stroke:#ff0000;stroke-width:0.174448;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker3323)"
-       d="m 146.25015,112.86527 5.42557,10.45865"
-       id="path15976" />
-    <rect
-       y="13.307861"
-       x="98.651421"
+       y="66.002541"
+       x="93.459831"
        height="65.495232"
        width="107.3578"
        id="rect3187"
@@ -2522,28 +1946,28 @@
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <path
-       d="m 83.668617,35.413654 h 8.618829 v 0.52917 h -8.618829 z m 8.266139,-0.79375 2.116677,1.05834 -2.116677,1.05833 z"
+       d="m 78.477023,88.108338 h 8.618829 v 0.52917 h -8.618829 z m 8.266139,-0.79375 2.116677,1.05834 -2.116677,1.05833 z"
        id="path3189"
        style="stroke-width:0.264583"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <path
-       d="m 210.53248,33.612312 10.4921,2e-5 v 0.52917 l -10.4921,-3e-5 z m 10.13934,-0.79373 2.11666,1.05834 -2.11666,1.05833 z"
+       d="m 205.34088,86.306998 10.4921,2e-5 v 0.52917 l -10.4921,-3e-5 z m 10.13934,-0.79373 2.11666,1.05834 -2.11666,1.05833 z"
        id="path3191"
        style="stroke-width:0.264583"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <path
-       d="m 93.786843,42.557404 -8.618858,-3e-5 v 0.52917 l 8.618858,2e-5 z m -8.266089,-0.79377 -2.116667,1.05832 2.116667,1.05834 z"
+       d="m 88.595249,95.252088 -8.618858,-3e-5 v 0.52917 l 8.618858,2e-5 z m -8.266089,-0.79377 -2.116667,1.05832 2.116667,1.05834 z"
        id="path3193"
        style="stroke-width:0.264583"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <path
-       d="m 223.22372,38.374802 h -10.66271 v 0.52916 h 10.66271 z m -10.31002,-0.79375 -2.11667,1.05833 2.11667,1.05833 z"
+       d="m 218.03212,91.069488 h -10.66271 v 0.52916 h 10.66271 z m -10.31002,-0.79375 -2.11667,1.05833 2.11667,1.05833 z"
        id="path3195"
        style="stroke-width:0.264583"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
@@ -2551,7 +1975,7 @@
        inkscape:export-ydpi="300.17444" />
     <g
        id="g3201"
-       transform="matrix(1.1342105,0,0,1.5523048,-97.273093,-386.64975)"
+       transform="matrix(1.1342105,0,0,1.5523048,-102.46469,-333.95506)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2569,7 +1993,7 @@
     </g>
     <g
        id="g3207"
-       transform="matrix(-1.1342105,0,0,1.5523048,422.37766,-404.97679)"
+       transform="matrix(-1.1342105,0,0,1.5523048,417.18606,-352.2821)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2588,7 +2012,7 @@
     </g>
     <g
        id="g3213"
-       transform="matrix(-1.1342105,0,0,1.5523048,294.44838,-380.5107)"
+       transform="matrix(-1.1342105,0,0,1.5523048,289.25678,-327.81601)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2608,20 +2032,20 @@
        inkscape:connector-curvature="0"
        id="path3215"
        style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.221178"
-       d="M 66.432522,30.957074 H 86.620188 V 19.243454 H 66.432522 Z"
+       d="M 61.240928,83.651758 H 81.428594 V 71.938139 H 61.240928 Z"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <path
        style="color:#000000;fill:#ffffff;stroke-width:0.447221;-inkscape-stroke:none"
-       d="m 66.432522,30.957074 h 14.684862 5.502804 V 19.243534 H 66.432522 Z"
+       d="M 61.240928,83.651758 H 75.92579 81.428594 V 71.938219 H 61.240928 Z"
        id="path3217"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <g
        id="g3239"
-       transform="matrix(1.3886185,0,0,1.3978919,-156.14012,-351.56102)"
+       transform="matrix(1.3886185,0,0,1.3978919,-161.33172,-298.86633)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2667,9 +2091,9 @@
     </g>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777778px;line-height:0%;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.332125"
-       x="77.228859"
-       y="23.611414"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:0%;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.332125"
+       x="71.991905"
+       y="75.849709"
        id="text3245"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2677,19 +2101,19 @@
        transform="scale(0.99133897,1.0087367)"><tspan
          sodipodi:role="line"
          id="tspan3241"
-         x="77.228859"
-         y="23.611414"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125;font-size:3.52777778px">Sales</tspan><tspan
+         x="71.991905"
+         y="75.849709"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125">Sales</tspan><tspan
          sodipodi:role="line"
-         x="77.228859"
-         y="27.951365"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125;font-size:3.52777778px"
+         x="71.991905"
+         y="80.25943"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:arial;-inkscape-font-specification:arial;text-align:center;text-anchor:middle;stroke-width:0.332125"
          id="tspan3243">System</tspan></text>
     <path
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3247"
-       d="m 112.16704,44.958035 h -4.16678 v -3.149871 h -4.85928"
+       d="m 106.97544,97.652718 h -4.16678 v -3.14987 h -4.859275"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2698,14 +2122,14 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3249"
-       d="m 192.12504,27.880714 h 5.22511 v 5.65933 h 4.59471"
+       d="m 186.93344,80.575399 h 5.22511 v 5.659329 h 4.59471"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <g
        id="g22708"
-       transform="translate(-15.345837)"
+       transform="translate(-20.537431,52.694685)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2782,7 +2206,7 @@
     <path
        id="path3286"
        style="fill:#000000;stroke-width:0.264583"
-       d="m 119.31973,26.482504 v 0.17828 2.30425 c -0.12827,0.0655 -0.235,0.16649 -0.30748,0.29094 -0.13409,0.23233 -0.13409,0.51853 0,0.75086 0.0725,0.12445 0.17921,0.22545 0.30748,0.29094 v 2.48305 h 9.86347 v -2.48305 c 0.12827,-0.0655 0.235,-0.16649 0.30747,-0.29094 0.1341,-0.23233 0.1341,-0.51853 0,-0.75086 -0.0725,-0.12445 -0.1792,-0.22545 -0.30747,-0.29094 v -2.48253 z m 0.35657,0.35605 h 9.15034 v 5.58519 h -9.15033 z m 3.57911,2.35128 v 0.36535 h -0.95499 v 0.18655 h 0.95499 v 0.36587 l 0.79375,-0.45941 -0.0739,-0.0429 z m 3.25973,-0.21653 v 1.35031 h 1.53996 v -1.35031 h -0.11885 z m -1.96627,0.0165 v 0.11886 1.19837 h 1.51101 v -1.31723 z m 2.20399,0.22118 h 1.06453 v 0.17621 h -1.06453 z m -1.96628,0.0165 h 0.18707 v 0.8418 h -0.18707 z m 0.42478,0 h 0.18448 v 0.8418 h -0.18448 z m 0.42219,0 h 0.18861 v 0.8418 h -0.18861 z m 1.11931,0.34984 h 1.06453 v 0.1695 h -1.06453 z m 0,0.36019 h 1.06453 v 0.14831 h -1.06453 z m -6.3833,-0.94768 v 0.11867 1.19867 h 1.51135 v -1.31734 z"
+       d="m 114.12813,79.177189 v 0.17828 2.30425 c -0.12827,0.0655 -0.235,0.16649 -0.30748,0.29094 -0.13409,0.23233 -0.13409,0.51853 0,0.75086 0.0725,0.12445 0.17921,0.22545 0.30748,0.29094 v 2.483049 h 9.86347 v -2.483049 c 0.12827,-0.0655 0.235,-0.16649 0.30747,-0.29094 0.1341,-0.23233 0.1341,-0.51853 0,-0.75086 -0.0725,-0.12445 -0.1792,-0.22545 -0.30747,-0.29094 v -2.48253 z m 0.35657,0.35605 h 9.15034 v 5.585189 h -9.15033 z m 3.57911,2.35128 v 0.36535 h -0.95499 v 0.18655 h 0.95499 v 0.36587 l 0.79375,-0.45941 -0.0739,-0.0429 z m 3.25973,-0.21653 v 1.35031 h 1.53996 v -1.35031 h -0.11885 z m -1.96627,0.0165 v 0.11886 1.19837 h 1.51101 v -1.31723 z m 2.20399,0.22118 h 1.06453 v 0.17621 h -1.06453 z m -1.96628,0.0165 h 0.18707 v 0.8418 h -0.18707 z m 0.42478,0 h 0.18448 v 0.8418 h -0.18448 z m 0.42219,0 h 0.18861 v 0.8418 h -0.18861 z m 1.11931,0.34984 h 1.06453 v 0.1695 h -1.06453 z m 0,0.36019 h 1.06453 v 0.14831 h -1.06453 z m -6.3833,-0.94768 v 0.11867 1.19867 h 1.51135 v -1.31734 z"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2790,7 +2214,7 @@
     <path
        id="path3288"
        style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       d="m 147.5096,26.482504 v 0.17829 2.14405 0.13488 c -0.0278,0.0118 -0.055,0.0254 -0.0811,0.0403 -0.002,0.001 -0.003,0.002 -0.005,0.003 -0.0243,0.0142 -0.0477,0.0297 -0.0703,0.0465 h -5.3e-4 c -0.005,0.003 -0.009,0.007 -0.0134,0.0103 -0.0226,0.0177 -0.044,0.0371 -0.0646,0.0574 -10e-4,10e-4 -0.003,0.002 -0.004,0.004 -0.0226,0.0226 -0.0439,0.0463 -0.0636,0.0718 v 5.3e-4 c -0.0201,0.0261 -0.0386,0.0537 -0.0553,0.0827 -0.0168,0.029 -0.0314,0.0589 -0.0439,0.0894 -0.0126,0.0305 -0.0231,0.0615 -0.0315,0.093 -0.008,0.0316 -0.0144,0.0639 -0.0186,0.0961 -0.004,0.0322 -0.007,0.0647 -0.007,0.0971 0,0.0324 0.002,0.0644 0.007,0.0966 0.004,0.0322 0.0102,0.0645 0.0186,0.0961 0.008,0.0316 0.019,0.0625 0.0315,0.093 0.0126,0.0305 0.0272,0.0604 0.0439,0.0894 0.0167,0.0289 0.0352,0.0566 0.0553,0.0827 v 5.3e-4 c 0.0197,0.0256 0.041,0.0493 0.0636,0.0718 0.001,0.001 0.003,0.002 0.004,0.004 0.0205,0.0203 0.042,0.0397 0.0646,0.0574 0.004,0.003 0.009,0.007 0.0134,0.0103 h 5.3e-4 c 0.0226,0.0168 0.046,0.0323 0.0703,0.0465 0.002,0.001 0.003,0.002 0.005,0.003 0.0261,0.015 0.0533,0.0285 0.0811,0.0403 v 0.0594 2.39829 h 9.86348 v -0.49815 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64079 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64079 -0.56947,-0.64027 v -0.41961 z m 0.35656,0.35657 h 9.15035 v 1.44539 1.36633 1.36684 1.40663 h -9.15035 z m 4.53978,0.36742 v 1.11208 h 1.2609 v -1.11208 z m -0.5178,0.71107 -0.0744,0.0429 -0.72244,0.41031 0.31575,0.185 -0.54777,0.93534 h -0.0248 v 0.18604 h 0.0253 l 0.58136,0.87953 -0.30541,0.20154 0.82062,0.40928 -0.005,-0.0858 -0.0496,-0.82941 -0.30489,0.20154 -0.51418,-0.7767 h 2.04432 v 0.36587 l 0.79375,-0.45889 -0.0744,-0.0429 -0.71934,-0.41599 v 0.36586 h -2.05155 l 0.49247,-0.84129 0.31575,0.185 z m 2.61948,1.10329 v 0.12712 0.98754 h 1.26245 v -1.11466 z m -5.72162,0.0305 v 0.12506 0.98753 h 1.26298 v -1.11259 z m 3.64888,1.92081 v 1.10794 h 1.26504 v -1.10794 z"
+       d="m 142.318,79.177189 v 0.17829 2.14405 0.13488 c -0.0278,0.0118 -0.055,0.0254 -0.0811,0.0403 -0.002,0.001 -0.003,0.002 -0.005,0.003 -0.0243,0.0142 -0.0477,0.0297 -0.0703,0.0465 h -5.3e-4 c -0.005,0.003 -0.009,0.007 -0.0134,0.0103 -0.0226,0.0177 -0.044,0.0371 -0.0646,0.0574 -0.001,10e-4 -0.003,0.002 -0.004,0.004 -0.0226,0.0226 -0.0439,0.0463 -0.0636,0.0718 v 5.3e-4 c -0.0201,0.0261 -0.0386,0.0537 -0.0553,0.0827 -0.0168,0.029 -0.0314,0.0589 -0.0439,0.0894 -0.0126,0.0305 -0.0231,0.0615 -0.0315,0.093 -0.008,0.0316 -0.0144,0.0639 -0.0186,0.0961 -0.004,0.0322 -0.007,0.0647 -0.007,0.0971 0,0.0324 0.002,0.0644 0.007,0.0966 0.004,0.0322 0.0102,0.0645 0.0186,0.0961 0.008,0.0316 0.019,0.0625 0.0315,0.093 0.0126,0.0305 0.0272,0.0604 0.0439,0.0894 0.0167,0.0289 0.0352,0.0566 0.0553,0.0827 v 5.3e-4 c 0.0197,0.0256 0.041,0.0493 0.0636,0.0718 0.001,0.001 0.003,0.002 0.004,0.004 0.0205,0.0203 0.042,0.0397 0.0646,0.0574 0.004,0.003 0.009,0.007 0.0134,0.0103 h 5.3e-4 c 0.0226,0.0168 0.046,0.0323 0.0703,0.0465 0.002,0.001 0.003,0.002 0.005,0.003 0.0261,0.015 0.0533,0.0285 0.0811,0.0403 v 0.0594 2.398289 h 9.86348 v -0.49815 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.640269 -0.56947,-0.64079 v -0.0858 l 0.56947,-0.64027 -0.56947,-0.64027 v -0.0858 l 0.56947,-0.64079 -0.56947,-0.64027 v -0.41961 z m 0.35656,0.35657 h 9.15035 v 1.44539 1.36633 1.366839 1.40663 h -9.15035 z m 4.53978,0.36742 v 1.11208 h 1.2609 v -1.11208 z m -0.5178,0.71107 -0.0744,0.0429 -0.72244,0.41031 0.31575,0.185 -0.54777,0.93534 h -0.0248 v 0.18604 h 0.0253 l 0.58136,0.87953 -0.30541,0.201539 0.82062,0.40928 -0.005,-0.0858 -0.0496,-0.829409 -0.30489,0.20154 -0.51418,-0.7767 h 2.04432 v 0.36587 l 0.79375,-0.45889 -0.0744,-0.0429 -0.71934,-0.41599 v 0.36586 h -2.05155 l 0.49247,-0.84129 0.31575,0.185 z m 2.61948,1.10329 v 0.12712 0.98754 h 1.26245 v -1.11466 z m -5.72162,0.0305 v 0.12506 0.98753 h 1.26298 v -1.11259 z m 3.64888,1.920809 v 1.10794 h 1.26504 v -1.10794 z"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
@@ -2798,7 +2222,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3296"
-       d="m 180.38275,71.783416 -14.78533,-0.0041 V 46.304874 l -11.43093,0.0041"
+       d="m 175.19115,124.4781 -14.78533,-0.004 V 98.999658 l -11.43093,0.004"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2807,7 +2231,7 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3298"
-       d="m 157.94254,27.912544 h 21.01992"
+       d="m 152.75094,80.607229 h 21.01992"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2816,14 +2240,14 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3308"
-       d="m 101.95957,35.839364 h 7.34178 v -6.24945 h 8.03428"
+       d="m 96.767975,88.534048 h 7.341775 v -6.249449 h 8.03428"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <g
        id="g3312"
-       transform="matrix(-0.26458333,0,0,0.26458333,230.81108,77.580253)"
+       transform="matrix(-0.26458333,0,0,0.26458333,225.61948,130.27494)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2836,14 +2260,14 @@
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path3314"
-       d="m 130.05554,29.631664 h 15.19909"
+       d="m 124.86394,82.326349 h 15.19909"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <g
        id="g3318"
-       transform="matrix(-0.26458333,0,0,0.26458333,298.95992,76.133365)"
+       transform="matrix(-0.26458333,0,0,0.26458333,293.76832,128.82805)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2854,7 +2278,7 @@
     </g>
     <g
        id="g3322"
-       transform="matrix(0.26458333,0,0,0.26458333,73.15168,60.519894)"
+       transform="matrix(0.26458333,0,0,0.26458333,67.960086,113.21458)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -2866,8 +2290,8 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="91.509819"
-       y="31.737072"
+       x="86.31823"
+       y="84.431755"
        id="text3326"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2875,13 +2299,13 @@
          sodipodi:role="line"
          id="tspan3324"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="91.509819"
-         y="31.737072">P1</tspan></text>
+         x="86.31823"
+         y="84.431755">P1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="208.17416"
-       y="30.172775"
+       x="202.98256"
+       y="82.867455"
        id="text3330"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2889,13 +2313,13 @@
          sodipodi:role="line"
          id="tspan3328"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="208.17416"
-         y="30.172775">P2</tspan></text>
+         x="202.98256"
+         y="82.867455">P2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="91.415085"
-       y="48.821026"
+       x="86.223495"
+       y="101.5157"
        id="text3334"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2903,69 +2327,69 @@
          sodipodi:role="line"
          id="tspan3332"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="91.415085"
-         y="48.821026">P4</tspan></text>
+         x="86.223495"
+         y="101.5157">P4</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="122.66729"
-       y="35.472851"
+       x="117.4757"
+       y="88.167534"
        id="text3338"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan3336"
-         x="122.66729"
-         y="35.472851"
+         x="117.4757"
+         y="88.167534"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T1</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="150.85507"
-       y="35.507961"
+       x="145.66347"
+       y="88.202644"
        id="text3342"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan3340"
-         x="150.85507"
-         y="35.507961"
+         x="145.66347"
+         y="88.202644"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T2</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="184.49831"
-       y="33.87141"
+       x="179.3067"
+       y="86.566093"
        id="text3346"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan3344"
-         x="184.49831"
-         y="33.87141"
+         x="179.3067"
+         y="86.566093"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="143.25214"
-       y="50.69957"
+       x="138.06053"
+       y="103.39424"
        id="text3354"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan3352"
-         x="143.25214"
-         y="50.69957"
+         x="138.06053"
+         y="103.39424"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T7</tspan></text>
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path4857"
-       d="M 180.50944,43.557605 H 154.13355"
+       d="M 175.31784,96.252288 H 148.94195"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2974,7 +2398,7 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path6591"
-       d="m 157.94254,30.955253 h 11.8597 l 10e-6,25.201672 h 9.74808"
+       d="m 152.75094,83.649938 h 11.8597 l 1e-5,25.201672 h 9.74808"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -2983,20 +2407,20 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path7971"
-       d="m 202.86516,37.868734 h -5.22511 v 5.65933 h -4.59471"
+       d="m 197.67356,90.563418 h -5.22511 v 5.65933 h -4.59471"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <path
-       d="m 210.53248,61.790436 10.4921,2e-5 v 0.52917 l -10.4921,-3e-5 z m 10.13934,-0.79373 2.11666,1.05834 -2.11666,1.05833 z"
+       d="m 205.34088,114.48512 10.4921,2e-5 v 0.52917 l -10.4921,-3e-5 z m 10.13934,-0.79373 2.11666,1.05834 -2.11666,1.05833 z"
        id="path8616"
        style="stroke-width:0.264583"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <path
-       d="m 223.22372,66.552926 h -10.66271 v 0.52916 h 10.66271 z m -10.31002,-0.79375 -2.11667,1.05833 2.11667,1.05833 z"
+       d="m 218.03212,119.24761 h -10.66271 v 0.52916 h 10.66271 z m -10.31002,-0.79375 -2.11667,1.05833 2.11667,1.05833 z"
        id="path8618"
        style="stroke-width:0.264583"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
@@ -3004,7 +2428,7 @@
        inkscape:export-ydpi="300.17444" />
     <g
        id="g8624"
-       transform="matrix(-1.1342105,0,0,1.5523048,422.37766,-376.79867)"
+       transform="matrix(-1.1342105,0,0,1.5523048,417.18606,-324.10398)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -3025,14 +2449,14 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path8626"
-       d="m 192.12504,56.058838 h 5.22511 v 5.65933 h 4.59471"
+       d="m 186.93344,108.75352 h 5.22511 v 5.65933 h 4.59471"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444" />
     <g
        id="g22691"
-       transform="translate(-15.345837)"
+       transform="translate(-20.537431,52.694685)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -3108,7 +2532,7 @@
     </g>
     <g
        id="g8662"
-       transform="matrix(-0.26458333,0,0,0.26458333,298.95992,104.31149)"
+       transform="matrix(-0.26458333,0,0,0.26458333,293.76832,157.00618)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -3119,7 +2543,7 @@
     </g>
     <g
        id="g8666"
-       transform="matrix(0.26458333,0,0,0.26458333,73.15168,88.698018)"
+       transform="matrix(0.26458333,0,0,0.26458333,67.960086,141.3927)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444">
@@ -3131,8 +2555,8 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-       x="208.17416"
-       y="58.350899"
+       x="202.98256"
+       y="111.04558"
        id="text8670"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -3140,27 +2564,27 @@
          sodipodi:role="line"
          id="tspan8668"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.52778px;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#000000;stroke-width:0.264583"
-         x="208.17416"
-         y="58.350899">P3</tspan></text>
+         x="202.98256"
+         y="111.04558">P3</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="184.49831"
-       y="62.049534"
+       x="179.3067"
+       y="114.74421"
        id="text8674"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan8672"
-         x="184.49831"
-         y="62.049534"
+         x="179.3067"
+         y="114.74421"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T5</tspan></text>
     <path
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path8676"
-       d="m 202.86516,66.046858 h -5.22511 v 5.65933 h -4.59471"
+       d="m 197.67356,118.74154 h -5.22511 v 5.65933 h -4.59471"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -3168,36 +2592,36 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="184.56445"
-       y="49.481827"
+       x="179.37285"
+       y="102.17651"
        id="text12363"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan12361"
-         x="184.56445"
-         y="49.481827"
+         x="179.37285"
+         y="102.17651"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T4</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="184.43216"
-       y="77.263077"
+       x="179.24055"
+       y="129.95776"
        id="text15261"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan15259"
-         x="184.43216"
-         y="77.263077"
+         x="179.24055"
+         y="129.95776"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T6</tspan></text>
     <path
        sodipodi:nodetypes="cc"
        inkscape:connector-curvature="0"
        id="path41270"
-       d="M 140.2704,44.972916 H 125.07131"
+       d="M 135.0788,97.667598 H 119.87971"
        style="display:inline;opacity:0.98;fill:none;stroke:#000000;stroke-width:0.533503;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.533503, 0.533503;stroke-dashoffset:0;stroke-opacity:1;marker-end:url(#TriangleOutM-6)"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
@@ -3205,16 +2629,16 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.175px;line-height:0%;font-family:'Bitstream Vera Sans';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
-       x="115.89618"
-       y="50.797832"
+       x="110.70459"
+       y="103.49252"
        id="text41525"
        inkscape:export-filename="D:\UserData\git-repository\dsl-smart-contract-eai\03-case-study\001-delivery-hiring\delivery-hiring.png"
        inkscape:export-xdpi="300.17444"
        inkscape:export-ydpi="300.17444"><tspan
          sodipodi:role="line"
          id="tspan41523"
-         x="115.89618"
-         y="50.797832"
+         x="110.70459"
+         y="103.49252"
          style="font-size:2.7659px;line-height:1.25;stroke-width:0.264583">T8</tspan></text>
     <g
        clip-path="url(#clip1-9)"
@@ -3308,6 +2732,6 @@
     <path
        id="path4627"
        style="color:#000000;fill:#000000;stroke-width:0.186371;-inkscape-stroke:none"
-       d="m 151.26963,41.817121 v 0.35656 l 0.63149,0.75706 -0.63149,0.67955 0.63149,0.67696 -0.63149,0.67903 0.63149,0.67851 -0.63149,0.67748 0.63149,0.67954 -0.63149,0.75706 v 0.35657 h -9.86348 v -2.48357 c -0.12813,-0.0652 -0.23485,-0.16583 -0.30747,-0.2899 -0.13409,-0.23231 -0.13409,-0.51854 0,-0.75085 0.0726,-0.12408 0.17934,-0.2247 0.30747,-0.28991 v -2.3058 -0.17828 z m -0.35657,0.35656 h -9.15034 v 5.58519 h 9.15034 z m -1.33893,1.24696 v 1.31723 h -1.51154 v -1.19838 -0.11885 z m -0.23771,0.23771 h -0.18914 v 0.84181 h 0.18914 z m -0.42634,0 h -0.185 v 0.84181 h 0.185 z m -0.42271,0 h -0.18707 v 0.84181 h 0.18707 z m -3.74395,0.83044 v 1.31723 h -1.51154 v -1.31723 z m 1.43867,0.21239 v 0.36587 h 0.95498 v 0.18603 h -0.95498 v 0.36587 l -0.79427,-0.45888 0.0749,-0.0429 z m 3.40909,0.81907 v 1.35031 h -1.54254 v -1.35031 h 1.40353 z m -0.27853,0.21239 h -0.98547 v 0.16743 h 0.98547 z m 0,0.37982 h -0.98547 v 0.16485 h 0.98547 z m 0,0.37672 h -0.98547 v 0.16899 h 0.98547 z" />
+       d="m 146.07803,94.511808 v 0.35656 l 0.63149,0.75706 -0.63149,0.67955 0.63149,0.67696 -0.63149,0.67903 0.63149,0.67851 -0.63149,0.67748 0.63149,0.67954 -0.63149,0.757062 v 0.35657 h -9.86348 v -2.483572 c -0.12813,-0.0652 -0.23485,-0.16583 -0.30747,-0.2899 -0.13409,-0.23231 -0.13409,-0.51854 0,-0.75085 0.0726,-0.12408 0.17934,-0.2247 0.30747,-0.28991 v -2.3058 -0.17828 z m -0.35657,0.35656 h -9.15034 v 5.585192 h 9.15034 z m -1.33893,1.24696 v 1.31723 h -1.51154 v -1.19838 -0.11885 z m -0.23771,0.23771 h -0.18914 v 0.84181 h 0.18914 z m -0.42634,0 h -0.185 v 0.84181 h 0.185 z m -0.42271,0 h -0.18707 v 0.84181 h 0.18707 z m -3.74395,0.83044 v 1.31723 h -1.51154 v -1.31723 z m 1.43867,0.21239 v 0.36587 h 0.95498 v 0.18603 h -0.95498 v 0.36587 l -0.79427,-0.45888 0.0749,-0.0429 z m 3.40909,0.81907 v 1.35031 h -1.54254 v -1.35031 h 1.40353 z m -0.27853,0.21239 h -0.98547 v 0.16743 h 0.98547 z m 0,0.37982 h -0.98547 v 0.16485 h 0.98547 z m 0,0.37672 h -0.98547 v 0.16899 h 0.98547 z" />
   </g>
 </svg>
