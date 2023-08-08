@@ -8,13 +8,14 @@ contract DeliveryHiring_O {
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
+	
 	clauses{
 		obligation responseOrder {
 			rolePlayer = application
 			operation = response
 			terms {
-				Timeout(30),
-				MessageContent('//budget/id/text()' >= 0)	 		
+				Timeout(20),
+				MessageContent('//budget/deliveryTime/text()' < 15)	 		
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
 		}	

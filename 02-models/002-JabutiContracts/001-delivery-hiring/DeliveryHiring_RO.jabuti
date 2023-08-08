@@ -11,43 +11,31 @@ contract DeliveryHiring_RO {
 	}
 	
 	variables{
-		numberOfAddresses = "count(//body/perosonalInformation/address/cep)" 
+		numberOfAddresses = "count(//body/perosonalInformation/address/cep)"
+		weight = "//body/package/weight/text()" 
 	}
 	
 	clauses{
-	
-			right requestDelivery       {
-			/*Setting the days and hours to request a delivery,
-			the maximum request operation by minute and number of address by request*/
-		
-			rolePlayer = application
+		right requestDelivery {			
+			rolePlayer = process
 			operation = request
 			
-			terms {
-				WeekDaysInterval(Monday to Friday),
-				TimeInterval("08:30:00" to "18:30:00"),
-				MaxNumberOfOperation(5 per Day),
-				MessageContent(numberOfAddresses >=1),  
-				MessageContent(numberOfAddresses <= 3),
-				MessageContent(numberOfAddresses <= 1000 per Month) 
-			}
-			// the onSuccess is optional
-			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))
-			
+			terms {			
+				MaxNumberOfOperation(3 per Minute),
+				MessageContent(numberOfAddresses == 1), 
+				MessageContent(weight == 100), 
+				MessageContent(productValue < 20000) 			
+			}			
+			onBreach(log("Request operation did not meet all requirements"))			
 		}
-	
-		obligation responseDelivery  {
-			/* Setting the time limit for responding to a request */
+		obligation responseOrder {
 			rolePlayer = application
 			operation = response
-			terms { 
-				Timeout("180"),
-				MessageContent("//budget/id/text()" != "") 						
+			terms {
+				Timeout(20),
+				MessageContent('//budget/deliveryTime/text()' < 15)	 		
 			}
-			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))
+			onBreach(log("response performed outside of time limit or delivery time too long"))			
 		}
-		
-		
-		
-	}
+	}		
 }

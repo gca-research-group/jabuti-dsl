@@ -25,27 +25,23 @@ contract DeliveryHiring_RO {
 
 /* =========== BEGIN: codes generated based in specific jabuti contract =================== */
     	
-//  1º STEP:  Import library to conditions/terms  ----------------------------------        
-    using EAI for EAI.WeekDaysInterval;
-    using EAI for EAI.TimeInterval;
+//  1º STEP:  Import library to conditions/terms  ----------------------------------             
     using EAI for EAI.MaxNumberOfOperationByTime;
-    using EAI for EAI.MessageContent_Number;
-    using EAI for EAI.MessageContent_Number_PerTime;
+    using EAI for EAI.MessageContent_Number;    
     using EAI for EAI.Timeout;
 // ----------------------------------------------------------------------------------
 
 
 // 2º STEP: Identify and create the variables  from " variable block" ---------------  
  string numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
+ string weight = "//body/package/weight/text()";
+
 // ----------------------------------------------------------------------------------
 
 
-// 3º STEP: Identify and create variables referring to the clauses terms ------------	
-    EAI.WeekDaysInterval[]  weekDaysInterval_C1; 	
-	EAI.TimeInterval[] timeInterval_C1;
+// 3º STEP: Identify and create variables referring to the clauses terms ------------	    
     EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
-    EAI.MessageContent_Number[] msgContent_number_C1;
-    EAI.MessageContent_Number_PerTime[] msgContent_numberPerTime_C1;
+    EAI.MessageContent_Number[] msgContent_number_C1;   
 
     EAI.Timeout[]  timeout_C2; 	
 	EAI.MessageContent_Number[]  msgContent_number_C2;
@@ -53,7 +49,7 @@ contract DeliveryHiring_RO {
 
 
 // 4º STEP: Create the constructor method --------------------------------------------
-	constructor(address _applicationWallet, address _processWallet){
+	constructor(address _applicationWallet){
 	 	activated = true;
         // Catch the date from jabuti contract 
         beginDate = 1672561800;
@@ -65,16 +61,14 @@ contract DeliveryHiring_RO {
         mapParty[_applicationWallet] = application;
 
 // 5º STEP: Create the terms of the clauses, (check if some of them use a variable from variable block)        
-        // clause 01
-        weekDaysInterval_C1.push(EAI.createWeekDaysInterval(EAI.MONDAY, EAI.FRIDAY));
-        timeInterval_C1.push(EAI.createTimeInterval(30600,66600)); //TimeInterval("08:30:00" to "18:30:00")
-        maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime(5, EAI.DAY));
-		msgContent_number_C1.push(EAI.createMessageContent(numberOfAddresses, ">=", 1));        
-        msgContent_number_C1.push(EAI.createMessageContent(numberOfAddresses, "<=", 3));        
-        msgContent_numberPerTime_C1.push(EAI.createMessageContent(numberOfAddresses, "<=", 1000, EAI.MONTH));
+        // clause 01      
+        maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime(3, EAI.MINUTE));
+		msgContent_number_C1.push(EAI.createMessageContent(numberOfAddresses, "==", 1));        
+        msgContent_number_C1.push(EAI.createMessageContent(weight, "<=", 100)); 
+        msgContent_number_C1.push(EAI.createMessageContent("//body/order/totalCost/text()" , "<=", 20000));                
         // clause 02
-        timeout_C2.push(EAI.createTimeout(30));	   				
-		msgContent_number_C2.push(EAI.createMessageContent("//budget/text()", ">=", 10));   
+        timeout_C2.push(EAI.createTimeout(20));	   				
+		msgContent_number_C2.push(EAI.createMessageContent("//budget/deliveryTime/text()", "<=", 15));   
 	}
 	
 // 6º STEP: Translate the clauses to functions
@@ -83,20 +77,15 @@ contract DeliveryHiring_RO {
 
     function right_requestDelivery(
         uint32 _accessDateTime, 
-        uint8 [] _weekDay, 
-        uint32 _hourOfDay, 
-        int256[] memory _resultFromXpath_nc,
-        uint256[] memory _resultFromXpath_npt
+        int256[] memory _resultFromXpath_nc
         ) public onlyProcess() returns(bool){
        
-        if(weekDaysInterval_C1[0].isIntoWeekDaysInterval(_weekDay[0]) &&           
-           timeInterval_C1[0].isIntoTimeInterval(_hourOfDay) &&
-           maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime)&&
+        if(maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime)&&
            msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath_nc[0]) &&
            msgContent_number_C1[1].evaluateNumberContent(_resultFromXpath_nc[1]) &&
-           msgContent_numberPerTime_C1[0].evaluateNumberPerTime(_accessDateTime, _resultFromXpath_npt[0])
+            msgContent_number_C1[1].evaluateNumberContent(_resultFromXpath_nc[1])           
         ){
-            msgContent_numberPerTime_C1[0].decreaseTheLastContentOfRestingAmount();
+            maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(_accessDateTime);
             timeout_C2[0].setEndTimeInTimeout(_accessDateTime);        
             emit successEvent("Successful execution!");
             return true;
@@ -116,11 +105,11 @@ contract DeliveryHiring_RO {
 			msgContent_number_C2[0].evaluateNumberContent(_resultFromXpath_nc[0])
             )
 			{			    
-                maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime();
+                maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(_accessDateTime);
                 emit successEvent("Successful execution!");                
 	        	return true;
 	    	}else{	    
-                emit failEvent("Response made outside of allowed hours or distance limit exceeded");                
+                emit failEvent("Response performed outside of time limit or delivery time too long");                
                 return false;
             }       
 	}

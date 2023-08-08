@@ -160,24 +160,9 @@
 						"type": "uint32"
 					},
 					{
-						"internalType": "uint8",
-						"name": "_weekDay",
-						"type": "uint8"
-					},
-					{
-						"internalType": "uint32",
-						"name": "_hourOfDay",
-						"type": "uint32"
-					},
-					{
 						"internalType": "int256[]",
 						"name": "_resultFromXpath_nc",
 						"type": "int256[]"
-					},
-					{
-						"internalType": "uint256[]",
-						"name": "_resultFromXpath_npt",
-						"type": "uint256[]"
 					}
 				],
 				"name": "right_requestDelivery",
@@ -233,19 +218,19 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0x656162b8b719f761c414605bcc7737f06f09670f0b11333377fcd28db0a1f057",
+			"keccak256": "0x46cc7c84b1d197be03b373d863f1b46c201540a140067c625f33e007a1739e81",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1a9276c739cb482067c79b69aa54a1e113d8af015399feecee144bcd004487cc",
-				"dweb:/ipfs/QmQew9MDEEP1jtS3pvRU8fWTpeE5S9JBJrSqButXFgXVjw"
+				"bzz-raw://bf8ef2621aa8426be1004adb1de78a268b113faa7bc093b76fa246fa719c05d2",
+				"dweb:/ipfs/QmbhKKJfhsUAN3fMJNQFQq33NF4NxVGNcn8dUPYnTXAHKE"
 			]
 		},
 		"contracts/study-case-contracts/001-delivery-hiring/DeliveryHiring_RO.sol": {
-			"keccak256": "0x2b0cffb0b99f33859b5781b1d3ee344b3576826fb4d70cad6a46f689ca21491c",
+			"keccak256": "0x616cd3250b2b9ff7403b319da9cdbd8cd221968bcc794421b6ec00102d283408",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://b2a175dc69b217abf7dc089fbf9ad0f06f46d30cad41ad6d1476a4a151bece5d",
-				"dweb:/ipfs/QmNZDRs1JcQrdEc3SSJTxLJy25pQnQ8ZuauNB5iKF2Mjni"
+				"bzz-raw://57b0448f5f9430d102bfb1c170520284ec83e981b4feae67c9b5de859ace6d13",
+				"dweb:/ipfs/QmdyTT45J1MgFj8f2ZLGXdiB9av2MJh7TB1U8YYjC1a5j6"
 			]
 		}
 	},

@@ -1,0 +1,269 @@
+grammar br.edu.unijui.gca.jabuti.Jabuti with org.eclipse.xtext.common.Terminals
+
+import "http://www.edu.br/unijui/gca/jabuti/Jabuti"
+
+Model:
+	imports+=Import*
+	contract=Contract;
+
+Import:
+    'import' importedNamespace=QualifiedNameWithWildcard
+;
+	
+// #################### CONTRACT STRUCTURE ####################
+Contract: 
+	'contract' name=ID '{'
+	
+		'dates' '{'
+			'beginDate' '=' beginDate=STRING
+			'dueDate' '=' dueDate=STRING
+		'}'
+			
+		'parties' '{'
+				application=Application
+				process=Process
+		'}'
+
+		('variables' '{'
+			variables+=Variable*
+		'}')?
+		
+		'clauses' '{'
+			clauses+=Clause*
+		'}'		
+				
+	'}'; 
+	
+// #################### CLAUSE STRUCTURE AND CLAUSE SUBTYPES ####################
+Clause: 
+	(Right | Prohibition | Obligation) '{'
+		'rolePlayer' '=' roleplayer=RolePlayer
+		'operation' '=' operation=Operation
+		'terms' '{' 
+			condition = Condition			
+		'}'
+		eventLog+=EventLog*
+	'}' 
+;
+
+Right:
+	'right'  name=ID 
+;
+Obligation:
+	'obligation'   name=ID 
+;
+Prohibition:
+	'prohibition'  name=ID 
+;	
+
+
+// #################### PARTY AND SUBTYPES ####################
+
+Party: 
+	(Application | Process) 
+;
+
+Application:
+	'application' '=' name=STRING
+;
+
+Process:
+	'process' '=' name=STRING
+;
+
+
+// #################### EventLog onBreach and onSuccess ####################
+
+
+EventLog:
+	OnSuccess | OnBreach
+;
+OnSuccess:
+	'onSuccess' '(' 'log(' message=STRING ')' ')' 
+;
+
+OnBreach:
+	 'onBreach' '(' 'log(' message=STRING ')' ')' 
+;
+
+// #################### EXPRESSION GROUP - CLASSES AND SUBCLASSES ####################
+
+Expression:
+	Negation ({BinaryOperator.left=current} (symbol='AND' | symbol='&&' | symbol="||" | symbol='OR'  ) right=Negation)*
+;
+
+Negation returns Expression:
+	Comparison | {UnaryOperator} symbol='!' expression=Comparison;
+
+
+Comparison returns Expression:
+	Plus ({BinaryOperator.left=current} (symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
+	| symbol='==' | symbol='is' | symbol='as') right=Plus)*;
+
+Plus returns Expression:
+	Factor ({BinaryOperator.left=current} ('+' | '-') right=Factor)*;
+
+Factor returns Expression:
+	Negative ({BinaryOperator.left=current} ('*' | '/') right=Negative)*;
+
+Negative returns Expression:
+	Primary | {UnaryOperator} '-' expression=Primary;
+
+Primary returns Expression:
+	LiteralValue | '(' Expression ')';
+
+LiteralValue:
+	NumericValue | StringValue | VariableValue | FunctionCall;
+
+NumericValue:
+	value=INT;
+
+StringValue:
+	value=STRING;	
+
+
+VariableValue:
+	value=QualifiedName;
+
+FunctionCall:
+	name=QualifiedName '(' params+=Expression (',' params+=Expression)* ')'
+;
+
+Variable:
+	name=ID '=' (expression=Expression | term = (SessionInterval | MessageContent | TimeInterval | Timeout )) 
+;
+
+
+// #################### CONDITION AND TERMS ####################
+
+// ----------------- inicio versão antiga -----------------
+//Condition: 
+//	Term | CompositeCondition | ConditionalExpression
+//;
+//
+//Term:
+//	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
+//;
+//
+//CompositeCondition:	
+//	conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*
+//;
+//
+//ConditionalExpression: 
+//	conditions+=CompositeCondition
+//	'when' '(' expression=Expression ')' 'do' '{'
+//		conditions+=CompositeCondition
+//	'}'
+//;
+
+// ----------------- fim - versão antiga -----------------
+
+
+
+//------------------ start of new version ----------------
+
+
+Condition:
+	(conditionTerm += ConditionTerm |
+	conditionalExpression+=ConditionalExpression)+
+;
+
+ConditionalExpression :
+	(beforeSymbol = LogicalOperator)?
+	'when' '(' ((QualifiedName | conditionParam+=ConditionTerm ) (comparisonOperator+=ComparisonOperator (QualifiedName | STRING | conditionParam+=ConditionTerm))?) (logicalOperator+=LogicalOperator QualifiedName (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)*')' 'do' '{'
+		conditionTerm=ConditionTerm
+	'}'
+	(afterSymbol = LogicalOperator)?
+;
+
+
+ConditionTerm:
+	CompositeCondition
+;
+
+CompositeCondition returns ConditionTerm:
+	NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
+
+NegationTerm returns ConditionTerm:
+	Term | {UnaryTermOperator} symbol='NOT' conditionTerm=Term;
+	
+Term returns ConditionTerm:
+	'(' ConditionTerm ')' |
+	SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+;
+
+
+//  ----------------- end new version proposal  -----------------
+
+LogicalOperator:
+	symbol=(',' | 'AND'| 'OR' | 'NOT')
+;
+
+TimeInterval: 
+	'TimeInterval' '(' start=STRING 'to' end=STRING')'
+; 
+
+SessionInterval: 
+	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | QualifiedName ) )? ')'
+; 
+
+Timeout:
+	'Timeout' '(' expression=Expression ')'
+;
+
+MaxNumberOfOperation:
+	'MaxNumberOfOperation' '(' operationsNumber=INT ('per' timeUnit=TimeUnit)?  ')'
+;
+
+WeekDaysInterval:
+	('WeekDaysInterval' '(' start=WeekDay 'to' end=WeekDay ')')
+;
+
+MessageContent:
+	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' )
+
+//	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
+//	x (',' x)*
+// ver sobre o validation. Validar se uma variavel(referencia) foi criada 
+;
+
+ComparisonOperator:
+	symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='	| symbol='==' 
+;
+
+//############################################
+//por que utilizar um qualifiedName e como ID ?
+QualifiedName:
+	ID ('.' ID)*;
+	
+QualifiedNameWithWildcard:
+	QualifiedName '.*'; 
+	
+// #################### ENUM SECTION ####################
+
+enum RolePlayer:
+	APPLICATION='application' | PROCESS='process'
+;
+
+enum Operation:
+    PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
+;
+
+enum WeekDay:
+    SUNDAY='Sunday' | MONDAY='Monday' | TUESDAY='Tuesday' | WEDNESDAY = 'Wednesday' | THURSDAY='Thursday' | FRIDAY='Friday' | SATURDAY='Saturday'
+;
+    
+enum TimeUnit:
+    SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='Day' | WEEK='Week' | MONTH='Month' | YEAR='Year'
+;
+
+
+// ########### ENUM SECTION ####################
+
+//DATE: YEAR'-'MONTH'-'DAY'T'HOUR':'MIN':'SEC;
+//YEAR: INT;
+//MONTH: INT;
+//DAY: INT;
+//HOUR: INT;
+//MIN: INT;
+//SEC: INT;
