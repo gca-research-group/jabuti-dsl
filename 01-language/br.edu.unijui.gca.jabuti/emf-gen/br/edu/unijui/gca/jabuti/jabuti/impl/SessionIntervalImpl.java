@@ -7,7 +7,6 @@ import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
-import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,7 +28,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getValue <em>Value</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getMessageContent <em>Message Content</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -105,16 +103,6 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 	 * @ordered
 	 */
 	protected MessageContent messageContent;
-
-	/**
-	 * The cached value of the '{@link #getVariableValue() <em>Variable Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVariableValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected VariableValue variableValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -268,64 +256,12 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 	 * @generated
 	 */
 	@Override
-	public VariableValue getVariableValue()
-	{
-		return variableValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetVariableValue(VariableValue newVariableValue, NotificationChain msgs)
-	{
-		VariableValue oldVariableValue = variableValue;
-		variableValue = newVariableValue;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE, oldVariableValue, newVariableValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setVariableValue(VariableValue newVariableValue)
-	{
-		if (newVariableValue != variableValue)
-		{
-			NotificationChain msgs = null;
-			if (variableValue != null)
-				msgs = ((InternalEObject)variableValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE, null, msgs);
-			if (newVariableValue != null)
-				msgs = ((InternalEObject)newVariableValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE, null, msgs);
-			msgs = basicSetVariableValue(newVariableValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE, newVariableValue, newVariableValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
 		{
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				return basicSetMessageContent(null, msgs);
-			case JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE:
-				return basicSetVariableValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -348,8 +284,6 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 				return getValue();
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				return getMessageContent();
-			case JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE:
-				return getVariableValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -375,9 +309,6 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 				return;
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				setMessageContent((MessageContent)newValue);
-				return;
-			case JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE:
-				setVariableValue((VariableValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -405,9 +336,6 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				setMessageContent((MessageContent)null);
 				return;
-			case JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE:
-				setVariableValue((VariableValue)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -430,8 +358,6 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				return messageContent != null;
-			case JabutiPackage.SESSION_INTERVAL__VARIABLE_VALUE:
-				return variableValue != null;
 		}
 		return super.eIsSet(featureID);
 	}

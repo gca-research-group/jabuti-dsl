@@ -10,7 +10,7 @@ contract DockRequest {
 		application = "SpanishPortSystem"
 		process =     "Integration Process"
 	}
-	
+
 	clauses{
 		//Clause 1 from clauses presented on Section 5 
 		right requestBerthing {

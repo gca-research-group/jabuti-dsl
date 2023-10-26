@@ -3,10 +3,10 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.Condition;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Terms;
 
 import java.util.Collection;
 
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Condition</b></em>'.
+ * An implementation of the model object '<em><b>Terms</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl#getConditionalExpression <em>Conditional Expression</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl#getConditionTerm <em>Condition Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermsImpl#getConditionalExpression <em>Conditional Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermsImpl#getExpressionTerm <em>Expression Term</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConditionImpl extends MinimalEObjectImpl.Container implements Condition
+public class TermsImpl extends MinimalEObjectImpl.Container implements Terms
 {
 	/**
 	 * The cached value of the '{@link #getConditionalExpression() <em>Conditional Expression</em>}' containment reference list.
@@ -49,21 +49,21 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	protected EList<ConditionalExpression> conditionalExpression;
 
 	/**
-	 * The cached value of the '{@link #getConditionTerm() <em>Condition Term</em>}' containment reference list.
+	 * The cached value of the '{@link #getExpressionTerm() <em>Expression Term</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConditionTerm()
+	 * @see #getExpressionTerm()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ConditionTerm> conditionTerm;
+	protected EList<ExpressionTerm> expressionTerm;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConditionImpl()
+	protected TermsImpl()
 	{
 		super();
 	}
@@ -76,7 +76,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	@Override
 	protected EClass eStaticClass()
 	{
-		return JabutiPackage.Literals.CONDITION;
+		return JabutiPackage.Literals.TERMS;
 	}
 
 	/**
@@ -89,7 +89,7 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	{
 		if (conditionalExpression == null)
 		{
-			conditionalExpression = new EObjectContainmentEList<ConditionalExpression>(ConditionalExpression.class, this, JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION);
+			conditionalExpression = new EObjectContainmentEList<ConditionalExpression>(ConditionalExpression.class, this, JabutiPackage.TERMS__CONDITIONAL_EXPRESSION);
 		}
 		return conditionalExpression;
 	}
@@ -100,13 +100,13 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	 * @generated
 	 */
 	@Override
-	public EList<ConditionTerm> getConditionTerm()
+	public EList<ExpressionTerm> getExpressionTerm()
 	{
-		if (conditionTerm == null)
+		if (expressionTerm == null)
 		{
-			conditionTerm = new EObjectContainmentEList<ConditionTerm>(ConditionTerm.class, this, JabutiPackage.CONDITION__CONDITION_TERM);
+			expressionTerm = new EObjectContainmentEList<ExpressionTerm>(ExpressionTerm.class, this, JabutiPackage.TERMS__EXPRESSION_TERM);
 		}
-		return conditionTerm;
+		return expressionTerm;
 	}
 
 	/**
@@ -119,10 +119,10 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+			case JabutiPackage.TERMS__CONDITIONAL_EXPRESSION:
 				return ((InternalEList<?>)getConditionalExpression()).basicRemove(otherEnd, msgs);
-			case JabutiPackage.CONDITION__CONDITION_TERM:
-				return ((InternalEList<?>)getConditionTerm()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.TERMS__EXPRESSION_TERM:
+				return ((InternalEList<?>)getExpressionTerm()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -137,10 +137,10 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+			case JabutiPackage.TERMS__CONDITIONAL_EXPRESSION:
 				return getConditionalExpression();
-			case JabutiPackage.CONDITION__CONDITION_TERM:
-				return getConditionTerm();
+			case JabutiPackage.TERMS__EXPRESSION_TERM:
+				return getExpressionTerm();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,13 +156,13 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+			case JabutiPackage.TERMS__CONDITIONAL_EXPRESSION:
 				getConditionalExpression().clear();
 				getConditionalExpression().addAll((Collection<? extends ConditionalExpression>)newValue);
 				return;
-			case JabutiPackage.CONDITION__CONDITION_TERM:
-				getConditionTerm().clear();
-				getConditionTerm().addAll((Collection<? extends ConditionTerm>)newValue);
+			case JabutiPackage.TERMS__EXPRESSION_TERM:
+				getExpressionTerm().clear();
+				getExpressionTerm().addAll((Collection<? extends ExpressionTerm>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -178,11 +178,11 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+			case JabutiPackage.TERMS__CONDITIONAL_EXPRESSION:
 				getConditionalExpression().clear();
 				return;
-			case JabutiPackage.CONDITION__CONDITION_TERM:
-				getConditionTerm().clear();
+			case JabutiPackage.TERMS__EXPRESSION_TERM:
+				getExpressionTerm().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -198,12 +198,12 @@ public class ConditionImpl extends MinimalEObjectImpl.Container implements Condi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITION__CONDITIONAL_EXPRESSION:
+			case JabutiPackage.TERMS__CONDITIONAL_EXPRESSION:
 				return conditionalExpression != null && !conditionalExpression.isEmpty();
-			case JabutiPackage.CONDITION__CONDITION_TERM:
-				return conditionTerm != null && !conditionTerm.isEmpty();
+			case JabutiPackage.TERMS__EXPRESSION_TERM:
+				return expressionTerm != null && !expressionTerm.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConditionImpl
+} //TermsImpl

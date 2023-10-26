@@ -8,13 +8,12 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
-import br.edu.unijui.gca.jabuti.jabuti.Condition;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
+import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
@@ -33,6 +32,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
+import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
@@ -222,9 +222,9 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 				return createOnSuccessAdapter();
 			}
 			@Override
-			public Adapter caseConditionTerm(ConditionTerm object)
+			public Adapter caseExpressionTerm(ExpressionTerm object)
 			{
-				return createConditionTermAdapter();
+				return createExpressionTermAdapter();
 			}
 			@Override
 			public Adapter caseLogicalOperator(LogicalOperator object)
@@ -237,14 +237,14 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 				return createConditionalExpressionAdapter();
 			}
 			@Override
-			public Adapter caseCondition(Condition object)
+			public Adapter caseTerms(Terms object)
 			{
-				return createConditionAdapter();
+				return createTermsAdapter();
 			}
 			@Override
-			public Adapter caseCompositeCondition(CompositeCondition object)
+			public Adapter caseCompositeTerm(CompositeTerm object)
 			{
-				return createCompositeConditionAdapter();
+				return createCompositeTermAdapter();
 			}
 			@Override
 			public Adapter caseTerm(Term object)
@@ -649,16 +649,16 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionTerm <em>Condition Term</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionTerm
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm
 	 * @generated
 	 */
-	public Adapter createConditionTermAdapter()
+	public Adapter createExpressionTermAdapter()
 	{
 		return null;
 	}
@@ -694,31 +694,31 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Condition <em>Condition</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Terms <em>Terms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Condition
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Terms
 	 * @generated
 	 */
-	public Adapter createConditionAdapter()
+	public Adapter createTermsAdapter()
 	{
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition <em>Composite Condition</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeTerm <em>Composite Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeCondition
+	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeTerm
 	 * @generated
 	 */
-	public Adapter createCompositeConditionAdapter()
+	public Adapter createCompositeTermAdapter()
 	{
 		return null;
 	}

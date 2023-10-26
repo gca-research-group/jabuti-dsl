@@ -12,7 +12,6 @@ contract ApiExpandedBasicPlan {
 		process = "Integration Process" 
 	}
 
-
 	clauses{	
 
 		right requestDocuments {
@@ -31,7 +30,7 @@ contract ApiExpandedBasicPlan {
 			rolePlayer =  application
 			operation =  response
 			terms{
-				Timeout("60") 
+				Timeout(60) 
 			}
 			onBreach(log("Conditon not meet"))
 		}

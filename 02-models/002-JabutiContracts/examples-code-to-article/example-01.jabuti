@@ -1,0 +1,58 @@
+contract DeliveryHiring_RO {  
+	
+	dates{
+		beginDate = "2022-01-01 08:00:00" 
+		dueDate = "2022-12-31 18:00:00" 
+	}	
+
+	parties{
+		application = "deliverySystem" 
+		process  	= "integrationProcess" 
+	}
+	
+	variables{
+		
+		a = "text_01"
+		b = "text_02"	
+		c = 2
+		d = 1	
+		
+		// example of a logical expression	
+		expression_01 = a != b AND b == "text_02"
+		
+		// example of mathematical expression
+		expression_02 = c*((c-d)+2)
+		
+		// example of expression using mathematical and logical operators  		
+		expression_03 = c+d <= 3 AND (a == "text_02" OR a != b)
+		
+	}
+	
+	
+	clauses{
+		right requestDelivery {			
+			rolePlayer = process
+			operation = request
+			
+			terms {	
+				
+				TimeInterval("07:00:00" to "18:00:00"),
+				
+				SessionInterval(30 Minute per MessageContent("//clientID/text()")),
+				
+				Timeout(30),	
+				
+				MaxNumberOfOperation(50000),	
+				MaxNumberOfOperation(10 per Minute),
+				
+				WeekDaysInterval(Monday to Friday),
+				
+				MessageContent("count(//item)<=10"), 
+				MessageContent("count(//item)" <= 10), 
+				MessageContent("count(//item)" <= 1000 per Month) 
+			}
+						
+			onBreach(log("Request operation did not meet all requirements"))			
+		}
+	}		
+}

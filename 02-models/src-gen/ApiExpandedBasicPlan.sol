@@ -7,10 +7,10 @@ contract ApiExpandedBasicPlan is EAI_Domain{
 	
 	Party Web Of Science;
 	Party Integration Process;
-	
 	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(2, SECOND, 0, 0);
 	MessageContent public messageContent = MessageContent("count(//body/document)");
 	MessageContent public messageContent = MessageContent("count(//body/document)");
+	
 	
 	event requestDocumentsevent(string _logMessage);
 	

@@ -8,7 +8,7 @@ contract DeliveryHiring_O {
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
-	
+
 	clauses{
 		obligation responseOrder {
 			rolePlayer = application

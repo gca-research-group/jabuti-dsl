@@ -11,6 +11,7 @@ Import:
 ;
 	
 // #################### CONTRACT STRUCTURE ####################
+
 Contract: 
 	'contract' name=ID '{'
 	
@@ -34,13 +35,15 @@ Contract:
 				
 	'}'; 
 	
+	
 // #################### CLAUSE STRUCTURE AND CLAUSE SUBTYPES ####################
+
 Clause: 
 	(Right | Prohibition | Obligation) '{'
-		'rolePlayer' '=' roleplayer=RolePlayer
+		'rolePlayer' '=' rolePlayer=RolePlayer
 		'operation' '=' operation=Operation
 		'terms' '{' 
-			condition = Condition			
+			terms = Terms			
 		'}'
 		eventLog+=EventLog*
 	'}' 
@@ -78,6 +81,7 @@ Process:
 EventLog:
 	OnSuccess | OnBreach
 ;
+
 OnSuccess:
 	'onSuccess' '(' 'log(' message=STRING ')' ')' 
 ;
@@ -89,7 +93,7 @@ OnBreach:
 // #################### EXPRESSION GROUP - CLASSES AND SUBCLASSES ####################
 
 Expression:
-	Negation ({BinaryOperator.left=current} (symbol='AND' | symbol='&&' | symbol="||" | symbol='OR'  ) right=Negation)*
+	Negation ({BinaryOperator.left=current} (symbol='AND' | symbol='OR'  ) right=Negation)*
 ;
 
 Negation returns Expression:
@@ -134,69 +138,40 @@ Variable:
 ;
 
 
-// #################### CONDITION AND TERMS ####################
-
-// ----------------- inicio versão antiga -----------------
-//Condition: 
-//	Term | CompositeCondition | ConditionalExpression
-//;
-//
-//Term:
-//	Timeout | MaxNumberOfOperation | WeekDaysInterval |TimeInterval | MessageContent | SessionInterval	
-//;
-//
-//CompositeCondition:	
-//	conditions+=Term logicalOperators+=LogicalOperator (conditions+=Term (logicalOperators+=LogicalOperator conditions+=Term)*)*
-//;
-//
-//ConditionalExpression: 
-//	conditions+=CompositeCondition
-//	'when' '(' expression=Expression ')' 'do' '{'
-//		conditions+=CompositeCondition
-//	'}'
-//;
-
-// ----------------- fim - versão antiga -----------------
-
-
-
 //------------------ start of new version ----------------
+ 
 
-
-Condition:
-	(conditionTerm += ConditionTerm |
+Terms:
+	(expressionTerm += ExpressionTerm |
 	conditionalExpression+=ConditionalExpression)+
+;
+
+ExpressionTerm:
+	NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
+
+NegationTerm returns ExpressionTerm:
+	Term | {UnaryTermOperator} symbol='NOT' expressionTerm=Term;
+	
+Term returns ExpressionTerm:
+	'(' ExpressionTerm ')' |
+	SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
 ;
 
 ConditionalExpression :
 	(beforeSymbol = LogicalOperator)?
-	'when' '(' ((QualifiedName | conditionParam+=ConditionTerm ) (comparisonOperator+=ComparisonOperator (QualifiedName | STRING | conditionParam+=ConditionTerm))?) (logicalOperator+=LogicalOperator QualifiedName (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)*')' 'do' '{'
-		conditionTerm=ConditionTerm
+	'when' '(' ((QualifiedName | STRING ) 
+				(comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?) 
+				(logicalOperator+=LogicalOperator QualifiedName  
+					(comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'check' '{'
+					expressionTerm=ExpressionTerm
 	'}'
 	(afterSymbol = LogicalOperator)?
 ;
 
-
-ConditionTerm:
-	CompositeCondition
-;
-
-CompositeCondition returns ConditionTerm:
-	NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
-
-NegationTerm returns ConditionTerm:
-	Term | {UnaryTermOperator} symbol='NOT' conditionTerm=Term;
-	
-Term returns ConditionTerm:
-	'(' ConditionTerm ')' |
-	SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
-;
-
-
 //  ----------------- end new version proposal  -----------------
 
 LogicalOperator:
-	symbol=(',' | 'AND'| 'OR' | 'NOT')
+	symbol=(',' | 'AND'| 'OR')
 ;
 
 TimeInterval: 
@@ -208,7 +183,7 @@ SessionInterval:
 ; 
 
 Timeout:
-	'Timeout' '(' expression=Expression ')'
+	'Timeout' '(' seconds=INT ')'
 ;
 
 MaxNumberOfOperation:
@@ -216,11 +191,12 @@ MaxNumberOfOperation:
 ;
 
 WeekDaysInterval:
-	('WeekDaysInterval' '(' start=WeekDay 'to' end=WeekDay ')')
+	'WeekDaysInterval' '(' start=WeekDay 'to' end=WeekDay ')'
 ;
 
 MessageContent:
-	('MessageContent' '(' (content=STRING | QualifiedName)  (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' )
+	'MessageContent' '(' (content=STRING | QualifiedName)  
+	(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 
 
 //	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
 //	x (',' x)*

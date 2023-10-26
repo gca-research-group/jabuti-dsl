@@ -4,7 +4,7 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryTermOperator
+public class BinaryTermOperatorImpl extends ExpressionTermImpl implements BinaryTermOperator
 {
 	/**
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
@@ -60,7 +60,7 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * @generated
 	 * @ordered
 	 */
-	protected ConditionTerm left;
+	protected ExpressionTerm left;
 
 	/**
 	 * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -70,7 +70,7 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * @generated
 	 * @ordered
 	 */
-	protected ConditionTerm right;
+	protected ExpressionTerm right;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -124,7 +124,7 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * @generated
 	 */
 	@Override
-	public ConditionTerm getLeft()
+	public ExpressionTerm getLeft()
 	{
 		return left;
 	}
@@ -134,9 +134,9 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetLeft(ConditionTerm newLeft, NotificationChain msgs)
+	public NotificationChain basicSetLeft(ExpressionTerm newLeft, NotificationChain msgs)
 	{
-		ConditionTerm oldLeft = left;
+		ExpressionTerm oldLeft = left;
 		left = newLeft;
 		if (eNotificationRequired())
 		{
@@ -152,7 +152,7 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * @generated
 	 */
 	@Override
-	public void setLeft(ConditionTerm newLeft)
+	public void setLeft(ExpressionTerm newLeft)
 	{
 		if (newLeft != left)
 		{
@@ -174,7 +174,7 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * @generated
 	 */
 	@Override
-	public ConditionTerm getRight()
+	public ExpressionTerm getRight()
 	{
 		return right;
 	}
@@ -184,9 +184,9 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetRight(ConditionTerm newRight, NotificationChain msgs)
+	public NotificationChain basicSetRight(ExpressionTerm newRight, NotificationChain msgs)
 	{
-		ConditionTerm oldRight = right;
+		ExpressionTerm oldRight = right;
 		right = newRight;
 		if (eNotificationRequired())
 		{
@@ -202,7 +202,7 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 	 * @generated
 	 */
 	@Override
-	public void setRight(ConditionTerm newRight)
+	public void setRight(ExpressionTerm newRight)
 	{
 		if (newRight != right)
 		{
@@ -270,10 +270,10 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 				setSymbol((String)newValue);
 				return;
 			case JabutiPackage.BINARY_TERM_OPERATOR__LEFT:
-				setLeft((ConditionTerm)newValue);
+				setLeft((ExpressionTerm)newValue);
 				return;
 			case JabutiPackage.BINARY_TERM_OPERATOR__RIGHT:
-				setRight((ConditionTerm)newValue);
+				setRight((ExpressionTerm)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -293,10 +293,10 @@ public class BinaryTermOperatorImpl extends ConditionTermImpl implements BinaryT
 				setSymbol(SYMBOL_EDEFAULT);
 				return;
 			case JabutiPackage.BINARY_TERM_OPERATOR__LEFT:
-				setLeft((ConditionTerm)null);
+				setLeft((ExpressionTerm)null);
 				return;
 			case JabutiPackage.BINARY_TERM_OPERATOR__RIGHT:
-				setRight((ConditionTerm)null);
+				setRight((ExpressionTerm)null);
 				return;
 		}
 		super.eUnset(featureID);

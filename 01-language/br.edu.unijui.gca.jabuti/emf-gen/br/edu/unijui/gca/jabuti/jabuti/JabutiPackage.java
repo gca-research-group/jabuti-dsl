@@ -225,22 +225,13 @@ public interface JabutiPackage extends EPackage
 	int CLAUSE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLAUSE__ROLEPLAYER = 1;
-
-	/**
 	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__EVENT_LOG = 2;
+	int CLAUSE__EVENT_LOG = 1;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -249,16 +240,25 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__OPERATION = 3;
+	int CLAUSE__OPERATION = 2;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Terms</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__CONDITION = 4;
+	int CLAUSE__TERMS = 3;
+
+	/**
+	 * The feature id for the '<em><b>Role Player</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__ROLE_PLAYER = 4;
 
 	/**
 	 * The number of structural features of the '<em>Clause</em>' class.
@@ -373,15 +373,6 @@ public interface JabutiPackage extends EPackage
 	int RIGHT__NAME = CLAUSE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RIGHT__ROLEPLAYER = CLAUSE__ROLEPLAYER;
-
-	/**
 	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -400,13 +391,22 @@ public interface JabutiPackage extends EPackage
 	int RIGHT__OPERATION = CLAUSE__OPERATION;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Terms</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIGHT__CONDITION = CLAUSE__CONDITION;
+	int RIGHT__TERMS = CLAUSE__TERMS;
+
+	/**
+	 * The feature id for the '<em><b>Role Player</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT__ROLE_PLAYER = CLAUSE__ROLE_PLAYER;
 
 	/**
 	 * The number of structural features of the '<em>Right</em>' class.
@@ -437,15 +437,6 @@ public interface JabutiPackage extends EPackage
 	int OBLIGATION__NAME = CLAUSE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OBLIGATION__ROLEPLAYER = CLAUSE__ROLEPLAYER;
-
-	/**
 	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -464,13 +455,22 @@ public interface JabutiPackage extends EPackage
 	int OBLIGATION__OPERATION = CLAUSE__OPERATION;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Terms</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBLIGATION__CONDITION = CLAUSE__CONDITION;
+	int OBLIGATION__TERMS = CLAUSE__TERMS;
+
+	/**
+	 * The feature id for the '<em><b>Role Player</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION__ROLE_PLAYER = CLAUSE__ROLE_PLAYER;
 
 	/**
 	 * The number of structural features of the '<em>Obligation</em>' class.
@@ -501,15 +501,6 @@ public interface JabutiPackage extends EPackage
 	int PROHIBITION__NAME = CLAUSE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Roleplayer</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PROHIBITION__ROLEPLAYER = CLAUSE__ROLEPLAYER;
-
-	/**
 	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -528,13 +519,22 @@ public interface JabutiPackage extends EPackage
 	int PROHIBITION__OPERATION = CLAUSE__OPERATION;
 
 	/**
-	 * The feature id for the '<em><b>Condition</b></em>' containment reference.
+	 * The feature id for the '<em><b>Terms</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROHIBITION__CONDITION = CLAUSE__CONDITION;
+	int PROHIBITION__TERMS = CLAUSE__TERMS;
+
+	/**
+	 * The feature id for the '<em><b>Role Player</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION__ROLE_PLAYER = CLAUSE__ROLE_PLAYER;
 
 	/**
 	 * The number of structural features of the '<em>Prohibition</em>' class.
@@ -918,23 +918,23 @@ public interface JabutiPackage extends EPackage
 	int ON_SUCCESS_FEATURE_COUNT = EVENT_LOG_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionTermImpl <em>Condition Term</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionTermImpl <em>Expression Term</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionTermImpl
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionTerm()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionTermImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getExpressionTerm()
 	 * @generated
 	 */
-	int CONDITION_TERM = 22;
+	int EXPRESSION_TERM = 22;
 
 	/**
-	 * The number of structural features of the '<em>Condition Term</em>' class.
+	 * The number of structural features of the '<em>Expression Term</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_TERM_FEATURE_COUNT = 0;
+	int EXPRESSION_TERM_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.LogicalOperatorImpl <em>Logical Operator</em>}' class.
@@ -975,22 +975,13 @@ public interface JabutiPackage extends EPackage
 	int CONDITIONAL_EXPRESSION = 24;
 
 	/**
-	 * The feature id for the '<em><b>Condition Term</b></em>' containment reference.
+	 * The feature id for the '<em><b>Expression Term</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__CONDITION_TERM = 0;
-
-	/**
-	 * The feature id for the '<em><b>Condition Param</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_EXPRESSION__CONDITION_PARAM = 1;
+	int CONDITIONAL_EXPRESSION__EXPRESSION_TERM = 0;
 
 	/**
 	 * The feature id for the '<em><b>After Symbol</b></em>' containment reference.
@@ -999,7 +990,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__AFTER_SYMBOL = 2;
+	int CONDITIONAL_EXPRESSION__AFTER_SYMBOL = 1;
 
 	/**
 	 * The feature id for the '<em><b>Before Symbol</b></em>' containment reference.
@@ -1008,7 +999,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__BEFORE_SYMBOL = 3;
+	int CONDITIONAL_EXPRESSION__BEFORE_SYMBOL = 2;
 
 	/**
 	 * The feature id for the '<em><b>Comparison Operator</b></em>' containment reference list.
@@ -1017,7 +1008,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = 4;
+	int CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Logical Operator</b></em>' containment reference list.
@@ -1026,7 +1017,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = 5;
+	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = 4;
 
 	/**
 	 * The number of structural features of the '<em>Conditional Expression</em>' class.
@@ -1035,17 +1026,17 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = 6;
+	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = 5;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl <em>Condition</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermsImpl <em>Terms</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCondition()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TermsImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTerms()
 	 * @generated
 	 */
-	int CONDITION = 25;
+	int TERMS = 25;
 
 	/**
 	 * The feature id for the '<em><b>Conditional Expression</b></em>' containment reference list.
@@ -1054,53 +1045,53 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__CONDITIONAL_EXPRESSION = 0;
+	int TERMS__CONDITIONAL_EXPRESSION = 0;
 
 	/**
-	 * The feature id for the '<em><b>Condition Term</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Expression Term</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION__CONDITION_TERM = 1;
+	int TERMS__EXPRESSION_TERM = 1;
 
 	/**
-	 * The number of structural features of the '<em>Condition</em>' class.
+	 * The number of structural features of the '<em>Terms</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITION_FEATURE_COUNT = 2;
+	int TERMS_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeTermImpl <em>Composite Term</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCompositeCondition()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.CompositeTermImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCompositeTerm()
 	 * @generated
 	 */
-	int COMPOSITE_CONDITION = 26;
+	int COMPOSITE_TERM = 26;
 
 	/**
-	 * The feature id for the '<em><b>Condition Term</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSITE_CONDITION__CONDITION_TERM = CONDITION_TERM_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Composite Condition</em>' class.
+	 * The feature id for the '<em><b>Expression Term</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSITE_CONDITION_FEATURE_COUNT = CONDITION_TERM_FEATURE_COUNT + 1;
+	int COMPOSITE_TERM__EXPRESSION_TERM = EXPRESSION_TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Composite Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSITE_TERM_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl <em>Term</em>}' class.
@@ -1119,7 +1110,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int TERM_FEATURE_COUNT = CONDITION_TERM_FEATURE_COUNT + 0;
+	int TERM_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl <em>Unary Term Operator</em>}' class.
@@ -1138,16 +1129,16 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM_OPERATOR__SYMBOL = CONDITION_TERM_FEATURE_COUNT + 0;
+	int UNARY_TERM_OPERATOR__SYMBOL = EXPRESSION_TERM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Condition Term</b></em>' containment reference.
+	 * The feature id for the '<em><b>Expression Term</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM_OPERATOR__CONDITION_TERM = CONDITION_TERM_FEATURE_COUNT + 1;
+	int UNARY_TERM_OPERATOR__EXPRESSION_TERM = EXPRESSION_TERM_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Unary Term Operator</em>' class.
@@ -1156,7 +1147,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM_OPERATOR_FEATURE_COUNT = CONDITION_TERM_FEATURE_COUNT + 2;
+	int UNARY_TERM_OPERATOR_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.BinaryTermOperatorImpl <em>Binary Term Operator</em>}' class.
@@ -1175,7 +1166,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_TERM_OPERATOR__SYMBOL = CONDITION_TERM_FEATURE_COUNT + 0;
+	int BINARY_TERM_OPERATOR__SYMBOL = EXPRESSION_TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1184,7 +1175,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_TERM_OPERATOR__LEFT = CONDITION_TERM_FEATURE_COUNT + 1;
+	int BINARY_TERM_OPERATOR__LEFT = EXPRESSION_TERM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Right</b></em>' containment reference.
@@ -1193,7 +1184,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_TERM_OPERATOR__RIGHT = CONDITION_TERM_FEATURE_COUNT + 2;
+	int BINARY_TERM_OPERATOR__RIGHT = EXPRESSION_TERM_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Binary Term Operator</em>' class.
@@ -1202,7 +1193,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int BINARY_TERM_OPERATOR_FEATURE_COUNT = CONDITION_TERM_FEATURE_COUNT + 3;
+	int BINARY_TERM_OPERATOR_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl <em>Session Interval</em>}' class.
@@ -1251,22 +1242,13 @@ public interface JabutiPackage extends EPackage
 	int SESSION_INTERVAL__MESSAGE_CONTENT = TERM_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Variable Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SESSION_INTERVAL__VARIABLE_VALUE = TERM_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Session Interval</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 5;
+	int SESSION_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
@@ -1353,13 +1335,13 @@ public interface JabutiPackage extends EPackage
 	int TIMEOUT = 33;
 
 	/**
-	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Seconds</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TIMEOUT__EXPRESSION = TERM_FEATURE_COUNT + 0;
+	int TIMEOUT__SECONDS = TERM_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Timeout</em>' class.
@@ -1454,22 +1436,13 @@ public interface JabutiPackage extends EPackage
 	int MESSAGE_CONTENT__EXPRESSION = TERM_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Variable Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_CONTENT__VARIABLE_VALUE = TERM_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Message Content</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT_FEATURE_COUNT = TERM_FEATURE_COUNT + 5;
+	int MESSAGE_CONTENT_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.
@@ -1702,17 +1675,6 @@ public interface JabutiPackage extends EPackage
 	EAttribute getClause_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRoleplayer <em>Roleplayer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Roleplayer</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getRoleplayer()
-	 * @see #getClause()
-	 * @generated
-	 */
-	EAttribute getClause_Roleplayer();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog <em>Event Log</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1735,15 +1697,26 @@ public interface JabutiPackage extends EPackage
 	EAttribute getClause_Operation();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition <em>Condition</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getTerms <em>Terms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition()
+	 * @return the meta object for the containment reference '<em>Terms</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getTerms()
 	 * @see #getClause()
 	 * @generated
 	 */
-	EReference getClause_Condition();
+	EReference getClause_Terms();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRolePlayer <em>Role Player</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Role Player</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getRolePlayer()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EAttribute getClause_RolePlayer();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Party <em>Party</em>}'.
@@ -2091,14 +2064,14 @@ public interface JabutiPackage extends EPackage
 	EClass getOnSuccess();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionTerm <em>Condition Term</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Condition Term</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionTerm
+	 * @return the meta object for class '<em>Expression Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm
 	 * @generated
 	 */
-	EClass getConditionTerm();
+	EClass getExpressionTerm();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperator <em>Logical Operator</em>}'.
@@ -2132,26 +2105,15 @@ public interface JabutiPackage extends EPackage
 	EClass getConditionalExpression();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionTerm <em>Condition Term</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition Term</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionTerm()
+	 * @return the meta object for the containment reference '<em>Expression Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm()
 	 * @see #getConditionalExpression()
 	 * @generated
 	 */
-	EReference getConditionalExpression_ConditionTerm();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Condition Param</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam()
-	 * @see #getConditionalExpression()
-	 * @generated
-	 */
-	EReference getConditionalExpression_ConditionParam();
+	EReference getConditionalExpression_ExpressionTerm();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}'.
@@ -2198,57 +2160,57 @@ public interface JabutiPackage extends EPackage
 	EReference getConditionalExpression_LogicalOperator();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Condition <em>Condition</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Terms <em>Terms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Condition</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Condition
+	 * @return the meta object for class '<em>Terms</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Terms
 	 * @generated
 	 */
-	EClass getCondition();
+	EClass getTerms();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Condition#getConditionalExpression <em>Conditional Expression</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Terms#getConditionalExpression <em>Conditional Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Conditional Expression</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Condition#getConditionalExpression()
-	 * @see #getCondition()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Terms#getConditionalExpression()
+	 * @see #getTerms()
 	 * @generated
 	 */
-	EReference getCondition_ConditionalExpression();
+	EReference getTerms_ConditionalExpression();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Condition#getConditionTerm <em>Condition Term</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Terms#getExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Condition Term</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Condition#getConditionTerm()
-	 * @see #getCondition()
+	 * @return the meta object for the containment reference list '<em>Expression Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Terms#getExpressionTerm()
+	 * @see #getTerms()
 	 * @generated
 	 */
-	EReference getCondition_ConditionTerm();
+	EReference getTerms_ExpressionTerm();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition <em>Composite Condition</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeTerm <em>Composite Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Composite Condition</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeCondition
+	 * @return the meta object for class '<em>Composite Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeTerm
 	 * @generated
 	 */
-	EClass getCompositeCondition();
+	EClass getCompositeTerm();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getConditionTerm <em>Condition Term</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeTerm#getExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Condition Term</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeCondition#getConditionTerm()
-	 * @see #getCompositeCondition()
+	 * @return the meta object for the containment reference list '<em>Expression Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeTerm#getExpressionTerm()
+	 * @see #getCompositeTerm()
 	 * @generated
 	 */
-	EReference getCompositeCondition_ConditionTerm();
+	EReference getCompositeTerm_ExpressionTerm();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Term <em>Term</em>}'.
@@ -2282,15 +2244,15 @@ public interface JabutiPackage extends EPackage
 	EAttribute getUnaryTermOperator_Symbol();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getConditionTerm <em>Condition Term</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Condition Term</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getConditionTerm()
+	 * @return the meta object for the containment reference '<em>Expression Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm()
 	 * @see #getUnaryTermOperator()
 	 * @generated
 	 */
-	EReference getUnaryTermOperator_ConditionTerm();
+	EReference getUnaryTermOperator_ExpressionTerm();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator <em>Binary Term Operator</em>}'.
@@ -2390,17 +2352,6 @@ public interface JabutiPackage extends EPackage
 	EReference getSessionInterval_MessageContent();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariableValue <em>Variable Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Variable Value</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariableValue()
-	 * @see #getSessionInterval()
-	 * @generated
-	 */
-	EReference getSessionInterval_VariableValue();
-
-	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval <em>Week Days Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2475,15 +2426,15 @@ public interface JabutiPackage extends EPackage
 	EClass getTimeout();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getExpression <em>Expression</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Timeout#getSeconds <em>Seconds</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Expression</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Timeout#getExpression()
+	 * @return the meta object for the attribute '<em>Seconds</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Timeout#getSeconds()
 	 * @see #getTimeout()
 	 * @generated
 	 */
-	EReference getTimeout_Expression();
+	EAttribute getTimeout_Seconds();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation <em>Max Number Of Operation</em>}'.
@@ -2570,17 +2521,6 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EReference getMessageContent_Expression();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Variable Value</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue()
-	 * @see #getMessageContent()
-	 * @generated
-	 */
-	EReference getMessageContent_VariableValue();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator <em>Comparison Operator</em>}'.
@@ -2795,14 +2735,6 @@ public interface JabutiPackage extends EPackage
 		EAttribute CLAUSE__NAME = eINSTANCE.getClause_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Roleplayer</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CLAUSE__ROLEPLAYER = eINSTANCE.getClause_Roleplayer();
-
-		/**
 		 * The meta object literal for the '<em><b>Event Log</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2819,12 +2751,20 @@ public interface JabutiPackage extends EPackage
 		EAttribute CLAUSE__OPERATION = eINSTANCE.getClause_Operation();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Terms</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CLAUSE__CONDITION = eINSTANCE.getClause_Condition();
+		EReference CLAUSE__TERMS = eINSTANCE.getClause_Terms();
+
+		/**
+		 * The meta object literal for the '<em><b>Role Player</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CLAUSE__ROLE_PLAYER = eINSTANCE.getClause_RolePlayer();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl <em>Party</em>}' class.
@@ -3127,14 +3067,14 @@ public interface JabutiPackage extends EPackage
 		EClass ON_SUCCESS = eINSTANCE.getOnSuccess();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionTermImpl <em>Condition Term</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionTermImpl <em>Expression Term</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionTermImpl
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionTerm()
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ExpressionTermImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getExpressionTerm()
 		 * @generated
 		 */
-		EClass CONDITION_TERM = eINSTANCE.getConditionTerm();
+		EClass EXPRESSION_TERM = eINSTANCE.getExpressionTerm();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.LogicalOperatorImpl <em>Logical Operator</em>}' class.
@@ -3165,20 +3105,12 @@ public interface JabutiPackage extends EPackage
 		EClass CONDITIONAL_EXPRESSION = eINSTANCE.getConditionalExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition Term</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expression Term</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL_EXPRESSION__CONDITION_TERM = eINSTANCE.getConditionalExpression_ConditionTerm();
-
-		/**
-		 * The meta object literal for the '<em><b>Condition Param</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL_EXPRESSION__CONDITION_PARAM = eINSTANCE.getConditionalExpression_ConditionParam();
+		EReference CONDITIONAL_EXPRESSION__EXPRESSION_TERM = eINSTANCE.getConditionalExpression_ExpressionTerm();
 
 		/**
 		 * The meta object literal for the '<em><b>After Symbol</b></em>' containment reference feature.
@@ -3213,14 +3145,14 @@ public interface JabutiPackage extends EPackage
 		EReference CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = eINSTANCE.getConditionalExpression_LogicalOperator();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl <em>Condition</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermsImpl <em>Terms</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionImpl
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCondition()
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TermsImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTerms()
 		 * @generated
 		 */
-		EClass CONDITION = eINSTANCE.getCondition();
+		EClass TERMS = eINSTANCE.getTerms();
 
 		/**
 		 * The meta object literal for the '<em><b>Conditional Expression</b></em>' containment reference list feature.
@@ -3228,33 +3160,33 @@ public interface JabutiPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITION__CONDITIONAL_EXPRESSION = eINSTANCE.getCondition_ConditionalExpression();
+		EReference TERMS__CONDITIONAL_EXPRESSION = eINSTANCE.getTerms_ConditionalExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition Term</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Expression Term</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITION__CONDITION_TERM = eINSTANCE.getCondition_ConditionTerm();
+		EReference TERMS__EXPRESSION_TERM = eINSTANCE.getTerms_ExpressionTerm();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl <em>Composite Condition</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeTermImpl <em>Composite Term</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCompositeCondition()
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.CompositeTermImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getCompositeTerm()
 		 * @generated
 		 */
-		EClass COMPOSITE_CONDITION = eINSTANCE.getCompositeCondition();
+		EClass COMPOSITE_TERM = eINSTANCE.getCompositeTerm();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition Term</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Expression Term</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPOSITE_CONDITION__CONDITION_TERM = eINSTANCE.getCompositeCondition_ConditionTerm();
+		EReference COMPOSITE_TERM__EXPRESSION_TERM = eINSTANCE.getCompositeTerm_ExpressionTerm();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl <em>Term</em>}' class.
@@ -3285,12 +3217,12 @@ public interface JabutiPackage extends EPackage
 		EAttribute UNARY_TERM_OPERATOR__SYMBOL = eINSTANCE.getUnaryTermOperator_Symbol();
 
 		/**
-		 * The meta object literal for the '<em><b>Condition Term</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Expression Term</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_TERM_OPERATOR__CONDITION_TERM = eINSTANCE.getUnaryTermOperator_ConditionTerm();
+		EReference UNARY_TERM_OPERATOR__EXPRESSION_TERM = eINSTANCE.getUnaryTermOperator_ExpressionTerm();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.BinaryTermOperatorImpl <em>Binary Term Operator</em>}' class.
@@ -3369,14 +3301,6 @@ public interface JabutiPackage extends EPackage
 		EReference SESSION_INTERVAL__MESSAGE_CONTENT = eINSTANCE.getSessionInterval_MessageContent();
 
 		/**
-		 * The meta object literal for the '<em><b>Variable Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SESSION_INTERVAL__VARIABLE_VALUE = eINSTANCE.getSessionInterval_VariableValue();
-
-		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3439,12 +3363,12 @@ public interface JabutiPackage extends EPackage
 		EClass TIMEOUT = eINSTANCE.getTimeout();
 
 		/**
-		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Seconds</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference TIMEOUT__EXPRESSION = eINSTANCE.getTimeout_Expression();
+		EAttribute TIMEOUT__SECONDS = eINSTANCE.getTimeout_Seconds();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl <em>Max Number Of Operation</em>}' class.
@@ -3513,14 +3437,6 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EReference MESSAGE_CONTENT__EXPRESSION = eINSTANCE.getMessageContent_Expression();
-
-		/**
-		 * The meta object literal for the '<em><b>Variable Value</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MESSAGE_CONTENT__VARIABLE_VALUE = eINSTANCE.getMessageContent_VariableValue();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.

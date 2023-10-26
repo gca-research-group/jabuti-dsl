@@ -17,7 +17,6 @@ package br.edu.unijui.gca.jabuti.jabuti;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent()
@@ -116,27 +115,5 @@ public interface MessageContent extends Term
 	 * @generated
 	 */
 	void setExpression(Expression value);
-
-	/**
-	 * Returns the value of the '<em><b>Variable Value</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variable Value</em>' containment reference.
-	 * @see #setVariableValue(VariableValue)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_VariableValue()
-	 * @model containment="true"
-	 * @generated
-	 */
-	VariableValue getVariableValue();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariableValue <em>Variable Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Variable Value</em>' containment reference.
-	 * @see #getVariableValue()
-	 * @generated
-	 */
-	void setVariableValue(VariableValue value);
 
 } // MessageContent

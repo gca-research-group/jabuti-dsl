@@ -4,11 +4,11 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
-import br.edu.unijui.gca.jabuti.jabuti.Condition;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.Operation;
 import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
+import br.edu.unijui.gca.jabuti.jabuti.Terms;
 
 import java.util.Collection;
 
@@ -35,10 +35,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getRoleplayer <em>Roleplayer</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getEventLog <em>Event Log</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getOperation <em>Operation</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getCondition <em>Condition</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getTerms <em>Terms</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getRolePlayer <em>Role Player</em>}</li>
  * </ul>
  *
  * @generated
@@ -64,26 +64,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getRoleplayer() <em>Roleplayer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleplayer()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final RolePlayer ROLEPLAYER_EDEFAULT = RolePlayer.PROCESS;
-
-	/**
-	 * The cached value of the '{@link #getRoleplayer() <em>Roleplayer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getRoleplayer()
-	 * @generated
-	 * @ordered
-	 */
-	protected RolePlayer roleplayer = ROLEPLAYER_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getEventLog() <em>Event Log</em>}' containment reference list.
@@ -116,14 +96,34 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	protected Operation operation = OPERATION_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getCondition() <em>Condition</em>}' containment reference.
+	 * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getCondition()
+	 * @see #getTerms()
 	 * @generated
 	 * @ordered
 	 */
-	protected Condition condition;
+	protected Terms terms;
+
+	/**
+	 * The default value of the '{@link #getRolePlayer() <em>Role Player</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRolePlayer()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final RolePlayer ROLE_PLAYER_EDEFAULT = RolePlayer.PROCESS;
+
+	/**
+	 * The cached value of the '{@link #getRolePlayer() <em>Role Player</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRolePlayer()
+	 * @generated
+	 * @ordered
+	 */
+	protected RolePlayer rolePlayer = ROLE_PLAYER_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,31 +177,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public RolePlayer getRoleplayer()
-	{
-		return roleplayer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setRoleplayer(RolePlayer newRoleplayer)
-	{
-		RolePlayer oldRoleplayer = roleplayer;
-		roleplayer = newRoleplayer == null ? ROLEPLAYER_EDEFAULT : newRoleplayer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__ROLEPLAYER, oldRoleplayer, roleplayer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EList<EventLog> getEventLog()
 	{
 		if (eventLog == null)
@@ -242,9 +217,9 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public Condition getCondition()
+	public Terms getTerms()
 	{
-		return condition;
+		return terms;
 	}
 
 	/**
@@ -252,13 +227,13 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondition(Condition newCondition, NotificationChain msgs)
+	public NotificationChain basicSetTerms(Terms newTerms, NotificationChain msgs)
 	{
-		Condition oldCondition = condition;
-		condition = newCondition;
+		Terms oldTerms = terms;
+		terms = newTerms;
 		if (eNotificationRequired())
 		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__CONDITION, oldCondition, newCondition);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__TERMS, oldTerms, newTerms);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -270,20 +245,45 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public void setCondition(Condition newCondition)
+	public void setTerms(Terms newTerms)
 	{
-		if (newCondition != condition)
+		if (newTerms != terms)
 		{
 			NotificationChain msgs = null;
-			if (condition != null)
-				msgs = ((InternalEObject)condition).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__CONDITION, null, msgs);
-			if (newCondition != null)
-				msgs = ((InternalEObject)newCondition).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__CONDITION, null, msgs);
-			msgs = basicSetCondition(newCondition, msgs);
+			if (terms != null)
+				msgs = ((InternalEObject)terms).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__TERMS, null, msgs);
+			if (newTerms != null)
+				msgs = ((InternalEObject)newTerms).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__TERMS, null, msgs);
+			msgs = basicSetTerms(newTerms, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__CONDITION, newCondition, newCondition));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__TERMS, newTerms, newTerms));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public RolePlayer getRolePlayer()
+	{
+		return rolePlayer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setRolePlayer(RolePlayer newRolePlayer)
+	{
+		RolePlayer oldRolePlayer = rolePlayer;
+		rolePlayer = newRolePlayer == null ? ROLE_PLAYER_EDEFAULT : newRolePlayer;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__ROLE_PLAYER, oldRolePlayer, rolePlayer));
 	}
 
 	/**
@@ -298,8 +298,8 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		{
 			case JabutiPackage.CLAUSE__EVENT_LOG:
 				return ((InternalEList<?>)getEventLog()).basicRemove(otherEnd, msgs);
-			case JabutiPackage.CLAUSE__CONDITION:
-				return basicSetCondition(null, msgs);
+			case JabutiPackage.CLAUSE__TERMS:
+				return basicSetTerms(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -316,14 +316,14 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		{
 			case JabutiPackage.CLAUSE__NAME:
 				return getName();
-			case JabutiPackage.CLAUSE__ROLEPLAYER:
-				return getRoleplayer();
 			case JabutiPackage.CLAUSE__EVENT_LOG:
 				return getEventLog();
 			case JabutiPackage.CLAUSE__OPERATION:
 				return getOperation();
-			case JabutiPackage.CLAUSE__CONDITION:
-				return getCondition();
+			case JabutiPackage.CLAUSE__TERMS:
+				return getTerms();
+			case JabutiPackage.CLAUSE__ROLE_PLAYER:
+				return getRolePlayer();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -342,9 +342,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case JabutiPackage.CLAUSE__NAME:
 				setName((String)newValue);
 				return;
-			case JabutiPackage.CLAUSE__ROLEPLAYER:
-				setRoleplayer((RolePlayer)newValue);
-				return;
 			case JabutiPackage.CLAUSE__EVENT_LOG:
 				getEventLog().clear();
 				getEventLog().addAll((Collection<? extends EventLog>)newValue);
@@ -352,8 +349,11 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case JabutiPackage.CLAUSE__OPERATION:
 				setOperation((Operation)newValue);
 				return;
-			case JabutiPackage.CLAUSE__CONDITION:
-				setCondition((Condition)newValue);
+			case JabutiPackage.CLAUSE__TERMS:
+				setTerms((Terms)newValue);
+				return;
+			case JabutiPackage.CLAUSE__ROLE_PLAYER:
+				setRolePlayer((RolePlayer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -372,17 +372,17 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case JabutiPackage.CLAUSE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case JabutiPackage.CLAUSE__ROLEPLAYER:
-				setRoleplayer(ROLEPLAYER_EDEFAULT);
-				return;
 			case JabutiPackage.CLAUSE__EVENT_LOG:
 				getEventLog().clear();
 				return;
 			case JabutiPackage.CLAUSE__OPERATION:
 				setOperation(OPERATION_EDEFAULT);
 				return;
-			case JabutiPackage.CLAUSE__CONDITION:
-				setCondition((Condition)null);
+			case JabutiPackage.CLAUSE__TERMS:
+				setTerms((Terms)null);
+				return;
+			case JabutiPackage.CLAUSE__ROLE_PLAYER:
+				setRolePlayer(ROLE_PLAYER_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -400,14 +400,14 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		{
 			case JabutiPackage.CLAUSE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case JabutiPackage.CLAUSE__ROLEPLAYER:
-				return roleplayer != ROLEPLAYER_EDEFAULT;
 			case JabutiPackage.CLAUSE__EVENT_LOG:
 				return eventLog != null && !eventLog.isEmpty();
 			case JabutiPackage.CLAUSE__OPERATION:
 				return operation != OPERATION_EDEFAULT;
-			case JabutiPackage.CLAUSE__CONDITION:
-				return condition != null;
+			case JabutiPackage.CLAUSE__TERMS:
+				return terms != null;
+			case JabutiPackage.CLAUSE__ROLE_PLAYER:
+				return rolePlayer != ROLE_PLAYER_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -425,10 +425,10 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (name: ");
 		result.append(name);
-		result.append(", roleplayer: ");
-		result.append(roleplayer);
 		result.append(", operation: ");
 		result.append(operation);
+		result.append(", rolePlayer: ");
+		result.append(rolePlayer);
 		result.append(')');
 		return result.toString();
 	}

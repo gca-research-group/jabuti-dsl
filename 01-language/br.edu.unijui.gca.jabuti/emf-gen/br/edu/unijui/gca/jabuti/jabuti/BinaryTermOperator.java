@@ -22,7 +22,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
  * @model
  * @generated
  */
-public interface BinaryTermOperator extends ConditionTerm
+public interface BinaryTermOperator extends ExpressionTerm
 {
 	/**
 	 * Returns the value of the '<em><b>Symbol</b></em>' attribute.
@@ -51,12 +51,12 @@ public interface BinaryTermOperator extends ConditionTerm
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Left</em>' containment reference.
-	 * @see #setLeft(ConditionTerm)
+	 * @see #setLeft(ExpressionTerm)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getBinaryTermOperator_Left()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ConditionTerm getLeft();
+	ExpressionTerm getLeft();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator#getLeft <em>Left</em>}' containment reference.
@@ -66,19 +66,19 @@ public interface BinaryTermOperator extends ConditionTerm
 	 * @see #getLeft()
 	 * @generated
 	 */
-	void setLeft(ConditionTerm value);
+	void setLeft(ExpressionTerm value);
 
 	/**
 	 * Returns the value of the '<em><b>Right</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Right</em>' containment reference.
-	 * @see #setRight(ConditionTerm)
+	 * @see #setRight(ExpressionTerm)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getBinaryTermOperator_Right()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ConditionTerm getRight();
+	ExpressionTerm getRight();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator#getRight <em>Right</em>}' containment reference.
@@ -88,6 +88,6 @@ public interface BinaryTermOperator extends ConditionTerm
 	 * @see #getRight()
 	 * @generated
 	 */
-	void setRight(ConditionTerm value);
+	void setRight(ExpressionTerm value);
 
 } // BinaryTermOperator

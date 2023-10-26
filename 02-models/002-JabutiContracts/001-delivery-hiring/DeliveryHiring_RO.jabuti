@@ -25,16 +25,17 @@ contract DeliveryHiring_RO {
 				MessageContent(numberOfAddresses == 1), 
 				MessageContent(weight == 100), 
 				MessageContent(productValue < 20000) 			
-			}			
+			}
+						
 			onBreach(log("Request operation did not meet all requirements"))			
 		}
 		obligation responseOrder {
 			rolePlayer = application
-			operation = response
+			operation = response			
 			terms {
 				Timeout(20),
 				MessageContent('//budget/deliveryTime/text()' < 15)	 		
-			}
+		}
 			onBreach(log("response performed outside of time limit or delivery time too long"))			
 		}
 	}		

@@ -16,11 +16,12 @@ contract RequestWorks{
 			rolePlayer = process
 			operation = request
 			terms {
+				
 				WeekDaysInterval(Monday to Sunday),
 				TimeInterval ("00:00:00" to "23:59:59"), // 0, 86399
 				MaxNumberOfOperation (24 per Second)
 			}
-			onBreach (log("Conditions do not meet"))
+			onBreach (log("Conditions do not meet"))			
 		}
 		
 		obligation responseWorks {

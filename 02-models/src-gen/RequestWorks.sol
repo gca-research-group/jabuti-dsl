@@ -7,10 +7,10 @@ contract RequestWorks is EAI_Domain{
 	
 	Party Orcid;
 	Party Integration Process;
-	
 	WeekDaysInterval public weekDaysInterval = WeekDaysInterval(MONDAY, SUNDAY);
 	TimeInterval public timeInterval = TimeInterval(00:00:00, 23:59:59);
 	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(24, SECOND, 0, 0);
+	
 	
 	event requestAllWorksevent(string _logMessage);
 	

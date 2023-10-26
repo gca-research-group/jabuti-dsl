@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class TermImpl extends ConditionTermImpl implements Term
+public class TermImpl extends ExpressionTermImpl implements Term
 {
 	/**
 	 * <!-- begin-user-doc -->

@@ -9,7 +9,7 @@ contract FlightFacade {
 		application =  "Flight Facade"
 		process =  "Integration Process"	
 	}
-		
+
 	clauses{	
 		right requestRight{
 			// Setting days and times to requesting flights	

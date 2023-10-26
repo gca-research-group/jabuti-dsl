@@ -8,13 +8,12 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
-import br.edu.unijui.gca.jabuti.jabuti.Condition;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
+import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
@@ -33,6 +32,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
+import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
@@ -281,10 +281,10 @@ public class JabutiSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case JabutiPackage.CONDITION_TERM:
+			case JabutiPackage.EXPRESSION_TERM:
 			{
-				ConditionTerm conditionTerm = (ConditionTerm)theEObject;
-				T result = caseConditionTerm(conditionTerm);
+				ExpressionTerm expressionTerm = (ExpressionTerm)theEObject;
+				T result = caseExpressionTerm(expressionTerm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -302,18 +302,18 @@ public class JabutiSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case JabutiPackage.CONDITION:
+			case JabutiPackage.TERMS:
 			{
-				Condition condition = (Condition)theEObject;
-				T result = caseCondition(condition);
+				Terms terms = (Terms)theEObject;
+				T result = caseTerms(terms);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case JabutiPackage.COMPOSITE_CONDITION:
+			case JabutiPackage.COMPOSITE_TERM:
 			{
-				CompositeCondition compositeCondition = (CompositeCondition)theEObject;
-				T result = caseCompositeCondition(compositeCondition);
-				if (result == null) result = caseConditionTerm(compositeCondition);
+				CompositeTerm compositeTerm = (CompositeTerm)theEObject;
+				T result = caseCompositeTerm(compositeTerm);
+				if (result == null) result = caseExpressionTerm(compositeTerm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -321,7 +321,7 @@ public class JabutiSwitch<T> extends Switch<T>
 			{
 				Term term = (Term)theEObject;
 				T result = caseTerm(term);
-				if (result == null) result = caseConditionTerm(term);
+				if (result == null) result = caseExpressionTerm(term);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -329,7 +329,7 @@ public class JabutiSwitch<T> extends Switch<T>
 			{
 				UnaryTermOperator unaryTermOperator = (UnaryTermOperator)theEObject;
 				T result = caseUnaryTermOperator(unaryTermOperator);
-				if (result == null) result = caseConditionTerm(unaryTermOperator);
+				if (result == null) result = caseExpressionTerm(unaryTermOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -337,7 +337,7 @@ public class JabutiSwitch<T> extends Switch<T>
 			{
 				BinaryTermOperator binaryTermOperator = (BinaryTermOperator)theEObject;
 				T result = caseBinaryTermOperator(binaryTermOperator);
-				if (result == null) result = caseConditionTerm(binaryTermOperator);
+				if (result == null) result = caseExpressionTerm(binaryTermOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -346,7 +346,7 @@ public class JabutiSwitch<T> extends Switch<T>
 				SessionInterval sessionInterval = (SessionInterval)theEObject;
 				T result = caseSessionInterval(sessionInterval);
 				if (result == null) result = caseTerm(sessionInterval);
-				if (result == null) result = caseConditionTerm(sessionInterval);
+				if (result == null) result = caseExpressionTerm(sessionInterval);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -355,7 +355,7 @@ public class JabutiSwitch<T> extends Switch<T>
 				WeekDaysInterval weekDaysInterval = (WeekDaysInterval)theEObject;
 				T result = caseWeekDaysInterval(weekDaysInterval);
 				if (result == null) result = caseTerm(weekDaysInterval);
-				if (result == null) result = caseConditionTerm(weekDaysInterval);
+				if (result == null) result = caseExpressionTerm(weekDaysInterval);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -364,7 +364,7 @@ public class JabutiSwitch<T> extends Switch<T>
 				TimeInterval timeInterval = (TimeInterval)theEObject;
 				T result = caseTimeInterval(timeInterval);
 				if (result == null) result = caseTerm(timeInterval);
-				if (result == null) result = caseConditionTerm(timeInterval);
+				if (result == null) result = caseExpressionTerm(timeInterval);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -373,7 +373,7 @@ public class JabutiSwitch<T> extends Switch<T>
 				Timeout timeout = (Timeout)theEObject;
 				T result = caseTimeout(timeout);
 				if (result == null) result = caseTerm(timeout);
-				if (result == null) result = caseConditionTerm(timeout);
+				if (result == null) result = caseExpressionTerm(timeout);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -382,7 +382,7 @@ public class JabutiSwitch<T> extends Switch<T>
 				MaxNumberOfOperation maxNumberOfOperation = (MaxNumberOfOperation)theEObject;
 				T result = caseMaxNumberOfOperation(maxNumberOfOperation);
 				if (result == null) result = caseTerm(maxNumberOfOperation);
-				if (result == null) result = caseConditionTerm(maxNumberOfOperation);
+				if (result == null) result = caseExpressionTerm(maxNumberOfOperation);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -391,7 +391,7 @@ public class JabutiSwitch<T> extends Switch<T>
 				MessageContent messageContent = (MessageContent)theEObject;
 				T result = caseMessageContent(messageContent);
 				if (result == null) result = caseTerm(messageContent);
-				if (result == null) result = caseConditionTerm(messageContent);
+				if (result == null) result = caseExpressionTerm(messageContent);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -759,17 +759,17 @@ public class JabutiSwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Condition Term</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Expression Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Condition Term</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Expression Term</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConditionTerm(ConditionTerm object)
+	public T caseExpressionTerm(ExpressionTerm object)
 	{
 		return null;
 	}
@@ -807,33 +807,33 @@ public class JabutiSwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Terms</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Condition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Terms</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCondition(Condition object)
+	public T caseTerms(Terms object)
 	{
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composite Condition</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Composite Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composite Condition</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Composite Term</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseCompositeCondition(CompositeCondition object)
+	public T caseCompositeTerm(CompositeTerm object)
 	{
 		return null;
 	}

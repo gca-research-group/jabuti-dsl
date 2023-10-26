@@ -3,7 +3,7 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
 
@@ -24,12 +24,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl#getSymbol <em>Symbol</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl#getConditionTerm <em>Condition Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl#getExpressionTerm <em>Expression Term</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTermOperator
+public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTermOperator
 {
 	/**
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
@@ -52,14 +52,14 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 	protected String symbol = SYMBOL_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getConditionTerm() <em>Condition Term</em>}' containment reference.
+	 * The cached value of the '{@link #getExpressionTerm() <em>Expression Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConditionTerm()
+	 * @see #getExpressionTerm()
 	 * @generated
 	 * @ordered
 	 */
-	protected ConditionTerm conditionTerm;
+	protected ExpressionTerm expressionTerm;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -113,9 +113,9 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 	 * @generated
 	 */
 	@Override
-	public ConditionTerm getConditionTerm()
+	public ExpressionTerm getExpressionTerm()
 	{
-		return conditionTerm;
+		return expressionTerm;
 	}
 
 	/**
@@ -123,13 +123,13 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetConditionTerm(ConditionTerm newConditionTerm, NotificationChain msgs)
+	public NotificationChain basicSetExpressionTerm(ExpressionTerm newExpressionTerm, NotificationChain msgs)
 	{
-		ConditionTerm oldConditionTerm = conditionTerm;
-		conditionTerm = newConditionTerm;
+		ExpressionTerm oldExpressionTerm = expressionTerm;
+		expressionTerm = newExpressionTerm;
 		if (eNotificationRequired())
 		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM, oldConditionTerm, newConditionTerm);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, oldExpressionTerm, newExpressionTerm);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -141,20 +141,20 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 	 * @generated
 	 */
 	@Override
-	public void setConditionTerm(ConditionTerm newConditionTerm)
+	public void setExpressionTerm(ExpressionTerm newExpressionTerm)
 	{
-		if (newConditionTerm != conditionTerm)
+		if (newExpressionTerm != expressionTerm)
 		{
 			NotificationChain msgs = null;
-			if (conditionTerm != null)
-				msgs = ((InternalEObject)conditionTerm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM, null, msgs);
-			if (newConditionTerm != null)
-				msgs = ((InternalEObject)newConditionTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM, null, msgs);
-			msgs = basicSetConditionTerm(newConditionTerm, msgs);
+			if (expressionTerm != null)
+				msgs = ((InternalEObject)expressionTerm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, null, msgs);
+			if (newExpressionTerm != null)
+				msgs = ((InternalEObject)newExpressionTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, null, msgs);
+			msgs = basicSetExpressionTerm(newExpressionTerm, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM, newConditionTerm, newConditionTerm));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, newExpressionTerm, newExpressionTerm));
 	}
 
 	/**
@@ -167,8 +167,8 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM:
-				return basicSetConditionTerm(null, msgs);
+			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+				return basicSetExpressionTerm(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -185,8 +185,8 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 		{
 			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
 				return getSymbol();
-			case JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM:
-				return getConditionTerm();
+			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+				return getExpressionTerm();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -204,8 +204,8 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
 				setSymbol((String)newValue);
 				return;
-			case JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM:
-				setConditionTerm((ConditionTerm)newValue);
+			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+				setExpressionTerm((ExpressionTerm)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,8 +224,8 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
 				setSymbol(SYMBOL_EDEFAULT);
 				return;
-			case JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM:
-				setConditionTerm((ConditionTerm)null);
+			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+				setExpressionTerm((ExpressionTerm)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -243,8 +243,8 @@ public class UnaryTermOperatorImpl extends ConditionTermImpl implements UnaryTer
 		{
 			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
 				return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
-			case JabutiPackage.UNARY_TERM_OPERATOR__CONDITION_TERM:
-				return conditionTerm != null;
+			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+				return expressionTerm != null;
 		}
 		return super.eIsSet(featureID);
 	}

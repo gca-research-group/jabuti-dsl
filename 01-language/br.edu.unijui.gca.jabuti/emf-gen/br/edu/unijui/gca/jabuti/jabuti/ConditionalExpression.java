@@ -16,8 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionTerm <em>Condition Term</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionParam <em>Condition Param</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm <em>Expression Term</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator <em>Comparison Operator</em>}</li>
@@ -31,38 +30,26 @@ import org.eclipse.emf.ecore.EObject;
 public interface ConditionalExpression extends EObject
 {
 	/**
-	 * Returns the value of the '<em><b>Condition Term</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Expression Term</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition Term</em>' containment reference.
-	 * @see #setConditionTerm(ConditionTerm)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ConditionTerm()
-	 * @model containment="true"
+	 * @return the value of the '<em>Expression Term</em>' containment reference.
+	 * @see #setExpressionTerm(ExpressionTerm)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ExpressionTerm()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	ConditionTerm getConditionTerm();
+	ExpressionTerm getExpressionTerm();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getConditionTerm <em>Condition Term</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm <em>Expression Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Condition Term</em>' containment reference.
-	 * @see #getConditionTerm()
+	 * @param value the new value of the '<em>Expression Term</em>' containment reference.
+	 * @see #getExpressionTerm()
 	 * @generated
 	 */
-	void setConditionTerm(ConditionTerm value);
-
-	/**
-	 * Returns the value of the '<em><b>Condition Param</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.ConditionTerm}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition Param</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ConditionParam()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<ConditionTerm> getConditionParam();
+	void setExpressionTerm(ExpressionTerm value);
 
 	/**
 	 * Returns the value of the '<em><b>After Symbol</b></em>' containment reference.

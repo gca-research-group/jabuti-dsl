@@ -9,6 +9,7 @@ contract PurchaseOrderProvider {
 		application = "Supplier System Database"
 		process =	 "Integration Process"
 	}
+	
 	clauses{
 		right writeData {
 			//"Setting the days and hours to write on sales system database" 		

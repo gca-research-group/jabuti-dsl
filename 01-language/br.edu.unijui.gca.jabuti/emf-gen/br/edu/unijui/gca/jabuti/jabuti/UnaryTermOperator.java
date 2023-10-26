@@ -14,14 +14,14 @@ package br.edu.unijui.gca.jabuti.jabuti;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getSymbol <em>Symbol</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getConditionTerm <em>Condition Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm <em>Expression Term</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getUnaryTermOperator()
  * @model
  * @generated
  */
-public interface UnaryTermOperator extends ConditionTerm
+public interface UnaryTermOperator extends ExpressionTerm
 {
 	/**
 	 * Returns the value of the '<em><b>Symbol</b></em>' attribute.
@@ -46,25 +46,25 @@ public interface UnaryTermOperator extends ConditionTerm
 	void setSymbol(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Condition Term</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Expression Term</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition Term</em>' containment reference.
-	 * @see #setConditionTerm(ConditionTerm)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getUnaryTermOperator_ConditionTerm()
+	 * @return the value of the '<em>Expression Term</em>' containment reference.
+	 * @see #setExpressionTerm(ExpressionTerm)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getUnaryTermOperator_ExpressionTerm()
 	 * @model containment="true"
 	 * @generated
 	 */
-	ConditionTerm getConditionTerm();
+	ExpressionTerm getExpressionTerm();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getConditionTerm <em>Condition Term</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm <em>Expression Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Condition Term</em>' containment reference.
-	 * @see #getConditionTerm()
+	 * @param value the new value of the '<em>Expression Term</em>' containment reference.
+	 * @see #getExpressionTerm()
 	 * @generated
 	 */
-	void setConditionTerm(ConditionTerm value);
+	void setExpressionTerm(ExpressionTerm value);
 
 } // UnaryTermOperator

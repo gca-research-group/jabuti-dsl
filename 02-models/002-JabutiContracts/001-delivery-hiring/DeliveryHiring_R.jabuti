@@ -1,5 +1,5 @@
 //@version - jabuti 0.1.0 
-
+ 
 contract DeliveryHiring_R { 
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
@@ -21,8 +21,7 @@ contract DeliveryHiring_R {
 			/*Setting the days and hours to request a delivery,
 			the maximum request operation by minute and number of address by request*/
 			rolePlayer = process
-			operation = request
-			
+			operation = request	
 			terms {			
 				MaxNumberOfOperation(3 per Minute),
 				MessageContent(numberOfAddresses == 1), 

@@ -9,7 +9,7 @@ contract SMSNotifier {
 		application=  "SMS Notifier"
 		process=	  "Integration Process"	
 	}
-	
+
 	clauses{
 		right writeSMS_R{
 			//Setting the days and hours to write in SMS Notifier database	

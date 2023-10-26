@@ -8,13 +8,12 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
-import br.edu.unijui.gca.jabuti.jabuti.Condition;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
+import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiFactory;
@@ -36,6 +35,7 @@ import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
+import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
@@ -129,11 +129,11 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.EVENT_LOG: return createEventLog();
 			case JabutiPackage.ON_BREACH: return createOnBreach();
 			case JabutiPackage.ON_SUCCESS: return createOnSuccess();
-			case JabutiPackage.CONDITION_TERM: return createConditionTerm();
+			case JabutiPackage.EXPRESSION_TERM: return createExpressionTerm();
 			case JabutiPackage.LOGICAL_OPERATOR: return createLogicalOperator();
 			case JabutiPackage.CONDITIONAL_EXPRESSION: return createConditionalExpression();
-			case JabutiPackage.CONDITION: return createCondition();
-			case JabutiPackage.COMPOSITE_CONDITION: return createCompositeCondition();
+			case JabutiPackage.TERMS: return createTerms();
+			case JabutiPackage.COMPOSITE_TERM: return createCompositeTerm();
 			case JabutiPackage.TERM: return createTerm();
 			case JabutiPackage.UNARY_TERM_OPERATOR: return createUnaryTermOperator();
 			case JabutiPackage.BINARY_TERM_OPERATOR: return createBinaryTermOperator();
@@ -465,10 +465,10 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public ConditionTerm createConditionTerm()
+	public ExpressionTerm createExpressionTerm()
 	{
-		ConditionTermImpl conditionTerm = new ConditionTermImpl();
-		return conditionTerm;
+		ExpressionTermImpl expressionTerm = new ExpressionTermImpl();
+		return expressionTerm;
 	}
 
 	/**
@@ -501,10 +501,10 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public Condition createCondition()
+	public Terms createTerms()
 	{
-		ConditionImpl condition = new ConditionImpl();
-		return condition;
+		TermsImpl terms = new TermsImpl();
+		return terms;
 	}
 
 	/**
@@ -513,10 +513,10 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public CompositeCondition createCompositeCondition()
+	public CompositeTerm createCompositeTerm()
 	{
-		CompositeConditionImpl compositeCondition = new CompositeConditionImpl();
-		return compositeCondition;
+		CompositeTermImpl compositeTerm = new CompositeTermImpl();
+		return compositeTerm;
 	}
 
 	/**

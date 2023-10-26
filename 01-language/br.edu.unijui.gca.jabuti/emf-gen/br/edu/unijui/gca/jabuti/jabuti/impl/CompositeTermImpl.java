@@ -3,8 +3,8 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
-import br.edu.unijui.gca.jabuti.jabuti.CompositeCondition;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionTerm;
+import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 
 import java.util.Collection;
@@ -21,35 +21,35 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Composite Condition</b></em>'.
+ * An implementation of the model object '<em><b>Composite Term</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeConditionImpl#getConditionTerm <em>Condition Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.CompositeTermImpl#getExpressionTerm <em>Expression Term</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class CompositeConditionImpl extends ConditionTermImpl implements CompositeCondition
+public class CompositeTermImpl extends ExpressionTermImpl implements CompositeTerm
 {
 	/**
-	 * The cached value of the '{@link #getConditionTerm() <em>Condition Term</em>}' containment reference list.
+	 * The cached value of the '{@link #getExpressionTerm() <em>Expression Term</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConditionTerm()
+	 * @see #getExpressionTerm()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ConditionTerm> conditionTerm;
+	protected EList<ExpressionTerm> expressionTerm;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected CompositeConditionImpl()
+	protected CompositeTermImpl()
 	{
 		super();
 	}
@@ -62,7 +62,7 @@ public class CompositeConditionImpl extends ConditionTermImpl implements Composi
 	@Override
 	protected EClass eStaticClass()
 	{
-		return JabutiPackage.Literals.COMPOSITE_CONDITION;
+		return JabutiPackage.Literals.COMPOSITE_TERM;
 	}
 
 	/**
@@ -71,13 +71,13 @@ public class CompositeConditionImpl extends ConditionTermImpl implements Composi
 	 * @generated
 	 */
 	@Override
-	public EList<ConditionTerm> getConditionTerm()
+	public EList<ExpressionTerm> getExpressionTerm()
 	{
-		if (conditionTerm == null)
+		if (expressionTerm == null)
 		{
-			conditionTerm = new EObjectContainmentEList<ConditionTerm>(ConditionTerm.class, this, JabutiPackage.COMPOSITE_CONDITION__CONDITION_TERM);
+			expressionTerm = new EObjectContainmentEList<ExpressionTerm>(ExpressionTerm.class, this, JabutiPackage.COMPOSITE_TERM__EXPRESSION_TERM);
 		}
-		return conditionTerm;
+		return expressionTerm;
 	}
 
 	/**
@@ -90,8 +90,8 @@ public class CompositeConditionImpl extends ConditionTermImpl implements Composi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.COMPOSITE_CONDITION__CONDITION_TERM:
-				return ((InternalEList<?>)getConditionTerm()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.COMPOSITE_TERM__EXPRESSION_TERM:
+				return ((InternalEList<?>)getExpressionTerm()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -106,8 +106,8 @@ public class CompositeConditionImpl extends ConditionTermImpl implements Composi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.COMPOSITE_CONDITION__CONDITION_TERM:
-				return getConditionTerm();
+			case JabutiPackage.COMPOSITE_TERM__EXPRESSION_TERM:
+				return getExpressionTerm();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -123,9 +123,9 @@ public class CompositeConditionImpl extends ConditionTermImpl implements Composi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.COMPOSITE_CONDITION__CONDITION_TERM:
-				getConditionTerm().clear();
-				getConditionTerm().addAll((Collection<? extends ConditionTerm>)newValue);
+			case JabutiPackage.COMPOSITE_TERM__EXPRESSION_TERM:
+				getExpressionTerm().clear();
+				getExpressionTerm().addAll((Collection<? extends ExpressionTerm>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class CompositeConditionImpl extends ConditionTermImpl implements Composi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.COMPOSITE_CONDITION__CONDITION_TERM:
-				getConditionTerm().clear();
+			case JabutiPackage.COMPOSITE_TERM__EXPRESSION_TERM:
+				getExpressionTerm().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -158,10 +158,10 @@ public class CompositeConditionImpl extends ConditionTermImpl implements Composi
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.COMPOSITE_CONDITION__CONDITION_TERM:
-				return conditionTerm != null && !conditionTerm.isEmpty();
+			case JabutiPackage.COMPOSITE_TERM__EXPRESSION_TERM:
+				return expressionTerm != null && !expressionTerm.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //CompositeConditionImpl
+} //CompositeTermImpl

@@ -222,13 +222,13 @@ public interface JabutiFactory extends EFactory
 	OnSuccess createOnSuccess();
 
 	/**
-	 * Returns a new object of class '<em>Condition Term</em>'.
+	 * Returns a new object of class '<em>Expression Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition Term</em>'.
+	 * @return a new object of class '<em>Expression Term</em>'.
 	 * @generated
 	 */
-	ConditionTerm createConditionTerm();
+	ExpressionTerm createExpressionTerm();
 
 	/**
 	 * Returns a new object of class '<em>Logical Operator</em>'.
@@ -249,22 +249,22 @@ public interface JabutiFactory extends EFactory
 	ConditionalExpression createConditionalExpression();
 
 	/**
-	 * Returns a new object of class '<em>Condition</em>'.
+	 * Returns a new object of class '<em>Terms</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Condition</em>'.
+	 * @return a new object of class '<em>Terms</em>'.
 	 * @generated
 	 */
-	Condition createCondition();
+	Terms createTerms();
 
 	/**
-	 * Returns a new object of class '<em>Composite Condition</em>'.
+	 * Returns a new object of class '<em>Composite Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Condition</em>'.
+	 * @return a new object of class '<em>Composite Term</em>'.
 	 * @generated
 	 */
-	CompositeCondition createCompositeCondition();
+	CompositeTerm createCompositeTerm();
 
 	/**
 	 * Returns a new object of class '<em>Term</em>'.

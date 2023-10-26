@@ -15,18 +15,19 @@ contract DeliveryHiring_O {
 	variables{
 		dateTimeCompra = "//dateCompra/text()"  + " " + "//HourCompra/text()"		
 		var1="//dateCompra/text()/dateCompra/text()dateCompra/text()ateCompra/text()"
+		sessionInterval = SessionInterval(1 Day)
 	}
 	
 	clauses{	
 		right respondIntervalAndLimit {
 			rolePlayer = application
 			operation = request	
-		
+ 	
 			terms {
 				(WeekDaysInterval(Monday to Wednesday) OR WeekDaysInterval(Friday to Saturday)),
 				MaxNumberOfOperation( 2 per Hour ),
 				TimeInterval("08:00:00" to "12:00:00"),
-				when(SessionInterval(1 Day))do{
+				when(sessionInterval) do {
 					MessageContent( "Content" )	
 				},
 				TimeInterval("08:00:00" to "12:00:00")

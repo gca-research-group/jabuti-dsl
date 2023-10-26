@@ -25,14 +25,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Clause">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roleplayer" eType="#//RolePlayer"
-        defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="eventLog" upperBound="-1"
         eType="#//EventLog" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//Operation"
         defaultValueLiteral=""/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condition" lowerBound="1"
-        eType="#//Condition" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terms" lowerBound="1" eType="#//Terms"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolePlayer" eType="#//RolePlayer"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Party">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -111,15 +110,13 @@
     <eLiterals name="REQUEST" value="4"/>
     <eLiterals name="RESPONSE" value="5"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConditionTerm"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionTerm"/>
   <eClassifiers xsi:type="ecore:EClass" name="LogicalOperator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTerm" eType="#//ConditionTerm"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionParam" upperBound="-1"
-        eType="#//ConditionTerm" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" lowerBound="1"
+        eType="#//ExpressionTerm" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="afterSymbol" eType="#//LogicalOperator"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="beforeSymbol" eType="#//LogicalOperator"
@@ -129,27 +126,23 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperator" upperBound="-1"
         eType="#//LogicalOperator" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Condition">
+  <eClassifiers xsi:type="ecore:EClass" name="Terms">
     <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalExpression"
         upperBound="-1" eType="#//ConditionalExpression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTerm" upperBound="-1"
-        eType="#//ConditionTerm" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" upperBound="-1"
+        eType="#//ExpressionTerm" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="CompositeCondition" eSuperTypes="#//ConditionTerm">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTerm" upperBound="-1"
-        eType="#//ConditionTerm" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//ConditionTerm"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UnaryTermOperator" eSuperTypes="#//ConditionTerm">
+  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//ExpressionTerm"/>
+  <eClassifiers xsi:type="ecore:EClass" name="UnaryTermOperator" eSuperTypes="#//ExpressionTerm">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionTerm" eType="#//ConditionTerm"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" eType="#//ExpressionTerm"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BinaryTermOperator" eSuperTypes="#//ConditionTerm">
+  <eClassifiers xsi:type="ecore:EClass" name="BinaryTermOperator" eSuperTypes="#//ExpressionTerm">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ConditionTerm"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ExpressionTerm"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ConditionTerm"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ExpressionTerm"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SessionInterval" eSuperTypes="#//Term">
@@ -157,8 +150,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageContent" eType="#//MessageContent"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//VariableValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WeekDaysInterval" eSuperTypes="#//Term">
@@ -170,8 +161,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="end" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Timeout" eSuperTypes="#//Term">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="seconds" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaxNumberOfOperation" eSuperTypes="#//Term">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationsNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -183,8 +173,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variableValue" eType="#//VariableValue"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComparisonOperator">

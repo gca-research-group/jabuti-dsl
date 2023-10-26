@@ -1,4 +1,4 @@
-//@version -  0.1.0  
+//@version -  0.1.0   
 
 contract SendMessageWhatsapp { 
  
@@ -13,7 +13,8 @@ contract SendMessageWhatsapp {
 		process = "Integration Process" 
 	}
 	
-	variables{					
+	variables{	
+		var = "teste"				
 		session = SessionInterval(24 Hour per "//conversationId/text()")			
 		conversationStarter = MessageContent("//conversationStarter/text()") 
 	}
@@ -24,10 +25,11 @@ contract SendMessageWhatsapp {
 			rolePlayer = process
 			operation = write		
 			terms{
-				WeekDaysInterval(Monday to Friday),			 			 	
-				when(session == "CLOSED" AND conversationStarter == "Business-initiated" ) do {				
+				WeekDaysInterval(Monday to Friday),	
+				MessageContent(conversationStart),	 			 	
+				when( conversationStarter == "Business-initiated" ) do {				
 					 	MaxNumberOfOperation(10000 per Month)		
-				}					 
+				}				 
 			}				
 			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))
 		}

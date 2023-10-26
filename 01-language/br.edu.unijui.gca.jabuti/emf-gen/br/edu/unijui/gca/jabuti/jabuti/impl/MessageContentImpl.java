@@ -8,7 +8,6 @@ import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
-import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -30,7 +29,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getExpression <em>Expression</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getVariableValue <em>Variable Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -96,16 +94,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @ordered
 	 */
 	protected Expression expression;
-
-	/**
-	 * The cached value of the '{@link #getVariableValue() <em>Variable Value</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVariableValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected VariableValue variableValue;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -284,56 +272,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public VariableValue getVariableValue()
-	{
-		return variableValue;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetVariableValue(VariableValue newVariableValue, NotificationChain msgs)
-	{
-		VariableValue oldVariableValue = variableValue;
-		variableValue = newVariableValue;
-		if (eNotificationRequired())
-		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, oldVariableValue, newVariableValue);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setVariableValue(VariableValue newVariableValue)
-	{
-		if (newVariableValue != variableValue)
-		{
-			NotificationChain msgs = null;
-			if (variableValue != null)
-				msgs = ((InternalEObject)variableValue).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, null, msgs);
-			if (newVariableValue != null)
-				msgs = ((InternalEObject)newVariableValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, null, msgs);
-			msgs = basicSetVariableValue(newVariableValue, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE, newVariableValue, newVariableValue));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -342,8 +280,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return basicSetComparisonOperator(null, msgs);
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return basicSetExpression(null, msgs);
-			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
-				return basicSetVariableValue(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -366,8 +302,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return getTimeUnit();
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return getExpression();
-			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
-				return getVariableValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -393,9 +327,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return;
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				setExpression((Expression)newValue);
-				return;
-			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
-				setVariableValue((VariableValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -423,9 +354,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				setExpression((Expression)null);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
-				setVariableValue((VariableValue)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -448,8 +376,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return timeUnit != TIME_UNIT_EDEFAULT;
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return expression != null;
-			case JabutiPackage.MESSAGE_CONTENT__VARIABLE_VALUE:
-				return variableValue != null;
 		}
 		return super.eIsSet(featureID);
 	}

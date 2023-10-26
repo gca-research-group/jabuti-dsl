@@ -12,7 +12,7 @@ import java.sql.Timestamp
 import br.edu.unijui.gca.jabuti.jabuti.Contract
 
 import br.edu.unijui.gca.jabuti.jabuti.Timeout
-import br.edu.unijui.gca.jabuti.jabuti.Condition
+import br.edu.unijui.gca.jabuti.jabuti.Terms
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
 import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent
@@ -50,8 +50,8 @@ class JabutiGenerator extends AbstractGenerator {
 				
 				Party «c.application.name»;
 				Party «c.process.name»;
+				«getTerms(c.clauses.get(0).terms)»
 				
-				«getConditions(c.clauses.get(0).condition)»
 				
 				event «c.clauses.get(0).name+"event"»(string _logMessage);
 				
@@ -65,7 +65,7 @@ class JabutiGenerator extends AbstractGenerator {
 					
 					bool isBreached=false;
 					
-					if(«getConditionals(c.clauses.get(0).condition)») {
+					if(«getConditionals(c.clauses.get(0).terms)») {
 						operationLimit.requestsPerformed+=1;
 			        	return true;	
 					}
@@ -81,11 +81,11 @@ class JabutiGenerator extends AbstractGenerator {
 		return (Timestamp.valueOf(date).getTime()/1000);
 	}
 	
-	def getConditions(Condition condition){
+	def getTerms(Terms term){
 		'''
-			«FOR c: condition.eAllContents.toIterable»
+			«FOR c: term.eAllContents.toIterable»
 				«IF(c instanceof Timeout)»
-					Timeout public timeout = Timeout(«c.expression», 0);
+					Timeout public timeout = Timeout(«c.seconds», 0);
 				«ELSEIF(c instanceof WeekDaysInterval)»
 					WeekDaysInterval public weekDaysInterval = WeekDaysInterval(«c.start», «c.end»);
 				«ELSEIF(c instanceof TimeInterval)»
@@ -99,9 +99,9 @@ class JabutiGenerator extends AbstractGenerator {
 		'''
 	}
 	
-	def getConditionals(Condition condition){
+	def getConditionals(Terms terms){
 		'''	
-		«FOR c: condition.eAllContents.toIterable»
+		«FOR c: terms.eAllContents.toIterable»
 			«IF(c instanceof Timeout)»
 				!isTimeout(_accessDateTime, timeout.endTime) &&
 			«ELSEIF(c instanceof WeekDaysInterval)»

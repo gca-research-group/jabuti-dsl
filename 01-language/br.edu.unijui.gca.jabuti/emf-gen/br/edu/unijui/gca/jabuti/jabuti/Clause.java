@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRoleplayer <em>Roleplayer</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog <em>Event Log</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOperation <em>Operation</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition <em>Condition</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getTerms <em>Terms</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRolePlayer <em>Role Player</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause()
@@ -50,32 +50,6 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Roleplayer</b></em>' attribute.
-	 * The default value is <code>""</code>.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Roleplayer</em>' attribute.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
-	 * @see #setRoleplayer(RolePlayer)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Roleplayer()
-	 * @model default=""
-	 * @generated
-	 */
-	RolePlayer getRoleplayer();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRoleplayer <em>Roleplayer</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Roleplayer</em>' attribute.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
-	 * @see #getRoleplayer()
-	 * @generated
-	 */
-	void setRoleplayer(RolePlayer value);
 
 	/**
 	 * Returns the value of the '<em><b>Event Log</b></em>' containment reference list.
@@ -116,25 +90,50 @@ public interface Clause extends EObject
 	void setOperation(Operation value);
 
 	/**
-	 * Returns the value of the '<em><b>Condition</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Terms</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Condition</em>' containment reference.
-	 * @see #setCondition(Condition)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Condition()
+	 * @return the value of the '<em>Terms</em>' containment reference.
+	 * @see #setTerms(Terms)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Terms()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Condition getCondition();
+	Terms getTerms();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getCondition <em>Condition</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getTerms <em>Terms</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Condition</em>' containment reference.
-	 * @see #getCondition()
+	 * @param value the new value of the '<em>Terms</em>' containment reference.
+	 * @see #getTerms()
 	 * @generated
 	 */
-	void setCondition(Condition value);
+	void setTerms(Terms value);
+
+	/**
+	 * Returns the value of the '<em><b>Role Player</b></em>' attribute.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Role Player</em>' attribute.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
+	 * @see #setRolePlayer(RolePlayer)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_RolePlayer()
+	 * @model
+	 * @generated
+	 */
+	RolePlayer getRolePlayer();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRolePlayer <em>Role Player</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Role Player</em>' attribute.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.RolePlayer
+	 * @see #getRolePlayer()
+	 * @generated
+	 */
+	void setRolePlayer(RolePlayer value);
 
 } // Clause
