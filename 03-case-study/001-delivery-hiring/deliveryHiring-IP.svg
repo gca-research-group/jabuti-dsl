@@ -24,9 +24,9 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="16.308413"
-     inkscape:cx="233.86703"
-     inkscape:cy="263.57562"
+     inkscape:zoom="1.0192758"
+     inkscape:cx="437.56557"
+     inkscape:cy="327.19309"
      inkscape:window-width="1920"
      inkscape:window-height="1001"
      inkscape:window-x="-9"
@@ -1426,6 +1426,16 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.203698"
+       id="rect1898"
+       width="179.51877"
+       height="66.947227"
+       x="57.861462"
+       y="65.270889"
+       inkscape:export-filename="delivery-hiring.png"
+       inkscape:export-xdpi="300.17444"
+       inkscape:export-ydpi="300.17444" />
     <g
        id="g13588"
        transform="translate(223.16308,127.65537)">
@@ -2759,12 +2769,5 @@
        id="path4627"
        style="color:#000000;fill:#000000;stroke-width:0.186371;-inkscape-stroke:none"
        d="m 146.07803,94.511808 v 0.35656 l 0.63149,0.75706 -0.63149,0.67955 0.63149,0.67696 -0.63149,0.67903 0.63149,0.67851 -0.63149,0.67748 0.63149,0.67954 -0.63149,0.757062 v 0.35657 h -9.86348 v -2.483572 c -0.12813,-0.0652 -0.23485,-0.16583 -0.30747,-0.2899 -0.13409,-0.23231 -0.13409,-0.51854 0,-0.75085 0.0726,-0.12408 0.17934,-0.2247 0.30747,-0.28991 v -2.3058 -0.17828 z m -0.35657,0.35656 h -9.15034 v 5.585192 h 9.15034 z m -1.33893,1.24696 v 1.31723 h -1.51154 v -1.19838 -0.11885 z m -0.23771,0.23771 h -0.18914 v 0.84181 h 0.18914 z m -0.42634,0 h -0.185 v 0.84181 h 0.185 z m -0.42271,0 h -0.18707 v 0.84181 h 0.18707 z m -3.74395,0.83044 v 1.31723 h -1.51154 v -1.31723 z m 1.43867,0.21239 v 0.36587 h 0.95498 v 0.18603 h -0.95498 v 0.36587 l -0.79427,-0.45888 0.0749,-0.0429 z m 3.40909,0.81907 v 1.35031 h -1.54254 v -1.35031 h 1.40353 z m -0.27853,0.21239 h -0.98547 v 0.16743 h 0.98547 z m 0,0.37982 h -0.98547 v 0.16485 h 0.98547 z m 0,0.37672 h -0.98547 v 0.16899 h 0.98547 z" />
-    <rect
-       style="fill:none;stroke:#808080;stroke-width:0.203698"
-       id="rect1898"
-       width="179.51877"
-       height="66.947227"
-       x="57.861462"
-       y="65.270889" />
   </g>
 </svg>

@@ -8,7 +8,6 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
@@ -133,7 +132,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.LOGICAL_OPERATOR: return createLogicalOperator();
 			case JabutiPackage.CONDITIONAL_EXPRESSION: return createConditionalExpression();
 			case JabutiPackage.TERMS: return createTerms();
-			case JabutiPackage.COMPOSITE_TERM: return createCompositeTerm();
 			case JabutiPackage.TERM: return createTerm();
 			case JabutiPackage.UNARY_TERM_OPERATOR: return createUnaryTermOperator();
 			case JabutiPackage.BINARY_TERM_OPERATOR: return createBinaryTermOperator();
@@ -505,18 +503,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	{
 		TermsImpl terms = new TermsImpl();
 		return terms;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public CompositeTerm createCompositeTerm()
-	{
-		CompositeTermImpl compositeTerm = new CompositeTermImpl();
-		return compositeTerm;
 	}
 
 	/**

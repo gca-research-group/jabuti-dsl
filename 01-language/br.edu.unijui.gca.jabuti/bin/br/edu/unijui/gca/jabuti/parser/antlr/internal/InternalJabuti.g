@@ -1919,220 +1919,6 @@ ruleTerms returns [EObject current=null]
 	)+
 ;
 
-// Entry rule entryRuleConditionalExpression
-entryRuleConditionalExpression returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConditionalExpressionRule()); }
-	iv_ruleConditionalExpression=ruleConditionalExpression
-	{ $current=$iv_ruleConditionalExpression.current; }
-	EOF;
-
-// Rule ConditionalExpression
-ruleConditionalExpression returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getBeforeSymbolLogicalOperatorParserRuleCall_0_0());
-				}
-				lv_beforeSymbol_0_0=ruleLogicalOperator
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
-					}
-					set(
-						$current,
-						"beforeSymbol",
-						lv_beforeSymbol_0_0,
-						"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-		otherlv_1='when'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getConditionalExpressionAccess().getWhenKeyword_1());
-		}
-		otherlv_2='('
-		{
-			newLeafNode(otherlv_2, grammarAccess.getConditionalExpressionAccess().getLeftParenthesisKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_3_0_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				this_STRING_4=RULE_STRING
-				{
-					newLeafNode(this_STRING_4, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_3_0_1());
-				}
-			)
-			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getConditionalExpressionAccess().getComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0());
-						}
-						lv_comparisonOperator_5_0=ruleComparisonOperator
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
-							}
-							add(
-								$current,
-								"comparisonOperator",
-								lv_comparisonOperator_5_0,
-								"br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_3_1_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					this_STRING_7=RULE_STRING
-					{
-						newLeafNode(this_STRING_7, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_3_1_1_1());
-					}
-				)
-			)?
-		)
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalExpressionAccess().getLogicalOperatorLogicalOperatorParserRuleCall_4_0_0());
-					}
-					lv_logicalOperator_8_0=ruleLogicalOperator
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
-						}
-						add(
-							$current,
-							"logicalOperator",
-							lv_logicalOperator_8_0,
-							"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			{
-				newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_4_1());
-			}
-			ruleQualifiedName
-			{
-				afterParserOrEnumRuleCall();
-			}
-			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getConditionalExpressionAccess().getComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0());
-						}
-						lv_comparisonOperator_10_0=ruleComparisonOperator
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
-							}
-							add(
-								$current,
-								"comparisonOperator",
-								lv_comparisonOperator_10_0,
-								"br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_4_2_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					this_STRING_12=RULE_STRING
-					{
-						newLeafNode(this_STRING_12, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_4_2_1_1());
-					}
-				)
-			)?
-		)*
-		otherlv_13=')'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getConditionalExpressionAccess().getRightParenthesisKeyword_5());
-		}
-		otherlv_14='do'
-		{
-			newLeafNode(otherlv_14, grammarAccess.getConditionalExpressionAccess().getDoKeyword_6());
-		}
-		otherlv_15='{'
-		{
-			newLeafNode(otherlv_15, grammarAccess.getConditionalExpressionAccess().getLeftCurlyBracketKeyword_7());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getExpressionTermExpressionTermParserRuleCall_8_0());
-				}
-				lv_expressionTerm_16_0=ruleExpressionTerm
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
-					}
-					set(
-						$current,
-						"expressionTerm",
-						lv_expressionTerm_16_0,
-						"br.edu.unijui.gca.jabuti.Jabuti.ExpressionTerm");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_17='}'
-		{
-			newLeafNode(otherlv_17, grammarAccess.getConditionalExpressionAccess().getRightCurlyBracketKeyword_9());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getAfterSymbolLogicalOperatorParserRuleCall_10_0());
-				}
-				lv_afterSymbol_18_0=ruleLogicalOperator
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
-					}
-					set(
-						$current,
-						"afterSymbol",
-						lv_afterSymbol_18_0,
-						"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)?
-	)
-;
-
 // Entry rule entryRuleExpressionTerm
 entryRuleExpressionTerm returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getExpressionTermRule()); }
@@ -2377,6 +2163,220 @@ ruleTerm returns [EObject current=null]
 			$current = $this_MessageContent_8.current;
 			afterParserOrEnumRuleCall();
 		}
+	)
+;
+
+// Entry rule entryRuleConditionalExpression
+entryRuleConditionalExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getConditionalExpressionRule()); }
+	iv_ruleConditionalExpression=ruleConditionalExpression
+	{ $current=$iv_ruleConditionalExpression.current; }
+	EOF;
+
+// Rule ConditionalExpression
+ruleConditionalExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getBeforeSymbolLogicalOperatorParserRuleCall_0_0());
+				}
+				lv_beforeSymbol_0_0=ruleLogicalOperator
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+					}
+					set(
+						$current,
+						"beforeSymbol",
+						lv_beforeSymbol_0_0,
+						"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		otherlv_1='when'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getConditionalExpressionAccess().getWhenKeyword_1());
+		}
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getConditionalExpressionAccess().getLeftParenthesisKeyword_2());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_3_0_0());
+				}
+				ruleQualifiedName
+				{
+					afterParserOrEnumRuleCall();
+				}
+				    |
+				this_STRING_4=RULE_STRING
+				{
+					newLeafNode(this_STRING_4, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_3_0_1());
+				}
+			)
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConditionalExpressionAccess().getComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0());
+						}
+						lv_comparisonOperator_5_0=ruleComparisonOperator
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+							}
+							add(
+								$current,
+								"comparisonOperator",
+								lv_comparisonOperator_5_0,
+								"br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					{
+						newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_3_1_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					this_STRING_7=RULE_STRING
+					{
+						newLeafNode(this_STRING_7, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_3_1_1_1());
+					}
+				)
+			)?
+		)
+		(
+			(
+				(
+					{
+						newCompositeNode(grammarAccess.getConditionalExpressionAccess().getLogicalOperatorLogicalOperatorParserRuleCall_4_0_0());
+					}
+					lv_logicalOperator_8_0=ruleLogicalOperator
+					{
+						if ($current==null) {
+							$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+						}
+						add(
+							$current,
+							"logicalOperator",
+							lv_logicalOperator_8_0,
+							"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
+						afterParserOrEnumRuleCall();
+					}
+				)
+			)
+			{
+				newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_4_1());
+			}
+			ruleQualifiedName
+			{
+				afterParserOrEnumRuleCall();
+			}
+			(
+				(
+					(
+						{
+							newCompositeNode(grammarAccess.getConditionalExpressionAccess().getComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0());
+						}
+						lv_comparisonOperator_10_0=ruleComparisonOperator
+						{
+							if ($current==null) {
+								$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+							}
+							add(
+								$current,
+								"comparisonOperator",
+								lv_comparisonOperator_10_0,
+								"br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
+							afterParserOrEnumRuleCall();
+						}
+					)
+				)
+				(
+					{
+						newCompositeNode(grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_4_2_1_0());
+					}
+					ruleQualifiedName
+					{
+						afterParserOrEnumRuleCall();
+					}
+					    |
+					this_STRING_12=RULE_STRING
+					{
+						newLeafNode(this_STRING_12, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_4_2_1_1());
+					}
+				)
+			)?
+		)*
+		otherlv_13=')'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getConditionalExpressionAccess().getRightParenthesisKeyword_5());
+		}
+		otherlv_14='check'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getConditionalExpressionAccess().getCheckKeyword_6());
+		}
+		otherlv_15='{'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getConditionalExpressionAccess().getLeftCurlyBracketKeyword_7());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getExpressionTermExpressionTermParserRuleCall_8_0());
+				}
+				lv_expressionTerm_16_0=ruleExpressionTerm
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+					}
+					set(
+						$current,
+						"expressionTerm",
+						lv_expressionTerm_16_0,
+						"br.edu.unijui.gca.jabuti.Jabuti.ExpressionTerm");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_17='}'
+		{
+			newLeafNode(otherlv_17, grammarAccess.getConditionalExpressionAccess().getRightCurlyBracketKeyword_9());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getConditionalExpressionAccess().getAfterSymbolLogicalOperatorParserRuleCall_10_0());
+				}
+				lv_afterSymbol_18_0=ruleLogicalOperator
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getConditionalExpressionRule());
+					}
+					set(
+						$current,
+						"afterSymbol",
+						lv_afterSymbol_18_0,
+						"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
 	)
 ;
 

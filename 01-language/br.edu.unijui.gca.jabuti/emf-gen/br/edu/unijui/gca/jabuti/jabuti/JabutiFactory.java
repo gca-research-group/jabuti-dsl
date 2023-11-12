@@ -258,15 +258,6 @@ public interface JabutiFactory extends EFactory
 	Terms createTerms();
 
 	/**
-	 * Returns a new object of class '<em>Composite Term</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Composite Term</em>'.
-	 * @generated
-	 */
-	CompositeTerm createCompositeTerm();
-
-	/**
 	 * Returns a new object of class '<em>Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

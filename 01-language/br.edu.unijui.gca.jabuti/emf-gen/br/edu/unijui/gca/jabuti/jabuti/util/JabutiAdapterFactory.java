@@ -8,7 +8,6 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
@@ -240,11 +239,6 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseTerms(Terms object)
 			{
 				return createTermsAdapter();
-			}
-			@Override
-			public Adapter caseCompositeTerm(CompositeTerm object)
-			{
-				return createCompositeTermAdapter();
 			}
 			@Override
 			public Adapter caseTerm(Term object)
@@ -704,21 +698,6 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createTermsAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.CompositeTerm <em>Composite Term</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.CompositeTerm
-	 * @generated
-	 */
-	public Adapter createCompositeTermAdapter()
 	{
 		return null;
 	}

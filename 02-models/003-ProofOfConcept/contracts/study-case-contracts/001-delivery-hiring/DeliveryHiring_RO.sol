@@ -83,7 +83,7 @@ contract DeliveryHiring_RO {
         if(maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime)&&
            msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath_nc[0]) &&
            msgContent_number_C1[1].evaluateNumberContent(_resultFromXpath_nc[1]) &&
-            msgContent_number_C1[1].evaluateNumberContent(_resultFromXpath_nc[1])           
+           msgContent_number_C1[1].evaluateNumberContent(_resultFromXpath_nc[1])           
         ){
             maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(_accessDateTime);
             timeout_C2[0].setEndTimeInTimeout(_accessDateTime);        

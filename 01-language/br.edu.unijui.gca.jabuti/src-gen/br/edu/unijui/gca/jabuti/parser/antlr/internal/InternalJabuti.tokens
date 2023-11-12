@@ -24,7 +24,7 @@
 'Minute'=78
 'Monday'=71
 'Month'=82
-'NOT'=53
+'NOT'=51
 'OR'=36
 'Saturday'=76
 'Second'=77
@@ -41,10 +41,10 @@
 'application'=28
 'as'=45
 'beginDate'=15
+'check'=53
 'clauses'=21
 'contract'=12
 'dates'=14
-'do'=52
 'dueDate'=17
 'import'=11
 'is'=44
@@ -67,7 +67,7 @@
 'terms'=24
 'to'=55
 'variables'=20
-'when'=51
+'when'=52
 'write'=66
 '{'=13
 '}'=18

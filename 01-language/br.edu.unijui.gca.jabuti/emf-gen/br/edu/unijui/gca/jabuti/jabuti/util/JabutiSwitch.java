@@ -8,7 +8,6 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
@@ -306,14 +305,6 @@ public class JabutiSwitch<T> extends Switch<T>
 			{
 				Terms terms = (Terms)theEObject;
 				T result = caseTerms(terms);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case JabutiPackage.COMPOSITE_TERM:
-			{
-				CompositeTerm compositeTerm = (CompositeTerm)theEObject;
-				T result = caseCompositeTerm(compositeTerm);
-				if (result == null) result = caseExpressionTerm(compositeTerm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -818,22 +809,6 @@ public class JabutiSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseTerms(Terms object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Composite Term</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Composite Term</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseCompositeTerm(CompositeTerm object)
 	{
 		return null;
 	}

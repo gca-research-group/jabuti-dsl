@@ -13,7 +13,7 @@ Import:
 // #################### CONTRACT STRUCTURE ####################
 
 Contract: 
-	'contract' name=ID '{'
+	"contract" name=ID '{'
 	
 		'dates' '{'
 			'beginDate' '=' beginDate=STRING

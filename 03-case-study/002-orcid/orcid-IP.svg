@@ -7,7 +7,7 @@
    viewBox="0 0 297 210"
    version="1.1"
    id="svg2543"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
    sodipodi:docname="orcid-IP.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -24,18 +24,39 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.95223716"
-     inkscape:cx="556.05895"
-     inkscape:cy="411.66215"
+     inkscape:zoom="1.3466667"
+     inkscape:cx="215.34653"
+     inkscape:cy="486.75741"
      inkscape:window-width="1920"
-     inkscape:window-height="1009"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
      showguides="true"
      inkscape:pageshadow="0"
-     inkscape:lockguides="true" />
+     inkscape:lockguides="true">
+    <sodipodi:guide
+       position="9.369966,122.3361"
+       orientation="1,0"
+       id="guide4391"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="77.521394,142.35735"
+       orientation="0,-1"
+       id="guide4393"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="65.452792,59.055177"
+       orientation="0,-1"
+       id="guide4397"
+       inkscape:locked="true" />
+    <sodipodi:guide
+       position="291.3387,110.77184"
+       orientation="1,0"
+       id="guide4399"
+       inkscape:locked="true" />
+  </sodipodi:namedview>
   <defs
      id="defs2540">
     <marker
@@ -1372,6 +1393,16 @@
      inkscape:label="Camada 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#ffffff;stroke-width:0.376342"
+       id="rect4453"
+       width="282.85437"
+       height="84.29203"
+       x="8.9705496"
+       y="67.156403"
+       inkscape:export-filename="orcid-updating-ip.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <g
        id="rect3206-4"
        style="fill:#000000"

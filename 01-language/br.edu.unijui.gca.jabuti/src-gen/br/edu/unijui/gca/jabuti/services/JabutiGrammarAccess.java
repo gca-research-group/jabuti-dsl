@@ -118,7 +118,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//// #################### CONTRACT STRUCTURE ####################
 		//Contract:
-		//    'contract' name=ID '{'
+		//    "contract" name=ID '{'
 		//        'dates' '{'
 		//            'beginDate' '=' beginDate=STRING
 		//            'dueDate' '=' dueDate=STRING
@@ -136,7 +136,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//    '}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'contract' name=ID '{'
+		//"contract" name=ID '{'
 		//    'dates' '{'
 		//        'beginDate' '=' beginDate=STRING
 		//        'dueDate' '=' dueDate=STRING
@@ -154,7 +154,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'}'
 		public Group getGroup() { return cGroup; }
 		
-		//'contract'
+		//"contract"
 		public Keyword getContractKeyword_0() { return cContractKeyword_0; }
 		
 		//name=ID
@@ -1181,162 +1181,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//ConditionalExpression
 		public RuleCall getConditionalExpressionConditionalExpressionParserRuleCall_1_0() { return cConditionalExpressionConditionalExpressionParserRuleCall_1_0; }
 	}
-	public class ConditionalExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ConditionalExpression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cBeforeSymbolAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cBeforeSymbolLogicalOperatorParserRuleCall_0_0 = (RuleCall)cBeforeSymbolAssignment_0.eContents().get(0);
-		private final Keyword cWhenKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
-		private final RuleCall cQualifiedNameParserRuleCall_3_0_0 = (RuleCall)cAlternatives_3_0.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_3_0_1 = (RuleCall)cAlternatives_3_0.eContents().get(1);
-		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
-		private final Assignment cComparisonOperatorAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
-		private final RuleCall cComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0 = (RuleCall)cComparisonOperatorAssignment_3_1_0.eContents().get(0);
-		private final Alternatives cAlternatives_3_1_1 = (Alternatives)cGroup_3_1.eContents().get(1);
-		private final RuleCall cQualifiedNameParserRuleCall_3_1_1_0 = (RuleCall)cAlternatives_3_1_1.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_3_1_1_1 = (RuleCall)cAlternatives_3_1_1.eContents().get(1);
-		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Assignment cLogicalOperatorAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
-		private final RuleCall cLogicalOperatorLogicalOperatorParserRuleCall_4_0_0 = (RuleCall)cLogicalOperatorAssignment_4_0.eContents().get(0);
-		private final RuleCall cQualifiedNameParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
-		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
-		private final Assignment cComparisonOperatorAssignment_4_2_0 = (Assignment)cGroup_4_2.eContents().get(0);
-		private final RuleCall cComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0 = (RuleCall)cComparisonOperatorAssignment_4_2_0.eContents().get(0);
-		private final Alternatives cAlternatives_4_2_1 = (Alternatives)cGroup_4_2.eContents().get(1);
-		private final RuleCall cQualifiedNameParserRuleCall_4_2_1_0 = (RuleCall)cAlternatives_4_2_1.eContents().get(0);
-		private final RuleCall cSTRINGTerminalRuleCall_4_2_1_1 = (RuleCall)cAlternatives_4_2_1.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cDoKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cExpressionTermAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cExpressionTermExpressionTermParserRuleCall_8_0 = (RuleCall)cExpressionTermAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cAfterSymbolAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cAfterSymbolLogicalOperatorParserRuleCall_10_0 = (RuleCall)cAfterSymbolAssignment_10.eContents().get(0);
-		
-		//ConditionalExpression :
-		//    (beforeSymbol = LogicalOperator)?
-		//    'when' '(' ((QualifiedName | STRING )
-		//                (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
-		//                (logicalOperator+=LogicalOperator QualifiedName
-		//                    (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'do' '{'
-		//                    expressionTerm=ExpressionTerm
-		//    '}'
-		//    (afterSymbol = LogicalOperator)?
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//(beforeSymbol = LogicalOperator)?
-		//'when' '(' ((QualifiedName | STRING )
-		//            (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
-		//            (logicalOperator+=LogicalOperator QualifiedName
-		//                (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'do' '{'
-		//                expressionTerm=ExpressionTerm
-		//'}'
-		//(afterSymbol = LogicalOperator)?
-		public Group getGroup() { return cGroup; }
-		
-		//(beforeSymbol = LogicalOperator)?
-		public Assignment getBeforeSymbolAssignment_0() { return cBeforeSymbolAssignment_0; }
-		
-		//LogicalOperator
-		public RuleCall getBeforeSymbolLogicalOperatorParserRuleCall_0_0() { return cBeforeSymbolLogicalOperatorParserRuleCall_0_0; }
-		
-		//'when'
-		public Keyword getWhenKeyword_1() { return cWhenKeyword_1; }
-		
-		//'('
-		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
-		
-		//((QualifiedName | STRING )
-		//               (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
-		public Group getGroup_3() { return cGroup_3; }
-		
-		//(QualifiedName | STRING )
-		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
-		
-		//QualifiedName
-		public RuleCall getQualifiedNameParserRuleCall_3_0_0() { return cQualifiedNameParserRuleCall_3_0_0; }
-		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_3_0_1() { return cSTRINGTerminalRuleCall_3_0_1; }
-		
-		//(comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?
-		public Group getGroup_3_1() { return cGroup_3_1; }
-		
-		//comparisonOperator+=ComparisonOperator
-		public Assignment getComparisonOperatorAssignment_3_1_0() { return cComparisonOperatorAssignment_3_1_0; }
-		
-		//ComparisonOperator
-		public RuleCall getComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0() { return cComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0; }
-		
-		//(QualifiedName | STRING )
-		public Alternatives getAlternatives_3_1_1() { return cAlternatives_3_1_1; }
-		
-		//QualifiedName
-		public RuleCall getQualifiedNameParserRuleCall_3_1_1_0() { return cQualifiedNameParserRuleCall_3_1_1_0; }
-		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_3_1_1_1() { return cSTRINGTerminalRuleCall_3_1_1_1; }
-		
-		//(logicalOperator+=LogicalOperator QualifiedName
-		//    (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)*
-		public Group getGroup_4() { return cGroup_4; }
-		
-		//logicalOperator+=LogicalOperator
-		public Assignment getLogicalOperatorAssignment_4_0() { return cLogicalOperatorAssignment_4_0; }
-		
-		//LogicalOperator
-		public RuleCall getLogicalOperatorLogicalOperatorParserRuleCall_4_0_0() { return cLogicalOperatorLogicalOperatorParserRuleCall_4_0_0; }
-		
-		//QualifiedName
-		public RuleCall getQualifiedNameParserRuleCall_4_1() { return cQualifiedNameParserRuleCall_4_1; }
-		
-		//(comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?
-		public Group getGroup_4_2() { return cGroup_4_2; }
-		
-		//comparisonOperator+=ComparisonOperator
-		public Assignment getComparisonOperatorAssignment_4_2_0() { return cComparisonOperatorAssignment_4_2_0; }
-		
-		//ComparisonOperator
-		public RuleCall getComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0() { return cComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0; }
-		
-		//(QualifiedName | STRING)
-		public Alternatives getAlternatives_4_2_1() { return cAlternatives_4_2_1; }
-		
-		//QualifiedName
-		public RuleCall getQualifiedNameParserRuleCall_4_2_1_0() { return cQualifiedNameParserRuleCall_4_2_1_0; }
-		
-		//STRING
-		public RuleCall getSTRINGTerminalRuleCall_4_2_1_1() { return cSTRINGTerminalRuleCall_4_2_1_1; }
-		
-		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
-		
-		//'do'
-		public Keyword getDoKeyword_6() { return cDoKeyword_6; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
-		
-		//expressionTerm=ExpressionTerm
-		public Assignment getExpressionTermAssignment_8() { return cExpressionTermAssignment_8; }
-		
-		//ExpressionTerm
-		public RuleCall getExpressionTermExpressionTermParserRuleCall_8_0() { return cExpressionTermExpressionTermParserRuleCall_8_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
-		
-		//(afterSymbol = LogicalOperator)?
-		public Assignment getAfterSymbolAssignment_10() { return cAfterSymbolAssignment_10; }
-		
-		//LogicalOperator
-		public RuleCall getAfterSymbolLogicalOperatorParserRuleCall_10_0() { return cAfterSymbolLogicalOperatorParserRuleCall_10_0; }
-	}
 	public class ExpressionTermElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ExpressionTerm");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1351,7 +1195,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightNegationTermParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
-		//ExpressionTerm returns ExpressionTerm:
+		//ExpressionTerm:
 		//    NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -1480,6 +1324,162 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//MessageContent
 		public RuleCall getMessageContentParserRuleCall_6() { return cMessageContentParserRuleCall_6; }
+	}
+	public class ConditionalExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ConditionalExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cBeforeSymbolAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cBeforeSymbolLogicalOperatorParserRuleCall_0_0 = (RuleCall)cBeforeSymbolAssignment_0.eContents().get(0);
+		private final Keyword cWhenKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Alternatives cAlternatives_3_0 = (Alternatives)cGroup_3.eContents().get(0);
+		private final RuleCall cQualifiedNameParserRuleCall_3_0_0 = (RuleCall)cAlternatives_3_0.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_3_0_1 = (RuleCall)cAlternatives_3_0.eContents().get(1);
+		private final Group cGroup_3_1 = (Group)cGroup_3.eContents().get(1);
+		private final Assignment cComparisonOperatorAssignment_3_1_0 = (Assignment)cGroup_3_1.eContents().get(0);
+		private final RuleCall cComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0 = (RuleCall)cComparisonOperatorAssignment_3_1_0.eContents().get(0);
+		private final Alternatives cAlternatives_3_1_1 = (Alternatives)cGroup_3_1.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_3_1_1_0 = (RuleCall)cAlternatives_3_1_1.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_3_1_1_1 = (RuleCall)cAlternatives_3_1_1.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Assignment cLogicalOperatorAssignment_4_0 = (Assignment)cGroup_4.eContents().get(0);
+		private final RuleCall cLogicalOperatorLogicalOperatorParserRuleCall_4_0_0 = (RuleCall)cLogicalOperatorAssignment_4_0.eContents().get(0);
+		private final RuleCall cQualifiedNameParserRuleCall_4_1 = (RuleCall)cGroup_4.eContents().get(1);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Assignment cComparisonOperatorAssignment_4_2_0 = (Assignment)cGroup_4_2.eContents().get(0);
+		private final RuleCall cComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0 = (RuleCall)cComparisonOperatorAssignment_4_2_0.eContents().get(0);
+		private final Alternatives cAlternatives_4_2_1 = (Alternatives)cGroup_4_2.eContents().get(1);
+		private final RuleCall cQualifiedNameParserRuleCall_4_2_1_0 = (RuleCall)cAlternatives_4_2_1.eContents().get(0);
+		private final RuleCall cSTRINGTerminalRuleCall_4_2_1_1 = (RuleCall)cAlternatives_4_2_1.eContents().get(1);
+		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cCheckKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cLeftCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cExpressionTermAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cExpressionTermExpressionTermParserRuleCall_8_0 = (RuleCall)cExpressionTermAssignment_8.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cAfterSymbolAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cAfterSymbolLogicalOperatorParserRuleCall_10_0 = (RuleCall)cAfterSymbolAssignment_10.eContents().get(0);
+		
+		//ConditionalExpression :
+		//    (beforeSymbol = LogicalOperator)?
+		//    'when' '(' ((QualifiedName | STRING )
+		//                (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
+		//                (logicalOperator+=LogicalOperator QualifiedName
+		//                    (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'check' '{'
+		//                    expressionTerm=ExpressionTerm
+		//    '}'
+		//    (afterSymbol = LogicalOperator)?
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//(beforeSymbol = LogicalOperator)?
+		//'when' '(' ((QualifiedName | STRING )
+		//            (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
+		//            (logicalOperator+=LogicalOperator QualifiedName
+		//                (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'check' '{'
+		//                expressionTerm=ExpressionTerm
+		//'}'
+		//(afterSymbol = LogicalOperator)?
+		public Group getGroup() { return cGroup; }
+		
+		//(beforeSymbol = LogicalOperator)?
+		public Assignment getBeforeSymbolAssignment_0() { return cBeforeSymbolAssignment_0; }
+		
+		//LogicalOperator
+		public RuleCall getBeforeSymbolLogicalOperatorParserRuleCall_0_0() { return cBeforeSymbolLogicalOperatorParserRuleCall_0_0; }
+		
+		//'when'
+		public Keyword getWhenKeyword_1() { return cWhenKeyword_1; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//((QualifiedName | STRING )
+		//               (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
+		public Group getGroup_3() { return cGroup_3; }
+		
+		//(QualifiedName | STRING )
+		public Alternatives getAlternatives_3_0() { return cAlternatives_3_0; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_3_0_0() { return cQualifiedNameParserRuleCall_3_0_0; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_3_0_1() { return cSTRINGTerminalRuleCall_3_0_1; }
+		
+		//(comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?
+		public Group getGroup_3_1() { return cGroup_3_1; }
+		
+		//comparisonOperator+=ComparisonOperator
+		public Assignment getComparisonOperatorAssignment_3_1_0() { return cComparisonOperatorAssignment_3_1_0; }
+		
+		//ComparisonOperator
+		public RuleCall getComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0() { return cComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0; }
+		
+		//(QualifiedName | STRING )
+		public Alternatives getAlternatives_3_1_1() { return cAlternatives_3_1_1; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_3_1_1_0() { return cQualifiedNameParserRuleCall_3_1_1_0; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_3_1_1_1() { return cSTRINGTerminalRuleCall_3_1_1_1; }
+		
+		//(logicalOperator+=LogicalOperator QualifiedName
+		//    (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)*
+		public Group getGroup_4() { return cGroup_4; }
+		
+		//logicalOperator+=LogicalOperator
+		public Assignment getLogicalOperatorAssignment_4_0() { return cLogicalOperatorAssignment_4_0; }
+		
+		//LogicalOperator
+		public RuleCall getLogicalOperatorLogicalOperatorParserRuleCall_4_0_0() { return cLogicalOperatorLogicalOperatorParserRuleCall_4_0_0; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_4_1() { return cQualifiedNameParserRuleCall_4_1; }
+		
+		//(comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?
+		public Group getGroup_4_2() { return cGroup_4_2; }
+		
+		//comparisonOperator+=ComparisonOperator
+		public Assignment getComparisonOperatorAssignment_4_2_0() { return cComparisonOperatorAssignment_4_2_0; }
+		
+		//ComparisonOperator
+		public RuleCall getComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0() { return cComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0; }
+		
+		//(QualifiedName | STRING)
+		public Alternatives getAlternatives_4_2_1() { return cAlternatives_4_2_1; }
+		
+		//QualifiedName
+		public RuleCall getQualifiedNameParserRuleCall_4_2_1_0() { return cQualifiedNameParserRuleCall_4_2_1_0; }
+		
+		//STRING
+		public RuleCall getSTRINGTerminalRuleCall_4_2_1_1() { return cSTRINGTerminalRuleCall_4_2_1_1; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		
+		//'check'
+		public Keyword getCheckKeyword_6() { return cCheckKeyword_6; }
+		
+		//'{'
+		public Keyword getLeftCurlyBracketKeyword_7() { return cLeftCurlyBracketKeyword_7; }
+		
+		//expressionTerm=ExpressionTerm
+		public Assignment getExpressionTermAssignment_8() { return cExpressionTermAssignment_8; }
+		
+		//ExpressionTerm
+		public RuleCall getExpressionTermExpressionTermParserRuleCall_8_0() { return cExpressionTermExpressionTermParserRuleCall_8_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		
+		//(afterSymbol = LogicalOperator)?
+		public Assignment getAfterSymbolAssignment_10() { return cAfterSymbolAssignment_10; }
+		
+		//LogicalOperator
+		public RuleCall getAfterSymbolLogicalOperatorParserRuleCall_10_0() { return cAfterSymbolLogicalOperatorParserRuleCall_10_0; }
 	}
 	public class LogicalOperatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
@@ -2193,10 +2193,10 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final FunctionCallElements pFunctionCall;
 	private final VariableElements pVariable;
 	private final TermsElements pTerms;
-	private final ConditionalExpressionElements pConditionalExpression;
 	private final ExpressionTermElements pExpressionTerm;
 	private final NegationTermElements pNegationTerm;
 	private final TermElements pTerm;
+	private final ConditionalExpressionElements pConditionalExpression;
 	private final LogicalOperatorElements pLogicalOperator;
 	private final TimeIntervalElements pTimeInterval;
 	private final SessionIntervalElements pSessionInterval;
@@ -2248,10 +2248,10 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pFunctionCall = new FunctionCallElements();
 		this.pVariable = new VariableElements();
 		this.pTerms = new TermsElements();
-		this.pConditionalExpression = new ConditionalExpressionElements();
 		this.pExpressionTerm = new ExpressionTermElements();
 		this.pNegationTerm = new NegationTermElements();
 		this.pTerm = new TermElements();
+		this.pConditionalExpression = new ConditionalExpressionElements();
 		this.pLogicalOperator = new LogicalOperatorElements();
 		this.pTimeInterval = new TimeIntervalElements();
 		this.pSessionInterval = new SessionIntervalElements();
@@ -2319,7 +2319,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//// #################### CONTRACT STRUCTURE ####################
 	//Contract:
-	//    'contract' name=ID '{'
+	//    "contract" name=ID '{'
 	//        'dates' '{'
 	//            'beginDate' '=' beginDate=STRING
 	//            'dueDate' '=' dueDate=STRING
@@ -2611,25 +2611,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		return getTermsAccess().getRule();
 	}
 	
-	//ConditionalExpression :
-	//    (beforeSymbol = LogicalOperator)?
-	//    'when' '(' ((QualifiedName | STRING )
-	//                (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
-	//                (logicalOperator+=LogicalOperator QualifiedName
-	//                    (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'do' '{'
-	//                    expressionTerm=ExpressionTerm
-	//    '}'
-	//    (afterSymbol = LogicalOperator)?
-	//;
-	public ConditionalExpressionElements getConditionalExpressionAccess() {
-		return pConditionalExpression;
-	}
-	
-	public ParserRule getConditionalExpressionRule() {
-		return getConditionalExpressionAccess().getRule();
-	}
-	
-	//ExpressionTerm returns ExpressionTerm:
+	//ExpressionTerm:
 	//    NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
 	public ExpressionTermElements getExpressionTermAccess() {
 		return pExpressionTerm;
@@ -2659,6 +2641,24 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	public ParserRule getTermRule() {
 		return getTermAccess().getRule();
+	}
+	
+	//ConditionalExpression :
+	//    (beforeSymbol = LogicalOperator)?
+	//    'when' '(' ((QualifiedName | STRING )
+	//                (comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?)
+	//                (logicalOperator+=LogicalOperator QualifiedName
+	//                    (comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'check' '{'
+	//                    expressionTerm=ExpressionTerm
+	//    '}'
+	//    (afterSymbol = LogicalOperator)?
+	//;
+	public ConditionalExpressionElements getConditionalExpressionAccess() {
+		return pConditionalExpression;
+	}
+	
+	public ParserRule getConditionalExpressionRule() {
+		return getConditionalExpressionAccess().getRule();
 	}
 	
 	////  ----------------- end new version proposal  -----------------

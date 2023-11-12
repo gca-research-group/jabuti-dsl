@@ -79,21 +79,21 @@
 // // 6º STEP: Translate the clauses to functions
 
 
-//     function right_requestDocuments(uint32 _accessDateTime, int256[] memory  _resultFromXpath_n, uint256[] memory _resultFromXpath_npt) public onlyProcess() returns(bool){
+    // function right_requestDocuments(uint32 _accessDateTime, int256[] memory  _resultFromXpath_n, uint256[] memory _resultFromXpath_npt) public onlyProcess() returns(bool){
 
-//         if(maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime)&&
-//             msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath_n[0]) &&
-//             msgContent_numberPerTime_C1[0].evaluateNumberPerTime(_accessDateTime, _resultFromXpath_npt[0]) 
-//         ){
-//              // the msgContent_numberPerTime_C1[0] will be decreased in function response  
-//             timeout_C2[0].setEndTimeInTimeout(_accessDateTime);
-//             emit successEvent("Successful execution!");
-//             return true;
-//         } else{
-//             emit failEvent("Exceded number of docuemnts");
-//             return false;
-//         }   
-//     }
+    //     if(maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime)&&
+    //         msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath_n[0]) &&
+    //         msgContent_numberPerTime_C1[0].evaluateNumberPerTime(_accessDateTime, _resultFromXpath_npt[0]) 
+    //     ){
+    //          // the msgContent_numberPerTime_C1[0] will be decreased in function response  
+    //         timeout_C2[0].setEndTimeInTimeout(_accessDateTime);
+    //         emit successEvent("Successful execution!");
+    //         return true;
+    //     } else{
+    //         emit failEvent("Exceded number of docuemnts");
+    //         return false;
+    //     }   
+    // }
 
 //     function obligation_responseWithDocuments (uint32 _accessDateTime) public onlyApplication() returns(bool){
 

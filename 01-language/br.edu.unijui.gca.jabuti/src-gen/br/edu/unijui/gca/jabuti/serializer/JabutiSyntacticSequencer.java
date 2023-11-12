@@ -119,10 +119,10 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     QualifiedName | STRING
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) 'when' '(' (ambiguity) ')' 'do' '{' expressionTerm=ExpressionTerm
+	 *     (rule start) 'when' '(' (ambiguity) ')' 'check' '{' expressionTerm=ExpressionTerm
 	 *     (rule start) 'when' '(' (ambiguity) comparisonOperator+=ComparisonOperator
 	 *     (rule start) 'when' '(' (ambiguity) logicalOperator+=LogicalOperator
-	 *     beforeSymbol=LogicalOperator 'when' '(' (ambiguity) ')' 'do' '{' expressionTerm=ExpressionTerm
+	 *     beforeSymbol=LogicalOperator 'when' '(' (ambiguity) ')' 'check' '{' expressionTerm=ExpressionTerm
 	 *     beforeSymbol=LogicalOperator 'when' '(' (ambiguity) comparisonOperator+=ComparisonOperator
 	 *     beforeSymbol=LogicalOperator 'when' '(' (ambiguity) logicalOperator+=LogicalOperator
 	 
@@ -138,7 +138,7 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     QualifiedName | STRING
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     comparisonOperator+=ComparisonOperator (ambiguity) ')' 'do' '{' expressionTerm=ExpressionTerm
+	 *     comparisonOperator+=ComparisonOperator (ambiguity) ')' 'check' '{' expressionTerm=ExpressionTerm
 	 *     comparisonOperator+=ComparisonOperator (ambiguity) logicalOperator+=LogicalOperator
 	 
 	 * </pre>
@@ -153,7 +153,7 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     QualifiedName | STRING
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     comparisonOperator+=ComparisonOperator (ambiguity) ')' 'do' '{' expressionTerm=ExpressionTerm
+	 *     comparisonOperator+=ComparisonOperator (ambiguity) ')' 'check' '{' expressionTerm=ExpressionTerm
 	 *     comparisonOperator+=ComparisonOperator (ambiguity) logicalOperator+=LogicalOperator
 	 
 	 * </pre>

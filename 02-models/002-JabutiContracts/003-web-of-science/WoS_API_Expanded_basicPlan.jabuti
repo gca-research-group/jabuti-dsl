@@ -12,27 +12,27 @@ contract ApiExpandedBasicPlan {
 		process = "Integration Process" 
 	}
 
-	clauses{	
-
-		right requestDocuments {
-			rolePlayer = process
-			operation = request
-			terms {
-				 MaxNumberOfOperation(2 per Second), 
-				 MessageContent("count(//body/document)" <= 100),
-				 MessageContent("count(//body/document)" <= 50000 per Month) 			 
-			}
-			onBreach(log("Exceded number of docuemnts"))
-		}
-		
-		obligation responseWithDocuments {
+		clauses{	
 	
-			rolePlayer =  application
-			operation =  response
-			terms{
-				Timeout(60) 
+			right requestDocuments {
+				rolePlayer = process
+				operation = request
+				terms {
+					 MaxNumberOfOperation(2 per Second), 
+					 MessageContent("count(//body/document)" <= 100),
+					 MessageContent("count(//body/document)" <= 50000 per Month) 			 
+				}
+				onBreach(log("Exceded number of docuemnts"))
 			}
-			onBreach(log("Conditon not meet"))
+			
+			obligation responseWithDocuments {
+		
+				rolePlayer =  application
+				operation =  response
+				terms{
+					Timeout(60) 
+				}
+				onBreach(log("Conditon not meet"))
+			}
 		}
-	}
 }

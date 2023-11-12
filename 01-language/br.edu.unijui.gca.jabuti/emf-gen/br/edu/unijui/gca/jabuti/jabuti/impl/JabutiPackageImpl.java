@@ -8,7 +8,6 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.CompositeTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
@@ -243,13 +242,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	private EClass termsEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass compositeTermEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1121,28 +1113,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getCompositeTerm()
-	{
-		return compositeTermEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getCompositeTerm_ExpressionTerm()
-	{
-		return (EReference)compositeTermEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTerm()
 	{
 		return termEClass;
@@ -1643,9 +1613,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		createEReference(termsEClass, TERMS__CONDITIONAL_EXPRESSION);
 		createEReference(termsEClass, TERMS__EXPRESSION_TERM);
 
-		compositeTermEClass = createEClass(COMPOSITE_TERM);
-		createEReference(compositeTermEClass, COMPOSITE_TERM__EXPRESSION_TERM);
-
 		termEClass = createEClass(TERM);
 
 		unaryTermOperatorEClass = createEClass(UNARY_TERM_OPERATOR);
@@ -1737,7 +1704,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		functionCallEClass.getESuperTypes().add(this.getLiteralValue());
 		onBreachEClass.getESuperTypes().add(this.getEventLog());
 		onSuccessEClass.getESuperTypes().add(this.getEventLog());
-		compositeTermEClass.getESuperTypes().add(this.getExpressionTerm());
 		termEClass.getESuperTypes().add(this.getExpressionTerm());
 		unaryTermOperatorEClass.getESuperTypes().add(this.getExpressionTerm());
 		binaryTermOperatorEClass.getESuperTypes().add(this.getExpressionTerm());
@@ -1838,9 +1804,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEClass(termsEClass, Terms.class, "Terms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTerms_ConditionalExpression(), this.getConditionalExpression(), null, "conditionalExpression", null, 0, -1, Terms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTerms_ExpressionTerm(), this.getExpressionTerm(), null, "expressionTerm", null, 0, -1, Terms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(compositeTermEClass, CompositeTerm.class, "CompositeTerm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCompositeTerm_ExpressionTerm(), this.getExpressionTerm(), null, "expressionTerm", null, 1, -1, CompositeTerm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

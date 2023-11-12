@@ -1,4 +1,4 @@
-contract DeliveryHiring_RO {  
+contract DeliveryHiring {  
 	
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
@@ -40,3 +40,4 @@ contract DeliveryHiring_RO {
 		}
 	}		
 }
+
