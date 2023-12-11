@@ -27,7 +27,7 @@ contract SendMessageWhatsapp {
 			terms{
 				WeekDaysInterval(Monday to Friday),	
 				MessageContent(conversationStart),	 			 	
-				when( conversationStarter == "Business-initiated" ) do {				
+				when( conversationStarter == "Business-initiated" ) check {				
 					 	MaxNumberOfOperation(10000 per Month)		
 				}				 
 			}				

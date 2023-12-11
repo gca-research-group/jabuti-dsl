@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.13+commit.abaa5c0e"
+		"version": "0.8.10+commit.fc410830"
 	},
 	"language": "Solidity",
 	"output": {
@@ -155,22 +155,17 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint8",
-						"name": "_weekDay",
-						"type": "uint8"
-					},
-					{
-						"internalType": "uint32",
-						"name": "_accessTime",
-						"type": "uint32"
-					},
-					{
 						"internalType": "uint32",
 						"name": "_accessDateTime",
 						"type": "uint32"
+					},
+					{
+						"internalType": "bool[]",
+						"name": "_resultFromXpath",
+						"type": "bool[]"
 					}
 				],
-				"name": "right_requestAllWorks",
+				"name": "right_requestUpdate",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -208,7 +203,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/study-case-contracts/002-orcid/Orcid.sol": "Orcid"
+			"contracts/study-case-contracts/002-orcid/orcid.sol": "Orcid"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -223,19 +218,19 @@
 	},
 	"sources": {
 		"contracts/lib/eai/EAI.sol": {
-			"keccak256": "0xd9890723646e3aaf54191a7d11f57789d10dccd12abcd1b87b3409a379a130a2",
+			"keccak256": "0x46cc7c84b1d197be03b373d863f1b46c201540a140067c625f33e007a1739e81",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5ae5c8ed9bafe6cd470efb7e86b79049f5e7fc0b53c5d974690a4ee8c5f80354",
-				"dweb:/ipfs/QmNQhH3oVScnCMLxQYFyLnNfhfx84WS7P2DNz4m4Y2hH9h"
+				"bzz-raw://bf8ef2621aa8426be1004adb1de78a268b113faa7bc093b76fa246fa719c05d2",
+				"dweb:/ipfs/QmbhKKJfhsUAN3fMJNQFQq33NF4NxVGNcn8dUPYnTXAHKE"
 			]
 		},
-		"contracts/study-case-contracts/002-orcid/Orcid.sol": {
-			"keccak256": "0x66854ab343e9f6231a2df46e81e5f922c41487491ed5c354ebebd49983cea135",
+		"contracts/study-case-contracts/002-orcid/orcid.sol": {
+			"keccak256": "0x4599152981960825d293094f7ae14cb82dd134a1b8a92dee79b97dd3fabfb3a9",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://2f798159743efdd5d58bd1a1b2f5c02bd2c36e0829c3e85f5bcd49a43660a0fc",
-				"dweb:/ipfs/Qmdhutocg4BXp5wReWcpaW2iv7SeaMgjAmgCS7XtxSCG3j"
+				"bzz-raw://29a29f809dcc3f9913668beb2f9f318434d9346f89bcfbc208955bbb1c0a1800",
+				"dweb:/ipfs/QmYjxngzmiXDMG77UaxTNjT96cAuGLWGz4P7w2hjbyPE9P"
 			]
 		}
 	},

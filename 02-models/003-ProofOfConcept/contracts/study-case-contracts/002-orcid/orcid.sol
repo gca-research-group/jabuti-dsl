@@ -75,13 +75,13 @@ contract Orcid {
 	}
 	
 // 6º STEP: Translate the clauses to functions
-    function right_requestUpdate(uint32 _accessTime, bool[] memory _resultFromXpath )public onlyProcess() returns(bool){
+    function right_requestUpdate(uint32 _accessDateTime, bool[] memory _resultFromXpath )public onlyProcess() returns(bool){
 
         if(maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(_accessDateTime) &&
             _resultFromXpath[0] &&
             _resultFromXpath[1]
             ){
-            maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime();   
+            maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(_accessDateTime);   
             timeout_C2[0].setEndTimeInTimeout(_accessDateTime);        
             emit successEvent("Successful execution!");
             return true;
@@ -91,11 +91,11 @@ contract Orcid {
         }               
     }
 
-    function obligation_responseWorks(uint32 _accessDateTime)public onlyApplication() returns(bool){
+    function obligation_responseWorks(uint32 _accessDateTime, bool[] memory _resultFromXpath)public onlyApplication() returns(bool){
         if(!timeout_C2[0].isTimeoutEnded(_accessDateTime) &&
             _resultFromXpath[0]
         ){
-            maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime();
+            maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(_accessDateTime);
             emit successEvent("Successful execution!");
             return true;
         }else{

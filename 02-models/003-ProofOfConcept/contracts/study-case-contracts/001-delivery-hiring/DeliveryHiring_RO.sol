@@ -1,6 +1,6 @@
 /* ========================== BEGIN: code for all contracts ====================== */
 //SPDX-License-Identifier: MIT
-pragma solidity >0.8.4 < 0.8.14;
+pragma solidity >0.8.4 < 0.8.19;
 
 import "../../lib/eai/EAI.sol";
 

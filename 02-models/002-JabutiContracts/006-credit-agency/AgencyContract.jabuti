@@ -27,7 +27,7 @@ contract DeliveryHiring_O {
 				(WeekDaysInterval(Monday to Wednesday) OR WeekDaysInterval(Friday to Saturday)),
 				MaxNumberOfOperation( 2 per Hour ),
 				TimeInterval("08:00:00" to "12:00:00"),
-				when(sessionInterval) do {
+				when(sessionInterval) check {
 					MessageContent( "Content" )	
 				},
 				TimeInterval("08:00:00" to "12:00:00")
