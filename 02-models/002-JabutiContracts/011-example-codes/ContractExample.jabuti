@@ -1,0 +1,24 @@
+contract ContractExample{
+   
+   dates{
+		beginDate = "2023-09-23 17:00:00"
+		dueDate =   "2024-09-23 12:00:00"
+	}
+   
+    parties{
+        application = "Application Name"
+        process = "Integration Process Name"
+    }
+    
+    clauses{	
+        right requestDocuments {
+            rolePlayer = process
+            operation = request
+            terms {
+                 MaxNumberOfOperation(2 per Second), 
+                 MessageContent("count(//body/document)" <= 100)	 
+            }
+            onBreach(log("Exceded number of documents"))
+        }	        
+    }
+}
