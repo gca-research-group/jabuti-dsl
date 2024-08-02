@@ -3,8 +3,6 @@
  */
 package br.edu.unijui.gca.jabuti.jabuti;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,10 +15,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog <em>Event Log</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOnSuccess <em>On Success</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOperation <em>Operation</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getTerms <em>Terms</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getRolePlayer <em>Role Player</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOnBreach <em>On Breach</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause()
@@ -52,20 +51,30 @@ public interface Clause extends EObject
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Event Log</b></em>' containment reference list.
-	 * The list contents are of type {@link br.edu.unijui.gca.jabuti.jabuti.EventLog}.
+	 * Returns the value of the '<em><b>On Success</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Event Log</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_EventLog()
+	 * @return the value of the '<em>On Success</em>' containment reference.
+	 * @see #setOnSuccess(OnSuccess)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_OnSuccess()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<EventLog> getEventLog();
+	OnSuccess getOnSuccess();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOnSuccess <em>On Success</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Success</em>' containment reference.
+	 * @see #getOnSuccess()
+	 * @generated
+	 */
+	void setOnSuccess(OnSuccess value);
 
 	/**
 	 * Returns the value of the '<em><b>Operation</b></em>' attribute.
-	 * The default value is <code>""</code>.
+	 * The default value is <code>"READ"</code>.
 	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.Operation}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -73,7 +82,7 @@ public interface Clause extends EObject
 	 * @see br.edu.unijui.gca.jabuti.jabuti.Operation
 	 * @see #setOperation(Operation)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Operation()
-	 * @model default=""
+	 * @model default="READ"
 	 * @generated
 	 */
 	Operation getOperation();
@@ -135,5 +144,27 @@ public interface Clause extends EObject
 	 * @generated
 	 */
 	void setRolePlayer(RolePlayer value);
+
+	/**
+	 * Returns the value of the '<em><b>On Breach</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>On Breach</em>' containment reference.
+	 * @see #setOnBreach(OnBreach)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_OnBreach()
+	 * @model containment="true"
+	 * @generated
+	 */
+	OnBreach getOnBreach();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOnBreach <em>On Breach</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>On Breach</em>' containment reference.
+	 * @see #getOnBreach()
+	 * @generated
+	 */
+	void setOnBreach(OnBreach value);
 
 } // Clause

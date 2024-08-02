@@ -19,7 +19,7 @@ contract DeliveryHiring_RO {
     event failEvent(string _logMessage);
     event successEvent(string _logMessage);
 
-/* --------------------------- END: code for all contracts ----------------------- */  
+/* --------------------------- END: commom code for all contracts ----------------------- */  
 
 
 

@@ -45,7 +45,9 @@ Clause:
 		'terms' '{' 
 			terms = Terms			
 		'}'
-		eventLog+=EventLog*
+		onSuccess=OnSuccess?
+		onBreach=OnBreach?
+		
 	'}' 
 ;
 
@@ -102,16 +104,16 @@ Negation returns Expression:
 
 Comparison returns Expression:
 	Plus ({BinaryOperator.left=current} (symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='
-	| symbol='==' | symbol='is' | symbol='as') right=Plus)*;
+	| symbol='==') right=Plus)*;
 
 Plus returns Expression:
-	Factor ({BinaryOperator.left=current} ('+' | '-') right=Factor)*;
+	Factor ({BinaryOperator.left=current} (symbol='+' | symbol='-') right=Factor)*;
 
 Factor returns Expression:
-	Negative ({BinaryOperator.left=current} ('*' | '/') right=Negative)*;
+	Negative ({BinaryOperator.left=current} (symbol='*' | symbol='/') right=Negative)*;
 
 Negative returns Expression:
-	Primary | {UnaryOperator} '-' expression=Primary;
+	Primary | {UnaryOperator} symbol='-' expression=Primary;
 
 Primary returns Expression:
 	LiteralValue | '(' Expression ')';
@@ -179,7 +181,7 @@ TimeInterval:
 ; 
 
 SessionInterval: 
-	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | QualifiedName ) )? ')'
+	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | variable=[Variable] ) )? ')'
 ; 
 
 Timeout:
@@ -194,14 +196,19 @@ WeekDaysInterval:
 	'WeekDaysInterval' '(' start=WeekDay 'to' end=WeekDay ')'
 ;
 
-MessageContent:
-	'MessageContent' '(' (content=STRING | QualifiedName)  
-	(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 
 
+MessageContent:
+	{MessageContent} 'MessageContent' '(' (content=STRING | variable=[Variable])
+	(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 	
+	;
+//MessageContent:
+//	'MessageContent' '(' (content=STRING | QualifiedName)  
+//	(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 
+//;
 //	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
 //	x (',' x)*
 // ver sobre o validation. Validar se uma variavel(referencia) foi criada 
-;
+
 
 ComparisonOperator:
 	symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='	| symbol='==' 

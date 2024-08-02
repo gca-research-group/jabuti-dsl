@@ -25,13 +25,15 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Clause">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="eventLog" upperBound="-1"
-        eType="#//EventLog" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onSuccess" eType="#//OnSuccess"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//Operation"
-        defaultValueLiteral=""/>
+        defaultValueLiteral="READ"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="terms" lowerBound="1" eType="#//Terms"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolePlayer" eType="#//RolePlayer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onBreach" eType="#//OnBreach"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Party">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -151,6 +153,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="messageContent" eType="#//MessageContent"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="WeekDaysInterval" eSuperTypes="#//Term">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="start" eType="#//WeekDay"/>
@@ -174,6 +177,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComparisonOperator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

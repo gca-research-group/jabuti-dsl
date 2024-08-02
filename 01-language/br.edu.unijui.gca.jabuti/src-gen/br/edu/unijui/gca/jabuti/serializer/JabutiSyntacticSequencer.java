@@ -26,11 +26,8 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1;
 	protected AbstractElementAlias match_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1;
 	protected AbstractElementAlias match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q;
-	protected AbstractElementAlias match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1;
-	protected AbstractElementAlias match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
 	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
-	protected AbstractElementAlias match_SessionInterval___PerKeyword_4_0_QualifiedNameParserRuleCall_4_1_2__q;
 	protected AbstractElementAlias match_Term_LeftParenthesisKeyword_0_0_a;
 	protected AbstractElementAlias match_Term_LeftParenthesisKeyword_0_0_p;
 	
@@ -41,11 +38,8 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_3_1_1_0()), new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_3_1_1_1()));
 		match_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_4_2_1_0()), new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_4_2_1_1()));
 		match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContractAccess().getVariablesKeyword_17_0()), new TokenAlias(false, false, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_17_1()), new TokenAlias(false, false, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_17_3()));
-		match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getFactorAccess().getAsteriskKeyword_1_1_0()), new TokenAlias(false, false, grammarAccess.getFactorAccess().getSolidusKeyword_1_1_1()));
-		match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getPlusAccess().getHyphenMinusKeyword_1_1_1()), new TokenAlias(false, false, grammarAccess.getPlusAccess().getPlusSignKeyword_1_1_0()));
 		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
-		match_SessionInterval___PerKeyword_4_0_QualifiedNameParserRuleCall_4_1_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getSessionIntervalAccess().getPerKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getSessionIntervalAccess().getQualifiedNameParserRuleCall_4_1_2()));
 		match_Term_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getTermAccess().getLeftParenthesisKeyword_0_0());
 		match_Term_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getTermAccess().getLeftParenthesisKeyword_0_0());
 	}
@@ -95,16 +89,10 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q.equals(syntax))
 				emit_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1.equals(syntax))
-				emit_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0.equals(syntax))
-				emit_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_1_0_a.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Primary_LeftParenthesisKeyword_1_0_p.equals(syntax))
 				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_SessionInterval___PerKeyword_4_0_QualifiedNameParserRuleCall_4_1_2__q.equals(syntax))
-				emit_SessionInterval___PerKeyword_4_0_QualifiedNameParserRuleCall_4_1_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Term_LeftParenthesisKeyword_0_0_a.equals(syntax))
 				emit_Term_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Term_LeftParenthesisKeyword_0_0_p.equals(syntax))
@@ -180,40 +168,12 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     '*' | '/'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     {BinaryOperator.left=} (ambiguity) right=Negative
-	 
-	 * </pre>
-	 */
-	protected void emit_Factor_AsteriskKeyword_1_1_0_or_SolidusKeyword_1_1_1(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     '+' | '-'
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     {BinaryOperator.left=} (ambiguity) right=Factor
-	 
-	 * </pre>
-	 */
-	protected void emit_Plus_HyphenMinusKeyword_1_1_1_or_PlusSignKeyword_1_1_0(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
 	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '-' expression=Primary
 	 *     (rule start) (ambiguity) name=QualifiedName
 	 *     (rule start) (ambiguity) symbol='!'
+	 *     (rule start) (ambiguity) symbol='-'
 	 *     (rule start) (ambiguity) value=INT
 	 *     (rule start) (ambiguity) value=QualifiedName
 	 *     (rule start) (ambiguity) value=STRING
@@ -231,8 +191,8 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('+
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) '-' expression=Primary
 	 *     (rule start) (ambiguity) symbol='!'
+	 *     (rule start) (ambiguity) symbol='-'
 	 *     (rule start) (ambiguity) {BinaryOperator.left=}
 	 
 	 * </pre>
@@ -244,27 +204,12 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	/**
 	 * <pre>
 	 * Ambiguous syntax:
-	 *     ('per' QualifiedName)?
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     timeUnit=TimeUnit (ambiguity) ')' (rule end)
-	 
-	 * </pre>
-	 */
-	protected void emit_SessionInterval___PerKeyword_4_0_QualifiedNameParserRuleCall_4_1_2__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
 	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
 	 *     (rule start) (ambiguity) 'MaxNumberOfOperation' '(' operationsNumber=INT
-	 *     (rule start) (ambiguity) 'MessageContent' '(' QualifiedName ')' (rule start)
-	 *     (rule start) (ambiguity) 'MessageContent' '(' QualifiedName comparisonOperator=ComparisonOperator
 	 *     (rule start) (ambiguity) 'MessageContent' '(' content=STRING
+	 *     (rule start) (ambiguity) 'MessageContent' '(' variable=[Variable|ID]
 	 *     (rule start) (ambiguity) 'SessionInterval' '(' frequency=INT
 	 *     (rule start) (ambiguity) 'TimeInterval' '(' start=STRING
 	 *     (rule start) (ambiguity) 'Timeout' '(' seconds=INT

@@ -4,7 +4,7 @@ contract DeliveryHiring_O {
 		dueDate =  "2024-01-01 08:30:00"   			  	 
 	}	
   
-	parties{
+  	parties{
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}

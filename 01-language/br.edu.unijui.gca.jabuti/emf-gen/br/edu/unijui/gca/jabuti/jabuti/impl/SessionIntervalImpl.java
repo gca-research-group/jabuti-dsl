@@ -7,6 +7,7 @@ import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -28,6 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getValue <em>Value</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getMessageContent <em>Message Content</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.SessionIntervalImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @generated
@@ -103,6 +105,16 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 	 * @ordered
 	 */
 	protected MessageContent messageContent;
+
+	/**
+	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Variable variable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -256,6 +268,51 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 	 * @generated
 	 */
 	@Override
+	public Variable getVariable()
+	{
+		if (variable != null && variable.eIsProxy())
+		{
+			InternalEObject oldVariable = (InternalEObject)variable;
+			variable = (Variable)eResolveProxy(oldVariable);
+			if (variable != oldVariable)
+			{
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JabutiPackage.SESSION_INTERVAL__VARIABLE, oldVariable, variable));
+			}
+		}
+		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Variable basicGetVariable()
+	{
+		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVariable(Variable newVariable)
+	{
+		Variable oldVariable = variable;
+		variable = newVariable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.SESSION_INTERVAL__VARIABLE, oldVariable, variable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -284,6 +341,9 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 				return getValue();
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				return getMessageContent();
+			case JabutiPackage.SESSION_INTERVAL__VARIABLE:
+				if (resolve) return getVariable();
+				return basicGetVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -309,6 +369,9 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 				return;
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				setMessageContent((MessageContent)newValue);
+				return;
+			case JabutiPackage.SESSION_INTERVAL__VARIABLE:
+				setVariable((Variable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -336,6 +399,9 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				setMessageContent((MessageContent)null);
 				return;
+			case JabutiPackage.SESSION_INTERVAL__VARIABLE:
+				setVariable((Variable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -358,6 +424,8 @@ public class SessionIntervalImpl extends TermImpl implements SessionInterval
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case JabutiPackage.SESSION_INTERVAL__MESSAGE_CONTENT:
 				return messageContent != null;
+			case JabutiPackage.SESSION_INTERVAL__VARIABLE:
+				return variable != null;
 		}
 		return super.eIsSet(featureID);
 	}

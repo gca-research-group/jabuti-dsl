@@ -4,17 +4,17 @@ contract DeliveryHiring_R {
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
 		dueDate = "2022-12-31 18:00:00"
-	}	
-
+	}	  
+   
 	parties{
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
-
+   
 	variables{
-		numberOfAddresses = "count(//body/perosonalInformation/address/cep)"
-		weight = "//body/package/weight/text()" 
-	}
+		numberOfAddresses  = "count(//body/perosonalInformation/address/cep)"
+		weight = "//body/package/weight/text()"  
+	} 
 	
 	clauses{
 		right requestDelivery {

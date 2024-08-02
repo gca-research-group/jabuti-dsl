@@ -199,7 +199,14 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Clause returns Obligation
 	 *
 	 * Constraint:
-	 *     (name=ID rolePlayer=RolePlayer operation=Operation terms=Terms eventLog+=EventLog*)
+	 *     (
+	 *         name=ID 
+	 *         rolePlayer=RolePlayer 
+	 *         operation=Operation 
+	 *         terms=Terms 
+	 *         onSuccess=OnSuccess? 
+	 *         onBreach=OnBreach?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Clause_Obligation(ISerializationContext context, Obligation semanticObject) {
@@ -213,7 +220,14 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Clause returns Prohibition
 	 *
 	 * Constraint:
-	 *     (name=ID rolePlayer=RolePlayer operation=Operation terms=Terms eventLog+=EventLog*)
+	 *     (
+	 *         name=ID 
+	 *         rolePlayer=RolePlayer 
+	 *         operation=Operation 
+	 *         terms=Terms 
+	 *         onSuccess=OnSuccess? 
+	 *         onBreach=OnBreach?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Clause_Prohibition(ISerializationContext context, Prohibition semanticObject) {
@@ -227,7 +241,14 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Clause returns Right
 	 *
 	 * Constraint:
-	 *     (name=ID rolePlayer=RolePlayer operation=Operation terms=Terms eventLog+=EventLog*)
+	 *     (
+	 *         name=ID 
+	 *         rolePlayer=RolePlayer 
+	 *         operation=Operation 
+	 *         terms=Terms 
+	 *         onSuccess=OnSuccess? 
+	 *         onBreach=OnBreach?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_Clause_Right(ISerializationContext context, Right semanticObject) {
@@ -282,14 +303,12 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *                 symbol='&gt;' | 
 	 *                 symbol='&lt;' | 
 	 *                 symbol='!=' | 
-	 *                 symbol='==' | 
-	 *                 symbol='is' | 
-	 *                 symbol='as'
+	 *                 symbol='=='
 	 *             ) 
 	 *             right=Plus
 	 *         ) | 
-	 *         (left=Plus_BinaryOperator_1_0 right=Factor) | 
-	 *         (left=Factor_BinaryOperator_1_0 right=Negative)
+	 *         (left=Plus_BinaryOperator_1_0 (symbol='+' | symbol='-') right=Factor) | 
+	 *         (left=Factor_BinaryOperator_1_0 (symbol='*' | symbol='/') right=Negative)
 	 *     )
 	 * </pre>
 	 */
@@ -445,7 +464,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     MessageContent returns MessageContent
 	 *
 	 * Constraint:
-	 *     (content=STRING | (content=STRING comparisonOperator=ComparisonOperator expression=Expression timeUnit=TimeUnit?))?
+	 *     ((content=STRING | variable=[Variable|ID]) (comparisonOperator=ComparisonOperator expression=Expression timeUnit=TimeUnit?)?)
 	 * </pre>
 	 */
 	protected void sequence_MessageContent(ISerializationContext context, MessageContent semanticObject) {
@@ -509,7 +528,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Primary returns UnaryOperator
 	 *
 	 * Constraint:
-	 *     ((symbol='!' expression=Comparison) | expression=Primary)
+	 *     ((symbol='!' expression=Comparison) | (symbol='-' expression=Primary))
 	 * </pre>
 	 */
 	protected void sequence_Negation_Negative(ISerializationContext context, UnaryOperator semanticObject) {
@@ -682,7 +701,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     SessionInterval returns SessionInterval
 	 *
 	 * Constraint:
-	 *     (frequency=INT timeUnit=TimeUnit (messageContent=MessageContent | value=STRING)?)
+	 *     (frequency=INT timeUnit=TimeUnit (messageContent=MessageContent | value=STRING | variable=[Variable|ID])?)
 	 * </pre>
 	 */
 	protected void sequence_SessionInterval(ISerializationContext context, SessionInterval semanticObject) {

@@ -8,6 +8,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,6 +30,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getContent <em>Content</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getVariable <em>Variable</em>}</li>
  * </ul>
  *
  * @generated
@@ -94,6 +96,16 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @ordered
 	 */
 	protected Expression expression;
+
+	/**
+	 * The cached value of the '{@link #getVariable() <em>Variable</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getVariable()
+	 * @generated
+	 * @ordered
+	 */
+	protected Variable variable;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -272,6 +284,51 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
+	public Variable getVariable()
+	{
+		if (variable != null && variable.eIsProxy())
+		{
+			InternalEObject oldVariable = (InternalEObject)variable;
+			variable = (Variable)eResolveProxy(oldVariable);
+			if (variable != oldVariable)
+			{
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JabutiPackage.MESSAGE_CONTENT__VARIABLE, oldVariable, variable));
+			}
+		}
+		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Variable basicGetVariable()
+	{
+		return variable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setVariable(Variable newVariable)
+	{
+		Variable oldVariable = variable;
+		variable = newVariable;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__VARIABLE, oldVariable, variable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -302,6 +359,9 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return getTimeUnit();
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return getExpression();
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
+				if (resolve) return getVariable();
+				return basicGetVariable();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -327,6 +387,9 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return;
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				setExpression((Expression)newValue);
+				return;
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
+				setVariable((Variable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -354,6 +417,9 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				setExpression((Expression)null);
 				return;
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
+				setVariable((Variable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -376,6 +442,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return timeUnit != TIME_UNIT_EDEFAULT;
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return expression != null;
+			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
+				return variable != null;
 		}
 		return super.eIsSet(featureID);
 	}

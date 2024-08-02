@@ -5,33 +5,24 @@ import "./libs/EAI_Domain.sol";
 
 contract DeliveryHiring is EAI_Domain{
 	
-	Party deliverySystem;
-	Party integrationProcess;
-	MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(3, MINUTE, 0, 0);
-	MessageContent public messageContent = MessageContent("");
-	MessageContent public messageContent = MessageContent("");
-	MessageContent public messageContent = MessageContent("");
+	uint32 beginDate; 
+	uint32 dueDate; 	
+	using EAI for EAI.Party;
+	       
+	EAI.Party application;
+	EAI.Party process;
+	mapping(address=>EAI.Party) mapParty;
 	
+	event failEvent(string _logMessage);
+	event successEvent(string _logMessage);
+	/* --------------------------- END: commom code for all contracts ----------------------- */  
 	
-	event requestDeliveryevent(string _logMessage);
-	
-	constructor(address _applicationWallet, address _processWallet){
-    	deliverySystem = Party("integrationProcess ", _applicationWallet);
-	    integrationProcess = Party("integrationProcess", _processWallet);
-	}
-	
-	function requestDelivery(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
-					
-		
-		bool isBreached=false;
-		
-		if(!isOperationLimitReached(_accessDateTime, operationLimit) &&
-		) {
-			operationLimit.requestsPerformed+=1;
-        	return true;	
-		}
-		
-		emit requestDeliveryevent ("Request made outside of allowed hours or distance limit exceeded");
-		return false;
-	}
-}
+	/* =========== BEGIN: codes generated based in specific jabuti contract =================== */
+	    	
+	//  1º STEP:  Import library to conditions/terms  ----------------------------------             
+	    
+	    
+	      
+
+
+

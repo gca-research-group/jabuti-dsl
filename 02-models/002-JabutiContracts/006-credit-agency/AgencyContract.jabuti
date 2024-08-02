@@ -14,7 +14,7 @@ contract DeliveryHiring_O {
 	
 	variables{
 		dateTimeCompra = "//dateCompra/text()"  + " " + "//HourCompra/text()"		
-		var1="//dateCompra/text()/dateCompra/text()dateCompra/text()ateCompra/text()"
+		var1="//dateCompra/text()"
 		sessionInterval = SessionInterval(1 Day)
 	}
 	
@@ -31,9 +31,10 @@ contract DeliveryHiring_O {
 					MessageContent( "Content" )	
 				},
 				TimeInterval("08:00:00" to "12:00:00")
-			}
+			}			
 			
 			onBreach (log(" resgistrar falha...."))
+			
 		}
 	}
 }

@@ -225,13 +225,13 @@ public interface JabutiPackage extends EPackage
 	int CLAUSE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * The feature id for the '<em><b>On Success</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE__EVENT_LOG = 1;
+	int CLAUSE__ON_SUCCESS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -261,13 +261,22 @@ public interface JabutiPackage extends EPackage
 	int CLAUSE__ROLE_PLAYER = 4;
 
 	/**
+	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CLAUSE__ON_BREACH = 5;
+
+	/**
 	 * The number of structural features of the '<em>Clause</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAUSE_FEATURE_COUNT = 5;
+	int CLAUSE_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl <em>Party</em>}' class.
@@ -373,13 +382,13 @@ public interface JabutiPackage extends EPackage
 	int RIGHT__NAME = CLAUSE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * The feature id for the '<em><b>On Success</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RIGHT__EVENT_LOG = CLAUSE__EVENT_LOG;
+	int RIGHT__ON_SUCCESS = CLAUSE__ON_SUCCESS;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -407,6 +416,15 @@ public interface JabutiPackage extends EPackage
 	 * @ordered
 	 */
 	int RIGHT__ROLE_PLAYER = CLAUSE__ROLE_PLAYER;
+
+	/**
+	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RIGHT__ON_BREACH = CLAUSE__ON_BREACH;
 
 	/**
 	 * The number of structural features of the '<em>Right</em>' class.
@@ -437,13 +455,13 @@ public interface JabutiPackage extends EPackage
 	int OBLIGATION__NAME = CLAUSE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * The feature id for the '<em><b>On Success</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int OBLIGATION__EVENT_LOG = CLAUSE__EVENT_LOG;
+	int OBLIGATION__ON_SUCCESS = CLAUSE__ON_SUCCESS;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -471,6 +489,15 @@ public interface JabutiPackage extends EPackage
 	 * @ordered
 	 */
 	int OBLIGATION__ROLE_PLAYER = CLAUSE__ROLE_PLAYER;
+
+	/**
+	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OBLIGATION__ON_BREACH = CLAUSE__ON_BREACH;
 
 	/**
 	 * The number of structural features of the '<em>Obligation</em>' class.
@@ -501,13 +528,13 @@ public interface JabutiPackage extends EPackage
 	int PROHIBITION__NAME = CLAUSE__NAME;
 
 	/**
-	 * The feature id for the '<em><b>Event Log</b></em>' containment reference list.
+	 * The feature id for the '<em><b>On Success</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROHIBITION__EVENT_LOG = CLAUSE__EVENT_LOG;
+	int PROHIBITION__ON_SUCCESS = CLAUSE__ON_SUCCESS;
 
 	/**
 	 * The feature id for the '<em><b>Operation</b></em>' attribute.
@@ -535,6 +562,15 @@ public interface JabutiPackage extends EPackage
 	 * @ordered
 	 */
 	int PROHIBITION__ROLE_PLAYER = CLAUSE__ROLE_PLAYER;
+
+	/**
+	 * The feature id for the '<em><b>On Breach</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROHIBITION__ON_BREACH = CLAUSE__ON_BREACH;
 
 	/**
 	 * The number of structural features of the '<em>Prohibition</em>' class.
@@ -1214,13 +1250,22 @@ public interface JabutiPackage extends EPackage
 	int SESSION_INTERVAL__MESSAGE_CONTENT = TERM_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SESSION_INTERVAL__VARIABLE = TERM_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Session Interval</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SESSION_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
+	int SESSION_INTERVAL_FEATURE_COUNT = TERM_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
@@ -1408,13 +1453,22 @@ public interface JabutiPackage extends EPackage
 	int MESSAGE_CONTENT__EXPRESSION = TERM_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Variable</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__VARIABLE = TERM_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Message Content</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT_FEATURE_COUNT = TERM_FEATURE_COUNT + 4;
+	int MESSAGE_CONTENT_FEATURE_COUNT = TERM_FEATURE_COUNT + 5;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.
@@ -1647,15 +1701,15 @@ public interface JabutiPackage extends EPackage
 	EAttribute getClause_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog <em>Event Log</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOnSuccess <em>On Success</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Event Log</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getEventLog()
+	 * @return the meta object for the containment reference '<em>On Success</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getOnSuccess()
 	 * @see #getClause()
 	 * @generated
 	 */
-	EReference getClause_EventLog();
+	EReference getClause_OnSuccess();
 
 	/**
 	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOperation <em>Operation</em>}'.
@@ -1689,6 +1743,17 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getClause_RolePlayer();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getOnBreach <em>On Breach</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>On Breach</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.Clause#getOnBreach()
+	 * @see #getClause()
+	 * @generated
+	 */
+	EReference getClause_OnBreach();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Party <em>Party</em>}'.
@@ -2303,6 +2368,17 @@ public interface JabutiPackage extends EPackage
 	EReference getSessionInterval_MessageContent();
 
 	/**
+	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Variable</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.SessionInterval#getVariable()
+	 * @see #getSessionInterval()
+	 * @generated
+	 */
+	EReference getSessionInterval_Variable();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval <em>Week Days Interval</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2472,6 +2548,17 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EReference getMessageContent_Expression();
+
+	/**
+	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariable <em>Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Variable</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariable()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EReference getMessageContent_Variable();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator <em>Comparison Operator</em>}'.
@@ -2686,12 +2773,12 @@ public interface JabutiPackage extends EPackage
 		EAttribute CLAUSE__NAME = eINSTANCE.getClause_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Event Log</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>On Success</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CLAUSE__EVENT_LOG = eINSTANCE.getClause_EventLog();
+		EReference CLAUSE__ON_SUCCESS = eINSTANCE.getClause_OnSuccess();
 
 		/**
 		 * The meta object literal for the '<em><b>Operation</b></em>' attribute feature.
@@ -2716,6 +2803,14 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute CLAUSE__ROLE_PLAYER = eINSTANCE.getClause_RolePlayer();
+
+		/**
+		 * The meta object literal for the '<em><b>On Breach</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CLAUSE__ON_BREACH = eINSTANCE.getClause_OnBreach();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.PartyImpl <em>Party</em>}' class.
@@ -3234,6 +3329,14 @@ public interface JabutiPackage extends EPackage
 		EReference SESSION_INTERVAL__MESSAGE_CONTENT = eINSTANCE.getSessionInterval_MessageContent();
 
 		/**
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SESSION_INTERVAL__VARIABLE = eINSTANCE.getSessionInterval_Variable();
+
+		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.WeekDaysIntervalImpl <em>Week Days Interval</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3370,6 +3473,14 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EReference MESSAGE_CONTENT__EXPRESSION = eINSTANCE.getMessageContent_Expression();
+
+		/**
+		 * The meta object literal for the '<em><b>Variable</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_CONTENT__VARIABLE = eINSTANCE.getMessageContent_Variable();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.

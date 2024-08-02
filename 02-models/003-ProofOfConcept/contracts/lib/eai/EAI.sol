@@ -588,7 +588,7 @@ library EAI{
 
 
 /* ========================================================================== */
-/*                      SESSION INTERVAL SINGLE                     */
+/*                      SESSION INTERVAL SINGLE                               */
 /* ========================================================================== */
     // the session interval accept only from SECOND to WEEK timeUnit
     struct SessionInterval{

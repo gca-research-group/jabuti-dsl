@@ -4,27 +4,21 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
-import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
+import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
 import br.edu.unijui.gca.jabuti.jabuti.Operation;
 import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 import br.edu.unijui.gca.jabuti.jabuti.Terms;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,10 +29,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getName <em>Name</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getEventLog <em>Event Log</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getOnSuccess <em>On Success</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getOperation <em>Operation</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getTerms <em>Terms</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getRolePlayer <em>Role Player</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ClauseImpl#getOnBreach <em>On Breach</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,14 +61,14 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getEventLog() <em>Event Log</em>}' containment reference list.
+	 * The cached value of the '{@link #getOnSuccess() <em>On Success</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getEventLog()
+	 * @see #getOnSuccess()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EventLog> eventLog;
+	protected OnSuccess onSuccess;
 
 	/**
 	 * The default value of the '{@link #getOperation() <em>Operation</em>}' attribute.
@@ -83,7 +78,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Operation OPERATION_EDEFAULT = Operation.PUSH;
+	protected static final Operation OPERATION_EDEFAULT = Operation.READ;
 
 	/**
 	 * The cached value of the '{@link #getOperation() <em>Operation</em>}' attribute.
@@ -124,6 +119,16 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @ordered
 	 */
 	protected RolePlayer rolePlayer = ROLE_PLAYER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getOnBreach() <em>On Breach</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOnBreach()
+	 * @generated
+	 * @ordered
+	 */
+	protected OnBreach onBreach;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,13 +182,48 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public EList<EventLog> getEventLog()
+	public OnSuccess getOnSuccess()
 	{
-		if (eventLog == null)
+		return onSuccess;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOnSuccess(OnSuccess newOnSuccess, NotificationChain msgs)
+	{
+		OnSuccess oldOnSuccess = onSuccess;
+		onSuccess = newOnSuccess;
+		if (eNotificationRequired())
 		{
-			eventLog = new EObjectContainmentEList<EventLog>(EventLog.class, this, JabutiPackage.CLAUSE__EVENT_LOG);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__ON_SUCCESS, oldOnSuccess, newOnSuccess);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
-		return eventLog;
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOnSuccess(OnSuccess newOnSuccess)
+	{
+		if (newOnSuccess != onSuccess)
+		{
+			NotificationChain msgs = null;
+			if (onSuccess != null)
+				msgs = ((InternalEObject)onSuccess).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__ON_SUCCESS, null, msgs);
+			if (newOnSuccess != null)
+				msgs = ((InternalEObject)newOnSuccess).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__ON_SUCCESS, null, msgs);
+			msgs = basicSetOnSuccess(newOnSuccess, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__ON_SUCCESS, newOnSuccess, newOnSuccess));
 	}
 
 	/**
@@ -292,14 +332,66 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
+	public OnBreach getOnBreach()
+	{
+		return onBreach;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetOnBreach(OnBreach newOnBreach, NotificationChain msgs)
+	{
+		OnBreach oldOnBreach = onBreach;
+		onBreach = newOnBreach;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__ON_BREACH, oldOnBreach, newOnBreach);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setOnBreach(OnBreach newOnBreach)
+	{
+		if (newOnBreach != onBreach)
+		{
+			NotificationChain msgs = null;
+			if (onBreach != null)
+				msgs = ((InternalEObject)onBreach).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__ON_BREACH, null, msgs);
+			if (newOnBreach != null)
+				msgs = ((InternalEObject)newOnBreach).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CLAUSE__ON_BREACH, null, msgs);
+			msgs = basicSetOnBreach(newOnBreach, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CLAUSE__ON_BREACH, newOnBreach, newOnBreach));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CLAUSE__EVENT_LOG:
-				return ((InternalEList<?>)getEventLog()).basicRemove(otherEnd, msgs);
+			case JabutiPackage.CLAUSE__ON_SUCCESS:
+				return basicSetOnSuccess(null, msgs);
 			case JabutiPackage.CLAUSE__TERMS:
 				return basicSetTerms(null, msgs);
+			case JabutiPackage.CLAUSE__ON_BREACH:
+				return basicSetOnBreach(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -316,14 +408,16 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		{
 			case JabutiPackage.CLAUSE__NAME:
 				return getName();
-			case JabutiPackage.CLAUSE__EVENT_LOG:
-				return getEventLog();
+			case JabutiPackage.CLAUSE__ON_SUCCESS:
+				return getOnSuccess();
 			case JabutiPackage.CLAUSE__OPERATION:
 				return getOperation();
 			case JabutiPackage.CLAUSE__TERMS:
 				return getTerms();
 			case JabutiPackage.CLAUSE__ROLE_PLAYER:
 				return getRolePlayer();
+			case JabutiPackage.CLAUSE__ON_BREACH:
+				return getOnBreach();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -333,7 +427,6 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue)
 	{
@@ -342,9 +435,8 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case JabutiPackage.CLAUSE__NAME:
 				setName((String)newValue);
 				return;
-			case JabutiPackage.CLAUSE__EVENT_LOG:
-				getEventLog().clear();
-				getEventLog().addAll((Collection<? extends EventLog>)newValue);
+			case JabutiPackage.CLAUSE__ON_SUCCESS:
+				setOnSuccess((OnSuccess)newValue);
 				return;
 			case JabutiPackage.CLAUSE__OPERATION:
 				setOperation((Operation)newValue);
@@ -354,6 +446,9 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return;
 			case JabutiPackage.CLAUSE__ROLE_PLAYER:
 				setRolePlayer((RolePlayer)newValue);
+				return;
+			case JabutiPackage.CLAUSE__ON_BREACH:
+				setOnBreach((OnBreach)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -372,8 +467,8 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 			case JabutiPackage.CLAUSE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case JabutiPackage.CLAUSE__EVENT_LOG:
-				getEventLog().clear();
+			case JabutiPackage.CLAUSE__ON_SUCCESS:
+				setOnSuccess((OnSuccess)null);
 				return;
 			case JabutiPackage.CLAUSE__OPERATION:
 				setOperation(OPERATION_EDEFAULT);
@@ -383,6 +478,9 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				return;
 			case JabutiPackage.CLAUSE__ROLE_PLAYER:
 				setRolePlayer(ROLE_PLAYER_EDEFAULT);
+				return;
+			case JabutiPackage.CLAUSE__ON_BREACH:
+				setOnBreach((OnBreach)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -400,14 +498,16 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 		{
 			case JabutiPackage.CLAUSE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case JabutiPackage.CLAUSE__EVENT_LOG:
-				return eventLog != null && !eventLog.isEmpty();
+			case JabutiPackage.CLAUSE__ON_SUCCESS:
+				return onSuccess != null;
 			case JabutiPackage.CLAUSE__OPERATION:
 				return operation != OPERATION_EDEFAULT;
 			case JabutiPackage.CLAUSE__TERMS:
 				return terms != null;
 			case JabutiPackage.CLAUSE__ROLE_PLAYER:
 				return rolePlayer != ROLE_PLAYER_EDEFAULT;
+			case JabutiPackage.CLAUSE__ON_BREACH:
+				return onBreach != null;
 		}
 		return super.eIsSet(featureID);
 	}
