@@ -33,6 +33,7 @@ import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
 import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
+import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
@@ -390,6 +391,13 @@ public class JabutiSwitch<T> extends Switch<T>
 			{
 				ComparisonOperator comparisonOperator = (ComparisonOperator)theEObject;
 				T result = caseComparisonOperator(comparisonOperator);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case JabutiPackage.TIME_UNIT_SPEC:
+			{
+				TimeUnitSpec timeUnitSpec = (TimeUnitSpec)theEObject;
+				T result = caseTimeUnitSpec(timeUnitSpec);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -969,6 +977,22 @@ public class JabutiSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseComparisonOperator(ComparisonOperator object)
+	{
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Time Unit Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Time Unit Spec</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTimeUnitSpec(TimeUnitSpec object)
 	{
 		return null;
 	}

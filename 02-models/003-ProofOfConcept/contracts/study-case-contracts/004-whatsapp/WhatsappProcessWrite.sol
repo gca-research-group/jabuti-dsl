@@ -9,7 +9,7 @@
 //     bool activated;
  
 //     uint32 beginDate; 
-// 	uint32 dueDate; 	
+// 	   uint32 dueDate; 	
 //     using EAI for EAI.Party;
        
 //     EAI.Party application;

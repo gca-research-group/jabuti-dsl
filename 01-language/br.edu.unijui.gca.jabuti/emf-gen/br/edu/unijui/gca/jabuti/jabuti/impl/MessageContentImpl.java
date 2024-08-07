@@ -4,10 +4,11 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
+import br.edu.unijui.gca.jabuti.jabuti.DataType;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
-import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -28,9 +29,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getContent <em>Content</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getVariable <em>Variable</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getTimeUnitSpec <em>Time Unit Spec</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,26 +70,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	protected String content = CONTENT_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final TimeUnit TIME_UNIT_EDEFAULT = TimeUnit.SECOND;
-
-	/**
-	 * The cached value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -106,6 +88,36 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @ordered
 	 */
 	protected Variable variable;
+
+	/**
+	 * The default value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final DataType RETURN_TYPE_EDEFAULT = DataType.TEXT;
+
+	/**
+	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnType()
+	 * @generated
+	 * @ordered
+	 */
+	protected DataType returnType = RETURN_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getTimeUnitSpec() <em>Time Unit Spec</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimeUnitSpec()
+	 * @generated
+	 * @ordered
+	 */
+	protected TimeUnitSpec timeUnitSpec;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -209,31 +221,6 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public TimeUnit getTimeUnit()
-	{
-		return timeUnit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setTimeUnit(TimeUnit newTimeUnit)
-	{
-		TimeUnit oldTimeUnit = timeUnit;
-		timeUnit = newTimeUnit == null ? TIME_UNIT_EDEFAULT : newTimeUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__TIME_UNIT, oldTimeUnit, timeUnit));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public Expression getExpression()
 	{
 		return expression;
@@ -329,6 +316,81 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
+	public DataType getReturnType()
+	{
+		return returnType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setReturnType(DataType newReturnType)
+	{
+		DataType oldReturnType = returnType;
+		returnType = newReturnType == null ? RETURN_TYPE_EDEFAULT : newReturnType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE, oldReturnType, returnType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public TimeUnitSpec getTimeUnitSpec()
+	{
+		return timeUnitSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetTimeUnitSpec(TimeUnitSpec newTimeUnitSpec, NotificationChain msgs)
+	{
+		TimeUnitSpec oldTimeUnitSpec = timeUnitSpec;
+		timeUnitSpec = newTimeUnitSpec;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, oldTimeUnitSpec, newTimeUnitSpec);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setTimeUnitSpec(TimeUnitSpec newTimeUnitSpec)
+	{
+		if (newTimeUnitSpec != timeUnitSpec)
+		{
+			NotificationChain msgs = null;
+			if (timeUnitSpec != null)
+				msgs = ((InternalEObject)timeUnitSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, null, msgs);
+			if (newTimeUnitSpec != null)
+				msgs = ((InternalEObject)newTimeUnitSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, null, msgs);
+			msgs = basicSetTimeUnitSpec(newTimeUnitSpec, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, newTimeUnitSpec, newTimeUnitSpec));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
 	{
 		switch (featureID)
@@ -337,6 +399,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return basicSetComparisonOperator(null, msgs);
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return basicSetExpression(null, msgs);
+			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
+				return basicSetTimeUnitSpec(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -355,13 +419,15 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return getComparisonOperator();
 			case JabutiPackage.MESSAGE_CONTENT__CONTENT:
 				return getContent();
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
-				return getTimeUnit();
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return getExpression();
 			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
 				if (resolve) return getVariable();
 				return basicGetVariable();
+			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
+				return getReturnType();
+			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
+				return getTimeUnitSpec();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -382,14 +448,17 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__CONTENT:
 				setContent((String)newValue);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
-				setTimeUnit((TimeUnit)newValue);
-				return;
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				setExpression((Expression)newValue);
 				return;
 			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
 				setVariable((Variable)newValue);
+				return;
+			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
+				setReturnType((DataType)newValue);
+				return;
+			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
+				setTimeUnitSpec((TimeUnitSpec)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -411,14 +480,17 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__CONTENT:
 				setContent(CONTENT_EDEFAULT);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
-				setTimeUnit(TIME_UNIT_EDEFAULT);
-				return;
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				setExpression((Expression)null);
 				return;
 			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
 				setVariable((Variable)null);
+				return;
+			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
+				setReturnType(RETURN_TYPE_EDEFAULT);
+				return;
+			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
+				setTimeUnitSpec((TimeUnitSpec)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -438,12 +510,14 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return comparisonOperator != null;
 			case JabutiPackage.MESSAGE_CONTENT__CONTENT:
 				return CONTENT_EDEFAULT == null ? content != null : !CONTENT_EDEFAULT.equals(content);
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT:
-				return timeUnit != TIME_UNIT_EDEFAULT;
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return expression != null;
 			case JabutiPackage.MESSAGE_CONTENT__VARIABLE:
 				return variable != null;
+			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
+				return returnType != RETURN_TYPE_EDEFAULT;
+			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
+				return timeUnitSpec != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -461,8 +535,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (content: ");
 		result.append(content);
-		result.append(", timeUnit: ");
-		result.append(timeUnit);
+		result.append(", returnType: ");
+		result.append(returnType);
 		result.append(')');
 		return result.toString();
 	}

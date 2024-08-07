@@ -40,6 +40,7 @@
 'Year'=81
 'application'=28
 'beginDate'=15
+'boolean'=84
 'check'=51
 'clauses'=21
 'contract'=12
@@ -47,6 +48,7 @@
 'dueDate'=17
 'import'=11
 'log('=32
+'numeric'=83
 'obligation'=26
 'onBreach'=34
 'onSuccess'=30
@@ -63,6 +65,7 @@
 'right'=25
 'rolePlayer'=22
 'terms'=24
+'text'=82
 'to'=53
 'variables'=20
 'when'=50
@@ -147,3 +150,6 @@ T__78=78
 T__79=79
 T__80=80
 T__81=81
+T__82=82
+T__83=83
+T__84=84

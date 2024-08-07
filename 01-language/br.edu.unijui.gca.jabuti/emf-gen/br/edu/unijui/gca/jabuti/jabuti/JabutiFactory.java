@@ -348,6 +348,15 @@ public interface JabutiFactory extends EFactory
 	ComparisonOperator createComparisonOperator();
 
 	/**
+	 * Returns a new object of class '<em>Time Unit Spec</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Time Unit Spec</em>'.
+	 * @generated
+	 */
+	TimeUnitSpec createTimeUnitSpec();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -15,9 +15,10 @@ package br.edu.unijui.gca.jabuti.jabuti;
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getContent <em>Content</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariable <em>Variable</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getReturnType <em>Return Type</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec <em>Time Unit Spec</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent()
@@ -71,31 +72,6 @@ public interface MessageContent extends Term
 	void setContent(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Time Unit</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time Unit</em>' attribute.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnit
-	 * @see #setTimeUnit(TimeUnit)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_TimeUnit()
-	 * @model
-	 * @generated
-	 */
-	TimeUnit getTimeUnit();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Unit</em>' attribute.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnit
-	 * @see #getTimeUnit()
-	 * @generated
-	 */
-	void setTimeUnit(TimeUnit value);
-
-	/**
 	 * Returns the value of the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -138,5 +114,52 @@ public interface MessageContent extends Term
 	 * @generated
 	 */
 	void setVariable(Variable value);
+
+	/**
+	 * Returns the value of the '<em><b>Return Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.DataType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Return Type</em>' attribute.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.DataType
+	 * @see #setReturnType(DataType)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_ReturnType()
+	 * @model
+	 * @generated
+	 */
+	DataType getReturnType();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getReturnType <em>Return Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Return Type</em>' attribute.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.DataType
+	 * @see #getReturnType()
+	 * @generated
+	 */
+	void setReturnType(DataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Time Unit Spec</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Time Unit Spec</em>' containment reference.
+	 * @see #setTimeUnitSpec(TimeUnitSpec)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_TimeUnitSpec()
+	 * @model containment="true"
+	 * @generated
+	 */
+	TimeUnitSpec getTimeUnitSpec();
+
+	/**
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec <em>Time Unit Spec</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Time Unit Spec</em>' containment reference.
+	 * @see #getTimeUnitSpec()
+	 * @generated
+	 */
+	void setTimeUnitSpec(TimeUnitSpec value);
 
 } // MessageContent

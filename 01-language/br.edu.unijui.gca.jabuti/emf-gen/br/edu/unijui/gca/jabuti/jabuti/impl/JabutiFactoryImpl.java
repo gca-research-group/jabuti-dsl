@@ -10,6 +10,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.DataType;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
@@ -37,6 +38,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Term;
 import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
@@ -142,6 +144,7 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION: return createMaxNumberOfOperation();
 			case JabutiPackage.MESSAGE_CONTENT: return createMessageContent();
 			case JabutiPackage.COMPARISON_OPERATOR: return createComparisonOperator();
+			case JabutiPackage.TIME_UNIT_SPEC: return createTimeUnitSpec();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -165,6 +168,8 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 				return createTimeUnitFromString(eDataType, initialValue);
 			case JabutiPackage.OPERATION:
 				return createOperationFromString(eDataType, initialValue);
+			case JabutiPackage.DATA_TYPE:
+				return createDataTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -188,6 +193,8 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 				return convertTimeUnitToString(eDataType, instanceValue);
 			case JabutiPackage.OPERATION:
 				return convertOperationToString(eDataType, instanceValue);
+			case JabutiPackage.DATA_TYPE:
+				return convertDataTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -630,6 +637,18 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public TimeUnitSpec createTimeUnitSpec()
+	{
+		TimeUnitSpecImpl timeUnitSpec = new TimeUnitSpecImpl();
+		return timeUnitSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RolePlayer createRolePlayerFromString(EDataType eDataType, String initialValue)
 	{
 		RolePlayer result = RolePlayer.get(initialValue);
@@ -709,6 +728,28 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	public String convertOperationToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType createDataTypeFromString(EDataType eDataType, String initialValue)
+	{
+		DataType result = DataType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDataTypeToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

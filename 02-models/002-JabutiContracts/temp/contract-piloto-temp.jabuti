@@ -9,35 +9,55 @@ contract Temp {
 		process  	= "integrationProcess" 
 	}
    
-	variables{
-		string_01  = "count(//body/perosonalInformation/address/cep)"		
-		
-		msg_01 = MessageContent ("//body/perosonalInformation/address/cep")
-		msg_02 = MessageContent(string_01) 
-		msg_03 = MessageContent (string_01 == 1)
-		msg_04 = MessageContent (string_01 == 1 per Day)
-				 
+	variables{ 
+		amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
+		numeroRef  = 1001+20
+		weight  = amount_of_cep		
+		 
+		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )
+		msg_02 = MessageContent( boolean(amount_of_cep) )
+		msg_02 = MessageContent( numeric(weight) )  
+		   
+		msg_04 = MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" )
+		msg_05 = MessageContent( boolean(amount_of_cep) == true ) 
+		msg_06 = MessageContent( numeric(weight)<=20)   
+		  
+		msg_07 = MessageContent( numeric(amount_of_cep)== 1 per Hour )
+		 		    
 		session = SessionInterval(10 Hour)
 		session = SessionInterval  (10 Hour per msg_01)
-	 
-		msg_02 = TimeInterval("08:00:00" to "18:00:00") 
-		
-		timeout = Timeout(30)
-	
-	} 
-	
-	clauses{
+	    
+		timeInterval = TimeInterval("08:00:00" to "18:00:00") 
+		    
+		timeout = Timeout(30)    
+	 	}       
+	               
+	clauses{  
 		right requestDelivery {
 			/*Setting the days and hours to request a delivery,
 			the maximum request operation by minute and number of address by request*/
 			rolePlayer = process
 			operation = request	
-			terms {			
-				MaxNumberOfOperation(3 per Minute),
-				MessageContent(numberOfAddresses == 1), 
-				MessageContent(weight == 100), 
-				MessageContent(productValue < 20000) 			
-			}
+			terms {		 	  
+				MessageContent( text("//body/perosonalInformation/address/cep") ) 
+//				MessageContent( boolean(amount_of_cep) ),
+//				MessageContent( numeric(weight) )  	,	  
+//				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
+//				MessageContent( boolean(amount_of_cep) == true ) ,
+//				MessageContent( numeric(weight)<=20)	  
+//				MessageContent( numeric(amount_of_cep)== 1 per Hour )	,		
+//				SessionInterval(10 Hour),
+//				SessionInterval  (10 Hour per msg_01),	 
+//				TimeInterval("08:00:00" to "18:00:00"), 		 
+//				Timeout(30)  
+		  
+//				MaxNumberOfOperation(3 per Minute),  
+//				MessageContent(numeric(amount_of_cep) == 1),  
+//				MessageContent(text(weight) == 100), 
+//			 	MaxNumberOfOperation(4 per Minute), 
+//			 	Timeout(3)	    
+			 	          	   	     
+			}      
 			// the onSuccess is optional
 			onBreach(log("Request operation did not meet all requirements"))			
 		}

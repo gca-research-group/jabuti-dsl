@@ -3,25 +3,24 @@
  */
 package br.edu.unijui.gca.jabuti.generator
 
+import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator
+import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator
+import br.edu.unijui.gca.jabuti.jabuti.Contract
+import br.edu.unijui.gca.jabuti.jabuti.DataType
+import br.edu.unijui.gca.jabuti.jabuti.Expression
+import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation
+import br.edu.unijui.gca.jabuti.jabuti.MessageContent
+import br.edu.unijui.gca.jabuti.jabuti.NumericValue
+import br.edu.unijui.gca.jabuti.jabuti.StringValue
+import br.edu.unijui.gca.jabuti.jabuti.Term
+import br.edu.unijui.gca.jabuti.jabuti.VariableValue
+import java.util.HashSet
+
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import java.sql.Timestamp
-
-import br.edu.unijui.gca.jabuti.jabuti.Contract
-
-import br.edu.unijui.gca.jabuti.jabuti.Timeout
-import br.edu.unijui.gca.jabuti.jabuti.Terms
-import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
-import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation
-import br.edu.unijui.gca.jabuti.jabuti.MessageContent
-import br.edu.unijui.gca.jabuti.jabuti.TimeInterval
-import java.util.Map
-import java.util.ArrayList
-import br.edu.unijui.gca.jabuti.jabuti.Variable
-import br.edu.unijui.gca.jabuti.jabuti.SessionInterval
-import br.edu.unijui.gca.jabuti.jabuti.Term
+import br.edu.unijui.gca.jabuti.jabuti.LiteralValue
 
 /**
  * Generates code from your model files on save.
@@ -62,29 +61,92 @@ class JabutiGenerator extends AbstractGenerator {
 				
 				event failEvent(string _logMessage);
 				event successEvent(string _logMessage);
-				/* --------------------------- END: commom code for all contracts ----------------------- */  
-				
-				/* =========== BEGIN: codes generated based in specific jabuti contract =================== */
-				    	
-				//  1º STEP:  Import library to conditions/terms  ----------------------------------             
-				    
-				    
-				      
+«««				/* --------------------------- END: commom code for all contracts ----------------------- */  
+«««				
+«««				/* =========== BEGIN: codes generated based in specific jabuti contract =================== */				      
 			«IF ct !== null»
-				«val variableTerms = ct.getVariableTerms»
 
-				«FOR f : variableTerms»			    				    	
-					using EAI for EAI.«f»				   	
+«««				--------------------------------------------------------------------------------
+«««				-------------------- 1º STEP: ADD IMPORTS TO THE USED TERMS --------------------
+				«val terms = getNameOfTheUsedTerms(ct) »
+				«FOR t: terms»										
+					«"\t"»using EAI for EAI.«t»
 				«ENDFOR»
 				
+«««				--------------------------------------------------------------------------------
+«««				------------------------ 2º STEP: Create the variables -------------------------
+			
+				«FOR v : ct.variables»
+					« IF v.term !== null»
+						EAI.«v.term.getTermType» «v.name»
+					«ELSEIF v.expression !== null»
+						«v.expression.getTypeStrOrInt» «v.name»
+					«ENDIF»					
+				«ENDFOR»
+					
+			}
 			«ENDIF»
-
+			
+			
 		'''
-	// ----------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------
 	}
 
-	def static ArrayList<String> getVariableTerms(Contract ct) {
-		val result = newArrayList
+// ==================================== Create the variables =======================================	
+
+//	def static HashSet<String> getVariablesName(Contract ct){
+//		getTermType(Term tm)
+//	}
+
+	def static String getTypeStrOrInt(Expression exp){		
+		var type = ""
+		// verificar se é uma expressão composta. é binaryOperator?
+//		println(exp.toString)
+		
+
+		if(exp instanceof LiteralValue){
+			type = getTypeOfLiteralValue(exp as LiteralValue)
+		}else if(exp instanceof BinaryOperator) {
+			var e = exp as BinaryOperator  
+			if(e.left instanceof LiteralValue){				
+				type = getTypeOfLiteralValue(e.left as LiteralValue)
+			}else{
+				println("não é literalValue")			
+			}
+		}else{		
+			println("tipo nao identificado")		
+		}
+		return type
+	}
+
+	def static String getTypeOfLiteralValue(LiteralValue lv ){
+		if(lv instanceof NumericValue){
+			return  "is a  NumericValue"
+		}else if(lv instanceof StringValue){
+			return "is a  StringValue"
+		}else if(lv instanceof VariableValue){	
+			return "is a  VariableValue"	
+		}
+	}
+
+// =============================== Identify all Terms used in a contract  ==========================	
+	
+	
+	def static HashSet<String> getNameOfTheUsedTerms(Contract ct){
+		val terms = newHashSet;
+				
+		terms.addAll(ct.getNameOfTermsUsedInVariablesBlock)
+		terms.addAll(ct.getNameOfTermsUsedInTermsBlock)
+				
+		
+		return terms
+	}
+
+
+// ================================ GET THE NAME OF THE TERMS USED IN VARIABLES BLOCK ============================
+
+	def static HashSet<String> getNameOfTermsUsedInVariablesBlock(Contract ct) {
+		val result = newHashSet
 		if (ct.variables !== null) {
 			ct.variables.forEach [ variable |
 				if (variable.term !== null) {
@@ -96,97 +158,124 @@ class JabutiGenerator extends AbstractGenerator {
 		return result
 	}
 
-	def static String getTermType(Term tm) {
-		
-		// WeekDaysInterval | TimeInterval | Timeout
-		val termType = tm.eClass().getName()
-		if(termType.equalsIgnoreCase("WeekDaysInterval") || termType.equalsIgnoreCase("TimeInterval") || termType.equalsIgnoreCase("Timeout") ){
-			return termType
-		}else{
-			// SessionInterval 
-			if(termType.equalsIgnoreCase("SessionInterval")){
-				// messageContent !== null | value=STRING | variable=[Variable]		
-				val sessionInterval =  tm as SessionInterval				 
-				if(sessionInterval.messageContent !== null){
-					return termType+"_subTypeMsg"
-				}else if(sessionInterval.value !== null){
-					return termType+"_subTypeValue"
-				}
-				if(sessionInterval.variable !== null){
-					return termType+"_subTypeVariable"
-				}
-				
-				return termType
-			
-			}//MaxNumberOfOperation
-			else if(termType.equalsIgnoreCase("MaxNumberOfOperation")){
-				val maxNumberOfOperation =  tm as MaxNumberOfOperation	
-				
-				//MaxNumberOfOperationByTime
-				if(maxNumberOfOperation.timeUnit !== null){
-					return termType+"_subTypeTimeUnit"
-				}
-				// MaxNumberOfOperation
-				return termType
-				
-				
-			} // MessageContent	
-			else if(termType.equalsIgnoreCase("MessageContent")){
-				
-				//'MessageContent' '(' (content=STRING | variable=[Variable]) (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 
-				val messageContent =  tm as MessageContent	
-				
-				if(messageContent.variable !== null){
-					
-				}
-				// messageContent composed with only an xpath or a variable	
-				if(messageContent.expression === null){
-					// MessageContent_onlyXPath_Boolean
-					if( messageContent.content.contains("==") || messageContent.content.contains("!=") ||
-						messageContent.content.contains("<")  || messageContent.content.contains("<=") ||
-						messageContent.content.contains(">=") || messageContent.content.contains(">")){
-						return termType+"_onlyXPath_Bollean"
-					// MessageContent_onlyXPath_String
-					}else if(messageContent.content.contains("text()")){
-						return termType+"_onlyXPath_String"
-					// MessageContent_onlyXPath_Number
-					
-					}else{
-						return termType+"_onlyXPath_Number"//	
-					}		
-					
-				// messageContent composed with xpath/variable and comparison with a expression					
-				}else if (messageContent.timeUnit === null){
-					val content = messageContent.expression.toString			
-					if (content.isNumeric ) {
-						return termType+"_Number"//  MessageContent_Number
-					}else{
-						return termType+"_String"// MessageContent_String
+// ================================ GET THE NAME OF THE TERMS USED IN CLAUSES BLOCK ============================
+	def static HashSet<String> getNameOfTermsUsedInTermsBlock(Contract ct) {
+		val termTypes = newHashSet
+		for (cl : ct.clauses) {
+			if (cl.terms !== null) {
+				if (cl.terms.expressionTerm !== null) {
+					if (cl.terms.expressionTerm.get(0) instanceof BinaryTermOperator) {
+						val binaryTermOperator = cl.terms.expressionTerm.get(0) as BinaryTermOperator
+						extractTermTypesFromBinaryTermOperator(binaryTermOperator, termTypes)
+					} else {
+						//println("não é binaryOperator")
 					}
-			
-				// messageContent composed with xpath/variable and comparison with a expression						
-				}else {
-					// MessageContent_Number_PerTime					
-					return termType+"_Number_PerTime"
-				}						
+				}
+			}
+		}
+		return termTypes
+	}
+
+	def static HashSet<String> extractTermTypesFromBinaryTermOperator(BinaryTermOperator binary, HashSet<String> term) {
+
+		if (binary.left !== null) {
+			if (binary.left instanceof BinaryTermOperator) {
+				val b_aux = binary.left as BinaryTermOperator
+				extractTermTypesFromBinaryTermOperator(b_aux, term)
+			} else {
+				term.add(getTermType(binary.left as Term))
 			}
 		}		
+		term.add(getTermType(binary.right as Term))
+		return term
+
 	}
-	
-	
+
+// ==============================================================================================
+
+
+//	if (exp instanceof MaxNumberOfOperation) {
+//				println("é instancia de MaxNumberOfOperation")
+//				termTypes.add("MaxNumberOfOperation-of-clause")
+//			}
+//	def static ArrayList<String> geClauseTerms(Contract ct) {
+//		val result = newArrayList
+//		if (ct.clauses !== null) {
+//			ct.clauses.forEach [ clause |
+//				if (clause.terms !== null) {
+//						val terms = clause.terms;						
+//						if(terms.expressionTerm !== null){
+//							terms.expressionTerm.forEach[term |
+//								val termType = term.getTermType
+//								result.add(termType)
+//							] 
+//						}
+//				}
+//			]
+//		}
+//		return result
+//	}
+	// ================================ BUILD THE STRUCT NAME USED IN SOLID EAI LIBRARY ============================
+	def static String getTermType(Term tm) {
+
+		val termType = tm.eClass().getName()
+		if (termType.equalsIgnoreCase("WeekDaysInterval") || termType.equalsIgnoreCase("TimeInterval") ||
+			termType.equalsIgnoreCase("Timeout") || termType.equalsIgnoreCase("SessionInterval")) {
+			return termType // WeekDaysInterval | TimeInterval | Timeout
+		} // ================================= MaxNumberOfOperation	================================= 
+		else if (termType.equalsIgnoreCase("MaxNumberOfOperation")) {
+			val maxNumberOfOperation = tm as MaxNumberOfOperation
+
+			if (maxNumberOfOperation.timeUnit !== null) {
+				return termType + "ByTime" // MaxNumberOfOperationByTime
+			}
+			return termType // MaxNumberOfOperation
+		} // ================================= MessageContent =================================
+		else if (termType.equalsIgnoreCase("MessageContent")) {
+
+			// 'MessageContent' '(' returnType= DataType ":" (content=STRING | variable=[Variable]) (comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 
+			val messageContent = tm as MessageContent
+
+			if (messageContent.expression === null) {
+				// if (messageContent.content !== null) {
+				if (messageContent.returnType === DataType.TEXT) {
+					return termType + "_onlyXPath_String" // MessageContent_onlyXPath_String
+				} else if (messageContent.returnType === DataType.NUMERIC) {
+					return termType + "_onlyXPath_Number" // MessageContent_onlyXPath_Number
+				} else if (messageContent.returnType === DataType.BOOLEAN) {
+					return termType + "_onlyXPath_Bollean" // MessageContent_onlyXPath_Boolean
+				}
+			} else if (messageContent.timeUnitSpec === null) {
+				if (messageContent.returnType === DataType.TEXT) {
+					return termType + "_String" // MessageContent_String
+				} else if (messageContent.returnType === DataType.NUMERIC) {
+					return termType + "_Number" // MessageContent_Number
+				} else if (messageContent.returnType === DataType.BOOLEAN) {
+					return termType + "_Boolean" // MessageContent_Boolean
+				}
+			} else {
+				if (messageContent.returnType === DataType.NUMERIC) {
+					return termType + "_Number_PerTime" // MessageContent_Number_PerTime
+				} else {
+					return "//MessageContent_Number_PerTime is used only to numeric type"
+				}
+			}
+		}
+	}
+
 	def static boolean isNumeric(String str) {
-        try {
-            Integer.parseInt(str)
-            return true
-        } catch (NumberFormatException e) {
-            try {
-                Double.parseDouble(str)
-                return true
-            } catch (NumberFormatException e1) {
-                return false
-            }
-        }
-    }
+		try {
+			Integer.parseInt(str)
+			return true
+		} catch (NumberFormatException e) {
+			try {
+				Double.parseDouble(str)
+				return true
+			} catch (NumberFormatException e1) {
+				return false
+			}
+		}
+	}
 
 //	def static String subTypeTer(Term tm){
 //		val subTypeTermName=""

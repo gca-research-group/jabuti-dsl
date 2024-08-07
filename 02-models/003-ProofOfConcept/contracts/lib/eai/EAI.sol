@@ -491,6 +491,39 @@ library EAI{
 
 
 /* ========================================================================== */
+/*                              MESSAGE CONTENT BOOLEAN                       */
+/* ========================================================================== */
+
+    struct MessageContent_Boolean{
+        string xpath;
+        string op; // comparison operator
+        bool content;      
+    }
+
+    function createMessageContent(string memory _xpath, string memory _op, bool _content ) internal pure returns(MessageContent_Number memory){        
+        return MessageContent_Boolean(_xpath, _op, _content); 
+    }
+
+    function evaluateNumberContent(MessageContent_Boolean memory msgContent, bool _content) internal pure returns(bool){
+        bytes memory chars = bytes(msgContent.op);
+
+        if( chars[0] ==  0x21 ){// if chars[0] is '!'
+            return _content != msgContent.content;       
+        }else if( chars[0] == 0x3D ){ // if chars[0] is '='
+            return _content == msgContent.content;        
+        }
+        
+        require(false, "Comparison symbol is not valid");
+        return false;
+        // 0x21 : !
+        // 0x3D : =
+        // 0x3C : <
+        // 0x3E : >
+
+    }
+
+
+/* ========================================================================== */
 /*                           MESSAGE CONTENT  PER TIME                        */
 /* ========================================================================== */
 

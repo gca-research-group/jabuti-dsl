@@ -119,7 +119,7 @@ Primary returns Expression:
 	LiteralValue | '(' Expression ')';
 
 LiteralValue:
-	NumericValue | StringValue | VariableValue | FunctionCall;
+	NumericValue | StringValue | VariableValue;
 
 NumericValue:
 	value=INT;
@@ -129,7 +129,7 @@ StringValue:
 
 
 VariableValue:
-	value=QualifiedName;
+	value=[Variable];
 
 FunctionCall:
 	name=QualifiedName '(' params+=Expression (',' params+=Expression)* ')'
@@ -155,9 +155,11 @@ NegationTerm returns ExpressionTerm:
 	Term | {UnaryTermOperator} symbol='NOT' expressionTerm=Term;
 	
 Term returns ExpressionTerm:
-	'(' ExpressionTerm ')' |
-	SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+	'(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+	
 ;
+
+
 
 ConditionalExpression :
 	(beforeSymbol = LogicalOperator)?
@@ -198,9 +200,13 @@ WeekDaysInterval:
 
 
 MessageContent:
-	{MessageContent} 'MessageContent' '(' (content=STRING | variable=[Variable])
-	(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 	
+	'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
+	(comparisonOperator=ComparisonOperator expression=Expression (timeUnitSpec=TimeUnitSpec)?)?  ')' 	
 	;
+	
+TimeUnitSpec:
+    'per' timeUnit=TimeUnit
+    ;	
 //MessageContent:
 //	'MessageContent' '(' (content=STRING | QualifiedName)  
 //	(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 
@@ -240,6 +246,11 @@ enum TimeUnit:
     SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='Day' | WEEK='Week' | MONTH='Month' | YEAR='Year'
 ;
 
+enum DataType:
+	TEXT='text' |
+	NUMERIC='numeric' |
+	BOOLEAN='boolean'
+;
 
 // ########### ENUM SECTION ####################
 

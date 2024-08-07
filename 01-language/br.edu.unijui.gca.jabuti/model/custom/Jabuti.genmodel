@@ -36,6 +36,11 @@
       <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//Operation/REQUEST"/>
       <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//Operation/RESPONSE"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//DataType">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//DataType/TEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//DataType/NUMERIC"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//DataType/BOOLEAN"/>
+    </genEnums>
     <genClasses ecoreClass="Jabuti.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/imports"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/contract"/>
@@ -83,7 +88,7 @@
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//LiteralValue"/>
     <genClasses ecoreClass="Jabuti.ecore#//VariableValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//VariableValue/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Jabuti.ecore#//VariableValue/value"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//StringValue">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//StringValue/value"/>
@@ -152,12 +157,16 @@
     <genClasses ecoreClass="Jabuti.ecore#//MessageContent">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//MessageContent/comparisonOperator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MessageContent/content"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MessageContent/timeUnit"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//MessageContent/expression"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Jabuti.ecore#//MessageContent/variable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//MessageContent/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//MessageContent/timeUnitSpec"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//ComparisonOperator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//ComparisonOperator/symbol"/>
+    </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//TimeUnitSpec">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//TimeUnitSpec/timeUnit"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

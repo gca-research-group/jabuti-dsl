@@ -1435,22 +1435,13 @@ public interface JabutiPackage extends EPackage
 	int MESSAGE_CONTENT__CONTENT = TERM_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGE_CONTENT__TIME_UNIT = TERM_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT__EXPRESSION = TERM_FEATURE_COUNT + 3;
+	int MESSAGE_CONTENT__EXPRESSION = TERM_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Variable</b></em>' reference.
@@ -1459,7 +1450,25 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT__VARIABLE = TERM_FEATURE_COUNT + 4;
+	int MESSAGE_CONTENT__VARIABLE = TERM_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Return Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__RETURN_TYPE = TERM_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Time Unit Spec</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE_CONTENT__TIME_UNIT_SPEC = TERM_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Message Content</em>' class.
@@ -1468,7 +1477,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT_FEATURE_COUNT = TERM_FEATURE_COUNT + 5;
+	int MESSAGE_CONTENT_FEATURE_COUNT = TERM_FEATURE_COUNT + 6;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.
@@ -1499,6 +1508,34 @@ public interface JabutiPackage extends EPackage
 	int COMPARISON_OPERATOR_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeUnitSpecImpl <em>Time Unit Spec</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TimeUnitSpecImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeUnitSpec()
+	 * @generated
+	 */
+	int TIME_UNIT_SPEC = 36;
+
+	/**
+	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_UNIT_SPEC__TIME_UNIT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Time Unit Spec</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TIME_UNIT_SPEC_FEATURE_COUNT = 1;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1506,7 +1543,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRolePlayer()
 	 * @generated
 	 */
-	int ROLE_PLAYER = 36;
+	int ROLE_PLAYER = 37;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDay <em>Week Day</em>}' enum.
@@ -1516,7 +1553,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAY = 37;
+	int WEEK_DAY = 38;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit <em>Time Unit</em>}' enum.
@@ -1526,7 +1563,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 38;
+	int TIME_UNIT = 39;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.Operation <em>Operation</em>}' enum.
@@ -1536,7 +1573,17 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 39;
+	int OPERATION = 40;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.DataType <em>Data Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.DataType
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getDataType()
+	 * @generated
+	 */
+	int DATA_TYPE = 41;
 
 
 	/**
@@ -2528,17 +2575,6 @@ public interface JabutiPackage extends EPackage
 	EAttribute getMessageContent_Content();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit <em>Time Unit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time Unit</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnit()
-	 * @see #getMessageContent()
-	 * @generated
-	 */
-	EAttribute getMessageContent_TimeUnit();
-
-	/**
 	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2561,6 +2597,28 @@ public interface JabutiPackage extends EPackage
 	EReference getMessageContent_Variable();
 
 	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getReturnType <em>Return Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Return Type</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getReturnType()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EAttribute getMessageContent_ReturnType();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec <em>Time Unit Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Time Unit Spec</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec()
+	 * @see #getMessageContent()
+	 * @generated
+	 */
+	EReference getMessageContent_TimeUnitSpec();
+
+	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator <em>Comparison Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2580,6 +2638,27 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EAttribute getComparisonOperator_Symbol();
+
+	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec <em>Time Unit Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Time Unit Spec</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec
+	 * @generated
+	 */
+	EClass getTimeUnitSpec();
+
+	/**
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec#getTimeUnit <em>Time Unit</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Time Unit</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec#getTimeUnit()
+	 * @see #getTimeUnitSpec()
+	 * @generated
+	 */
+	EAttribute getTimeUnitSpec_TimeUnit();
 
 	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}'.
@@ -2620,6 +2699,16 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getOperation();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Data Type</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.DataType
+	 * @generated
+	 */
+	EEnum getDataType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3459,14 +3548,6 @@ public interface JabutiPackage extends EPackage
 		EAttribute MESSAGE_CONTENT__CONTENT = eINSTANCE.getMessageContent_Content();
 
 		/**
-		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute MESSAGE_CONTENT__TIME_UNIT = eINSTANCE.getMessageContent_TimeUnit();
-
-		/**
 		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3481,6 +3562,22 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EReference MESSAGE_CONTENT__VARIABLE = eINSTANCE.getMessageContent_Variable();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE_CONTENT__RETURN_TYPE = eINSTANCE.getMessageContent_ReturnType();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit Spec</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference MESSAGE_CONTENT__TIME_UNIT_SPEC = eINSTANCE.getMessageContent_TimeUnitSpec();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.
@@ -3499,6 +3596,24 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute COMPARISON_OPERATOR__SYMBOL = eINSTANCE.getComparisonOperator_Symbol();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TimeUnitSpecImpl <em>Time Unit Spec</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.TimeUnitSpecImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeUnitSpec()
+		 * @generated
+		 */
+		EClass TIME_UNIT_SPEC = eINSTANCE.getTimeUnitSpec();
+
+		/**
+		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TIME_UNIT_SPEC__TIME_UNIT = eINSTANCE.getTimeUnitSpec_TimeUnit();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
@@ -3539,6 +3654,16 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EEnum OPERATION = eINSTANCE.getOperation();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.DataType <em>Data Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.DataType
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getDataType()
+		 * @generated
+		 */
+		EEnum DATA_TYPE = eINSTANCE.getDataType();
 
 	}
 

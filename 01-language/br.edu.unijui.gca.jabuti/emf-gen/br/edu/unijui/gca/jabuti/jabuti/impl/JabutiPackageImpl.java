@@ -10,6 +10,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
+import br.edu.unijui.gca.jabuti.jabuti.DataType;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
 import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
@@ -37,6 +38,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Term;
 import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
@@ -318,6 +320,13 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass timeUnitSpecEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum rolePlayerEEnum = null;
 
 	/**
@@ -340,6 +349,13 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	private EEnum operationEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum dataTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -1432,20 +1448,9 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMessageContent_TimeUnit()
-	{
-		return (EAttribute)messageContentEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EReference getMessageContent_Expression()
 	{
-		return (EReference)messageContentEClass.getEStructuralFeatures().get(3);
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1456,7 +1461,29 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	@Override
 	public EReference getMessageContent_Variable()
 	{
-		return (EReference)messageContentEClass.getEStructuralFeatures().get(4);
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getMessageContent_ReturnType()
+	{
+		return (EAttribute)messageContentEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getMessageContent_TimeUnitSpec()
+	{
+		return (EReference)messageContentEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1479,6 +1506,28 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	public EAttribute getComparisonOperator_Symbol()
 	{
 		return (EAttribute)comparisonOperatorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getTimeUnitSpec()
+	{
+		return timeUnitSpecEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getTimeUnitSpec_TimeUnit()
+	{
+		return (EAttribute)timeUnitSpecEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1523,6 +1572,17 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	public EEnum getOperation()
 	{
 		return operationEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getDataType()
+	{
+		return dataTypeEEnum;
 	}
 
 	/**
@@ -1683,18 +1743,23 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		messageContentEClass = createEClass(MESSAGE_CONTENT);
 		createEReference(messageContentEClass, MESSAGE_CONTENT__COMPARISON_OPERATOR);
 		createEAttribute(messageContentEClass, MESSAGE_CONTENT__CONTENT);
-		createEAttribute(messageContentEClass, MESSAGE_CONTENT__TIME_UNIT);
 		createEReference(messageContentEClass, MESSAGE_CONTENT__EXPRESSION);
 		createEReference(messageContentEClass, MESSAGE_CONTENT__VARIABLE);
+		createEAttribute(messageContentEClass, MESSAGE_CONTENT__RETURN_TYPE);
+		createEReference(messageContentEClass, MESSAGE_CONTENT__TIME_UNIT_SPEC);
 
 		comparisonOperatorEClass = createEClass(COMPARISON_OPERATOR);
 		createEAttribute(comparisonOperatorEClass, COMPARISON_OPERATOR__SYMBOL);
+
+		timeUnitSpecEClass = createEClass(TIME_UNIT_SPEC);
+		createEAttribute(timeUnitSpecEClass, TIME_UNIT_SPEC__TIME_UNIT);
 
 		// Create enums
 		rolePlayerEEnum = createEEnum(ROLE_PLAYER);
 		weekDayEEnum = createEEnum(WEEK_DAY);
 		timeUnitEEnum = createEEnum(TIME_UNIT);
 		operationEEnum = createEEnum(OPERATION);
+		dataTypeEEnum = createEEnum(DATA_TYPE);
 	}
 
 	/**
@@ -1878,12 +1943,16 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEClass(messageContentEClass, MessageContent.class, "MessageContent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getMessageContent_ComparisonOperator(), this.getComparisonOperator(), null, "comparisonOperator", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMessageContent_Content(), ecorePackage.getEString(), "content", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMessageContent_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageContent_Expression(), this.getExpression(), null, "expression", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getMessageContent_Variable(), this.getVariable(), null, "variable", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessageContent_ReturnType(), this.getDataType(), "returnType", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMessageContent_TimeUnitSpec(), this.getTimeUnitSpec(), null, "timeUnitSpec", null, 0, 1, MessageContent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(comparisonOperatorEClass, ComparisonOperator.class, "ComparisonOperator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComparisonOperator_Symbol(), ecorePackage.getEString(), "symbol", null, 0, 1, ComparisonOperator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(timeUnitSpecEClass, TimeUnitSpec.class, "TimeUnitSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTimeUnitSpec_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, TimeUnitSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(rolePlayerEEnum, RolePlayer.class, "RolePlayer");
@@ -1915,6 +1984,11 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		addEEnumLiteral(operationEEnum, Operation.READ);
 		addEEnumLiteral(operationEEnum, Operation.REQUEST);
 		addEEnumLiteral(operationEEnum, Operation.RESPONSE);
+
+		initEEnum(dataTypeEEnum, DataType.class, "DataType");
+		addEEnumLiteral(dataTypeEEnum, DataType.TEXT);
+		addEEnumLiteral(dataTypeEEnum, DataType.NUMERIC);
+		addEEnumLiteral(dataTypeEEnum, DataType.BOOLEAN);
 
 		// Create resource
 		createResource(eNS_URI);

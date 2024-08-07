@@ -33,6 +33,7 @@ import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
 import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
+import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
@@ -289,6 +290,11 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseComparisonOperator(ComparisonOperator object)
 			{
 				return createComparisonOperatorAdapter();
+			}
+			@Override
+			public Adapter caseTimeUnitSpec(TimeUnitSpec object)
+			{
+				return createTimeUnitSpecAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -848,6 +854,21 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createComparisonOperatorAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec <em>Time Unit Spec</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec
+	 * @generated
+	 */
+	public Adapter createTimeUnitSpecAdapter()
 	{
 		return null;
 	}
