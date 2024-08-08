@@ -123,93 +123,132 @@ class JabutiGenerator extends AbstractGenerator {
 		var type = "unknown"
 		var exp = variable.expression
 		if (exp instanceof BinaryOperator) {
-			println("é binary")
+//			println("é binary")
 			type = getTypeOfExpression(exp as BinaryOperator, newHashSet)
 		} else if (exp instanceof UnaryOperator) {
-			println("é unary")
+//			println("é unary")
 			type = getTheTypeOfUnaryOperator(exp as UnaryOperator)
 		} else if (exp instanceof LiteralValue) {
-			println("é unary")
+//			println("é unary")
 			type = getTypeOfLiteralValue(exp as LiteralValue)
 		}
 		variables_map.put(variable.name, type)
 		return type
 	}
-
+	
 	def static String getTypeOfExpression(BinaryOperator bop, HashSet<String> operators) {
-		if (bop.left !== null) {
-			if (bop.left instanceof BinaryOperator) {
-//				val bop_aux = bop.left as BinaryOperator
-				operators.add(bop.symbol)
-				if (bop.right instanceof StringValue) {
-					return "String"
-				} else if (bop.right instanceof VariableValue) {
-					return "Variable type" // verificar se é string ou numeric value	
-				}
-				getTypeOfExpression(bop.left as BinaryOperator, operators)
-			}
-			else if (bop.left instanceof UnaryOperator){
+		if (bop.right !== null) {
+			if (bop.right instanceof BinaryOperator) {
 				
-				var unary_aux = bop.left as UnaryOperator 				
-				if(unary_aux.symbol.equals("-")){	
-					println("left é unary negativo")				
-					if(bop.right instanceof LiteralValue){
-						if(unary_aux.expression instanceof LiteralValue){
-							val typeExp = getTypeOfLiteralValue(unary_aux.expression as LiteralValue)
-							val rightVal =  getTypeOfLiteralValue(bop.right as LiteralValue)
-							
-							if(typeExp.equals("String") || rightVal.equals("String")){
-								return "String"
-							}else if(typeExp.equals("Variable")){
-								 var var_exp = unary_aux.expression as Variable
-								 if (variables_map.get(var_exp.name).equals("String")){
-									return "String" 	
-								 }								
-							}else if(rightVal.equals("Variable")){
-								var var_right = bop.right as Variable
-								if ( variables_map.get(var_right.name).equals("String")){
-									return "String" 	
-								 }					
-							}else{
-								return "uint32"
-							}
-						}else if (unary_aux.expression instanceof BinaryOperator){											
-							return getTypeOfExpression(unary_aux.expression as BinaryOperator, operators)						
-						}					
-					}
-					else if (bop.right instanceof BinaryOperator){											
-						return getTypeOfExpression(bop.right as BinaryOperator, operators)						
-					}					
-					return "unknown 1"	
+				var auxbi = bop.right as BinaryOperator
+				if(auxbi.right instanceof LiteralValue){
+					var lit_aux = auxbi.right as LiteralValue 
+					println(lit_aux)				
+					println(bop.right)
+				}else{
+					println("left não é literalValue")
 				}
-				
-//				else if(unary_aux.symbol.equals("!")){					
-//					return "unary bool"				
-//				}
-//				return "unknown 2"			
+				getTypeOfExpression(bop.right as BinaryOperator, operators)				
+			}else{
+				println(bop.left)
 			}
-			 else {
-				operators.add(bop.symbol)
-				for (String symbol : operators) {
-					if (comparison_symbols.contains(symbol) || logical_symbols.contains(symbol)) {
-						return "bool"
-					}
-				}
-
-				if (bop.left instanceof LiteralValue) {
-					val left_aux = getTypeOfLiteralValue(bop.left as LiteralValue)
-					val right_aux = getTypeOfLiteralValue(bop.right as LiteralValue)					
-					if (left_aux.equals("String") || right_aux.equals("String")) {
-						return "String"
-					} else if (left_aux.equals("Variable") || right_aux.equals("Variable")) {
-						return "Variable"
-					} else {
-						return "uint32"
-					}
-				}
+		} else (bop.left !== null) {
+			if(bop.left instanceof UnaryOperator){		
+				println(bop.symbol)
+				
+				var left_aux = bop.left as UnaryOperator 
+				println(left_aux.symbol)
+				println(left_aux.expression)
 			}
 		}
+		return ""		
 	}
+	
+	
+//	def static String getTypeOfExpression(BinaryOperator bop, HashSet<String> operators) {
+//		if (bop.left !== null) {
+//			println("left e righ")
+//				println(bop.left)
+//				println(bop.right)
+//			if (bop.left instanceof BinaryOperator) {
+//				print("dentro do binary")
+////				val bop_aux = bop.left as BinaryOperator
+//				operators.add(bop.symbol)
+//				if (bop.right instanceof StringValue) {
+//					print("retornou string")
+//					return "String"
+//				} else if (bop.right instanceof VariableValue) {
+//					var auxVar = bop.right as VariableValue
+//					print("variableName: "+auxVar.value.name)
+//					return "Variable type" // verificar se é string ou numeric value	
+//				}
+//				println("é um binaryOperator e vai chamar o get como binary")
+//				getTypeOfExpression(bop.left as BinaryOperator, operators)
+//			}
+//			else if (bop.left instanceof UnaryOperator){
+//				println("entrou no unaryOperator "+bop.left)
+//				var unary_aux = bop.left as UnaryOperator 				
+//				if(unary_aux.symbol.equals("-")){	
+//									
+//					if(bop.right instanceof LiteralValue){
+//						println("left é unary negativo  com bop.righ igual a literal value")
+//						if(unary_aux.expression instanceof LiteralValue){
+//							val typeExp = getTypeOfLiteralValue(unary_aux.expression as LiteralValue)
+//							val rightVal =  getTypeOfLiteralValue(bop.right as LiteralValue)
+//							
+//							if(typeExp.equals("String") || rightVal.equals("String")){
+//								return "String"
+//							}else if(typeExp.equals("Variable")){
+//								 var var_exp = unary_aux.expression as Variable
+//								 if (variables_map.get(var_exp.name).equals("String")){
+//									return "String" 	
+//								 }								
+//							}else if(rightVal.equals("Variable")){
+//								var var_right = bop.right as Variable
+//								if ( variables_map.get(var_right.name).equals("String")){
+//									return "String" 	
+//								 }					
+//							}else{
+//								return "uint32"
+//							}
+//						}else if (unary_aux.expression instanceof BinaryOperator){											
+//							return getTypeOfExpression(unary_aux.expression as BinaryOperator, operators)						
+//						}					
+//					}
+//					else if (bop.right instanceof BinaryOperator){	
+//						println("left é unary com bop.righ igual a binaryOperator")										
+//						return getTypeOfExpression(bop.right as BinaryOperator, operators)						
+//					}					
+//					return "unknown 1"	
+//				}
+//				
+////				else if(unary_aux.symbol.equals("!")){					
+////					return "unary bool"				
+////				}
+////				return "unknown 2"			
+//			}
+//			 else {
+//				operators.add(bop.symbol)
+//				for (String symbol : operators) {
+//					if (comparison_symbols.contains(symbol) || logical_symbols.contains(symbol)) {
+//						return "bool"
+//					}
+//				}
+//
+//				if (bop.left instanceof LiteralValue) {
+//					val left_aux = getTypeOfLiteralValue(bop.left as LiteralValue)
+//					val right_aux = getTypeOfLiteralValue(bop.right as LiteralValue)					
+//					if (left_aux.equals("String") || right_aux.equals("String")) {
+//						return "String"
+//					} else if (left_aux.equals("Variable") || right_aux.equals("Variable")) {
+//						return "Variable"
+//					} else {
+//						return "uint32"
+//					}
+//				}
+//			}
+//		}
+//	}
 
 	def static String getTheTypeOfUnaryOperator(UnaryOperator unary) {
 		var type = "unknown"

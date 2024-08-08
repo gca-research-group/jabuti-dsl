@@ -33,13 +33,14 @@ contract Temp {
 	 
 //		bool7_un_negation = !bool1_cp_strs  
 //		bool8_un_negation = !("Eldair" == "Fabricio")
-//		
-		numNegative = -2  
+//	 	
+//		numNegative = 2  
         
-	 	 str6_negative  =  -"s" + (2*2)
-		   
-		    
-		     
+	 	 str6_negative  =  -"s" + (2*4)   
+		        
+		          
+		             
+		       
 //		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )
 //		msg_02 = MessageContent( boolean(str1_amount_of_cep) )
 //		msg_02 = MessageContent( numeric(num1_single) )  
