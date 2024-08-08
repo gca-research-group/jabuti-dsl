@@ -854,9 +854,9 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EAttribute getVariableValue_Value()
+	public EReference getVariableValue_Value()
 	{
-		return (EAttribute)variableValueEClass.getEStructuralFeatures().get(0);
+		return (EReference)variableValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1670,7 +1670,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		literalValueEClass = createEClass(LITERAL_VALUE);
 
 		variableValueEClass = createEClass(VARIABLE_VALUE);
-		createEAttribute(variableValueEClass, VARIABLE_VALUE__VALUE);
+		createEReference(variableValueEClass, VARIABLE_VALUE__VALUE);
 
 		stringValueEClass = createEClass(STRING_VALUE);
 		createEAttribute(stringValueEClass, STRING_VALUE__VALUE);
@@ -1870,7 +1870,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEClass(literalValueEClass, LiteralValue.class, "LiteralValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(variableValueEClass, VariableValue.class, "VariableValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVariableValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVariableValue_Value(), this.getVariable(), null, "value", null, 0, 1, VariableValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringValue_Value(), ecorePackage.getEString(), "value", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

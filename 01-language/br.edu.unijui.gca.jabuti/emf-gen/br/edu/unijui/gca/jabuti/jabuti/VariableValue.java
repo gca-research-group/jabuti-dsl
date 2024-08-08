@@ -23,25 +23,25 @@ package br.edu.unijui.gca.jabuti.jabuti;
 public interface VariableValue extends LiteralValue
 {
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * Returns the value of the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
+	 * @return the value of the '<em>Value</em>' reference.
+	 * @see #setValue(Variable)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getVariableValue_Value()
 	 * @model
 	 * @generated
 	 */
-	String getValue();
+	Variable getValue();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.VariableValue#getValue <em>Value</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.VariableValue#getValue <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @param value the new value of the '<em>Value</em>' reference.
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setValue(Variable value);
 
 } // VariableValue

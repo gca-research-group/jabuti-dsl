@@ -4,11 +4,13 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
+import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -28,24 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class VariableValueImpl extends LiteralValueImpl implements VariableValue
 {
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
+	protected Variable value;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -74,7 +66,27 @@ public class VariableValueImpl extends LiteralValueImpl implements VariableValue
 	 * @generated
 	 */
 	@Override
-	public String getValue()
+	public Variable getValue()
+	{
+		if (value != null && value.eIsProxy())
+		{
+			InternalEObject oldValue = (InternalEObject)value;
+			value = (Variable)eResolveProxy(oldValue);
+			if (value != oldValue)
+			{
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, JabutiPackage.VARIABLE_VALUE__VALUE, oldValue, value));
+			}
+		}
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Variable basicGetValue()
 	{
 		return value;
 	}
@@ -85,9 +97,9 @@ public class VariableValueImpl extends LiteralValueImpl implements VariableValue
 	 * @generated
 	 */
 	@Override
-	public void setValue(String newValue)
+	public void setValue(Variable newValue)
 	{
-		String oldValue = value;
+		Variable oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.VARIABLE_VALUE__VALUE, oldValue, value));
@@ -104,7 +116,8 @@ public class VariableValueImpl extends LiteralValueImpl implements VariableValue
 		switch (featureID)
 		{
 			case JabutiPackage.VARIABLE_VALUE__VALUE:
-				return getValue();
+				if (resolve) return getValue();
+				return basicGetValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,7 +133,7 @@ public class VariableValueImpl extends LiteralValueImpl implements VariableValue
 		switch (featureID)
 		{
 			case JabutiPackage.VARIABLE_VALUE__VALUE:
-				setValue((String)newValue);
+				setValue((Variable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -137,7 +150,7 @@ public class VariableValueImpl extends LiteralValueImpl implements VariableValue
 		switch (featureID)
 		{
 			case JabutiPackage.VARIABLE_VALUE__VALUE:
-				setValue(VALUE_EDEFAULT);
+				setValue((Variable)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -154,26 +167,9 @@ public class VariableValueImpl extends LiteralValueImpl implements VariableValue
 		switch (featureID)
 		{
 			case JabutiPackage.VARIABLE_VALUE__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
+				return value != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString()
-	{
-		if (eIsProxy()) return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (value: ");
-		result.append(value);
-		result.append(')');
-		return result.toString();
 	}
 
 } //VariableValueImpl

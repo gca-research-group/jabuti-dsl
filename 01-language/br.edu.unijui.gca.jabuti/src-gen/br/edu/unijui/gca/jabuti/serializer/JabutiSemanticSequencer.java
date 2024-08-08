@@ -383,18 +383,6 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     Expression returns FunctionCall
-	 *     Expression.BinaryOperator_1_0 returns FunctionCall
-	 *     Negation returns FunctionCall
-	 *     Comparison returns FunctionCall
-	 *     Comparison.BinaryOperator_1_0 returns FunctionCall
-	 *     Plus returns FunctionCall
-	 *     Plus.BinaryOperator_1_0 returns FunctionCall
-	 *     Factor returns FunctionCall
-	 *     Factor.BinaryOperator_1_0 returns FunctionCall
-	 *     Negative returns FunctionCall
-	 *     Primary returns FunctionCall
-	 *     LiteralValue returns FunctionCall
 	 *     FunctionCall returns FunctionCall
 	 *
 	 * Constraint:
@@ -852,7 +840,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     VariableValue returns VariableValue
 	 *
 	 * Constraint:
-	 *     value=QualifiedName
+	 *     value=[Variable|ID]
 	 * </pre>
 	 */
 	protected void sequence_VariableValue(ISerializationContext context, VariableValue semanticObject) {
@@ -861,7 +849,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.VARIABLE_VALUE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getVariableValueAccess().getValueQualifiedNameParserRuleCall_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getVariableValueAccess().getValueVariableIDTerminalRuleCall_0_1(), semanticObject.eGet(JabutiPackage.Literals.VARIABLE_VALUE__VALUE, false));
 		feeder.finish();
 	}
 	

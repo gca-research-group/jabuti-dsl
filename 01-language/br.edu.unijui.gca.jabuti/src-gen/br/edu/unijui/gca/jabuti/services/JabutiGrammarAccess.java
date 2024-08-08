@@ -987,13 +987,12 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cNumericValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cStringValueParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cVariableValueParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cFunctionCallParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//LiteralValue:
-		//    NumericValue | StringValue | VariableValue | FunctionCall;
+		//    NumericValue | StringValue | VariableValue;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//NumericValue | StringValue | VariableValue | FunctionCall
+		//NumericValue | StringValue | VariableValue
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//NumericValue
@@ -1004,9 +1003,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		
 		//VariableValue
 		public RuleCall getVariableValueParserRuleCall_2() { return cVariableValueParserRuleCall_2; }
-		
-		//FunctionCall
-		public RuleCall getFunctionCallParserRuleCall_3() { return cFunctionCallParserRuleCall_3; }
 	}
 	public class NumericValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.NumericValue");
@@ -1041,17 +1037,21 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	public class VariableValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.VariableValue");
 		private final Assignment cValueAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cValueQualifiedNameParserRuleCall_0 = (RuleCall)cValueAssignment.eContents().get(0);
+		private final CrossReference cValueVariableCrossReference_0 = (CrossReference)cValueAssignment.eContents().get(0);
+		private final RuleCall cValueVariableIDTerminalRuleCall_0_1 = (RuleCall)cValueVariableCrossReference_0.eContents().get(1);
 		
 		//VariableValue:
-		//    value=QualifiedName;
+		//    value=[Variable];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//value=QualifiedName
+		//value=[Variable]
 		public Assignment getValueAssignment() { return cValueAssignment; }
 		
-		//QualifiedName
-		public RuleCall getValueQualifiedNameParserRuleCall_0() { return cValueQualifiedNameParserRuleCall_0; }
+		//[Variable]
+		public CrossReference getValueVariableCrossReference_0() { return cValueVariableCrossReference_0; }
+		
+		//ID
+		public RuleCall getValueVariableIDTerminalRuleCall_0_1() { return cValueVariableIDTerminalRuleCall_0_1; }
 	}
 	public class FunctionCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.FunctionCall");
@@ -1301,13 +1301,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cMessageContentParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
 		
 		//Term returns ExpressionTerm:
-		//    '(' ExpressionTerm ')' |
-		//    SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+		//    '(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' ExpressionTerm ')' |
-		//SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+		//'(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'(' ExpressionTerm ')'
@@ -2649,7 +2647,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//LiteralValue:
-	//    NumericValue | StringValue | VariableValue | FunctionCall;
+	//    NumericValue | StringValue | VariableValue;
 	public LiteralValueElements getLiteralValueAccess() {
 		return pLiteralValue;
 	}
@@ -2679,7 +2677,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//VariableValue:
-	//    value=QualifiedName;
+	//    value=[Variable];
 	public VariableValueElements getVariableValueAccess() {
 		return pVariableValue;
 	}
@@ -2744,8 +2742,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Term returns ExpressionTerm:
-	//    '(' ExpressionTerm ')' |
-	//    SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+	//    '(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
 	//;
 	public TermElements getTermAccess() {
 		return pTerm;

@@ -21,6 +21,9 @@ import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import br.edu.unijui.gca.jabuti.jabuti.LiteralValue
+import java.util.ArrayList
+import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator
+import br.edu.unijui.gca.jabuti.jabuti.Variable
 
 /**
  * Generates code from your model files on save.
@@ -36,13 +39,27 @@ class JabutiGenerator extends AbstractGenerator {
 ////				.map[name]
 ////				.join(', '))
 //	}
+	static var comparison_symbols = newArrayList
+	static var logical_symbols = newArrayList
+	static var math_symbols = newArrayList
+	static var unary_symbols = newArrayList
+	static var variables_map = newHashMap
+
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (c : resource.allContents.filter(Contract).toIterable) {
 			fsa.generateFile(c.name + '.sol', generateSolCode(c))
 		}
+
 	}
 
 	def generateSolCode(Contract ct) {
+
+		comparison_symbols.addAll(#["<=", ">=", ">", "<", "!=", "=="])
+		logical_symbols.addAll(#["AND", "OR"])
+		math_symbols.addAll(#["+", "-", "*", "/"])
+		unary_symbols.addAll(#["-", "!"])
+		variables_map.clear
+		
 		'''		
 			//SPDX-License-Identifier: MIT
 			pragma solidity ^0.8.14;
@@ -61,96 +78,176 @@ class JabutiGenerator extends AbstractGenerator {
 				
 				event failEvent(string _logMessage);
 				event successEvent(string _logMessage);
-«««				/* --------------------------- END: commom code for all contracts ----------------------- */  
+			«««				/* --------------------------- END: commom code for all contracts ----------------------- */  
 «««				
 «««				/* =========== BEGIN: codes generated based in specific jabuti contract =================== */				      
 			«IF ct !== null»
-
-«««				--------------------------------------------------------------------------------
+			
+			«««				--------------------------------------------------------------------------------
 «««				-------------------- 1º STEP: ADD IMPORTS TO THE USED TERMS --------------------
 				«val terms = getNameOfTheUsedTerms(ct) »
 				«FOR t: terms»										
 					«"\t"»using EAI for EAI.«t»
 				«ENDFOR»
 				
-«««				--------------------------------------------------------------------------------
+			«««				--------------------------------------------------------------------------------
 «««				------------------------ 2º STEP: Create the variables -------------------------
-			
 				«FOR v : ct.variables»
-					« IF v.term !== null»
-						EAI.«v.term.getTermType» «v.name»
-					«ELSEIF v.expression !== null»
-						«v.expression.getTypeStrOrInt» «v.name»
-					«ENDIF»					
-				«ENDFOR»
-					
-			}
+					« IF v.term !== null»						
+						EAI.«v.getTermType» «v.name»
+					«ELSEIF v.expression !== null»						
+						«v.getReturnedTypeByExpression» «v.name»						
+					«ENDIF»						
+				«ENDFOR»				
+				}
 			«ENDIF»
 			
-			
 		'''
+		
+		
 // ----------------------------------------------------------------------------------
 	}
 
 // ==================================== Create the variables =======================================	
-
 //	def static HashSet<String> getVariablesName(Contract ct){
 //		getTermType(Term tm)
 //	}
+	def static void printVariablesMap() {
+		println("")
+		variables_map.forEach [ p1, p2 |
+			println(p2 + ", " + p1)
+		]
+	}
 
-	def static String getTypeStrOrInt(Expression exp){		
-		var type = ""
-		// verificar se é uma expressão composta. é binaryOperator?
-//		println(exp.toString)
-		
-
-		if(exp instanceof LiteralValue){
+	def static String getReturnedTypeByExpression(Variable variable) {
+		var type = "unknown"
+		var exp = variable.expression
+		if (exp instanceof BinaryOperator) {
+			println("é binary")
+			type = getTypeOfExpression(exp as BinaryOperator, newHashSet)
+		} else if (exp instanceof UnaryOperator) {
+			println("é unary")
+			type = getTheTypeOfUnaryOperator(exp as UnaryOperator)
+		} else if (exp instanceof LiteralValue) {
+			println("é unary")
 			type = getTypeOfLiteralValue(exp as LiteralValue)
-		}else if(exp instanceof BinaryOperator) {
-			var e = exp as BinaryOperator  
-			if(e.left instanceof LiteralValue){				
-				type = getTypeOfLiteralValue(e.left as LiteralValue)
-			}else{
-				println("não é literalValue")			
+		}
+		variables_map.put(variable.name, type)
+		return type
+	}
+
+	def static String getTypeOfExpression(BinaryOperator bop, HashSet<String> operators) {
+		if (bop.left !== null) {
+			if (bop.left instanceof BinaryOperator) {
+//				val bop_aux = bop.left as BinaryOperator
+				operators.add(bop.symbol)
+				if (bop.right instanceof StringValue) {
+					return "String"
+				} else if (bop.right instanceof VariableValue) {
+					return "Variable type" // verificar se é string ou numeric value	
+				}
+				getTypeOfExpression(bop.left as BinaryOperator, operators)
 			}
-		}else{		
-			println("tipo nao identificado")		
+			else if (bop.left instanceof UnaryOperator){
+				
+				var unary_aux = bop.left as UnaryOperator 				
+				if(unary_aux.symbol.equals("-")){	
+					println("left é unary negativo")				
+					if(bop.right instanceof LiteralValue){
+						if(unary_aux.expression instanceof LiteralValue){
+							val typeExp = getTypeOfLiteralValue(unary_aux.expression as LiteralValue)
+							val rightVal =  getTypeOfLiteralValue(bop.right as LiteralValue)
+							
+							if(typeExp.equals("String") || rightVal.equals("String")){
+								return "String"
+							}else if(typeExp.equals("Variable")){
+								 var var_exp = unary_aux.expression as Variable
+								 if (variables_map.get(var_exp.name).equals("String")){
+									return "String" 	
+								 }								
+							}else if(rightVal.equals("Variable")){
+								var var_right = bop.right as Variable
+								if ( variables_map.get(var_right.name).equals("String")){
+									return "String" 	
+								 }					
+							}else{
+								return "uint32"
+							}
+						}else if (unary_aux.expression instanceof BinaryOperator){											
+							return getTypeOfExpression(unary_aux.expression as BinaryOperator, operators)						
+						}					
+					}
+					else if (bop.right instanceof BinaryOperator){											
+						return getTypeOfExpression(bop.right as BinaryOperator, operators)						
+					}					
+					return "unknown 1"	
+				}
+				
+//				else if(unary_aux.symbol.equals("!")){					
+//					return "unary bool"				
+//				}
+//				return "unknown 2"			
+			}
+			 else {
+				operators.add(bop.symbol)
+				for (String symbol : operators) {
+					if (comparison_symbols.contains(symbol) || logical_symbols.contains(symbol)) {
+						return "bool"
+					}
+				}
+
+				if (bop.left instanceof LiteralValue) {
+					val left_aux = getTypeOfLiteralValue(bop.left as LiteralValue)
+					val right_aux = getTypeOfLiteralValue(bop.right as LiteralValue)					
+					if (left_aux.equals("String") || right_aux.equals("String")) {
+						return "String"
+					} else if (left_aux.equals("Variable") || right_aux.equals("Variable")) {
+						return "Variable"
+					} else {
+						return "uint32"
+					}
+				}
+			}
+		}
+	}
+
+	def static String getTheTypeOfUnaryOperator(UnaryOperator unary) {
+		var type = "unknown"
+		if (unary.symbol.equals("!")) {
+			type = "Unary_only bool"
+		} else if (unary.symbol.equals("-")) {
+			type = "Unary_only uint32 "
 		}
 		return type
 	}
 
-	def static String getTypeOfLiteralValue(LiteralValue lv ){
-		if(lv instanceof NumericValue){
-			return  "is a  NumericValue"
-		}else if(lv instanceof StringValue){
-			return "is a  StringValue"
-		}else if(lv instanceof VariableValue){	
-			return "is a  VariableValue"	
+	def static String getTypeOfLiteralValue(LiteralValue lv) {
+		if (lv instanceof NumericValue) {
+			return "uint32"
+		} else if (lv instanceof StringValue) {
+			return "String"
+		} else if (lv instanceof VariableValue) {
+			return "Variable"
 		}
 	}
 
 // =============================== Identify all Terms used in a contract  ==========================	
-	
-	
-	def static HashSet<String> getNameOfTheUsedTerms(Contract ct){
+	def static HashSet<String> getNameOfTheUsedTerms(Contract ct) {
 		val terms = newHashSet;
-				
+
 		terms.addAll(ct.getNameOfTermsUsedInVariablesBlock)
 		terms.addAll(ct.getNameOfTermsUsedInTermsBlock)
-				
-		
+
 		return terms
 	}
 
-
 // ================================ GET THE NAME OF THE TERMS USED IN VARIABLES BLOCK ============================
-
 	def static HashSet<String> getNameOfTermsUsedInVariablesBlock(Contract ct) {
 		val result = newHashSet
 		if (ct.variables !== null) {
 			ct.variables.forEach [ variable |
 				if (variable.term !== null) {
-					val termType = variable.term.getTermType
+					val termType = variable.getTermType
 					result.add(termType)
 				}
 			]
@@ -168,7 +265,7 @@ class JabutiGenerator extends AbstractGenerator {
 						val binaryTermOperator = cl.terms.expressionTerm.get(0) as BinaryTermOperator
 						extractTermTypesFromBinaryTermOperator(binaryTermOperator, termTypes)
 					} else {
-						//println("não é binaryOperator")
+						// println("não é binaryOperator")
 					}
 				}
 			}
@@ -185,15 +282,13 @@ class JabutiGenerator extends AbstractGenerator {
 			} else {
 				term.add(getTermType(binary.left as Term))
 			}
-		}		
+		}
 		term.add(getTermType(binary.right as Term))
 		return term
 
 	}
 
 // ==============================================================================================
-
-
 //	if (exp instanceof MaxNumberOfOperation) {
 //				println("é instancia de MaxNumberOfOperation")
 //				termTypes.add("MaxNumberOfOperation-of-clause")
@@ -216,8 +311,13 @@ class JabutiGenerator extends AbstractGenerator {
 //		return result
 //	}
 	// ================================ BUILD THE STRUCT NAME USED IN SOLID EAI LIBRARY ============================
-	def static String getTermType(Term tm) {
+	def static String getTermType(Variable variable) {
+		var type = getTermType(variable.term)
+		variables_map.put(variable.name, type)
+		return type
+	}
 
+	def static String getTermType(Term tm) {
 		val termType = tm.eClass().getName()
 		if (termType.equalsIgnoreCase("WeekDaysInterval") || termType.equalsIgnoreCase("TimeInterval") ||
 			termType.equalsIgnoreCase("Timeout") || termType.equalsIgnoreCase("SessionInterval")) {

@@ -741,7 +741,7 @@ public interface JabutiPackage extends EPackage
 	int VARIABLE_VALUE = 15;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2000,15 +2000,15 @@ public interface JabutiPackage extends EPackage
 	EClass getVariableValue();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.VariableValue#getValue <em>Value</em>}'.
+	 * Returns the meta object for the reference '{@link br.edu.unijui.gca.jabuti.jabuti.VariableValue#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @return the meta object for the reference '<em>Value</em>'.
 	 * @see br.edu.unijui.gca.jabuti.jabuti.VariableValue#getValue()
 	 * @see #getVariableValue()
 	 * @generated
 	 */
-	EAttribute getVariableValue_Value();
+	EReference getVariableValue_Value();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.StringValue <em>String Value</em>}'.
@@ -3078,12 +3078,12 @@ public interface JabutiPackage extends EPackage
 		EClass VARIABLE_VALUE = eINSTANCE.getVariableValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIABLE_VALUE__VALUE = eINSTANCE.getVariableValue_Value();
+		EReference VARIABLE_VALUE__VALUE = eINSTANCE.getVariableValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.StringValueImpl <em>String Value</em>}' class.

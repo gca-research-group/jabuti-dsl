@@ -171,12 +171,11 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     '('*
 	 *
 	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) name=QualifiedName
 	 *     (rule start) (ambiguity) symbol='!'
 	 *     (rule start) (ambiguity) symbol='-'
 	 *     (rule start) (ambiguity) value=INT
-	 *     (rule start) (ambiguity) value=QualifiedName
 	 *     (rule start) (ambiguity) value=STRING
+	 *     (rule start) (ambiguity) value=[Variable|ID]
 	 *     (rule start) (ambiguity) {BinaryOperator.left=}
 	 
 	 * </pre>
