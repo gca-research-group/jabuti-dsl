@@ -116,8 +116,13 @@ Negative returns Expression:
 	Primary | {UnaryOperator} symbol='-' expression=Primary;
 
 Primary returns Expression:
-	LiteralValue | '(' Expression ')';
+	LiteralValue | ParenthesizedExpression ;
 
+ParenthesizedExpression: 
+	"(" expression=Expression ")"
+;
+
+    
 LiteralValue:
 	NumericValue | StringValue | VariableValue;
 

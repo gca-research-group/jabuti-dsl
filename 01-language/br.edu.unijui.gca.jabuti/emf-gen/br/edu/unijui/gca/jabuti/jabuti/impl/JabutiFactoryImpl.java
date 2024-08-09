@@ -28,6 +28,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
 import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
 import br.edu.unijui.gca.jabuti.jabuti.Operation;
+import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
@@ -145,6 +146,7 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.MESSAGE_CONTENT: return createMessageContent();
 			case JabutiPackage.COMPARISON_OPERATOR: return createComparisonOperator();
 			case JabutiPackage.TIME_UNIT_SPEC: return createTimeUnitSpec();
+			case JabutiPackage.PARENTHESIZED_EXPRESSION: return createParenthesizedExpression();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -642,6 +644,18 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	{
 		TimeUnitSpecImpl timeUnitSpec = new TimeUnitSpecImpl();
 		return timeUnitSpec;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public ParenthesizedExpression createParenthesizedExpression()
+	{
+		ParenthesizedExpressionImpl parenthesizedExpression = new ParenthesizedExpressionImpl();
+		return parenthesizedExpression;
 	}
 
 	/**

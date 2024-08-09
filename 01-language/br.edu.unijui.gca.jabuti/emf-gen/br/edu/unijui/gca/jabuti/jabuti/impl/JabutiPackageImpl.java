@@ -28,6 +28,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
 import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
 import br.edu.unijui.gca.jabuti.jabuti.Operation;
+import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
@@ -321,6 +322,13 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	private EClass timeUnitSpecEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parenthesizedExpressionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1536,6 +1544,28 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
+	public EClass getParenthesizedExpression()
+	{
+		return parenthesizedExpressionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParenthesizedExpression_Expression()
+	{
+		return (EReference)parenthesizedExpressionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getRolePlayer()
 	{
 		return rolePlayerEEnum;
@@ -1754,6 +1784,9 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		timeUnitSpecEClass = createEClass(TIME_UNIT_SPEC);
 		createEAttribute(timeUnitSpecEClass, TIME_UNIT_SPEC__TIME_UNIT);
 
+		parenthesizedExpressionEClass = createEClass(PARENTHESIZED_EXPRESSION);
+		createEReference(parenthesizedExpressionEClass, PARENTHESIZED_EXPRESSION__EXPRESSION);
+
 		// Create enums
 		rolePlayerEEnum = createEEnum(ROLE_PLAYER);
 		weekDayEEnum = createEEnum(WEEK_DAY);
@@ -1814,6 +1847,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		timeoutEClass.getESuperTypes().add(this.getTerm());
 		maxNumberOfOperationEClass.getESuperTypes().add(this.getTerm());
 		messageContentEClass.getESuperTypes().add(this.getTerm());
+		parenthesizedExpressionEClass.getESuperTypes().add(this.getExpression());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1953,6 +1987,9 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 
 		initEClass(timeUnitSpecEClass, TimeUnitSpec.class, "TimeUnitSpec", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTimeUnitSpec_TimeUnit(), this.getTimeUnit(), "timeUnit", null, 0, 1, TimeUnitSpec.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parenthesizedExpressionEClass, ParenthesizedExpression.class, "ParenthesizedExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getParenthesizedExpression_Expression(), this.getExpression(), null, "expression", null, 0, 1, ParenthesizedExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(rolePlayerEEnum, RolePlayer.class, "RolePlayer");

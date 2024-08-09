@@ -168,5 +168,8 @@
     <genClasses ecoreClass="Jabuti.ecore#//TimeUnitSpec">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//TimeUnitSpec/timeUnit"/>
     </genClasses>
+    <genClasses ecoreClass="Jabuti.ecore#//ParenthesizedExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ParenthesizedExpression/expression"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

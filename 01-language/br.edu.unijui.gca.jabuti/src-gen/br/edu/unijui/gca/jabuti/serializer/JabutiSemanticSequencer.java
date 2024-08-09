@@ -20,6 +20,7 @@ import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
 import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
+import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
@@ -64,8 +65,28 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				sequence_Application(context, (Application) semanticObject); 
 				return; 
 			case JabutiPackage.BINARY_OPERATOR:
-				sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getExpressionRule()
+						|| action == grammarAccess.getExpressionAccess().getBinaryOperatorLeftAction_1_0()) {
+					sequence_Comparison_Expression_Factor_Plus(context, (BinaryOperator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getNegationRule()
+						|| rule == grammarAccess.getComparisonRule()
+						|| action == grammarAccess.getComparisonAccess().getBinaryOperatorLeftAction_1_0()) {
+					sequence_Comparison_Factor_Plus(context, (BinaryOperator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getFactorRule()
+						|| action == grammarAccess.getFactorAccess().getBinaryOperatorLeftAction_1_0()) {
+					sequence_Factor(context, (BinaryOperator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getPlusRule()
+						|| action == grammarAccess.getPlusAccess().getBinaryOperatorLeftAction_1_0()) {
+					sequence_Factor_Plus(context, (BinaryOperator) semanticObject); 
+					return; 
+				}
+				else break;
 			case JabutiPackage.BINARY_TERM_OPERATOR:
 				sequence_ExpressionTerm(context, (BinaryTermOperator) semanticObject); 
 				return; 
@@ -115,6 +136,9 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case JabutiPackage.ON_SUCCESS:
 				sequence_OnSuccess(context, (OnSuccess) semanticObject); 
 				return; 
+			case JabutiPackage.PARENTHESIZED_EXPRESSION:
+				sequence_ParenthesizedExpression(context, (ParenthesizedExpression) semanticObject); 
+				return; 
 			case JabutiPackage.PROCESS:
 				sequence_Process(context, (br.edu.unijui.gca.jabuti.jabuti.Process) semanticObject); 
 				return; 
@@ -157,8 +181,23 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				sequence_Timeout(context, (Timeout) semanticObject); 
 				return; 
 			case JabutiPackage.UNARY_OPERATOR:
-				sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
-				return; 
+				if (rule == grammarAccess.getExpressionRule()
+						|| action == grammarAccess.getExpressionAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getNegationRule()) {
+					sequence_Negation_Negative(context, (UnaryOperator) semanticObject); 
+					return; 
+				}
+				else if (rule == grammarAccess.getComparisonRule()
+						|| action == grammarAccess.getComparisonAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getPlusRule()
+						|| action == grammarAccess.getPlusAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getFactorRule()
+						|| action == grammarAccess.getFactorAccess().getBinaryOperatorLeftAction_1_0()
+						|| rule == grammarAccess.getNegativeRule()) {
+					sequence_Negative(context, (UnaryOperator) semanticObject); 
+					return; 
+				}
+				else break;
 			case JabutiPackage.UNARY_TERM_OPERATOR:
 				sequence_NegationTerm(context, (UnaryTermOperator) semanticObject); 
 				return; 
@@ -286,15 +325,6 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * Contexts:
 	 *     Expression returns BinaryOperator
 	 *     Expression.BinaryOperator_1_0 returns BinaryOperator
-	 *     Negation returns BinaryOperator
-	 *     Comparison returns BinaryOperator
-	 *     Comparison.BinaryOperator_1_0 returns BinaryOperator
-	 *     Plus returns BinaryOperator
-	 *     Plus.BinaryOperator_1_0 returns BinaryOperator
-	 *     Factor returns BinaryOperator
-	 *     Factor.BinaryOperator_1_0 returns BinaryOperator
-	 *     Negative returns BinaryOperator
-	 *     Primary returns BinaryOperator
 	 *
 	 * Constraint:
 	 *     (
@@ -317,6 +347,37 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * </pre>
 	 */
 	protected void sequence_Comparison_Expression_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Negation returns BinaryOperator
+	 *     Comparison returns BinaryOperator
+	 *     Comparison.BinaryOperator_1_0 returns BinaryOperator
+	 *
+	 * Constraint:
+	 *     (
+	 *         (
+	 *             left=Comparison_BinaryOperator_1_0 
+	 *             (
+	 *                 symbol='&lt;=' | 
+	 *                 symbol='&gt;=' | 
+	 *                 symbol='&gt;' | 
+	 *                 symbol='&lt;' | 
+	 *                 symbol='!=' | 
+	 *                 symbol='=='
+	 *             ) 
+	 *             right=Plus
+	 *         ) | 
+	 *         (left=Plus_BinaryOperator_1_0 (symbol='+' | symbol='-') right=Factor) | 
+	 *         (left=Factor_BinaryOperator_1_0 (symbol='*' | symbol='/') right=Negative)
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Comparison_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -376,6 +437,39 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * </pre>
 	 */
 	protected void sequence_ExpressionTerm(ISerializationContext context, BinaryTermOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Factor returns BinaryOperator
+	 *     Factor.BinaryOperator_1_0 returns BinaryOperator
+	 *
+	 * Constraint:
+	 *     (left=Factor_BinaryOperator_1_0 (symbol='*' | symbol='/') right=Negative)
+	 * </pre>
+	 */
+	protected void sequence_Factor(ISerializationContext context, BinaryOperator semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Plus returns BinaryOperator
+	 *     Plus.BinaryOperator_1_0 returns BinaryOperator
+	 *
+	 * Constraint:
+	 *     (
+	 *         (left=Plus_BinaryOperator_1_0 (symbol='+' | symbol='-') right=Factor) | 
+	 *         (left=Factor_BinaryOperator_1_0 (symbol='*' | symbol='/') right=Negative)
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -514,14 +608,6 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     Expression returns UnaryOperator
 	 *     Expression.BinaryOperator_1_0 returns UnaryOperator
 	 *     Negation returns UnaryOperator
-	 *     Comparison returns UnaryOperator
-	 *     Comparison.BinaryOperator_1_0 returns UnaryOperator
-	 *     Plus returns UnaryOperator
-	 *     Plus.BinaryOperator_1_0 returns UnaryOperator
-	 *     Factor returns UnaryOperator
-	 *     Factor.BinaryOperator_1_0 returns UnaryOperator
-	 *     Negative returns UnaryOperator
-	 *     Primary returns UnaryOperator
 	 *
 	 * Constraint:
 	 *     ((symbol='!' expression=Comparison) | (symbol='-' expression=Primary))
@@ -529,6 +615,35 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 */
 	protected void sequence_Negation_Negative(ISerializationContext context, UnaryOperator semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Comparison returns UnaryOperator
+	 *     Comparison.BinaryOperator_1_0 returns UnaryOperator
+	 *     Plus returns UnaryOperator
+	 *     Plus.BinaryOperator_1_0 returns UnaryOperator
+	 *     Factor returns UnaryOperator
+	 *     Factor.BinaryOperator_1_0 returns UnaryOperator
+	 *     Negative returns UnaryOperator
+	 *
+	 * Constraint:
+	 *     (symbol='-' expression=Primary)
+	 * </pre>
+	 */
+	protected void sequence_Negative(ISerializationContext context, UnaryOperator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.UNARY_OPERATOR__SYMBOL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.UNARY_OPERATOR__SYMBOL));
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.UNARY_OPERATOR__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.UNARY_OPERATOR__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNegativeAccess().getSymbolHyphenMinusKeyword_1_1_0(), semanticObject.getSymbol());
+		feeder.accept(grammarAccess.getNegativeAccess().getExpressionPrimaryParserRuleCall_1_2_0(), semanticObject.getExpression());
+		feeder.finish();
 	}
 	
 	
@@ -622,6 +737,37 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getOnSuccessAccess().getMessageSTRINGTerminalRuleCall_3_0(), semanticObject.getMessage());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Expression returns ParenthesizedExpression
+	 *     Expression.BinaryOperator_1_0 returns ParenthesizedExpression
+	 *     Negation returns ParenthesizedExpression
+	 *     Comparison returns ParenthesizedExpression
+	 *     Comparison.BinaryOperator_1_0 returns ParenthesizedExpression
+	 *     Plus returns ParenthesizedExpression
+	 *     Plus.BinaryOperator_1_0 returns ParenthesizedExpression
+	 *     Factor returns ParenthesizedExpression
+	 *     Factor.BinaryOperator_1_0 returns ParenthesizedExpression
+	 *     Negative returns ParenthesizedExpression
+	 *     Primary returns ParenthesizedExpression
+	 *     ParenthesizedExpression returns ParenthesizedExpression
+	 *
+	 * Constraint:
+	 *     expression=Expression
+	 * </pre>
+	 */
+	protected void sequence_ParenthesizedExpression(ISerializationContext context, ParenthesizedExpression semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, JabutiPackage.Literals.PARENTHESIZED_EXPRESSION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JabutiPackage.Literals.PARENTHESIZED_EXPRESSION__EXPRESSION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getParenthesizedExpressionAccess().getExpressionExpressionParserRuleCall_1_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

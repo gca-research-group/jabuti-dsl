@@ -26,8 +26,6 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1;
 	protected AbstractElementAlias match_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1;
 	protected AbstractElementAlias match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_a;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_1_0_p;
 	protected AbstractElementAlias match_Term_LeftParenthesisKeyword_0_0_a;
 	protected AbstractElementAlias match_Term_LeftParenthesisKeyword_0_0_p;
 	
@@ -38,8 +36,6 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 		match_ConditionalExpression_QualifiedNameParserRuleCall_3_1_1_0_or_STRINGTerminalRuleCall_3_1_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_3_1_1_0()), new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_3_1_1_1()));
 		match_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getQualifiedNameParserRuleCall_4_2_1_0()), new TokenAlias(false, false, grammarAccess.getConditionalExpressionAccess().getSTRINGTerminalRuleCall_4_2_1_1()));
 		match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getContractAccess().getVariablesKeyword_17_0()), new TokenAlias(false, false, grammarAccess.getContractAccess().getLeftCurlyBracketKeyword_17_1()), new TokenAlias(false, false, grammarAccess.getContractAccess().getRightCurlyBracketKeyword_17_3()));
-		match_Primary_LeftParenthesisKeyword_1_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
-		match_Primary_LeftParenthesisKeyword_1_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
 		match_Term_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getTermAccess().getLeftParenthesisKeyword_0_0());
 		match_Term_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getTermAccess().getLeftParenthesisKeyword_0_0());
 	}
@@ -89,10 +85,6 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_ConditionalExpression_QualifiedNameParserRuleCall_4_2_1_0_or_STRINGTerminalRuleCall_4_2_1_1(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q.equals(syntax))
 				emit_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Primary_LeftParenthesisKeyword_1_0_a.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_1_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if (match_Primary_LeftParenthesisKeyword_1_0_p.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_1_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Term_LeftParenthesisKeyword_0_0_a.equals(syntax))
 				emit_Term_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if (match_Term_LeftParenthesisKeyword_0_0_p.equals(syntax))
@@ -162,41 +154,6 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 * </pre>
 	 */
 	protected void emit_Contract___VariablesKeyword_17_0_LeftCurlyBracketKeyword_17_1_RightCurlyBracketKeyword_17_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     '('*
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) symbol='!'
-	 *     (rule start) (ambiguity) symbol='-'
-	 *     (rule start) (ambiguity) value=INT
-	 *     (rule start) (ambiguity) value=STRING
-	 *     (rule start) (ambiguity) value=[Variable|ID]
-	 *     (rule start) (ambiguity) {BinaryOperator.left=}
-	 
-	 * </pre>
-	 */
-	protected void emit_Primary_LeftParenthesisKeyword_1_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * <pre>
-	 * Ambiguous syntax:
-	 *     '('+
-	 *
-	 * This ambiguous syntax occurs at:
-	 *     (rule start) (ambiguity) symbol='!'
-	 *     (rule start) (ambiguity) symbol='-'
-	 *     (rule start) (ambiguity) {BinaryOperator.left=}
-	 
-	 * </pre>
-	 */
-	protected void emit_Primary_LeftParenthesisKeyword_1_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

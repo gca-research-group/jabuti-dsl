@@ -1461,24 +1461,60 @@ rulePrimary returns [EObject current=null]
 			afterParserOrEnumRuleCall();
 		}
 		    |
+		{
+			newCompositeNode(grammarAccess.getPrimaryAccess().getParenthesizedExpressionParserRuleCall_1());
+		}
+		this_ParenthesizedExpression_1=ruleParenthesizedExpression
+		{
+			$current = $this_ParenthesizedExpression_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleParenthesizedExpression
+entryRuleParenthesizedExpression returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getParenthesizedExpressionRule()); }
+	iv_ruleParenthesizedExpression=ruleParenthesizedExpression
+	{ $current=$iv_ruleParenthesizedExpression.current; }
+	EOF;
+
+// Rule ParenthesizedExpression
+ruleParenthesizedExpression returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='('
+		{
+			newLeafNode(otherlv_0, grammarAccess.getParenthesizedExpressionAccess().getLeftParenthesisKeyword_0());
+		}
 		(
-			otherlv_1='('
-			{
-				newLeafNode(otherlv_1, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_1_0());
-			}
-			{
-				newCompositeNode(grammarAccess.getPrimaryAccess().getExpressionParserRuleCall_1_1());
-			}
-			this_Expression_2=ruleExpression
-			{
-				$current = $this_Expression_2.current;
-				afterParserOrEnumRuleCall();
-			}
-			otherlv_3=')'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getPrimaryAccess().getRightParenthesisKeyword_1_2());
-			}
+			(
+				{
+					newCompositeNode(grammarAccess.getParenthesizedExpressionAccess().getExpressionExpressionParserRuleCall_1_0());
+				}
+				lv_expression_1_0=ruleExpression
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getParenthesizedExpressionRule());
+					}
+					set(
+						$current,
+						"expression",
+						lv_expression_1_0,
+						"br.edu.unijui.gca.jabuti.Jabuti.Expression");
+					afterParserOrEnumRuleCall();
+				}
+			)
 		)
+		otherlv_2=')'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getParenthesizedExpressionAccess().getRightParenthesisKeyword_2());
+		}
 	)
 ;
 

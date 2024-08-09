@@ -25,6 +25,7 @@ import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
 import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
+import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression;
 import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
@@ -295,6 +296,11 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseTimeUnitSpec(TimeUnitSpec object)
 			{
 				return createTimeUnitSpecAdapter();
+			}
+			@Override
+			public Adapter caseParenthesizedExpression(ParenthesizedExpression object)
+			{
+				return createParenthesizedExpressionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object)
@@ -869,6 +875,21 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createTimeUnitSpecAdapter()
+	{
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression <em>Parenthesized Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression
+	 * @generated
+	 */
+	public Adapter createParenthesizedExpressionAdapter()
 	{
 		return null;
 	}

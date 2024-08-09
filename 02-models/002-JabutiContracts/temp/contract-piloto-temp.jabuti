@@ -22,7 +22,7 @@ contract Temp {
 //		num2_soma =  1001+20-15*10/5
 //	 	num3_soma_var = num1_single + 2
 //		num4_soma_var = num1_single + num2_soma
-//		
+//		 
 //		bool1_cp_strs = "Eldair" == "Fabricio"
 //		bool2_cp_str_num = "ab" > 2
 //		bool3_cp_nums = 2==4
@@ -30,35 +30,39 @@ contract Temp {
 //		bool4_lg_strs = "Eldair" AND "Fabricio"
 //		bool5_lg_str_num = "ab" OR 2
 //		bool6_lg_nums = 2==4 AND "Eldair" == "Fabricio"
-	 
+//	 
 //		bool7_un_negation = !bool1_cp_strs  
 //		bool8_un_negation = !("Eldair" == "Fabricio")
 //	 	
-//		numNegative = 2  
-        
-	 	 str6_negative  =  -"s" + (2*4)   
-		        
-		          
-		             
-		       
+//		numNegative = 2   
+//          
+//	 	str6_negative  =   (-2 + ((!2+2)/6+2) + numNegative )  
+		     
+		                           
+		str_aux1  = "//body/perosonalInformation/address/cep"   
+		str_aux2  = "count(//body/perosonalInformation/address/cep)"
+		str_aux3  = "count(//body/perosonalInformation/address/cep)<2"                 
+		           
 //		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )
-//		msg_02 = MessageContent( boolean(str1_amount_of_cep) )
-//		msg_02 = MessageContent( numeric(num1_single) )  
-//		   
+//		msg_02 = MessageContent( numeric(str_aux2) )  
+//		msg_03 = MessageContent( boolean(str_aux3) )
+//		
+//		     
 //		msg_04 = MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" )
-//		msg_05 = MessageContent( boolean(str1_amount_of_cep))  
-//		msg_06 = MessageContent( numeric(num1_single)<=20)   
+//		msg_05 = MessageContent( numeric(str_aux2)<=20)  		
+//		    
 //		   
-//		msg_07 = MessageContent( numeric(str1_amount_of_cep)== 1 per Hour )
+//		msg_06 = MessageContent( numeric(str_aux3)<2 per Hour )
 //		 		    
 //		session = SessionInterval(10 Hour)
 //		session = SessionInterval  (10 Hour per msg_01)
 //	    
-//		timeInterval = Ti meInterval("08:00:00" to "18:00:00") 
+//		timeInterval = TimeInterval("08:00:00" to "18:00:00") 
 //		    
-//		timeout = Timeout(30)     
-	 	}        
-	               
+//		timeout = Timeout(30) 
+		   	 		 		
+	 	}            
+	                 
 	clauses{  
 		right requestDelivery {
 			/*Setting the days and hours to request a delivery,
@@ -66,9 +70,9 @@ contract Temp {
 			rolePlayer = process
 			operation = request	
 			terms {		 	  
-				MessageContent( text("//body/perosonalInformation/address/cep") ) 
-//				MessageContent( boolean(amount_of_cep) ),
-//				MessageContent( numeric(weight) )  	,	  
+				MessageContent( text("//body/perosonalInformation/address/cep") ) OR 
+				(TimeInterval("08:00:00" to "18:00:00"),
+				Timeout(3) ) 	  
 //				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
 //				MessageContent( boolean(amount_of_cep) == true ) ,
 //				MessageContent( numeric(weight)<=20)	  

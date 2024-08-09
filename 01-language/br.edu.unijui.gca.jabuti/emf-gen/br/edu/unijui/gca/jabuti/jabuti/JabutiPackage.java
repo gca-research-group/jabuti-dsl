@@ -1536,6 +1536,34 @@ public interface JabutiPackage extends EPackage
 	int TIME_UNIT_SPEC_FEATURE_COUNT = 1;
 
 	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ParenthesizedExpressionImpl <em>Parenthesized Expression</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ParenthesizedExpressionImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getParenthesizedExpression()
+	 * @generated
+	 */
+	int PARENTHESIZED_EXPRESSION = 37;
+
+	/**
+	 * The feature id for the '<em><b>Expression</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARENTHESIZED_EXPRESSION__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Parenthesized Expression</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARENTHESIZED_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+
+	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1543,7 +1571,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getRolePlayer()
 	 * @generated
 	 */
-	int ROLE_PLAYER = 37;
+	int ROLE_PLAYER = 38;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.WeekDay <em>Week Day</em>}' enum.
@@ -1553,7 +1581,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getWeekDay()
 	 * @generated
 	 */
-	int WEEK_DAY = 38;
+	int WEEK_DAY = 39;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit <em>Time Unit</em>}' enum.
@@ -1563,7 +1591,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getTimeUnit()
 	 * @generated
 	 */
-	int TIME_UNIT = 39;
+	int TIME_UNIT = 40;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.Operation <em>Operation</em>}' enum.
@@ -1573,7 +1601,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getOperation()
 	 * @generated
 	 */
-	int OPERATION = 40;
+	int OPERATION = 41;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.DataType <em>Data Type</em>}' enum.
@@ -1583,7 +1611,7 @@ public interface JabutiPackage extends EPackage
 	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 41;
+	int DATA_TYPE = 42;
 
 
 	/**
@@ -2661,6 +2689,27 @@ public interface JabutiPackage extends EPackage
 	EAttribute getTimeUnitSpec_TimeUnit();
 
 	/**
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression <em>Parenthesized Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parenthesized Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression
+	 * @generated
+	 */
+	EClass getParenthesizedExpression();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression#getExpression <em>Expression</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Expression</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression#getExpression()
+	 * @see #getParenthesizedExpression()
+	 * @generated
+	 */
+	EReference getParenthesizedExpression_Expression();
+
+	/**
 	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3614,6 +3663,24 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EAttribute TIME_UNIT_SPEC__TIME_UNIT = eINSTANCE.getTimeUnitSpec_TimeUnit();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ParenthesizedExpressionImpl <em>Parenthesized Expression</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ParenthesizedExpressionImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getParenthesizedExpression()
+		 * @generated
+		 */
+		EClass PARENTHESIZED_EXPRESSION = eINSTANCE.getParenthesizedExpression();
+
+		/**
+		 * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARENTHESIZED_EXPRESSION__EXPRESSION = eINSTANCE.getParenthesizedExpression_Expression();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.RolePlayer <em>Role Player</em>}' enum.

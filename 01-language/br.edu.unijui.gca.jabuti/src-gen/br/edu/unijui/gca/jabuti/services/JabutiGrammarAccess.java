@@ -954,32 +954,48 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.Primary");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cLiteralValueParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLeftParenthesisKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final RuleCall cExpressionParserRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Keyword cRightParenthesisKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
+		private final RuleCall cParenthesizedExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Primary returns Expression:
-		//    LiteralValue | '(' Expression ')';
+		//    LiteralValue | ParenthesizedExpression ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//LiteralValue | '(' Expression ')'
+		//LiteralValue | ParenthesizedExpression
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//LiteralValue
 		public RuleCall getLiteralValueParserRuleCall_0() { return cLiteralValueParserRuleCall_0; }
 		
-		//'(' Expression ')'
-		public Group getGroup_1() { return cGroup_1; }
+		//ParenthesizedExpression
+		public RuleCall getParenthesizedExpressionParserRuleCall_1() { return cParenthesizedExpressionParserRuleCall_1; }
+	}
+	public class ParenthesizedExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ParenthesizedExpression");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
-		//'('
-		public Keyword getLeftParenthesisKeyword_1_0() { return cLeftParenthesisKeyword_1_0; }
+		//ParenthesizedExpression:
+		//    "(" expression=Expression ")"
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"(" expression=Expression ")"
+		public Group getGroup() { return cGroup; }
+		
+		//"("
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
+		
+		//expression=Expression
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
 		
 		//Expression
-		public RuleCall getExpressionParserRuleCall_1_1() { return cExpressionParserRuleCall_1_1; }
+		public RuleCall getExpressionExpressionParserRuleCall_1_0() { return cExpressionExpressionParserRuleCall_1_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_1_2() { return cRightParenthesisKeyword_1_2; }
+		//")"
+		public Keyword getRightParenthesisKeyword_2() { return cRightParenthesisKeyword_2; }
 	}
 	public class LiteralValueElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.LiteralValue");
@@ -2291,6 +2307,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final FactorElements pFactor;
 	private final NegativeElements pNegative;
 	private final PrimaryElements pPrimary;
+	private final ParenthesizedExpressionElements pParenthesizedExpression;
 	private final LiteralValueElements pLiteralValue;
 	private final NumericValueElements pNumericValue;
 	private final StringValueElements pStringValue;
@@ -2348,6 +2365,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pFactor = new FactorElements();
 		this.pNegative = new NegativeElements();
 		this.pPrimary = new PrimaryElements();
+		this.pParenthesizedExpression = new ParenthesizedExpressionElements();
 		this.pLiteralValue = new LiteralValueElements();
 		this.pNumericValue = new NumericValueElements();
 		this.pStringValue = new StringValueElements();
@@ -2637,13 +2655,24 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Primary returns Expression:
-	//    LiteralValue | '(' Expression ')';
+	//    LiteralValue | ParenthesizedExpression ;
 	public PrimaryElements getPrimaryAccess() {
 		return pPrimary;
 	}
 	
 	public ParserRule getPrimaryRule() {
 		return getPrimaryAccess().getRule();
+	}
+	
+	//ParenthesizedExpression:
+	//    "(" expression=Expression ")"
+	//;
+	public ParenthesizedExpressionElements getParenthesizedExpressionAccess() {
+		return pParenthesizedExpression;
+	}
+	
+	public ParserRule getParenthesizedExpressionRule() {
+		return getParenthesizedExpressionAccess().getRule();
 	}
 	
 	//LiteralValue:

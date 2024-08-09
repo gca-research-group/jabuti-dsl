@@ -82,7 +82,7 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFactorAccess().getGroup(), "rule__Factor__Group__0");
 			builder.put(grammarAccess.getFactorAccess().getGroup_1(), "rule__Factor__Group_1__0");
 			builder.put(grammarAccess.getNegativeAccess().getGroup_1(), "rule__Negative__Group_1__0");
-			builder.put(grammarAccess.getPrimaryAccess().getGroup_1(), "rule__Primary__Group_1__0");
+			builder.put(grammarAccess.getParenthesizedExpressionAccess().getGroup(), "rule__ParenthesizedExpression__Group__0");
 			builder.put(grammarAccess.getFunctionCallAccess().getGroup(), "rule__FunctionCall__Group__0");
 			builder.put(grammarAccess.getFunctionCallAccess().getGroup_3(), "rule__FunctionCall__Group_3__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
@@ -150,6 +150,7 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getFactorAccess().getRightAssignment_1_2(), "rule__Factor__RightAssignment_1_2");
 			builder.put(grammarAccess.getNegativeAccess().getSymbolAssignment_1_1(), "rule__Negative__SymbolAssignment_1_1");
 			builder.put(grammarAccess.getNegativeAccess().getExpressionAssignment_1_2(), "rule__Negative__ExpressionAssignment_1_2");
+			builder.put(grammarAccess.getParenthesizedExpressionAccess().getExpressionAssignment_1(), "rule__ParenthesizedExpression__ExpressionAssignment_1");
 			builder.put(grammarAccess.getNumericValueAccess().getValueAssignment(), "rule__NumericValue__ValueAssignment");
 			builder.put(grammarAccess.getStringValueAccess().getValueAssignment(), "rule__StringValue__ValueAssignment");
 			builder.put(grammarAccess.getVariableValueAccess().getValueAssignment(), "rule__VariableValue__ValueAssignment");
