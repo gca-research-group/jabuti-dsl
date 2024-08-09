@@ -25,8 +25,7 @@ contract SendMessageWhatsapp {
 			rolePlayer = process
 			operation = write		
 			terms{
-				WeekDaysInterval(Monday to Friday),	
-				MessageContent(conversationStart),	 			 	
+				WeekDaysInterval(Monday to Friday),		 			 	
 				when( conversationStarter == "Business-initiated" ) check {				
 					 	MaxNumberOfOperation(10000 per Month)		
 				}				 

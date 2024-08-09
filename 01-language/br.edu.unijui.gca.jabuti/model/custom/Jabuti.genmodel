@@ -118,10 +118,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalExpression/comparisonOperator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalExpression/logicalOperator"/>
     </genClasses>
-    <genClasses ecoreClass="Jabuti.ecore#//Terms">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Terms/conditionalExpression"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Terms/expressionTerm"/>
-    </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//Term"/>
     <genClasses ecoreClass="Jabuti.ecore#//UnaryTermOperator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//UnaryTermOperator/symbol"/>

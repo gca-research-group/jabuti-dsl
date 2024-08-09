@@ -32,7 +32,6 @@ import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
-import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
@@ -300,13 +299,7 @@ public class JabutiSwitch<T> extends Switch<T>
 			{
 				ConditionalExpression conditionalExpression = (ConditionalExpression)theEObject;
 				T result = caseConditionalExpression(conditionalExpression);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case JabutiPackage.TERMS:
-			{
-				Terms terms = (Terms)theEObject;
-				T result = caseTerms(terms);
+				if (result == null) result = caseExpressionTerm(conditionalExpression);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -810,22 +803,6 @@ public class JabutiSwitch<T> extends Switch<T>
 	 * @generated
 	 */
 	public T caseConditionalExpression(ConditionalExpression object)
-	{
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Terms</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Terms</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTerms(Terms object)
 	{
 		return null;
 	}

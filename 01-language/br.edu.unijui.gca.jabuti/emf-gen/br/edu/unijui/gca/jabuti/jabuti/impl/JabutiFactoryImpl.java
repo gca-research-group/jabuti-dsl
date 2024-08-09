@@ -36,7 +36,6 @@ import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
-import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
@@ -134,7 +133,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.EXPRESSION_TERM: return createExpressionTerm();
 			case JabutiPackage.LOGICAL_OPERATOR: return createLogicalOperator();
 			case JabutiPackage.CONDITIONAL_EXPRESSION: return createConditionalExpression();
-			case JabutiPackage.TERMS: return createTerms();
 			case JabutiPackage.TERM: return createTerm();
 			case JabutiPackage.UNARY_TERM_OPERATOR: return createUnaryTermOperator();
 			case JabutiPackage.BINARY_TERM_OPERATOR: return createBinaryTermOperator();
@@ -500,18 +498,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	{
 		ConditionalExpressionImpl conditionalExpression = new ConditionalExpressionImpl();
 		return conditionalExpression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Terms createTerms()
-	{
-		TermsImpl terms = new TermsImpl();
-		return terms;
 	}
 
 	/**

@@ -278,7 +278,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cTermsKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cTermsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cTermsTermsParserRuleCall_10_0 = (RuleCall)cTermsAssignment_10.eContents().get(0);
+		private final RuleCall cTermsExpressionTermParserRuleCall_10_0 = (RuleCall)cTermsAssignment_10.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		private final Assignment cOnSuccessAssignment_12 = (Assignment)cGroup.eContents().get(12);
 		private final RuleCall cOnSuccessOnSuccessParserRuleCall_12_0 = (RuleCall)cOnSuccessAssignment_12.eContents().get(0);
@@ -292,7 +292,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//        'rolePlayer' '=' rolePlayer=RolePlayer
 		//        'operation' '=' operation=Operation
 		//        'terms' '{'
-		//            terms = Terms
+		//            terms = ExpressionTerm
 		//        '}'
 		//        onSuccess=OnSuccess?
 		//        onBreach=OnBreach?
@@ -304,7 +304,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//    'rolePlayer' '=' rolePlayer=RolePlayer
 		//    'operation' '=' operation=Operation
 		//    'terms' '{'
-		//        terms = Terms
+		//        terms = ExpressionTerm
 		//    '}'
 		//    onSuccess=OnSuccess?
 		//    onBreach=OnBreach?
@@ -356,11 +356,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
 		
-		//terms = Terms
+		//terms = ExpressionTerm
 		public Assignment getTermsAssignment_10() { return cTermsAssignment_10; }
 		
-		//Terms
-		public RuleCall getTermsTermsParserRuleCall_10_0() { return cTermsTermsParserRuleCall_10_0; }
+		//ExpressionTerm
+		public RuleCall getTermsExpressionTermParserRuleCall_10_0() { return cTermsExpressionTermParserRuleCall_10_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
@@ -1181,37 +1181,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Timeout
 		public RuleCall getTermTimeoutParserRuleCall_2_1_0_3() { return cTermTimeoutParserRuleCall_2_1_0_3; }
 	}
-	public class TermsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.Terms");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cExpressionTermAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cExpressionTermExpressionTermParserRuleCall_0_0 = (RuleCall)cExpressionTermAssignment_0.eContents().get(0);
-		private final Assignment cConditionalExpressionAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cConditionalExpressionConditionalExpressionParserRuleCall_1_0 = (RuleCall)cConditionalExpressionAssignment_1.eContents().get(0);
-		
-		////------------------ start of new version ----------------
-		//Terms:
-		//    (expressionTerm += ExpressionTerm |
-		//    conditionalExpression+=ConditionalExpression)+
-		//;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//(expressionTerm += ExpressionTerm |
-		//conditionalExpression+=ConditionalExpression)+
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//expressionTerm += ExpressionTerm
-		public Assignment getExpressionTermAssignment_0() { return cExpressionTermAssignment_0; }
-		
-		//ExpressionTerm
-		public RuleCall getExpressionTermExpressionTermParserRuleCall_0_0() { return cExpressionTermExpressionTermParserRuleCall_0_0; }
-		
-		//conditionalExpression+=ConditionalExpression
-		public Assignment getConditionalExpressionAssignment_1() { return cConditionalExpressionAssignment_1; }
-		
-		//ConditionalExpression
-		public RuleCall getConditionalExpressionConditionalExpressionParserRuleCall_1_0() { return cConditionalExpressionConditionalExpressionParserRuleCall_1_0; }
-	}
 	public class ExpressionTermElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ExpressionTerm");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1226,6 +1195,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
 		private final RuleCall cRightNegationTermParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
 		
+		////------------------ start of new version ----------------
 		//ExpressionTerm:
 		//    NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
 		@Override public ParserRule getRule() { return rule; }
@@ -1309,19 +1279,20 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cLeftParenthesisKeyword_0_0 = (Keyword)cGroup_0.eContents().get(0);
 		private final RuleCall cExpressionTermParserRuleCall_0_1 = (RuleCall)cGroup_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final RuleCall cSessionIntervalParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cWeekDaysIntervalParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cTimeIntervalParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
-		private final RuleCall cTimeoutParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
-		private final RuleCall cMaxNumberOfOperationParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
-		private final RuleCall cMessageContentParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cConditionalExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cSessionIntervalParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cWeekDaysIntervalParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cTimeIntervalParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
+		private final RuleCall cTimeoutParserRuleCall_5 = (RuleCall)cAlternatives.eContents().get(5);
+		private final RuleCall cMaxNumberOfOperationParserRuleCall_6 = (RuleCall)cAlternatives.eContents().get(6);
+		private final RuleCall cMessageContentParserRuleCall_7 = (RuleCall)cAlternatives.eContents().get(7);
 		
 		//Term returns ExpressionTerm:
-		//    '(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+		//    '(' ExpressionTerm ')' | ConditionalExpression | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+		//'(' ExpressionTerm ')' | ConditionalExpression | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'(' ExpressionTerm ')'
@@ -1336,23 +1307,26 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//')'
 		public Keyword getRightParenthesisKeyword_0_2() { return cRightParenthesisKeyword_0_2; }
 		
+		//ConditionalExpression
+		public RuleCall getConditionalExpressionParserRuleCall_1() { return cConditionalExpressionParserRuleCall_1; }
+		
 		//SessionInterval
-		public RuleCall getSessionIntervalParserRuleCall_1() { return cSessionIntervalParserRuleCall_1; }
+		public RuleCall getSessionIntervalParserRuleCall_2() { return cSessionIntervalParserRuleCall_2; }
 		
 		//WeekDaysInterval
-		public RuleCall getWeekDaysIntervalParserRuleCall_2() { return cWeekDaysIntervalParserRuleCall_2; }
+		public RuleCall getWeekDaysIntervalParserRuleCall_3() { return cWeekDaysIntervalParserRuleCall_3; }
 		
 		//TimeInterval
-		public RuleCall getTimeIntervalParserRuleCall_3() { return cTimeIntervalParserRuleCall_3; }
+		public RuleCall getTimeIntervalParserRuleCall_4() { return cTimeIntervalParserRuleCall_4; }
 		
 		//Timeout
-		public RuleCall getTimeoutParserRuleCall_4() { return cTimeoutParserRuleCall_4; }
+		public RuleCall getTimeoutParserRuleCall_5() { return cTimeoutParserRuleCall_5; }
 		
 		//MaxNumberOfOperation
-		public RuleCall getMaxNumberOfOperationParserRuleCall_5() { return cMaxNumberOfOperationParserRuleCall_5; }
+		public RuleCall getMaxNumberOfOperationParserRuleCall_6() { return cMaxNumberOfOperationParserRuleCall_6; }
 		
 		//MessageContent
-		public RuleCall getMessageContentParserRuleCall_6() { return cMessageContentParserRuleCall_6; }
+		public RuleCall getMessageContentParserRuleCall_7() { return cMessageContentParserRuleCall_7; }
 	}
 	public class ConditionalExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "br.edu.unijui.gca.jabuti.Jabuti.ConditionalExpression");
@@ -2314,7 +2288,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	private final VariableValueElements pVariableValue;
 	private final FunctionCallElements pFunctionCall;
 	private final VariableElements pVariable;
-	private final TermsElements pTerms;
 	private final ExpressionTermElements pExpressionTerm;
 	private final NegationTermElements pNegationTerm;
 	private final TermElements pTerm;
@@ -2372,7 +2345,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		this.pVariableValue = new VariableValueElements();
 		this.pFunctionCall = new FunctionCallElements();
 		this.pVariable = new VariableElements();
-		this.pTerms = new TermsElements();
 		this.pExpressionTerm = new ExpressionTermElements();
 		this.pNegationTerm = new NegationTermElements();
 		this.pTerm = new TermElements();
@@ -2476,7 +2448,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	//        'rolePlayer' '=' rolePlayer=RolePlayer
 	//        'operation' '=' operation=Operation
 	//        'terms' '{'
-	//            terms = Terms
+	//            terms = ExpressionTerm
 	//        '}'
 	//        onSuccess=OnSuccess?
 	//        onBreach=OnBreach?
@@ -2738,18 +2710,6 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	////------------------ start of new version ----------------
-	//Terms:
-	//    (expressionTerm += ExpressionTerm |
-	//    conditionalExpression+=ConditionalExpression)+
-	//;
-	public TermsElements getTermsAccess() {
-		return pTerms;
-	}
-	
-	public ParserRule getTermsRule() {
-		return getTermsAccess().getRule();
-	}
-	
 	//ExpressionTerm:
 	//    NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
 	public ExpressionTermElements getExpressionTermAccess() {
@@ -2771,7 +2731,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//Term returns ExpressionTerm:
-	//    '(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
+	//    '(' ExpressionTerm ')' | ConditionalExpression | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
 	//;
 	public TermElements getTermAccess() {
 		return pTerm;

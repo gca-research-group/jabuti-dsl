@@ -99,6 +99,9 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     QualifiedName | STRING
 	 *
 	 * This ambiguous syntax occurs at:
+	 *     (rule start) '('* 'when' '(' (ambiguity) ')' 'check' '{' expressionTerm=ExpressionTerm
+	 *     (rule start) '('* 'when' '(' (ambiguity) comparisonOperator+=ComparisonOperator
+	 *     (rule start) '('* 'when' '(' (ambiguity) logicalOperator+=LogicalOperator
 	 *     (rule start) 'when' '(' (ambiguity) ')' 'check' '{' expressionTerm=ExpressionTerm
 	 *     (rule start) 'when' '(' (ambiguity) comparisonOperator+=ComparisonOperator
 	 *     (rule start) 'when' '(' (ambiguity) logicalOperator+=LogicalOperator
@@ -169,6 +172,10 @@ public class JabutiSyntacticSequencer extends AbstractSyntacticSequencer {
 	 *     (rule start) (ambiguity) 'TimeInterval' '(' start=STRING
 	 *     (rule start) (ambiguity) 'Timeout' '(' seconds=INT
 	 *     (rule start) (ambiguity) 'WeekDaysInterval' '(' start=WeekDay
+	 *     (rule start) (ambiguity) 'when' '(' (QualifiedName | STRING) ')' 'check' '{' expressionTerm=ExpressionTerm
+	 *     (rule start) (ambiguity) 'when' '(' (QualifiedName | STRING) comparisonOperator+=ComparisonOperator
+	 *     (rule start) (ambiguity) 'when' '(' (QualifiedName | STRING) logicalOperator+=LogicalOperator
+	 *     (rule start) (ambiguity) beforeSymbol=LogicalOperator
 	 *     (rule start) (ambiguity) symbol='NOT'
 	 *     (rule start) (ambiguity) {BinaryTermOperator.left=}
 	 

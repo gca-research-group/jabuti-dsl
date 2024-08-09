@@ -44,7 +44,6 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getLiteralValueAccess().getAlternatives(), "rule__LiteralValue__Alternatives");
 			builder.put(grammarAccess.getVariableAccess().getAlternatives_2(), "rule__Variable__Alternatives_2");
 			builder.put(grammarAccess.getVariableAccess().getTermAlternatives_2_1_0(), "rule__Variable__TermAlternatives_2_1_0");
-			builder.put(grammarAccess.getTermsAccess().getAlternatives(), "rule__Terms__Alternatives");
 			builder.put(grammarAccess.getExpressionTermAccess().getAlternatives_1_1(), "rule__ExpressionTerm__Alternatives_1_1");
 			builder.put(grammarAccess.getNegationTermAccess().getAlternatives(), "rule__NegationTerm__Alternatives");
 			builder.put(grammarAccess.getTermAccess().getAlternatives(), "rule__Term__Alternatives");
@@ -160,8 +159,6 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getVariableAccess().getNameAssignment_0(), "rule__Variable__NameAssignment_0");
 			builder.put(grammarAccess.getVariableAccess().getExpressionAssignment_2_0(), "rule__Variable__ExpressionAssignment_2_0");
 			builder.put(grammarAccess.getVariableAccess().getTermAssignment_2_1(), "rule__Variable__TermAssignment_2_1");
-			builder.put(grammarAccess.getTermsAccess().getExpressionTermAssignment_0(), "rule__Terms__ExpressionTermAssignment_0");
-			builder.put(grammarAccess.getTermsAccess().getConditionalExpressionAssignment_1(), "rule__Terms__ConditionalExpressionAssignment_1");
 			builder.put(grammarAccess.getExpressionTermAccess().getSymbolAssignment_1_1_0(), "rule__ExpressionTerm__SymbolAssignment_1_1_0");
 			builder.put(grammarAccess.getExpressionTermAccess().getSymbolAssignment_1_1_1(), "rule__ExpressionTerm__SymbolAssignment_1_1_1");
 			builder.put(grammarAccess.getExpressionTermAccess().getRightAssignment_1_2(), "rule__ExpressionTerm__RightAssignment_1_2");

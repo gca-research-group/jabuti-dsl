@@ -43,7 +43,7 @@ Clause:
 		'rolePlayer' '=' rolePlayer=RolePlayer
 		'operation' '=' operation=Operation
 		'terms' '{' 
-			terms = Terms			
+			terms = ExpressionTerm			
 		'}'
 		onSuccess=OnSuccess?
 		onBreach=OnBreach?
@@ -148,10 +148,6 @@ Variable:
 //------------------ start of new version ----------------
  
 
-Terms:
-	(expressionTerm += ExpressionTerm |
-	conditionalExpression+=ConditionalExpression)+
-;
 
 ExpressionTerm:
 	NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
@@ -160,11 +156,8 @@ NegationTerm returns ExpressionTerm:
 	Term | {UnaryTermOperator} symbol='NOT' expressionTerm=Term;
 	
 Term returns ExpressionTerm:
-	'(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
-	
+	'(' ExpressionTerm ')' | ConditionalExpression | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent	
 ;
-
-
 
 ConditionalExpression :
 	(beforeSymbol = LogicalOperator)?

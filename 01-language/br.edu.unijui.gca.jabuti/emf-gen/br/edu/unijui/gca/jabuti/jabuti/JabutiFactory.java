@@ -249,15 +249,6 @@ public interface JabutiFactory extends EFactory
 	ConditionalExpression createConditionalExpression();
 
 	/**
-	 * Returns a new object of class '<em>Terms</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Terms</em>'.
-	 * @generated
-	 */
-	Terms createTerms();
-
-	/**
 	 * Returns a new object of class '<em>Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -29,7 +29,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operation" eType="#//Operation"
         defaultValueLiteral="READ"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="terms" lowerBound="1" eType="#//Terms"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="terms" lowerBound="1" eType="#//ExpressionTerm"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rolePlayer" eType="#//RolePlayer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="onBreach" eType="#//OnBreach"
@@ -116,7 +116,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LogicalOperator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//ExpressionTerm">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" lowerBound="1"
         eType="#//ExpressionTerm" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="afterSymbol" eType="#//LogicalOperator"
@@ -127,12 +127,6 @@
         eType="#//ComparisonOperator" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperator" upperBound="-1"
         eType="#//LogicalOperator" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Terms">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conditionalExpression"
-        upperBound="-1" eType="#//ConditionalExpression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" upperBound="-1"
-        eType="#//ExpressionTerm" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//ExpressionTerm"/>
   <eClassifiers xsi:type="ecore:EClass" name="UnaryTermOperator" eSuperTypes="#//ExpressionTerm">

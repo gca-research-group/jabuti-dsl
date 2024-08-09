@@ -15,7 +15,7 @@ contract DeliveryHiring_O {
 			operation = response
 			terms {
 				Timeout(20),
-				MessageContent('//budget/deliveryTime/text()' < 15)	 		
+				MessageContent(text("//budget/deliveryTime/text()") < 15)	  		
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
 		}	

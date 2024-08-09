@@ -32,7 +32,6 @@ import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
-import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
@@ -236,11 +235,6 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 			public Adapter caseConditionalExpression(ConditionalExpression object)
 			{
 				return createConditionalExpressionAdapter();
-			}
-			@Override
-			public Adapter caseTerms(Terms object)
-			{
-				return createTermsAdapter();
 			}
 			@Override
 			public Adapter caseTerm(Term object)
@@ -695,21 +689,6 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	 * @generated
 	 */
 	public Adapter createConditionalExpressionAdapter()
-	{
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.Terms <em>Terms</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.Terms
-	 * @generated
-	 */
-	public Adapter createTermsAdapter()
 	{
 		return null;
 	}

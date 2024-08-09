@@ -4,12 +4,12 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
 import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
 import br.edu.unijui.gca.jabuti.jabuti.Operation;
 import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
-import br.edu.unijui.gca.jabuti.jabuti.Terms;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -98,7 +98,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 * @ordered
 	 */
-	protected Terms terms;
+	protected ExpressionTerm terms;
 
 	/**
 	 * The default value of the '{@link #getRolePlayer() <em>Role Player</em>}' attribute.
@@ -257,7 +257,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public Terms getTerms()
+	public ExpressionTerm getTerms()
 	{
 		return terms;
 	}
@@ -267,9 +267,9 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTerms(Terms newTerms, NotificationChain msgs)
+	public NotificationChain basicSetTerms(ExpressionTerm newTerms, NotificationChain msgs)
 	{
-		Terms oldTerms = terms;
+		ExpressionTerm oldTerms = terms;
 		terms = newTerms;
 		if (eNotificationRequired())
 		{
@@ -285,7 +285,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 	 * @generated
 	 */
 	@Override
-	public void setTerms(Terms newTerms)
+	public void setTerms(ExpressionTerm newTerms)
 	{
 		if (newTerms != terms)
 		{
@@ -442,7 +442,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				setOperation((Operation)newValue);
 				return;
 			case JabutiPackage.CLAUSE__TERMS:
-				setTerms((Terms)newValue);
+				setTerms((ExpressionTerm)newValue);
 				return;
 			case JabutiPackage.CLAUSE__ROLE_PLAYER:
 				setRolePlayer((RolePlayer)newValue);
@@ -474,7 +474,7 @@ public class ClauseImpl extends MinimalEObjectImpl.Container implements Clause
 				setOperation(OPERATION_EDEFAULT);
 				return;
 			case JabutiPackage.CLAUSE__TERMS:
-				setTerms((Terms)null);
+				setTerms((ExpressionTerm)null);
 				return;
 			case JabutiPackage.CLAUSE__ROLE_PLAYER:
 				setRolePlayer(ROLE_PLAYER_EDEFAULT);

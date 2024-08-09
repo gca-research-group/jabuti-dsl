@@ -13,7 +13,8 @@ contract DeliveryHiring_R {
    
 	variables{
 		numberOfAddresses  = "count(//body/perosonalInformation/address/cep)"
-		weight = "//body/package/weight/text()"  
+		weight = "//body/package/weight/text()" 
+		productValue = "//body/productValue/text()"  
 	} 
 	
 	clauses{
@@ -24,9 +25,9 @@ contract DeliveryHiring_R {
 			operation = request	
 			terms {			
 				MaxNumberOfOperation(3 per Minute),
-				MessageContent(numberOfAddresses == 1), 
-				MessageContent(weight == 100), 
-				MessageContent(productValue < 20000) 			
+				MessageContent(text(numberOfAddresses) == 1), 
+				MessageContent(numeric(weight) == 100), 
+				MessageContent(numeric(productValue) < 20000) 			
 			}
 			// the onSuccess is optional
 			onBreach(log("Request operation did not meet all requirements"))			

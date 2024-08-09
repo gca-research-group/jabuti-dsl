@@ -25,7 +25,6 @@ import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
-import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
@@ -168,9 +167,6 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 			case JabutiPackage.STRING_VALUE:
 				sequence_StringValue(context, (StringValue) semanticObject); 
 				return; 
-			case JabutiPackage.TERMS:
-				sequence_Terms(context, (Terms) semanticObject); 
-				return; 
 			case JabutiPackage.TIME_INTERVAL:
 				sequence_TimeInterval(context, (TimeInterval) semanticObject); 
 				return; 
@@ -246,7 +242,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         name=ID 
 	 *         rolePlayer=RolePlayer 
 	 *         operation=Operation 
-	 *         terms=Terms 
+	 *         terms=ExpressionTerm 
 	 *         onSuccess=OnSuccess? 
 	 *         onBreach=OnBreach?
 	 *     )
@@ -267,7 +263,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         name=ID 
 	 *         rolePlayer=RolePlayer 
 	 *         operation=Operation 
-	 *         terms=Terms 
+	 *         terms=ExpressionTerm 
 	 *         onSuccess=OnSuccess? 
 	 *         onBreach=OnBreach?
 	 *     )
@@ -288,7 +284,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *         name=ID 
 	 *         rolePlayer=RolePlayer 
 	 *         operation=Operation 
-	 *         terms=Terms 
+	 *         terms=ExpressionTerm 
 	 *         onSuccess=OnSuccess? 
 	 *         onBreach=OnBreach?
 	 *     )
@@ -385,6 +381,10 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     ExpressionTerm returns ConditionalExpression
+	 *     ExpressionTerm.BinaryTermOperator_1_0 returns ConditionalExpression
+	 *     NegationTerm returns ConditionalExpression
+	 *     Term returns ConditionalExpression
 	 *     ConditionalExpression returns ConditionalExpression
 	 *
 	 * Constraint:
@@ -880,20 +880,6 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0(), semanticObject.getValue());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     Terms returns Terms
-	 *
-	 * Constraint:
-	 *     (expressionTerm+=ExpressionTerm | conditionalExpression+=ConditionalExpression)+
-	 * </pre>
-	 */
-	protected void sequence_Terms(ISerializationContext context, Terms semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

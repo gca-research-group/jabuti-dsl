@@ -36,7 +36,6 @@ import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
 import br.edu.unijui.gca.jabuti.jabuti.Term;
-import br.edu.unijui.gca.jabuti.jabuti.Terms;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
@@ -238,13 +237,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	private EClass conditionalExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass termsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1115,39 +1107,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 	 * @generated
 	 */
 	@Override
-	public EClass getTerms()
-	{
-		return termsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTerms_ConditionalExpression()
-	{
-		return (EReference)termsEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getTerms_ExpressionTerm()
-	{
-		return (EReference)termsEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EClass getTerm()
 	{
 		return termEClass;
@@ -1733,10 +1692,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR);
 		createEReference(conditionalExpressionEClass, CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR);
 
-		termsEClass = createEClass(TERMS);
-		createEReference(termsEClass, TERMS__CONDITIONAL_EXPRESSION);
-		createEReference(termsEClass, TERMS__EXPRESSION_TERM);
-
 		termEClass = createEClass(TERM);
 
 		unaryTermOperatorEClass = createEClass(UNARY_TERM_OPERATOR);
@@ -1838,6 +1793,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		functionCallEClass.getESuperTypes().add(this.getLiteralValue());
 		onBreachEClass.getESuperTypes().add(this.getEventLog());
 		onSuccessEClass.getESuperTypes().add(this.getEventLog());
+		conditionalExpressionEClass.getESuperTypes().add(this.getExpressionTerm());
 		termEClass.getESuperTypes().add(this.getExpressionTerm());
 		unaryTermOperatorEClass.getESuperTypes().add(this.getExpressionTerm());
 		binaryTermOperatorEClass.getESuperTypes().add(this.getExpressionTerm());
@@ -1870,7 +1826,7 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEAttribute(getClause_Name(), ecorePackage.getEString(), "name", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_OnSuccess(), this.getOnSuccess(), null, "onSuccess", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_Operation(), this.getOperation(), "operation", "READ", 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getClause_Terms(), this.getTerms(), null, "terms", null, 1, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getClause_Terms(), this.getExpressionTerm(), null, "terms", null, 1, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getClause_RolePlayer(), this.getRolePlayer(), "rolePlayer", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getClause_OnBreach(), this.getOnBreach(), null, "onBreach", null, 0, 1, Clause.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1936,10 +1892,6 @@ public class JabutiPackageImpl extends EPackageImpl implements JabutiPackage
 		initEReference(getConditionalExpression_BeforeSymbol(), this.getLogicalOperator(), null, "beforeSymbol", null, 0, 1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditionalExpression_ComparisonOperator(), this.getComparisonOperator(), null, "comparisonOperator", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConditionalExpression_LogicalOperator(), this.getLogicalOperator(), null, "logicalOperator", null, 0, -1, ConditionalExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(termsEClass, Terms.class, "Terms", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTerms_ConditionalExpression(), this.getConditionalExpression(), null, "conditionalExpression", null, 0, -1, Terms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTerms_ExpressionTerm(), this.getExpressionTerm(), null, "expressionTerm", null, 0, -1, Terms.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -103,12 +103,12 @@ public interface Clause extends EObject
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Terms</em>' containment reference.
-	 * @see #setTerms(Terms)
+	 * @see #setTerms(ExpressionTerm)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getClause_Terms()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	Terms getTerms();
+	ExpressionTerm getTerms();
 
 	/**
 	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.Clause#getTerms <em>Terms</em>}' containment reference.
@@ -118,7 +118,7 @@ public interface Clause extends EObject
 	 * @see #getTerms()
 	 * @generated
 	 */
-	void setTerms(Terms value);
+	void setTerms(ExpressionTerm value);
 
 	/**
 	 * Returns the value of the '<em><b>Role Player</b></em>' attribute.

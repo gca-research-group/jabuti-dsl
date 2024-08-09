@@ -5,8 +5,6 @@ package br.edu.unijui.gca.jabuti.jabuti;
 
 import org.eclipse.emf.common.util.EList;
 
-import org.eclipse.emf.ecore.EObject;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Conditional Expression</b></em>'.
@@ -27,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface ConditionalExpression extends EObject
+public interface ConditionalExpression extends ExpressionTerm
 {
 	/**
 	 * Returns the value of the '<em><b>Expression Term</b></em>' containment reference.

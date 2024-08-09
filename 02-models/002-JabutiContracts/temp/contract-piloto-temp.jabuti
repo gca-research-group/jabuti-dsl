@@ -38,10 +38,10 @@ contract Temp {
 //          
 //	 	str6_negative  =   (-2 + ((!2+2)/6+2) + numNegative )  
 		     
-		                           
-		str_aux1  = "//body/perosonalInformation/address/cep"   
-		str_aux2  = "count(//body/perosonalInformation/address/cep)"
-		str_aux3  = "count(//body/perosonalInformation/address/cep)<2"                 
+//		                           
+//		str_aux1  = "//body/perosonalInformation/address/cep"   
+//		str_aux2  = "count(//body/perosonalInformation/address/cep)"
+//		str_aux3  = "count(//body/perosonalInformation/address/cep)<2"                 
 		           
 //		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )
 //		msg_02 = MessageContent( numeric(str_aux2) )  
@@ -61,7 +61,7 @@ contract Temp {
 //		    
 //		timeout = Timeout(30) 
 		   	 		 		
-	 	}            
+	 	}             
 	                 
 	clauses{  
 		right requestDelivery {
@@ -69,24 +69,26 @@ contract Temp {
 			the maximum request operation by minute and number of address by request*/
 			rolePlayer = process
 			operation = request	
-			terms {		 	  
-				MessageContent( text("//body/perosonalInformation/address/cep") ) OR 
-				(TimeInterval("08:00:00" to "18:00:00"),
-				Timeout(3) ) 	  
-//				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
-//				MessageContent( boolean(amount_of_cep) == true ) ,
-//				MessageContent( numeric(weight)<=20)	  
-//				MessageContent( numeric(amount_of_cep)== 1 per Hour )	,		
-//				SessionInterval(10 Hour),
-//				SessionInterval  (10 Hour per msg_01),	 
-//				TimeInterval("08:00:00" to "18:00:00"), 		 
-//				Timeout(30)  
-		  
-//				MaxNumberOfOperation(3 per Minute),  
-//				MessageContent(numeric(amount_of_cep) == 1),  
-//				MessageContent(text(weight) == 100), 
-//			 	MaxNumberOfOperation(4 per Minute), 
-//			 	Timeout(3)	    
+			terms {	 	  	   
+				(MessageContent( text("//body/perosonalInformation/address/cep") ) OR 
+				TimeInterval("08:00:00" to "18:00:00"),
+				Timeout(3),   	   
+		 		MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
+				MessageContent( boolean("08:00:00") == "true" ) ) OR
+				MessageContent( numeric("08:00:00")<=20),	  
+				MessageContent( numeric("08:00:00")== 1 per Hour )	,		
+				SessionInterval(10 Hour),
+				SessionInterval  (10 Hour per "08:00:00"),	 
+				TimeInterval("08:00:00" to "18:00:00"), 		 
+				Timeout(30), 		  
+				MaxNumberOfOperation(3 per Minute),  
+				MessageContent(numeric("08:00:00") == 1),  
+				MessageContent(text("08:00:00") == 100), 
+			 	MaxNumberOfOperation(4 per Minute), 
+			 	Timeout(3),
+			 	when( "Business-initiated" == "Business-initiated" ) check {				
+					 	MaxNumberOfOperation(10000 per Month)		
+				}	     
 			 	          	   	     
 			}      
 			// the onSuccess is optional
