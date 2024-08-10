@@ -31,6 +31,7 @@ import br.edu.unijui.gca.jabuti.jabuti.TimeInterval
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval
 import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
+import java.util.List
 
 /**
  * Generates code from your model files on save.
@@ -53,6 +54,8 @@ class JabutiGenerator extends AbstractGenerator {
 	static var variables_map = newHashMap
 	static var dataTypesIntoTheExpression = newArrayList
 	static var symbolsIntoTheExpression = newArrayList
+
+	//static var usedTermsTypeInBlockTerms = newHashSet
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (c : resource.allContents.filter(Contract).toIterable) {
@@ -93,38 +96,37 @@ class JabutiGenerator extends AbstractGenerator {
 		
 			«IF ct !== null»
 				
-				«««				--------------------------------------------------------------------------------
-«««				-------------------- 1º STEP: ADD IMPORTS TO THE USED TERMS --------------------
-«««				«val terms = getNameOfTheUsedTerms(ct) »
-«««				«FOR t: terms»										
-«««					«"\t"»using EAI for EAI.«t»
-«««				«ENDFOR»
-				«ct.clauses.get(0).terms.getTermsTypeFromTermBlock»	
-			
-			«««				--------------------------------------------------------------------------------
-«««				------------------------ 2º STEP: Create the variables -------------------------
+				
+				«««				----------------- 1º STEP: ADD IMPORTS TO THE TERMS USED IN THE CONTRACT ---------------«««				
+				«var terms = ct.getNameOfTheUsedTerms»
+					«FOR t: terms»										
+						using EAI for EAI.«t»
+					«ENDFOR»
+					
+					
+				«««				-------------- 2º STEP: Create the variables (from variables and terms block) -------------------------
 				«FOR v : ct.variables»
 					« IF v.term !== null»						
-						«"\t"»EAI.«v.getTermType» «v.name»
+						«"\t"»EAI.«v.term.getTermType» «v.name»
 					«ELSEIF v.expression !== null»						
 						«"\t"»«v.expression.getVariableType(v.name)» «v.name»						
 					«ENDIF»						
-				«ENDFOR»				
-				}
+				«ENDFOR»
+												
 			«ENDIF»
-			
+			}
 		'''
 
 // ----------------------------------------------------------------------------------
 	}
 
 //======================================================================================================
-// ================================ Create the variables ( EXPRESSION ) ================================	
+// ================================ GET THE VARIABLES FROM EXPRESSION ================================	
 	def String getVariableType(Expression expr, String var_name) {
 		dataTypesIntoTheExpression.clear()
 		symbolsIntoTheExpression.clear()
-		// println()
-		// print(var_name+" \t= ")
+		 println()
+		 print(var_name+" \t= ")
 		if (expr !== null) {
 			getDataTypesAndValuesFromVariables_Expression(expr)
 
@@ -150,31 +152,32 @@ class JabutiGenerator extends AbstractGenerator {
 	}
 
 	def void getDataTypesAndValuesFromVariables_Expression(Expression expr) {
+		
 		switch expr {
 			ParenthesizedExpression: { // Novo caso para parênteses
-			// print("(")
+			 print("(")
 				getDataTypesAndValuesFromVariables_Expression(expr.expression)
-			// print(")")
+			 print(")")
 			}
 			BinaryOperator: {
 				getDataTypesAndValuesFromVariables_Expression(expr.left)
-				// print(expr.symbol)
+				 print(expr.symbol)
 				symbolsIntoTheExpression.add(expr.symbol)
 				getDataTypesAndValuesFromVariables_Expression(expr.right)
 			}
 			UnaryOperator: {
-				// print(expr.symbol)
+				 print(expr.symbol)
 				symbolsIntoTheExpression.add(expr.symbol)
 				getDataTypesAndValuesFromVariables_Expression(expr.expression)
 			}
 			VariableValue: {
-				// print(expr.value.name)				
+				 print(expr.value.name)				
 				dataTypesIntoTheExpression.add(variables_map.get(expr.value.name))
 			}
 			LiteralValue: {
 				if (expr instanceof StringValue) {
 					var aux = expr as StringValue
-					// print(aux.value)
+					print(aux.value)
 					dataTypesIntoTheExpression.add("String")
 
 				} else if (expr instanceof NumericValue) {
@@ -189,45 +192,48 @@ class JabutiGenerator extends AbstractGenerator {
 	}
 
 // ===========================================================================================================
-// ============================ Identify the Terms Type used in Variable block  ==============================	
-	def void getTermsTypeFromTermBlock(ExpressionTerm exprTerm) {
+// ====================== GET VARIABLES BASED IN THE (VARIABLES AND TERMS BLOCK)  ============================	
+	def static List<String> getNameOfTheUsedTerms(Contract ct) {
+		
+		val terms = newArrayList;		
+
+		if(ct.variables !== null){
+			terms.getNameOfTermsUsedInVariablesBlock(ct.variables)
+		}
+		if (ct.clauses !== null) {
+			for (c : ct.clauses) {
+				if (c.terms !== null) {
+					terms.getTermsTypeFromTermBlock(c.terms)					
+				}
+			}
+			
+		}
+		return terms
+	}
+
+	def static void getTermsTypeFromTermBlock(List<String> terms, ExpressionTerm exprTerm) {
 
 		switch exprTerm {
 			BinaryTermOperator: {
-				getTermsTypeFromTermBlock(exprTerm.left)
+				getTermsTypeFromTermBlock(terms, exprTerm.left)
 				println(exprTerm.symbol)
 				// symbolsIntoTheExpression.add(expr.symbol)
-				getTermsTypeFromTermBlock(exprTerm.right)
+				getTermsTypeFromTermBlock(terms, exprTerm.right)
 			}
 			UnaryTermOperator: {
 				println("UnaryTerm")
 				// symbolsIntoTheExpression.add(exprTerm.symbol)
 				var unary = exprTerm as UnaryTermOperator
-				getTermsTypeFromTermBlock(unary.expressionTerm)
+				getTermsTypeFromTermBlock(terms, unary.expressionTerm)
 			}
 			Term: {
-				if (exprTerm instanceof SessionInterval) {
-//					var aux = exprTerm as SessionInterval
-					println("SessionInterval")
-				} else if (exprTerm instanceof WeekDaysInterval) {
-//					var aux = exprTerm as SessionInterval
-					println("WeekDaysInterval")
-				} else if (exprTerm instanceof TimeInterval) {
-//					var aux = exprTerm as SessionInterval
-					println("TimeInterval")
-				} else if (exprTerm instanceof Timeout) {
-//					var aux = exprTerm as SessionInterval
-					println("Timeout")
-				} else if (exprTerm instanceof MaxNumberOfOperation) {
-//					var aux = exprTerm as SessionInterval
-					println("MaxNumberOfOperation")
-				} else if (exprTerm instanceof MessageContent) {
-//					var aux = exprTerm as SessionInterval
-					println("MessageContent")
-				}
+				var term = exprTerm as Term
+				var type = term.getTermType
+				//println(type)
+				terms.insertNewValueInListIfDoesntExist(type)				
 			}
-			ConditionalExpression:{
-				println("ConditionalExpression")
+			ConditionalExpression: {
+				println("ConditionalExpression")// fazer o tratamento para a conditional expression
 			}
 			default: {
 				println("Unknown term type: " + exprTerm)
@@ -235,95 +241,19 @@ class JabutiGenerator extends AbstractGenerator {
 		}
 	}
 
-
-
-// ===========================================================================================================
-// ===================================== Identify all Terms used in a contract  ==============================	
-	def static HashSet<String> getNameOfTheUsedTerms(Contract ct) {
-		val terms = newHashSet;
-		terms.addAll(ct.getNameOfTermsUsedInVariablesBlock)
-		terms.addAll(ct.getNameOfTermsUsedInTermsBlock)
-		return terms
-	}
-
-// ================================ GET THE NAME OF THE TERMS USED IN VARIABLES BLOCK ============================
-	def static HashSet<String> getNameOfTermsUsedInVariablesBlock(Contract ct) {
-		val result = newHashSet
-		if (ct.variables !== null) {
-			ct.variables.forEach [ variable |
-				if (variable.term !== null) {
-					val termType = variable.getTermType
-					result.add(termType)
+	def static void getNameOfTermsUsedInVariablesBlock(List<String> terms, List<Variable> variables) {
+		
+			variables.forEach [ v |
+				if (v.term !== null) {
+					val termType = v.term.getTermType
+					terms.insertNewValueInListIfDoesntExist(termType)
 				}
-			]
-		}
-		return result
+			]			
 	}
 
-// ================================ GET THE NAME OF THE TERMS USED IN CLAUSES BLOCK ============================
-	def static HashSet<String> getNameOfTermsUsedInTermsBlock(Contract ct) {
-		val termTypes = newHashSet
-		for (cl : ct.clauses) {
-			if (cl.terms !== null) {
-				if (cl.terms !== null) {
-					if (cl.terms instanceof BinaryTermOperator) {
-						val binaryTermOperator = cl.terms as BinaryTermOperator
-						extractTermTypesFromBinaryTermOperator(binaryTermOperator, termTypes)
-					} else {
-						// println("não é binaryOperator")
-					}
-				}
-			}
-		}
-		return termTypes
-	}
 
-	def static HashSet<String> extractTermTypesFromBinaryTermOperator(BinaryTermOperator binary, HashSet<String> term) {
-
-		if (binary.left !== null) {
-			if (binary.left instanceof BinaryTermOperator) {
-				val b_aux = binary.left as BinaryTermOperator
-				extractTermTypesFromBinaryTermOperator(b_aux, term)
-			} else {
-				term.add(getTermType(binary.left as Term))
-			}
-		}
-		term.add(getTermType(binary.right as Term))
-		return term
-
-	}
-
-// ==============================================================================================
-//	if (exp instanceof MaxNumberOfOperation) {
-//				println("é instancia de MaxNumberOfOperation")
-//				termTypes.add("MaxNumberOfOperation-of-clause")
-//			}
-//	def static ArrayList<String> geClauseTerms(Contract ct) {
-//		val result = newArrayList
-//		if (ct.clauses !== null) {
-//			ct.clauses.forEach [ clause |
-//				if (clause.terms !== null) {
-//						val terms = clause.terms;						
-//						if(terms.expressionTerm !== null){
-//							terms.expressionTerm.forEach[term |
-//								val termType = term.getTermType
-//								result.add(termType)
-//							] 
-//						}
-//				}
-//			]
-//		}
-//		return result
-//	}
-	// ================================ BUILD THE STRUCT NAME USED IN SOLID EAI LIBRARY ============================
-	def static String getTermType(Variable variable) {
-		var type = getTermType(variable.term)
-		variables_map.put(variable.name, type)
-		return type
-	}
-
-	// buildTheNameOfTheTermAsTheSolidityTermStructureName
 	def static String getTermType(Term tm) {
+		
 		val termType = tm.eClass().getName()
 		if (termType.equalsIgnoreCase("WeekDaysInterval") || termType.equalsIgnoreCase("TimeInterval") ||
 			termType.equalsIgnoreCase("Timeout") || termType.equalsIgnoreCase("SessionInterval")) {
@@ -369,6 +299,28 @@ class JabutiGenerator extends AbstractGenerator {
 		}
 	}
 
+
+
+	// ================================ BUILD THE STRUCT NAME USED IN SOLID EAI LIBRARY ============================
+//	def static String getTermType(Variable variable) {
+//		var type = getTermType(variable.term)
+//		variables_map.put(variable.name, type)
+//		return type
+//	}
+	// buildTheNameOfTheTermAsTheSolidityTermStructureName
+	
+	
+	// ================================ General methods ============================
+	
+	def static insertNewValueInListIfDoesntExist(List<String> list, String value){
+		if(!list.contains(value)){
+			list.add(value)
+		}
+//		else{
+//			println(value+" já existe na lista")
+//		}
+	}
+	
 	def static boolean isNumeric(String str) {
 		try {
 			Integer.parseInt(str)

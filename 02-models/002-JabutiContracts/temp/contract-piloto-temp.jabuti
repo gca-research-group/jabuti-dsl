@@ -11,57 +11,57 @@ contract Temp {
       
 	variables{  
 		
-//		str1_amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
-//		str2_concat = "Eldair "+ "Dornelles"
-//		str3_contact_str_e_num = "Eldair "+ 2 
-//		str4_contact_str_e_num = 2+2+"Eldair"  
-//		  
-//		str5_var = str2_concat
-//		
-//		num1_single = 123
-//		num2_soma =  1001+20-15*10/5
-//	 	num3_soma_var = num1_single + 2
-//		num4_soma_var = num1_single + num2_soma
-//		 
-//		bool1_cp_strs = "Eldair" == "Fabricio"
-//		bool2_cp_str_num = "ab" > 2
-//		bool3_cp_nums = 2==4
-//		
-//		bool4_lg_strs = "Eldair" AND "Fabricio"
-//		bool5_lg_str_num = "ab" OR 2
-//		bool6_lg_nums = 2==4 AND "Eldair" == "Fabricio"
-//	 
-//		bool7_un_negation = !bool1_cp_strs  
-//		bool8_un_negation = !("Eldair" == "Fabricio")
-//	 	
-//		numNegative = 2   
-//          
-//	 	str6_negative  =   (-2 + ((!2+2)/6+2) + numNegative )  
-		     
-//		                           
-//		str_aux1  = "//body/perosonalInformation/address/cep"   
-//		str_aux2  = "count(//body/perosonalInformation/address/cep)"
-//		str_aux3  = "count(//body/perosonalInformation/address/cep)<2"                 
+		str1_amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
+		str2_concat = "Eldair "+ "Dornelles"
+		str3_contact_str_e_num = "Eldair "+ 2 
+		str4_contact_str_e_num = 2+2+"Eldair"  
+		  
+		str5_var = str2_concat
+		
+		num1_single = 123
+		num2_soma =  1001+20-15*10/5
+	 	num3_soma_var = num1_single + 2
+		num4_soma_var = num1_single + num2_soma 
+		 
+		bool1_cp_strs = "Eldair" == "Fabricio"
+		bool2_cp_str_num = "ab" > 2
+		bool3_cp_nums = 2==4
+		
+		bool4_lg_strs = "Eldair" AND "Fabricio"
+		bool5_lg_str_num = "ab" OR 2
+		bool6_lg_nums = 2==4 AND "Eldair" == "Fabricio"
+	 
+		bool7_un_negation = !bool1_cp_strs   
+		bool8_un_negation = !("Eldair" == "Fabricio")
+	 	
+		numNegative = 2     
+          
+	 	str6_negative  =   (-2 + ((!2+2)/6+2) + numNegative )  
+		      
+		                            
+		str_aux1  = "//body/perosonalInformation/address/cep"   
+		str_aux2  = "count(//body/perosonalInformation/address/cep)"
+		str_aux3  = "count(//body/perosonalInformation/address/cep)<2"                 
 		           
-//		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )
-//		msg_02 = MessageContent( numeric(str_aux2) )  
-//		msg_03 = MessageContent( boolean(str_aux3) )
-//		
-//		     
-//		msg_04 = MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" )
-//		msg_05 = MessageContent( numeric(str_aux2)<=20)  		
-//		    
-//		   
-//		msg_06 = MessageContent( numeric(str_aux3)<2 per Hour )
-//		 		    
-//		session = SessionInterval(10 Hour)
-//		session = SessionInterval  (10 Hour per msg_01)
-//	    
-//		timeInterval = TimeInterval("08:00:00" to "18:00:00") 
-//		    
-//		timeout = Timeout(30) 
-		   	 		 		
-	 	}             
+		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )
+		msg_02 = MessageContent( numeric(str_aux2) )  
+		msg_03 = MessageContent( boolean(str_aux3) )
+		
+		     
+		msg_04 = MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" )
+		msg_05 = MessageContent( numeric(str_aux2)<=20)  		
+		    
+		    
+		msg_06 = MessageContent( numeric(str_aux3) < 2 per Hour )
+		 		    
+		session = SessionInterval(10 Hour)
+		session = SessionInterval  (10 Hour per msg_01)
+	    
+		timeInterval = TimeInterval("08:00:00" to "18:00:00") 
+		    
+		timeout = Timeout(30) 
+		   	 		 	 	 
+	 	}               
 	                 
 	clauses{  
 		right requestDelivery {
@@ -70,26 +70,29 @@ contract Temp {
 			rolePlayer = process
 			operation = request	
 			terms {	 	  	   
-				(MessageContent( text("//body/perosonalInformation/address/cep") ) OR 
+				(
+					MessageContent( text("//body/perosonalInformation/address/cep") ) OR 
 				TimeInterval("08:00:00" to "18:00:00"),
 				Timeout(3),   	   
 		 		MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
-				MessageContent( boolean("08:00:00") == "true" ) ) OR
-				MessageContent( numeric("08:00:00")<=20),	  
+				MessageContent( boolean("08:00:00") == "true" ) 
+				) 
+				
+				OR
+				MessageContent( numeric("08:00:00")<=20),	   
 				MessageContent( numeric("08:00:00")== 1 per Hour )	,		
 				SessionInterval(10 Hour),
 				SessionInterval  (10 Hour per "08:00:00"),	 
-				TimeInterval("08:00:00" to "18:00:00"), 		 
-				Timeout(30), 		  
-				MaxNumberOfOperation(3 per Minute),  
+				TimeInterval("08:00:00" to "18:00:00"), 		 					 
+				MaxNumberOfOperation(3),  
 				MessageContent(numeric("08:00:00") == 1),  
 				MessageContent(text("08:00:00") == 100), 
-			 	MaxNumberOfOperation(4 per Minute), 
-			 	Timeout(3),
-			 	when( "Business-initiated" == "Business-initiated" ) check {				
-					 	MaxNumberOfOperation(10000 per Month)		
-				}	     
-			 	          	   	     
+			 	MaxNumberOfOperation(4 per Minute),  
+				Timeout(3)   			 	
+//			 	when( "Business-initiated" == "Business-initiated" ) check {				
+//					 	MaxNumberOfOperation(10000 per Month)		
+//				}	       
+		 	             	    	       
 			}      
 			// the onSuccess is optional
 			onBreach(log("Request operation did not meet all requirements"))			
