@@ -18,7 +18,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getExpression <em>Expression</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getVariable <em>Variable</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getReturnType <em>Return Type</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec <em>Time Unit Spec</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getPerTime <em>Per Time</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent()
@@ -141,25 +141,25 @@ public interface MessageContent extends Term
 	void setReturnType(DataType value);
 
 	/**
-	 * Returns the value of the '<em><b>Time Unit Spec</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Per Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time Unit Spec</em>' containment reference.
-	 * @see #setTimeUnitSpec(TimeUnitSpec)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_TimeUnitSpec()
+	 * @return the value of the '<em>Per Time</em>' containment reference.
+	 * @see #setPerTime(TimeUnitSpec)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMessageContent_PerTime()
 	 * @model containment="true"
 	 * @generated
 	 */
-	TimeUnitSpec getTimeUnitSpec();
+	TimeUnitSpec getPerTime();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec <em>Time Unit Spec</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getPerTime <em>Per Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Unit Spec</em>' containment reference.
-	 * @see #getTimeUnitSpec()
+	 * @param value the new value of the '<em>Per Time</em>' containment reference.
+	 * @see #getPerTime()
 	 * @generated
 	 */
-	void setTimeUnitSpec(TimeUnitSpec value);
+	void setPerTime(TimeUnitSpec value);
 
 } // MessageContent

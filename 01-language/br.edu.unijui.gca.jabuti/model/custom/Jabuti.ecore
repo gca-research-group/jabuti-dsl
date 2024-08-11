@@ -162,7 +162,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MaxNumberOfOperation" eSuperTypes="#//Term">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="operationsNumber" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeUnit" eType="#//TimeUnit"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="perTime" eType="#//TimeUnitSpec"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MessageContent" eSuperTypes="#//Term">
     <eStructuralFeatures xsi:type="ecore:EReference" name="comparisonOperator" eType="#//ComparisonOperator"
@@ -172,7 +173,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variable" eType="#//Variable"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="timeUnitSpec" eType="#//TimeUnitSpec"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="perTime" eType="#//TimeUnitSpec"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComparisonOperator">

@@ -32,7 +32,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getVariable <em>Variable</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getReturnType <em>Return Type</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getTimeUnitSpec <em>Time Unit Spec</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl#getPerTime <em>Per Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -110,14 +110,14 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	protected DataType returnType = RETURN_TYPE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTimeUnitSpec() <em>Time Unit Spec</em>}' containment reference.
+	 * The cached value of the '{@link #getPerTime() <em>Per Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimeUnitSpec()
+	 * @see #getPerTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected TimeUnitSpec timeUnitSpec;
+	protected TimeUnitSpec perTime;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -341,9 +341,9 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public TimeUnitSpec getTimeUnitSpec()
+	public TimeUnitSpec getPerTime()
 	{
-		return timeUnitSpec;
+		return perTime;
 	}
 
 	/**
@@ -351,13 +351,13 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetTimeUnitSpec(TimeUnitSpec newTimeUnitSpec, NotificationChain msgs)
+	public NotificationChain basicSetPerTime(TimeUnitSpec newPerTime, NotificationChain msgs)
 	{
-		TimeUnitSpec oldTimeUnitSpec = timeUnitSpec;
-		timeUnitSpec = newTimeUnitSpec;
+		TimeUnitSpec oldPerTime = perTime;
+		perTime = newPerTime;
 		if (eNotificationRequired())
 		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, oldTimeUnitSpec, newTimeUnitSpec);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__PER_TIME, oldPerTime, newPerTime);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -369,20 +369,20 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 	 * @generated
 	 */
 	@Override
-	public void setTimeUnitSpec(TimeUnitSpec newTimeUnitSpec)
+	public void setPerTime(TimeUnitSpec newPerTime)
 	{
-		if (newTimeUnitSpec != timeUnitSpec)
+		if (newPerTime != perTime)
 		{
 			NotificationChain msgs = null;
-			if (timeUnitSpec != null)
-				msgs = ((InternalEObject)timeUnitSpec).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, null, msgs);
-			if (newTimeUnitSpec != null)
-				msgs = ((InternalEObject)newTimeUnitSpec).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, null, msgs);
-			msgs = basicSetTimeUnitSpec(newTimeUnitSpec, msgs);
+			if (perTime != null)
+				msgs = ((InternalEObject)perTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__PER_TIME, null, msgs);
+			if (newPerTime != null)
+				msgs = ((InternalEObject)newPerTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MESSAGE_CONTENT__PER_TIME, null, msgs);
+			msgs = basicSetPerTime(newPerTime, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC, newTimeUnitSpec, newTimeUnitSpec));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MESSAGE_CONTENT__PER_TIME, newPerTime, newPerTime));
 	}
 
 	/**
@@ -399,8 +399,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return basicSetComparisonOperator(null, msgs);
 			case JabutiPackage.MESSAGE_CONTENT__EXPRESSION:
 				return basicSetExpression(null, msgs);
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
-				return basicSetTimeUnitSpec(null, msgs);
+			case JabutiPackage.MESSAGE_CONTENT__PER_TIME:
+				return basicSetPerTime(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -426,8 +426,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return basicGetVariable();
 			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
 				return getReturnType();
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
-				return getTimeUnitSpec();
+			case JabutiPackage.MESSAGE_CONTENT__PER_TIME:
+				return getPerTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -457,8 +457,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
 				setReturnType((DataType)newValue);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
-				setTimeUnitSpec((TimeUnitSpec)newValue);
+			case JabutiPackage.MESSAGE_CONTENT__PER_TIME:
+				setPerTime((TimeUnitSpec)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -489,8 +489,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
 				setReturnType(RETURN_TYPE_EDEFAULT);
 				return;
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
-				setTimeUnitSpec((TimeUnitSpec)null);
+			case JabutiPackage.MESSAGE_CONTENT__PER_TIME:
+				setPerTime((TimeUnitSpec)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -516,8 +516,8 @@ public class MessageContentImpl extends TermImpl implements MessageContent
 				return variable != null;
 			case JabutiPackage.MESSAGE_CONTENT__RETURN_TYPE:
 				return returnType != RETURN_TYPE_EDEFAULT;
-			case JabutiPackage.MESSAGE_CONTENT__TIME_UNIT_SPEC:
-				return timeUnitSpec != null;
+			case JabutiPackage.MESSAGE_CONTENT__PER_TIME:
+				return perTime != null;
 		}
 		return super.eIsSet(featureID);
 	}

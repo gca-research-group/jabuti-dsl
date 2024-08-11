@@ -14,7 +14,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getOperationsNumber <em>Operations Number</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getPerTime <em>Per Time</em>}</li>
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMaxNumberOfOperation()
@@ -46,28 +46,25 @@ public interface MaxNumberOfOperation extends Term
 	void setOperationsNumber(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Time Unit</b></em>' attribute.
-	 * The literals are from the enumeration {@link br.edu.unijui.gca.jabuti.jabuti.TimeUnit}.
+	 * Returns the value of the '<em><b>Per Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Time Unit</em>' attribute.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnit
-	 * @see #setTimeUnit(TimeUnit)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMaxNumberOfOperation_TimeUnit()
-	 * @model
+	 * @return the value of the '<em>Per Time</em>' containment reference.
+	 * @see #setPerTime(TimeUnitSpec)
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getMaxNumberOfOperation_PerTime()
+	 * @model containment="true"
 	 * @generated
 	 */
-	TimeUnit getTimeUnit();
+	TimeUnitSpec getPerTime();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getTimeUnit <em>Time Unit</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getPerTime <em>Per Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Time Unit</em>' attribute.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.TimeUnit
-	 * @see #getTimeUnit()
+	 * @param value the new value of the '<em>Per Time</em>' containment reference.
+	 * @see #getPerTime()
 	 * @generated
 	 */
-	void setTimeUnit(TimeUnit value);
+	void setPerTime(TimeUnitSpec value);
 
 } // MaxNumberOfOperation

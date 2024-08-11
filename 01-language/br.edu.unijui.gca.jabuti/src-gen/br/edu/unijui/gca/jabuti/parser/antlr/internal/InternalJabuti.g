@@ -2611,33 +2611,27 @@ ruleMaxNumberOfOperation returns [EObject current=null]
 			)
 		)
 		(
-			otherlv_3='per'
-			{
-				newLeafNode(otherlv_3, grammarAccess.getMaxNumberOfOperationAccess().getPerKeyword_3_0());
-			}
 			(
-				(
-					{
-						newCompositeNode(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitTimeUnitEnumRuleCall_3_1_0());
+				{
+					newCompositeNode(grammarAccess.getMaxNumberOfOperationAccess().getPerTimeTimeUnitSpecParserRuleCall_3_0());
+				}
+				lv_perTime_3_0=ruleTimeUnitSpec
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMaxNumberOfOperationRule());
 					}
-					lv_timeUnit_4_0=ruleTimeUnit
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getMaxNumberOfOperationRule());
-						}
-						set(
-							$current,
-							"timeUnit",
-							lv_timeUnit_4_0,
-							"br.edu.unijui.gca.jabuti.Jabuti.TimeUnit");
-						afterParserOrEnumRuleCall();
-					}
-				)
+					set(
+						$current,
+						"perTime",
+						lv_perTime_3_0,
+						"br.edu.unijui.gca.jabuti.Jabuti.TimeUnitSpec");
+					afterParserOrEnumRuleCall();
+				}
 			)
 		)?
-		otherlv_5=')'
+		otherlv_4=')'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getMaxNumberOfOperationAccess().getRightParenthesisKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getMaxNumberOfOperationAccess().getRightParenthesisKeyword_4());
 		}
 	)
 ;
@@ -2842,17 +2836,17 @@ ruleMessageContent returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getMessageContentAccess().getTimeUnitSpecTimeUnitSpecParserRuleCall_6_2_0());
+						newCompositeNode(grammarAccess.getMessageContentAccess().getPerTimeTimeUnitSpecParserRuleCall_6_2_0());
 					}
-					lv_timeUnitSpec_9_0=ruleTimeUnitSpec
+					lv_perTime_9_0=ruleTimeUnitSpec
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getMessageContentRule());
 						}
 						set(
 							$current,
-							"timeUnitSpec",
-							lv_timeUnitSpec_9_0,
+							"perTime",
+							lv_perTime_9_0,
 							"br.edu.unijui.gca.jabuti.Jabuti.TimeUnitSpec");
 						afterParserOrEnumRuleCall();
 					}

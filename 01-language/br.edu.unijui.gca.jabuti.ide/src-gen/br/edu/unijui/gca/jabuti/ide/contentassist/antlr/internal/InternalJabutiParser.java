@@ -16443,10 +16443,10 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
                     {
                     int LA40_3 = input.LA(2);
 
-                    if ( (LA40_3==11) ) {
+                    if ( (LA40_3==EOF||LA40_3==13||LA40_3==46||LA40_3==59) ) {
                         alt40=1;
                     }
-                    else if ( (LA40_3==EOF||LA40_3==13||LA40_3==46||LA40_3==59) ) {
+                    else if ( (LA40_3==11) ) {
                         alt40=1;
                     }
                     }
@@ -18936,20 +18936,20 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxNumberOfOperation__Group__3__Impl"
-    // InternalJabuti.g:6033:1: rule__MaxNumberOfOperation__Group__3__Impl : ( ( rule__MaxNumberOfOperation__Group_3__0 )? ) ;
+    // InternalJabuti.g:6033:1: rule__MaxNumberOfOperation__Group__3__Impl : ( ( rule__MaxNumberOfOperation__PerTimeAssignment_3 )? ) ;
     public final void rule__MaxNumberOfOperation__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6037:1: ( ( ( rule__MaxNumberOfOperation__Group_3__0 )? ) )
-            // InternalJabuti.g:6038:1: ( ( rule__MaxNumberOfOperation__Group_3__0 )? )
+            // InternalJabuti.g:6037:1: ( ( ( rule__MaxNumberOfOperation__PerTimeAssignment_3 )? ) )
+            // InternalJabuti.g:6038:1: ( ( rule__MaxNumberOfOperation__PerTimeAssignment_3 )? )
             {
-            // InternalJabuti.g:6038:1: ( ( rule__MaxNumberOfOperation__Group_3__0 )? )
-            // InternalJabuti.g:6039:2: ( rule__MaxNumberOfOperation__Group_3__0 )?
+            // InternalJabuti.g:6038:1: ( ( rule__MaxNumberOfOperation__PerTimeAssignment_3 )? )
+            // InternalJabuti.g:6039:2: ( rule__MaxNumberOfOperation__PerTimeAssignment_3 )?
             {
-             before(grammarAccess.getMaxNumberOfOperationAccess().getGroup_3()); 
-            // InternalJabuti.g:6040:2: ( rule__MaxNumberOfOperation__Group_3__0 )?
+             before(grammarAccess.getMaxNumberOfOperationAccess().getPerTimeAssignment_3()); 
+            // InternalJabuti.g:6040:2: ( rule__MaxNumberOfOperation__PerTimeAssignment_3 )?
             int alt44=2;
             int LA44_0 = input.LA(1);
 
@@ -18958,10 +18958,10 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
             }
             switch (alt44) {
                 case 1 :
-                    // InternalJabuti.g:6040:3: rule__MaxNumberOfOperation__Group_3__0
+                    // InternalJabuti.g:6040:3: rule__MaxNumberOfOperation__PerTimeAssignment_3
                     {
                     pushFollow(FOLLOW_2);
-                    rule__MaxNumberOfOperation__Group_3__0();
+                    rule__MaxNumberOfOperation__PerTimeAssignment_3();
 
                     state._fsp--;
 
@@ -18971,7 +18971,7 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getMaxNumberOfOperationAccess().getGroup_3()); 
+             after(grammarAccess.getMaxNumberOfOperationAccess().getPerTimeAssignment_3()); 
 
             }
 
@@ -19063,170 +19063,15 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MaxNumberOfOperation__Group__4__Impl"
 
 
-    // $ANTLR start "rule__MaxNumberOfOperation__Group_3__0"
-    // InternalJabuti.g:6075:1: rule__MaxNumberOfOperation__Group_3__0 : rule__MaxNumberOfOperation__Group_3__0__Impl rule__MaxNumberOfOperation__Group_3__1 ;
-    public final void rule__MaxNumberOfOperation__Group_3__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJabuti.g:6079:1: ( rule__MaxNumberOfOperation__Group_3__0__Impl rule__MaxNumberOfOperation__Group_3__1 )
-            // InternalJabuti.g:6080:2: rule__MaxNumberOfOperation__Group_3__0__Impl rule__MaxNumberOfOperation__Group_3__1
-            {
-            pushFollow(FOLLOW_54);
-            rule__MaxNumberOfOperation__Group_3__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__MaxNumberOfOperation__Group_3__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MaxNumberOfOperation__Group_3__0"
-
-
-    // $ANTLR start "rule__MaxNumberOfOperation__Group_3__0__Impl"
-    // InternalJabuti.g:6087:1: rule__MaxNumberOfOperation__Group_3__0__Impl : ( 'per' ) ;
-    public final void rule__MaxNumberOfOperation__Group_3__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJabuti.g:6091:1: ( ( 'per' ) )
-            // InternalJabuti.g:6092:1: ( 'per' )
-            {
-            // InternalJabuti.g:6092:1: ( 'per' )
-            // InternalJabuti.g:6093:2: 'per'
-            {
-             before(grammarAccess.getMaxNumberOfOperationAccess().getPerKeyword_3_0()); 
-            match(input,66,FOLLOW_2); 
-             after(grammarAccess.getMaxNumberOfOperationAccess().getPerKeyword_3_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MaxNumberOfOperation__Group_3__0__Impl"
-
-
-    // $ANTLR start "rule__MaxNumberOfOperation__Group_3__1"
-    // InternalJabuti.g:6102:1: rule__MaxNumberOfOperation__Group_3__1 : rule__MaxNumberOfOperation__Group_3__1__Impl ;
-    public final void rule__MaxNumberOfOperation__Group_3__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJabuti.g:6106:1: ( rule__MaxNumberOfOperation__Group_3__1__Impl )
-            // InternalJabuti.g:6107:2: rule__MaxNumberOfOperation__Group_3__1__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__MaxNumberOfOperation__Group_3__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MaxNumberOfOperation__Group_3__1"
-
-
-    // $ANTLR start "rule__MaxNumberOfOperation__Group_3__1__Impl"
-    // InternalJabuti.g:6113:1: rule__MaxNumberOfOperation__Group_3__1__Impl : ( ( rule__MaxNumberOfOperation__TimeUnitAssignment_3_1 ) ) ;
-    public final void rule__MaxNumberOfOperation__Group_3__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalJabuti.g:6117:1: ( ( ( rule__MaxNumberOfOperation__TimeUnitAssignment_3_1 ) ) )
-            // InternalJabuti.g:6118:1: ( ( rule__MaxNumberOfOperation__TimeUnitAssignment_3_1 ) )
-            {
-            // InternalJabuti.g:6118:1: ( ( rule__MaxNumberOfOperation__TimeUnitAssignment_3_1 ) )
-            // InternalJabuti.g:6119:2: ( rule__MaxNumberOfOperation__TimeUnitAssignment_3_1 )
-            {
-             before(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitAssignment_3_1()); 
-            // InternalJabuti.g:6120:2: ( rule__MaxNumberOfOperation__TimeUnitAssignment_3_1 )
-            // InternalJabuti.g:6120:3: rule__MaxNumberOfOperation__TimeUnitAssignment_3_1
-            {
-            pushFollow(FOLLOW_2);
-            rule__MaxNumberOfOperation__TimeUnitAssignment_3_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitAssignment_3_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MaxNumberOfOperation__Group_3__1__Impl"
-
-
     // $ANTLR start "rule__WeekDaysInterval__Group__0"
-    // InternalJabuti.g:6129:1: rule__WeekDaysInterval__Group__0 : rule__WeekDaysInterval__Group__0__Impl rule__WeekDaysInterval__Group__1 ;
+    // InternalJabuti.g:6075:1: rule__WeekDaysInterval__Group__0 : rule__WeekDaysInterval__Group__0__Impl rule__WeekDaysInterval__Group__1 ;
     public final void rule__WeekDaysInterval__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6133:1: ( rule__WeekDaysInterval__Group__0__Impl rule__WeekDaysInterval__Group__1 )
-            // InternalJabuti.g:6134:2: rule__WeekDaysInterval__Group__0__Impl rule__WeekDaysInterval__Group__1
+            // InternalJabuti.g:6079:1: ( rule__WeekDaysInterval__Group__0__Impl rule__WeekDaysInterval__Group__1 )
+            // InternalJabuti.g:6080:2: rule__WeekDaysInterval__Group__0__Impl rule__WeekDaysInterval__Group__1
             {
             pushFollow(FOLLOW_28);
             rule__WeekDaysInterval__Group__0__Impl();
@@ -19257,17 +19102,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__0__Impl"
-    // InternalJabuti.g:6141:1: rule__WeekDaysInterval__Group__0__Impl : ( 'WeekDaysInterval' ) ;
+    // InternalJabuti.g:6087:1: rule__WeekDaysInterval__Group__0__Impl : ( 'WeekDaysInterval' ) ;
     public final void rule__WeekDaysInterval__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6145:1: ( ( 'WeekDaysInterval' ) )
-            // InternalJabuti.g:6146:1: ( 'WeekDaysInterval' )
+            // InternalJabuti.g:6091:1: ( ( 'WeekDaysInterval' ) )
+            // InternalJabuti.g:6092:1: ( 'WeekDaysInterval' )
             {
-            // InternalJabuti.g:6146:1: ( 'WeekDaysInterval' )
-            // InternalJabuti.g:6147:2: 'WeekDaysInterval'
+            // InternalJabuti.g:6092:1: ( 'WeekDaysInterval' )
+            // InternalJabuti.g:6093:2: 'WeekDaysInterval'
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getWeekDaysIntervalKeyword_0()); 
             match(input,69,FOLLOW_2); 
@@ -19294,14 +19139,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__1"
-    // InternalJabuti.g:6156:1: rule__WeekDaysInterval__Group__1 : rule__WeekDaysInterval__Group__1__Impl rule__WeekDaysInterval__Group__2 ;
+    // InternalJabuti.g:6102:1: rule__WeekDaysInterval__Group__1 : rule__WeekDaysInterval__Group__1__Impl rule__WeekDaysInterval__Group__2 ;
     public final void rule__WeekDaysInterval__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6160:1: ( rule__WeekDaysInterval__Group__1__Impl rule__WeekDaysInterval__Group__2 )
-            // InternalJabuti.g:6161:2: rule__WeekDaysInterval__Group__1__Impl rule__WeekDaysInterval__Group__2
+            // InternalJabuti.g:6106:1: ( rule__WeekDaysInterval__Group__1__Impl rule__WeekDaysInterval__Group__2 )
+            // InternalJabuti.g:6107:2: rule__WeekDaysInterval__Group__1__Impl rule__WeekDaysInterval__Group__2
             {
             pushFollow(FOLLOW_57);
             rule__WeekDaysInterval__Group__1__Impl();
@@ -19332,17 +19177,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__1__Impl"
-    // InternalJabuti.g:6168:1: rule__WeekDaysInterval__Group__1__Impl : ( '(' ) ;
+    // InternalJabuti.g:6114:1: rule__WeekDaysInterval__Group__1__Impl : ( '(' ) ;
     public final void rule__WeekDaysInterval__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6172:1: ( ( '(' ) )
-            // InternalJabuti.g:6173:1: ( '(' )
+            // InternalJabuti.g:6118:1: ( ( '(' ) )
+            // InternalJabuti.g:6119:1: ( '(' )
             {
-            // InternalJabuti.g:6173:1: ( '(' )
-            // InternalJabuti.g:6174:2: '('
+            // InternalJabuti.g:6119:1: ( '(' )
+            // InternalJabuti.g:6120:2: '('
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getLeftParenthesisKeyword_1()); 
             match(input,57,FOLLOW_2); 
@@ -19369,14 +19214,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__2"
-    // InternalJabuti.g:6183:1: rule__WeekDaysInterval__Group__2 : rule__WeekDaysInterval__Group__2__Impl rule__WeekDaysInterval__Group__3 ;
+    // InternalJabuti.g:6129:1: rule__WeekDaysInterval__Group__2 : rule__WeekDaysInterval__Group__2__Impl rule__WeekDaysInterval__Group__3 ;
     public final void rule__WeekDaysInterval__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6187:1: ( rule__WeekDaysInterval__Group__2__Impl rule__WeekDaysInterval__Group__3 )
-            // InternalJabuti.g:6188:2: rule__WeekDaysInterval__Group__2__Impl rule__WeekDaysInterval__Group__3
+            // InternalJabuti.g:6133:1: ( rule__WeekDaysInterval__Group__2__Impl rule__WeekDaysInterval__Group__3 )
+            // InternalJabuti.g:6134:2: rule__WeekDaysInterval__Group__2__Impl rule__WeekDaysInterval__Group__3
             {
             pushFollow(FOLLOW_52);
             rule__WeekDaysInterval__Group__2__Impl();
@@ -19407,21 +19252,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__2__Impl"
-    // InternalJabuti.g:6195:1: rule__WeekDaysInterval__Group__2__Impl : ( ( rule__WeekDaysInterval__StartAssignment_2 ) ) ;
+    // InternalJabuti.g:6141:1: rule__WeekDaysInterval__Group__2__Impl : ( ( rule__WeekDaysInterval__StartAssignment_2 ) ) ;
     public final void rule__WeekDaysInterval__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6199:1: ( ( ( rule__WeekDaysInterval__StartAssignment_2 ) ) )
-            // InternalJabuti.g:6200:1: ( ( rule__WeekDaysInterval__StartAssignment_2 ) )
+            // InternalJabuti.g:6145:1: ( ( ( rule__WeekDaysInterval__StartAssignment_2 ) ) )
+            // InternalJabuti.g:6146:1: ( ( rule__WeekDaysInterval__StartAssignment_2 ) )
             {
-            // InternalJabuti.g:6200:1: ( ( rule__WeekDaysInterval__StartAssignment_2 ) )
-            // InternalJabuti.g:6201:2: ( rule__WeekDaysInterval__StartAssignment_2 )
+            // InternalJabuti.g:6146:1: ( ( rule__WeekDaysInterval__StartAssignment_2 ) )
+            // InternalJabuti.g:6147:2: ( rule__WeekDaysInterval__StartAssignment_2 )
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getStartAssignment_2()); 
-            // InternalJabuti.g:6202:2: ( rule__WeekDaysInterval__StartAssignment_2 )
-            // InternalJabuti.g:6202:3: rule__WeekDaysInterval__StartAssignment_2
+            // InternalJabuti.g:6148:2: ( rule__WeekDaysInterval__StartAssignment_2 )
+            // InternalJabuti.g:6148:3: rule__WeekDaysInterval__StartAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__WeekDaysInterval__StartAssignment_2();
@@ -19454,14 +19299,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__3"
-    // InternalJabuti.g:6210:1: rule__WeekDaysInterval__Group__3 : rule__WeekDaysInterval__Group__3__Impl rule__WeekDaysInterval__Group__4 ;
+    // InternalJabuti.g:6156:1: rule__WeekDaysInterval__Group__3 : rule__WeekDaysInterval__Group__3__Impl rule__WeekDaysInterval__Group__4 ;
     public final void rule__WeekDaysInterval__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6214:1: ( rule__WeekDaysInterval__Group__3__Impl rule__WeekDaysInterval__Group__4 )
-            // InternalJabuti.g:6215:2: rule__WeekDaysInterval__Group__3__Impl rule__WeekDaysInterval__Group__4
+            // InternalJabuti.g:6160:1: ( rule__WeekDaysInterval__Group__3__Impl rule__WeekDaysInterval__Group__4 )
+            // InternalJabuti.g:6161:2: rule__WeekDaysInterval__Group__3__Impl rule__WeekDaysInterval__Group__4
             {
             pushFollow(FOLLOW_57);
             rule__WeekDaysInterval__Group__3__Impl();
@@ -19492,17 +19337,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__3__Impl"
-    // InternalJabuti.g:6222:1: rule__WeekDaysInterval__Group__3__Impl : ( 'to' ) ;
+    // InternalJabuti.g:6168:1: rule__WeekDaysInterval__Group__3__Impl : ( 'to' ) ;
     public final void rule__WeekDaysInterval__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6226:1: ( ( 'to' ) )
-            // InternalJabuti.g:6227:1: ( 'to' )
+            // InternalJabuti.g:6172:1: ( ( 'to' ) )
+            // InternalJabuti.g:6173:1: ( 'to' )
             {
-            // InternalJabuti.g:6227:1: ( 'to' )
-            // InternalJabuti.g:6228:2: 'to'
+            // InternalJabuti.g:6173:1: ( 'to' )
+            // InternalJabuti.g:6174:2: 'to'
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getToKeyword_3()); 
             match(input,64,FOLLOW_2); 
@@ -19529,14 +19374,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__4"
-    // InternalJabuti.g:6237:1: rule__WeekDaysInterval__Group__4 : rule__WeekDaysInterval__Group__4__Impl rule__WeekDaysInterval__Group__5 ;
+    // InternalJabuti.g:6183:1: rule__WeekDaysInterval__Group__4 : rule__WeekDaysInterval__Group__4__Impl rule__WeekDaysInterval__Group__5 ;
     public final void rule__WeekDaysInterval__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6241:1: ( rule__WeekDaysInterval__Group__4__Impl rule__WeekDaysInterval__Group__5 )
-            // InternalJabuti.g:6242:2: rule__WeekDaysInterval__Group__4__Impl rule__WeekDaysInterval__Group__5
+            // InternalJabuti.g:6187:1: ( rule__WeekDaysInterval__Group__4__Impl rule__WeekDaysInterval__Group__5 )
+            // InternalJabuti.g:6188:2: rule__WeekDaysInterval__Group__4__Impl rule__WeekDaysInterval__Group__5
             {
             pushFollow(FOLLOW_30);
             rule__WeekDaysInterval__Group__4__Impl();
@@ -19567,21 +19412,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__4__Impl"
-    // InternalJabuti.g:6249:1: rule__WeekDaysInterval__Group__4__Impl : ( ( rule__WeekDaysInterval__EndAssignment_4 ) ) ;
+    // InternalJabuti.g:6195:1: rule__WeekDaysInterval__Group__4__Impl : ( ( rule__WeekDaysInterval__EndAssignment_4 ) ) ;
     public final void rule__WeekDaysInterval__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6253:1: ( ( ( rule__WeekDaysInterval__EndAssignment_4 ) ) )
-            // InternalJabuti.g:6254:1: ( ( rule__WeekDaysInterval__EndAssignment_4 ) )
+            // InternalJabuti.g:6199:1: ( ( ( rule__WeekDaysInterval__EndAssignment_4 ) ) )
+            // InternalJabuti.g:6200:1: ( ( rule__WeekDaysInterval__EndAssignment_4 ) )
             {
-            // InternalJabuti.g:6254:1: ( ( rule__WeekDaysInterval__EndAssignment_4 ) )
-            // InternalJabuti.g:6255:2: ( rule__WeekDaysInterval__EndAssignment_4 )
+            // InternalJabuti.g:6200:1: ( ( rule__WeekDaysInterval__EndAssignment_4 ) )
+            // InternalJabuti.g:6201:2: ( rule__WeekDaysInterval__EndAssignment_4 )
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getEndAssignment_4()); 
-            // InternalJabuti.g:6256:2: ( rule__WeekDaysInterval__EndAssignment_4 )
-            // InternalJabuti.g:6256:3: rule__WeekDaysInterval__EndAssignment_4
+            // InternalJabuti.g:6202:2: ( rule__WeekDaysInterval__EndAssignment_4 )
+            // InternalJabuti.g:6202:3: rule__WeekDaysInterval__EndAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__WeekDaysInterval__EndAssignment_4();
@@ -19614,14 +19459,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__5"
-    // InternalJabuti.g:6264:1: rule__WeekDaysInterval__Group__5 : rule__WeekDaysInterval__Group__5__Impl ;
+    // InternalJabuti.g:6210:1: rule__WeekDaysInterval__Group__5 : rule__WeekDaysInterval__Group__5__Impl ;
     public final void rule__WeekDaysInterval__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6268:1: ( rule__WeekDaysInterval__Group__5__Impl )
-            // InternalJabuti.g:6269:2: rule__WeekDaysInterval__Group__5__Impl
+            // InternalJabuti.g:6214:1: ( rule__WeekDaysInterval__Group__5__Impl )
+            // InternalJabuti.g:6215:2: rule__WeekDaysInterval__Group__5__Impl
             {
             pushFollow(FOLLOW_2);
             rule__WeekDaysInterval__Group__5__Impl();
@@ -19647,17 +19492,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__Group__5__Impl"
-    // InternalJabuti.g:6275:1: rule__WeekDaysInterval__Group__5__Impl : ( ')' ) ;
+    // InternalJabuti.g:6221:1: rule__WeekDaysInterval__Group__5__Impl : ( ')' ) ;
     public final void rule__WeekDaysInterval__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6279:1: ( ( ')' ) )
-            // InternalJabuti.g:6280:1: ( ')' )
+            // InternalJabuti.g:6225:1: ( ( ')' ) )
+            // InternalJabuti.g:6226:1: ( ')' )
             {
-            // InternalJabuti.g:6280:1: ( ')' )
-            // InternalJabuti.g:6281:2: ')'
+            // InternalJabuti.g:6226:1: ( ')' )
+            // InternalJabuti.g:6227:2: ')'
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getRightParenthesisKeyword_5()); 
             match(input,59,FOLLOW_2); 
@@ -19684,14 +19529,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__0"
-    // InternalJabuti.g:6291:1: rule__MessageContent__Group__0 : rule__MessageContent__Group__0__Impl rule__MessageContent__Group__1 ;
+    // InternalJabuti.g:6237:1: rule__MessageContent__Group__0 : rule__MessageContent__Group__0__Impl rule__MessageContent__Group__1 ;
     public final void rule__MessageContent__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6295:1: ( rule__MessageContent__Group__0__Impl rule__MessageContent__Group__1 )
-            // InternalJabuti.g:6296:2: rule__MessageContent__Group__0__Impl rule__MessageContent__Group__1
+            // InternalJabuti.g:6241:1: ( rule__MessageContent__Group__0__Impl rule__MessageContent__Group__1 )
+            // InternalJabuti.g:6242:2: rule__MessageContent__Group__0__Impl rule__MessageContent__Group__1
             {
             pushFollow(FOLLOW_28);
             rule__MessageContent__Group__0__Impl();
@@ -19722,17 +19567,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__0__Impl"
-    // InternalJabuti.g:6303:1: rule__MessageContent__Group__0__Impl : ( 'MessageContent' ) ;
+    // InternalJabuti.g:6249:1: rule__MessageContent__Group__0__Impl : ( 'MessageContent' ) ;
     public final void rule__MessageContent__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6307:1: ( ( 'MessageContent' ) )
-            // InternalJabuti.g:6308:1: ( 'MessageContent' )
+            // InternalJabuti.g:6253:1: ( ( 'MessageContent' ) )
+            // InternalJabuti.g:6254:1: ( 'MessageContent' )
             {
-            // InternalJabuti.g:6308:1: ( 'MessageContent' )
-            // InternalJabuti.g:6309:2: 'MessageContent'
+            // InternalJabuti.g:6254:1: ( 'MessageContent' )
+            // InternalJabuti.g:6255:2: 'MessageContent'
             {
              before(grammarAccess.getMessageContentAccess().getMessageContentKeyword_0()); 
             match(input,70,FOLLOW_2); 
@@ -19759,14 +19604,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__1"
-    // InternalJabuti.g:6318:1: rule__MessageContent__Group__1 : rule__MessageContent__Group__1__Impl rule__MessageContent__Group__2 ;
+    // InternalJabuti.g:6264:1: rule__MessageContent__Group__1 : rule__MessageContent__Group__1__Impl rule__MessageContent__Group__2 ;
     public final void rule__MessageContent__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6322:1: ( rule__MessageContent__Group__1__Impl rule__MessageContent__Group__2 )
-            // InternalJabuti.g:6323:2: rule__MessageContent__Group__1__Impl rule__MessageContent__Group__2
+            // InternalJabuti.g:6268:1: ( rule__MessageContent__Group__1__Impl rule__MessageContent__Group__2 )
+            // InternalJabuti.g:6269:2: rule__MessageContent__Group__1__Impl rule__MessageContent__Group__2
             {
             pushFollow(FOLLOW_58);
             rule__MessageContent__Group__1__Impl();
@@ -19797,17 +19642,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__1__Impl"
-    // InternalJabuti.g:6330:1: rule__MessageContent__Group__1__Impl : ( '(' ) ;
+    // InternalJabuti.g:6276:1: rule__MessageContent__Group__1__Impl : ( '(' ) ;
     public final void rule__MessageContent__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6334:1: ( ( '(' ) )
-            // InternalJabuti.g:6335:1: ( '(' )
+            // InternalJabuti.g:6280:1: ( ( '(' ) )
+            // InternalJabuti.g:6281:1: ( '(' )
             {
-            // InternalJabuti.g:6335:1: ( '(' )
-            // InternalJabuti.g:6336:2: '('
+            // InternalJabuti.g:6281:1: ( '(' )
+            // InternalJabuti.g:6282:2: '('
             {
              before(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_1()); 
             match(input,57,FOLLOW_2); 
@@ -19834,14 +19679,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__2"
-    // InternalJabuti.g:6345:1: rule__MessageContent__Group__2 : rule__MessageContent__Group__2__Impl rule__MessageContent__Group__3 ;
+    // InternalJabuti.g:6291:1: rule__MessageContent__Group__2 : rule__MessageContent__Group__2__Impl rule__MessageContent__Group__3 ;
     public final void rule__MessageContent__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6349:1: ( rule__MessageContent__Group__2__Impl rule__MessageContent__Group__3 )
-            // InternalJabuti.g:6350:2: rule__MessageContent__Group__2__Impl rule__MessageContent__Group__3
+            // InternalJabuti.g:6295:1: ( rule__MessageContent__Group__2__Impl rule__MessageContent__Group__3 )
+            // InternalJabuti.g:6296:2: rule__MessageContent__Group__2__Impl rule__MessageContent__Group__3
             {
             pushFollow(FOLLOW_28);
             rule__MessageContent__Group__2__Impl();
@@ -19872,21 +19717,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__2__Impl"
-    // InternalJabuti.g:6357:1: rule__MessageContent__Group__2__Impl : ( ( rule__MessageContent__ReturnTypeAssignment_2 ) ) ;
+    // InternalJabuti.g:6303:1: rule__MessageContent__Group__2__Impl : ( ( rule__MessageContent__ReturnTypeAssignment_2 ) ) ;
     public final void rule__MessageContent__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6361:1: ( ( ( rule__MessageContent__ReturnTypeAssignment_2 ) ) )
-            // InternalJabuti.g:6362:1: ( ( rule__MessageContent__ReturnTypeAssignment_2 ) )
+            // InternalJabuti.g:6307:1: ( ( ( rule__MessageContent__ReturnTypeAssignment_2 ) ) )
+            // InternalJabuti.g:6308:1: ( ( rule__MessageContent__ReturnTypeAssignment_2 ) )
             {
-            // InternalJabuti.g:6362:1: ( ( rule__MessageContent__ReturnTypeAssignment_2 ) )
-            // InternalJabuti.g:6363:2: ( rule__MessageContent__ReturnTypeAssignment_2 )
+            // InternalJabuti.g:6308:1: ( ( rule__MessageContent__ReturnTypeAssignment_2 ) )
+            // InternalJabuti.g:6309:2: ( rule__MessageContent__ReturnTypeAssignment_2 )
             {
              before(grammarAccess.getMessageContentAccess().getReturnTypeAssignment_2()); 
-            // InternalJabuti.g:6364:2: ( rule__MessageContent__ReturnTypeAssignment_2 )
-            // InternalJabuti.g:6364:3: rule__MessageContent__ReturnTypeAssignment_2
+            // InternalJabuti.g:6310:2: ( rule__MessageContent__ReturnTypeAssignment_2 )
+            // InternalJabuti.g:6310:3: rule__MessageContent__ReturnTypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__ReturnTypeAssignment_2();
@@ -19919,14 +19764,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__3"
-    // InternalJabuti.g:6372:1: rule__MessageContent__Group__3 : rule__MessageContent__Group__3__Impl rule__MessageContent__Group__4 ;
+    // InternalJabuti.g:6318:1: rule__MessageContent__Group__3 : rule__MessageContent__Group__3__Impl rule__MessageContent__Group__4 ;
     public final void rule__MessageContent__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6376:1: ( rule__MessageContent__Group__3__Impl rule__MessageContent__Group__4 )
-            // InternalJabuti.g:6377:2: rule__MessageContent__Group__3__Impl rule__MessageContent__Group__4
+            // InternalJabuti.g:6322:1: ( rule__MessageContent__Group__3__Impl rule__MessageContent__Group__4 )
+            // InternalJabuti.g:6323:2: rule__MessageContent__Group__3__Impl rule__MessageContent__Group__4
             {
             pushFollow(FOLLOW_47);
             rule__MessageContent__Group__3__Impl();
@@ -19957,17 +19802,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__3__Impl"
-    // InternalJabuti.g:6384:1: rule__MessageContent__Group__3__Impl : ( '(' ) ;
+    // InternalJabuti.g:6330:1: rule__MessageContent__Group__3__Impl : ( '(' ) ;
     public final void rule__MessageContent__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6388:1: ( ( '(' ) )
-            // InternalJabuti.g:6389:1: ( '(' )
+            // InternalJabuti.g:6334:1: ( ( '(' ) )
+            // InternalJabuti.g:6335:1: ( '(' )
             {
-            // InternalJabuti.g:6389:1: ( '(' )
-            // InternalJabuti.g:6390:2: '('
+            // InternalJabuti.g:6335:1: ( '(' )
+            // InternalJabuti.g:6336:2: '('
             {
              before(grammarAccess.getMessageContentAccess().getLeftParenthesisKeyword_3()); 
             match(input,57,FOLLOW_2); 
@@ -19994,14 +19839,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__4"
-    // InternalJabuti.g:6399:1: rule__MessageContent__Group__4 : rule__MessageContent__Group__4__Impl rule__MessageContent__Group__5 ;
+    // InternalJabuti.g:6345:1: rule__MessageContent__Group__4 : rule__MessageContent__Group__4__Impl rule__MessageContent__Group__5 ;
     public final void rule__MessageContent__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6403:1: ( rule__MessageContent__Group__4__Impl rule__MessageContent__Group__5 )
-            // InternalJabuti.g:6404:2: rule__MessageContent__Group__4__Impl rule__MessageContent__Group__5
+            // InternalJabuti.g:6349:1: ( rule__MessageContent__Group__4__Impl rule__MessageContent__Group__5 )
+            // InternalJabuti.g:6350:2: rule__MessageContent__Group__4__Impl rule__MessageContent__Group__5
             {
             pushFollow(FOLLOW_30);
             rule__MessageContent__Group__4__Impl();
@@ -20032,21 +19877,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__4__Impl"
-    // InternalJabuti.g:6411:1: rule__MessageContent__Group__4__Impl : ( ( rule__MessageContent__Alternatives_4 ) ) ;
+    // InternalJabuti.g:6357:1: rule__MessageContent__Group__4__Impl : ( ( rule__MessageContent__Alternatives_4 ) ) ;
     public final void rule__MessageContent__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6415:1: ( ( ( rule__MessageContent__Alternatives_4 ) ) )
-            // InternalJabuti.g:6416:1: ( ( rule__MessageContent__Alternatives_4 ) )
+            // InternalJabuti.g:6361:1: ( ( ( rule__MessageContent__Alternatives_4 ) ) )
+            // InternalJabuti.g:6362:1: ( ( rule__MessageContent__Alternatives_4 ) )
             {
-            // InternalJabuti.g:6416:1: ( ( rule__MessageContent__Alternatives_4 ) )
-            // InternalJabuti.g:6417:2: ( rule__MessageContent__Alternatives_4 )
+            // InternalJabuti.g:6362:1: ( ( rule__MessageContent__Alternatives_4 ) )
+            // InternalJabuti.g:6363:2: ( rule__MessageContent__Alternatives_4 )
             {
              before(grammarAccess.getMessageContentAccess().getAlternatives_4()); 
-            // InternalJabuti.g:6418:2: ( rule__MessageContent__Alternatives_4 )
-            // InternalJabuti.g:6418:3: rule__MessageContent__Alternatives_4
+            // InternalJabuti.g:6364:2: ( rule__MessageContent__Alternatives_4 )
+            // InternalJabuti.g:6364:3: rule__MessageContent__Alternatives_4
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Alternatives_4();
@@ -20079,14 +19924,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__5"
-    // InternalJabuti.g:6426:1: rule__MessageContent__Group__5 : rule__MessageContent__Group__5__Impl rule__MessageContent__Group__6 ;
+    // InternalJabuti.g:6372:1: rule__MessageContent__Group__5 : rule__MessageContent__Group__5__Impl rule__MessageContent__Group__6 ;
     public final void rule__MessageContent__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6430:1: ( rule__MessageContent__Group__5__Impl rule__MessageContent__Group__6 )
-            // InternalJabuti.g:6431:2: rule__MessageContent__Group__5__Impl rule__MessageContent__Group__6
+            // InternalJabuti.g:6376:1: ( rule__MessageContent__Group__5__Impl rule__MessageContent__Group__6 )
+            // InternalJabuti.g:6377:2: rule__MessageContent__Group__5__Impl rule__MessageContent__Group__6
             {
             pushFollow(FOLLOW_59);
             rule__MessageContent__Group__5__Impl();
@@ -20117,17 +19962,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__5__Impl"
-    // InternalJabuti.g:6438:1: rule__MessageContent__Group__5__Impl : ( ')' ) ;
+    // InternalJabuti.g:6384:1: rule__MessageContent__Group__5__Impl : ( ')' ) ;
     public final void rule__MessageContent__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6442:1: ( ( ')' ) )
-            // InternalJabuti.g:6443:1: ( ')' )
+            // InternalJabuti.g:6388:1: ( ( ')' ) )
+            // InternalJabuti.g:6389:1: ( ')' )
             {
-            // InternalJabuti.g:6443:1: ( ')' )
-            // InternalJabuti.g:6444:2: ')'
+            // InternalJabuti.g:6389:1: ( ')' )
+            // InternalJabuti.g:6390:2: ')'
             {
              before(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_5()); 
             match(input,59,FOLLOW_2); 
@@ -20154,14 +19999,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__6"
-    // InternalJabuti.g:6453:1: rule__MessageContent__Group__6 : rule__MessageContent__Group__6__Impl rule__MessageContent__Group__7 ;
+    // InternalJabuti.g:6399:1: rule__MessageContent__Group__6 : rule__MessageContent__Group__6__Impl rule__MessageContent__Group__7 ;
     public final void rule__MessageContent__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6457:1: ( rule__MessageContent__Group__6__Impl rule__MessageContent__Group__7 )
-            // InternalJabuti.g:6458:2: rule__MessageContent__Group__6__Impl rule__MessageContent__Group__7
+            // InternalJabuti.g:6403:1: ( rule__MessageContent__Group__6__Impl rule__MessageContent__Group__7 )
+            // InternalJabuti.g:6404:2: rule__MessageContent__Group__6__Impl rule__MessageContent__Group__7
             {
             pushFollow(FOLLOW_59);
             rule__MessageContent__Group__6__Impl();
@@ -20192,20 +20037,20 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__6__Impl"
-    // InternalJabuti.g:6465:1: rule__MessageContent__Group__6__Impl : ( ( rule__MessageContent__Group_6__0 )? ) ;
+    // InternalJabuti.g:6411:1: rule__MessageContent__Group__6__Impl : ( ( rule__MessageContent__Group_6__0 )? ) ;
     public final void rule__MessageContent__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6469:1: ( ( ( rule__MessageContent__Group_6__0 )? ) )
-            // InternalJabuti.g:6470:1: ( ( rule__MessageContent__Group_6__0 )? )
+            // InternalJabuti.g:6415:1: ( ( ( rule__MessageContent__Group_6__0 )? ) )
+            // InternalJabuti.g:6416:1: ( ( rule__MessageContent__Group_6__0 )? )
             {
-            // InternalJabuti.g:6470:1: ( ( rule__MessageContent__Group_6__0 )? )
-            // InternalJabuti.g:6471:2: ( rule__MessageContent__Group_6__0 )?
+            // InternalJabuti.g:6416:1: ( ( rule__MessageContent__Group_6__0 )? )
+            // InternalJabuti.g:6417:2: ( rule__MessageContent__Group_6__0 )?
             {
              before(grammarAccess.getMessageContentAccess().getGroup_6()); 
-            // InternalJabuti.g:6472:2: ( rule__MessageContent__Group_6__0 )?
+            // InternalJabuti.g:6418:2: ( rule__MessageContent__Group_6__0 )?
             int alt45=2;
             int LA45_0 = input.LA(1);
 
@@ -20214,7 +20059,7 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
             }
             switch (alt45) {
                 case 1 :
-                    // InternalJabuti.g:6472:3: rule__MessageContent__Group_6__0
+                    // InternalJabuti.g:6418:3: rule__MessageContent__Group_6__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__MessageContent__Group_6__0();
@@ -20250,14 +20095,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__7"
-    // InternalJabuti.g:6480:1: rule__MessageContent__Group__7 : rule__MessageContent__Group__7__Impl ;
+    // InternalJabuti.g:6426:1: rule__MessageContent__Group__7 : rule__MessageContent__Group__7__Impl ;
     public final void rule__MessageContent__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6484:1: ( rule__MessageContent__Group__7__Impl )
-            // InternalJabuti.g:6485:2: rule__MessageContent__Group__7__Impl
+            // InternalJabuti.g:6430:1: ( rule__MessageContent__Group__7__Impl )
+            // InternalJabuti.g:6431:2: rule__MessageContent__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Group__7__Impl();
@@ -20283,17 +20128,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group__7__Impl"
-    // InternalJabuti.g:6491:1: rule__MessageContent__Group__7__Impl : ( ')' ) ;
+    // InternalJabuti.g:6437:1: rule__MessageContent__Group__7__Impl : ( ')' ) ;
     public final void rule__MessageContent__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6495:1: ( ( ')' ) )
-            // InternalJabuti.g:6496:1: ( ')' )
+            // InternalJabuti.g:6441:1: ( ( ')' ) )
+            // InternalJabuti.g:6442:1: ( ')' )
             {
-            // InternalJabuti.g:6496:1: ( ')' )
-            // InternalJabuti.g:6497:2: ')'
+            // InternalJabuti.g:6442:1: ( ')' )
+            // InternalJabuti.g:6443:2: ')'
             {
              before(grammarAccess.getMessageContentAccess().getRightParenthesisKeyword_7()); 
             match(input,59,FOLLOW_2); 
@@ -20320,14 +20165,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_6__0"
-    // InternalJabuti.g:6507:1: rule__MessageContent__Group_6__0 : rule__MessageContent__Group_6__0__Impl rule__MessageContent__Group_6__1 ;
+    // InternalJabuti.g:6453:1: rule__MessageContent__Group_6__0 : rule__MessageContent__Group_6__0__Impl rule__MessageContent__Group_6__1 ;
     public final void rule__MessageContent__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6511:1: ( rule__MessageContent__Group_6__0__Impl rule__MessageContent__Group_6__1 )
-            // InternalJabuti.g:6512:2: rule__MessageContent__Group_6__0__Impl rule__MessageContent__Group_6__1
+            // InternalJabuti.g:6457:1: ( rule__MessageContent__Group_6__0__Impl rule__MessageContent__Group_6__1 )
+            // InternalJabuti.g:6458:2: rule__MessageContent__Group_6__0__Impl rule__MessageContent__Group_6__1
             {
             pushFollow(FOLLOW_33);
             rule__MessageContent__Group_6__0__Impl();
@@ -20358,21 +20203,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_6__0__Impl"
-    // InternalJabuti.g:6519:1: rule__MessageContent__Group_6__0__Impl : ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) ) ;
+    // InternalJabuti.g:6465:1: rule__MessageContent__Group_6__0__Impl : ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) ) ;
     public final void rule__MessageContent__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6523:1: ( ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) ) )
-            // InternalJabuti.g:6524:1: ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) )
+            // InternalJabuti.g:6469:1: ( ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) ) )
+            // InternalJabuti.g:6470:1: ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) )
             {
-            // InternalJabuti.g:6524:1: ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) )
-            // InternalJabuti.g:6525:2: ( rule__MessageContent__ComparisonOperatorAssignment_6_0 )
+            // InternalJabuti.g:6470:1: ( ( rule__MessageContent__ComparisonOperatorAssignment_6_0 ) )
+            // InternalJabuti.g:6471:2: ( rule__MessageContent__ComparisonOperatorAssignment_6_0 )
             {
              before(grammarAccess.getMessageContentAccess().getComparisonOperatorAssignment_6_0()); 
-            // InternalJabuti.g:6526:2: ( rule__MessageContent__ComparisonOperatorAssignment_6_0 )
-            // InternalJabuti.g:6526:3: rule__MessageContent__ComparisonOperatorAssignment_6_0
+            // InternalJabuti.g:6472:2: ( rule__MessageContent__ComparisonOperatorAssignment_6_0 )
+            // InternalJabuti.g:6472:3: rule__MessageContent__ComparisonOperatorAssignment_6_0
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__ComparisonOperatorAssignment_6_0();
@@ -20405,14 +20250,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_6__1"
-    // InternalJabuti.g:6534:1: rule__MessageContent__Group_6__1 : rule__MessageContent__Group_6__1__Impl rule__MessageContent__Group_6__2 ;
+    // InternalJabuti.g:6480:1: rule__MessageContent__Group_6__1 : rule__MessageContent__Group_6__1__Impl rule__MessageContent__Group_6__2 ;
     public final void rule__MessageContent__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6538:1: ( rule__MessageContent__Group_6__1__Impl rule__MessageContent__Group_6__2 )
-            // InternalJabuti.g:6539:2: rule__MessageContent__Group_6__1__Impl rule__MessageContent__Group_6__2
+            // InternalJabuti.g:6484:1: ( rule__MessageContent__Group_6__1__Impl rule__MessageContent__Group_6__2 )
+            // InternalJabuti.g:6485:2: rule__MessageContent__Group_6__1__Impl rule__MessageContent__Group_6__2
             {
             pushFollow(FOLLOW_60);
             rule__MessageContent__Group_6__1__Impl();
@@ -20443,21 +20288,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_6__1__Impl"
-    // InternalJabuti.g:6546:1: rule__MessageContent__Group_6__1__Impl : ( ( rule__MessageContent__ExpressionAssignment_6_1 ) ) ;
+    // InternalJabuti.g:6492:1: rule__MessageContent__Group_6__1__Impl : ( ( rule__MessageContent__ExpressionAssignment_6_1 ) ) ;
     public final void rule__MessageContent__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6550:1: ( ( ( rule__MessageContent__ExpressionAssignment_6_1 ) ) )
-            // InternalJabuti.g:6551:1: ( ( rule__MessageContent__ExpressionAssignment_6_1 ) )
+            // InternalJabuti.g:6496:1: ( ( ( rule__MessageContent__ExpressionAssignment_6_1 ) ) )
+            // InternalJabuti.g:6497:1: ( ( rule__MessageContent__ExpressionAssignment_6_1 ) )
             {
-            // InternalJabuti.g:6551:1: ( ( rule__MessageContent__ExpressionAssignment_6_1 ) )
-            // InternalJabuti.g:6552:2: ( rule__MessageContent__ExpressionAssignment_6_1 )
+            // InternalJabuti.g:6497:1: ( ( rule__MessageContent__ExpressionAssignment_6_1 ) )
+            // InternalJabuti.g:6498:2: ( rule__MessageContent__ExpressionAssignment_6_1 )
             {
              before(grammarAccess.getMessageContentAccess().getExpressionAssignment_6_1()); 
-            // InternalJabuti.g:6553:2: ( rule__MessageContent__ExpressionAssignment_6_1 )
-            // InternalJabuti.g:6553:3: rule__MessageContent__ExpressionAssignment_6_1
+            // InternalJabuti.g:6499:2: ( rule__MessageContent__ExpressionAssignment_6_1 )
+            // InternalJabuti.g:6499:3: rule__MessageContent__ExpressionAssignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__ExpressionAssignment_6_1();
@@ -20490,14 +20335,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_6__2"
-    // InternalJabuti.g:6561:1: rule__MessageContent__Group_6__2 : rule__MessageContent__Group_6__2__Impl ;
+    // InternalJabuti.g:6507:1: rule__MessageContent__Group_6__2 : rule__MessageContent__Group_6__2__Impl ;
     public final void rule__MessageContent__Group_6__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6565:1: ( rule__MessageContent__Group_6__2__Impl )
-            // InternalJabuti.g:6566:2: rule__MessageContent__Group_6__2__Impl
+            // InternalJabuti.g:6511:1: ( rule__MessageContent__Group_6__2__Impl )
+            // InternalJabuti.g:6512:2: rule__MessageContent__Group_6__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MessageContent__Group_6__2__Impl();
@@ -20523,20 +20368,20 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__Group_6__2__Impl"
-    // InternalJabuti.g:6572:1: rule__MessageContent__Group_6__2__Impl : ( ( rule__MessageContent__TimeUnitSpecAssignment_6_2 )? ) ;
+    // InternalJabuti.g:6518:1: rule__MessageContent__Group_6__2__Impl : ( ( rule__MessageContent__PerTimeAssignment_6_2 )? ) ;
     public final void rule__MessageContent__Group_6__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6576:1: ( ( ( rule__MessageContent__TimeUnitSpecAssignment_6_2 )? ) )
-            // InternalJabuti.g:6577:1: ( ( rule__MessageContent__TimeUnitSpecAssignment_6_2 )? )
+            // InternalJabuti.g:6522:1: ( ( ( rule__MessageContent__PerTimeAssignment_6_2 )? ) )
+            // InternalJabuti.g:6523:1: ( ( rule__MessageContent__PerTimeAssignment_6_2 )? )
             {
-            // InternalJabuti.g:6577:1: ( ( rule__MessageContent__TimeUnitSpecAssignment_6_2 )? )
-            // InternalJabuti.g:6578:2: ( rule__MessageContent__TimeUnitSpecAssignment_6_2 )?
+            // InternalJabuti.g:6523:1: ( ( rule__MessageContent__PerTimeAssignment_6_2 )? )
+            // InternalJabuti.g:6524:2: ( rule__MessageContent__PerTimeAssignment_6_2 )?
             {
-             before(grammarAccess.getMessageContentAccess().getTimeUnitSpecAssignment_6_2()); 
-            // InternalJabuti.g:6579:2: ( rule__MessageContent__TimeUnitSpecAssignment_6_2 )?
+             before(grammarAccess.getMessageContentAccess().getPerTimeAssignment_6_2()); 
+            // InternalJabuti.g:6525:2: ( rule__MessageContent__PerTimeAssignment_6_2 )?
             int alt46=2;
             int LA46_0 = input.LA(1);
 
@@ -20545,10 +20390,10 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
             }
             switch (alt46) {
                 case 1 :
-                    // InternalJabuti.g:6579:3: rule__MessageContent__TimeUnitSpecAssignment_6_2
+                    // InternalJabuti.g:6525:3: rule__MessageContent__PerTimeAssignment_6_2
                     {
                     pushFollow(FOLLOW_2);
-                    rule__MessageContent__TimeUnitSpecAssignment_6_2();
+                    rule__MessageContent__PerTimeAssignment_6_2();
 
                     state._fsp--;
 
@@ -20558,7 +20403,7 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
             }
 
-             after(grammarAccess.getMessageContentAccess().getTimeUnitSpecAssignment_6_2()); 
+             after(grammarAccess.getMessageContentAccess().getPerTimeAssignment_6_2()); 
 
             }
 
@@ -20581,14 +20426,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeUnitSpec__Group__0"
-    // InternalJabuti.g:6588:1: rule__TimeUnitSpec__Group__0 : rule__TimeUnitSpec__Group__0__Impl rule__TimeUnitSpec__Group__1 ;
+    // InternalJabuti.g:6534:1: rule__TimeUnitSpec__Group__0 : rule__TimeUnitSpec__Group__0__Impl rule__TimeUnitSpec__Group__1 ;
     public final void rule__TimeUnitSpec__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6592:1: ( rule__TimeUnitSpec__Group__0__Impl rule__TimeUnitSpec__Group__1 )
-            // InternalJabuti.g:6593:2: rule__TimeUnitSpec__Group__0__Impl rule__TimeUnitSpec__Group__1
+            // InternalJabuti.g:6538:1: ( rule__TimeUnitSpec__Group__0__Impl rule__TimeUnitSpec__Group__1 )
+            // InternalJabuti.g:6539:2: rule__TimeUnitSpec__Group__0__Impl rule__TimeUnitSpec__Group__1
             {
             pushFollow(FOLLOW_54);
             rule__TimeUnitSpec__Group__0__Impl();
@@ -20619,17 +20464,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeUnitSpec__Group__0__Impl"
-    // InternalJabuti.g:6600:1: rule__TimeUnitSpec__Group__0__Impl : ( 'per' ) ;
+    // InternalJabuti.g:6546:1: rule__TimeUnitSpec__Group__0__Impl : ( 'per' ) ;
     public final void rule__TimeUnitSpec__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6604:1: ( ( 'per' ) )
-            // InternalJabuti.g:6605:1: ( 'per' )
+            // InternalJabuti.g:6550:1: ( ( 'per' ) )
+            // InternalJabuti.g:6551:1: ( 'per' )
             {
-            // InternalJabuti.g:6605:1: ( 'per' )
-            // InternalJabuti.g:6606:2: 'per'
+            // InternalJabuti.g:6551:1: ( 'per' )
+            // InternalJabuti.g:6552:2: 'per'
             {
              before(grammarAccess.getTimeUnitSpecAccess().getPerKeyword_0()); 
             match(input,66,FOLLOW_2); 
@@ -20656,14 +20501,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeUnitSpec__Group__1"
-    // InternalJabuti.g:6615:1: rule__TimeUnitSpec__Group__1 : rule__TimeUnitSpec__Group__1__Impl ;
+    // InternalJabuti.g:6561:1: rule__TimeUnitSpec__Group__1 : rule__TimeUnitSpec__Group__1__Impl ;
     public final void rule__TimeUnitSpec__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6619:1: ( rule__TimeUnitSpec__Group__1__Impl )
-            // InternalJabuti.g:6620:2: rule__TimeUnitSpec__Group__1__Impl
+            // InternalJabuti.g:6565:1: ( rule__TimeUnitSpec__Group__1__Impl )
+            // InternalJabuti.g:6566:2: rule__TimeUnitSpec__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnitSpec__Group__1__Impl();
@@ -20689,21 +20534,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeUnitSpec__Group__1__Impl"
-    // InternalJabuti.g:6626:1: rule__TimeUnitSpec__Group__1__Impl : ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) ) ;
+    // InternalJabuti.g:6572:1: rule__TimeUnitSpec__Group__1__Impl : ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) ) ;
     public final void rule__TimeUnitSpec__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6630:1: ( ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) ) )
-            // InternalJabuti.g:6631:1: ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) )
+            // InternalJabuti.g:6576:1: ( ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) ) )
+            // InternalJabuti.g:6577:1: ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) )
             {
-            // InternalJabuti.g:6631:1: ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) )
-            // InternalJabuti.g:6632:2: ( rule__TimeUnitSpec__TimeUnitAssignment_1 )
+            // InternalJabuti.g:6577:1: ( ( rule__TimeUnitSpec__TimeUnitAssignment_1 ) )
+            // InternalJabuti.g:6578:2: ( rule__TimeUnitSpec__TimeUnitAssignment_1 )
             {
              before(grammarAccess.getTimeUnitSpecAccess().getTimeUnitAssignment_1()); 
-            // InternalJabuti.g:6633:2: ( rule__TimeUnitSpec__TimeUnitAssignment_1 )
-            // InternalJabuti.g:6633:3: rule__TimeUnitSpec__TimeUnitAssignment_1
+            // InternalJabuti.g:6579:2: ( rule__TimeUnitSpec__TimeUnitAssignment_1 )
+            // InternalJabuti.g:6579:3: rule__TimeUnitSpec__TimeUnitAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TimeUnitSpec__TimeUnitAssignment_1();
@@ -20736,14 +20581,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0"
-    // InternalJabuti.g:6642:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
+    // InternalJabuti.g:6588:1: rule__QualifiedName__Group__0 : rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 ;
     public final void rule__QualifiedName__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6646:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
-            // InternalJabuti.g:6647:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
+            // InternalJabuti.g:6592:1: ( rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1 )
+            // InternalJabuti.g:6593:2: rule__QualifiedName__Group__0__Impl rule__QualifiedName__Group__1
             {
             pushFollow(FOLLOW_61);
             rule__QualifiedName__Group__0__Impl();
@@ -20774,17 +20619,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__0__Impl"
-    // InternalJabuti.g:6654:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
+    // InternalJabuti.g:6600:1: rule__QualifiedName__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6658:1: ( ( RULE_ID ) )
-            // InternalJabuti.g:6659:1: ( RULE_ID )
+            // InternalJabuti.g:6604:1: ( ( RULE_ID ) )
+            // InternalJabuti.g:6605:1: ( RULE_ID )
             {
-            // InternalJabuti.g:6659:1: ( RULE_ID )
-            // InternalJabuti.g:6660:2: RULE_ID
+            // InternalJabuti.g:6605:1: ( RULE_ID )
+            // InternalJabuti.g:6606:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -20811,14 +20656,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1"
-    // InternalJabuti.g:6669:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
+    // InternalJabuti.g:6615:1: rule__QualifiedName__Group__1 : rule__QualifiedName__Group__1__Impl ;
     public final void rule__QualifiedName__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6673:1: ( rule__QualifiedName__Group__1__Impl )
-            // InternalJabuti.g:6674:2: rule__QualifiedName__Group__1__Impl
+            // InternalJabuti.g:6619:1: ( rule__QualifiedName__Group__1__Impl )
+            // InternalJabuti.g:6620:2: rule__QualifiedName__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group__1__Impl();
@@ -20844,20 +20689,20 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group__1__Impl"
-    // InternalJabuti.g:6680:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
+    // InternalJabuti.g:6626:1: rule__QualifiedName__Group__1__Impl : ( ( rule__QualifiedName__Group_1__0 )* ) ;
     public final void rule__QualifiedName__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6684:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
-            // InternalJabuti.g:6685:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalJabuti.g:6630:1: ( ( ( rule__QualifiedName__Group_1__0 )* ) )
+            // InternalJabuti.g:6631:1: ( ( rule__QualifiedName__Group_1__0 )* )
             {
-            // InternalJabuti.g:6685:1: ( ( rule__QualifiedName__Group_1__0 )* )
-            // InternalJabuti.g:6686:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalJabuti.g:6631:1: ( ( rule__QualifiedName__Group_1__0 )* )
+            // InternalJabuti.g:6632:2: ( rule__QualifiedName__Group_1__0 )*
             {
              before(grammarAccess.getQualifiedNameAccess().getGroup_1()); 
-            // InternalJabuti.g:6687:2: ( rule__QualifiedName__Group_1__0 )*
+            // InternalJabuti.g:6633:2: ( rule__QualifiedName__Group_1__0 )*
             loop47:
             do {
                 int alt47=2;
@@ -20870,7 +20715,7 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
                 switch (alt47) {
             	case 1 :
-            	    // InternalJabuti.g:6687:3: rule__QualifiedName__Group_1__0
+            	    // InternalJabuti.g:6633:3: rule__QualifiedName__Group_1__0
             	    {
             	    pushFollow(FOLLOW_62);
             	    rule__QualifiedName__Group_1__0();
@@ -20909,14 +20754,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0"
-    // InternalJabuti.g:6696:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
+    // InternalJabuti.g:6642:1: rule__QualifiedName__Group_1__0 : rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 ;
     public final void rule__QualifiedName__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6700:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
-            // InternalJabuti.g:6701:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
+            // InternalJabuti.g:6646:1: ( rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1 )
+            // InternalJabuti.g:6647:2: rule__QualifiedName__Group_1__0__Impl rule__QualifiedName__Group_1__1
             {
             pushFollow(FOLLOW_5);
             rule__QualifiedName__Group_1__0__Impl();
@@ -20947,17 +20792,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__0__Impl"
-    // InternalJabuti.g:6708:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
+    // InternalJabuti.g:6654:1: rule__QualifiedName__Group_1__0__Impl : ( '.' ) ;
     public final void rule__QualifiedName__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6712:1: ( ( '.' ) )
-            // InternalJabuti.g:6713:1: ( '.' )
+            // InternalJabuti.g:6658:1: ( ( '.' ) )
+            // InternalJabuti.g:6659:1: ( '.' )
             {
-            // InternalJabuti.g:6713:1: ( '.' )
-            // InternalJabuti.g:6714:2: '.'
+            // InternalJabuti.g:6659:1: ( '.' )
+            // InternalJabuti.g:6660:2: '.'
             {
              before(grammarAccess.getQualifiedNameAccess().getFullStopKeyword_1_0()); 
             match(input,71,FOLLOW_2); 
@@ -20984,14 +20829,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1"
-    // InternalJabuti.g:6723:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
+    // InternalJabuti.g:6669:1: rule__QualifiedName__Group_1__1 : rule__QualifiedName__Group_1__1__Impl ;
     public final void rule__QualifiedName__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6727:1: ( rule__QualifiedName__Group_1__1__Impl )
-            // InternalJabuti.g:6728:2: rule__QualifiedName__Group_1__1__Impl
+            // InternalJabuti.g:6673:1: ( rule__QualifiedName__Group_1__1__Impl )
+            // InternalJabuti.g:6674:2: rule__QualifiedName__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedName__Group_1__1__Impl();
@@ -21017,17 +20862,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedName__Group_1__1__Impl"
-    // InternalJabuti.g:6734:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
+    // InternalJabuti.g:6680:1: rule__QualifiedName__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__QualifiedName__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6738:1: ( ( RULE_ID ) )
-            // InternalJabuti.g:6739:1: ( RULE_ID )
+            // InternalJabuti.g:6684:1: ( ( RULE_ID ) )
+            // InternalJabuti.g:6685:1: ( RULE_ID )
             {
-            // InternalJabuti.g:6739:1: ( RULE_ID )
-            // InternalJabuti.g:6740:2: RULE_ID
+            // InternalJabuti.g:6685:1: ( RULE_ID )
+            // InternalJabuti.g:6686:2: RULE_ID
             {
              before(grammarAccess.getQualifiedNameAccess().getIDTerminalRuleCall_1_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21054,14 +20899,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__0"
-    // InternalJabuti.g:6750:1: rule__QualifiedNameWithWildcard__Group__0 : rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 ;
+    // InternalJabuti.g:6696:1: rule__QualifiedNameWithWildcard__Group__0 : rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 ;
     public final void rule__QualifiedNameWithWildcard__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6754:1: ( rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 )
-            // InternalJabuti.g:6755:2: rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1
+            // InternalJabuti.g:6700:1: ( rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1 )
+            // InternalJabuti.g:6701:2: rule__QualifiedNameWithWildcard__Group__0__Impl rule__QualifiedNameWithWildcard__Group__1
             {
             pushFollow(FOLLOW_63);
             rule__QualifiedNameWithWildcard__Group__0__Impl();
@@ -21092,17 +20937,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__0__Impl"
-    // InternalJabuti.g:6762:1: rule__QualifiedNameWithWildcard__Group__0__Impl : ( ruleQualifiedName ) ;
+    // InternalJabuti.g:6708:1: rule__QualifiedNameWithWildcard__Group__0__Impl : ( ruleQualifiedName ) ;
     public final void rule__QualifiedNameWithWildcard__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6766:1: ( ( ruleQualifiedName ) )
-            // InternalJabuti.g:6767:1: ( ruleQualifiedName )
+            // InternalJabuti.g:6712:1: ( ( ruleQualifiedName ) )
+            // InternalJabuti.g:6713:1: ( ruleQualifiedName )
             {
-            // InternalJabuti.g:6767:1: ( ruleQualifiedName )
-            // InternalJabuti.g:6768:2: ruleQualifiedName
+            // InternalJabuti.g:6713:1: ( ruleQualifiedName )
+            // InternalJabuti.g:6714:2: ruleQualifiedName
             {
              before(grammarAccess.getQualifiedNameWithWildcardAccess().getQualifiedNameParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -21133,14 +20978,14 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__1"
-    // InternalJabuti.g:6777:1: rule__QualifiedNameWithWildcard__Group__1 : rule__QualifiedNameWithWildcard__Group__1__Impl ;
+    // InternalJabuti.g:6723:1: rule__QualifiedNameWithWildcard__Group__1 : rule__QualifiedNameWithWildcard__Group__1__Impl ;
     public final void rule__QualifiedNameWithWildcard__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6781:1: ( rule__QualifiedNameWithWildcard__Group__1__Impl )
-            // InternalJabuti.g:6782:2: rule__QualifiedNameWithWildcard__Group__1__Impl
+            // InternalJabuti.g:6727:1: ( rule__QualifiedNameWithWildcard__Group__1__Impl )
+            // InternalJabuti.g:6728:2: rule__QualifiedNameWithWildcard__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__QualifiedNameWithWildcard__Group__1__Impl();
@@ -21166,17 +21011,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__QualifiedNameWithWildcard__Group__1__Impl"
-    // InternalJabuti.g:6788:1: rule__QualifiedNameWithWildcard__Group__1__Impl : ( '.*' ) ;
+    // InternalJabuti.g:6734:1: rule__QualifiedNameWithWildcard__Group__1__Impl : ( '.*' ) ;
     public final void rule__QualifiedNameWithWildcard__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6792:1: ( ( '.*' ) )
-            // InternalJabuti.g:6793:1: ( '.*' )
+            // InternalJabuti.g:6738:1: ( ( '.*' ) )
+            // InternalJabuti.g:6739:1: ( '.*' )
             {
-            // InternalJabuti.g:6793:1: ( '.*' )
-            // InternalJabuti.g:6794:2: '.*'
+            // InternalJabuti.g:6739:1: ( '.*' )
+            // InternalJabuti.g:6740:2: '.*'
             {
              before(grammarAccess.getQualifiedNameWithWildcardAccess().getFullStopAsteriskKeyword_1()); 
             match(input,72,FOLLOW_2); 
@@ -21203,17 +21048,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ImportsAssignment_0"
-    // InternalJabuti.g:6804:1: rule__Model__ImportsAssignment_0 : ( ruleImport ) ;
+    // InternalJabuti.g:6750:1: rule__Model__ImportsAssignment_0 : ( ruleImport ) ;
     public final void rule__Model__ImportsAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6808:1: ( ( ruleImport ) )
-            // InternalJabuti.g:6809:2: ( ruleImport )
+            // InternalJabuti.g:6754:1: ( ( ruleImport ) )
+            // InternalJabuti.g:6755:2: ( ruleImport )
             {
-            // InternalJabuti.g:6809:2: ( ruleImport )
-            // InternalJabuti.g:6810:3: ruleImport
+            // InternalJabuti.g:6755:2: ( ruleImport )
+            // InternalJabuti.g:6756:3: ruleImport
             {
              before(grammarAccess.getModelAccess().getImportsImportParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -21244,17 +21089,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Model__ContractAssignment_1"
-    // InternalJabuti.g:6819:1: rule__Model__ContractAssignment_1 : ( ruleContract ) ;
+    // InternalJabuti.g:6765:1: rule__Model__ContractAssignment_1 : ( ruleContract ) ;
     public final void rule__Model__ContractAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6823:1: ( ( ruleContract ) )
-            // InternalJabuti.g:6824:2: ( ruleContract )
+            // InternalJabuti.g:6769:1: ( ( ruleContract ) )
+            // InternalJabuti.g:6770:2: ( ruleContract )
             {
-            // InternalJabuti.g:6824:2: ( ruleContract )
-            // InternalJabuti.g:6825:3: ruleContract
+            // InternalJabuti.g:6770:2: ( ruleContract )
+            // InternalJabuti.g:6771:3: ruleContract
             {
              before(grammarAccess.getModelAccess().getContractContractParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21285,17 +21130,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
-    // InternalJabuti.g:6834:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
+    // InternalJabuti.g:6780:1: rule__Import__ImportedNamespaceAssignment_1 : ( ruleQualifiedNameWithWildcard ) ;
     public final void rule__Import__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6838:1: ( ( ruleQualifiedNameWithWildcard ) )
-            // InternalJabuti.g:6839:2: ( ruleQualifiedNameWithWildcard )
+            // InternalJabuti.g:6784:1: ( ( ruleQualifiedNameWithWildcard ) )
+            // InternalJabuti.g:6785:2: ( ruleQualifiedNameWithWildcard )
             {
-            // InternalJabuti.g:6839:2: ( ruleQualifiedNameWithWildcard )
-            // InternalJabuti.g:6840:3: ruleQualifiedNameWithWildcard
+            // InternalJabuti.g:6785:2: ( ruleQualifiedNameWithWildcard )
+            // InternalJabuti.g:6786:3: ruleQualifiedNameWithWildcard
             {
              before(grammarAccess.getImportAccess().getImportedNamespaceQualifiedNameWithWildcardParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -21326,17 +21171,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__NameAssignment_1"
-    // InternalJabuti.g:6849:1: rule__Contract__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalJabuti.g:6795:1: rule__Contract__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Contract__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6853:1: ( ( RULE_ID ) )
-            // InternalJabuti.g:6854:2: ( RULE_ID )
+            // InternalJabuti.g:6799:1: ( ( RULE_ID ) )
+            // InternalJabuti.g:6800:2: ( RULE_ID )
             {
-            // InternalJabuti.g:6854:2: ( RULE_ID )
-            // InternalJabuti.g:6855:3: RULE_ID
+            // InternalJabuti.g:6800:2: ( RULE_ID )
+            // InternalJabuti.g:6801:3: RULE_ID
             {
              before(grammarAccess.getContractAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21363,17 +21208,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__BeginDateAssignment_7"
-    // InternalJabuti.g:6864:1: rule__Contract__BeginDateAssignment_7 : ( RULE_STRING ) ;
+    // InternalJabuti.g:6810:1: rule__Contract__BeginDateAssignment_7 : ( RULE_STRING ) ;
     public final void rule__Contract__BeginDateAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6868:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:6869:2: ( RULE_STRING )
+            // InternalJabuti.g:6814:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:6815:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:6869:2: ( RULE_STRING )
-            // InternalJabuti.g:6870:3: RULE_STRING
+            // InternalJabuti.g:6815:2: ( RULE_STRING )
+            // InternalJabuti.g:6816:3: RULE_STRING
             {
              before(grammarAccess.getContractAccess().getBeginDateSTRINGTerminalRuleCall_7_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -21400,17 +21245,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__DueDateAssignment_10"
-    // InternalJabuti.g:6879:1: rule__Contract__DueDateAssignment_10 : ( RULE_STRING ) ;
+    // InternalJabuti.g:6825:1: rule__Contract__DueDateAssignment_10 : ( RULE_STRING ) ;
     public final void rule__Contract__DueDateAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6883:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:6884:2: ( RULE_STRING )
+            // InternalJabuti.g:6829:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:6830:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:6884:2: ( RULE_STRING )
-            // InternalJabuti.g:6885:3: RULE_STRING
+            // InternalJabuti.g:6830:2: ( RULE_STRING )
+            // InternalJabuti.g:6831:3: RULE_STRING
             {
              before(grammarAccess.getContractAccess().getDueDateSTRINGTerminalRuleCall_10_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -21437,17 +21282,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__ApplicationAssignment_14"
-    // InternalJabuti.g:6894:1: rule__Contract__ApplicationAssignment_14 : ( ruleApplication ) ;
+    // InternalJabuti.g:6840:1: rule__Contract__ApplicationAssignment_14 : ( ruleApplication ) ;
     public final void rule__Contract__ApplicationAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6898:1: ( ( ruleApplication ) )
-            // InternalJabuti.g:6899:2: ( ruleApplication )
+            // InternalJabuti.g:6844:1: ( ( ruleApplication ) )
+            // InternalJabuti.g:6845:2: ( ruleApplication )
             {
-            // InternalJabuti.g:6899:2: ( ruleApplication )
-            // InternalJabuti.g:6900:3: ruleApplication
+            // InternalJabuti.g:6845:2: ( ruleApplication )
+            // InternalJabuti.g:6846:3: ruleApplication
             {
              before(grammarAccess.getContractAccess().getApplicationApplicationParserRuleCall_14_0()); 
             pushFollow(FOLLOW_2);
@@ -21478,17 +21323,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__ProcessAssignment_15"
-    // InternalJabuti.g:6909:1: rule__Contract__ProcessAssignment_15 : ( ruleProcess ) ;
+    // InternalJabuti.g:6855:1: rule__Contract__ProcessAssignment_15 : ( ruleProcess ) ;
     public final void rule__Contract__ProcessAssignment_15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6913:1: ( ( ruleProcess ) )
-            // InternalJabuti.g:6914:2: ( ruleProcess )
+            // InternalJabuti.g:6859:1: ( ( ruleProcess ) )
+            // InternalJabuti.g:6860:2: ( ruleProcess )
             {
-            // InternalJabuti.g:6914:2: ( ruleProcess )
-            // InternalJabuti.g:6915:3: ruleProcess
+            // InternalJabuti.g:6860:2: ( ruleProcess )
+            // InternalJabuti.g:6861:3: ruleProcess
             {
              before(grammarAccess.getContractAccess().getProcessProcessParserRuleCall_15_0()); 
             pushFollow(FOLLOW_2);
@@ -21519,17 +21364,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__VariablesAssignment_17_2"
-    // InternalJabuti.g:6924:1: rule__Contract__VariablesAssignment_17_2 : ( ruleVariable ) ;
+    // InternalJabuti.g:6870:1: rule__Contract__VariablesAssignment_17_2 : ( ruleVariable ) ;
     public final void rule__Contract__VariablesAssignment_17_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6928:1: ( ( ruleVariable ) )
-            // InternalJabuti.g:6929:2: ( ruleVariable )
+            // InternalJabuti.g:6874:1: ( ( ruleVariable ) )
+            // InternalJabuti.g:6875:2: ( ruleVariable )
             {
-            // InternalJabuti.g:6929:2: ( ruleVariable )
-            // InternalJabuti.g:6930:3: ruleVariable
+            // InternalJabuti.g:6875:2: ( ruleVariable )
+            // InternalJabuti.g:6876:3: ruleVariable
             {
              before(grammarAccess.getContractAccess().getVariablesVariableParserRuleCall_17_2_0()); 
             pushFollow(FOLLOW_2);
@@ -21560,17 +21405,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Contract__ClausesAssignment_20"
-    // InternalJabuti.g:6939:1: rule__Contract__ClausesAssignment_20 : ( ruleClause ) ;
+    // InternalJabuti.g:6885:1: rule__Contract__ClausesAssignment_20 : ( ruleClause ) ;
     public final void rule__Contract__ClausesAssignment_20() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6943:1: ( ( ruleClause ) )
-            // InternalJabuti.g:6944:2: ( ruleClause )
+            // InternalJabuti.g:6889:1: ( ( ruleClause ) )
+            // InternalJabuti.g:6890:2: ( ruleClause )
             {
-            // InternalJabuti.g:6944:2: ( ruleClause )
-            // InternalJabuti.g:6945:3: ruleClause
+            // InternalJabuti.g:6890:2: ( ruleClause )
+            // InternalJabuti.g:6891:3: ruleClause
             {
              before(grammarAccess.getContractAccess().getClausesClauseParserRuleCall_20_0()); 
             pushFollow(FOLLOW_2);
@@ -21601,17 +21446,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__RolePlayerAssignment_4"
-    // InternalJabuti.g:6954:1: rule__Clause__RolePlayerAssignment_4 : ( ruleRolePlayer ) ;
+    // InternalJabuti.g:6900:1: rule__Clause__RolePlayerAssignment_4 : ( ruleRolePlayer ) ;
     public final void rule__Clause__RolePlayerAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6958:1: ( ( ruleRolePlayer ) )
-            // InternalJabuti.g:6959:2: ( ruleRolePlayer )
+            // InternalJabuti.g:6904:1: ( ( ruleRolePlayer ) )
+            // InternalJabuti.g:6905:2: ( ruleRolePlayer )
             {
-            // InternalJabuti.g:6959:2: ( ruleRolePlayer )
-            // InternalJabuti.g:6960:3: ruleRolePlayer
+            // InternalJabuti.g:6905:2: ( ruleRolePlayer )
+            // InternalJabuti.g:6906:3: ruleRolePlayer
             {
              before(grammarAccess.getClauseAccess().getRolePlayerRolePlayerEnumRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -21642,17 +21487,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__OperationAssignment_7"
-    // InternalJabuti.g:6969:1: rule__Clause__OperationAssignment_7 : ( ruleOperation ) ;
+    // InternalJabuti.g:6915:1: rule__Clause__OperationAssignment_7 : ( ruleOperation ) ;
     public final void rule__Clause__OperationAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6973:1: ( ( ruleOperation ) )
-            // InternalJabuti.g:6974:2: ( ruleOperation )
+            // InternalJabuti.g:6919:1: ( ( ruleOperation ) )
+            // InternalJabuti.g:6920:2: ( ruleOperation )
             {
-            // InternalJabuti.g:6974:2: ( ruleOperation )
-            // InternalJabuti.g:6975:3: ruleOperation
+            // InternalJabuti.g:6920:2: ( ruleOperation )
+            // InternalJabuti.g:6921:3: ruleOperation
             {
              before(grammarAccess.getClauseAccess().getOperationOperationEnumRuleCall_7_0()); 
             pushFollow(FOLLOW_2);
@@ -21683,17 +21528,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__TermsAssignment_10"
-    // InternalJabuti.g:6984:1: rule__Clause__TermsAssignment_10 : ( ruleExpressionTerm ) ;
+    // InternalJabuti.g:6930:1: rule__Clause__TermsAssignment_10 : ( ruleExpressionTerm ) ;
     public final void rule__Clause__TermsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:6988:1: ( ( ruleExpressionTerm ) )
-            // InternalJabuti.g:6989:2: ( ruleExpressionTerm )
+            // InternalJabuti.g:6934:1: ( ( ruleExpressionTerm ) )
+            // InternalJabuti.g:6935:2: ( ruleExpressionTerm )
             {
-            // InternalJabuti.g:6989:2: ( ruleExpressionTerm )
-            // InternalJabuti.g:6990:3: ruleExpressionTerm
+            // InternalJabuti.g:6935:2: ( ruleExpressionTerm )
+            // InternalJabuti.g:6936:3: ruleExpressionTerm
             {
              before(grammarAccess.getClauseAccess().getTermsExpressionTermParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -21724,17 +21569,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__OnSuccessAssignment_12"
-    // InternalJabuti.g:6999:1: rule__Clause__OnSuccessAssignment_12 : ( ruleOnSuccess ) ;
+    // InternalJabuti.g:6945:1: rule__Clause__OnSuccessAssignment_12 : ( ruleOnSuccess ) ;
     public final void rule__Clause__OnSuccessAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7003:1: ( ( ruleOnSuccess ) )
-            // InternalJabuti.g:7004:2: ( ruleOnSuccess )
+            // InternalJabuti.g:6949:1: ( ( ruleOnSuccess ) )
+            // InternalJabuti.g:6950:2: ( ruleOnSuccess )
             {
-            // InternalJabuti.g:7004:2: ( ruleOnSuccess )
-            // InternalJabuti.g:7005:3: ruleOnSuccess
+            // InternalJabuti.g:6950:2: ( ruleOnSuccess )
+            // InternalJabuti.g:6951:3: ruleOnSuccess
             {
              before(grammarAccess.getClauseAccess().getOnSuccessOnSuccessParserRuleCall_12_0()); 
             pushFollow(FOLLOW_2);
@@ -21765,17 +21610,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Clause__OnBreachAssignment_13"
-    // InternalJabuti.g:7014:1: rule__Clause__OnBreachAssignment_13 : ( ruleOnBreach ) ;
+    // InternalJabuti.g:6960:1: rule__Clause__OnBreachAssignment_13 : ( ruleOnBreach ) ;
     public final void rule__Clause__OnBreachAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7018:1: ( ( ruleOnBreach ) )
-            // InternalJabuti.g:7019:2: ( ruleOnBreach )
+            // InternalJabuti.g:6964:1: ( ( ruleOnBreach ) )
+            // InternalJabuti.g:6965:2: ( ruleOnBreach )
             {
-            // InternalJabuti.g:7019:2: ( ruleOnBreach )
-            // InternalJabuti.g:7020:3: ruleOnBreach
+            // InternalJabuti.g:6965:2: ( ruleOnBreach )
+            // InternalJabuti.g:6966:3: ruleOnBreach
             {
              before(grammarAccess.getClauseAccess().getOnBreachOnBreachParserRuleCall_13_0()); 
             pushFollow(FOLLOW_2);
@@ -21806,17 +21651,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Right__NameAssignment_1"
-    // InternalJabuti.g:7029:1: rule__Right__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalJabuti.g:6975:1: rule__Right__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Right__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7033:1: ( ( RULE_ID ) )
-            // InternalJabuti.g:7034:2: ( RULE_ID )
+            // InternalJabuti.g:6979:1: ( ( RULE_ID ) )
+            // InternalJabuti.g:6980:2: ( RULE_ID )
             {
-            // InternalJabuti.g:7034:2: ( RULE_ID )
-            // InternalJabuti.g:7035:3: RULE_ID
+            // InternalJabuti.g:6980:2: ( RULE_ID )
+            // InternalJabuti.g:6981:3: RULE_ID
             {
              before(grammarAccess.getRightAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21843,17 +21688,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Obligation__NameAssignment_1"
-    // InternalJabuti.g:7044:1: rule__Obligation__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalJabuti.g:6990:1: rule__Obligation__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Obligation__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7048:1: ( ( RULE_ID ) )
-            // InternalJabuti.g:7049:2: ( RULE_ID )
+            // InternalJabuti.g:6994:1: ( ( RULE_ID ) )
+            // InternalJabuti.g:6995:2: ( RULE_ID )
             {
-            // InternalJabuti.g:7049:2: ( RULE_ID )
-            // InternalJabuti.g:7050:3: RULE_ID
+            // InternalJabuti.g:6995:2: ( RULE_ID )
+            // InternalJabuti.g:6996:3: RULE_ID
             {
              before(grammarAccess.getObligationAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21880,17 +21725,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Prohibition__NameAssignment_1"
-    // InternalJabuti.g:7059:1: rule__Prohibition__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalJabuti.g:7005:1: rule__Prohibition__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Prohibition__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7063:1: ( ( RULE_ID ) )
-            // InternalJabuti.g:7064:2: ( RULE_ID )
+            // InternalJabuti.g:7009:1: ( ( RULE_ID ) )
+            // InternalJabuti.g:7010:2: ( RULE_ID )
             {
-            // InternalJabuti.g:7064:2: ( RULE_ID )
-            // InternalJabuti.g:7065:3: RULE_ID
+            // InternalJabuti.g:7010:2: ( RULE_ID )
+            // InternalJabuti.g:7011:3: RULE_ID
             {
              before(grammarAccess.getProhibitionAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -21917,17 +21762,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Application__NameAssignment_2"
-    // InternalJabuti.g:7074:1: rule__Application__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7020:1: rule__Application__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Application__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7078:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7079:2: ( RULE_STRING )
+            // InternalJabuti.g:7024:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7025:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7079:2: ( RULE_STRING )
-            // InternalJabuti.g:7080:3: RULE_STRING
+            // InternalJabuti.g:7025:2: ( RULE_STRING )
+            // InternalJabuti.g:7026:3: RULE_STRING
             {
              before(grammarAccess.getApplicationAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -21954,17 +21799,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Process__NameAssignment_2"
-    // InternalJabuti.g:7089:1: rule__Process__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7035:1: rule__Process__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Process__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7093:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7094:2: ( RULE_STRING )
+            // InternalJabuti.g:7039:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7040:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7094:2: ( RULE_STRING )
-            // InternalJabuti.g:7095:3: RULE_STRING
+            // InternalJabuti.g:7040:2: ( RULE_STRING )
+            // InternalJabuti.g:7041:3: RULE_STRING
             {
              before(grammarAccess.getProcessAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -21991,17 +21836,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnSuccess__MessageAssignment_3"
-    // InternalJabuti.g:7104:1: rule__OnSuccess__MessageAssignment_3 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7050:1: rule__OnSuccess__MessageAssignment_3 : ( RULE_STRING ) ;
     public final void rule__OnSuccess__MessageAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7108:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7109:2: ( RULE_STRING )
+            // InternalJabuti.g:7054:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7055:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7109:2: ( RULE_STRING )
-            // InternalJabuti.g:7110:3: RULE_STRING
+            // InternalJabuti.g:7055:2: ( RULE_STRING )
+            // InternalJabuti.g:7056:3: RULE_STRING
             {
              before(grammarAccess.getOnSuccessAccess().getMessageSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -22028,17 +21873,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OnBreach__MessageAssignment_3"
-    // InternalJabuti.g:7119:1: rule__OnBreach__MessageAssignment_3 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7065:1: rule__OnBreach__MessageAssignment_3 : ( RULE_STRING ) ;
     public final void rule__OnBreach__MessageAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7123:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7124:2: ( RULE_STRING )
+            // InternalJabuti.g:7069:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7070:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7124:2: ( RULE_STRING )
-            // InternalJabuti.g:7125:3: RULE_STRING
+            // InternalJabuti.g:7070:2: ( RULE_STRING )
+            // InternalJabuti.g:7071:3: RULE_STRING
             {
              before(grammarAccess.getOnBreachAccess().getMessageSTRINGTerminalRuleCall_3_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -22065,21 +21910,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__SymbolAssignment_1_1_0"
-    // InternalJabuti.g:7134:1: rule__Expression__SymbolAssignment_1_1_0 : ( ( 'AND' ) ) ;
+    // InternalJabuti.g:7080:1: rule__Expression__SymbolAssignment_1_1_0 : ( ( 'AND' ) ) ;
     public final void rule__Expression__SymbolAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7138:1: ( ( ( 'AND' ) ) )
-            // InternalJabuti.g:7139:2: ( ( 'AND' ) )
+            // InternalJabuti.g:7084:1: ( ( ( 'AND' ) ) )
+            // InternalJabuti.g:7085:2: ( ( 'AND' ) )
             {
-            // InternalJabuti.g:7139:2: ( ( 'AND' ) )
-            // InternalJabuti.g:7140:3: ( 'AND' )
+            // InternalJabuti.g:7085:2: ( ( 'AND' ) )
+            // InternalJabuti.g:7086:3: ( 'AND' )
             {
              before(grammarAccess.getExpressionAccess().getSymbolANDKeyword_1_1_0_0()); 
-            // InternalJabuti.g:7141:3: ( 'AND' )
-            // InternalJabuti.g:7142:4: 'AND'
+            // InternalJabuti.g:7087:3: ( 'AND' )
+            // InternalJabuti.g:7088:4: 'AND'
             {
              before(grammarAccess.getExpressionAccess().getSymbolANDKeyword_1_1_0_0()); 
             match(input,12,FOLLOW_2); 
@@ -22110,21 +21955,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__SymbolAssignment_1_1_1"
-    // InternalJabuti.g:7153:1: rule__Expression__SymbolAssignment_1_1_1 : ( ( 'OR' ) ) ;
+    // InternalJabuti.g:7099:1: rule__Expression__SymbolAssignment_1_1_1 : ( ( 'OR' ) ) ;
     public final void rule__Expression__SymbolAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7157:1: ( ( ( 'OR' ) ) )
-            // InternalJabuti.g:7158:2: ( ( 'OR' ) )
+            // InternalJabuti.g:7103:1: ( ( ( 'OR' ) ) )
+            // InternalJabuti.g:7104:2: ( ( 'OR' ) )
             {
-            // InternalJabuti.g:7158:2: ( ( 'OR' ) )
-            // InternalJabuti.g:7159:3: ( 'OR' )
+            // InternalJabuti.g:7104:2: ( ( 'OR' ) )
+            // InternalJabuti.g:7105:3: ( 'OR' )
             {
              before(grammarAccess.getExpressionAccess().getSymbolORKeyword_1_1_1_0()); 
-            // InternalJabuti.g:7160:3: ( 'OR' )
-            // InternalJabuti.g:7161:4: 'OR'
+            // InternalJabuti.g:7106:3: ( 'OR' )
+            // InternalJabuti.g:7107:4: 'OR'
             {
              before(grammarAccess.getExpressionAccess().getSymbolORKeyword_1_1_1_0()); 
             match(input,13,FOLLOW_2); 
@@ -22155,17 +22000,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expression__RightAssignment_1_2"
-    // InternalJabuti.g:7172:1: rule__Expression__RightAssignment_1_2 : ( ruleNegation ) ;
+    // InternalJabuti.g:7118:1: rule__Expression__RightAssignment_1_2 : ( ruleNegation ) ;
     public final void rule__Expression__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7176:1: ( ( ruleNegation ) )
-            // InternalJabuti.g:7177:2: ( ruleNegation )
+            // InternalJabuti.g:7122:1: ( ( ruleNegation ) )
+            // InternalJabuti.g:7123:2: ( ruleNegation )
             {
-            // InternalJabuti.g:7177:2: ( ruleNegation )
-            // InternalJabuti.g:7178:3: ruleNegation
+            // InternalJabuti.g:7123:2: ( ruleNegation )
+            // InternalJabuti.g:7124:3: ruleNegation
             {
              before(grammarAccess.getExpressionAccess().getRightNegationParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22196,21 +22041,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__SymbolAssignment_1_1"
-    // InternalJabuti.g:7187:1: rule__Negation__SymbolAssignment_1_1 : ( ( '!' ) ) ;
+    // InternalJabuti.g:7133:1: rule__Negation__SymbolAssignment_1_1 : ( ( '!' ) ) ;
     public final void rule__Negation__SymbolAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7191:1: ( ( ( '!' ) ) )
-            // InternalJabuti.g:7192:2: ( ( '!' ) )
+            // InternalJabuti.g:7137:1: ( ( ( '!' ) ) )
+            // InternalJabuti.g:7138:2: ( ( '!' ) )
             {
-            // InternalJabuti.g:7192:2: ( ( '!' ) )
-            // InternalJabuti.g:7193:3: ( '!' )
+            // InternalJabuti.g:7138:2: ( ( '!' ) )
+            // InternalJabuti.g:7139:3: ( '!' )
             {
              before(grammarAccess.getNegationAccess().getSymbolExclamationMarkKeyword_1_1_0()); 
-            // InternalJabuti.g:7194:3: ( '!' )
-            // InternalJabuti.g:7195:4: '!'
+            // InternalJabuti.g:7140:3: ( '!' )
+            // InternalJabuti.g:7141:4: '!'
             {
              before(grammarAccess.getNegationAccess().getSymbolExclamationMarkKeyword_1_1_0()); 
             match(input,73,FOLLOW_2); 
@@ -22241,17 +22086,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negation__ExpressionAssignment_1_2"
-    // InternalJabuti.g:7206:1: rule__Negation__ExpressionAssignment_1_2 : ( ruleComparison ) ;
+    // InternalJabuti.g:7152:1: rule__Negation__ExpressionAssignment_1_2 : ( ruleComparison ) ;
     public final void rule__Negation__ExpressionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7210:1: ( ( ruleComparison ) )
-            // InternalJabuti.g:7211:2: ( ruleComparison )
+            // InternalJabuti.g:7156:1: ( ( ruleComparison ) )
+            // InternalJabuti.g:7157:2: ( ruleComparison )
             {
-            // InternalJabuti.g:7211:2: ( ruleComparison )
-            // InternalJabuti.g:7212:3: ruleComparison
+            // InternalJabuti.g:7157:2: ( ruleComparison )
+            // InternalJabuti.g:7158:3: ruleComparison
             {
              before(grammarAccess.getNegationAccess().getExpressionComparisonParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22282,21 +22127,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_0"
-    // InternalJabuti.g:7221:1: rule__Comparison__SymbolAssignment_1_1_0 : ( ( '<=' ) ) ;
+    // InternalJabuti.g:7167:1: rule__Comparison__SymbolAssignment_1_1_0 : ( ( '<=' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7225:1: ( ( ( '<=' ) ) )
-            // InternalJabuti.g:7226:2: ( ( '<=' ) )
+            // InternalJabuti.g:7171:1: ( ( ( '<=' ) ) )
+            // InternalJabuti.g:7172:2: ( ( '<=' ) )
             {
-            // InternalJabuti.g:7226:2: ( ( '<=' ) )
-            // InternalJabuti.g:7227:3: ( '<=' )
+            // InternalJabuti.g:7172:2: ( ( '<=' ) )
+            // InternalJabuti.g:7173:3: ( '<=' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolLessThanSignEqualsSignKeyword_1_1_0_0()); 
-            // InternalJabuti.g:7228:3: ( '<=' )
-            // InternalJabuti.g:7229:4: '<='
+            // InternalJabuti.g:7174:3: ( '<=' )
+            // InternalJabuti.g:7175:4: '<='
             {
              before(grammarAccess.getComparisonAccess().getSymbolLessThanSignEqualsSignKeyword_1_1_0_0()); 
             match(input,74,FOLLOW_2); 
@@ -22327,21 +22172,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_1"
-    // InternalJabuti.g:7240:1: rule__Comparison__SymbolAssignment_1_1_1 : ( ( '>=' ) ) ;
+    // InternalJabuti.g:7186:1: rule__Comparison__SymbolAssignment_1_1_1 : ( ( '>=' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7244:1: ( ( ( '>=' ) ) )
-            // InternalJabuti.g:7245:2: ( ( '>=' ) )
+            // InternalJabuti.g:7190:1: ( ( ( '>=' ) ) )
+            // InternalJabuti.g:7191:2: ( ( '>=' ) )
             {
-            // InternalJabuti.g:7245:2: ( ( '>=' ) )
-            // InternalJabuti.g:7246:3: ( '>=' )
+            // InternalJabuti.g:7191:2: ( ( '>=' ) )
+            // InternalJabuti.g:7192:3: ( '>=' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_1_1_0()); 
-            // InternalJabuti.g:7247:3: ( '>=' )
-            // InternalJabuti.g:7248:4: '>='
+            // InternalJabuti.g:7193:3: ( '>=' )
+            // InternalJabuti.g:7194:4: '>='
             {
              before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_1_1_0()); 
             match(input,75,FOLLOW_2); 
@@ -22372,21 +22217,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_2"
-    // InternalJabuti.g:7259:1: rule__Comparison__SymbolAssignment_1_1_2 : ( ( '>' ) ) ;
+    // InternalJabuti.g:7205:1: rule__Comparison__SymbolAssignment_1_1_2 : ( ( '>' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7263:1: ( ( ( '>' ) ) )
-            // InternalJabuti.g:7264:2: ( ( '>' ) )
+            // InternalJabuti.g:7209:1: ( ( ( '>' ) ) )
+            // InternalJabuti.g:7210:2: ( ( '>' ) )
             {
-            // InternalJabuti.g:7264:2: ( ( '>' ) )
-            // InternalJabuti.g:7265:3: ( '>' )
+            // InternalJabuti.g:7210:2: ( ( '>' ) )
+            // InternalJabuti.g:7211:3: ( '>' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignKeyword_1_1_2_0()); 
-            // InternalJabuti.g:7266:3: ( '>' )
-            // InternalJabuti.g:7267:4: '>'
+            // InternalJabuti.g:7212:3: ( '>' )
+            // InternalJabuti.g:7213:4: '>'
             {
              before(grammarAccess.getComparisonAccess().getSymbolGreaterThanSignKeyword_1_1_2_0()); 
             match(input,76,FOLLOW_2); 
@@ -22417,21 +22262,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_3"
-    // InternalJabuti.g:7278:1: rule__Comparison__SymbolAssignment_1_1_3 : ( ( '<' ) ) ;
+    // InternalJabuti.g:7224:1: rule__Comparison__SymbolAssignment_1_1_3 : ( ( '<' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7282:1: ( ( ( '<' ) ) )
-            // InternalJabuti.g:7283:2: ( ( '<' ) )
+            // InternalJabuti.g:7228:1: ( ( ( '<' ) ) )
+            // InternalJabuti.g:7229:2: ( ( '<' ) )
             {
-            // InternalJabuti.g:7283:2: ( ( '<' ) )
-            // InternalJabuti.g:7284:3: ( '<' )
+            // InternalJabuti.g:7229:2: ( ( '<' ) )
+            // InternalJabuti.g:7230:3: ( '<' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolLessThanSignKeyword_1_1_3_0()); 
-            // InternalJabuti.g:7285:3: ( '<' )
-            // InternalJabuti.g:7286:4: '<'
+            // InternalJabuti.g:7231:3: ( '<' )
+            // InternalJabuti.g:7232:4: '<'
             {
              before(grammarAccess.getComparisonAccess().getSymbolLessThanSignKeyword_1_1_3_0()); 
             match(input,77,FOLLOW_2); 
@@ -22462,21 +22307,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_4"
-    // InternalJabuti.g:7297:1: rule__Comparison__SymbolAssignment_1_1_4 : ( ( '!=' ) ) ;
+    // InternalJabuti.g:7243:1: rule__Comparison__SymbolAssignment_1_1_4 : ( ( '!=' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7301:1: ( ( ( '!=' ) ) )
-            // InternalJabuti.g:7302:2: ( ( '!=' ) )
+            // InternalJabuti.g:7247:1: ( ( ( '!=' ) ) )
+            // InternalJabuti.g:7248:2: ( ( '!=' ) )
             {
-            // InternalJabuti.g:7302:2: ( ( '!=' ) )
-            // InternalJabuti.g:7303:3: ( '!=' )
+            // InternalJabuti.g:7248:2: ( ( '!=' ) )
+            // InternalJabuti.g:7249:3: ( '!=' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolExclamationMarkEqualsSignKeyword_1_1_4_0()); 
-            // InternalJabuti.g:7304:3: ( '!=' )
-            // InternalJabuti.g:7305:4: '!='
+            // InternalJabuti.g:7250:3: ( '!=' )
+            // InternalJabuti.g:7251:4: '!='
             {
              before(grammarAccess.getComparisonAccess().getSymbolExclamationMarkEqualsSignKeyword_1_1_4_0()); 
             match(input,78,FOLLOW_2); 
@@ -22507,21 +22352,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__SymbolAssignment_1_1_5"
-    // InternalJabuti.g:7316:1: rule__Comparison__SymbolAssignment_1_1_5 : ( ( '==' ) ) ;
+    // InternalJabuti.g:7262:1: rule__Comparison__SymbolAssignment_1_1_5 : ( ( '==' ) ) ;
     public final void rule__Comparison__SymbolAssignment_1_1_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7320:1: ( ( ( '==' ) ) )
-            // InternalJabuti.g:7321:2: ( ( '==' ) )
+            // InternalJabuti.g:7266:1: ( ( ( '==' ) ) )
+            // InternalJabuti.g:7267:2: ( ( '==' ) )
             {
-            // InternalJabuti.g:7321:2: ( ( '==' ) )
-            // InternalJabuti.g:7322:3: ( '==' )
+            // InternalJabuti.g:7267:2: ( ( '==' ) )
+            // InternalJabuti.g:7268:3: ( '==' )
             {
              before(grammarAccess.getComparisonAccess().getSymbolEqualsSignEqualsSignKeyword_1_1_5_0()); 
-            // InternalJabuti.g:7323:3: ( '==' )
-            // InternalJabuti.g:7324:4: '=='
+            // InternalJabuti.g:7269:3: ( '==' )
+            // InternalJabuti.g:7270:4: '=='
             {
              before(grammarAccess.getComparisonAccess().getSymbolEqualsSignEqualsSignKeyword_1_1_5_0()); 
             match(input,79,FOLLOW_2); 
@@ -22552,17 +22397,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Comparison__RightAssignment_1_2"
-    // InternalJabuti.g:7335:1: rule__Comparison__RightAssignment_1_2 : ( rulePlus ) ;
+    // InternalJabuti.g:7281:1: rule__Comparison__RightAssignment_1_2 : ( rulePlus ) ;
     public final void rule__Comparison__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7339:1: ( ( rulePlus ) )
-            // InternalJabuti.g:7340:2: ( rulePlus )
+            // InternalJabuti.g:7285:1: ( ( rulePlus ) )
+            // InternalJabuti.g:7286:2: ( rulePlus )
             {
-            // InternalJabuti.g:7340:2: ( rulePlus )
-            // InternalJabuti.g:7341:3: rulePlus
+            // InternalJabuti.g:7286:2: ( rulePlus )
+            // InternalJabuti.g:7287:3: rulePlus
             {
              before(grammarAccess.getComparisonAccess().getRightPlusParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22593,21 +22438,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__SymbolAssignment_1_1_0"
-    // InternalJabuti.g:7350:1: rule__Plus__SymbolAssignment_1_1_0 : ( ( '+' ) ) ;
+    // InternalJabuti.g:7296:1: rule__Plus__SymbolAssignment_1_1_0 : ( ( '+' ) ) ;
     public final void rule__Plus__SymbolAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7354:1: ( ( ( '+' ) ) )
-            // InternalJabuti.g:7355:2: ( ( '+' ) )
+            // InternalJabuti.g:7300:1: ( ( ( '+' ) ) )
+            // InternalJabuti.g:7301:2: ( ( '+' ) )
             {
-            // InternalJabuti.g:7355:2: ( ( '+' ) )
-            // InternalJabuti.g:7356:3: ( '+' )
+            // InternalJabuti.g:7301:2: ( ( '+' ) )
+            // InternalJabuti.g:7302:3: ( '+' )
             {
              before(grammarAccess.getPlusAccess().getSymbolPlusSignKeyword_1_1_0_0()); 
-            // InternalJabuti.g:7357:3: ( '+' )
-            // InternalJabuti.g:7358:4: '+'
+            // InternalJabuti.g:7303:3: ( '+' )
+            // InternalJabuti.g:7304:4: '+'
             {
              before(grammarAccess.getPlusAccess().getSymbolPlusSignKeyword_1_1_0_0()); 
             match(input,80,FOLLOW_2); 
@@ -22638,21 +22483,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__SymbolAssignment_1_1_1"
-    // InternalJabuti.g:7369:1: rule__Plus__SymbolAssignment_1_1_1 : ( ( '-' ) ) ;
+    // InternalJabuti.g:7315:1: rule__Plus__SymbolAssignment_1_1_1 : ( ( '-' ) ) ;
     public final void rule__Plus__SymbolAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7373:1: ( ( ( '-' ) ) )
-            // InternalJabuti.g:7374:2: ( ( '-' ) )
+            // InternalJabuti.g:7319:1: ( ( ( '-' ) ) )
+            // InternalJabuti.g:7320:2: ( ( '-' ) )
             {
-            // InternalJabuti.g:7374:2: ( ( '-' ) )
-            // InternalJabuti.g:7375:3: ( '-' )
+            // InternalJabuti.g:7320:2: ( ( '-' ) )
+            // InternalJabuti.g:7321:3: ( '-' )
             {
              before(grammarAccess.getPlusAccess().getSymbolHyphenMinusKeyword_1_1_1_0()); 
-            // InternalJabuti.g:7376:3: ( '-' )
-            // InternalJabuti.g:7377:4: '-'
+            // InternalJabuti.g:7322:3: ( '-' )
+            // InternalJabuti.g:7323:4: '-'
             {
              before(grammarAccess.getPlusAccess().getSymbolHyphenMinusKeyword_1_1_1_0()); 
             match(input,81,FOLLOW_2); 
@@ -22683,17 +22528,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Plus__RightAssignment_1_2"
-    // InternalJabuti.g:7388:1: rule__Plus__RightAssignment_1_2 : ( ruleFactor ) ;
+    // InternalJabuti.g:7334:1: rule__Plus__RightAssignment_1_2 : ( ruleFactor ) ;
     public final void rule__Plus__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7392:1: ( ( ruleFactor ) )
-            // InternalJabuti.g:7393:2: ( ruleFactor )
+            // InternalJabuti.g:7338:1: ( ( ruleFactor ) )
+            // InternalJabuti.g:7339:2: ( ruleFactor )
             {
-            // InternalJabuti.g:7393:2: ( ruleFactor )
-            // InternalJabuti.g:7394:3: ruleFactor
+            // InternalJabuti.g:7339:2: ( ruleFactor )
+            // InternalJabuti.g:7340:3: ruleFactor
             {
              before(grammarAccess.getPlusAccess().getRightFactorParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22724,21 +22569,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__SymbolAssignment_1_1_0"
-    // InternalJabuti.g:7403:1: rule__Factor__SymbolAssignment_1_1_0 : ( ( '*' ) ) ;
+    // InternalJabuti.g:7349:1: rule__Factor__SymbolAssignment_1_1_0 : ( ( '*' ) ) ;
     public final void rule__Factor__SymbolAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7407:1: ( ( ( '*' ) ) )
-            // InternalJabuti.g:7408:2: ( ( '*' ) )
+            // InternalJabuti.g:7353:1: ( ( ( '*' ) ) )
+            // InternalJabuti.g:7354:2: ( ( '*' ) )
             {
-            // InternalJabuti.g:7408:2: ( ( '*' ) )
-            // InternalJabuti.g:7409:3: ( '*' )
+            // InternalJabuti.g:7354:2: ( ( '*' ) )
+            // InternalJabuti.g:7355:3: ( '*' )
             {
              before(grammarAccess.getFactorAccess().getSymbolAsteriskKeyword_1_1_0_0()); 
-            // InternalJabuti.g:7410:3: ( '*' )
-            // InternalJabuti.g:7411:4: '*'
+            // InternalJabuti.g:7356:3: ( '*' )
+            // InternalJabuti.g:7357:4: '*'
             {
              before(grammarAccess.getFactorAccess().getSymbolAsteriskKeyword_1_1_0_0()); 
             match(input,82,FOLLOW_2); 
@@ -22769,21 +22614,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__SymbolAssignment_1_1_1"
-    // InternalJabuti.g:7422:1: rule__Factor__SymbolAssignment_1_1_1 : ( ( '/' ) ) ;
+    // InternalJabuti.g:7368:1: rule__Factor__SymbolAssignment_1_1_1 : ( ( '/' ) ) ;
     public final void rule__Factor__SymbolAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7426:1: ( ( ( '/' ) ) )
-            // InternalJabuti.g:7427:2: ( ( '/' ) )
+            // InternalJabuti.g:7372:1: ( ( ( '/' ) ) )
+            // InternalJabuti.g:7373:2: ( ( '/' ) )
             {
-            // InternalJabuti.g:7427:2: ( ( '/' ) )
-            // InternalJabuti.g:7428:3: ( '/' )
+            // InternalJabuti.g:7373:2: ( ( '/' ) )
+            // InternalJabuti.g:7374:3: ( '/' )
             {
              before(grammarAccess.getFactorAccess().getSymbolSolidusKeyword_1_1_1_0()); 
-            // InternalJabuti.g:7429:3: ( '/' )
-            // InternalJabuti.g:7430:4: '/'
+            // InternalJabuti.g:7375:3: ( '/' )
+            // InternalJabuti.g:7376:4: '/'
             {
              before(grammarAccess.getFactorAccess().getSymbolSolidusKeyword_1_1_1_0()); 
             match(input,83,FOLLOW_2); 
@@ -22814,17 +22659,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Factor__RightAssignment_1_2"
-    // InternalJabuti.g:7441:1: rule__Factor__RightAssignment_1_2 : ( ruleNegative ) ;
+    // InternalJabuti.g:7387:1: rule__Factor__RightAssignment_1_2 : ( ruleNegative ) ;
     public final void rule__Factor__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7445:1: ( ( ruleNegative ) )
-            // InternalJabuti.g:7446:2: ( ruleNegative )
+            // InternalJabuti.g:7391:1: ( ( ruleNegative ) )
+            // InternalJabuti.g:7392:2: ( ruleNegative )
             {
-            // InternalJabuti.g:7446:2: ( ruleNegative )
-            // InternalJabuti.g:7447:3: ruleNegative
+            // InternalJabuti.g:7392:2: ( ruleNegative )
+            // InternalJabuti.g:7393:3: ruleNegative
             {
              before(grammarAccess.getFactorAccess().getRightNegativeParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22855,21 +22700,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__SymbolAssignment_1_1"
-    // InternalJabuti.g:7456:1: rule__Negative__SymbolAssignment_1_1 : ( ( '-' ) ) ;
+    // InternalJabuti.g:7402:1: rule__Negative__SymbolAssignment_1_1 : ( ( '-' ) ) ;
     public final void rule__Negative__SymbolAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7460:1: ( ( ( '-' ) ) )
-            // InternalJabuti.g:7461:2: ( ( '-' ) )
+            // InternalJabuti.g:7406:1: ( ( ( '-' ) ) )
+            // InternalJabuti.g:7407:2: ( ( '-' ) )
             {
-            // InternalJabuti.g:7461:2: ( ( '-' ) )
-            // InternalJabuti.g:7462:3: ( '-' )
+            // InternalJabuti.g:7407:2: ( ( '-' ) )
+            // InternalJabuti.g:7408:3: ( '-' )
             {
              before(grammarAccess.getNegativeAccess().getSymbolHyphenMinusKeyword_1_1_0()); 
-            // InternalJabuti.g:7463:3: ( '-' )
-            // InternalJabuti.g:7464:4: '-'
+            // InternalJabuti.g:7409:3: ( '-' )
+            // InternalJabuti.g:7410:4: '-'
             {
              before(grammarAccess.getNegativeAccess().getSymbolHyphenMinusKeyword_1_1_0()); 
             match(input,81,FOLLOW_2); 
@@ -22900,17 +22745,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Negative__ExpressionAssignment_1_2"
-    // InternalJabuti.g:7475:1: rule__Negative__ExpressionAssignment_1_2 : ( rulePrimary ) ;
+    // InternalJabuti.g:7421:1: rule__Negative__ExpressionAssignment_1_2 : ( rulePrimary ) ;
     public final void rule__Negative__ExpressionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7479:1: ( ( rulePrimary ) )
-            // InternalJabuti.g:7480:2: ( rulePrimary )
+            // InternalJabuti.g:7425:1: ( ( rulePrimary ) )
+            // InternalJabuti.g:7426:2: ( rulePrimary )
             {
-            // InternalJabuti.g:7480:2: ( rulePrimary )
-            // InternalJabuti.g:7481:3: rulePrimary
+            // InternalJabuti.g:7426:2: ( rulePrimary )
+            // InternalJabuti.g:7427:3: rulePrimary
             {
              before(grammarAccess.getNegativeAccess().getExpressionPrimaryParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -22941,17 +22786,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ParenthesizedExpression__ExpressionAssignment_1"
-    // InternalJabuti.g:7490:1: rule__ParenthesizedExpression__ExpressionAssignment_1 : ( ruleExpression ) ;
+    // InternalJabuti.g:7436:1: rule__ParenthesizedExpression__ExpressionAssignment_1 : ( ruleExpression ) ;
     public final void rule__ParenthesizedExpression__ExpressionAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7494:1: ( ( ruleExpression ) )
-            // InternalJabuti.g:7495:2: ( ruleExpression )
+            // InternalJabuti.g:7440:1: ( ( ruleExpression ) )
+            // InternalJabuti.g:7441:2: ( ruleExpression )
             {
-            // InternalJabuti.g:7495:2: ( ruleExpression )
-            // InternalJabuti.g:7496:3: ruleExpression
+            // InternalJabuti.g:7441:2: ( ruleExpression )
+            // InternalJabuti.g:7442:3: ruleExpression
             {
              before(grammarAccess.getParenthesizedExpressionAccess().getExpressionExpressionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -22982,17 +22827,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NumericValue__ValueAssignment"
-    // InternalJabuti.g:7505:1: rule__NumericValue__ValueAssignment : ( RULE_INT ) ;
+    // InternalJabuti.g:7451:1: rule__NumericValue__ValueAssignment : ( RULE_INT ) ;
     public final void rule__NumericValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7509:1: ( ( RULE_INT ) )
-            // InternalJabuti.g:7510:2: ( RULE_INT )
+            // InternalJabuti.g:7455:1: ( ( RULE_INT ) )
+            // InternalJabuti.g:7456:2: ( RULE_INT )
             {
-            // InternalJabuti.g:7510:2: ( RULE_INT )
-            // InternalJabuti.g:7511:3: RULE_INT
+            // InternalJabuti.g:7456:2: ( RULE_INT )
+            // InternalJabuti.g:7457:3: RULE_INT
             {
              before(grammarAccess.getNumericValueAccess().getValueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -23019,17 +22864,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__StringValue__ValueAssignment"
-    // InternalJabuti.g:7520:1: rule__StringValue__ValueAssignment : ( RULE_STRING ) ;
+    // InternalJabuti.g:7466:1: rule__StringValue__ValueAssignment : ( RULE_STRING ) ;
     public final void rule__StringValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7524:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7525:2: ( RULE_STRING )
+            // InternalJabuti.g:7470:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7471:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7525:2: ( RULE_STRING )
-            // InternalJabuti.g:7526:3: RULE_STRING
+            // InternalJabuti.g:7471:2: ( RULE_STRING )
+            // InternalJabuti.g:7472:3: RULE_STRING
             {
              before(grammarAccess.getStringValueAccess().getValueSTRINGTerminalRuleCall_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -23056,21 +22901,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__VariableValue__ValueAssignment"
-    // InternalJabuti.g:7535:1: rule__VariableValue__ValueAssignment : ( ( RULE_ID ) ) ;
+    // InternalJabuti.g:7481:1: rule__VariableValue__ValueAssignment : ( ( RULE_ID ) ) ;
     public final void rule__VariableValue__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7539:1: ( ( ( RULE_ID ) ) )
-            // InternalJabuti.g:7540:2: ( ( RULE_ID ) )
+            // InternalJabuti.g:7485:1: ( ( ( RULE_ID ) ) )
+            // InternalJabuti.g:7486:2: ( ( RULE_ID ) )
             {
-            // InternalJabuti.g:7540:2: ( ( RULE_ID ) )
-            // InternalJabuti.g:7541:3: ( RULE_ID )
+            // InternalJabuti.g:7486:2: ( ( RULE_ID ) )
+            // InternalJabuti.g:7487:3: ( RULE_ID )
             {
              before(grammarAccess.getVariableValueAccess().getValueVariableCrossReference_0()); 
-            // InternalJabuti.g:7542:3: ( RULE_ID )
-            // InternalJabuti.g:7543:4: RULE_ID
+            // InternalJabuti.g:7488:3: ( RULE_ID )
+            // InternalJabuti.g:7489:4: RULE_ID
             {
              before(grammarAccess.getVariableValueAccess().getValueVariableIDTerminalRuleCall_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -23101,17 +22946,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variable__NameAssignment_0"
-    // InternalJabuti.g:7554:1: rule__Variable__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalJabuti.g:7500:1: rule__Variable__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Variable__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7558:1: ( ( RULE_ID ) )
-            // InternalJabuti.g:7559:2: ( RULE_ID )
+            // InternalJabuti.g:7504:1: ( ( RULE_ID ) )
+            // InternalJabuti.g:7505:2: ( RULE_ID )
             {
-            // InternalJabuti.g:7559:2: ( RULE_ID )
-            // InternalJabuti.g:7560:3: RULE_ID
+            // InternalJabuti.g:7505:2: ( RULE_ID )
+            // InternalJabuti.g:7506:3: RULE_ID
             {
              before(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -23138,17 +22983,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variable__ExpressionAssignment_2_0"
-    // InternalJabuti.g:7569:1: rule__Variable__ExpressionAssignment_2_0 : ( ruleExpression ) ;
+    // InternalJabuti.g:7515:1: rule__Variable__ExpressionAssignment_2_0 : ( ruleExpression ) ;
     public final void rule__Variable__ExpressionAssignment_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7573:1: ( ( ruleExpression ) )
-            // InternalJabuti.g:7574:2: ( ruleExpression )
+            // InternalJabuti.g:7519:1: ( ( ruleExpression ) )
+            // InternalJabuti.g:7520:2: ( ruleExpression )
             {
-            // InternalJabuti.g:7574:2: ( ruleExpression )
-            // InternalJabuti.g:7575:3: ruleExpression
+            // InternalJabuti.g:7520:2: ( ruleExpression )
+            // InternalJabuti.g:7521:3: ruleExpression
             {
              before(grammarAccess.getVariableAccess().getExpressionExpressionParserRuleCall_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -23179,21 +23024,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Variable__TermAssignment_2_1"
-    // InternalJabuti.g:7584:1: rule__Variable__TermAssignment_2_1 : ( ( rule__Variable__TermAlternatives_2_1_0 ) ) ;
+    // InternalJabuti.g:7530:1: rule__Variable__TermAssignment_2_1 : ( ( rule__Variable__TermAlternatives_2_1_0 ) ) ;
     public final void rule__Variable__TermAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7588:1: ( ( ( rule__Variable__TermAlternatives_2_1_0 ) ) )
-            // InternalJabuti.g:7589:2: ( ( rule__Variable__TermAlternatives_2_1_0 ) )
+            // InternalJabuti.g:7534:1: ( ( ( rule__Variable__TermAlternatives_2_1_0 ) ) )
+            // InternalJabuti.g:7535:2: ( ( rule__Variable__TermAlternatives_2_1_0 ) )
             {
-            // InternalJabuti.g:7589:2: ( ( rule__Variable__TermAlternatives_2_1_0 ) )
-            // InternalJabuti.g:7590:3: ( rule__Variable__TermAlternatives_2_1_0 )
+            // InternalJabuti.g:7535:2: ( ( rule__Variable__TermAlternatives_2_1_0 ) )
+            // InternalJabuti.g:7536:3: ( rule__Variable__TermAlternatives_2_1_0 )
             {
              before(grammarAccess.getVariableAccess().getTermAlternatives_2_1_0()); 
-            // InternalJabuti.g:7591:3: ( rule__Variable__TermAlternatives_2_1_0 )
-            // InternalJabuti.g:7591:4: rule__Variable__TermAlternatives_2_1_0
+            // InternalJabuti.g:7537:3: ( rule__Variable__TermAlternatives_2_1_0 )
+            // InternalJabuti.g:7537:4: rule__Variable__TermAlternatives_2_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Variable__TermAlternatives_2_1_0();
@@ -23226,21 +23071,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressionTerm__SymbolAssignment_1_1_0"
-    // InternalJabuti.g:7599:1: rule__ExpressionTerm__SymbolAssignment_1_1_0 : ( ( ',' ) ) ;
+    // InternalJabuti.g:7545:1: rule__ExpressionTerm__SymbolAssignment_1_1_0 : ( ( ',' ) ) ;
     public final void rule__ExpressionTerm__SymbolAssignment_1_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7603:1: ( ( ( ',' ) ) )
-            // InternalJabuti.g:7604:2: ( ( ',' ) )
+            // InternalJabuti.g:7549:1: ( ( ( ',' ) ) )
+            // InternalJabuti.g:7550:2: ( ( ',' ) )
             {
-            // InternalJabuti.g:7604:2: ( ( ',' ) )
-            // InternalJabuti.g:7605:3: ( ',' )
+            // InternalJabuti.g:7550:2: ( ( ',' ) )
+            // InternalJabuti.g:7551:3: ( ',' )
             {
              before(grammarAccess.getExpressionTermAccess().getSymbolCommaKeyword_1_1_0_0()); 
-            // InternalJabuti.g:7606:3: ( ',' )
-            // InternalJabuti.g:7607:4: ','
+            // InternalJabuti.g:7552:3: ( ',' )
+            // InternalJabuti.g:7553:4: ','
             {
              before(grammarAccess.getExpressionTermAccess().getSymbolCommaKeyword_1_1_0_0()); 
             match(input,11,FOLLOW_2); 
@@ -23271,21 +23116,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressionTerm__SymbolAssignment_1_1_1"
-    // InternalJabuti.g:7618:1: rule__ExpressionTerm__SymbolAssignment_1_1_1 : ( ( 'OR' ) ) ;
+    // InternalJabuti.g:7564:1: rule__ExpressionTerm__SymbolAssignment_1_1_1 : ( ( 'OR' ) ) ;
     public final void rule__ExpressionTerm__SymbolAssignment_1_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7622:1: ( ( ( 'OR' ) ) )
-            // InternalJabuti.g:7623:2: ( ( 'OR' ) )
+            // InternalJabuti.g:7568:1: ( ( ( 'OR' ) ) )
+            // InternalJabuti.g:7569:2: ( ( 'OR' ) )
             {
-            // InternalJabuti.g:7623:2: ( ( 'OR' ) )
-            // InternalJabuti.g:7624:3: ( 'OR' )
+            // InternalJabuti.g:7569:2: ( ( 'OR' ) )
+            // InternalJabuti.g:7570:3: ( 'OR' )
             {
              before(grammarAccess.getExpressionTermAccess().getSymbolORKeyword_1_1_1_0()); 
-            // InternalJabuti.g:7625:3: ( 'OR' )
-            // InternalJabuti.g:7626:4: 'OR'
+            // InternalJabuti.g:7571:3: ( 'OR' )
+            // InternalJabuti.g:7572:4: 'OR'
             {
              before(grammarAccess.getExpressionTermAccess().getSymbolORKeyword_1_1_1_0()); 
             match(input,13,FOLLOW_2); 
@@ -23316,17 +23161,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ExpressionTerm__RightAssignment_1_2"
-    // InternalJabuti.g:7637:1: rule__ExpressionTerm__RightAssignment_1_2 : ( ruleNegationTerm ) ;
+    // InternalJabuti.g:7583:1: rule__ExpressionTerm__RightAssignment_1_2 : ( ruleNegationTerm ) ;
     public final void rule__ExpressionTerm__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7641:1: ( ( ruleNegationTerm ) )
-            // InternalJabuti.g:7642:2: ( ruleNegationTerm )
+            // InternalJabuti.g:7587:1: ( ( ruleNegationTerm ) )
+            // InternalJabuti.g:7588:2: ( ruleNegationTerm )
             {
-            // InternalJabuti.g:7642:2: ( ruleNegationTerm )
-            // InternalJabuti.g:7643:3: ruleNegationTerm
+            // InternalJabuti.g:7588:2: ( ruleNegationTerm )
+            // InternalJabuti.g:7589:3: ruleNegationTerm
             {
              before(grammarAccess.getExpressionTermAccess().getRightNegationTermParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -23357,21 +23202,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NegationTerm__SymbolAssignment_1_1"
-    // InternalJabuti.g:7652:1: rule__NegationTerm__SymbolAssignment_1_1 : ( ( 'NOT' ) ) ;
+    // InternalJabuti.g:7598:1: rule__NegationTerm__SymbolAssignment_1_1 : ( ( 'NOT' ) ) ;
     public final void rule__NegationTerm__SymbolAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7656:1: ( ( ( 'NOT' ) ) )
-            // InternalJabuti.g:7657:2: ( ( 'NOT' ) )
+            // InternalJabuti.g:7602:1: ( ( ( 'NOT' ) ) )
+            // InternalJabuti.g:7603:2: ( ( 'NOT' ) )
             {
-            // InternalJabuti.g:7657:2: ( ( 'NOT' ) )
-            // InternalJabuti.g:7658:3: ( 'NOT' )
+            // InternalJabuti.g:7603:2: ( ( 'NOT' ) )
+            // InternalJabuti.g:7604:3: ( 'NOT' )
             {
              before(grammarAccess.getNegationTermAccess().getSymbolNOTKeyword_1_1_0()); 
-            // InternalJabuti.g:7659:3: ( 'NOT' )
-            // InternalJabuti.g:7660:4: 'NOT'
+            // InternalJabuti.g:7605:3: ( 'NOT' )
+            // InternalJabuti.g:7606:4: 'NOT'
             {
              before(grammarAccess.getNegationTermAccess().getSymbolNOTKeyword_1_1_0()); 
             match(input,84,FOLLOW_2); 
@@ -23402,17 +23247,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__NegationTerm__ExpressionTermAssignment_1_2"
-    // InternalJabuti.g:7671:1: rule__NegationTerm__ExpressionTermAssignment_1_2 : ( ruleTerm ) ;
+    // InternalJabuti.g:7617:1: rule__NegationTerm__ExpressionTermAssignment_1_2 : ( ruleTerm ) ;
     public final void rule__NegationTerm__ExpressionTermAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7675:1: ( ( ruleTerm ) )
-            // InternalJabuti.g:7676:2: ( ruleTerm )
+            // InternalJabuti.g:7621:1: ( ( ruleTerm ) )
+            // InternalJabuti.g:7622:2: ( ruleTerm )
             {
-            // InternalJabuti.g:7676:2: ( ruleTerm )
-            // InternalJabuti.g:7677:3: ruleTerm
+            // InternalJabuti.g:7622:2: ( ruleTerm )
+            // InternalJabuti.g:7623:3: ruleTerm
             {
              before(grammarAccess.getNegationTermAccess().getExpressionTermTermParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -23443,17 +23288,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__BeforeSymbolAssignment_0"
-    // InternalJabuti.g:7686:1: rule__ConditionalExpression__BeforeSymbolAssignment_0 : ( ruleLogicalOperator ) ;
+    // InternalJabuti.g:7632:1: rule__ConditionalExpression__BeforeSymbolAssignment_0 : ( ruleLogicalOperator ) ;
     public final void rule__ConditionalExpression__BeforeSymbolAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7690:1: ( ( ruleLogicalOperator ) )
-            // InternalJabuti.g:7691:2: ( ruleLogicalOperator )
+            // InternalJabuti.g:7636:1: ( ( ruleLogicalOperator ) )
+            // InternalJabuti.g:7637:2: ( ruleLogicalOperator )
             {
-            // InternalJabuti.g:7691:2: ( ruleLogicalOperator )
-            // InternalJabuti.g:7692:3: ruleLogicalOperator
+            // InternalJabuti.g:7637:2: ( ruleLogicalOperator )
+            // InternalJabuti.g:7638:3: ruleLogicalOperator
             {
              before(grammarAccess.getConditionalExpressionAccess().getBeforeSymbolLogicalOperatorParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -23484,17 +23329,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__ComparisonOperatorAssignment_3_1_0"
-    // InternalJabuti.g:7701:1: rule__ConditionalExpression__ComparisonOperatorAssignment_3_1_0 : ( ruleComparisonOperator ) ;
+    // InternalJabuti.g:7647:1: rule__ConditionalExpression__ComparisonOperatorAssignment_3_1_0 : ( ruleComparisonOperator ) ;
     public final void rule__ConditionalExpression__ComparisonOperatorAssignment_3_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7705:1: ( ( ruleComparisonOperator ) )
-            // InternalJabuti.g:7706:2: ( ruleComparisonOperator )
+            // InternalJabuti.g:7651:1: ( ( ruleComparisonOperator ) )
+            // InternalJabuti.g:7652:2: ( ruleComparisonOperator )
             {
-            // InternalJabuti.g:7706:2: ( ruleComparisonOperator )
-            // InternalJabuti.g:7707:3: ruleComparisonOperator
+            // InternalJabuti.g:7652:2: ( ruleComparisonOperator )
+            // InternalJabuti.g:7653:3: ruleComparisonOperator
             {
              before(grammarAccess.getConditionalExpressionAccess().getComparisonOperatorComparisonOperatorParserRuleCall_3_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -23525,17 +23370,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__LogicalOperatorAssignment_4_0"
-    // InternalJabuti.g:7716:1: rule__ConditionalExpression__LogicalOperatorAssignment_4_0 : ( ruleLogicalOperator ) ;
+    // InternalJabuti.g:7662:1: rule__ConditionalExpression__LogicalOperatorAssignment_4_0 : ( ruleLogicalOperator ) ;
     public final void rule__ConditionalExpression__LogicalOperatorAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7720:1: ( ( ruleLogicalOperator ) )
-            // InternalJabuti.g:7721:2: ( ruleLogicalOperator )
+            // InternalJabuti.g:7666:1: ( ( ruleLogicalOperator ) )
+            // InternalJabuti.g:7667:2: ( ruleLogicalOperator )
             {
-            // InternalJabuti.g:7721:2: ( ruleLogicalOperator )
-            // InternalJabuti.g:7722:3: ruleLogicalOperator
+            // InternalJabuti.g:7667:2: ( ruleLogicalOperator )
+            // InternalJabuti.g:7668:3: ruleLogicalOperator
             {
              before(grammarAccess.getConditionalExpressionAccess().getLogicalOperatorLogicalOperatorParserRuleCall_4_0_0()); 
             pushFollow(FOLLOW_2);
@@ -23566,17 +23411,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__ComparisonOperatorAssignment_4_2_0"
-    // InternalJabuti.g:7731:1: rule__ConditionalExpression__ComparisonOperatorAssignment_4_2_0 : ( ruleComparisonOperator ) ;
+    // InternalJabuti.g:7677:1: rule__ConditionalExpression__ComparisonOperatorAssignment_4_2_0 : ( ruleComparisonOperator ) ;
     public final void rule__ConditionalExpression__ComparisonOperatorAssignment_4_2_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7735:1: ( ( ruleComparisonOperator ) )
-            // InternalJabuti.g:7736:2: ( ruleComparisonOperator )
+            // InternalJabuti.g:7681:1: ( ( ruleComparisonOperator ) )
+            // InternalJabuti.g:7682:2: ( ruleComparisonOperator )
             {
-            // InternalJabuti.g:7736:2: ( ruleComparisonOperator )
-            // InternalJabuti.g:7737:3: ruleComparisonOperator
+            // InternalJabuti.g:7682:2: ( ruleComparisonOperator )
+            // InternalJabuti.g:7683:3: ruleComparisonOperator
             {
              before(grammarAccess.getConditionalExpressionAccess().getComparisonOperatorComparisonOperatorParserRuleCall_4_2_0_0()); 
             pushFollow(FOLLOW_2);
@@ -23607,17 +23452,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__ExpressionTermAssignment_8"
-    // InternalJabuti.g:7746:1: rule__ConditionalExpression__ExpressionTermAssignment_8 : ( ruleExpressionTerm ) ;
+    // InternalJabuti.g:7692:1: rule__ConditionalExpression__ExpressionTermAssignment_8 : ( ruleExpressionTerm ) ;
     public final void rule__ConditionalExpression__ExpressionTermAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7750:1: ( ( ruleExpressionTerm ) )
-            // InternalJabuti.g:7751:2: ( ruleExpressionTerm )
+            // InternalJabuti.g:7696:1: ( ( ruleExpressionTerm ) )
+            // InternalJabuti.g:7697:2: ( ruleExpressionTerm )
             {
-            // InternalJabuti.g:7751:2: ( ruleExpressionTerm )
-            // InternalJabuti.g:7752:3: ruleExpressionTerm
+            // InternalJabuti.g:7697:2: ( ruleExpressionTerm )
+            // InternalJabuti.g:7698:3: ruleExpressionTerm
             {
              before(grammarAccess.getConditionalExpressionAccess().getExpressionTermExpressionTermParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -23648,17 +23493,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ConditionalExpression__AfterSymbolAssignment_10"
-    // InternalJabuti.g:7761:1: rule__ConditionalExpression__AfterSymbolAssignment_10 : ( ruleLogicalOperator ) ;
+    // InternalJabuti.g:7707:1: rule__ConditionalExpression__AfterSymbolAssignment_10 : ( ruleLogicalOperator ) ;
     public final void rule__ConditionalExpression__AfterSymbolAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7765:1: ( ( ruleLogicalOperator ) )
-            // InternalJabuti.g:7766:2: ( ruleLogicalOperator )
+            // InternalJabuti.g:7711:1: ( ( ruleLogicalOperator ) )
+            // InternalJabuti.g:7712:2: ( ruleLogicalOperator )
             {
-            // InternalJabuti.g:7766:2: ( ruleLogicalOperator )
-            // InternalJabuti.g:7767:3: ruleLogicalOperator
+            // InternalJabuti.g:7712:2: ( ruleLogicalOperator )
+            // InternalJabuti.g:7713:3: ruleLogicalOperator
             {
              before(grammarAccess.getConditionalExpressionAccess().getAfterSymbolLogicalOperatorParserRuleCall_10_0()); 
             pushFollow(FOLLOW_2);
@@ -23689,21 +23534,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__LogicalOperator__SymbolAssignment"
-    // InternalJabuti.g:7776:1: rule__LogicalOperator__SymbolAssignment : ( ( rule__LogicalOperator__SymbolAlternatives_0 ) ) ;
+    // InternalJabuti.g:7722:1: rule__LogicalOperator__SymbolAssignment : ( ( rule__LogicalOperator__SymbolAlternatives_0 ) ) ;
     public final void rule__LogicalOperator__SymbolAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7780:1: ( ( ( rule__LogicalOperator__SymbolAlternatives_0 ) ) )
-            // InternalJabuti.g:7781:2: ( ( rule__LogicalOperator__SymbolAlternatives_0 ) )
+            // InternalJabuti.g:7726:1: ( ( ( rule__LogicalOperator__SymbolAlternatives_0 ) ) )
+            // InternalJabuti.g:7727:2: ( ( rule__LogicalOperator__SymbolAlternatives_0 ) )
             {
-            // InternalJabuti.g:7781:2: ( ( rule__LogicalOperator__SymbolAlternatives_0 ) )
-            // InternalJabuti.g:7782:3: ( rule__LogicalOperator__SymbolAlternatives_0 )
+            // InternalJabuti.g:7727:2: ( ( rule__LogicalOperator__SymbolAlternatives_0 ) )
+            // InternalJabuti.g:7728:3: ( rule__LogicalOperator__SymbolAlternatives_0 )
             {
              before(grammarAccess.getLogicalOperatorAccess().getSymbolAlternatives_0()); 
-            // InternalJabuti.g:7783:3: ( rule__LogicalOperator__SymbolAlternatives_0 )
-            // InternalJabuti.g:7783:4: rule__LogicalOperator__SymbolAlternatives_0
+            // InternalJabuti.g:7729:3: ( rule__LogicalOperator__SymbolAlternatives_0 )
+            // InternalJabuti.g:7729:4: rule__LogicalOperator__SymbolAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__LogicalOperator__SymbolAlternatives_0();
@@ -23736,17 +23581,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__StartAssignment_2"
-    // InternalJabuti.g:7791:1: rule__TimeInterval__StartAssignment_2 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7737:1: rule__TimeInterval__StartAssignment_2 : ( RULE_STRING ) ;
     public final void rule__TimeInterval__StartAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7795:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7796:2: ( RULE_STRING )
+            // InternalJabuti.g:7741:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7742:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7796:2: ( RULE_STRING )
-            // InternalJabuti.g:7797:3: RULE_STRING
+            // InternalJabuti.g:7742:2: ( RULE_STRING )
+            // InternalJabuti.g:7743:3: RULE_STRING
             {
              before(grammarAccess.getTimeIntervalAccess().getStartSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -23773,17 +23618,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__TimeInterval__EndAssignment_4"
-    // InternalJabuti.g:7806:1: rule__TimeInterval__EndAssignment_4 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7752:1: rule__TimeInterval__EndAssignment_4 : ( RULE_STRING ) ;
     public final void rule__TimeInterval__EndAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7810:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7811:2: ( RULE_STRING )
+            // InternalJabuti.g:7756:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7757:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7811:2: ( RULE_STRING )
-            // InternalJabuti.g:7812:3: RULE_STRING
+            // InternalJabuti.g:7757:2: ( RULE_STRING )
+            // InternalJabuti.g:7758:3: RULE_STRING
             {
              before(grammarAccess.getTimeIntervalAccess().getEndSTRINGTerminalRuleCall_4_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -23810,17 +23655,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__FrequencyAssignment_2"
-    // InternalJabuti.g:7821:1: rule__SessionInterval__FrequencyAssignment_2 : ( RULE_INT ) ;
+    // InternalJabuti.g:7767:1: rule__SessionInterval__FrequencyAssignment_2 : ( RULE_INT ) ;
     public final void rule__SessionInterval__FrequencyAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7825:1: ( ( RULE_INT ) )
-            // InternalJabuti.g:7826:2: ( RULE_INT )
+            // InternalJabuti.g:7771:1: ( ( RULE_INT ) )
+            // InternalJabuti.g:7772:2: ( RULE_INT )
             {
-            // InternalJabuti.g:7826:2: ( RULE_INT )
-            // InternalJabuti.g:7827:3: RULE_INT
+            // InternalJabuti.g:7772:2: ( RULE_INT )
+            // InternalJabuti.g:7773:3: RULE_INT
             {
              before(grammarAccess.getSessionIntervalAccess().getFrequencyINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -23847,17 +23692,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__TimeUnitAssignment_3"
-    // InternalJabuti.g:7836:1: rule__SessionInterval__TimeUnitAssignment_3 : ( ruleTimeUnit ) ;
+    // InternalJabuti.g:7782:1: rule__SessionInterval__TimeUnitAssignment_3 : ( ruleTimeUnit ) ;
     public final void rule__SessionInterval__TimeUnitAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7840:1: ( ( ruleTimeUnit ) )
-            // InternalJabuti.g:7841:2: ( ruleTimeUnit )
+            // InternalJabuti.g:7786:1: ( ( ruleTimeUnit ) )
+            // InternalJabuti.g:7787:2: ( ruleTimeUnit )
             {
-            // InternalJabuti.g:7841:2: ( ruleTimeUnit )
-            // InternalJabuti.g:7842:3: ruleTimeUnit
+            // InternalJabuti.g:7787:2: ( ruleTimeUnit )
+            // InternalJabuti.g:7788:3: ruleTimeUnit
             {
              before(grammarAccess.getSessionIntervalAccess().getTimeUnitTimeUnitEnumRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -23888,17 +23733,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__MessageContentAssignment_4_1_0"
-    // InternalJabuti.g:7851:1: rule__SessionInterval__MessageContentAssignment_4_1_0 : ( ruleMessageContent ) ;
+    // InternalJabuti.g:7797:1: rule__SessionInterval__MessageContentAssignment_4_1_0 : ( ruleMessageContent ) ;
     public final void rule__SessionInterval__MessageContentAssignment_4_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7855:1: ( ( ruleMessageContent ) )
-            // InternalJabuti.g:7856:2: ( ruleMessageContent )
+            // InternalJabuti.g:7801:1: ( ( ruleMessageContent ) )
+            // InternalJabuti.g:7802:2: ( ruleMessageContent )
             {
-            // InternalJabuti.g:7856:2: ( ruleMessageContent )
-            // InternalJabuti.g:7857:3: ruleMessageContent
+            // InternalJabuti.g:7802:2: ( ruleMessageContent )
+            // InternalJabuti.g:7803:3: ruleMessageContent
             {
              before(grammarAccess.getSessionIntervalAccess().getMessageContentMessageContentParserRuleCall_4_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -23929,17 +23774,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__ValueAssignment_4_1_1"
-    // InternalJabuti.g:7866:1: rule__SessionInterval__ValueAssignment_4_1_1 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7812:1: rule__SessionInterval__ValueAssignment_4_1_1 : ( RULE_STRING ) ;
     public final void rule__SessionInterval__ValueAssignment_4_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7870:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7871:2: ( RULE_STRING )
+            // InternalJabuti.g:7816:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7817:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7871:2: ( RULE_STRING )
-            // InternalJabuti.g:7872:3: RULE_STRING
+            // InternalJabuti.g:7817:2: ( RULE_STRING )
+            // InternalJabuti.g:7818:3: RULE_STRING
             {
              before(grammarAccess.getSessionIntervalAccess().getValueSTRINGTerminalRuleCall_4_1_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -23966,21 +23811,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SessionInterval__VariableAssignment_4_1_2"
-    // InternalJabuti.g:7881:1: rule__SessionInterval__VariableAssignment_4_1_2 : ( ( RULE_ID ) ) ;
+    // InternalJabuti.g:7827:1: rule__SessionInterval__VariableAssignment_4_1_2 : ( ( RULE_ID ) ) ;
     public final void rule__SessionInterval__VariableAssignment_4_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7885:1: ( ( ( RULE_ID ) ) )
-            // InternalJabuti.g:7886:2: ( ( RULE_ID ) )
+            // InternalJabuti.g:7831:1: ( ( ( RULE_ID ) ) )
+            // InternalJabuti.g:7832:2: ( ( RULE_ID ) )
             {
-            // InternalJabuti.g:7886:2: ( ( RULE_ID ) )
-            // InternalJabuti.g:7887:3: ( RULE_ID )
+            // InternalJabuti.g:7832:2: ( ( RULE_ID ) )
+            // InternalJabuti.g:7833:3: ( RULE_ID )
             {
              before(grammarAccess.getSessionIntervalAccess().getVariableVariableCrossReference_4_1_2_0()); 
-            // InternalJabuti.g:7888:3: ( RULE_ID )
-            // InternalJabuti.g:7889:4: RULE_ID
+            // InternalJabuti.g:7834:3: ( RULE_ID )
+            // InternalJabuti.g:7835:4: RULE_ID
             {
              before(grammarAccess.getSessionIntervalAccess().getVariableVariableIDTerminalRuleCall_4_1_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -24011,17 +23856,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Timeout__SecondsAssignment_2"
-    // InternalJabuti.g:7900:1: rule__Timeout__SecondsAssignment_2 : ( RULE_INT ) ;
+    // InternalJabuti.g:7846:1: rule__Timeout__SecondsAssignment_2 : ( RULE_INT ) ;
     public final void rule__Timeout__SecondsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7904:1: ( ( RULE_INT ) )
-            // InternalJabuti.g:7905:2: ( RULE_INT )
+            // InternalJabuti.g:7850:1: ( ( RULE_INT ) )
+            // InternalJabuti.g:7851:2: ( RULE_INT )
             {
-            // InternalJabuti.g:7905:2: ( RULE_INT )
-            // InternalJabuti.g:7906:3: RULE_INT
+            // InternalJabuti.g:7851:2: ( RULE_INT )
+            // InternalJabuti.g:7852:3: RULE_INT
             {
              before(grammarAccess.getTimeoutAccess().getSecondsINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -24048,17 +23893,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MaxNumberOfOperation__OperationsNumberAssignment_2"
-    // InternalJabuti.g:7915:1: rule__MaxNumberOfOperation__OperationsNumberAssignment_2 : ( RULE_INT ) ;
+    // InternalJabuti.g:7861:1: rule__MaxNumberOfOperation__OperationsNumberAssignment_2 : ( RULE_INT ) ;
     public final void rule__MaxNumberOfOperation__OperationsNumberAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7919:1: ( ( RULE_INT ) )
-            // InternalJabuti.g:7920:2: ( RULE_INT )
+            // InternalJabuti.g:7865:1: ( ( RULE_INT ) )
+            // InternalJabuti.g:7866:2: ( RULE_INT )
             {
-            // InternalJabuti.g:7920:2: ( RULE_INT )
-            // InternalJabuti.g:7921:3: RULE_INT
+            // InternalJabuti.g:7866:2: ( RULE_INT )
+            // InternalJabuti.g:7867:3: RULE_INT
             {
              before(grammarAccess.getMaxNumberOfOperationAccess().getOperationsNumberINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -24084,26 +23929,26 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MaxNumberOfOperation__OperationsNumberAssignment_2"
 
 
-    // $ANTLR start "rule__MaxNumberOfOperation__TimeUnitAssignment_3_1"
-    // InternalJabuti.g:7930:1: rule__MaxNumberOfOperation__TimeUnitAssignment_3_1 : ( ruleTimeUnit ) ;
-    public final void rule__MaxNumberOfOperation__TimeUnitAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__MaxNumberOfOperation__PerTimeAssignment_3"
+    // InternalJabuti.g:7876:1: rule__MaxNumberOfOperation__PerTimeAssignment_3 : ( ruleTimeUnitSpec ) ;
+    public final void rule__MaxNumberOfOperation__PerTimeAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7934:1: ( ( ruleTimeUnit ) )
-            // InternalJabuti.g:7935:2: ( ruleTimeUnit )
+            // InternalJabuti.g:7880:1: ( ( ruleTimeUnitSpec ) )
+            // InternalJabuti.g:7881:2: ( ruleTimeUnitSpec )
             {
-            // InternalJabuti.g:7935:2: ( ruleTimeUnit )
-            // InternalJabuti.g:7936:3: ruleTimeUnit
+            // InternalJabuti.g:7881:2: ( ruleTimeUnitSpec )
+            // InternalJabuti.g:7882:3: ruleTimeUnitSpec
             {
-             before(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitTimeUnitEnumRuleCall_3_1_0()); 
+             before(grammarAccess.getMaxNumberOfOperationAccess().getPerTimeTimeUnitSpecParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
-            ruleTimeUnit();
+            ruleTimeUnitSpec();
 
             state._fsp--;
 
-             after(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitTimeUnitEnumRuleCall_3_1_0()); 
+             after(grammarAccess.getMaxNumberOfOperationAccess().getPerTimeTimeUnitSpecParserRuleCall_3_0()); 
 
             }
 
@@ -24122,21 +23967,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MaxNumberOfOperation__TimeUnitAssignment_3_1"
+    // $ANTLR end "rule__MaxNumberOfOperation__PerTimeAssignment_3"
 
 
     // $ANTLR start "rule__WeekDaysInterval__StartAssignment_2"
-    // InternalJabuti.g:7945:1: rule__WeekDaysInterval__StartAssignment_2 : ( ruleWeekDay ) ;
+    // InternalJabuti.g:7891:1: rule__WeekDaysInterval__StartAssignment_2 : ( ruleWeekDay ) ;
     public final void rule__WeekDaysInterval__StartAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7949:1: ( ( ruleWeekDay ) )
-            // InternalJabuti.g:7950:2: ( ruleWeekDay )
+            // InternalJabuti.g:7895:1: ( ( ruleWeekDay ) )
+            // InternalJabuti.g:7896:2: ( ruleWeekDay )
             {
-            // InternalJabuti.g:7950:2: ( ruleWeekDay )
-            // InternalJabuti.g:7951:3: ruleWeekDay
+            // InternalJabuti.g:7896:2: ( ruleWeekDay )
+            // InternalJabuti.g:7897:3: ruleWeekDay
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getStartWeekDayEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24167,17 +24012,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__WeekDaysInterval__EndAssignment_4"
-    // InternalJabuti.g:7960:1: rule__WeekDaysInterval__EndAssignment_4 : ( ruleWeekDay ) ;
+    // InternalJabuti.g:7906:1: rule__WeekDaysInterval__EndAssignment_4 : ( ruleWeekDay ) ;
     public final void rule__WeekDaysInterval__EndAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7964:1: ( ( ruleWeekDay ) )
-            // InternalJabuti.g:7965:2: ( ruleWeekDay )
+            // InternalJabuti.g:7910:1: ( ( ruleWeekDay ) )
+            // InternalJabuti.g:7911:2: ( ruleWeekDay )
             {
-            // InternalJabuti.g:7965:2: ( ruleWeekDay )
-            // InternalJabuti.g:7966:3: ruleWeekDay
+            // InternalJabuti.g:7911:2: ( ruleWeekDay )
+            // InternalJabuti.g:7912:3: ruleWeekDay
             {
              before(grammarAccess.getWeekDaysIntervalAccess().getEndWeekDayEnumRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -24208,17 +24053,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ReturnTypeAssignment_2"
-    // InternalJabuti.g:7975:1: rule__MessageContent__ReturnTypeAssignment_2 : ( ruleDataType ) ;
+    // InternalJabuti.g:7921:1: rule__MessageContent__ReturnTypeAssignment_2 : ( ruleDataType ) ;
     public final void rule__MessageContent__ReturnTypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7979:1: ( ( ruleDataType ) )
-            // InternalJabuti.g:7980:2: ( ruleDataType )
+            // InternalJabuti.g:7925:1: ( ( ruleDataType ) )
+            // InternalJabuti.g:7926:2: ( ruleDataType )
             {
-            // InternalJabuti.g:7980:2: ( ruleDataType )
-            // InternalJabuti.g:7981:3: ruleDataType
+            // InternalJabuti.g:7926:2: ( ruleDataType )
+            // InternalJabuti.g:7927:3: ruleDataType
             {
              before(grammarAccess.getMessageContentAccess().getReturnTypeDataTypeEnumRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -24249,17 +24094,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ContentAssignment_4_0"
-    // InternalJabuti.g:7990:1: rule__MessageContent__ContentAssignment_4_0 : ( RULE_STRING ) ;
+    // InternalJabuti.g:7936:1: rule__MessageContent__ContentAssignment_4_0 : ( RULE_STRING ) ;
     public final void rule__MessageContent__ContentAssignment_4_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:7994:1: ( ( RULE_STRING ) )
-            // InternalJabuti.g:7995:2: ( RULE_STRING )
+            // InternalJabuti.g:7940:1: ( ( RULE_STRING ) )
+            // InternalJabuti.g:7941:2: ( RULE_STRING )
             {
-            // InternalJabuti.g:7995:2: ( RULE_STRING )
-            // InternalJabuti.g:7996:3: RULE_STRING
+            // InternalJabuti.g:7941:2: ( RULE_STRING )
+            // InternalJabuti.g:7942:3: RULE_STRING
             {
              before(grammarAccess.getMessageContentAccess().getContentSTRINGTerminalRuleCall_4_0_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -24286,21 +24131,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__VariableAssignment_4_1"
-    // InternalJabuti.g:8005:1: rule__MessageContent__VariableAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // InternalJabuti.g:7951:1: rule__MessageContent__VariableAssignment_4_1 : ( ( RULE_ID ) ) ;
     public final void rule__MessageContent__VariableAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8009:1: ( ( ( RULE_ID ) ) )
-            // InternalJabuti.g:8010:2: ( ( RULE_ID ) )
+            // InternalJabuti.g:7955:1: ( ( ( RULE_ID ) ) )
+            // InternalJabuti.g:7956:2: ( ( RULE_ID ) )
             {
-            // InternalJabuti.g:8010:2: ( ( RULE_ID ) )
-            // InternalJabuti.g:8011:3: ( RULE_ID )
+            // InternalJabuti.g:7956:2: ( ( RULE_ID ) )
+            // InternalJabuti.g:7957:3: ( RULE_ID )
             {
              before(grammarAccess.getMessageContentAccess().getVariableVariableCrossReference_4_1_0()); 
-            // InternalJabuti.g:8012:3: ( RULE_ID )
-            // InternalJabuti.g:8013:4: RULE_ID
+            // InternalJabuti.g:7958:3: ( RULE_ID )
+            // InternalJabuti.g:7959:4: RULE_ID
             {
              before(grammarAccess.getMessageContentAccess().getVariableVariableIDTerminalRuleCall_4_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -24331,17 +24176,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ComparisonOperatorAssignment_6_0"
-    // InternalJabuti.g:8024:1: rule__MessageContent__ComparisonOperatorAssignment_6_0 : ( ruleComparisonOperator ) ;
+    // InternalJabuti.g:7970:1: rule__MessageContent__ComparisonOperatorAssignment_6_0 : ( ruleComparisonOperator ) ;
     public final void rule__MessageContent__ComparisonOperatorAssignment_6_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8028:1: ( ( ruleComparisonOperator ) )
-            // InternalJabuti.g:8029:2: ( ruleComparisonOperator )
+            // InternalJabuti.g:7974:1: ( ( ruleComparisonOperator ) )
+            // InternalJabuti.g:7975:2: ( ruleComparisonOperator )
             {
-            // InternalJabuti.g:8029:2: ( ruleComparisonOperator )
-            // InternalJabuti.g:8030:3: ruleComparisonOperator
+            // InternalJabuti.g:7975:2: ( ruleComparisonOperator )
+            // InternalJabuti.g:7976:3: ruleComparisonOperator
             {
              before(grammarAccess.getMessageContentAccess().getComparisonOperatorComparisonOperatorParserRuleCall_6_0_0()); 
             pushFollow(FOLLOW_2);
@@ -24372,17 +24217,17 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__MessageContent__ExpressionAssignment_6_1"
-    // InternalJabuti.g:8039:1: rule__MessageContent__ExpressionAssignment_6_1 : ( ruleExpression ) ;
+    // InternalJabuti.g:7985:1: rule__MessageContent__ExpressionAssignment_6_1 : ( ruleExpression ) ;
     public final void rule__MessageContent__ExpressionAssignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8043:1: ( ( ruleExpression ) )
-            // InternalJabuti.g:8044:2: ( ruleExpression )
+            // InternalJabuti.g:7989:1: ( ( ruleExpression ) )
+            // InternalJabuti.g:7990:2: ( ruleExpression )
             {
-            // InternalJabuti.g:8044:2: ( ruleExpression )
-            // InternalJabuti.g:8045:3: ruleExpression
+            // InternalJabuti.g:7990:2: ( ruleExpression )
+            // InternalJabuti.g:7991:3: ruleExpression
             {
              before(grammarAccess.getMessageContentAccess().getExpressionExpressionParserRuleCall_6_1_0()); 
             pushFollow(FOLLOW_2);
@@ -24412,26 +24257,26 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__MessageContent__ExpressionAssignment_6_1"
 
 
-    // $ANTLR start "rule__MessageContent__TimeUnitSpecAssignment_6_2"
-    // InternalJabuti.g:8054:1: rule__MessageContent__TimeUnitSpecAssignment_6_2 : ( ruleTimeUnitSpec ) ;
-    public final void rule__MessageContent__TimeUnitSpecAssignment_6_2() throws RecognitionException {
+    // $ANTLR start "rule__MessageContent__PerTimeAssignment_6_2"
+    // InternalJabuti.g:8000:1: rule__MessageContent__PerTimeAssignment_6_2 : ( ruleTimeUnitSpec ) ;
+    public final void rule__MessageContent__PerTimeAssignment_6_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8058:1: ( ( ruleTimeUnitSpec ) )
-            // InternalJabuti.g:8059:2: ( ruleTimeUnitSpec )
+            // InternalJabuti.g:8004:1: ( ( ruleTimeUnitSpec ) )
+            // InternalJabuti.g:8005:2: ( ruleTimeUnitSpec )
             {
-            // InternalJabuti.g:8059:2: ( ruleTimeUnitSpec )
-            // InternalJabuti.g:8060:3: ruleTimeUnitSpec
+            // InternalJabuti.g:8005:2: ( ruleTimeUnitSpec )
+            // InternalJabuti.g:8006:3: ruleTimeUnitSpec
             {
-             before(grammarAccess.getMessageContentAccess().getTimeUnitSpecTimeUnitSpecParserRuleCall_6_2_0()); 
+             before(grammarAccess.getMessageContentAccess().getPerTimeTimeUnitSpecParserRuleCall_6_2_0()); 
             pushFollow(FOLLOW_2);
             ruleTimeUnitSpec();
 
             state._fsp--;
 
-             after(grammarAccess.getMessageContentAccess().getTimeUnitSpecTimeUnitSpecParserRuleCall_6_2_0()); 
+             after(grammarAccess.getMessageContentAccess().getPerTimeTimeUnitSpecParserRuleCall_6_2_0()); 
 
             }
 
@@ -24450,21 +24295,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__MessageContent__TimeUnitSpecAssignment_6_2"
+    // $ANTLR end "rule__MessageContent__PerTimeAssignment_6_2"
 
 
     // $ANTLR start "rule__TimeUnitSpec__TimeUnitAssignment_1"
-    // InternalJabuti.g:8069:1: rule__TimeUnitSpec__TimeUnitAssignment_1 : ( ruleTimeUnit ) ;
+    // InternalJabuti.g:8015:1: rule__TimeUnitSpec__TimeUnitAssignment_1 : ( ruleTimeUnit ) ;
     public final void rule__TimeUnitSpec__TimeUnitAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8073:1: ( ( ruleTimeUnit ) )
-            // InternalJabuti.g:8074:2: ( ruleTimeUnit )
+            // InternalJabuti.g:8019:1: ( ( ruleTimeUnit ) )
+            // InternalJabuti.g:8020:2: ( ruleTimeUnit )
             {
-            // InternalJabuti.g:8074:2: ( ruleTimeUnit )
-            // InternalJabuti.g:8075:3: ruleTimeUnit
+            // InternalJabuti.g:8020:2: ( ruleTimeUnit )
+            // InternalJabuti.g:8021:3: ruleTimeUnit
             {
              before(grammarAccess.getTimeUnitSpecAccess().getTimeUnitTimeUnitEnumRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -24495,21 +24340,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonOperator__SymbolAssignment_0"
-    // InternalJabuti.g:8084:1: rule__ComparisonOperator__SymbolAssignment_0 : ( ( '<=' ) ) ;
+    // InternalJabuti.g:8030:1: rule__ComparisonOperator__SymbolAssignment_0 : ( ( '<=' ) ) ;
     public final void rule__ComparisonOperator__SymbolAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8088:1: ( ( ( '<=' ) ) )
-            // InternalJabuti.g:8089:2: ( ( '<=' ) )
+            // InternalJabuti.g:8034:1: ( ( ( '<=' ) ) )
+            // InternalJabuti.g:8035:2: ( ( '<=' ) )
             {
-            // InternalJabuti.g:8089:2: ( ( '<=' ) )
-            // InternalJabuti.g:8090:3: ( '<=' )
+            // InternalJabuti.g:8035:2: ( ( '<=' ) )
+            // InternalJabuti.g:8036:3: ( '<=' )
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolLessThanSignEqualsSignKeyword_0_0()); 
-            // InternalJabuti.g:8091:3: ( '<=' )
-            // InternalJabuti.g:8092:4: '<='
+            // InternalJabuti.g:8037:3: ( '<=' )
+            // InternalJabuti.g:8038:4: '<='
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolLessThanSignEqualsSignKeyword_0_0()); 
             match(input,74,FOLLOW_2); 
@@ -24540,21 +24385,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonOperator__SymbolAssignment_1"
-    // InternalJabuti.g:8103:1: rule__ComparisonOperator__SymbolAssignment_1 : ( ( '>=' ) ) ;
+    // InternalJabuti.g:8049:1: rule__ComparisonOperator__SymbolAssignment_1 : ( ( '>=' ) ) ;
     public final void rule__ComparisonOperator__SymbolAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8107:1: ( ( ( '>=' ) ) )
-            // InternalJabuti.g:8108:2: ( ( '>=' ) )
+            // InternalJabuti.g:8053:1: ( ( ( '>=' ) ) )
+            // InternalJabuti.g:8054:2: ( ( '>=' ) )
             {
-            // InternalJabuti.g:8108:2: ( ( '>=' ) )
-            // InternalJabuti.g:8109:3: ( '>=' )
+            // InternalJabuti.g:8054:2: ( ( '>=' ) )
+            // InternalJabuti.g:8055:3: ( '>=' )
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_0()); 
-            // InternalJabuti.g:8110:3: ( '>=' )
-            // InternalJabuti.g:8111:4: '>='
+            // InternalJabuti.g:8056:3: ( '>=' )
+            // InternalJabuti.g:8057:4: '>='
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolGreaterThanSignEqualsSignKeyword_1_0()); 
             match(input,75,FOLLOW_2); 
@@ -24585,21 +24430,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonOperator__SymbolAssignment_2"
-    // InternalJabuti.g:8122:1: rule__ComparisonOperator__SymbolAssignment_2 : ( ( '>' ) ) ;
+    // InternalJabuti.g:8068:1: rule__ComparisonOperator__SymbolAssignment_2 : ( ( '>' ) ) ;
     public final void rule__ComparisonOperator__SymbolAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8126:1: ( ( ( '>' ) ) )
-            // InternalJabuti.g:8127:2: ( ( '>' ) )
+            // InternalJabuti.g:8072:1: ( ( ( '>' ) ) )
+            // InternalJabuti.g:8073:2: ( ( '>' ) )
             {
-            // InternalJabuti.g:8127:2: ( ( '>' ) )
-            // InternalJabuti.g:8128:3: ( '>' )
+            // InternalJabuti.g:8073:2: ( ( '>' ) )
+            // InternalJabuti.g:8074:3: ( '>' )
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolGreaterThanSignKeyword_2_0()); 
-            // InternalJabuti.g:8129:3: ( '>' )
-            // InternalJabuti.g:8130:4: '>'
+            // InternalJabuti.g:8075:3: ( '>' )
+            // InternalJabuti.g:8076:4: '>'
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolGreaterThanSignKeyword_2_0()); 
             match(input,76,FOLLOW_2); 
@@ -24630,21 +24475,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonOperator__SymbolAssignment_3"
-    // InternalJabuti.g:8141:1: rule__ComparisonOperator__SymbolAssignment_3 : ( ( '<' ) ) ;
+    // InternalJabuti.g:8087:1: rule__ComparisonOperator__SymbolAssignment_3 : ( ( '<' ) ) ;
     public final void rule__ComparisonOperator__SymbolAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8145:1: ( ( ( '<' ) ) )
-            // InternalJabuti.g:8146:2: ( ( '<' ) )
+            // InternalJabuti.g:8091:1: ( ( ( '<' ) ) )
+            // InternalJabuti.g:8092:2: ( ( '<' ) )
             {
-            // InternalJabuti.g:8146:2: ( ( '<' ) )
-            // InternalJabuti.g:8147:3: ( '<' )
+            // InternalJabuti.g:8092:2: ( ( '<' ) )
+            // InternalJabuti.g:8093:3: ( '<' )
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolLessThanSignKeyword_3_0()); 
-            // InternalJabuti.g:8148:3: ( '<' )
-            // InternalJabuti.g:8149:4: '<'
+            // InternalJabuti.g:8094:3: ( '<' )
+            // InternalJabuti.g:8095:4: '<'
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolLessThanSignKeyword_3_0()); 
             match(input,77,FOLLOW_2); 
@@ -24675,21 +24520,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonOperator__SymbolAssignment_4"
-    // InternalJabuti.g:8160:1: rule__ComparisonOperator__SymbolAssignment_4 : ( ( '!=' ) ) ;
+    // InternalJabuti.g:8106:1: rule__ComparisonOperator__SymbolAssignment_4 : ( ( '!=' ) ) ;
     public final void rule__ComparisonOperator__SymbolAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8164:1: ( ( ( '!=' ) ) )
-            // InternalJabuti.g:8165:2: ( ( '!=' ) )
+            // InternalJabuti.g:8110:1: ( ( ( '!=' ) ) )
+            // InternalJabuti.g:8111:2: ( ( '!=' ) )
             {
-            // InternalJabuti.g:8165:2: ( ( '!=' ) )
-            // InternalJabuti.g:8166:3: ( '!=' )
+            // InternalJabuti.g:8111:2: ( ( '!=' ) )
+            // InternalJabuti.g:8112:3: ( '!=' )
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolExclamationMarkEqualsSignKeyword_4_0()); 
-            // InternalJabuti.g:8167:3: ( '!=' )
-            // InternalJabuti.g:8168:4: '!='
+            // InternalJabuti.g:8113:3: ( '!=' )
+            // InternalJabuti.g:8114:4: '!='
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolExclamationMarkEqualsSignKeyword_4_0()); 
             match(input,78,FOLLOW_2); 
@@ -24720,21 +24565,21 @@ public class InternalJabutiParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ComparisonOperator__SymbolAssignment_5"
-    // InternalJabuti.g:8179:1: rule__ComparisonOperator__SymbolAssignment_5 : ( ( '==' ) ) ;
+    // InternalJabuti.g:8125:1: rule__ComparisonOperator__SymbolAssignment_5 : ( ( '==' ) ) ;
     public final void rule__ComparisonOperator__SymbolAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalJabuti.g:8183:1: ( ( ( '==' ) ) )
-            // InternalJabuti.g:8184:2: ( ( '==' ) )
+            // InternalJabuti.g:8129:1: ( ( ( '==' ) ) )
+            // InternalJabuti.g:8130:2: ( ( '==' ) )
             {
-            // InternalJabuti.g:8184:2: ( ( '==' ) )
-            // InternalJabuti.g:8185:3: ( '==' )
+            // InternalJabuti.g:8130:2: ( ( '==' ) )
+            // InternalJabuti.g:8131:3: ( '==' )
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolEqualsSignEqualsSignKeyword_5_0()); 
-            // InternalJabuti.g:8186:3: ( '==' )
-            // InternalJabuti.g:8187:4: '=='
+            // InternalJabuti.g:8132:3: ( '==' )
+            // InternalJabuti.g:8133:4: '=='
             {
              before(grammarAccess.getComparisonOperatorAccess().getSymbolEqualsSignEqualsSignKeyword_5_0()); 
             match(input,79,FOLLOW_2); 

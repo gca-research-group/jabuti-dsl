@@ -532,7 +532,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     MaxNumberOfOperation returns MaxNumberOfOperation
 	 *
 	 * Constraint:
-	 *     (operationsNumber=INT timeUnit=TimeUnit?)
+	 *     (operationsNumber=INT perTime=TimeUnitSpec?)
 	 * </pre>
 	 */
 	protected void sequence_MaxNumberOfOperation(ISerializationContext context, MaxNumberOfOperation semanticObject) {
@@ -553,7 +553,7 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 *     (
 	 *         returnType=DataType 
 	 *         (content=STRING | variable=[Variable|ID]) 
-	 *         (comparisonOperator=ComparisonOperator expression=Expression timeUnitSpec=TimeUnitSpec?)?
+	 *         (comparisonOperator=ComparisonOperator expression=Expression perTime=TimeUnitSpec?)?
 	 *     )
 	 * </pre>
 	 */

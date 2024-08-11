@@ -1676,18 +1676,16 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final Keyword cLeftParenthesisKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cOperationsNumberAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cOperationsNumberINTTerminalRuleCall_2_0 = (RuleCall)cOperationsNumberAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cPerKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTimeUnitAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTimeUnitTimeUnitEnumRuleCall_3_1_0 = (RuleCall)cTimeUnitAssignment_3_1.eContents().get(0);
+		private final Assignment cPerTimeAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cPerTimeTimeUnitSpecParserRuleCall_3_0 = (RuleCall)cPerTimeAssignment_3.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
 		
 		//MaxNumberOfOperation:
-		//    'MaxNumberOfOperation' '(' operationsNumber=INT ('per' timeUnit=TimeUnit)?  ')'
+		//    'MaxNumberOfOperation' '(' operationsNumber=INT (perTime=TimeUnitSpec)?  ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'MaxNumberOfOperation' '(' operationsNumber=INT ('per' timeUnit=TimeUnit)?  ')'
+		//'MaxNumberOfOperation' '(' operationsNumber=INT (perTime=TimeUnitSpec)?  ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'MaxNumberOfOperation'
@@ -1702,17 +1700,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//INT
 		public RuleCall getOperationsNumberINTTerminalRuleCall_2_0() { return cOperationsNumberINTTerminalRuleCall_2_0; }
 		
-		//('per' timeUnit=TimeUnit)?
-		public Group getGroup_3() { return cGroup_3; }
+		//(perTime=TimeUnitSpec)?
+		public Assignment getPerTimeAssignment_3() { return cPerTimeAssignment_3; }
 		
-		//'per'
-		public Keyword getPerKeyword_3_0() { return cPerKeyword_3_0; }
-		
-		//timeUnit=TimeUnit
-		public Assignment getTimeUnitAssignment_3_1() { return cTimeUnitAssignment_3_1; }
-		
-		//TimeUnit
-		public RuleCall getTimeUnitTimeUnitEnumRuleCall_3_1_0() { return cTimeUnitTimeUnitEnumRuleCall_3_1_0; }
+		//TimeUnitSpec
+		public RuleCall getPerTimeTimeUnitSpecParserRuleCall_3_0() { return cPerTimeTimeUnitSpecParserRuleCall_3_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
@@ -1781,18 +1773,18 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		private final RuleCall cComparisonOperatorComparisonOperatorParserRuleCall_6_0_0 = (RuleCall)cComparisonOperatorAssignment_6_0.eContents().get(0);
 		private final Assignment cExpressionAssignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
 		private final RuleCall cExpressionExpressionParserRuleCall_6_1_0 = (RuleCall)cExpressionAssignment_6_1.eContents().get(0);
-		private final Assignment cTimeUnitSpecAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
-		private final RuleCall cTimeUnitSpecTimeUnitSpecParserRuleCall_6_2_0 = (RuleCall)cTimeUnitSpecAssignment_6_2.eContents().get(0);
+		private final Assignment cPerTimeAssignment_6_2 = (Assignment)cGroup_6.eContents().get(2);
+		private final RuleCall cPerTimeTimeUnitSpecParserRuleCall_6_2_0 = (RuleCall)cPerTimeAssignment_6_2.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//MessageContent:
 		//    'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
-		//    (comparisonOperator=ComparisonOperator expression=Expression (timeUnitSpec=TimeUnitSpec)?)?  ')'
+		//    (comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')'
 		//    ;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
-		//(comparisonOperator=ComparisonOperator expression=Expression (timeUnitSpec=TimeUnitSpec)?)?  ')'
+		//(comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'MessageContent'
@@ -1831,7 +1823,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//")"
 		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
 		
-		//(comparisonOperator=ComparisonOperator expression=Expression (timeUnitSpec=TimeUnitSpec)?)?
+		//(comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?
 		public Group getGroup_6() { return cGroup_6; }
 		
 		//comparisonOperator=ComparisonOperator
@@ -1846,11 +1838,11 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 		//Expression
 		public RuleCall getExpressionExpressionParserRuleCall_6_1_0() { return cExpressionExpressionParserRuleCall_6_1_0; }
 		
-		//(timeUnitSpec=TimeUnitSpec)?
-		public Assignment getTimeUnitSpecAssignment_6_2() { return cTimeUnitSpecAssignment_6_2; }
+		//(perTime=TimeUnitSpec)?
+		public Assignment getPerTimeAssignment_6_2() { return cPerTimeAssignment_6_2; }
 		
 		//TimeUnitSpec
-		public RuleCall getTimeUnitSpecTimeUnitSpecParserRuleCall_6_2_0() { return cTimeUnitSpecTimeUnitSpecParserRuleCall_6_2_0; }
+		public RuleCall getPerTimeTimeUnitSpecParserRuleCall_6_2_0() { return cPerTimeTimeUnitSpecParserRuleCall_6_2_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
@@ -2805,7 +2797,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	}
 	
 	//MaxNumberOfOperation:
-	//    'MaxNumberOfOperation' '(' operationsNumber=INT ('per' timeUnit=TimeUnit)?  ')'
+	//    'MaxNumberOfOperation' '(' operationsNumber=INT (perTime=TimeUnitSpec)?  ')'
 	//;
 	public MaxNumberOfOperationElements getMaxNumberOfOperationAccess() {
 		return pMaxNumberOfOperation;
@@ -2828,7 +2820,7 @@ public class JabutiGrammarAccess extends AbstractElementFinder.AbstractGrammarEl
 	
 	//MessageContent:
 	//    'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
-	//    (comparisonOperator=ComparisonOperator expression=Expression (timeUnitSpec=TimeUnitSpec)?)?  ')'
+	//    (comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')'
 	//    ;
 	public MessageContentElements getMessageContentAccess() {
 		return pMessageContent;

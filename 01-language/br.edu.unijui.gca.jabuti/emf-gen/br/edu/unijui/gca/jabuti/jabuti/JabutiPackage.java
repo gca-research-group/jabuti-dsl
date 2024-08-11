@@ -1352,13 +1352,13 @@ public interface JabutiPackage extends EPackage
 	int MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER = TERM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Time Unit</b></em>' attribute.
+	 * The feature id for the '<em><b>Per Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MAX_NUMBER_OF_OPERATION__TIME_UNIT = TERM_FEATURE_COUNT + 1;
+	int MAX_NUMBER_OF_OPERATION__PER_TIME = TERM_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Max Number Of Operation</em>' class.
@@ -1425,13 +1425,13 @@ public interface JabutiPackage extends EPackage
 	int MESSAGE_CONTENT__RETURN_TYPE = TERM_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Time Unit Spec</b></em>' containment reference.
+	 * The feature id for the '<em><b>Per Time</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_CONTENT__TIME_UNIT_SPEC = TERM_FEATURE_COUNT + 5;
+	int MESSAGE_CONTENT__PER_TIME = TERM_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Message Content</em>' class.
@@ -2491,15 +2491,15 @@ public interface JabutiPackage extends EPackage
 	EAttribute getMaxNumberOfOperation_OperationsNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getTimeUnit <em>Time Unit</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getPerTime <em>Per Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Time Unit</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getTimeUnit()
+	 * @return the meta object for the containment reference '<em>Per Time</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation#getPerTime()
 	 * @see #getMaxNumberOfOperation()
 	 * @generated
 	 */
-	EAttribute getMaxNumberOfOperation_TimeUnit();
+	EReference getMaxNumberOfOperation_PerTime();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent <em>Message Content</em>}'.
@@ -2567,15 +2567,15 @@ public interface JabutiPackage extends EPackage
 	EAttribute getMessageContent_ReturnType();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec <em>Time Unit Spec</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.MessageContent#getPerTime <em>Per Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Time Unit Spec</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getTimeUnitSpec()
+	 * @return the meta object for the containment reference '<em>Per Time</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.MessageContent#getPerTime()
 	 * @see #getMessageContent()
 	 * @generated
 	 */
-	EReference getMessageContent_TimeUnitSpec();
+	EReference getMessageContent_PerTime();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator <em>Comparison Operator</em>}'.
@@ -3468,12 +3468,12 @@ public interface JabutiPackage extends EPackage
 		EAttribute MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER = eINSTANCE.getMaxNumberOfOperation_OperationsNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Time Unit</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Per Time</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute MAX_NUMBER_OF_OPERATION__TIME_UNIT = eINSTANCE.getMaxNumberOfOperation_TimeUnit();
+		EReference MAX_NUMBER_OF_OPERATION__PER_TIME = eINSTANCE.getMaxNumberOfOperation_PerTime();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.MessageContentImpl <em>Message Content</em>}' class.
@@ -3526,12 +3526,12 @@ public interface JabutiPackage extends EPackage
 		EAttribute MESSAGE_CONTENT__RETURN_TYPE = eINSTANCE.getMessageContent_ReturnType();
 
 		/**
-		 * The meta object literal for the '<em><b>Time Unit Spec</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Per Time</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference MESSAGE_CONTENT__TIME_UNIT_SPEC = eINSTANCE.getMessageContent_TimeUnitSpec();
+		EReference MESSAGE_CONTENT__PER_TIME = eINSTANCE.getMessageContent_PerTime();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ComparisonOperatorImpl <em>Comparison Operator</em>}' class.

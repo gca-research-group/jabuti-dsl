@@ -5,11 +5,13 @@ package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation;
-import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
+import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
@@ -22,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl#getOperationsNumber <em>Operations Number</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl#getTimeUnit <em>Time Unit</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.MaxNumberOfOperationImpl#getPerTime <em>Per Time</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +52,14 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	protected int operationsNumber = OPERATIONS_NUMBER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
+	 * The cached value of the '{@link #getPerTime() <em>Per Time</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTimeUnit()
+	 * @see #getPerTime()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final TimeUnit TIME_UNIT_EDEFAULT = TimeUnit.SECOND;
-
-	/**
-	 * The cached value of the '{@link #getTimeUnit() <em>Time Unit</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTimeUnit()
-	 * @generated
-	 * @ordered
-	 */
-	protected TimeUnit timeUnit = TIME_UNIT_EDEFAULT;
+	protected TimeUnitSpec perTime;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -121,9 +113,26 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	 * @generated
 	 */
 	@Override
-	public TimeUnit getTimeUnit()
+	public TimeUnitSpec getPerTime()
 	{
-		return timeUnit;
+		return perTime;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetPerTime(TimeUnitSpec newPerTime, NotificationChain msgs)
+	{
+		TimeUnitSpec oldPerTime = perTime;
+		perTime = newPerTime;
+		if (eNotificationRequired())
+		{
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME, oldPerTime, newPerTime);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -132,12 +141,36 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 	 * @generated
 	 */
 	@Override
-	public void setTimeUnit(TimeUnit newTimeUnit)
+	public void setPerTime(TimeUnitSpec newPerTime)
 	{
-		TimeUnit oldTimeUnit = timeUnit;
-		timeUnit = newTimeUnit == null ? TIME_UNIT_EDEFAULT : newTimeUnit;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT, oldTimeUnit, timeUnit));
+		if (newPerTime != perTime)
+		{
+			NotificationChain msgs = null;
+			if (perTime != null)
+				msgs = ((InternalEObject)perTime).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME, null, msgs);
+			if (newPerTime != null)
+				msgs = ((InternalEObject)newPerTime).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME, null, msgs);
+			msgs = basicSetPerTime(newPerTime, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME, newPerTime, newPerTime));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+	{
+		switch (featureID)
+		{
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME:
+				return basicSetPerTime(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -152,8 +185,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 		{
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
 				return getOperationsNumber();
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
-				return getTimeUnit();
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME:
+				return getPerTime();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -171,8 +204,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
 				setOperationsNumber((Integer)newValue);
 				return;
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
-				setTimeUnit((TimeUnit)newValue);
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME:
+				setPerTime((TimeUnitSpec)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -191,8 +224,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
 				setOperationsNumber(OPERATIONS_NUMBER_EDEFAULT);
 				return;
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
-				setTimeUnit(TIME_UNIT_EDEFAULT);
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME:
+				setPerTime((TimeUnitSpec)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -210,8 +243,8 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 		{
 			case JabutiPackage.MAX_NUMBER_OF_OPERATION__OPERATIONS_NUMBER:
 				return operationsNumber != OPERATIONS_NUMBER_EDEFAULT;
-			case JabutiPackage.MAX_NUMBER_OF_OPERATION__TIME_UNIT:
-				return timeUnit != TIME_UNIT_EDEFAULT;
+			case JabutiPackage.MAX_NUMBER_OF_OPERATION__PER_TIME:
+				return perTime != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -229,8 +262,6 @@ public class MaxNumberOfOperationImpl extends TermImpl implements MaxNumberOfOpe
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (operationsNumber: ");
 		result.append(operationsNumber);
-		result.append(", timeUnit: ");
-		result.append(timeUnit);
 		result.append(')');
 		return result.toString();
 	}

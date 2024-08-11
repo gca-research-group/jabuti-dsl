@@ -189,7 +189,7 @@ Timeout:
 ;
 
 MaxNumberOfOperation:
-	'MaxNumberOfOperation' '(' operationsNumber=INT ('per' timeUnit=TimeUnit)?  ')'
+	'MaxNumberOfOperation' '(' operationsNumber=INT (perTime=TimeUnitSpec)?  ')'
 ;
 
 WeekDaysInterval:
@@ -199,7 +199,7 @@ WeekDaysInterval:
 
 MessageContent:
 	'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
-	(comparisonOperator=ComparisonOperator expression=Expression (timeUnitSpec=TimeUnitSpec)?)?  ')' 	
+	(comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')' 	
 	;
 	
 TimeUnitSpec:

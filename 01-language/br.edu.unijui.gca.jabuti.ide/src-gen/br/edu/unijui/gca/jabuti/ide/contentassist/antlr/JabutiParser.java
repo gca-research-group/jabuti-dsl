@@ -99,7 +99,6 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSessionIntervalAccess().getGroup_4(), "rule__SessionInterval__Group_4__0");
 			builder.put(grammarAccess.getTimeoutAccess().getGroup(), "rule__Timeout__Group__0");
 			builder.put(grammarAccess.getMaxNumberOfOperationAccess().getGroup(), "rule__MaxNumberOfOperation__Group__0");
-			builder.put(grammarAccess.getMaxNumberOfOperationAccess().getGroup_3(), "rule__MaxNumberOfOperation__Group_3__0");
 			builder.put(grammarAccess.getWeekDaysIntervalAccess().getGroup(), "rule__WeekDaysInterval__Group__0");
 			builder.put(grammarAccess.getMessageContentAccess().getGroup(), "rule__MessageContent__Group__0");
 			builder.put(grammarAccess.getMessageContentAccess().getGroup_6(), "rule__MessageContent__Group_6__0");
@@ -180,7 +179,7 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSessionIntervalAccess().getVariableAssignment_4_1_2(), "rule__SessionInterval__VariableAssignment_4_1_2");
 			builder.put(grammarAccess.getTimeoutAccess().getSecondsAssignment_2(), "rule__Timeout__SecondsAssignment_2");
 			builder.put(grammarAccess.getMaxNumberOfOperationAccess().getOperationsNumberAssignment_2(), "rule__MaxNumberOfOperation__OperationsNumberAssignment_2");
-			builder.put(grammarAccess.getMaxNumberOfOperationAccess().getTimeUnitAssignment_3_1(), "rule__MaxNumberOfOperation__TimeUnitAssignment_3_1");
+			builder.put(grammarAccess.getMaxNumberOfOperationAccess().getPerTimeAssignment_3(), "rule__MaxNumberOfOperation__PerTimeAssignment_3");
 			builder.put(grammarAccess.getWeekDaysIntervalAccess().getStartAssignment_2(), "rule__WeekDaysInterval__StartAssignment_2");
 			builder.put(grammarAccess.getWeekDaysIntervalAccess().getEndAssignment_4(), "rule__WeekDaysInterval__EndAssignment_4");
 			builder.put(grammarAccess.getMessageContentAccess().getReturnTypeAssignment_2(), "rule__MessageContent__ReturnTypeAssignment_2");
@@ -188,7 +187,7 @@ public class JabutiParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMessageContentAccess().getVariableAssignment_4_1(), "rule__MessageContent__VariableAssignment_4_1");
 			builder.put(grammarAccess.getMessageContentAccess().getComparisonOperatorAssignment_6_0(), "rule__MessageContent__ComparisonOperatorAssignment_6_0");
 			builder.put(grammarAccess.getMessageContentAccess().getExpressionAssignment_6_1(), "rule__MessageContent__ExpressionAssignment_6_1");
-			builder.put(grammarAccess.getMessageContentAccess().getTimeUnitSpecAssignment_6_2(), "rule__MessageContent__TimeUnitSpecAssignment_6_2");
+			builder.put(grammarAccess.getMessageContentAccess().getPerTimeAssignment_6_2(), "rule__MessageContent__PerTimeAssignment_6_2");
 			builder.put(grammarAccess.getTimeUnitSpecAccess().getTimeUnitAssignment_1(), "rule__TimeUnitSpec__TimeUnitAssignment_1");
 			builder.put(grammarAccess.getComparisonOperatorAccess().getSymbolAssignment_0(), "rule__ComparisonOperator__SymbolAssignment_0");
 			builder.put(grammarAccess.getComparisonOperatorAccess().getSymbolAssignment_1(), "rule__ComparisonOperator__SymbolAssignment_1");

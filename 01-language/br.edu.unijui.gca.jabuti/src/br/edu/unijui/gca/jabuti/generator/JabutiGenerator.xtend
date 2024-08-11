@@ -3,35 +3,36 @@
  */
 package br.edu.unijui.gca.jabuti.generator
 
-import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator
+import br.edu.unijui.gca.jabuti.generator.entities.StructVar
+import br.edu.unijui.gca.jabuti.generator.entities.VarExpr
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator
+import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
 import br.edu.unijui.gca.jabuti.jabuti.Contract
 import br.edu.unijui.gca.jabuti.jabuti.DataType
 import br.edu.unijui.gca.jabuti.jabuti.Expression
+import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm
+import br.edu.unijui.gca.jabuti.jabuti.LiteralValue
 import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent
 import br.edu.unijui.gca.jabuti.jabuti.NumericValue
+import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression
 import br.edu.unijui.gca.jabuti.jabuti.StringValue
 import br.edu.unijui.gca.jabuti.jabuti.Term
+import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator
+import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator
+import br.edu.unijui.gca.jabuti.jabuti.Variable
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue
-import java.util.HashSet
-
+import java.util.ArrayList
+import java.util.LinkedHashMap
+import java.util.List
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import br.edu.unijui.gca.jabuti.jabuti.LiteralValue
-import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator
-import br.edu.unijui.gca.jabuti.jabuti.Variable
-import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression
-import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm
-import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator
-import br.edu.unijui.gca.jabuti.jabuti.Timeout
-import br.edu.unijui.gca.jabuti.jabuti.TimeInterval
-import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
-import br.edu.unijui.gca.jabuti.jabuti.SessionInterval
-import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
-import java.util.List
+import br.edu.unijui.gca.jabuti.generator.entities.VarTerm
+import br.edu.unijui.gca.jabuti.generator.entities.terms.MessageContent_onlyXPath_String
+import br.edu.unijui.gca.jabuti.generator.entities.terms.Timeout
 
 /**
  * Generates code from your model files on save.
@@ -51,11 +52,10 @@ class JabutiGenerator extends AbstractGenerator {
 	static var logical_symbols = newArrayList
 	static var math_symbols = newArrayList
 	static var unary_symbols = newArrayList
-	static var variables_map = newHashMap
-	static var dataTypesIntoTheExpression = newArrayList
-	static var symbolsIntoTheExpression = newArrayList
 
-	//static var usedTermsTypeInBlockTerms = newHashSet
+	LinkedHashMap<String, StructVar> variablesMap
+	ArrayList<String> exprContent_temp
+	String exprVarName_temp
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (c : resource.allContents.filter(Contract).toIterable) {
@@ -70,7 +70,9 @@ class JabutiGenerator extends AbstractGenerator {
 		logical_symbols.addAll(#["AND", "OR"])
 		math_symbols.addAll(#["+", "-", "*", "/"])
 		unary_symbols.addAll(#["-", "!"])
-		variables_map.clear
+		// variables_map.clear
+		exprContent_temp = new ArrayList<String>
+		variablesMap = new LinkedHashMap<String, StructVar>
 
 		'''		
 			//SPDX-License-Identifier: MIT
@@ -112,101 +114,151 @@ class JabutiGenerator extends AbstractGenerator {
 						«"\t"»«v.expression.getVariableType(v.name)» «v.name»						
 					«ENDIF»						
 				«ENDFOR»
-												
+				
 			«ENDIF»
+						«printVariablesMapContent()»
 			}
 		'''
 
 // ----------------------------------------------------------------------------------
 	}
 
+	// temp listar conteudo do variablesMap
+	def void printVariablesMapContent() {
+		println("\n\n")
+		println("----")
+		variablesMap.forEach [ p1, p2 |
+			if (p2 instanceof VarExpr) {
+				print(p2.type + " " + p2.name + " = ")
+				p2.content.forEach[p|print(" " + p.toString)]
+			}
+			if (p2 instanceof VarTerm) {
+				(p2 as VarTerm).printTermStruct
+			}
+			println("")
+		]
+		println("----")
+	}
+
+	def void printTermStruct(VarTerm vt) {	
+		switch vt.term {
+			MessageContent_onlyXPath_String: {
+				println("MessageContent_onlyXPath_String")
+			}
+			Timeout: {
+				println("Timeout")
+			}
+			default: {
+				println("unknown")
+			}
+		}
+
+	}
+
+//	def void printVariablesMapContent(){
+//		 // Iterando e listando itens na ordem de inserção
+//        for (variablesMap.Entry<String, VarExpr> entry : map.entrySet()) {
+//            System.out.println(entry.getKey() + ": " + entry.getValue());
+//        }
+//	}
 //======================================================================================================
 // ================================ GET THE VARIABLES FROM EXPRESSION ================================	
 	def String getVariableType(Expression expr, String var_name) {
-		dataTypesIntoTheExpression.clear()
-		symbolsIntoTheExpression.clear()
-		 println()
-		 print(var_name+" \t= ")
+		// dataTypesIntoTheExpression.clear()
+		// symbolsIntoTheExpression.clear()
+		exprContent_temp.clear() // empty expression	
 		if (expr !== null) {
 			getDataTypesAndValuesFromVariables_Expression(expr)
+			variablesMap.put(var_name, new VarExpr(var_name, "unknown", exprContent_temp))
 
 			// verify if the expression contains some logical, comparison o Negation operator			
-			for (s : symbolsIntoTheExpression) {
+			for (s : exprContent_temp) {
 				if (comparison_symbols.contains(s) || logical_symbols.contains(s) || s.equals("!")) {
-					// print("\t : bool ")
-					variables_map.put(var_name, "bool")
+					variablesMap.get(var_name).type = "bool"
 					return "bool"
 				}
 			}
 
-			if (dataTypesIntoTheExpression.contains("String")) {
-				variables_map.put(var_name, "String")
-				// print("\t : String ")								
-				return "String"
-			} else if (dataTypesIntoTheExpression.contains("uint32")) {
-				variables_map.put(var_name, "uint32")
-				// print("\t : uint32 ")					
-				return "uint32"
+			for (item : exprContent_temp) {
+				if (item.contains("\"")) {
+					variablesMap.get(var_name).type = "String"
+					return "String"
+				}
 			}
+
+			// if it is not a bool or string type then it is an uint32 type 
+			variablesMap.get(var_name).type = "uint32"
+			return "uint32"
 		}
 	}
 
 	def void getDataTypesAndValuesFromVariables_Expression(Expression expr) {
-		
+
 		switch expr {
 			ParenthesizedExpression: { // Novo caso para parênteses
-			 print("(")
+//				print("(")
+				exprContent_temp.add("(")
 				getDataTypesAndValuesFromVariables_Expression(expr.expression)
-			 print(")")
+//				print(")")
+				exprContent_temp.add(")")
 			}
 			BinaryOperator: {
 				getDataTypesAndValuesFromVariables_Expression(expr.left)
-				 print(expr.symbol)
-				symbolsIntoTheExpression.add(expr.symbol)
+//				print(expr.symbol)
+				exprContent_temp.add(expr.symbol)
+				// symbolsIntoTheExpression.add(expr.symbol)
 				getDataTypesAndValuesFromVariables_Expression(expr.right)
 			}
 			UnaryOperator: {
-				 print(expr.symbol)
-				symbolsIntoTheExpression.add(expr.symbol)
+//				print(expr.symbol)
+				exprContent_temp.add(expr.symbol)
+				// symbolsIntoTheExpression.add(expr.symbol)
 				getDataTypesAndValuesFromVariables_Expression(expr.expression)
 			}
 			VariableValue: {
-				 print(expr.value.name)				
-				dataTypesIntoTheExpression.add(variables_map.get(expr.value.name))
+//				print(expr.value.name)
+				exprContent_temp.add(expr.value.name)
+			// variablesMap.get(exprVarName_temp).type = variablesMap.get(expr.value.name).type
+			// dataTypesIntoTheExpression.add(variables_map.get(expr.value.name))
 			}
 			LiteralValue: {
 				if (expr instanceof StringValue) {
 					var aux = expr as StringValue
-					print(aux.value)
-					dataTypesIntoTheExpression.add("String")
-
+//					print(aux.value)
+					exprContent_temp.add("\"" + aux.value + "\"")
+				// variablesMap.get(exprVarName_temp).type = "string"
+				// dataTypesIntoTheExpression.add("String")
 				} else if (expr instanceof NumericValue) {
-					InputOutput.print((expr as NumericValue).value)
-					dataTypesIntoTheExpression.add("uint32")
+					var aux = expr as NumericValue
+//					print(aux.value)
+					exprContent_temp.add(aux.value.toString)
+				// variablesMap.get(exprVarName_temp).type = "uint32"
+				// dataTypesIntoTheExpression.add("uint32")
 				}
 			}
 			default: {
-				print("Unknown expression type: " + expr)
+				exprContent_temp.add("unknown")
+//				print("Unknown expression type: " + expr)
 			}
 		}
 	}
 
 // ===========================================================================================================
 // ====================== GET VARIABLES BASED IN THE (VARIABLES AND TERMS BLOCK)  ============================	
-	def static List<String> getNameOfTheUsedTerms(Contract ct) {
-		
-		val terms = newArrayList;		
+	def List<String> getNameOfTheUsedTerms(Contract ct) {
 
-		if(ct.variables !== null){
+		val terms = newArrayList;
+
+		if (ct.variables !== null) {
 			terms.getNameOfTermsUsedInVariablesBlock(ct.variables)
 		}
 		if (ct.clauses !== null) {
 			for (c : ct.clauses) {
 				if (c.terms !== null) {
-					terms.getTermsTypeFromTermBlock(c.terms)					
+					terms.getTermsTypeFromTermBlock(c.terms)
 				}
 			}
-			
+
 		}
 		return terms
 	}
@@ -229,11 +281,11 @@ class JabutiGenerator extends AbstractGenerator {
 			Term: {
 				var term = exprTerm as Term
 				var type = term.getTermType
-				//println(type)
-				terms.insertNewValueInListIfDoesntExist(type)				
+				// println(type)
+				terms.insertNewValueInListIfDoesntExist(type)
 			}
 			ConditionalExpression: {
-				println("ConditionalExpression")// fazer o tratamento para a conditional expression
+				println("ConditionalExpression") // fazer o tratamento para a conditional expression
 			}
 			default: {
 				println("Unknown term type: " + exprTerm)
@@ -241,19 +293,29 @@ class JabutiGenerator extends AbstractGenerator {
 		}
 	}
 
-	def static void getNameOfTermsUsedInVariablesBlock(List<String> terms, List<Variable> variables) {
-		
-			variables.forEach [ v |
-				if (v.term !== null) {
-					val termType = v.term.getTermType
-					terms.insertNewValueInListIfDoesntExist(termType)
-				}
-			]			
-	}
+	def void getNameOfTermsUsedInVariablesBlock(List<String> terms, List<Variable> variables) {
 
+		variables.forEach [ v |
+			if (v.term !== null) {
+
+				val termType = v.term.getTermType
+				terms.insertNewValueInListIfDoesntExist(termType)				
+								  
+				if (termType.equals("MessageContent_onlyXPath_String")) {
+					variablesMap.put(v.name, new VarTerm(v.name, termType, new MessageContent_onlyXPath_String("")))
+				} else if (termType.equals("Timeout")) {
+					variablesMap.put(v.name, new VarTerm(v.name, termType, new Timeout(11)))
+				}
+			}
+		]
+	}
+	
+//	def void createTheTermStruct(String name, String type, Term){
+//		
+//	}
 
 	def static String getTermType(Term tm) {
-		
+
 		val termType = tm.eClass().getName()
 		if (termType.equalsIgnoreCase("WeekDaysInterval") || termType.equalsIgnoreCase("TimeInterval") ||
 			termType.equalsIgnoreCase("Timeout") || termType.equalsIgnoreCase("SessionInterval")) {
@@ -262,7 +324,7 @@ class JabutiGenerator extends AbstractGenerator {
 		else if (termType.equalsIgnoreCase("MaxNumberOfOperation")) {
 			val maxNumberOfOperation = tm as MaxNumberOfOperation
 
-			if (maxNumberOfOperation.timeUnit !== null) {
+			if (maxNumberOfOperation.perTime !== null) {
 				return termType + "ByTime" // MaxNumberOfOperationByTime
 			}
 			return termType // MaxNumberOfOperation
@@ -281,7 +343,7 @@ class JabutiGenerator extends AbstractGenerator {
 				} else if (messageContent.returnType === DataType.BOOLEAN) {
 					return termType + "_onlyXPath_Bollean" // MessageContent_onlyXPath_Boolean
 				}
-			} else if (messageContent.timeUnitSpec === null) {
+			} else if (messageContent.perTime === null) {
 				if (messageContent.returnType === DataType.TEXT) {
 					return termType + "_String" // MessageContent_String
 				} else if (messageContent.returnType === DataType.NUMERIC) {
@@ -299,8 +361,6 @@ class JabutiGenerator extends AbstractGenerator {
 		}
 	}
 
-
-
 	// ================================ BUILD THE STRUCT NAME USED IN SOLID EAI LIBRARY ============================
 //	def static String getTermType(Variable variable) {
 //		var type = getTermType(variable.term)
@@ -308,19 +368,20 @@ class JabutiGenerator extends AbstractGenerator {
 //		return type
 //	}
 	// buildTheNameOfTheTermAsTheSolidityTermStructureName
-	
-	
 	// ================================ General methods ============================
-	
-	def static insertNewValueInListIfDoesntExist(List<String> list, String value){
-		if(!list.contains(value)){
+	def String contacStr(String str1, String str2) {
+		return str1 + str2
+	}
+
+	def static insertNewValueInListIfDoesntExist(List<String> list, String value) {
+		if (!list.contains(value)) {
 			list.add(value)
 		}
 //		else{
 //			println(value+" já existe na lista")
 //		}
 	}
-	
+
 	def static boolean isNumeric(String str) {
 		try {
 			Integer.parseInt(str)
