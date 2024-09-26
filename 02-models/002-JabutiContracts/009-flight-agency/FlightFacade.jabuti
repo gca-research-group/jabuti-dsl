@@ -20,8 +20,8 @@ contract FlightFacade {
 				WeekDaysInterval(Sunday to Saturday),
 				TimeInterval("06:00:00" to "22:59:00"),
 				MaxNumberOfOperation(100 per Minute),
-				MessageContent("count(//trip/path)" == 1 ),	
-				MessageContent("//origin/text()" != "//destiny/text()" ) 
+				MessageContent(numeric("count(//trip/path)") == 1 ),	
+				MessageContent(text("//origin/text()") != "//destiny/text()" ) 
 			}
 			onBreach(log("Breach of condition in the travel request"))		
 		}
@@ -33,7 +33,7 @@ contract FlightFacade {
 			
 			terms{				
 				TimeInterval("00:00:00" to "05:59:00") OR			
-				MessageContent("//trip/text()"  > 1)
+				MessageContent(numeric("//trip/text()")  > 1)
 			} 
 			onBreach(log("Request made outside of allowed hours, ..."))
 		}
@@ -46,9 +46,9 @@ contract FlightFacade {
 			
 			terms {				
 				Timeout(5),				
-				MessageContent("//flight/text()" != ""),		
-				MessageContent("//destinyResponse/text()" == "//destinyRequest/text()"),
-				MessageContent("//originResponse/text()" == "//originResponse/text()")						
+				MessageContent(text("//flight/text()") != ""),		
+				MessageContent(text("//destinyResponse/text()") == "//destinyRequest/text()"),
+				MessageContent(text("//originResponse/text()") == "//originResponse/text()")						
 			}
 			onBreach(log("The timeout exceeded or inconsistent response message"))	
 		}

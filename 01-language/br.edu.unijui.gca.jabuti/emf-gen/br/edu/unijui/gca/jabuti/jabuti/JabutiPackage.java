@@ -1020,31 +1020,13 @@ public interface JabutiPackage extends EPackage
 	int CONDITIONAL_EXPRESSION__EXPRESSION_TERM = EXPRESSION_TERM_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>After Symbol</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_EXPRESSION__AFTER_SYMBOL = EXPRESSION_TERM_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Before Symbol</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_EXPRESSION__BEFORE_SYMBOL = EXPRESSION_TERM_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Comparison Operator</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = EXPRESSION_TERM_FEATURE_COUNT + 3;
+	int CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = EXPRESSION_TERM_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Logical Operator</b></em>' containment reference list.
@@ -1053,7 +1035,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = EXPRESSION_TERM_FEATURE_COUNT + 4;
+	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = EXPRESSION_TERM_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Conditional Expression</em>' class.
@@ -1062,7 +1044,7 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 5;
+	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 3;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl <em>Term</em>}' class.
@@ -2191,28 +2173,6 @@ public interface JabutiPackage extends EPackage
 	EReference getConditionalExpression_ExpressionTerm();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>After Symbol</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol()
-	 * @see #getConditionalExpression()
-	 * @generated
-	 */
-	EReference getConditionalExpression_AfterSymbol();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Before Symbol</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol()
-	 * @see #getConditionalExpression()
-	 * @generated
-	 */
-	EReference getConditionalExpression_BeforeSymbol();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator <em>Comparison Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3226,22 +3186,6 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EReference CONDITIONAL_EXPRESSION__EXPRESSION_TERM = eINSTANCE.getConditionalExpression_ExpressionTerm();
-
-		/**
-		 * The meta object literal for the '<em><b>After Symbol</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL_EXPRESSION__AFTER_SYMBOL = eINSTANCE.getConditionalExpression_AfterSymbol();
-
-		/**
-		 * The meta object literal for the '<em><b>Before Symbol</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CONDITIONAL_EXPRESSION__BEFORE_SYMBOL = eINSTANCE.getConditionalExpression_BeforeSymbol();
 
 		/**
 		 * The meta object literal for the '<em><b>Comparison Operator</b></em>' containment reference list feature.

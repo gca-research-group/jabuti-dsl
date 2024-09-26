@@ -113,8 +113,6 @@
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//ConditionalExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalExpression/expressionTerm"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalExpression/afterSymbol"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalExpression/beforeSymbol"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalExpression/comparisonOperator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalExpression/logicalOperator"/>
     </genClasses>

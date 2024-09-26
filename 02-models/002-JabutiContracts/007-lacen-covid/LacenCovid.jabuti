@@ -31,7 +31,7 @@ contract Citizen_RS {
 			operation = request		
 			
 			terms {
-				MessageContent("XPATH_EXPRESSION") //consultar o numero de telefone de mais de um usuario por vez	
+				MessageContent(text("XPATH_EXPRESSION")) //consultar o numero de telefone de mais de um usuario por vez	
 			}
 			onBreach (log("It's not allowed more then one cpf by request"))		
 		}	

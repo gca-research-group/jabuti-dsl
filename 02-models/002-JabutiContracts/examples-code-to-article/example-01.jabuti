@@ -38,7 +38,7 @@ contract DeliveryHiring_RO {
 				
 				TimeInterval("07:00:00" to "18:00:00"),
 				
-				SessionInterval(30 Minute per MessageContent("//clientID/text()")),
+				SessionInterval(30 Minute per MessageContent(numeric("//clientID/text()"))),
 				
 				Timeout(30),	
 				
@@ -47,9 +47,9 @@ contract DeliveryHiring_RO {
 				
 				WeekDaysInterval(Monday to Friday),
 				
-				MessageContent("count(//item)<=10"), 
-				MessageContent("count(//item)" <= 10), 
-				MessageContent("count(//item)" <= 1000 per Month) 
+				MessageContent(boolean("count(//item)<=10")), 
+				MessageContent(numeric("count(//item)") <= 10), 
+				MessageContent(numeric("count(//item)") <= 1000 per Month) 
 			}
 						
 			onBreach(log("Request operation did not meet all requirements"))			

@@ -19,8 +19,8 @@ contract ApiExpandedBasicPlan {
 				operation = request
 				terms {
 					 MaxNumberOfOperation(2 per Second), 
-					 MessageContent("count(//body/document)" <= 100),
-					 MessageContent("count(//body/document)" <= 50000 per Month) 			 
+					 MessageContent(numeric("count(//body/document)") <= 100),
+					 MessageContent(numeric("count(//body/document)") <= 50000 per Month) 			 
 				}
 				onBreach(log("Exceded number of docuemnts"))
 			}

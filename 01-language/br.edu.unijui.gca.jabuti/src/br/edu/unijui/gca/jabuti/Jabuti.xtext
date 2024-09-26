@@ -21,8 +21,8 @@ Contract:
 		'}'
 			
 		'parties' '{'
-				application=Application
-				process=Process
+			application=Application
+			process=Process
 		'}'
 
 		('variables' '{'
@@ -34,10 +34,7 @@ Contract:
 		'}'		
 				
 	'}'; 
-	
-	
-// #################### CLAUSE STRUCTURE AND CLAUSE SUBTYPES ####################
-
+		
 Clause: 
 	(Right | Prohibition | Obligation) '{'
 		'rolePlayer' '=' rolePlayer=RolePlayer
@@ -160,14 +157,14 @@ Term returns ExpressionTerm:
 ;
 
 ConditionalExpression :
-	(beforeSymbol = LogicalOperator)?
+//	(beforeSymbol = LogicalOperator)?
 	'when' '(' ((QualifiedName | STRING ) 
 				(comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?) 
 				(logicalOperator+=LogicalOperator QualifiedName  
 					(comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'check' '{'
 					expressionTerm=ExpressionTerm
 	'}'
-	(afterSymbol = LogicalOperator)?
+//	(afterSymbol = LogicalOperator)?
 ;
 
 //  ----------------- end new version proposal  -----------------
@@ -205,13 +202,6 @@ MessageContent:
 TimeUnitSpec:
     'per' timeUnit=TimeUnit
     ;	
-//MessageContent:
-//	'MessageContent' '(' (content=STRING | QualifiedName)  
-//	(comparisonOperator=ComparisonOperator expression=Expression ('per' timeUnit=TimeUnit)?)?  ')' 
-//;
-//	'MessageContent' '(' left=Expression logicalOper=OpLog right=Expression ('per' timeUnit=TimeUnit)?
-//	x (',' x)*
-// ver sobre o validation. Validar se uma variavel(referencia) foi criada 
 
 
 ComparisonOperator:
@@ -249,13 +239,3 @@ enum DataType:
 	NUMERIC='numeric' |
 	BOOLEAN='boolean'
 ;
-
-// ########### ENUM SECTION ####################
-
-//DATE: YEAR'-'MONTH'-'DAY'T'HOUR':'MIN':'SEC;
-//YEAR: INT;
-//MONTH: INT;
-//DAY: INT;
-//HOUR: INT;
-//MIN: INT;
-//SEC: INT;

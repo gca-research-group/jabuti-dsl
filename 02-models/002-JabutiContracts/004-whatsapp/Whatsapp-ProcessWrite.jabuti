@@ -16,7 +16,7 @@ contract SendMessageWhatsapp {
 	variables{	
 		var = "teste"				
 		session = SessionInterval(24 Hour per "//conversationId/text()")			
-		conversationStarter = MessageContent("//conversationStarter/text()") 
+		conversationStarter = MessageContent(text("//conversationStarter/text()")) 
 	}
 
 	clauses{
@@ -27,6 +27,7 @@ contract SendMessageWhatsapp {
 			terms{
 				WeekDaysInterval(Monday to Friday),		 			 	
 				when( conversationStarter == "Business-initiated" ) check {				
+					 	MaxNumberOfOperation(10000 per Month),
 					 	MaxNumberOfOperation(10000 per Month)		
 				}				 
 			}				

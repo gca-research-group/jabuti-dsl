@@ -15,8 +15,6 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm <em>Expression Term</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator <em>Comparison Operator</em>}</li>
  *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator <em>Logical Operator</em>}</li>
  * </ul>
@@ -48,50 +46,6 @@ public interface ConditionalExpression extends ExpressionTerm
 	 * @generated
 	 */
 	void setExpressionTerm(ExpressionTerm value);
-
-	/**
-	 * Returns the value of the '<em><b>After Symbol</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>After Symbol</em>' containment reference.
-	 * @see #setAfterSymbol(LogicalOperator)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_AfterSymbol()
-	 * @model containment="true"
-	 * @generated
-	 */
-	LogicalOperator getAfterSymbol();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getAfterSymbol <em>After Symbol</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>After Symbol</em>' containment reference.
-	 * @see #getAfterSymbol()
-	 * @generated
-	 */
-	void setAfterSymbol(LogicalOperator value);
-
-	/**
-	 * Returns the value of the '<em><b>Before Symbol</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Before Symbol</em>' containment reference.
-	 * @see #setBeforeSymbol(LogicalOperator)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_BeforeSymbol()
-	 * @model containment="true"
-	 * @generated
-	 */
-	LogicalOperator getBeforeSymbol();
-
-	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getBeforeSymbol <em>Before Symbol</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Before Symbol</em>' containment reference.
-	 * @see #getBeforeSymbol()
-	 * @generated
-	 */
-	void setBeforeSymbol(LogicalOperator value);
 
 	/**
 	 * Returns the value of the '<em><b>Comparison Operator</b></em>' containment reference list.

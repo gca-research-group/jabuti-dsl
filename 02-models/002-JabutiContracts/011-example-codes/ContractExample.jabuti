@@ -16,7 +16,7 @@ contract ContractExample{
             operation = request
             terms {
                  MaxNumberOfOperation(2 per Second), 
-                 MessageContent("count(//body/document)" <= 100)	 
+                 MessageContent(numeric("count(//body/document)") <= 100)	 
             }
             onBreach(log("Exceded number of documents"))
         }	        

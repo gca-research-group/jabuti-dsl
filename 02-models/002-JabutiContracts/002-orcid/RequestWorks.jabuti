@@ -17,8 +17,8 @@ contract OrcidUpdating{
 			operation = request
 			terms {		
 				MaxNumberOfOperation (8 per Second),
-				MessageContent("//author/orcid/id/text()!=''"),
-				MessageContent("//article/title/text()!=''")
+				MessageContent(boolean("//author/orcid/id/text()!=''")),
+				MessageContent(boolean("//article/title/text()!=''"))
 			}
 			onBreach(log("Request operation did not meet all requirements"))					
 		}

@@ -28,7 +28,7 @@ contract DeliveryHiring_O {
 				MaxNumberOfOperation( 2 per Hour ),
 				TimeInterval("08:00:00" to "12:00:00"),
 				when(sessionInterval) check {
-					MessageContent( "Content" )	
+					MessageContent( text("Content" ))	
 				},
 				TimeInterval("08:00:00" to "12:00:00")
 			}			
