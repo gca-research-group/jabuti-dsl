@@ -2,100 +2,115 @@ contract Temp {
 	dates{
 		beginDate = "2022-01-01 08:00:00" 
 		dueDate = "2022-12-31 18:00:00"
-	}	  
+	}	 
    
 	parties{ 
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
-      
-	variables{  
-		
-		str1_amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
-		str2_concat = "Eldair"+ "Dornelles"
-		str3_contact_str_e_num = "Eldair"+ 2 
-		str4_contact_str_e_num = 2+2+"Eldair"  
-		   
-		str5_var = str2_concat
+        
+	variables{     
 		 
-		num1_single = 123  
-		num2_soma =  1001+20-15*10/5
-	  	num3_soma_var = num1_single + 2
-		num4_soma_var = num1_single + num2_soma  
-		  
-		bool1_cp_strs = "Eldair" == "Fabricio"
-		bool2_cp_str_num = "ab" > 2
-		bool3_cp_nums = 2==4
-		  
-		bool4_lg_strs = "Eldair" AND "Fabricio"
-		bool5_lg_str_num = "ab" OR 2
-		bool6_lg_nums = 2==4 AND "Eldair" == "Fabricio"
-	    
-		bool7_un_negation = !bool1_cp_strs   
-		bool8_un_negation = !("Eldair" == "Fabricio")
-	 	     
-		numNegative = 2     
-             
-	 	str6_negative  =   (-2 + ((!2+2)/6+2) + numNegative )  
-	   	               
-		                               
+//		str1_amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
+//		str2_concat = "Eldair"+ "Dornelles"
+//		str3_contact_str_e_num = "Eldair"+ 2 
+//		str4_contact_str_e_num = 2+2+"Eldair"  
+//		    
+//		str5_var = str2_concat
+//		   
+//		num1_single = 123  
+//		num2_soma =  1001+20-15*10/5
+//	  	num3_soma_var = num1_single + 2
+//		num4_soma_var = num1_single + num2_soma   
+//		    
+//		bool1_cp_strs = "Eldair" == "Fabricio" 
+//		bool2_cp_str_num = "ab" > 2 
+//		bool3_cp_nums = 2==4 
+//		      
+//		bool4_lg_strs = "Eldair" AND "Fabricio" 
+//		bool5_lg_str_num = "ab" OR 2 
+//		bool6_lg_nums = 2==4 AND "Eldair" == "Fabricio"  
+//	     
+//		bool7_un_negation = !bool1_cp_strs      
+//		bool8_un_negation = !("Eldair" == "Fabricio")  
+//	 	      
+//		numNegative = 2      
+//                  
+//	 	str6_negative  =   (-2 + ((!2+2)/6+2) + numNegative )  
+	   	                 
+		                                    
 		str_aux1  = "//body/perosonalInformation/address/cep"   
-		str_aux2  = "count(//body/perosonalInformation/address/cep)"
-		str_aux3  = "count(//body/perosonalInformation/address/cep)<2"                 
+		str_aux2  = "count(//body/perosonalInformation/address/cep)"  
+		str_aux3  = "count(//body/perosonalInformation/address/cep)<2"                   
 //		            
-		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )		
+//		msg_01 = MessageContent( text("//body/perosonalInformation/address/cep") )		
 //		msg_02 = MessageContent( numeric(str_aux2) )  
 //		msg_03 = MessageContent( boolean(str_aux3) )
-//		
+//		 
 //		     
 //		msg_04 = MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" )
 //		msg_05 = MessageContent( numeric(str_aux2)<=20)  		
 //		    
 //		    
 //		msg_06 = MessageContent( numeric(str_aux3) < 2 per Hour )
-//		 		    
+//		 		     
 //		session = SessionInterval(10 Hour)
-//		session = SessionInterval  (10 Hour per msg_01)
+//		session = SessionInterval  (10 Hour per msg_01) 
 //	    
 //		timeInterval = TimeInterval("08:00:00" to "18:00:00") 
 //		    
   		timeout = Timeout(30) 
 		
-	 	}                   
-	                 
-	clauses{  
+	 }                    
+	           
+	                          
+	clauses{     
 		right requestDelivery {
 			/*Setting the days and hours to request a delivery,
 			the maximum request operation by minute and number of address by request*/
 			rolePlayer = process
-			operation = request	
-			terms {	 	  	   
-				(
-					MessageContent( text("//body/perosonalInformation/address/cep") ) OR 
+			operation = request	   
+			terms {	 	  	      				  
+				MaxNumberOfOperation(10),  
+				MaxNumberOfOperation(4 per Minute),  
+				MessageContent( boolean("//body/boolValue") == "true" ), 
+				MessageContent( numeric("//body/addres") == 1 per Hour ),  
+				MessageContent( numeric("//body/package")<=20),	  
+				MessageContent(boolean("a==b")),    
+				MessageContent( numeric("125")),   
+				MessageContent( text("//cpf")),	
+				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
+				SessionInterval(10 Hour), 
 				TimeInterval("08:00:00" to "18:00:00"),
-				Timeout(3),   	   
-		 		MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
-				MessageContent( boolean("08:00:00") == "true" ) 
-				)  
-				
-				OR
-				MessageContent( numeric("08:00:00")<=20),	   
-				MessageContent( numeric("08:00:00")== 1 per Hour )	,		
-				SessionInterval(10 Hour),
-				SessionInterval  (10 Hour per "08:00:00"),	 
-				TimeInterval("08:00:00" to "18:00:00"), 		 					 
-				MaxNumberOfOperation(3),  
-				MessageContent(numeric("08:00:00") == 1),  
-				MessageContent(text("08:00:00") == 100),  
-			 	MaxNumberOfOperation(4 per Minute),  
-				Timeout(3)   			 	
-//			 	when( "Business-initiated" == "Business-initiated" ) check {				
-//					 	MaxNumberOfOperation(10000 per Month)		
-//				}	        
-		 	             	    	       
+				Timeout(3), 
+				WeekDaysInterval(Monday to Friday) 
+		 	}           
+			// the onSuccess is optional 
+			onBreach(log("Request operation did not meet all requirements"))			
+		}
+		   
+		obligation responseDelivery {  
+   
+			rolePlayer = process  
+			operation = request	    
+			terms {	 	  	    
+				MaxNumberOfOperation(10), 
+				MaxNumberOfOperation(4 per Minute),  
+				MessageContent( boolean("//body/boolValue") == "true" ), 
+				MessageContent( numeric("//body/addres") == 1 per Hour ),  
+				MessageContent( numeric("//body/package")<=20),	  
+				MessageContent(boolean("a==b")),  
+				MessageContent( numeric("125")),
+				MessageContent( text("//cpf")),	
+				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
+				SessionInterval(10 Hour), 
+				TimeInterval("08:00:00" to "18:00:00"),
+				Timeout(3),
+				WeekDaysInterval(Monday to Friday)  			 	
 			}      
 			// the onSuccess is optional
 			onBreach(log("Request operation did not meet all requirements"))			
 		}
 	}
 }
+

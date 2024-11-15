@@ -29,7 +29,7 @@ contract DeliveryHiring_R {
 			}
 			// the onSuccess is optional
 			onBreach(log("Request operation did not meet all requirements"))			
-		}
+		} 
 	}
 }
 
