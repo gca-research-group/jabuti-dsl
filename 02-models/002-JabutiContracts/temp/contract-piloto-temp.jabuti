@@ -8,7 +8,7 @@ contract Temp {
 		application = "deliverySystem" 
 		process  	= "integrationProcess" 
 	}
-        
+         
 	variables{     
 		 
 //		str1_amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
@@ -18,7 +18,7 @@ contract Temp {
 //		    
 //		str5_var = str2_concat
 //		   
-//		num1_single = 123  
+//		num1_single = 123   
 //		num2_soma =  1001+20-15*10/5
 //	  	num3_soma_var = num1_single + 2
 //		num4_soma_var = num1_single + num2_soma   
@@ -34,8 +34,8 @@ contract Temp {
 //		bool7_un_negation = !bool1_cp_strs      
 //		bool8_un_negation = !("Eldair" == "Fabricio")  
 //	 	      
-//		numNegative = 2      
-//                  
+//		numNegative = 2         
+//                    
 //	 	str6_negative  =   (-2 + ((!2+2)/6+2) + numNegative )  
 	   	                 
 		                                    

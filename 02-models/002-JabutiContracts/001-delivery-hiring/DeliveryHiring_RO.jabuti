@@ -15,17 +15,17 @@ contract DeliveryHiring {
 		weight = "//body/package/weight/text()" 
 		productValue = "//body/product/value/text()" 
 		soma = 4 + 5 
-		timeLimit = Timeout(20)
-	}       
+		timeLimit = Timeout(20) 
+	}        
 	       
-	clauses{    
-		right requestDelivery {			      
-			rolePlayer = process             
+	clauses{     
+		right requestDelivery {			        
+			rolePlayer = process              
 			operation = request      
-			           
+			               
 			terms {			    
 				MaxNumberOfOperation(3 per Minute) OR
-				MessageContent(numeric(numberOfAddresses) == 1)OR 
+				MessageContent(numeric(numberOfAddresses) == 1)OR  
 				NOT MessageContent(numeric(weight) == 100),
 				MessageContent(numeric(productValue) < 20000)					    		
 			} 

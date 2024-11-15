@@ -57,6 +57,7 @@ import java.time.LocalDate;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
 import br.edu.unijui.gca.jabuti.generator.entities.terms.WeekDaysInterval_S
+import br.edu.unijui.gca.jabuti.jabuti.Variable
 
 /**
  * Generates code from your model files on save.
@@ -148,23 +149,24 @@ contract «ct.name» is EAI_Domain{
 
 /*----------------- 1º STEP: ADD IMPORTS TO THE TERMS USED IN THE CONTRACT ---------------*/
  	«FOR t: termsTypesInUse»
- 		using EAI for EAI.«t.removeTermSuffix»
+ 		using EAI for EAI.«t.removeTermSuffix»;
  	«ENDFOR»	
  	
 /*-------------- 2º STEP: Create the variables (from variables and terms block) -------------------------*/		
 	«FOR v : variablesMap.values»
 		«IF v instanceof VarTerm»
-			EAI.«v.type.removeTermSuffix» «v.name» 
+			EAI.«v.type.removeTermSuffix» «v.name»;
 		«ELSE»
-			«v.type» «v.name» 
+			«v.type» «v.name»;
 		«ENDIF»
 	«ENDFOR»
 
 /*---------------- 3º STEP: Identify and create variables referring to the clauses terms --------------*/  
 	«FOR clause : clauses»
-		//---------------- Vectors of terms related to the «clause.name» clause. ---------------- 
+	
+		//---------------- Vectors of terms related to the «clause.name» clause(_C«clause.id»). ---------------- 
 		«FOR termType: clause.termsMap.keySet»			
-			«"EAI."+termType.removeTermSuffix+"[]"» «termType.removeTermSuffix.toFirstLower+"_C"+ clause.id +"\n"»
+			«"EAI."+termType.removeTermSuffix+"[]"» «termType.removeTermSuffix.toFirstLower+"_C"+ clause.id»;
 		«ENDFOR»
 	«ENDFOR»
 
@@ -186,19 +188,20 @@ contract «ct.name» is EAI_Domain{
 	«««instanciar os variariaveis, atribuir os valores»»
 	«FOR v : ct.variables»
 		«IF v.term !== null»			
-			«"\t"»«"\t"»«v.name» = «"EAI.create"+variablesMap.get(v.name).type.removeTermSuffix+"("+buildCode_addParameters(variablesMap.get(v.name).type, (variablesMap.get(v.name) as VarTerm).term)+"))"»	
+			«"\t"»«"\t"»«v.name» = «"EAI.create"+variablesMap.get(v.name).type.removeTermSuffix+"("+buildCode_addParameters(variablesMap.get(v.name).type, (variablesMap.get(v.name) as VarTerm).term)+"))"»;	
 		«ELSEIF v.expression !== null»
-			«"\t"»«"\t"»«v.name» = «(variablesMap.get(v.name) as VarExpr).content.join("")»
+			«"\t"»«"\t"»«v.name» = «(variablesMap.get(v.name) as VarExpr).content.join("")»;
 		«ENDIF»
 	«ENDFOR»
-
 «««instanciar os termos e adicionar ao vetor das respectivas clausulas»»
 	 «resetCounter»«««zera a variavel counter»
 	«FOR clause : clauses»
-		«incrementCounter»
+	
+	«incrementCounter»
+			//---------------- Terms related to the «clause.name» clause (C«clause.id»). ----------------
 		«FOR type: clause.termsMap.keySet»
 			«FOR term: clause.getTerms(type)»
-				«"\t"»«"\t"»«type.removeTermSuffix.toFirstLower+"_C"+counter+".push(EAI.create"+type.removeTermSuffix+"("+buildCode_addParameters(type, term)+"))"»
+				«"\t"»«type.removeTermSuffix.toFirstLower+"_C"+counter+".push(EAI.create"+type.removeTermSuffix+"("+buildCode_addParameters(type, term)+"))"»;
 			«ENDFOR»
 		«ENDFOR»
 	«ENDFOR»
@@ -212,10 +215,8 @@ contract «ct.name» is EAI_Domain{
 /* --------------------------- END: code for all contracts ----------------------- */
 '''
 	}
-	
 
 // ----------------------------------------------------------------------------------
-
 //======================================================================================================
 // ========================= CREATE THE TERMS TO INSERT INTO THE CONSTRUCTOR ===========================
 	def String buildCode_addParameters(String type, TermStruct term) {
@@ -225,46 +226,60 @@ contract «ct.name» is EAI_Domain{
 				return " " + term.amount + " "
 			}
 			MaxNumberOfOperationByTime_S: {
-				return " " +term.amout+", "+term.timeUnit+" "
+				return " " + term.amout + ", " + term.timeUnit + " "
 			}
 			MessageContent_Boolean_S: {
-				return " \""+term.xpath+"\", \""+term.op+"\", "+term.content+" "
+				var String xpath = term.xpath.addDoubleQuotesToXpath
+				return " " + xpath + ", \"" + term.op + "\", " + term.content + " "
 			}
 			MessageContent_Number_PerTime_S: {
-				return " \""+term.xpath+"\", \""+term.op+"\", "+term.amount+", "+term.timeUnit+" "
+				var String xpath = term.xpath.addDoubleQuotesToXpath
+				return " " + xpath + ", \"" + term.op + "\", " + term.amount + ", " + term.timeUnit + " "
 			}
-			MessageContent_Number_S: {
-				return " \""+term.xpath+"\", \""+term.op+"\", "+term.content+" "
+			MessageContent_Number_S: {				
+				var String xpath = term.xpath.addDoubleQuotesToXpath
+				return " " + xpath + ", \"" + term.op + "\", " + term.content + " "
 			}
 			MessageContent_onlyXPath_Boolean_S: {
-				return " \""+term.xpath+"\" "
+				var String xpath = term.xpath.addDoubleQuotesToXpath
+				return " " + xpath + " "
 			}
 			MessageContent_onlyXPath_Number_S: {
-				return " \""+term.xpath+"\" "
+				var String xpath = term.xpath.addDoubleQuotesToXpath
+				return " " + xpath + " "
 			}
 			MessageContent_onlyXPath_String_S: {
-				return " \""+term.xpath+"\" "
+				var String xpath = term.xpath.addDoubleQuotesToXpath
+				return " " + xpath + " "
 			}
 			MessageContent_String_S: {
-				return " \""+term.xpath+"\", \""+term.op+"\", "+term.content+" "
+				var String xpath = term.xpath.addDoubleQuotesToXpath
+				return " " + xpath + ", \"" + term.op + "\", " + term.content + " "
 			}
 			SessionInterval_S: {
-				return " "+term.duration+", "+term.timeUnit+" "
+				return " " + term.duration + ", " + term.timeUnit + " "
 			}
 			TimeInterval_S: {
-				return " "+ term.start+", "+term.end+" "
+				return " " + term.start + ", " + term.end + " "
 			}
 			Timeout_S: {
-				return " " +term.amountTime +" "
+				return " " + term.amountTime + " "
 			}
-			WeekDaysInterval_S:{
-				return " " +term.start+", "+term.end+" "
+			WeekDaysInterval_S: {
+				return " " + term.start + ", " + term.end + " "
 			}
 			default: {
 				return "unknown: " + term.class.simpleName
 			}
 		}
 
+	}
+
+	def String addDoubleQuotesToXpath(String xpath) {
+		if (xpath.contains("/")) {
+			return " \"" + xpath + "\""
+		}
+		return xpath
 	}
 
 //======================================================================================================
@@ -317,40 +332,46 @@ contract «ct.name» is EAI_Domain{
 			}
 			case "MessageContent_Boolean_S": {
 				var t = term as MessageContent
+				var String xpath = t.xpathFromMessageContent;
 				var expression = t.expression.variableContent_Expression.join("") == "true" ? true : false
-				return new MessageContent_Boolean_S(t.content, t.comparisonOperator.symbol, expression)
+				return new MessageContent_Boolean_S(xpath, t.comparisonOperator.symbol, expression)
 			}
 			case "MessageContent_Number_PerTime_S": {
 				var t = term as MessageContent
+				var String xpath = t.xpathFromMessageContent;
 				var expression = Integer.valueOf(t.expression.variableContent_Expression.join(""))
-				return new MessageContent_Number_PerTime_S(t.content, t.comparisonOperator.symbol, expression,
+				return new MessageContent_Number_PerTime_S(xpath, t.comparisonOperator.symbol, expression,
 					t.perTime.timeUnit.toString.toUpperCase)
 			}
 			case "MessageContent_Number_S": {
 				var t = term as MessageContent
-				var expression = Integer.valueOf(t.expression.variableContent_Expression.join(""))				
-				return new MessageContent_Number_S(t.content, t.comparisonOperator.symbol, expression)
-				
-				//'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
-				//(comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')' 	
-	
+				var String xpath = t.xpathFromMessageContent;
+				var expression = Integer.valueOf(t.expression.variableContent_Expression.join(""))
+				return new MessageContent_Number_S(xpath, t.comparisonOperator.symbol, expression)
+
+			// 'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
+			// (comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')' 	
 			}
 			case "MessageContent_onlyXPath_Boolean_S": {
 				var t = term as MessageContent
-				return new MessageContent_onlyXPath_Boolean_S(t.content)
+				var String xpath = t.xpathFromMessageContent;
+				return new MessageContent_onlyXPath_Boolean_S(xpath)
 			}
 			case "MessageContent_onlyXPath_Number_S": {
 				var t = term as MessageContent
-				return new MessageContent_onlyXPath_Number_S(t.content)
+				var String xpath = t.xpathFromMessageContent;
+				return new MessageContent_onlyXPath_Number_S(xpath)
 			}
 			case "MessageContent_onlyXPath_String_S": {
 				var t = term as MessageContent
-				return new MessageContent_onlyXPath_String_S(t.content)
+				var String xpath = t.xpathFromMessageContent;
+				return new MessageContent_onlyXPath_String_S(xpath)
 			}
 			case "MessageContent_String_S": {
 				var t = term as MessageContent
+				var String xpath = t.xpathFromMessageContent;
 				var expression = t.expression.variableContent_Expression.join("")
-				return new MessageContent_String_S(t.content, t.comparisonOperator.symbol, expression)
+				return new MessageContent_String_S(xpath, t.comparisonOperator.symbol, expression)
 			}
 			case "SessionInterval_S": {
 				var t = term as SessionInterval
@@ -364,17 +385,25 @@ contract «ct.name» is EAI_Domain{
 				var t = term as Timeout
 				return new Timeout_S(t.seconds)
 			}
-			case "WeekDaysInterval_S":{
+			case "WeekDaysInterval_S": {
 				var t = term as WeekDaysInterval
 				return new WeekDaysInterval_S(t.start.toString, t.end.toString)
 			}
-			
 			default: {
 				println("unknown: " + typeTerm)
 				return null;
 			}
 		}
 
+	}
+
+	def String getXpathFromMessageContent(MessageContent msgContent) {
+		if (msgContent.variable !== null) {
+			return msgContent.variable.name.toString
+		} else if (msgContent.content !== null) {
+			return msgContent.content.toString
+		}
+		return "Unknown"
 	}
 
 	// identify the type of the term and map from Jabuti Term to solidity struct type
@@ -524,7 +553,6 @@ contract «ct.name» is EAI_Domain{
 	}
 
 	// ================================ General methods ============================
-	
 	def void incrementCounter() {
 		counter++
 	}
@@ -533,23 +561,22 @@ contract «ct.name» is EAI_Domain{
 		counter = 0;
 	}
 
-	def String removeTermSuffix(String string) {
-		return string.replace("_S", "")
+	def String removeTermSuffix(String str) {
+		return str.substring(0, str.length - 2)
 	}
 
 	def long toTimestamp(String datetime) {
 		val format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
 		format.parse(datetime).time
 	}
-	
+
 	def long convertToSeconds(String timeString) {
 		val localTime = LocalTime.parse(timeString);
 		val localDateTime = LocalDateTime.of(LocalDate.now(), localTime);
 		val timestamp = Timestamp.valueOf(localDateTime);
 		return timestamp.time
 	}
-	
-	
+
 //	def static boolean isNumeric(String str) {
 //		try {
 //			Integer.parseInt(str)
