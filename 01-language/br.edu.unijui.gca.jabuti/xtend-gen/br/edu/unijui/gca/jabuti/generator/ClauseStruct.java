@@ -19,11 +19,15 @@ public class ClauseStruct {
 
   private final String rolePlayer;
 
+  private final String failMessasge;
+
+  private final String successMessage;
+
   private final Map<String, List<TermStruct>> termsMap;
 
   private final ArrayList<String> termsLogicalOperators;
 
-  public ClauseStruct(final int id, final String type, final String name, final String rolePlayer) {
+  public ClauseStruct(final int id, final String type, final String name, final String rolePlayer, final String failMessage, final String successMessage) {
     this.id = id;
     this.type = type;
     this.name = name;
@@ -31,6 +35,8 @@ public class ClauseStruct {
     HashMap<String, List<TermStruct>> _hashMap = new HashMap<String, List<TermStruct>>();
     this.termsMap = _hashMap;
     this.termsLogicalOperators = CollectionLiterals.<String>newArrayList();
+    this.failMessasge = failMessage;
+    this.successMessage = successMessage;
   }
 
   public Map<String, List<TermStruct>> getTermsMap() {
@@ -62,6 +68,10 @@ public class ClauseStruct {
     return this.name;
   }
 
+  public String getRolePlayer() {
+    return this.rolePlayer;
+  }
+
   public ArrayList<String> getLogicalOperators() {
     return this.termsLogicalOperators;
   }
@@ -76,6 +86,14 @@ public class ClauseStruct {
       _elvis = _newArrayList;
     }
     return _elvis;
+  }
+
+  public String getFailMessage() {
+    return this.failMessasge;
+  }
+
+  public String getSuccessMessage() {
+    return this.successMessage;
   }
 
   @Override

@@ -13,17 +13,21 @@ class ClauseStruct {
 	val String type;
 	val String name;
 	val String rolePlayer;
+	val String failMessasge;
+	val String successMessage;
 
 	val Map<String, List<TermStruct>> termsMap
 	val ArrayList<String> termsLogicalOperators
 
-	new(int id, String type, String name, String rolePlayer) {
+	new(int id, String type, String name, String rolePlayer, String failMessage, String successMessage) {
 		this.id = id
 		this.type = type
 		this.name = name
 		this.rolePlayer = rolePlayer
 		this.termsMap = new HashMap<String, List<TermStruct>>
 		this.termsLogicalOperators = newArrayList
+		this.failMessasge = failMessage
+		this.successMessage = successMessage
 	}
 
 	def Map<String, List<TermStruct>> getTermsMap() {
@@ -52,6 +56,10 @@ class ClauseStruct {
 	def String getName() {
 		return this.name
 	}
+	
+	def getRolePlayer(){
+		return this.rolePlayer
+	}
 
 	def ArrayList<String> getLogicalOperators() {
 		return this.termsLogicalOperators
@@ -59,6 +67,13 @@ class ClauseStruct {
 
 	def List<TermStruct> getTerms(String termType) {
 		termsMap.get(termType) ?: newArrayList
+	}
+	
+	def String getFailMessage(){
+		return this.failMessasge
+	}
+	def String getSuccessMessage(){
+		return this.successMessage
 	}
 
 	override toString() {

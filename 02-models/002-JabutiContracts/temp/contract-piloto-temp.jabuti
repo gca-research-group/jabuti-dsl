@@ -10,7 +10,7 @@ contract Temp {
 	}
          
 	variables{     
-		 
+		  
 //		str1_amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
 //		str2_concat = "Eldair"+ "Dornelles"
 //		str3_contact_str_e_num = "Eldair"+ 2 

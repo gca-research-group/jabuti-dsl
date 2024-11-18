@@ -173,6 +173,7 @@ contract «ct.name» is EAI_Domain{
 
 /*---------------- 4º STEP: Create the constructor method ------------------------------------------*/
 
+««« INÍCIO DO METODO CONSTRUTOR »»
 	constructor(address _applicationWallet){
 		activated = true;
 		// Catch the date from jabuti contract 
@@ -208,21 +209,28 @@ contract «ct.name» is EAI_Domain{
 	«resetCounter»
 	}
 	«««FIM DO METODO CONSTRUTOR»»
+«««	
+	«««INÍCIO DO GERADOR DE FUNÇÕES»»
 	«FOR c : clauses»
 		«"\t"»function «c.type»_«c.name»(
-						«FOR termType: c.termsMap.keySet»
-							«termType.toFirstLower»
+						«FOR termType: c.termsMap.keySet»							
+							«termType.buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause»
 						«ENDFOR»
 					) public returns(bool){
 				if(«FOR termType: c.termsMap.keySet»
 						«FOR term: c.termsMap.get(termType)»
-							«term.class.simpleName.toFirstLower»
+							«term.class.simpleName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause»
 						«ENDFOR»
 					«ENDFOR»
 					){
+						«IF !c.successMessage.nullOrEmpty»
+							emit successEvent("«c.successMessage»")						
+						«ENDIF»
 						return true;
 				}else{
-					emit failEvent("«»");
+					«IF !c.failMessage.nullOrEmpty»							
+						emit failEvent("«c.failMessage»");
+					«ENDIF»					
 					return false;
 		«"\t"»}
 	«ENDFOR»
@@ -236,6 +244,20 @@ contract «ct.name» is EAI_Domain{
 /* --------------------------- END: code for all contracts ----------------------- */
 '''
 	}
+	
+	
+	def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termType){
+		'''
+		«termType.toFirstLower.removeTermSuffix»
+		'''
+	}
+	
+		def buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(String termType){
+		'''
+		«termType.toFirstLower.removeTermSuffix»
+		'''
+	}
+	
 
 	def String buildFunctionName(Clause clause) {
 		switch (clause) {
@@ -326,7 +348,11 @@ contract «ct.name» is EAI_Domain{
 //======================================================================================================
 // ============================ MAPPING CLAUSES TO A HASH_MAP STRUCTURE ================================	
 	def void mappingClauses(Clause c) {
-		clauses.add(new ClauseStruct(counter + 1, c.clauseType, c.name, c.rolePlayer.getName))
+		var String onSuccessMessage = c.onSuccess?.message ?: null
+		val String onBreachMessage = c.onBreach?.message ?: null
+		clauses.add(
+			new ClauseStruct(counter + 1, c.clauseType, c.name, c.rolePlayer.getName, onBreachMessage,
+				onSuccessMessage))
 		addTermsIntoTheClauseMap(c.terms)
 		incrementCounter;
 	}
