@@ -13,6 +13,8 @@ import org.eclipse.xtext.xbase.lib.IterableExtensions;
 public class ClauseStruct {
   private final int id;
 
+  private final String type;
+
   private final String name;
 
   private final String rolePlayer;
@@ -21,8 +23,9 @@ public class ClauseStruct {
 
   private final ArrayList<String> termsLogicalOperators;
 
-  public ClauseStruct(final int id, final String name, final String rolePlayer) {
+  public ClauseStruct(final int id, final String type, final String name, final String rolePlayer) {
     this.id = id;
+    this.type = type;
     this.name = name;
     this.rolePlayer = rolePlayer;
     HashMap<String, List<TermStruct>> _hashMap = new HashMap<String, List<TermStruct>>();
@@ -49,6 +52,10 @@ public class ClauseStruct {
 
   public int getId() {
     return this.id;
+  }
+
+  public String getType() {
+    return this.type;
   }
 
   public String getName() {
