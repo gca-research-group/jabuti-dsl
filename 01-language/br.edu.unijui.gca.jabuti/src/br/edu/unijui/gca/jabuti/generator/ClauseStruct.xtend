@@ -3,7 +3,6 @@ package br.edu.unijui.gca.jabuti.generator
 import java.util.Map
 import java.util.List
 import java.util.ArrayList
-import br.edu.unijui.gca.jabuti.jabuti.Term
 import br.edu.unijui.gca.jabuti.generator.entities.terms.TermStruct
 import java.util.HashMap
 

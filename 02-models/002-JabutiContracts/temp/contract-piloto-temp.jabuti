@@ -10,7 +10,7 @@ contract Temp {
 	}
          
 	variables{     
-		  
+		 
 //		str1_amount_of_cep  = "count(//body/perosonalInformation/address/cep)"
 //		str2_concat = "Eldair"+ "Dornelles"
 //		str3_contact_str_e_num = "Eldair"+ 2 
@@ -83,7 +83,7 @@ contract Temp {
 				SessionInterval(10 Hour), 
 				TimeInterval("08:00:00" to "18:00:00"),
 				Timeout(3), 
-				WeekDaysInterval(Monday to Friday) 
+				WeekDaysInterval(Monday to Friday)  
 		 	}           
 			// the onSuccess is optional 
 			onBreach(log("Request operation did not meet all requirements"))			
