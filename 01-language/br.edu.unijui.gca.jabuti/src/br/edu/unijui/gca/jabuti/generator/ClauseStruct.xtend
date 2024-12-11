@@ -15,7 +15,7 @@ class ClauseStruct {
 	val String failMessasge;
 	val String successMessage;
 
-	val Map<String, List<TermStruct>> termsMap
+	val ArrayList<TermStruct> termsList
 	val ArrayList<String> termsLogicalOperators
 
 	new(int id, String type, String name, String rolePlayer, String failMessage, String successMessage) {
@@ -23,21 +23,18 @@ class ClauseStruct {
 		this.type = type
 		this.name = name
 		this.rolePlayer = rolePlayer
-		this.termsMap = new HashMap<String, List<TermStruct>>
+		this.termsList = new ArrayList<TermStruct>
 		this.termsLogicalOperators = newArrayList
 		this.failMessasge = failMessage
 		this.successMessage = successMessage
 	}
 
-	def Map<String, List<TermStruct>> getTermsMap() {
-		return this.termsMap
+	def ArrayList<TermStruct> getTermsMap() {
+		return this.termsList
 	}
 
-	def void addTerm(String termType, TermStruct term) {
-		if (!termsMap.containsKey(termType)) {
-			termsMap.put(termType, newArrayList)
-		}
-		termsMap.get(termType).add(term)
+	def void addTerm(TermStruct term) {		
+		this.termsList.add(term)
 	}
 
 	def void addLogicalOperator(String operator) {
@@ -64,8 +61,8 @@ class ClauseStruct {
 		return this.termsLogicalOperators
 	}
 
-	def List<TermStruct> getTerms(String termType) {
-		termsMap.get(termType) ?: newArrayList
+	def List<TermStruct> getTermsList() {
+		this.termsList
 	}
 	
 	def String getFailMessage(){
@@ -75,10 +72,4 @@ class ClauseStruct {
 		return this.successMessage
 	}
 
-	override toString() {
-		termsMap.entrySet.map [
-			key + ": " + value.join(", ")
-		].join(" | ")
-		"Clause #«clauseNumber»: «examples»"
-	}
 }

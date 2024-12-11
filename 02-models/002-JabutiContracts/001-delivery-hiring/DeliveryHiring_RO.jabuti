@@ -14,18 +14,18 @@ contract DeliveryHiring {
 		numberOfAddresses = "count(//body/perosonalInformation/address/cep)" 
 		weight = "//body/package/weight/text()"   
 		productValue = "//body/product/value/text()"  
-		soma = 4 + 5  
+		soma = 4 + 5   
 		timeLimit = Timeout(20)  
 	}            
-	              
-	clauses{            
-		right requestDelivery {		 	                  
-			rolePlayer = process                    
-			operation = request          
-			                    
-			terms {			          
-				MaxNumberOfOperation(3 per Minute),  
-				MaxNumberOfOperation(2 per Minute),   
+	               
+	clauses{              
+		right requestDelivery {		 	                   
+			rolePlayer = process                   
+			operation = request            
+			                      
+			terms {			           
+				MaxNumberOfOperation(3),     
+				MaxNumberOfOperation(2 per Minute),     
 				MessageContent(numeric(numberOfAddresses) == 1 ),   
 				NOT MessageContent(numeric(weight) == 100 per Minute), 
 				MessageContent(numeric(productValue) < 20000 )					    		
@@ -37,8 +37,8 @@ contract DeliveryHiring {
 			rolePlayer = application 
 			operation = response			 
 			terms {
-				Timeout(20),
-				MessageContent(text ('//budget/deliveryTime/text()') < 15)		
+				Timeout(20), 
+				MessageContent(boolean ('//budget/deliveryTime/text()') < 15)		
 		}
 			onBreach(log("response performed outside of time limit or delivery time too long"))			
 		}

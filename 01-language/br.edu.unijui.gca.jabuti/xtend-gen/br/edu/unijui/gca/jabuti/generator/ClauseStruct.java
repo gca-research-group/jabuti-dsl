@@ -2,12 +2,8 @@ package br.edu.unijui.gca.jabuti.generator;
 
 import br.edu.unijui.gca.jabuti.generator.entities.terms.TermStruct;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
-import org.eclipse.xtext.xbase.lib.Functions.Function1;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class ClauseStruct {
@@ -23,7 +19,7 @@ public class ClauseStruct {
 
   private final String successMessage;
 
-  private final Map<String, List<TermStruct>> termsMap;
+  private final ArrayList<TermStruct> termsList;
 
   private final ArrayList<String> termsLogicalOperators;
 
@@ -32,24 +28,19 @@ public class ClauseStruct {
     this.type = type;
     this.name = name;
     this.rolePlayer = rolePlayer;
-    HashMap<String, List<TermStruct>> _hashMap = new HashMap<String, List<TermStruct>>();
-    this.termsMap = _hashMap;
+    ArrayList<TermStruct> _arrayList = new ArrayList<TermStruct>();
+    this.termsList = _arrayList;
     this.termsLogicalOperators = CollectionLiterals.<String>newArrayList();
     this.failMessasge = failMessage;
     this.successMessage = successMessage;
   }
 
-  public Map<String, List<TermStruct>> getTermsMap() {
-    return this.termsMap;
+  public ArrayList<TermStruct> getTermsMap() {
+    return this.termsList;
   }
 
-  public void addTerm(final String termType, final TermStruct term) {
-    boolean _containsKey = this.termsMap.containsKey(termType);
-    boolean _not = (!_containsKey);
-    if (_not) {
-      this.termsMap.put(termType, CollectionLiterals.<TermStruct>newArrayList());
-    }
-    this.termsMap.get(termType).add(term);
+  public void addTerm(final TermStruct term) {
+    this.termsList.add(term);
   }
 
   public void addLogicalOperator(final String operator) {
@@ -76,16 +67,8 @@ public class ClauseStruct {
     return this.termsLogicalOperators;
   }
 
-  public List<TermStruct> getTerms(final String termType) {
-    List<TermStruct> _elvis = null;
-    List<TermStruct> _get = this.termsMap.get(termType);
-    if (_get != null) {
-      _elvis = _get;
-    } else {
-      ArrayList<TermStruct> _newArrayList = CollectionLiterals.<TermStruct>newArrayList();
-      _elvis = _newArrayList;
-    }
-    return _elvis;
+  public List<TermStruct> getTermsList() {
+    return this.termsList;
   }
 
   public String getFailMessage() {
@@ -94,21 +77,5 @@ public class ClauseStruct {
 
   public String getSuccessMessage() {
     return this.successMessage;
-  }
-
-  @Override
-  public String toString() {
-    String _xblockexpression = null;
-    {
-      final Function1<Map.Entry<String, List<TermStruct>>, String> _function = (Map.Entry<String, List<TermStruct>> it) -> {
-        String _key = it.getKey();
-        String _plus = (_key + ": ");
-        String _join = IterableExtensions.join(it.getValue(), ", ");
-        return (_plus + _join);
-      };
-      IterableExtensions.join(IterableExtensions.<Map.Entry<String, List<TermStruct>>, String>map(this.termsMap.entrySet(), _function), " | ");
-      _xblockexpression = "Clause #«clauseNumber»: «examples»";
-    }
-    return _xblockexpression;
   }
 }

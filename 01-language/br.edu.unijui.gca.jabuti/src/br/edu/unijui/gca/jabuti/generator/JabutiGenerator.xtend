@@ -61,6 +61,7 @@ import br.edu.unijui.gca.jabuti.jabuti.Right
 import br.edu.unijui.gca.jabuti.jabuti.Obligation
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition
 import java.util.Set
+import java.util.HashMap
 
 /**
  * Generates code from your model files on save.
@@ -87,7 +88,7 @@ class JabutiGenerator extends AbstractGenerator {
 //	String exprVarName_temp	
 	int counter;
 //	ArrayList<String> terms = newArrayList
-	ArrayList<String> termsTypesInUse = newArrayList
+	ArrayList<String> termsTypesInUse;
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		for (c : resource.allContents.filter(Contract).toIterable) {
@@ -106,6 +107,7 @@ class JabutiGenerator extends AbstractGenerator {
 		exprContent_temp = new ArrayList<String>
 		variablesMap = new LinkedHashMap<String, StructVar>
 		clauses = new ArrayList<ClauseStruct>
+		termsTypesInUse = newArrayList
 
 		if (ct !== null) {
 			resetCounter // define um contador de clausula como zero, dentro do mapping ele será incrementado
@@ -155,7 +157,7 @@ contract «ct.name» is EAI{
  		using EAI for EAI.«t.removeTermSuffix»;
  	«ENDFOR»	
  	
-/*-------------- 2º STEP: Create the variables (from variables and terms block) -------------------------*/		
+/*-------------- 2º STEP: Create the variables (from variables block) -------------------------*/		
 	«FOR v : variablesMap.values»
 		«IF v instanceof VarTerm»
 			EAI.«v.type.removeTermSuffix» «v.name»;
@@ -165,11 +167,11 @@ contract «ct.name» is EAI{
 	«ENDFOR»
 
 /*---------------- 3º STEP: Identify and create variables referring to the clauses terms --------------*/  
-	«FOR clause : clauses»
-	
+	«FOR clause : clauses»	
 		//---------------- Vectors of terms related to the «clause.name» clause(_C«clause.id»). ---------------- 
-		«FOR termType: clause.termsMap.keySet»			
-			«"EAI."+termType.removeTermSuffix+"[]"» «termType.removeTermSuffix.toFirstLower+"_C"+ clause.id»;
+		«var listOfTermsTypeUnique = clause.termsList.getUniqueValues»
+		«FOR termType: listOfTermsTypeUnique»			
+	 	«"\t"»«"EAI."+termType.removeTermSuffix+"[]"» «termType.removeTermSuffix.toFirstLower+"_C"+ clause.id»;
 		«ENDFOR»
 	«ENDFOR»
 
@@ -202,10 +204,9 @@ contract «ct.name» is EAI{
 	
 	«incrementCounter»
 			//---------------- Terms related to the «clause.name» clause (C«clause.id»). ----------------
-		«FOR type: clause.termsMap.keySet»
-			«FOR term: clause.getTerms(type)»
-				«"\t"»«type.removeTermSuffix.toFirstLower+"_C"+counter+".push(EAI.create"+type.removeTermSuffix+"("+buildCode_addParameters(type, term)+"))"»;
-			«ENDFOR»
+		«FOR term: clause.termsList»
+			«var typeName = term.class.simpleName»
+			«"\t"»«typeName.removeTermSuffix.toFirstLower+"_C"+counter+".push(EAI.create"+typeName.removeTermSuffix+"("+buildCode_addParameters(typeName, term)+"))"»;
 		«ENDFOR»
 	«ENDFOR»
 	«resetCounter»
@@ -216,30 +217,27 @@ contract «ct.name» is EAI{
 	«FOR c : clauses»
 	
 	«««GERADOR DOS PARAMETROS  DAS FUNÇÕES»»
-	«var listOfParameters = c.termsMap.keySet.buildParameterForFunction»
+	«var listOfParameters = c.termsList.buildParameterForFunction»
 «"\t"»function «c.type»_«c.name»(
 	«FOR termType: listOfParameters»	
 		«IF termType.isTheLastTermType(listOfParameters)»
-			«"\t"»«"\t"»«termType»
+			«"\t\t"»«termType»
 		«ELSE»
-			«"\t"»«"\t"»«termType»,
+			«"\t\t"»«termType»,
 		«ENDIF»
 	«ENDFOR»
 «"\t\t"») public returns(bool){
 	«««	
 	«««GERADOR DOS PARAMETROS DO IF STATEMENT»»
 	
-«"\t\t"»if(«FOR termType: c.termsMap.keySet»
-			«var isLastTermType = termType.isTheLastTermType(c.termsMap.keySet.toList)»
-			«FOR i : 0 ..< c.termsMap.get(termType).size»
-				«IF isLastTermType»
-				«var isLastTerm = i == c.termsMap.get(termType).size-1 »
-				«"\t\t\t"»«c.termsMap.get(termType).get(i).class.simpleName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(i,isLastTerm)»
+	«var listOfParametersForIfStatement = c.termsList.buildParameterForIfStatement»
+«"\t\t"»if(«FOR i:0 ..< listOfParametersForIfStatement.size»
+				«IF i== (listOfParametersForIfStatement.size-1)»
+					«"\t\t\t"»«listOfParametersForIfStatement.get(i)»
 				«ELSE»
-				«"\t\t\t"»«c.termsMap.get(termType).get(i).class.simpleName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(i,false)»
+					«"\t\t\t"»«listOfParametersForIfStatement.get(i)»&&
 				«ENDIF»
 			«ENDFOR»		
-		   «ENDFOR»
 «"\t\t"»){
 	«««	
 	«««GERADOR DO CORPO DO IF STATEMENT»»
@@ -255,7 +253,7 @@ contract «ct.name» is EAI{
 «"\t\t"»}
 «"\t"»}
 «incrementCounter» «««contador utilizado identificar o numero da clausula atual dentro do for»
-  
+«««  
 «ENDFOR»
 	«resetCounter»
 	
@@ -267,6 +265,22 @@ contract «ct.name» is EAI{
 '''
 	}
 
+	def ArrayList<String> getUniqueValues(List<TermStruct> terms) {
+		val termList = new ArrayList<TermStruct>(terms)
+
+		var termNameUnique = newArrayList
+
+		for (term : termList) {
+			var termName = term.getClass.simpleName
+			if (!termNameUnique.contains(termName)) {
+				termNameUnique.add(termName)
+			}
+
+		}
+
+		return termNameUnique
+	}
+
 	def boolean isTheLastTermType(String termType, List<String> listTermsType) {
 		var lastTermType = listTermsType.get(listTermsType.size - 1);
 		if (termType == lastTermType) {
@@ -275,9 +289,9 @@ contract «ct.name» is EAI{
 		return false;
 	}
 
-	def buildParameterForFunction(Set<String> setTermsType) {
+	def buildParameterForFunction(List<TermStruct> terms) {
 
-		var listTermsType = new ArrayList<String>(setTermsType.toList)
+		var listTermsType = terms.getUniqueValues
 
 		var listParemeters = newArrayList
 
@@ -297,6 +311,8 @@ contract «ct.name» is EAI{
 				}
 				listParemeters.add(termType_s.removeTermSuffix + "[] memory " +
 					termType_s.toFirstLower.removeTermSuffix)
+			} else if (termType_s == "MaxNumberOfOperation_S") {
+				// não fazer nada
 			} else {
 				listParemeters.add(termType_s.removeTermSuffix + "[] memory " +
 					termType_s.toFirstLower.removeTermSuffix)
@@ -307,31 +323,26 @@ contract «ct.name» is EAI{
 
 	}
 
-	def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termType_s, boolean isLastTerm) {
+	def buildParameterForIfStatement(List<TermStruct> terms) {
+		var listOfParameters = new ArrayList<String>()
 
-		var termType = "\t" + termType_s.removeTermSuffix + "[] memory " + termType_s.toFirstLower.removeTermSuffix
-
-		if (termType_s == "MaxNumberOfOperationByTime_S" || termType_s == "MessageContent_Number_PerTime_S" ||
-			termType_s == "Timeout_S") {
-			termType = "\tuint32 accessDateTime"
-		} else if (termType_s == "TimeInterval_S") {
-			termType = "\tuint32 accessTime"
+		val termOccurrences = new HashMap<String, Integer>()
+		
+		var termName =""
+		for (term : terms) {
+			termName = term.class.simpleName
+			if (termOccurrences.containsKey(termName)) {
+				termOccurrences.put(termName, termOccurrences.get(termName) + 1) // Incrementa o valor
+			} else {
+				termOccurrences.put(termName, 0) // Insere a chave com valor inicial 1
+			}
+			listOfParameters.add(termName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(termOccurrences.get(termName)))
 		}
 
-		if (!isLastTerm) {
-			'''
-			«termType»,
-				«««»»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»,
-			'''
-		} else {
-			'''
-			«termType»
-			«««»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»
-			'''
-		}
+		return listOfParameters
 	}
 
-	def buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(String termType, int id, boolean isLastTerm) {
+	def buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(String termType, int id) {
 		// msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath_nc[0]) &&
 		var ifParameter = "";
 		// println(termType + "- n:" + id)
@@ -386,18 +397,34 @@ contract «ct.name» is EAI{
 				return null;
 			}
 		}
-		if (!isLastTerm) {
-			'''
-				«ifParameter»&&
-			'''
-		} else {
-			'''
-				«ifParameter»
-			'''
-
-		}
+		
+		return ifParameter
+			
 	}
 
+//	def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termType_s, boolean isLastTerm) {
+//
+//		var termType = "\t" + termType_s.removeTermSuffix + "[] memory " + termType_s.toFirstLower.removeTermSuffix
+//
+//		if (termType_s == "MaxNumberOfOperationByTime_S" || termType_s == "MessageContent_Number_PerTime_S" ||
+//			termType_s == "Timeout_S") {
+//			termType = "\tuint32 accessDateTime"
+//		} else if (termType_s == "TimeInterval_S") {
+//			termType = "\tuint32 accessTime"
+//		}
+//
+//		if (!isLastTerm) {
+//			'''
+//			«termType»,
+//				«««»»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»,
+//			'''
+//		} else {
+//			'''
+//			«termType»
+//			«««»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»
+//			'''
+//		}
+//	}
 	def String buildFunctionName(Clause clause) {
 		switch (clause) {
 			Right: {
@@ -528,7 +555,7 @@ contract «ct.name» is EAI{
 				var type = term.getTermType
 				var TermStruct term_S = buildTheTermStruct_S(type, term)
 
-				clauses.get(counter).addTerm(type, term_S)
+				clauses.get(counter).addTerm(term_S)
 			}
 			ConditionalExpression: {
 				println("ConditionalExpression") // fazer o tratamento para a conditional expression
@@ -762,11 +789,11 @@ contract «ct.name» is EAI{
 
 		// add the types of terms used in the clauses block
 		for (cl : clauses) {
-			cl.termsMap.keySet.forEach [ t |
-				if (!termsTypesInUse.contains(t)) {
-					termsTypesInUse.add(t);
+			for (termName : cl.termsList.uniqueValues) {
+				if (!termsTypesInUse.contains(termName)) {
+					termsTypesInUse.add(termName);
 				}
-			]
+			}
 		}
 
 		return termsTypesInUse;
@@ -815,8 +842,8 @@ contract «ct.name» is EAI{
 	def void printClause() {
 		clauses.forEach [ cl |
 			println("termos:")
-			cl.termsMap.entrySet.forEach [ entry |
-				println(entry.key + " " + entry.value)
+			cl.termsList.forEach [ entry |
+				println(entry)
 			]
 			println("operadores lógicos:")
 			cl.logicalOperators.forEach [ lp |
