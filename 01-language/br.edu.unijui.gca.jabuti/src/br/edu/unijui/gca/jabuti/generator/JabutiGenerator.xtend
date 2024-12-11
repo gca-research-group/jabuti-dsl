@@ -57,16 +57,16 @@ import java.time.LocalDate;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval
 import br.edu.unijui.gca.jabuti.generator.entities.terms.WeekDaysInterval_S
-import br.edu.unijui.gca.jabuti.jabuti.Variable
 import br.edu.unijui.gca.jabuti.jabuti.Right
 import br.edu.unijui.gca.jabuti.jabuti.Obligation
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition
+import java.util.Set
 
 /**
  * Generates code from your model files on save.
  * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
- */ 
+ */
 class JabutiGenerator extends AbstractGenerator {
 
 //	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
@@ -130,9 +130,9 @@ class JabutiGenerator extends AbstractGenerator {
 		'''
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
-import "./libs/EAI_Domain.sol";
+import "./libs/EAI.sol";
 
-contract «ct.name» is EAI_Domain{
+contract «ct.name» is EAI{
 «"\n"»
 «"\t"»uint32 beginDate; 
 «"\t"»uint32 dueDate; 	
@@ -214,28 +214,50 @@ contract «ct.name» is EAI_Domain{
 «««	
 	«««INÍCIO DO GERADOR DE FUNÇÕES»»
 	«FOR c : clauses»
-		«"\t"»function «c.type»_«c.name»(
-						«FOR termType: c.termsMap.keySet»							
-							«termType.buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause»
-						«ENDFOR»
-					) public returns(bool){
-				if(«FOR termType: c.termsMap.keySet»
-						«FOR term: c.termsMap.get(termType)»
-							«term.class.simpleName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause»
-						«ENDFOR»
-					«ENDFOR»
-					){
-						«IF !c.successMessage.nullOrEmpty»
-							emit successEvent("«c.successMessage»")						
-						«ENDIF»
-						return true;
-				}else{
-					«IF !c.failMessage.nullOrEmpty»							
-						emit failEvent("«c.failMessage»");
-					«ENDIF»					
-					return false;
-		«"\t"»}
+	
+	«««GERADOR DOS PARAMETROS  DAS FUNÇÕES»»
+	«var listOfParameters = c.termsMap.keySet.buildParameterForFunction»
+«"\t"»function «c.type»_«c.name»(
+	«FOR termType: listOfParameters»	
+		«IF termType.isTheLastTermType(listOfParameters)»
+			«"\t"»«"\t"»«termType»
+		«ELSE»
+			«"\t"»«"\t"»«termType»,
+		«ENDIF»
 	«ENDFOR»
+«"\t\t"») public returns(bool){
+	«««	
+	«««GERADOR DOS PARAMETROS DO IF STATEMENT»»
+	
+«"\t\t"»if(«FOR termType: c.termsMap.keySet»
+			«var isLastTermType = termType.isTheLastTermType(c.termsMap.keySet.toList)»
+			«FOR i : 0 ..< c.termsMap.get(termType).size»
+				«IF isLastTermType»
+				«var isLastTerm = i == c.termsMap.get(termType).size-1 »
+				«"\t\t\t"»«c.termsMap.get(termType).get(i).class.simpleName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(i,isLastTerm)»
+				«ELSE»
+				«"\t\t\t"»«c.termsMap.get(termType).get(i).class.simpleName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(i,false)»
+				«ENDIF»
+			«ENDFOR»		
+		   «ENDFOR»
+«"\t\t"»){
+	«««	
+	«««GERADOR DO CORPO DO IF STATEMENT»»
+		«IF !c.successMessage.nullOrEmpty»
+			emit successEvent("«c.successMessage»")						
+		«ENDIF»
+				return true;
+«"\t\t"»}else{
+			«IF !c.failMessage.nullOrEmpty»							
+«"\t\t\t"»emit failEvent("«c.failMessage»");
+			«ENDIF»					
+«"\t\t\t"»return false;
+«"\t\t"»}
+«"\t"»}
+«incrementCounter» «««contador utilizado identificar o numero da clausula atual dentro do for»
+  
+«ENDFOR»
+	«resetCounter»
 	
 «ENDIF»	
 
@@ -244,19 +266,137 @@ contract «ct.name» is EAI_Domain{
 /* --------------------------- END: code for all contracts ----------------------- */
 '''
 	}
-	
-def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termType){
-		'''
-		«termType.toFirstLower.removeTermSuffix»
-		'''
+
+	def boolean isTheLastTermType(String termType, List<String> listTermsType) {
+		var lastTermType = listTermsType.get(listTermsType.size - 1);
+		if (termType == lastTermType) {
+			return true;
+		}
+		return false;
 	}
-	
-		def buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(String termType){
-		'''
-		«termType.toFirstLower.removeTermSuffix»
-		'''
+
+	def buildParameterForFunction(Set<String> setTermsType) {
+
+		var listTermsType = new ArrayList<String>(setTermsType.toList)
+
+		var listParemeters = newArrayList
+
+		for (String termType_s : listTermsType) {
+
+			if (termType_s == "MaxNumberOfOperationByTime_S" || termType_s == "Timeout_S") {
+				if (!listParemeters.contains("uint32 accessDateTime")) {
+					listParemeters.add("uint32 accessDateTime")
+				}
+			} else if (termType_s == "TimeInterval_S") {
+				if (!listParemeters.contains("uint32 accessTime")) {
+					listParemeters.add("uint32 accessTime")
+				}
+			} else if (termType_s == "MessageContent_Number_PerTime_S") {
+				if (!listParemeters.contains("uint32 accessDateTime")) {
+					listParemeters.add("uint32 accessDateTime")
+				}
+				listParemeters.add(termType_s.removeTermSuffix + "[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
+			} else {
+				listParemeters.add(termType_s.removeTermSuffix + "[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
+			}
+		}
+
+		return listParemeters
+
 	}
-	
+
+	def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termType_s, boolean isLastTerm) {
+
+		var termType = "\t" + termType_s.removeTermSuffix + "[] memory " + termType_s.toFirstLower.removeTermSuffix
+
+		if (termType_s == "MaxNumberOfOperationByTime_S" || termType_s == "MessageContent_Number_PerTime_S" ||
+			termType_s == "Timeout_S") {
+			termType = "\tuint32 accessDateTime"
+		} else if (termType_s == "TimeInterval_S") {
+			termType = "\tuint32 accessTime"
+		}
+
+		if (!isLastTerm) {
+			'''
+			«termType»,
+				«««»»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»,
+			'''
+		} else {
+			'''
+			«termType»
+			«««»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»
+			'''
+		}
+	}
+
+	def buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(String termType, int id, boolean isLastTerm) {
+		// msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath_nc[0]) &&
+		var ifParameter = "";
+		// println(termType + "- n:" + id)
+		switch termType {
+			case "MaxNumberOfOperation_S": {
+				ifParameter = "maxNumberOfOperation_C" + (counter + 1) + "[" + id + "].hasAvailableOperations()"
+			}
+			case "MaxNumberOfOperationByTime_S": {
+				ifParameter = "maxNumberOfOperationByTime_C" + (counter + 1) + "[" + id +
+					"].hasAvailableOperations_ByTime(accessDateTime)"
+			}
+			case "MessageContent_Boolean_S": {
+				ifParameter = "msgContent_Boolean_C" + (counter + 1) + "[" + id + "].evaluateBooleanContent(" +
+					termType.toFirstLower.removeTermSuffix + "[" + id + "])"
+			}
+			case "MessageContent_Number_PerTime_S": {
+				ifParameter = "messageContent_Number_PerTime_C" + (counter + 1) + "[" + id +
+					"].evaluateNumberContent(accessDateTime," + termType.toFirstLower.removeTermSuffix + "[" + id + "])"
+			}
+			case "MessageContent_Number_S": {
+				ifParameter = "messageContent_Number_C" + (counter + 1) + "[" + id + "].evaluateNumberContent(" +
+					termType.toFirstLower.removeTermSuffix + "[" + id + "])"
+			}
+			case "MessageContent_onlyXPath_Boolean_S": {
+				ifParameter = termType.toFirstLower.removeTermSuffix + "[" + id + "]"
+			}
+			case "MessageContent_onlyXPath_Number_S": {
+				ifParameter = termType.toFirstLower.removeTermSuffix + "[" + id + "]"
+			}
+			case "MessageContent_onlyXPath_String_S": {
+				ifParameter = termType.toFirstLower.removeTermSuffix + "[" + id + "]"
+			}
+			case "MessageContent_String_S": {
+				ifParameter = "messageContent_String_C" + (counter + 1) + "[" + id + "].evaluateStringContent(" +
+					termType.toFirstLower.removeTermSuffix + "[" + id + "])"
+			}
+			case "SessionInterval_S": {
+				ifParameter = "default - implementing"
+			}
+			case "TimeInterval_S": {
+				ifParameter = "timeInterval_C" + (counter + 1) + "[" + id + "].isIntoTimeIntervals(timeAccess)"
+			}
+			case "Timeout_S": {
+				ifParameter = "!timeOut_C" + (counter + 1) + "[" + id + "].isTimeoutEnded(accessDateTime)"
+			}
+			case "WeekDaysInterval_S": {
+				ifParameter = "weekDaysInterval_C" + (counter + 1) + "[" + id + "].isIntoWeekDaysInterval(" +
+					termType.toFirstLower.removeTermSuffix + "[" + id + "])"
+			}
+			default: {
+				println("unknown: " + termType)
+				return null;
+			}
+		}
+		if (!isLastTerm) {
+			'''
+				«ifParameter»&&
+			'''
+		} else {
+			'''
+				«ifParameter»
+			'''
+
+		}
+	}
 
 	def String buildFunctionName(Clause clause) {
 		switch (clause) {
@@ -312,7 +452,7 @@ def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termTy
 				var String xpath = term.xpath.addDoubleQuotesToXpath
 				return " " + xpath + ", \"" + term.op + "\", " + term.amount + ", " + term.timeUnit + " "
 			}
-			MessageContent_Number_S: {				
+			MessageContent_Number_S: {
 				var String xpath = term.xpath.addDoubleQuotesToXpath
 				return " " + xpath + ", \"" + term.op + "\", " + term.content + " "
 			}

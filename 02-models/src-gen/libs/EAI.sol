@@ -114,9 +114,9 @@ library EAI{
 
 
    // check into a set of weekDaysIntervals
-   function isIntoWeekDaysIntervals(    
-    WeekDaysInterval [] memory _wdInterval,
-    uint8 _weekDay
+   function isIntoWeekDaysIntervals(
+    uint8 _weekDay, 
+    WeekDaysInterval [] memory _wdInterval
     ) internal pure onlyValidDay(_weekDay) returns(bool){
         // bool flagReturn = false;
         uint vLength = _wdInterval.length;
@@ -195,12 +195,13 @@ library EAI{
 
    // check into a set of TimeIntervals
    function isIntoTimeIntervals(
-    uint32 _timeAccess, 
-    TimeInterval [] memory _ti
+   	TimeInterval [] memory _ti,
+    uint32 _timeAccess 
+    
     ) internal pure  onlyValidHour(_timeAccess) returns(bool){
         uint vLength = _ti.length;
         for(uint i=0; i<vLength; i++){
-               if(isIntoTimeInterval(_ti[i],_timeAccess)){                
+               if(isIntoTimeInterval(_timeAccess, _ti[i])){                
                 return true; 
                }
         }
@@ -209,8 +210,8 @@ library EAI{
 
     // check into one weekDaysInterval
     function isIntoTimeInterval(
-        TimeInterval memory _ti,
-        uint32 _timeAccess        
+        uint32 _timeAccess,
+        TimeInterval memory _ti        
         ) internal pure returns(bool){
        
         if(_ti.start < _ti.end ){
@@ -403,7 +404,6 @@ library EAI{
     function createMessageContent_onlyXPath_String(string memory _xpath) internal pure returns(MessageContent_onlyXPath_String memory){
         return MessageContent_onlyXPath_String(_xpath);
     }
-    
 /* ========================================================================== */
 /*                              MESSAGE CONTENT STRING                        */
 /* ========================================================================== */

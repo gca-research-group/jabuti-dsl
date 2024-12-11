@@ -1,38 +1,39 @@
 contract DeliveryHiring {  
-	
+	 
 	dates{ 
 		beginDate = "2022-01-01 08:00:00" 
-		dueDate = "2022-12-31 18:00:00" 
-	}	 
-    
-	parties{  
-		application = "deliverySystem" 
-		process  	= "integrationProcess"   
-	}   
+		dueDate = "2022-12-31 18:00:00"  
+	}	  
+     
+	parties{   
+		application = "deliverySystem"   
+		process  	= "integrationProcess"       
+	}     
 	     
-	variables{
+	variables{  
 		numberOfAddresses = "count(//body/perosonalInformation/address/cep)" 
-		weight = "//body/package/weight/text()" 
-		productValue = "//body/product/value/text()" 
-		soma = 4 + 5 
-		timeLimit = Timeout(20) 
-	}        
-	       
-	clauses{      
-		right requestDelivery {			        
-			rolePlayer = process               
-			operation = request      
-			              
-			terms {			    
-				MaxNumberOfOperation(3 per Minute) OR 
-				MessageContent(numeric(numberOfAddresses) == 1)OR  
-				NOT MessageContent(numeric(weight) == 100),
-				MessageContent(numeric(productValue) < 20000)					    		
-			} 
-						
+		weight = "//body/package/weight/text()"   
+		productValue = "//body/product/value/text()"  
+		soma = 4 + 5  
+		timeLimit = Timeout(20)  
+	}            
+	              
+	clauses{            
+		right requestDelivery {		 	                  
+			rolePlayer = process                    
+			operation = request          
+			                    
+			terms {			          
+				MaxNumberOfOperation(3 per Minute),  
+				MaxNumberOfOperation(2 per Minute),   
+				MessageContent(numeric(numberOfAddresses) == 1 ),   
+				NOT MessageContent(numeric(weight) == 100 per Minute), 
+				MessageContent(numeric(productValue) < 20000 )					    		
+			}  
+						 
 			onBreach(log("Request operation did not meet all requirements"))			
 		}
-		obligation responseOrder {  
+		obligation responseOrder {   
 			rolePlayer = application 
 			operation = response			 
 			terms {
