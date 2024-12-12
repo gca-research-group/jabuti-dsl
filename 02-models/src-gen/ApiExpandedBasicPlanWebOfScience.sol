@@ -2,7 +2,7 @@
 pragma solidity ^0.8.14;
 import "./libs/EAI.sol";
 
-contract SendMessageWhatsapp {
+contract ApiExpandedBasicPlanWebOfScience {
 
 	bool activated;
 	uint64 beginDate; 
@@ -21,18 +21,20 @@ contract SendMessageWhatsapp {
 /* =========== BEGIN: codes generated based in specific jabuti contract =================== */
 
 /*----------------- 1º STEP: ADD IMPORTS TO THE TERMS USED IN THE CONTRACT ---------------*/
- 	using EAI for EAI.SessionInterval;
- 	using EAI for EAI.MessageContent_onlyXPath_String;
- 	using EAI for EAI.WeekDaysInterval;
+ 	using EAI for EAI.MaxNumberOfOperationByTime;
+ 	using EAI for EAI.MessageContent_Number;
+ 	using EAI for EAI.MessageContent_Number_PerTime;
+ 	using EAI for EAI.Timeout;
  	
 /*-------------- 2º STEP: Create the variables (from variables block) -------------------------*/		
-	string var;
-	EAI.SessionInterval session;
-	EAI.MessageContent_onlyXPath_String conversationStarter;
 
 /*---------------- 3º STEP: Identify and create variables referring to the clauses terms --------------*/  
-	//---------------- Vectors of terms related to the sendMessage clause(_C1). ---------------- 
-	EAI.WeekDaysInterval[] weekDaysInterval_C1;
+	//---------------- Vectors of terms related to the requestDocuments clause(_C1). ---------------- 
+	EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
+	EAI.MessageContent_Number[] messageContent_Number_C1;
+	EAI.MessageContent_Number_PerTime[] messageContent_Number_PerTime_C1;
+	//---------------- Vectors of terms related to the responseWithDocuments clause(_C2). ---------------- 
+	EAI.Timeout[] timeout_C2;
 
 /*---------------- 4º STEP: Create the constructor method ------------------------------------------*/
 
@@ -42,30 +44,57 @@ contract SendMessageWhatsapp {
 		beginDate = 1672570800000;
 		dueDate = 1704056400000;
 		// Catch the name of the part for create the parties
-		application = EAI.createParty("Whatsapp", _applicationWallet, false);             
+		application = EAI.createParty("Web Of Science", _applicationWallet, false);             
 		process = EAI.createParty("Integration Process", msg.sender, true);    
 		mapParty[msg.sender] = process;
 		mapParty[_applicationWallet] = application;
 
 		// Create the terms of the clauses, (check if some of them use a variable from variable block)
 
-		var = "teste";
-		session = EAI.createSessionInterval( 24, EAI.HOUR );	
-		conversationStarter = EAI.createMessageContent_onlyXPath_String(  "//conversationStarter/text()" );	
 
-		//---------------- Terms related to the sendMessage clause (C1). ----------------
-		weekDaysInterval_C1.push(EAI.createWeekDaysInterval( EAI.MONDAY, EAI.FRIDAY ));
+		//---------------- Terms related to the requestDocuments clause (C1). ----------------
+		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 2, EAI.SECOND ));
+		messageContent_Number_C1.push(EAI.createMessageContent_Number(  "count(//body/document)", "<=", 100 ));
+		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime(  "count(//body/document)", "<=", 50000, EAI.MONTH ));
+
+		//---------------- Terms related to the responseWithDocuments clause (C2). ----------------
+		timeout_C2.push(EAI.createTimeout( 60 ));
 	}
 
-	function right_sendMessage(
+	function right_requestDocuments(
+		uint32 accessDateTime,
+		uint256[] memory messageContent_Number,
+		uint256[] memory messageContent_Number_PerTime
 		) public onlyProcess() returns(bool){
 		
 		if(
-			weekDaysInterval_C1[0].isIntoWeekDaysInterval(weekDaysInterval[0])
+			maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(accessDateTime) &&
+			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0]) &&
+			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0])
+		){
+			maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
+			messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
+			timeout_C2[0].setEndTimeInTimeout(accessDateTime); 
+			return true;
+		}else{
+			emit failEvent("Exceded number of docuemnts");
+			return false;
+		}
+	}
+ 
+	function obligation_responseWithDocuments(
+		uint32 accessDateTime
+		) public onlyApplication() returns(bool){
+		require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
+		
+		if(
+			!timeout_C2[0].isTimeoutEnded(accessDateTime)
 		){
 			return true;
 		}else{
-			emit failEvent("Request operation performed outside of allowed hours or limit operation exceeded");
+			maxNumberOfOperationByTime_C1[0].increaseOneOperation_ByTime();
+			messageContent_Number_PerTime_C1[0].increaseTheLastContentInRestingAmount();						
+			emit failEvent("Conditon not meet");
 			return false;
 		}
 	}

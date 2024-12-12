@@ -1,6 +1,5 @@
-
 //SPDX-License-Identifier: MIT
-pragma solidity >0.8.4 < 0.8.14;
+pragma solidity >0.8.4;
 
 
 // pragma experimental 'ABIEncoderV2';
@@ -114,9 +113,9 @@ library EAI{
 
 
    // check into a set of weekDaysIntervals
-   function isIntoWeekDaysIntervals(
-    uint8 _weekDay, 
-    WeekDaysInterval [] memory _wdInterval
+   function isIntoWeekDaysIntervals(    
+    WeekDaysInterval [] memory _wdInterval,
+    uint8 _weekDay
     ) internal pure onlyValidDay(_weekDay) returns(bool){
         // bool flagReturn = false;
         uint vLength = _wdInterval.length;
@@ -195,13 +194,12 @@ library EAI{
 
    // check into a set of TimeIntervals
    function isIntoTimeIntervals(
-   	TimeInterval [] memory _ti,
-    uint32 _timeAccess 
-    
+    uint32 _timeAccess, 
+    TimeInterval [] memory _ti
     ) internal pure  onlyValidHour(_timeAccess) returns(bool){
         uint vLength = _ti.length;
         for(uint i=0; i<vLength; i++){
-               if(isIntoTimeInterval(_timeAccess, _ti[i])){                
+               if(isIntoTimeInterval(_ti[i],_timeAccess)){                
                 return true; 
                }
         }
@@ -210,8 +208,8 @@ library EAI{
 
     // check into one weekDaysInterval
     function isIntoTimeInterval(
-        uint32 _timeAccess,
-        TimeInterval memory _ti        
+        TimeInterval memory _ti,
+        uint32 _timeAccess        
         ) internal pure returns(bool){
        
         if(_ti.start < _ti.end ){
@@ -404,6 +402,7 @@ library EAI{
     function createMessageContent_onlyXPath_String(string memory _xpath) internal pure returns(MessageContent_onlyXPath_String memory){
         return MessageContent_onlyXPath_String(_xpath);
     }
+    
 /* ========================================================================== */
 /*                              MESSAGE CONTENT STRING                        */
 /* ========================================================================== */
@@ -448,14 +447,14 @@ library EAI{
     struct MessageContent_Number{
         string xpath;
         string op; // comparison operator
-        int256 content;      
+        uint256 content;      
     }
 
-    function createMessageContent(string memory _xpath, string memory _op, int256 _content ) internal pure returns(MessageContent_Number memory){        
+    function createMessageContent_Number(string memory _xpath, string memory _op, uint256 _content ) internal pure returns(MessageContent_Number memory){        
         return MessageContent_Number(_xpath, _op, _content); 
     }
 
-    function evaluateNumberContent(MessageContent_Number memory msgContent, int256 _content) internal pure returns(bool){
+    function evaluateNumberContent(MessageContent_Number memory msgContent, uint256 _content) internal pure returns(bool){
         bytes memory chars = bytes(msgContent.op);
 
         if( chars[0] ==  0x21 ){// if chars[0] is '!'
@@ -501,7 +500,7 @@ library EAI{
         bool content;      
     }
 
-    function createMessageContent(string memory _xpath, string memory _op, bool _content ) internal pure returns(MessageContent_Number memory){        
+    function createMessageContent_Boolean(string memory _xpath, string memory _op, bool _content ) internal pure returns(MessageContent_Boolean memory){        
         return MessageContent_Boolean(_xpath, _op, _content); 
     }
 
@@ -540,7 +539,7 @@ library EAI{
     }
 
     // function createMessageContent_NumberPerTime(
-    function createMessageContent(
+    function createMessageContent_Number_PerTime(
         string memory _xpath,
         string memory _op, 
         uint256 _amount,
@@ -604,8 +603,11 @@ library EAI{
     function decreaseTheLastContentOfRestingAmount( MessageContent_Number_PerTime storage msgContent_NumberPerTime ) internal {        
         require(msgContent_NumberPerTime.lastContent > 0, "There in no content to decrease." );
         require(msgContent_NumberPerTime.lastContent <= msgContent_NumberPerTime.rest, "The message content number is greater than the remaining amount");  
-        msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;
-        msgContent_NumberPerTime.lastContent = 0;
+        msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;        
+    }
+    
+       function increaseTheLastContentInRestingAmount( MessageContent_Number_PerTime storage msgContent_NumberPerTime ) internal {        
+        msgContent_NumberPerTime.rest += msgContent_NumberPerTime.lastContent;        
     }
 
     // function setNewEndTimeAndRestFromAmout(
@@ -857,7 +859,4 @@ library EAI{
         }
         return string(buffer);
     }
-
-
-
 }

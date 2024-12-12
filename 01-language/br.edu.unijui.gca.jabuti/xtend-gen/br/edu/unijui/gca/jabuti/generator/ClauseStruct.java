@@ -2,7 +2,6 @@ package br.edu.unijui.gca.jabuti.generator;
 
 import br.edu.unijui.gca.jabuti.generator.entities.terms.TermStruct;
 import java.util.ArrayList;
-import java.util.List;
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 
 @SuppressWarnings("all")
@@ -35,10 +34,6 @@ public class ClauseStruct {
     this.successMessage = successMessage;
   }
 
-  public ArrayList<TermStruct> getTermsMap() {
-    return this.termsList;
-  }
-
   public void addTerm(final TermStruct term) {
     this.termsList.add(term);
   }
@@ -67,7 +62,7 @@ public class ClauseStruct {
     return this.termsLogicalOperators;
   }
 
-  public List<TermStruct> getTermsList() {
+  public ArrayList<TermStruct> getTermsList() {
     return this.termsList;
   }
 

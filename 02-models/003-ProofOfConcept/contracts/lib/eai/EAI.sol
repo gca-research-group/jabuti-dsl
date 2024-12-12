@@ -604,8 +604,11 @@ library EAI{
     function decreaseTheLastContentOfRestingAmount( MessageContent_Number_PerTime storage msgContent_NumberPerTime ) internal {        
         require(msgContent_NumberPerTime.lastContent > 0, "There in no content to decrease." );
         require(msgContent_NumberPerTime.lastContent <= msgContent_NumberPerTime.rest, "The message content number is greater than the remaining amount");  
-        msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;
-        msgContent_NumberPerTime.lastContent = 0;
+        msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;        
+    }
+    
+       function increaseTheLastContentInRestingAmount( MessageContent_Number_PerTime storage msgContent_NumberPerTime ) internal {        
+        msgContent_NumberPerTime.rest += msgContent_NumberPerTime.lastContent;        
     }
 
     // function setNewEndTimeAndRestFromAmout(

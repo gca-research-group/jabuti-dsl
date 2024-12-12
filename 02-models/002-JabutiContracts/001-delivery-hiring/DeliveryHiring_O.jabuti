@@ -11,7 +11,7 @@ contract DeliveryHiring_O {
 
 	clauses{
 		obligation responseOrder {
-			rolePlayer = application
+			rolePlayer = application 
 			operation = response
 			terms {
 				Timeout(20),

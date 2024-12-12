@@ -1,17 +1,17 @@
 //@version -  0.1.0  
 
 contract CreditAgency {
-	dates{
+	dates{ 
 		beginDate = "2022-01-01 08:00:00" 
 		dueDate = "2022-12-31 18:00:00"
 	}	
-	
+	 
 	parties{
 		application = "creditAgency"
 		process = "integrationProcess"
 	}
 
-	clauses{	
+	clauses{	 
 		right requestScore {
 			//Setting the limit operation by day and the number of user by request
 			rolePlayer = process 
@@ -22,7 +22,7 @@ contract CreditAgency {
 			}
 			onBreach ( log("Request limit by day exceeded or inconsistent message content") )
 		}
-		
+		 
 		prohibition requestScoreP {
 			//"Setting the times that when it is prohibited to send a request"	
 			rolePlayer = process

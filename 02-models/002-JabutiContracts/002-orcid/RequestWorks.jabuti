@@ -25,8 +25,8 @@ contract OrcidUpdating{
 		
 		obligation responseWorks {
 			rolePlayer = application
-			operation = response
-			terms {
+			operation = response 
+			terms { 
 				Timeout(5)
 			}
 			onBreach(log("response performed outside of time limit"))

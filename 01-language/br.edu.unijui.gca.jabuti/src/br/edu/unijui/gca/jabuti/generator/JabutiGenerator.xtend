@@ -134,10 +134,11 @@ class JabutiGenerator extends AbstractGenerator {
 pragma solidity ^0.8.14;
 import "./libs/EAI.sol";
 
-contract «ct.name» is EAI{
+contract «ct.name» {
 «"\n"»
-«"\t"»uint32 beginDate; 
-«"\t"»uint32 dueDate; 	
+«"\t"»bool activated;
+«"\t"»uint64 beginDate; 
+«"\t"»uint64 dueDate; 	
 «"\t"»using EAI for EAI.Party;
 
 «"\t"»EAI.Party application;
@@ -162,14 +163,14 @@ contract «ct.name» is EAI{
 		«IF v instanceof VarTerm»
 			EAI.«v.type.removeTermSuffix» «v.name»;
 		«ELSE»
-			«v.type» «v.name»;
+			«v.type.toFirstLower» «v.name»;
 		«ENDIF»
 	«ENDFOR»
 
 /*---------------- 3º STEP: Identify and create variables referring to the clauses terms --------------*/  
 	«FOR clause : clauses»	
 		//---------------- Vectors of terms related to the «clause.name» clause(_C«clause.id»). ---------------- 
-		«var listOfTermsTypeUnique = clause.termsList.getUniqueValues»
+		«var listOfTermsTypeUnique = clause.termsList.getTermTypeUniqueValues»
 		«FOR termType: listOfTermsTypeUnique»			
 	 	«"\t"»«"EAI."+termType.removeTermSuffix+"[]"» «termType.removeTermSuffix.toFirstLower+"_C"+ clause.id»;
 		«ENDFOR»
@@ -181,7 +182,7 @@ contract «ct.name» is EAI{
 		activated = true;
 		// Catch the date from jabuti contract 
 		beginDate = «ct.beginDate.toTimestamp»;
-		dueDate = «ct.beginDate.toTimestamp»;
+		dueDate = «ct.dueDate.toTimestamp»;
 		// Catch the name of the part for create the parties
 		application = EAI.createParty("«ct.application.name»", _applicationWallet, false);             
 		process = EAI.createParty("«ct.process.name»", msg.sender, true);    
@@ -193,7 +194,7 @@ contract «ct.name» is EAI{
 	«««instanciar os variariaveis, atribuir os valores»»
 	«FOR v : ct.variables»
 		«IF v.term !== null»			
-			«"\t"»«"\t"»«v.name» = «"EAI.create"+variablesMap.get(v.name).type.removeTermSuffix+"("+buildCode_addParameters(variablesMap.get(v.name).type, (variablesMap.get(v.name) as VarTerm).term)+"))"»;	
+			«"\t"»«"\t"»«v.name» = «"EAI.create"+variablesMap.get(v.name).type.removeTermSuffix+"("+buildCode_addParameters(variablesMap.get(v.name).type, (variablesMap.get(v.name) as VarTerm).term)+")"»;	
 		«ELSEIF v.expression !== null»
 			«"\t"»«"\t"»«v.name» = «(variablesMap.get(v.name) as VarExpr).content.join("")»;
 		«ENDIF»
@@ -226,26 +227,68 @@ contract «ct.name» is EAI{
 			«"\t\t"»«termType»,
 		«ENDIF»
 	«ENDFOR»
-«"\t\t"») public returns(bool){
+«"\t\t"») public «IF c.rolePlayer == "PROCESS"»onlyProcess()«ELSE»onlyApplication()«ENDIF» returns(bool){
+	«IF c.rolePlayer == "APPLICATION"»
+		«"\t\t"»require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
+	«ENDIF»
 	«««	
 	«««GERADOR DOS PARAMETROS DO IF STATEMENT»»
 	
 	«var listOfParametersForIfStatement = c.termsList.buildParameterForIfStatement»
+	«var count = 0»
 «"\t\t"»if(«FOR i:0 ..< listOfParametersForIfStatement.size»
-				«IF i== (listOfParametersForIfStatement.size-1)»
-					«"\t\t\t"»«listOfParametersForIfStatement.get(i)»
-				«ELSE»
-					«"\t\t\t"»«listOfParametersForIfStatement.get(i)»&&
-				«ENDIF»
+				«IF i== (listOfParametersForIfStatement.size-1)»««« se for o ultimo»					
+					«IF count < c.logicalOperators.size && c.logicalOperators.get(count)== "!"»
+						«"\t\t\t"»!«listOfParametersForIfStatement.get(i)»
+					«ELSE»
+						«"\t\t\t"»«listOfParametersForIfStatement.get(i)»
+					«ENDIF»					
+				«ELSE»				
+					«IF c.logicalOperators.get(count) !== null && c.logicalOperators.get(count)== "!"»
+						«"\t\t\t"»«c.logicalOperators.get(count++)»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(count++)»
+					«ELSE»
+						«"\t\t\t"»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(count++)»
+					«ENDIF»
+				«ENDIF»				
 			«ENDFOR»		
 «"\t\t"»){
 	«««	
 	«««GERADOR DO CORPO DO IF STATEMENT»»
+		«FOR j:0..<clauses.size»
+			«FOR term: clauses.get(j).termsList»
+				«IF j !== counter»
+					«IF term instanceof Timeout_S»
+						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].setEndTimeInTimeout(accessDateTime); 
+					«ENDIF»
+				«ELSE»
+					«IF term instanceof MaxNumberOfOperationByTime_S»
+						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].decreaseOneOperation_ByTime(accessDateTime);
+					«ELSEIF term instanceof MaxNumberOfOperation»
+						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].decreaseOneOperation();
+					«ELSEIF term instanceof MessageContent_Number_PerTime_S»
+						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].decreaseTheLastContentOfRestingAmount();						
+					«ENDIF»	
+				«ENDIF»			
+			«ENDFOR»
+		«ENDFOR»		
 		«IF !c.successMessage.nullOrEmpty»
 			emit successEvent("«c.successMessage»")						
 		«ENDIF»
 				return true;
 «"\t\t"»}else{
+		«FOR j:0..<clauses.size»
+			«FOR term: clauses.get(j).termsList»
+				«IF j !== counter»
+					«IF term instanceof MaxNumberOfOperationByTime_S»
+	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].increaseOneOperation_ByTime();
+					«ELSEIF term instanceof MaxNumberOfOperation»
+	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].increaseOneOperation();
+					«ELSEIF term instanceof MessageContent_Number_PerTime_S»
+	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].increaseTheLastContentInRestingAmount();						
+					«ENDIF»	
+				«ENDIF»			
+			«ENDFOR»
+		«ENDFOR»	
 			«IF !c.failMessage.nullOrEmpty»							
 «"\t\t\t"»emit failEvent("«c.failMessage»");
 			«ENDIF»					
@@ -261,11 +304,70 @@ contract «ct.name» is EAI{
 
 /* -------------- END: codes generated based in specific jabuti contract ------------- 
 
+/* ========================== BEGIN: code for all contracts ====================== */
+
+    /* the process sign the contract by default, the function signContract 
+    is used to get the applicationParty signature*/      
+    function signContract() public onlyApplication() returns(bool) {
+        require(application.aware == false, "The contract is already signed");        
+        application.aware = true;  
+        updateMapParty(msg.sender, application);
+		return true;
+    }
+
+    function updateMapParty(address _walletAddress, EAI.Party storage _party)internal returns(bool){       
+        mapParty[_walletAddress] = _party;
+		return true;
+    }
+    
+    /* It only possible to change the name and the address of the party. 
+    After change the  party, the new party need to sign the contract */
+    function changeApplicationParty(string memory _name, address _walletAddress) public returns(bool) {       
+        require(process.walletAddress == msg.sender, "Only the process can execute this operation");
+        delete mapParty[application.walletAddress];
+        application = EAI.createParty(_name, _walletAddress, false);          
+        updateMapParty(_walletAddress, application);
+        return true;       
+    }
+    
+    function getProcessAddress() public view onlyInvolvedParties returns(address){
+        return process.walletAddress;
+    }
+    
+    function getApplicationAddress() public view onlyInvolvedParties returns(address){
+        return application.walletAddress;
+    }
+
+    function getParty(address _walletAddress) public view onlyInvolvedParties returns(EAI.Party memory){
+        return mapParty[_walletAddress];
+    }
+    
+/* ==================================== MODIFIERS ==================================== */
+        modifier onlyApplication(){        
+            require(activated, "This contract is deactivated");            
+            require(application.walletAddress == msg.sender, "Only the application can execute this operation");
+            _;        
+    }
+
+    modifier onlyProcess(){
+        require(activated, "This contract is deactivated");
+        require(process.walletAddress == msg.sender, "Only the process can execute this operation");
+        _;
+    }
+
+    modifier onlyInvolvedParties(){
+        require(activated, "This contract is deactivated");
+        require(
+            (application.walletAddress == msg.sender || process.walletAddress == msg.sender ) ,
+            "Only the process or the application can execute this operation");
+        _;
+    }
 /* --------------------------- END: code for all contracts ----------------------- */
+}
 '''
 	}
 
-	def ArrayList<String> getUniqueValues(List<TermStruct> terms) {
+	def ArrayList<String> getTermTypeUniqueValues(List<TermStruct> terms) {
 		val termList = new ArrayList<TermStruct>(terms)
 
 		var termNameUnique = newArrayList
@@ -291,7 +393,7 @@ contract «ct.name» is EAI{
 
 	def buildParameterForFunction(List<TermStruct> terms) {
 
-		var listTermsType = terms.getUniqueValues
+		var listTermsType = terms.getTermTypeUniqueValues
 
 		var listParemeters = newArrayList
 
@@ -301,34 +403,51 @@ contract «ct.name» is EAI{
 				if (!listParemeters.contains("uint32 accessDateTime")) {
 					listParemeters.add("uint32 accessDateTime")
 				}
-			} else if (termType_s == "TimeInterval_S") {
-				if (!listParemeters.contains("uint32 accessTime")) {
-					listParemeters.add("uint32 accessTime")
-				}
+			} else if (termType_s == "MaxNumberOfOperation_S") {
+				// não fazer nada
+				
+			}else if (termType_s == "MessageContent_Boolean_S") {
+				listParemeters.add("bool[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
 			} else if (termType_s == "MessageContent_Number_PerTime_S") {
 				if (!listParemeters.contains("uint32 accessDateTime")) {
 					listParemeters.add("uint32 accessDateTime")
 				}
-				listParemeters.add(termType_s.removeTermSuffix + "[] memory " +
+				listParemeters.add("uint256[] memory " +
 					termType_s.toFirstLower.removeTermSuffix)
-			} else if (termType_s == "MaxNumberOfOperation_S") {
-				// não fazer nada
-			} else {
-				listParemeters.add(termType_s.removeTermSuffix + "[] memory " +
+			} else if (termType_s == "MessageContent_Number_S") {
+				listParemeters.add("uint256[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
+			} else if (termType_s == "MessageContent_String_S") {
+				listParemeters.add("string[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
+			}  else if (termType_s == "MessageContent_onlyXPath_Boolean_S") {
+				listParemeters.add("bool[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
+			}  else if (termType_s == "MessageContent_onlyXPath_Number_S") {
+				listParemeters.add("bool[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
+			}  else if (termType_s == "MessageContent_onlyXPath_String_S") {
+				listParemeters.add("bool[] memory " +
+					termType_s.toFirstLower.removeTermSuffix)
+			} else if (termType_s == "TimeInterval_S") {
+				if (!listParemeters.contains("uint32 accessTime")) {
+					listParemeters.add("uint32 accessTime")
+				}
+			} else if (termType_s == "WeekDayInterval") {
+				listParemeters.add("uint8[] memory " +
 					termType_s.toFirstLower.removeTermSuffix)
 			}
 		}
-
 		return listParemeters
-
 	}
 
 	def buildParameterForIfStatement(List<TermStruct> terms) {
 		var listOfParameters = new ArrayList<String>()
 
 		val termOccurrences = new HashMap<String, Integer>()
-		
-		var termName =""
+
+		var termName = ""
 		for (term : terms) {
 			termName = term.class.simpleName
 			if (termOccurrences.containsKey(termName)) {
@@ -336,7 +455,8 @@ contract «ct.name» is EAI{
 			} else {
 				termOccurrences.put(termName, 0) // Insere a chave com valor inicial 1
 			}
-			listOfParameters.add(termName.buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(termOccurrences.get(termName)))
+			listOfParameters.add(termName.
+				buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(termOccurrences.get(termName)))
 		}
 
 		return listOfParameters
@@ -355,12 +475,12 @@ contract «ct.name» is EAI{
 					"].hasAvailableOperations_ByTime(accessDateTime)"
 			}
 			case "MessageContent_Boolean_S": {
-				ifParameter = "msgContent_Boolean_C" + (counter + 1) + "[" + id + "].evaluateBooleanContent(" +
+				ifParameter = "messageContent_Boolean_C" + (counter + 1) + "[" + id + "].evaluateBooleanContent(" +
 					termType.toFirstLower.removeTermSuffix + "[" + id + "])"
 			}
 			case "MessageContent_Number_PerTime_S": {
 				ifParameter = "messageContent_Number_PerTime_C" + (counter + 1) + "[" + id +
-					"].evaluateNumberContent(accessDateTime," + termType.toFirstLower.removeTermSuffix + "[" + id + "])"
+					"].evaluateNumberPerTime(accessDateTime," + termType.toFirstLower.removeTermSuffix + "[" + id + "])"
 			}
 			case "MessageContent_Number_S": {
 				ifParameter = "messageContent_Number_C" + (counter + 1) + "[" + id + "].evaluateNumberContent(" +
@@ -383,10 +503,10 @@ contract «ct.name» is EAI{
 				ifParameter = "default - implementing"
 			}
 			case "TimeInterval_S": {
-				ifParameter = "timeInterval_C" + (counter + 1) + "[" + id + "].isIntoTimeIntervals(timeAccess)"
+				ifParameter = "timeInterval_C" + (counter + 1) + "[" + id + "].isIntoTimeIntervals(accessTime)"
 			}
 			case "Timeout_S": {
-				ifParameter = "!timeOut_C" + (counter + 1) + "[" + id + "].isTimeoutEnded(accessDateTime)"
+				ifParameter = "!timeout_C" + (counter + 1) + "[" + id + "].isTimeoutEnded(accessDateTime)"
 			}
 			case "WeekDaysInterval_S": {
 				ifParameter = "weekDaysInterval_C" + (counter + 1) + "[" + id + "].isIntoWeekDaysInterval(" +
@@ -397,9 +517,9 @@ contract «ct.name» is EAI{
 				return null;
 			}
 		}
-		
+
 		return ifParameter
-			
+
 	}
 
 //	def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termType_s, boolean isLastTerm) {
@@ -469,7 +589,7 @@ contract «ct.name» is EAI{
 				return " " + term.amount + " "
 			}
 			MaxNumberOfOperationByTime_S: {
-				return " " + term.amout + ", " + term.timeUnit + " "
+				return " " + term.amout + ", EAI." + term.timeUnit + " "
 			}
 			MessageContent_Boolean_S: {
 				var String xpath = term.xpath.addDoubleQuotesToXpath
@@ -477,7 +597,7 @@ contract «ct.name» is EAI{
 			}
 			MessageContent_Number_PerTime_S: {
 				var String xpath = term.xpath.addDoubleQuotesToXpath
-				return " " + xpath + ", \"" + term.op + "\", " + term.amount + ", " + term.timeUnit + " "
+				return " " + xpath + ", \"" + term.op + "\", " + term.amount + ", EAI." + term.timeUnit + " "
 			}
 			MessageContent_Number_S: {
 				var String xpath = term.xpath.addDoubleQuotesToXpath
@@ -500,7 +620,7 @@ contract «ct.name» is EAI{
 				return " " + xpath + ", \"" + term.op + "\", " + term.content + " "
 			}
 			SessionInterval_S: {
-				return " " + term.duration + ", " + term.timeUnit + " "
+				return " " + term.duration + ", EAI." + term.timeUnit + " "
 			}
 			TimeInterval_S: {
 				return " " + term.start + ", " + term.end + " "
@@ -509,7 +629,7 @@ contract «ct.name» is EAI{
 				return " " + term.amountTime + " "
 			}
 			WeekDaysInterval_S: {
-				return " " + term.start + ", " + term.end + " "
+				return " EAI." + term.start + ", EAI." + term.end + " "
 			}
 			default: {
 				return "unknown: " + term.class.simpleName
@@ -527,7 +647,7 @@ contract «ct.name» is EAI{
 
 //======================================================================================================
 // ============================ MAPPING CLAUSES TO A HASH_MAP STRUCTURE ================================	
-	def void mappingClauses(Clause c) {
+	def void mappingClauses(Clause c) {		
 		val String onSuccessMessage = c.onSuccess?.message ?: null
 		val String onBreachMessage = c.onBreach?.message ?: null
 		clauses.add(
@@ -542,11 +662,13 @@ contract «ct.name» is EAI{
 		switch exprTerm {
 			BinaryTermOperator: {
 				addTermsIntoTheClauseMap(exprTerm.left)
-				clauses.get(counter).addLogicalOperator(exprTerm.symbol)
+				// clauses.get(counter).addLogicalOperator(exprTerm.symbol)
+				clauses.get(counter).addLogicalOperator(getLogicalOperator(exprTerm.symbol))
 				addTermsIntoTheClauseMap(exprTerm.right)
 			}
 			UnaryTermOperator: {
-				clauses.get(counter).addLogicalOperator(exprTerm.symbol)
+				// clauses.get(counter).addLogicalOperator(exprTerm.symbol)
+				clauses.get(counter).addLogicalOperator(getLogicalOperator(exprTerm.symbol))
 				var unary = exprTerm as UnaryTermOperator
 				addTermsIntoTheClauseMap(unary.expressionTerm)
 			}
@@ -563,6 +685,16 @@ contract «ct.name» is EAI{
 			default: {
 				println("Unknown term type: " + exprTerm)
 			}
+		}
+	}
+
+	def getLogicalOperator(String symbol) {
+		if (symbol == "OR") {
+			return "||"
+		} else if (symbol == "NOT") {
+			return "!"
+		} else {
+			return "&&"
 		}
 	}
 
@@ -595,9 +727,7 @@ contract «ct.name» is EAI{
 				var String xpath = t.xpathFromMessageContent;
 				var expression = Integer.valueOf(t.expression.variableContent_Expression.join(""))
 				return new MessageContent_Number_S(xpath, t.comparisonOperator.symbol, expression)
-
-			// 'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
-			// (comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')' 	
+			
 			}
 			case "MessageContent_onlyXPath_Boolean_S": {
 				var t = term as MessageContent
@@ -789,7 +919,7 @@ contract «ct.name» is EAI{
 
 		// add the types of terms used in the clauses block
 		for (cl : clauses) {
-			for (termName : cl.termsList.uniqueValues) {
+			for (termName : cl.termsList.getTermTypeUniqueValues) {
 				if (!termsTypesInUse.contains(termName)) {
 					termsTypesInUse.add(termName);
 				}

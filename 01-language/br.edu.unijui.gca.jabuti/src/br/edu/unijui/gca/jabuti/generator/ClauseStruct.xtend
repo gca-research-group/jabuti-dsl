@@ -1,10 +1,9 @@
 package br.edu.unijui.gca.jabuti.generator
 
-import java.util.Map
-import java.util.List
+
 import java.util.ArrayList
 import br.edu.unijui.gca.jabuti.generator.entities.terms.TermStruct
-import java.util.HashMap
+
 
 class ClauseStruct {
 	// Número da cláusula
@@ -27,10 +26,6 @@ class ClauseStruct {
 		this.termsLogicalOperators = newArrayList
 		this.failMessasge = failMessage
 		this.successMessage = successMessage
-	}
-
-	def ArrayList<TermStruct> getTermsMap() {
-		return this.termsList
 	}
 
 	def void addTerm(TermStruct term) {		
@@ -61,7 +56,7 @@ class ClauseStruct {
 		return this.termsLogicalOperators
 	}
 
-	def List<TermStruct> getTermsList() {
+	def ArrayList<TermStruct> getTermsList() {
 		this.termsList
 	}
 	

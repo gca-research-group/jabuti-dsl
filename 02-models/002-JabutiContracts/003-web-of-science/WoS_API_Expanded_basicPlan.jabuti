@@ -1,15 +1,15 @@
 ///@version - jabuti 0.1.0 
 
-contract ApiExpandedBasicPlan {
+contract ApiExpandedBasicPlanWebOfScience {
 
 	dates{ 	
 		beginDate = "2023-01-01 08:00:00" 
 		dueDate = "2023-12-31 18:00:00"
 	}
-
+ 
 	parties{
 		application = "Web Of Science" 
-		process = "Integration Process" 
+		process = "Integration Process"  
 	}
 
 		clauses{	

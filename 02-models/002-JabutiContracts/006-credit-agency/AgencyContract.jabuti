@@ -9,7 +9,7 @@ contract DeliveryHiring_O {
 	
 	parties{
 		application = "deliverySystem" 
-		process  	= "integrationProcess" 
+		process  	= "integrationProcess"  
 	}
 	
 	variables{
