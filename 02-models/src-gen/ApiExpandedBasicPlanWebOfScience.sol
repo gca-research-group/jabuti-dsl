@@ -72,11 +72,14 @@ contract ApiExpandedBasicPlanWebOfScience {
 			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0]) &&
 			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0])
 		){
-			maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
-			messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
-			timeout_C2[0].setEndTimeInTimeout(accessDateTime); 
+			case true: request - right
+				timeout_C2[0].setEndTimeInTimeout(accessDateTime); 						
+				maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
+				messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
+	
 			return true;
 		}else{
+
 			emit failEvent("Exceded number of docuemnts");
 			return false;
 		}
@@ -90,8 +93,12 @@ contract ApiExpandedBasicPlanWebOfScience {
 		if(
 			!timeout_C2[0].isTimeoutEnded(accessDateTime)
 		){
+			case true: response - obligation
+	
 			return true;
 		}else{
+
+	case false: response - obligation
 			maxNumberOfOperationByTime_C1[0].increaseOneOperation_ByTime();
 			messageContent_Number_PerTime_C1[0].increaseTheLastContentInRestingAmount();						
 			emit failEvent("Conditon not meet");

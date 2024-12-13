@@ -18,11 +18,13 @@ public class ClauseStruct {
 
   private final String successMessage;
 
+  private final String operationType;
+
   private final ArrayList<TermStruct> termsList;
 
   private final ArrayList<String> termsLogicalOperators;
 
-  public ClauseStruct(final int id, final String type, final String name, final String rolePlayer, final String failMessage, final String successMessage) {
+  public ClauseStruct(final int id, final String type, final String name, final String rolePlayer, final String failMessage, final String successMessage, final String operationType) {
     this.id = id;
     this.type = type;
     this.name = name;
@@ -32,6 +34,7 @@ public class ClauseStruct {
     this.termsLogicalOperators = CollectionLiterals.<String>newArrayList();
     this.failMessasge = failMessage;
     this.successMessage = successMessage;
+    this.operationType = operationType;
   }
 
   public void addTerm(final TermStruct term) {
@@ -40,6 +43,10 @@ public class ClauseStruct {
 
   public void addLogicalOperator(final String operator) {
     this.termsLogicalOperators.add(operator);
+  }
+
+  public String getOperationType() {
+    return this.operationType;
   }
 
   public int getId() {

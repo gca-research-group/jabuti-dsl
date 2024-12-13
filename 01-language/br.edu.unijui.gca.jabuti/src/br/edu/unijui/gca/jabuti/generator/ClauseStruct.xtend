@@ -13,11 +13,12 @@ class ClauseStruct {
 	val String rolePlayer;
 	val String failMessasge;
 	val String successMessage;
+	val String operationType;
 
 	val ArrayList<TermStruct> termsList
 	val ArrayList<String> termsLogicalOperators
 
-	new(int id, String type, String name, String rolePlayer, String failMessage, String successMessage) {
+	new(int id, String type, String name, String rolePlayer, String failMessage, String successMessage, String operationType) {
 		this.id = id
 		this.type = type
 		this.name = name
@@ -26,6 +27,7 @@ class ClauseStruct {
 		this.termsLogicalOperators = newArrayList
 		this.failMessasge = failMessage
 		this.successMessage = successMessage
+		this.operationType = operationType
 	}
 
 	def void addTerm(TermStruct term) {		
@@ -35,7 +37,11 @@ class ClauseStruct {
 	def void addLogicalOperator(String operator) {
 		this.termsLogicalOperators.add(operator)
 	}
-
+	
+	def String getOperationType(){
+		return this.operationType
+	}
+	
 	def int getId() {
 		return this.id
 	}

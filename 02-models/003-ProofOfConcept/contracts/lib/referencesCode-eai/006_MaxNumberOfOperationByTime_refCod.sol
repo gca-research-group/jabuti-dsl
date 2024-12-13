@@ -55,5 +55,9 @@ EAI.MaxNumberOfOperationByTime[] maxOp;
     function getAllMaxOpByTime() public view returns(EAI.MaxNumberOfOperationByTime[] memory){
         return maxOp;
     }
+
+    function checkIfHasAvailableOperation() public view returns(bool){
+        return maxOp[0].hasAvailableOperationByTime(120);
+    }
     
 }

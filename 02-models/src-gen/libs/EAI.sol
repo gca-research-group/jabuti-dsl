@@ -294,8 +294,8 @@ library EAI{
         _maxNumberOfOperation.rest -=1;
     }
 
-    function increaseOneOperation(MaxNumberOfOperation storage _maxNumberOfOperation, uint32 _operations) internal {
-        _maxNumberOfOperation.rest += _operations;
+    function increaseOneOperation(MaxNumberOfOperation storage _maxNumberOfOperation) internal {
+        _maxNumberOfOperation.rest += 1;
     }
   
 /* ========================================================================== */
@@ -564,7 +564,7 @@ library EAI{
         return MessageContent_Number_PerTime(_xpath, _op, _amount, _timeUnit, auxByTime, _amount, 0, 0);
     }
 
-
+    //event DebugValueEAI(string value, uint256 v);
     // catch da value from message content and decrease from the amount
     function evaluateNumberPerTime(
         MessageContent_Number_PerTime storage msgContent_NumberPerTime,
@@ -581,20 +581,13 @@ library EAI{
                                                 msgContent_NumberPerTime.timeUnit,
                                                 _accessDateTime
                                                 );
-            }
+                                               
+            }   
             
-            // string memory revertMessage =  string(abi.encodePacked(
-            //     "You have only ", uint2String(msgContent_NumberPerTime.rest), 
-            //     " from ", uint2String(msgContent_NumberPerTime.amount)," resting, and the message contet xpath result is ", uint2String(_content)));
-            
-            // // the comparison operator (op) always will be  '<' or '<='            
-            // require(_content <= msgContent_NumberPerTime.rest, revertMessage);         
-            
-            if(_content <= msgContent_NumberPerTime.rest){
-                msgContent_NumberPerTime.lastContent = _content;
+            if(_content <= msgContent_NumberPerTime.rest){ 
+                msgContent_NumberPerTime.lastContent = _content;              
                 return true;
-            }else{
-                msgContent_NumberPerTime.lastContent = _content;
+            }else{               
                 return false;
             }
            
@@ -603,11 +596,13 @@ library EAI{
     function decreaseTheLastContentOfRestingAmount( MessageContent_Number_PerTime storage msgContent_NumberPerTime ) internal {        
         require(msgContent_NumberPerTime.lastContent > 0, "There in no content to decrease." );
         require(msgContent_NumberPerTime.lastContent <= msgContent_NumberPerTime.rest, "The message content number is greater than the remaining amount");  
-        msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;        
+        msgContent_NumberPerTime.rest -= msgContent_NumberPerTime.lastContent;    
+        msgContent_NumberPerTime.lastContent = 0;    
     }
     
        function increaseTheLastContentInRestingAmount( MessageContent_Number_PerTime storage msgContent_NumberPerTime ) internal {        
-        msgContent_NumberPerTime.rest += msgContent_NumberPerTime.lastContent;        
+        msgContent_NumberPerTime.rest += msgContent_NumberPerTime.lastContent;      
+        msgContent_NumberPerTime.lastContent = 0;   
     }
 
     // function setNewEndTimeAndRestFromAmout(
@@ -859,4 +854,7 @@ library EAI{
         }
         return string(buffer);
     }
+
+
+
 }

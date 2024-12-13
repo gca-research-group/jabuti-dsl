@@ -87,6 +87,7 @@ class JabutiGenerator extends AbstractGenerator {
 	ArrayList<String> exprContent_temp
 //	String exprVarName_temp	
 	int counter;
+	int paramCounter_if;
 //	ArrayList<String> terms = newArrayList
 	ArrayList<String> termsTypesInUse;
 
@@ -137,8 +138,8 @@ import "./libs/EAI.sol";
 contract «ct.name» {
 «"\n"»
 «"\t"»bool activated;
-«"\t"»uint64 beginDate; 
-«"\t"»uint64 dueDate; 	
+«"\t"»uint32 beginDate; 
+«"\t"»uint32 dueDate; 	
 «"\t"»using EAI for EAI.Party;
 
 «"\t"»EAI.Party application;
@@ -232,67 +233,97 @@ contract «ct.name» {
 		«"\t\t"»require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
 	«ENDIF»
 	«««	
-	«««GERADOR DOS PARAMETROS DO IF STATEMENT»»
-	
+	«««GERADOR DOS PARAMETROS DO IF STATEMENT»»	
 	«var listOfParametersForIfStatement = c.termsList.buildParameterForIfStatement»
-	«var count = 0»
+	
+	«reset_paramCounter_if»
 «"\t\t"»if(«FOR i:0 ..< listOfParametersForIfStatement.size»
 				«IF i== (listOfParametersForIfStatement.size-1)»««« se for o ultimo»					
-					«IF count < c.logicalOperators.size && c.logicalOperators.get(count)== "!"»
+					«IF paramCounter_if < c.logicalOperators.size && c.logicalOperators.get(paramCounter_if)== "!"»
 						«"\t\t\t"»!«listOfParametersForIfStatement.get(i)»
 					«ELSE»
 						«"\t\t\t"»«listOfParametersForIfStatement.get(i)»
 					«ENDIF»					
-				«ELSE»				
-					«IF c.logicalOperators.get(count) !== null && c.logicalOperators.get(count)== "!"»
-						«"\t\t\t"»«c.logicalOperators.get(count++)»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(count++)»
+				«ELSE»		
+					«IF c.type == "prohibition"»
+						«IF c.logicalOperators.get(paramCounter_if) !== null && c.logicalOperators.get(paramCounter_if)== "!"»
+							«"\t\t\t"»«c.logicalOperators.get(paramCounter_if++)»«listOfParametersForIfStatement.get(i)» || «increment_paramCounter_if»
+						«ELSE»
+							«"\t\t\t"»«listOfParametersForIfStatement.get(i)» || «increment_paramCounter_if»
+						«ENDIF»
 					«ELSE»
-						«"\t\t\t"»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(count++)»
+						«IF c.logicalOperators.get(paramCounter_if) !== null && c.logicalOperators.get(paramCounter_if)== "!"»
+							«"\t\t\t"»«c.logicalOperators.get(paramCounter_if++)»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(paramCounter_if++)»						
+						«ELSE»
+							«"\t\t\t"»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(paramCounter_if++)»
+						«ENDIF»
 					«ENDIF»
 				«ENDIF»				
 			«ENDFOR»		
 «"\t\t"»){
 	«««	
-	«««GERADOR DO CORPO DO IF STATEMENT»»
-		«FOR j:0..<clauses.size»
-			«FOR term: clauses.get(j).termsList»
-				«IF j !== counter»
-					«IF term instanceof Timeout_S»
-						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].setEndTimeInTimeout(accessDateTime); 
+	«««GERADOR DO CORPO DO IF STATEMENT»»		
+		«IF clauses.get(counter).operationType == "request" && clauses.get(counter).type == "right"»
+			«var id = getIdOfClauseWithOperationType("response")»
+			«IF id >=0»
+				«FOR term: clauses.get(id).termsList»
+					«IF term instanceof Timeout_S»						
+						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[0].setEndTimeInTimeout(accessDateTime); 						
 					«ENDIF»
-				«ELSE»
-					«IF term instanceof MaxNumberOfOperationByTime_S»
-						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].decreaseOneOperation_ByTime(accessDateTime);
-					«ELSEIF term instanceof MaxNumberOfOperation»
-						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].decreaseOneOperation();
-					«ELSEIF term instanceof MessageContent_Number_PerTime_S»
-						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].decreaseTheLastContentOfRestingAmount();						
-					«ENDIF»	
-				«ENDIF»			
-			«ENDFOR»
-		«ENDFOR»		
-		«IF !c.successMessage.nullOrEmpty»
-			emit successEvent("«c.successMessage»")						
+				«ENDFOR»
+			«ENDIF»	
 		«ENDIF»
-				return true;
-«"\t\t"»}else{
-		«FOR j:0..<clauses.size»
-			«FOR term: clauses.get(j).termsList»
-				«IF j !== counter»
-					«IF term instanceof MaxNumberOfOperationByTime_S»
-	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].increaseOneOperation_ByTime();
-					«ELSEIF term instanceof MaxNumberOfOperation»
-	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].increaseOneOperation();
-					«ELSEIF term instanceof MessageContent_Number_PerTime_S»
-	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«j+1»[0].increaseTheLastContentInRestingAmount();						
-					«ENDIF»	
-				«ENDIF»			
-			«ENDFOR»
-		«ENDFOR»	
+		«var maxNumberOfOperationByTime_counter=0»
+		«var maxNumberOfOperation_counter=0»
+		«var messageContent_Number_PerTime_counter=0»
+		«FOR term: clauses.get(counter).termsList»
+			«IF term instanceof MaxNumberOfOperationByTime_S»			
+	 			«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«maxNumberOfOperationByTime_counter++»].decreaseOneOperation_ByTime(accessDateTime);
+			«ELSEIF term instanceof MaxNumberOfOperation_S»
+ 				«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«maxNumberOfOperation_counter++»].decreaseOneOperation();
+			«ELSEIF term instanceof MessageContent_Number_PerTime_S»
+ 				«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«messageContent_Number_PerTime_counter++»].decreaseTheLastContentOfRestingAmount();						
+			«ENDIF»	
+		«ENDFOR»		
+		«««caso as condições sejam satifeitas»
+		«IF c.type == "prohibition"»
 			«IF !c.failMessage.nullOrEmpty»							
-«"\t\t\t"»emit failEvent("«c.failMessage»");
+	 			«"\t\t\t"»emit failEvent("«c.failMessage»");
 			«ENDIF»					
-«"\t\t\t"»return false;
+			«"\t\t\t"»return false;
+		«ELSE»
+			«IF !c.successMessage.nullOrEmpty»
+				«"\t\t\t"»emit successEvent("«c.successMessage»")						
+			«ENDIF»
+			«"\t\t\t"»return true;
+		«ENDIF»
+«"\t\t"»}else{	
+		«IF clauses.get(counter).operationType == "response" && clauses.get(counter).type == "obligation"»			
+			«var id = getIdOfClauseWithOperationType("request")»
+			«IF id >=0»
+				«FOR term: clauses.get(id).termsList»
+					«IF term instanceof MaxNumberOfOperationByTime_S»
+	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«maxNumberOfOperationByTime_counter++»].increaseOneOperation_ByTime();
+					«ELSEIF term instanceof MaxNumberOfOperation_S»
+	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«maxNumberOfOperation_counter++»].increaseOneOperation();
+					«ELSEIF term instanceof MessageContent_Number_PerTime_S»
+	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«messageContent_Number_PerTime_counter++»].increaseTheLastContentInRestingAmount();						
+					«ENDIF»					
+				«ENDFOR»
+			«ENDIF»	
+		«ENDIF»
+		«««caso as condições não  sejam satifeitas»
+		«IF c.type == "prohibition"»
+			«IF !c.successMessage.nullOrEmpty»
+				«"\t\t\t"»emit successEvent("«c.successMessage»")						
+			«ENDIF»
+			«"\t\t\t"»return true;
+		«ELSE»
+			«IF !c.failMessage.nullOrEmpty»							
+	 			«"\t\t\t"»emit failEvent("«c.failMessage»");
+			«ENDIF»					
+			«"\t\t\t"»return false;
+		«ENDIF»
 «"\t\t"»}
 «"\t"»}
 «incrementCounter» «««contador utilizado identificar o numero da clausula atual dentro do for»
@@ -367,6 +398,26 @@ contract «ct.name» {
 '''
 	}
 
+	def int countTermOfThisType(List<TermStruct> terms, String termTypeReference){
+		var int count=0;
+		for (term : terms) {
+			var termType = term.getClass.simpleName
+			if (termType == termTypeReference) {
+				count++;
+			}
+		}
+		return count;
+	}
+	
+	def int getIdOfClauseWithOperationType(String operationType) {
+		for (i : 0 .. clauses.size) {			
+			if (clauses.get(i).operationType == operationType) {			
+				return i;
+			}
+		}		
+		return -1;
+	}
+
 	def ArrayList<String> getTermTypeUniqueValues(List<TermStruct> terms) {
 		val termList = new ArrayList<TermStruct>(terms)
 
@@ -405,38 +456,29 @@ contract «ct.name» {
 				}
 			} else if (termType_s == "MaxNumberOfOperation_S") {
 				// não fazer nada
-				
-			}else if (termType_s == "MessageContent_Boolean_S") {
-				listParemeters.add("bool[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
+			} else if (termType_s == "MessageContent_Boolean_S") {
+				listParemeters.add("bool[] memory " + termType_s.toFirstLower.removeTermSuffix)
 			} else if (termType_s == "MessageContent_Number_PerTime_S") {
 				if (!listParemeters.contains("uint32 accessDateTime")) {
 					listParemeters.add("uint32 accessDateTime")
 				}
-				listParemeters.add("uint256[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
+				listParemeters.add("uint256[] memory " + termType_s.toFirstLower.removeTermSuffix)
 			} else if (termType_s == "MessageContent_Number_S") {
-				listParemeters.add("uint256[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
+				listParemeters.add("uint256[] memory " + termType_s.toFirstLower.removeTermSuffix)
 			} else if (termType_s == "MessageContent_String_S") {
-				listParemeters.add("string[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
-			}  else if (termType_s == "MessageContent_onlyXPath_Boolean_S") {
-				listParemeters.add("bool[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
-			}  else if (termType_s == "MessageContent_onlyXPath_Number_S") {
-				listParemeters.add("bool[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
-			}  else if (termType_s == "MessageContent_onlyXPath_String_S") {
-				listParemeters.add("bool[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
+				listParemeters.add("string[] memory " + termType_s.toFirstLower.removeTermSuffix)
+			} else if (termType_s == "MessageContent_onlyXPath_Boolean_S") {
+				listParemeters.add("bool[] memory " + termType_s.toFirstLower.removeTermSuffix)
+			} else if (termType_s == "MessageContent_onlyXPath_Number_S") {
+				listParemeters.add("bool[] memory " + termType_s.toFirstLower.removeTermSuffix)
+			} else if (termType_s == "MessageContent_onlyXPath_String_S") {
+				listParemeters.add("bool[] memory " + termType_s.toFirstLower.removeTermSuffix)
 			} else if (termType_s == "TimeInterval_S") {
 				if (!listParemeters.contains("uint32 accessTime")) {
 					listParemeters.add("uint32 accessTime")
 				}
 			} else if (termType_s == "WeekDayInterval") {
-				listParemeters.add("uint8[] memory " +
-					termType_s.toFirstLower.removeTermSuffix)
+				listParemeters.add("uint8[] memory " + termType_s.toFirstLower.removeTermSuffix)
 			}
 		}
 		return listParemeters
@@ -503,7 +545,7 @@ contract «ct.name» {
 				ifParameter = "default - implementing"
 			}
 			case "TimeInterval_S": {
-				ifParameter = "timeInterval_C" + (counter + 1) + "[" + id + "].isIntoTimeIntervals(accessTime)"
+				ifParameter = "timeInterval_C" + (counter + 1) + "[" + id + "].isIntoTimeInterval(accessTime)"
 			}
 			case "Timeout_S": {
 				ifParameter = "!timeout_C" + (counter + 1) + "[" + id + "].isTimeoutEnded(accessDateTime)"
@@ -647,12 +689,12 @@ contract «ct.name» {
 
 //======================================================================================================
 // ============================ MAPPING CLAUSES TO A HASH_MAP STRUCTURE ================================	
-	def void mappingClauses(Clause c) {		
+	def void mappingClauses(Clause c) {
 		val String onSuccessMessage = c.onSuccess?.message ?: null
 		val String onBreachMessage = c.onBreach?.message ?: null
 		clauses.add(
-			new ClauseStruct(counter + 1, c.clauseType, c.name, c.rolePlayer.getName, onBreachMessage,
-				onSuccessMessage))
+			new ClauseStruct(counter + 1, c.clauseType, c.name, c.rolePlayer.getName, onBreachMessage, onSuccessMessage,
+				c.operation.toString.toLowerCase))
 		addTermsIntoTheClauseMap(c.terms)
 		incrementCounter;
 	}
@@ -727,7 +769,7 @@ contract «ct.name» {
 				var String xpath = t.xpathFromMessageContent;
 				var expression = Integer.valueOf(t.expression.variableContent_Expression.join(""))
 				return new MessageContent_Number_S(xpath, t.comparisonOperator.symbol, expression)
-			
+
 			}
 			case "MessageContent_onlyXPath_Boolean_S": {
 				var t = term as MessageContent
@@ -930,6 +972,14 @@ contract «ct.name» {
 	}
 
 	// ================================ General methods ============================
+	def void increment_paramCounter_if() {
+		paramCounter_if++;
+	}
+
+	def void reset_paramCounter_if() {
+		paramCounter_if=0;
+	}
+	
 	def void incrementCounter() {
 		counter++
 	}
@@ -944,15 +994,21 @@ contract «ct.name» {
 
 	def long toTimestamp(String datetime) {
 		val format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-		format.parse(datetime).time
+		format.parse(datetime).time / 1000
 	}
 
-	def long convertToSeconds(String timeString) {
+	def long convertToSeconds2(String timeString) {
 		val localTime = LocalTime.parse(timeString);
 		val localDateTime = LocalDateTime.of(LocalDate.now(), localTime);
 		val timestamp = Timestamp.valueOf(localDateTime);
 		return timestamp.time
 	}
+	
+	def long convertToSeconds(String timeString) {
+    val localTime = LocalTime.parse(timeString) // Converte a string para LocalTime
+    val secondsOfDay = localTime.toSecondOfDay  // Obtém o total de segundos desde a meia-noite
+    return secondsOfDay // Retorna apenas os segundos
+}
 
 //	def static boolean isNumeric(String str) {
 //		try {

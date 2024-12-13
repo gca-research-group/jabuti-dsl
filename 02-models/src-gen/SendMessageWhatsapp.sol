@@ -63,8 +63,11 @@ contract SendMessageWhatsapp {
 		if(
 			weekDaysInterval_C1[0].isIntoWeekDaysInterval(weekDaysInterval[0])
 		){
+			case true: write - right
+	
 			return true;
 		}else{
+
 			emit failEvent("Request operation performed outside of allowed hours or limit operation exceeded");
 			return false;
 		}
