@@ -9,9 +9,9 @@ contract CreditAgency {
 	parties{
 		application = "creditAgency"
 		process = "integrationProcess"
-	} 
+	}  
  
-	clauses{	  
+	clauses{	   
 		right requestScore {
 			//Setting the limit operation by day and the number of user by request
 			rolePlayer = process 

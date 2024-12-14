@@ -153,10 +153,10 @@ NegationTerm returns ExpressionTerm:
 	Term | {UnaryTermOperator} symbol='NOT' expressionTerm=Term;
 	
 Term returns ExpressionTerm:
-	'(' ExpressionTerm ')' | ConditionalExpression | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent	
+	'(' ExpressionTerm ')' | ConditionalTerm | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent	
 ;
 
-ConditionalExpression :
+ConditionalTerm :
 //	(beforeSymbol = LogicalOperator)?
 	'when' '(' ((QualifiedName | STRING ) 
 				(comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?) 

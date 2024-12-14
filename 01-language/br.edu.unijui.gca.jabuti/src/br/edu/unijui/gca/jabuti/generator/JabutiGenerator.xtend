@@ -414,7 +414,7 @@ contract «ct.name» {
 			if (clauses.get(i).operationType == operationType) {			
 				return i;
 			}
-		}		
+		}				
 		return -1;
 	}
 

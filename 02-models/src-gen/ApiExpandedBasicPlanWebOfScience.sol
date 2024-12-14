@@ -5,8 +5,8 @@ import "./libs/EAI.sol";
 contract ApiExpandedBasicPlanWebOfScience {
 
 	bool activated;
-	uint64 beginDate; 
-	uint64 dueDate; 	
+	uint32 beginDate; 
+	uint32 dueDate; 	
 	using EAI for EAI.Party;
 
 	EAI.Party application;
@@ -41,8 +41,8 @@ contract ApiExpandedBasicPlanWebOfScience {
 	constructor(address _applicationWallet){
 		activated = true;
 		// Catch the date from jabuti contract 
-		beginDate = 1672570800000;
-		dueDate = 1704056400000;
+		beginDate = 1672570800;
+		dueDate = 1704056400;
 		// Catch the name of the part for create the parties
 		application = EAI.createParty("Web Of Science", _applicationWallet, false);             
 		process = EAI.createParty("Integration Process", msg.sender, true);    
@@ -66,20 +66,17 @@ contract ApiExpandedBasicPlanWebOfScience {
 		uint256[] memory messageContent_Number,
 		uint256[] memory messageContent_Number_PerTime
 		) public onlyProcess() returns(bool){
-		
+
 		if(
 			maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(accessDateTime) &&
 			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0]) &&
 			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0])
 		){
-			case true: request - right
-				timeout_C2[0].setEndTimeInTimeout(accessDateTime); 						
-				maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
-				messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
-	
+			timeout_C2[0].setEndTimeInTimeout(accessDateTime); 						
+			maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
+			messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
 			return true;
-		}else{
-
+		}else{	
 			emit failEvent("Exceded number of docuemnts");
 			return false;
 		}
@@ -89,16 +86,12 @@ contract ApiExpandedBasicPlanWebOfScience {
 		uint32 accessDateTime
 		) public onlyApplication() returns(bool){
 		require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
-		
+
 		if(
 			!timeout_C2[0].isTimeoutEnded(accessDateTime)
 		){
-			case true: response - obligation
-	
 			return true;
-		}else{
-
-	case false: response - obligation
+		}else{	
 			maxNumberOfOperationByTime_C1[0].increaseOneOperation_ByTime();
 			messageContent_Number_PerTime_C1[0].increaseTheLastContentInRestingAmount();						
 			emit failEvent("Conditon not meet");

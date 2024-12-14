@@ -116,7 +116,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="LogicalOperator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ConditionalExpression" eSuperTypes="#//ExpressionTerm">
+  <eClassifiers xsi:type="ecore:EClass" name="ConditionalTerm" eSuperTypes="#//Term">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" lowerBound="1"
         eType="#//ExpressionTerm" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="comparisonOperator" upperBound="-1"

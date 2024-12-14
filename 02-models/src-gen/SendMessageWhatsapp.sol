@@ -5,8 +5,8 @@ import "./libs/EAI.sol";
 contract SendMessageWhatsapp {
 
 	bool activated;
-	uint64 beginDate; 
-	uint64 dueDate; 	
+	uint32 beginDate; 
+	uint32 dueDate; 	
 	using EAI for EAI.Party;
 
 	EAI.Party application;
@@ -39,8 +39,8 @@ contract SendMessageWhatsapp {
 	constructor(address _applicationWallet){
 		activated = true;
 		// Catch the date from jabuti contract 
-		beginDate = 1672570800000;
-		dueDate = 1704056400000;
+		beginDate = 1672570800;
+		dueDate = 1704056400;
 		// Catch the name of the part for create the parties
 		application = EAI.createParty("Whatsapp", _applicationWallet, false);             
 		process = EAI.createParty("Integration Process", msg.sender, true);    
@@ -59,15 +59,12 @@ contract SendMessageWhatsapp {
 
 	function right_sendMessage(
 		) public onlyProcess() returns(bool){
-		
+
 		if(
 			weekDaysInterval_C1[0].isIntoWeekDaysInterval(weekDaysInterval[0])
 		){
-			case true: write - right
-	
 			return true;
-		}else{
-
+		}else{	
 			emit failEvent("Request operation performed outside of allowed hours or limit operation exceeded");
 			return false;
 		}

@@ -29,7 +29,7 @@ contract SendMessageWhatsapp {
 				when( conversationStarter == "Business-initiated" ) check {				
 					 	MaxNumberOfOperation(10000 per Month),
 					 	MaxNumberOfOperation(10000 per Month)		
-				}				 
+				}	 		 	 
 			}				
 			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))
 		}
