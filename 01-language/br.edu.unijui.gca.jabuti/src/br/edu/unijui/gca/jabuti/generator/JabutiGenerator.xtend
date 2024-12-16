@@ -62,6 +62,8 @@ import br.edu.unijui.gca.jabuti.jabuti.Obligation
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition
 import java.util.Set
 import java.util.HashMap
+import br.edu.unijui.gca.jabuti.jabuti.Variable
+import org.eclipse.emf.common.util.EList
 
 /**
  * Generates code from your model files on save.
@@ -127,9 +129,7 @@ class JabutiGenerator extends AbstractGenerator {
 			getTheTypesOfTermsInUse // this method populate the arraylist termsTypesInUse
 		}
 
-//			«FOR c : ct.clauses»					
-//					«mappingClauses(c)»
-//				«ENDFOR»	
+
 		'''
 //SPDX-License-Identifier: MIT
 pragma solidity ^0.8.14;
@@ -149,78 +149,54 @@ contract «ct.name» {
 «"\t"»event failEvent(string _logMessage);
 «"\t"»event successEvent(string _logMessage);
 
-/* --------------------------- END: commom code for all contracts ----------------------- */  
-
-/* =========== BEGIN: codes generated based in specific jabuti contract =================== */
+«««/* --------------------------- END: commom code for all contracts ----------------------- */ 
+«««/* =========== BEGIN: codes generated based in specific jabuti contract =================== */
 «IF ct !== null»
-
-/*----------------- 1º STEP: ADD IMPORTS TO THE TERMS USED IN THE CONTRACT ---------------*/
+«««/*----------------- 1º STEP: ADD IMPORTS TO THE TERMS USED IN THE CONTRACT ---------------*/
  	«FOR t: termsTypesInUse»
- 		using EAI for EAI.«t.removeTermSuffix»;
+      	«"\t"»using EAI for EAI.«t.removeTermSuffix»;
  	«ENDFOR»	
- 	
-/*-------------- 2º STEP: Create the variables (from variables block) -------------------------*/		
+ 
+«««»
+«««/*---------------- 2º STEP: Declare the variables (from variables block) -------------------------*/
 	«FOR v : variablesMap.values»
 		«IF v instanceof VarTerm»
-			EAI.«v.type.removeTermSuffix» «v.name»;
+      	«"\t"»EAI.«v.type.removeTermSuffix» «v.name»;
 		«ELSE»
-			«v.type.toFirstLower» «v.name»;
+      	«"\t"»«v.type.toFirstLower» «v.name»;
 		«ENDIF»
 	«ENDFOR»
 
-/*---------------- 3º STEP: Identify and create variables referring to the clauses terms --------------*/  
+«««
+«««/*---------------- 3º STEP: Identify and declare variables referring to the clauses terms --------------*/
 	«FOR clause : clauses»	
-		//---------------- Vectors of terms related to the «clause.name» clause(_C«clause.id»). ---------------- 
+		«"\t"»//---------------- Vectors of terms related to the «clause.name» clause(_C«clause.id»). ----------------
 		«var listOfTermsTypeUnique = clause.termsList.getTermTypeUniqueValues»
 		«FOR termType: listOfTermsTypeUnique»			
 	 	«"\t"»«"EAI."+termType.removeTermSuffix+"[]"» «termType.removeTermSuffix.toFirstLower+"_C"+ clause.id»;
-		«ENDFOR»
-	«ENDFOR»
-
-/*---------------- 4º STEP: Create the constructor method ------------------------------------------*/
-
+	 	«ENDFOR»«"\n"»
+	«ENDFOR»	
+«««
+«««/*---------------- 4º STEP: Create the constructor method ------------------------------------------*/» 
 	constructor(address _applicationWallet){
-		activated = true;
-		// Catch the date from jabuti contract 
+		activated = true;		
 		beginDate = «ct.beginDate.toTimestamp»;
 		dueDate = «ct.dueDate.toTimestamp»;
-		// Catch the name of the part for create the parties
 		application = EAI.createParty("«ct.application.name»", _applicationWallet, false);             
 		process = EAI.createParty("«ct.process.name»", msg.sender, true);    
 		mapParty[msg.sender] = process;
 		mapParty[_applicationWallet] = application;
-
-		// Create the terms of the clauses, (check if some of them use a variable from variable block)
-
-	«««instanciar os variariaveis, atribuir os valores»»
-	«FOR v : ct.variables»
-		«IF v.term !== null»			
-			«"\t"»«"\t"»«v.name» = «"EAI.create"+variablesMap.get(v.name).type.removeTermSuffix+"("+buildCode_addParameters(variablesMap.get(v.name).type, (variablesMap.get(v.name) as VarTerm).term)+")"»;	
-		«ELSEIF v.expression !== null»
-			«"\t"»«"\t"»«v.name» = «(variablesMap.get(v.name) as VarExpr).content.join("")»;
-		«ENDIF»
-	«ENDFOR»
-«««instanciar os termos e adicionar ao vetor das respectivas clausulas»»
-	 «resetCounter»«««zera a variavel counter»
-	«FOR clause : clauses»
-	
-	«incrementCounter»
-			//---------------- Terms related to the «clause.name» clause (C«clause.id»). ----------------
-		«FOR term: clause.termsList»
-			«var typeName = term.class.simpleName»
-			«"\t"»«typeName.removeTermSuffix.toFirstLower+"_C"+counter+".push(EAI.create"+typeName.removeTermSuffix+"("+buildCode_addParameters(typeName, term)+"))"»;
-		«ENDFOR»
-	«ENDFOR»
-	«resetCounter»
+		«"\n"»
+		// Create and assign the values to variables related to the variables from jabuti and the terms of the clauses
+		«assignValuesToVariablesRelatedToJabutiVariablesAndTerms(ct.variables)»
 	}
-	«««FIM DO METODO CONSTRUTOR»»
 «««	
-	«««INÍCIO DO GERADOR DE FUNÇÕES»»
-	«FOR c : clauses»
-	
-	«««GERADOR DOS PARAMETROS  DAS FUNÇÕES»»
+«««/*---------------- 5º STEP: Create the functions related to each function ------------------------------------------*/»»	
+	«FOR c : clauses»	
+	«««Define the name of the functions and their parameters»»	
+	«"\n"»
 	«var listOfParameters = c.termsList.buildParameterForFunction»
-«"\t"»function «c.type»_«c.name»(
+	«"\t"»function «c.type»_«c.name»(
 	«FOR termType: listOfParameters»	
 		«IF termType.isTheLastTermType(listOfParameters)»
 			«"\t\t"»«termType»
@@ -233,170 +209,202 @@ contract «ct.name» {
 		«"\t\t"»require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
 	«ENDIF»
 	«««	
-	«««GERADOR DOS PARAMETROS DO IF STATEMENT»»	
-	«var listOfParametersForIfStatement = c.termsList.buildParameterForIfStatement»
-	
-	«reset_paramCounter_if»
-«"\t\t"»if(«FOR i:0 ..< listOfParametersForIfStatement.size»
-				«IF i== (listOfParametersForIfStatement.size-1)»««« se for o ultimo»					
-					«IF paramCounter_if < c.logicalOperators.size && c.logicalOperators.get(paramCounter_if)== "!"»
-						«"\t\t\t"»!«listOfParametersForIfStatement.get(i)»
-					«ELSE»
-						«"\t\t\t"»«listOfParametersForIfStatement.get(i)»
-					«ENDIF»					
-				«ELSE»		
-					«IF c.type == "prohibition"»
-						«IF c.logicalOperators.get(paramCounter_if) !== null && c.logicalOperators.get(paramCounter_if)== "!"»
-							«"\t\t\t"»«c.logicalOperators.get(paramCounter_if++)»«listOfParametersForIfStatement.get(i)» || «increment_paramCounter_if»
-						«ELSE»
-							«"\t\t\t"»«listOfParametersForIfStatement.get(i)» || «increment_paramCounter_if»
-						«ENDIF»
-					«ELSE»
-						«IF c.logicalOperators.get(paramCounter_if) !== null && c.logicalOperators.get(paramCounter_if)== "!"»
-							«"\t\t\t"»«c.logicalOperators.get(paramCounter_if++)»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(paramCounter_if++)»						
-						«ELSE»
-							«"\t\t\t"»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(paramCounter_if++)»
-						«ENDIF»
-					«ENDIF»
-				«ENDIF»				
-			«ENDFOR»		
-«"\t\t"»){
-	«««	
-	«««GERADOR DO CORPO DO IF STATEMENT»»		
-		«IF clauses.get(counter).operationType == "request" && clauses.get(counter).type == "right"»
-			«var id = getIdOfClauseWithOperationType("response")»
-			«IF id >=0»
-				«FOR term: clauses.get(id).termsList»
-					«IF term instanceof Timeout_S»						
-						«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[0].setEndTimeInTimeout(accessDateTime); 						
-					«ENDIF»
-				«ENDFOR»
-			«ENDIF»	
-		«ENDIF»
-		«var maxNumberOfOperationByTime_counter=0»
-		«var maxNumberOfOperation_counter=0»
-		«var messageContent_Number_PerTime_counter=0»
-		«FOR term: clauses.get(counter).termsList»
-			«IF term instanceof MaxNumberOfOperationByTime_S»			
-	 			«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«maxNumberOfOperationByTime_counter++»].decreaseOneOperation_ByTime(accessDateTime);
-			«ELSEIF term instanceof MaxNumberOfOperation_S»
- 				«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«maxNumberOfOperation_counter++»].decreaseOneOperation();
-			«ELSEIF term instanceof MessageContent_Number_PerTime_S»
- 				«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«messageContent_Number_PerTime_counter++»].decreaseTheLastContentOfRestingAmount();						
-			«ENDIF»	
-		«ENDFOR»		
-		«««caso as condições sejam satifeitas»
-		«IF c.type == "prohibition"»
-			«IF !c.failMessage.nullOrEmpty»							
-	 			«"\t\t\t"»emit failEvent("«c.failMessage»");
-			«ENDIF»					
-			«"\t\t\t"»return false;
-		«ELSE»
-			«IF !c.successMessage.nullOrEmpty»
-				«"\t\t\t"»emit successEvent("«c.successMessage»")						
-			«ENDIF»
-			«"\t\t\t"»return true;
-		«ENDIF»
-«"\t\t"»}else{	
-		«IF clauses.get(counter).operationType == "response" && clauses.get(counter).type == "obligation"»			
-			«var id = getIdOfClauseWithOperationType("request")»
-			«IF id >=0»
-				«FOR term: clauses.get(id).termsList»
-					«IF term instanceof MaxNumberOfOperationByTime_S»
-	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«maxNumberOfOperationByTime_counter++»].increaseOneOperation_ByTime();
-					«ELSEIF term instanceof MaxNumberOfOperation_S»
-	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«maxNumberOfOperation_counter++»].increaseOneOperation();
-					«ELSEIF term instanceof MessageContent_Number_PerTime_S»
-	 					«"\t\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«messageContent_Number_PerTime_counter++»].increaseTheLastContentInRestingAmount();						
-					«ENDIF»					
-				«ENDFOR»
-			«ENDIF»	
-		«ENDIF»
-		«««caso as condições não  sejam satifeitas»
-		«IF c.type == "prohibition"»
-			«IF !c.successMessage.nullOrEmpty»
-				«"\t\t\t"»emit successEvent("«c.successMessage»")						
-			«ENDIF»
-			«"\t\t\t"»return true;
-		«ELSE»
-			«IF !c.failMessage.nullOrEmpty»							
-	 			«"\t\t\t"»emit failEvent("«c.failMessage»");
-			«ENDIF»					
-			«"\t\t\t"»return false;
-		«ENDIF»
-«"\t\t"»}
-«"\t"»}
+	«««GERADOR DOS IF STATEMENT»»
+«"\t"»«generateIfStatementBaseInTheTermsOfTheClause(c)»
+«"\t"»}««« end of the function»
+«"\n"»
 «incrementCounter» «««contador utilizado identificar o numero da clausula atual dentro do for»
-«««  
-«ENDFOR»
-	«resetCounter»
-	
+	«ENDFOR»
+	«resetCounter»	
 «ENDIF»	
-
-/* -------------- END: codes generated based in specific jabuti contract ------------- 
-
-/* ========================== BEGIN: code for all contracts ====================== */
-
-    /* the process sign the contract by default, the function signContract 
-    is used to get the applicationParty signature*/      
-    function signContract() public onlyApplication() returns(bool) {
-        require(application.aware == false, "The contract is already signed");        
-        application.aware = true;  
-        updateMapParty(msg.sender, application);
-		return true;
-    }
-
-    function updateMapParty(address _walletAddress, EAI.Party storage _party)internal returns(bool){       
-        mapParty[_walletAddress] = _party;
-		return true;
-    }
+«««
+«««/* -------------- END: codes generated based in specific jabuti contract ------------- 
+«««/*---------------- 6º STEP: Insert the code common to all contracts  ------------------------------------------*/»»	
+«insertTheCodeCommonToAllContracts»
     
-    /* It only possible to change the name and the address of the party. 
-    After change the  party, the new party need to sign the contract */
-    function changeApplicationParty(string memory _name, address _walletAddress) public returns(bool) {       
-        require(process.walletAddress == msg.sender, "Only the process can execute this operation");
-        delete mapParty[application.walletAddress];
-        application = EAI.createParty(_name, _walletAddress, false);          
-        updateMapParty(_walletAddress, application);
-        return true;       
-    }
-    
-    function getProcessAddress() public view onlyInvolvedParties returns(address){
-        return process.walletAddress;
-    }
-    
-    function getApplicationAddress() public view onlyInvolvedParties returns(address){
-        return application.walletAddress;
-    }
-
-    function getParty(address _walletAddress) public view onlyInvolvedParties returns(EAI.Party memory){
-        return mapParty[_walletAddress];
-    }
-    
-/* ==================================== MODIFIERS ==================================== */
-        modifier onlyApplication(){        
-            require(activated, "This contract is deactivated");            
-            require(application.walletAddress == msg.sender, "Only the application can execute this operation");
-            _;        
-    }
-
-    modifier onlyProcess(){
-        require(activated, "This contract is deactivated");
-        require(process.walletAddress == msg.sender, "Only the process can execute this operation");
-        _;
-    }
-
-    modifier onlyInvolvedParties(){
-        require(activated, "This contract is deactivated");
-        require(
-            (application.walletAddress == msg.sender || process.walletAddress == msg.sender ) ,
-            "Only the process or the application can execute this operation");
-        _;
-    }
-/* --------------------------- END: code for all contracts ----------------------- */
 }
 '''
 	}
+	
+	def insertTheCodeCommonToAllContracts(){
+		'''
+		«"\t"»/* the process sign the contract by default, the function signContract 
+		    is used to get the applicationParty signature*/      
+		    function signContract() public onlyApplication() returns(bool) {
+		        require(application.aware == false, "The contract is already signed");        
+		        application.aware = true;  
+		        updateMapParty(msg.sender, application);
+				return true;
+		    }
+		 
+		    function updateMapParty(address _walletAddress, EAI.Party storage _party)internal returns(bool){       
+		        mapParty[_walletAddress] = _party;
+				return true;
+		    }
+		    
+		    /* It only possible to change the name and the address of the party. 
+		    After change the  party, the new party need to sign the contract */
+		    function changeApplicationParty(string memory _name, address _walletAddress) public returns(bool) {       
+		        require(process.walletAddress == msg.sender, "Only the process can execute this operation");
+		        delete mapParty[application.walletAddress];
+		        application = EAI.createParty(_name, _walletAddress, false);          
+		        updateMapParty(_walletAddress, application);
+		        return true;       
+		    }
+		    
+		    function getProcessAddress() public view onlyInvolvedParties returns(address){
+		        return process.walletAddress;
+		    }
+		    
+		    function getApplicationAddress() public view onlyInvolvedParties returns(address){
+		        return application.walletAddress;
+		    }
+		 
+		    function getParty(address _walletAddress) public view onlyInvolvedParties returns(EAI.Party memory){
+		        return mapParty[_walletAddress];
+		    }
+		    
+		    modifier onlyApplication(){        
+		        require(activated, "This contract is deactivated");            
+		        require(application.walletAddress == msg.sender, "Only the application can execute this operation");
+		        _;        
+		    }
+		 
+		    modifier onlyProcess(){
+		        require(activated, "This contract is deactivated");
+		        require(process.walletAddress == msg.sender, "Only the process can execute this operation");
+		        _;
+		    }
+		 
+		    modifier onlyInvolvedParties(){
+		        require(activated, "This contract is deactivated");
+		        require(
+		            (application.walletAddress == msg.sender || process.walletAddress == msg.sender ) ,
+		            "Only the process or the application can execute this operation");
+		        _;
+		    }
+		'''
+	}
+
+	def assignValuesToVariablesRelatedToJabutiVariablesAndTerms(EList<Variable> variables){
+		'''
+		«««instanciar os variariaveis, atribuir os valores»»
+			«FOR v : variables»
+				«IF v.term !== null»			
+					«v.name» = «"EAI.create"+variablesMap.get(v.name).type.removeTermSuffix+"("+buildCode_addParameters(variablesMap.get(v.name).type, (variablesMap.get(v.name) as VarTerm).term)+")"»;	
+				«ELSEIF v.expression !== null»
+					«v.name» = «(variablesMap.get(v.name) as VarExpr).content.join("")»;
+				«ENDIF»
+			«ENDFOR»
+		«««instanciar os termos e adicionar ao vetor das respectivas clausulas»»
+«resetCounter»«««zera a variavel counter»
+	«FOR clause : clauses»			
+		«incrementCounter»«"\n"»
+		//---------------- Terms related to the «clause.name» clause (C«clause.id»). ----------------
+		«FOR term: clause.termsList»
+			«var typeName = term.class.simpleName»
+			«typeName.removeTermSuffix.toFirstLower+"_C"+counter+".push(EAI.create"+typeName.removeTermSuffix+"("+buildCode_addParameters(typeName, term)+"))"»;
+		«ENDFOR»
+	«ENDFOR»
+		«resetCounter»
+		'''
+	}
+	
+	def generateIfStatementBaseInTheTermsOfTheClause(ClauseStruct c){		
+	'''
+	«var listOfParametersForIfStatement = c.termsList.buildParameterForIfStatement»
+	«reset_paramCounter_if»
+	if(«FOR i:0 ..< listOfParametersForIfStatement.size»
+			«IF i== (listOfParametersForIfStatement.size-1)»««« se for o ultimo»					
+				«IF paramCounter_if < c.logicalOperators.size && c.logicalOperators.get(paramCounter_if)== "!"»
+					«"\t\t"»!«listOfParametersForIfStatement.get(i)»
+				«ELSE»
+					«"\t\t"»«listOfParametersForIfStatement.get(i)»
+				«ENDIF»					
+			«ELSE»		
+				«IF c.type == "prohibition"»
+					«IF c.logicalOperators.get(paramCounter_if) !== null && c.logicalOperators.get(paramCounter_if)== "!"»
+						«"\t\t"»«c.logicalOperators.get(paramCounter_if++)»«listOfParametersForIfStatement.get(i)» || «increment_paramCounter_if»
+					«ELSE»
+						«"\t\t"»«listOfParametersForIfStatement.get(i)» || «increment_paramCounter_if»
+					«ENDIF»
+				«ELSE»
+					«IF c.logicalOperators.get(paramCounter_if) !== null && c.logicalOperators.get(paramCounter_if)== "!"»
+						«"\t\t"»«c.logicalOperators.get(paramCounter_if++)»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(paramCounter_if++)»						
+					«ELSE»
+						«"\t\t"»«listOfParametersForIfStatement.get(i)» «c.logicalOperators.get(paramCounter_if++)»
+					«ENDIF»
+				«ENDIF»
+			«ENDIF»				
+		«ENDFOR»		
+	«"\t\t"»){
+		«««	
+		«««GERADOR DO CORPO DO IF STATEMENT»»		
+			«IF clauses.get(counter).operationType == "request" && clauses.get(counter).type == "right"»
+				«var id = getIdOfClauseWithOperationType("response")»
+				«IF id >=0»
+					«FOR term: clauses.get(id).termsList»
+						«IF term instanceof Timeout_S»						
+							«"\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[0].setEndTimeInTimeout(accessDateTime); 						
+						«ENDIF»
+					«ENDFOR»
+				«ENDIF»	
+			«ENDIF»
+			«var maxNumberOfOperationByTime_counter=0»
+			«var maxNumberOfOperation_counter=0»
+			«var messageContent_Number_PerTime_counter=0»
+			«FOR term: clauses.get(counter).termsList»
+				«IF term instanceof MaxNumberOfOperationByTime_S»			
+		 			«"\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«maxNumberOfOperationByTime_counter++»].decreaseOneOperation_ByTime(accessDateTime);
+				«ELSEIF term instanceof MaxNumberOfOperation_S»
+	 				«"\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«maxNumberOfOperation_counter++»].decreaseOneOperation();
+				«ELSEIF term instanceof MessageContent_Number_PerTime_S»
+	 				«"\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«counter+1»[«messageContent_Number_PerTime_counter++»].decreaseTheLastContentOfRestingAmount();						
+				«ENDIF»	
+			«ENDFOR»		
+			«««caso as condições sejam satifeitas»
+			«IF c.type == "prohibition"»
+				«IF !c.failMessage.nullOrEmpty»							
+		 			«"\t\t"»emit failEvent("«c.failMessage»");
+				«ENDIF»					
+				«"\t\t"»return false;
+			«ELSE»
+				«IF !c.successMessage.nullOrEmpty»
+					«"\t\t"»emit successEvent("«c.successMessage»")						
+				«ENDIF»
+				«"\t\t"»return true;
+			«ENDIF»
+	«"\t"»}else{	
+			«IF clauses.get(counter).operationType == "response" && clauses.get(counter).type == "obligation"»			
+				«var id = getIdOfClauseWithOperationType("request")»
+				«IF id >=0»
+					«FOR term: clauses.get(id).termsList»
+						«IF term instanceof MaxNumberOfOperationByTime_S»
+		 					«"\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«maxNumberOfOperationByTime_counter++»].increaseOneOperation_ByTime();
+						«ELSEIF term instanceof MaxNumberOfOperation_S»
+		 					«"\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«maxNumberOfOperation_counter++»].increaseOneOperation();
+						«ELSEIF term instanceof MessageContent_Number_PerTime_S»
+		 					«"\t\t"»«term.class.simpleName.removeTermSuffix.toFirstLower»_C«id+1»[«messageContent_Number_PerTime_counter++»].increaseTheLastContentInRestingAmount();						
+						«ENDIF»					
+					«ENDFOR»
+				«ENDIF»	
+			«ENDIF»
+			«««caso as condições não  sejam satifeitas»
+			«IF c.type == "prohibition"»
+				«IF !c.successMessage.nullOrEmpty»
+					«"\t\t"»emit successEvent("«c.successMessage»")						
+				«ENDIF»
+				«"\t\t"»return true;
+			«ELSE»
+				«IF !c.failMessage.nullOrEmpty»							
+		 			«"\t\t"»emit failEvent("«c.failMessage»");
+				«ENDIF»					
+				«"\t\t"»return false;
+			«ENDIF»
+	«"\t"»}
+	
+	'''
+	}	
 
 	def int countTermOfThisType(List<TermStruct> terms, String termTypeReference){
 		var int count=0;
@@ -410,7 +418,8 @@ contract «ct.name» {
 	}
 	
 	def int getIdOfClauseWithOperationType(String operationType) {
-		for (i : 0 .. clauses.size) {			
+		for (i : 0 .. clauses.size-1) {			
+			
 			if (clauses.get(i).operationType == operationType) {			
 				return i;
 			}

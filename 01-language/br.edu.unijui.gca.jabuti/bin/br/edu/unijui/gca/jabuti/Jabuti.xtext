@@ -43,8 +43,7 @@ Clause:
 			terms = ExpressionTerm			
 		'}'
 		onSuccess=OnSuccess?
-		onBreach=OnBreach?
-		
+		onBreach=OnBreach?		
 	'}' 
 ;
 

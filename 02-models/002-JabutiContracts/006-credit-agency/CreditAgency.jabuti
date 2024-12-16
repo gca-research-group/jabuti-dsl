@@ -10,7 +10,7 @@ contract CreditAgency {
 		application = "creditAgency"
 		process = "integrationProcess"
 	}  
- 
+  
 	clauses{	   
 		right requestScore {
 			//Setting the limit operation by day and the number of user by request

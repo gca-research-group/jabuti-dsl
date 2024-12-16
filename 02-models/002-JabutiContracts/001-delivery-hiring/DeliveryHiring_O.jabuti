@@ -9,6 +9,9 @@ contract DeliveryHiring_O {
 		process  	= "integrationProcess" 
 	}
 
+	variables{ 
+		teste = "teset"  
+	}
 	clauses{
 		obligation responseOrder {
 			rolePlayer = application 
@@ -18,7 +21,6 @@ contract DeliveryHiring_O {
 				MessageContent(numeric("//budget/deliveryTime/text()") < 15)	  		
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
-		}	
-			
+		}			
 	}
 }

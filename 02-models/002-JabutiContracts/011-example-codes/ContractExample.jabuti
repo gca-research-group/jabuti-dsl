@@ -8,7 +8,7 @@ contract ContractExample{
     parties{
         application = "Application Name"
         process = "Integration Process Name"
-    }
+    } 
     
     clauses{	
         right requestDocuments {
