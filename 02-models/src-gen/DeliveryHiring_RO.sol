@@ -2,7 +2,7 @@
 pragma solidity ^0.8.14;
 import "./libs/EAI.sol";
 
-contract DeliveryHiring_R {
+contract DeliveryHiring_RO {
 
 	bool activated;
 	uint32 beginDate; 
@@ -16,51 +16,84 @@ contract DeliveryHiring_R {
 	event failEvent(string _logMessage);
 	event successEvent(string _logMessage);
 
+	using EAI for EAI.TimeInterval;
+	using EAI for EAI.SessionInterval;
+	using EAI for EAI.Timeout;
+	using EAI for EAI.MaxNumberOfOperation;
 	using EAI for EAI.MaxNumberOfOperationByTime;
+	using EAI for EAI.WeekDaysInterval;
+	using EAI for EAI.MessageContent_onlyXPath_Boolean;
 	using EAI for EAI.MessageContent_Number;
 	using EAI for EAI.MessageContent_Number_PerTime;
 
-	string numberOfAddresses;
-	string weight;
-	string productValue;
+	string a;
+	string b;
+	uint32 c;
+	uint32 d;
+	bool expression_01;
+	uint32 expression_02;
+	bool expression_03;
 
 	//---------------- Vectors of terms related to the requestDelivery clause(_C1). ----------------
+	EAI.TimeInterval[] timeInterval_C1;
+	EAI.SessionInterval[] sessionInterval_C1;
+	EAI.Timeout[] timeout_C1;
+	EAI.MaxNumberOfOperation[] maxNumberOfOperation_C1;
 	EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
+	EAI.WeekDaysInterval[] weekDaysInterval_C1;
+	EAI.MessageContent_onlyXPath_Boolean[] messageContent_onlyXPath_Boolean_C1;
 	EAI.MessageContent_Number[] messageContent_Number_C1;
 	EAI.MessageContent_Number_PerTime[] messageContent_Number_PerTime_C1;
 
 	constructor(address _applicationWallet){
 		activated = true;		
 		beginDate = 1641034800;
-		dueDate = 1672434000;
+		dueDate = 1672520400;
 		application = EAI.createParty("deliverySystem", _applicationWallet, false);             
 		process = EAI.createParty("integrationProcess", msg.sender, true);    
 		mapParty[msg.sender] = process;
 		mapParty[_applicationWallet] = application;
 		
 		// Create and assign the values to variables related to the variables from jabuti and the terms of the clauses
-		numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
-		weight = "//body/package/weight/text()";
-		productValue = "//body/productValue/text()";
+		a = "text_01";
+		b = "text_02";
+		c = 2;
+		d = 1;
+		expression_01 = a!=bANDb=="text_02";
+		expression_02 = c*((c-d)+2);
+		expression_03 = c+d<=3AND(a=="text_02"ORa!=b);
 		
 		//---------------- Terms related to the requestDelivery clause (C1). ----------------
-		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 3, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( numberOfAddresses, "==", 1 ));
-		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime( weight, "==", 100, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( productValue, "<", 20000 ));
+		timeInterval_C1.push(EAI.createTimeInterval( 25200, 64800 ));
+		sessionInterval_C1.push(EAI.createSessionInterval( 30, EAI.MINUTE ));
+		timeout_C1.push(EAI.createTimeout( 30 ));
+		maxNumberOfOperation_C1.push(EAI.createMaxNumberOfOperation( 50000 ));
+		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 10, EAI.MINUTE ));
+		weekDaysInterval_C1.push(EAI.createWeekDaysInterval( EAI.MONDAY, EAI.FRIDAY ));
+		messageContent_onlyXPath_Boolean_C1.push(EAI.createMessageContent_onlyXPath_Boolean(  "count(//item)<=10" ));
+		messageContent_Number_C1.push(EAI.createMessageContent_Number(  "count(//item)", "<=", 10 ));
+		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime(  "count(//item)", "<=", 1000, EAI.MONTH ));
 	}
 	
 	function right_requestDelivery(
+		uint32 accessTime,
 		uint32 accessDateTime,
+		bool[] memory messageContent_onlyXPath_Boolean,
 		uint256[] memory messageContent_Number,
 		uint256[] memory messageContent_Number_PerTime
 		) public onlyProcess() returns(bool){
 		if(
+			timeInterval_C1[0].isIntoTimeInterval(accessTime) &&
+			default - implementing &&
+			!timeout_C1[0].isTimeoutEnded(accessDateTime) &&
+			maxNumberOfOperation_C1[0].hasAvailableOperations() &&
 			maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(accessDateTime) &&
+			weekDaysInterval_C1[0].isIntoWeekDaysInterval(weekDaysInterval[0]) &&
+			messageContent_onlyXPath_Boolean[0] &&
 			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0]) &&
-			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0]) &&
-			messageContent_Number_C1[1].evaluateNumberContent(messageContent_Number[1])
+			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0])
 			){
+			maxNumberOfOperation_C1[0].decreaseOneOperation();
 			maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
 			messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
 			return true;

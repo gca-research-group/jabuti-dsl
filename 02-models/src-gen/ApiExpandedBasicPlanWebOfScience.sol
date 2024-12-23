@@ -2,7 +2,7 @@
 pragma solidity ^0.8.14;
 import "./libs/EAI.sol";
 
-contract DeliveryHiring_R {
+contract ApiExpandedBasicPlanWebOfScience {
 
 	bool activated;
 	uint32 beginDate; 
@@ -19,38 +19,38 @@ contract DeliveryHiring_R {
 	using EAI for EAI.MaxNumberOfOperationByTime;
 	using EAI for EAI.MessageContent_Number;
 	using EAI for EAI.MessageContent_Number_PerTime;
+	using EAI for EAI.Timeout;
 
-	string numberOfAddresses;
-	string weight;
-	string productValue;
 
-	//---------------- Vectors of terms related to the requestDelivery clause(_C1). ----------------
+	//---------------- Vectors of terms related to the requestDocuments clause(_C1). ----------------
 	EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
 	EAI.MessageContent_Number[] messageContent_Number_C1;
 	EAI.MessageContent_Number_PerTime[] messageContent_Number_PerTime_C1;
 
+	//---------------- Vectors of terms related to the responseWithDocuments clause(_C2). ----------------
+	EAI.Timeout[] timeout_C2;
+
 	constructor(address _applicationWallet){
 		activated = true;		
-		beginDate = 1641034800;
-		dueDate = 1672434000;
-		application = EAI.createParty("deliverySystem", _applicationWallet, false);             
-		process = EAI.createParty("integrationProcess", msg.sender, true);    
+		beginDate = 1672570800;
+		dueDate = 1704056400;
+		application = EAI.createParty("Web Of Science", _applicationWallet, false);             
+		process = EAI.createParty("Integration Process", msg.sender, true);    
 		mapParty[msg.sender] = process;
 		mapParty[_applicationWallet] = application;
 		
 		// Create and assign the values to variables related to the variables from jabuti and the terms of the clauses
-		numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
-		weight = "//body/package/weight/text()";
-		productValue = "//body/productValue/text()";
 		
-		//---------------- Terms related to the requestDelivery clause (C1). ----------------
-		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 3, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( numberOfAddresses, "==", 1 ));
-		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime( weight, "==", 100, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( productValue, "<", 20000 ));
+		//---------------- Terms related to the requestDocuments clause (C1). ----------------
+		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 2, EAI.SECOND ));
+		messageContent_Number_C1.push(EAI.createMessageContent_Number(  "count(//body/document)", "<=", 100 ));
+		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime(  "count(//body/document)", "<=", 50000, EAI.MONTH ));
+		
+		//---------------- Terms related to the responseWithDocuments clause (C2). ----------------
+		timeout_C2.push(EAI.createTimeout( 60 ));
 	}
 	
-	function right_requestDelivery(
+	function right_requestDocuments(
 		uint32 accessDateTime,
 		uint256[] memory messageContent_Number,
 		uint256[] memory messageContent_Number_PerTime
@@ -58,14 +58,31 @@ contract DeliveryHiring_R {
 		if(
 			maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(accessDateTime) &&
 			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0]) &&
-			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0]) &&
-			messageContent_Number_C1[1].evaluateNumberContent(messageContent_Number[1])
+			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0])
 			){
+			timeout_C2[0].setEndTimeInTimeout(accessDateTime); 						
 			maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
 			messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
 			return true;
 		}else{	
-			emit failEvent("Request operation did not meet all requirements");
+			emit failEvent("Exceded number of docuemnts");
+			return false;
+		}
+	
+	}
+ 		
+	function obligation_responseWithDocuments(
+		uint32 accessDateTime
+		) public onlyApplication() returns(bool){
+		require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
+		if(
+			!timeout_C2[0].isTimeoutEnded(accessDateTime)
+			){
+			return true;
+		}else{	
+			maxNumberOfOperationByTime_C1[0].increaseOneOperation_ByTime();
+			messageContent_Number_PerTime_C1[0].increaseTheLastContentInRestingAmount();						
+			emit failEvent("Conditon not meet");
 			return false;
 		}
 	

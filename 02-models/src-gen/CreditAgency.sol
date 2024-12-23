@@ -2,7 +2,7 @@
 pragma solidity ^0.8.14;
 import "./libs/EAI.sol";
 
-contract DeliveryHiring_R {
+contract CreditAgency {
 
 	bool activated;
 	uint32 beginDate; 
@@ -18,54 +18,85 @@ contract DeliveryHiring_R {
 
 	using EAI for EAI.MaxNumberOfOperationByTime;
 	using EAI for EAI.MessageContent_Number;
-	using EAI for EAI.MessageContent_Number_PerTime;
+	using EAI for EAI.TimeInterval;
+	using EAI for EAI.Timeout;
 
-	string numberOfAddresses;
-	string weight;
-	string productValue;
 
-	//---------------- Vectors of terms related to the requestDelivery clause(_C1). ----------------
+	//---------------- Vectors of terms related to the requestScore clause(_C1). ----------------
 	EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
 	EAI.MessageContent_Number[] messageContent_Number_C1;
-	EAI.MessageContent_Number_PerTime[] messageContent_Number_PerTime_C1;
+
+	//---------------- Vectors of terms related to the requestScoreP clause(_C2). ----------------
+	EAI.TimeInterval[] timeInterval_C2;
+
+	//---------------- Vectors of terms related to the responseWithScore clause(_C3). ----------------
+	EAI.Timeout[] timeout_C3;
 
 	constructor(address _applicationWallet){
 		activated = true;		
 		beginDate = 1641034800;
-		dueDate = 1672434000;
-		application = EAI.createParty("deliverySystem", _applicationWallet, false);             
+		dueDate = 1672520400;
+		application = EAI.createParty("creditAgency", _applicationWallet, false);             
 		process = EAI.createParty("integrationProcess", msg.sender, true);    
 		mapParty[msg.sender] = process;
 		mapParty[_applicationWallet] = application;
 		
 		// Create and assign the values to variables related to the variables from jabuti and the terms of the clauses
-		numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
-		weight = "//body/package/weight/text()";
-		productValue = "//body/productValue/text()";
 		
-		//---------------- Terms related to the requestDelivery clause (C1). ----------------
-		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 3, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( numberOfAddresses, "==", 1 ));
-		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime( weight, "==", 100, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( productValue, "<", 20000 ));
+		//---------------- Terms related to the requestScore clause (C1). ----------------
+		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 1000, EAI.SECOND ));
+		messageContent_Number_C1.push(EAI.createMessageContent_Number(  "count(//CPF)", "==", 1 ));
+		
+		//---------------- Terms related to the requestScoreP clause (C2). ----------------
+		timeInterval_C2.push(EAI.createTimeInterval( 66600, 27000 ));
+		
+		//---------------- Terms related to the responseWithScore clause (C3). ----------------
+		timeout_C3.push(EAI.createTimeout( 60 ));
 	}
 	
-	function right_requestDelivery(
+	function right_requestScore(
 		uint32 accessDateTime,
-		uint256[] memory messageContent_Number,
-		uint256[] memory messageContent_Number_PerTime
+		uint256[] memory messageContent_Number
 		) public onlyProcess() returns(bool){
 		if(
 			maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(accessDateTime) &&
-			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0]) &&
-			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0]) &&
-			messageContent_Number_C1[1].evaluateNumberContent(messageContent_Number[1])
+			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0])
 			){
+			timeout_C3[0].setEndTimeInTimeout(accessDateTime); 						
 			maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
-			messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
 			return true;
 		}else{	
-			emit failEvent("Request operation did not meet all requirements");
+			emit failEvent("Request limit by day exceeded or inconsistent message content");
+			return false;
+		}
+	
+	}
+ 		
+	function prohibition_requestScoreP(
+		uint32 accessTime
+		) public onlyProcess() returns(bool){
+		if(
+			timeInterval_C2[0].isIntoTimeInterval(accessTime)
+			){
+			emit failEvent("Request made outside of allowed hours");
+			return false;
+		}else{	
+			return true;
+		}
+	
+	}
+ 		
+	function obligation_responseWithScore(
+		uint32 accessDateTime
+		) public onlyApplication() returns(bool){
+		require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
+		if(
+			!timeout_C3[0].isTimeoutEnded(accessDateTime)
+			){
+			return true;
+		}else{	
+			maxNumberOfOperationByTime_C1[0].increaseOneOperation_ByTime();
+			emit failEvent("Timeout for replying has been exceeded");
 			return false;
 		}
 	

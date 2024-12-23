@@ -21,7 +21,6 @@ import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
  * https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#validation
  */
 public class JabutiValidator extends AbstractJabutiValidator {
-
 	public static final String INVALID_NAME = "invalidName";
 	public static final String DUPLICATE_NAME = "Duplicated name";
 
@@ -41,7 +40,6 @@ public class JabutiValidator extends AbstractJabutiValidator {
 
 	@Check
 	public void checkClauseNameIsUnique(Clause clause) {
-
 		if (clause != null) {
 			EList<Clause> clauses = ((Contract) clause.eContainer()).getClauses();
 			int count = 0;
@@ -55,11 +53,9 @@ public class JabutiValidator extends AbstractJabutiValidator {
 			}
 		}
 	}
-
 	
 	@Check
-	public void checkTimeInTimeInterval(TimeInterval time) {
-				
+	public void checkTimeInTimeInterval(TimeInterval time) {				
 		String startTime = time.getStart();
 		String endTime =  time.getEnd();
 		
@@ -77,16 +73,13 @@ public class JabutiValidator extends AbstractJabutiValidator {
 	
 	@Check(CheckType.NORMAL)
 	public void checkDate(Contract contract) {
-
 		String beginDate = contract.getBeginDate();
 		String dueDate = contract.getDueDate();
-
 		if (beginDate != null) {
 			if (!beginDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")) {
 				error("DateTime invalid. Provide the format: YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__BEGIN_DATE);
 			}
-		}
-		
+		}		
 		if (dueDate != null) {
 			if (!dueDate.matches("\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}")) {
 				error("DateTime invalid. Provide the format:  YYYY-MM-DD HH:mm:ss", JabutiPackage.Literals.CONTRACT__DUE_DATE);

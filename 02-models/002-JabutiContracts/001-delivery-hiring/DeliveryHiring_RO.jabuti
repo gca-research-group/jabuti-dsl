@@ -8,7 +8,7 @@ contract DeliveryHiring {
     parties{
         application = "deliverySystem" 
         process  	= "integrationProcess" 
-    }
+    } 
     
     variables{
         numberOfAddresses = "count(//body/perosonalInformation/address/cep)"

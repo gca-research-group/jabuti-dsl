@@ -2,7 +2,7 @@
 pragma solidity ^0.8.14;
 import "./libs/EAI.sol";
 
-contract DeliveryHiring_R {
+contract DeliveryHiring_O {
 
 	bool activated;
 	uint32 beginDate; 
@@ -16,56 +16,44 @@ contract DeliveryHiring_R {
 	event failEvent(string _logMessage);
 	event successEvent(string _logMessage);
 
-	using EAI for EAI.MaxNumberOfOperationByTime;
+	using EAI for EAI.Timeout;
 	using EAI for EAI.MessageContent_Number;
-	using EAI for EAI.MessageContent_Number_PerTime;
 
-	string numberOfAddresses;
-	string weight;
-	string productValue;
+	string teste;
 
-	//---------------- Vectors of terms related to the requestDelivery clause(_C1). ----------------
-	EAI.MaxNumberOfOperationByTime[] maxNumberOfOperationByTime_C1;
+	//---------------- Vectors of terms related to the responseOrder clause(_C1). ----------------
+	EAI.Timeout[] timeout_C1;
 	EAI.MessageContent_Number[] messageContent_Number_C1;
-	EAI.MessageContent_Number_PerTime[] messageContent_Number_PerTime_C1;
 
 	constructor(address _applicationWallet){
 		activated = true;		
-		beginDate = 1641034800;
-		dueDate = 1672434000;
+		beginDate = 1672572600;
+		dueDate = 1704108600;
 		application = EAI.createParty("deliverySystem", _applicationWallet, false);             
 		process = EAI.createParty("integrationProcess", msg.sender, true);    
 		mapParty[msg.sender] = process;
 		mapParty[_applicationWallet] = application;
 		
 		// Create and assign the values to variables related to the variables from jabuti and the terms of the clauses
-		numberOfAddresses = "count(//body/perosonalInformation/address/cep)";
-		weight = "//body/package/weight/text()";
-		productValue = "//body/productValue/text()";
+		teste = "teset";
 		
-		//---------------- Terms related to the requestDelivery clause (C1). ----------------
-		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 3, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( numberOfAddresses, "==", 1 ));
-		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime( weight, "==", 100, EAI.MINUTE ));
-		messageContent_Number_C1.push(EAI.createMessageContent_Number( productValue, "<", 20000 ));
+		//---------------- Terms related to the responseOrder clause (C1). ----------------
+		timeout_C1.push(EAI.createTimeout( 20 ));
+		messageContent_Number_C1.push(EAI.createMessageContent_Number(  "//budget/deliveryTime/text()", "<", 15 ));
 	}
 	
-	function right_requestDelivery(
+	function obligation_responseOrder(
 		uint32 accessDateTime,
-		uint256[] memory messageContent_Number,
-		uint256[] memory messageContent_Number_PerTime
-		) public onlyProcess() returns(bool){
+		uint256[] memory messageContent_Number
+		) public onlyApplication() returns(bool){
+		require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
 		if(
-			maxNumberOfOperationByTime_C1[0].hasAvailableOperations_ByTime(accessDateTime) &&
-			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0]) &&
-			messageContent_Number_PerTime_C1[0].evaluateNumberPerTime(accessDateTime,messageContent_Number_PerTime[0]) &&
-			messageContent_Number_C1[1].evaluateNumberContent(messageContent_Number[1])
+			!timeout_C1[0].isTimeoutEnded(accessDateTime) &&
+			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0])
 			){
-			maxNumberOfOperationByTime_C1[0].decreaseOneOperation_ByTime(accessDateTime);
-			messageContent_Number_PerTime_C1[0].decreaseTheLastContentOfRestingAmount();						
 			return true;
 		}else{	
-			emit failEvent("Request operation did not meet all requirements");
+			emit failEvent("Request made outside of allowed hours or distance limit exceeded");
 			return false;
 		}
 	
