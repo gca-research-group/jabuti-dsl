@@ -40,7 +40,7 @@ contract OrcidUpdating {
 		// Create and assign the values to variables related to the variables from jabuti and the terms of the clauses
 		
 		//---------------- Terms related to the requestUpdate clause (C1). ----------------
-		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 8, EAI.SECOND ));
+		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 8, uint8(EAI.TimeUnit.SECOND) ));
 		messageContent_onlyXPath_Boolean_C1.push(EAI.createMessageContent_onlyXPath_Boolean(  "//author/orcid/id/text()!=''" ));
 		messageContent_onlyXPath_Boolean_C1.push(EAI.createMessageContent_onlyXPath_Boolean(  "//article/title/text()!=''" ));
 		

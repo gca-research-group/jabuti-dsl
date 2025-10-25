@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
+public abstract class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
 {
 	/**
 	 * <!-- begin-user-doc -->

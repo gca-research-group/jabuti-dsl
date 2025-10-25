@@ -11,7 +11,7 @@ package br.edu.unijui.gca.jabuti.jabuti;
  *
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getTerm()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Term extends ExpressionTerm

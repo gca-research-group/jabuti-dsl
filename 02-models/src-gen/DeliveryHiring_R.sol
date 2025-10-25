@@ -44,9 +44,9 @@ contract DeliveryHiring_R {
 		productValue = "//body/productValue/text()";
 		
 		//---------------- Terms related to the requestDelivery clause (C1). ----------------
-		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 3, EAI.MINUTE ));
+		maxNumberOfOperationByTime_C1.push(EAI.createMaxNumberOfOperationByTime( 3, uint8(EAI.TimeUnit.MINUTE) ));
 		messageContent_Number_C1.push(EAI.createMessageContent_Number( numberOfAddresses, "==", 1 ));
-		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime( weight, "==", 100, EAI.MINUTE ));
+		messageContent_Number_PerTime_C1.push(EAI.createMessageContent_Number_PerTime( weight, "==", 100, uint8(EAI.TimeUnit.MINUTE) ));
 		messageContent_Number_C1.push(EAI.createMessageContent_Number( productValue, "<", 20000 ));
 	}
 	

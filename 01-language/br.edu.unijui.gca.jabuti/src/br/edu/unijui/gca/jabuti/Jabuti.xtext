@@ -36,7 +36,7 @@ Contract:
 	'}'; 
 		
 Clause: 
-	(Right | Prohibition | Obligation) '{'
+	(Right | Obligation | Prohibition)  '{'
 		'rolePlayer' '=' rolePlayer=RolePlayer
 		'operation' '=' operation=Operation
 		'terms' '{' 
@@ -48,13 +48,13 @@ Clause:
 ;
 
 Right:
-	'right'  name=ID 
+	'right' name=ID 
 ;
 Obligation:
-	'obligation'   name=ID 
+	'obligation' name=ID 
 ;
 Prohibition:
-	'prohibition'  name=ID 
+	'prohibition' name=ID 
 ;	
 
 
@@ -146,30 +146,28 @@ Variable:
 
 
 ExpressionTerm:
-	NegationTerm ({BinaryTermOperator.left=current} (symbol=',' | symbol='OR'  ) right=NegationTerm)*;
+	NegationTerm ({BinaryTermOperator.left=current} (symbol='AND' | symbol='OR'  ) right=NegationTerm)*;
 
 NegationTerm returns ExpressionTerm:
-	Term | {UnaryTermOperator} symbol='NOT' expressionTerm=Term;
-	
+	Term | {NegationOperator} symbol='NOT' expressionTerm=Term;
+		
 Term returns ExpressionTerm:
 	'(' ExpressionTerm ')' | ConditionalTerm | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent	
 ;
 
 ConditionalTerm :
-//	(beforeSymbol = LogicalOperator)?
 	'when' '(' ((QualifiedName | STRING ) 
 				(comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?) 
 				(logicalOperator+=LogicalOperator QualifiedName  
 					(comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'check' '{'
 					expressionTerm=ExpressionTerm
 	'}'
-//	(afterSymbol = LogicalOperator)?
 ;
 
 //  ----------------- end new version proposal  -----------------
 
 LogicalOperator:
-	symbol=(',' | 'AND'| 'OR')
+	symbol=('AND'| 'OR')
 ;
 
 TimeInterval: 
@@ -235,6 +233,6 @@ enum TimeUnit:
 
 enum DataType:
 	TEXT='text' |
-	NUMERIC='numeric' |
+	NUMBER='number' |
 	BOOLEAN='boolean'
 ;

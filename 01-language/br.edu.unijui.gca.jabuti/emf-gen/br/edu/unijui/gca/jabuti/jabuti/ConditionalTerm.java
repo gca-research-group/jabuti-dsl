@@ -7,23 +7,23 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Conditional Expression</b></em>'.
+ * A representation of the model object '<em><b>Conditional Term</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm <em>Expression Term</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator <em>Comparison Operator</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator <em>Logical Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getExpressionTerm <em>Expression Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getComparisonOperator <em>Comparison Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getLogicalOperator <em>Logical Operator</em>}</li>
  * </ul>
  *
- * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression()
+ * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalTerm()
  * @model
  * @generated
  */
-public interface ConditionalExpression extends ExpressionTerm
+public interface ConditionalTerm extends Term
 {
 	/**
 	 * Returns the value of the '<em><b>Expression Term</b></em>' containment reference.
@@ -31,14 +31,14 @@ public interface ConditionalExpression extends ExpressionTerm
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression Term</em>' containment reference.
 	 * @see #setExpressionTerm(ExpressionTerm)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ExpressionTerm()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalTerm_ExpressionTerm()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ExpressionTerm getExpressionTerm();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm <em>Expression Term</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getExpressionTerm <em>Expression Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Expression Term</em>' containment reference.
@@ -53,7 +53,7 @@ public interface ConditionalExpression extends ExpressionTerm
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Comparison Operator</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_ComparisonOperator()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalTerm_ComparisonOperator()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -65,10 +65,10 @@ public interface ConditionalExpression extends ExpressionTerm
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Logical Operator</em>' containment reference list.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalExpression_LogicalOperator()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getConditionalTerm_LogicalOperator()
 	 * @model containment="true"
 	 * @generated
 	 */
 	EList<LogicalOperator> getLogicalOperator();
 
-} // ConditionalExpression
+} // ConditionalTerm

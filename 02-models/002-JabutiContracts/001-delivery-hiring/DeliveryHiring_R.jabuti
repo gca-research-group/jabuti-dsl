@@ -21,11 +21,11 @@ contract DeliveryHiring_R {
 			 *  request operation by minute and number of address by request*/
 			rolePlayer = process 
 			operation = request	
-			terms {		 	  
-				MaxNumberOfOperation(3 per Minute),   
-				MessageContent(numeric(numberOfAddresses) == 1),  
-				MessageContent(numeric(weight) == 100 per Minute), 
-				MessageContent(numeric(productValue) < 20000) 	 		
+			terms {		 	   
+				MaxNumberOfOperation(3 per Minute) AND   
+				MessageContent(number(numberOfAddresses) == 1)AND
+				MessageContent(number(weight) == 100 per Minute)AND 
+				MessageContent(number(productValue) < 20000) 	 		
 			}  
 			// the onSuccess is optional
 			onBreach(log("Request operation did not meet all requirements"))			

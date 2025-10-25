@@ -62,7 +62,7 @@ contract DockRequest {
 		
 		//---------------- Terms related to the notAllowedRequestBerthing clause (C3). ----------------
 		timeInterval_C3.push(EAI.createTimeInterval( 79200, 28800 ));
-		weekDaysInterval_C3.push(EAI.createWeekDaysInterval( EAI.SUNDAY, EAI.SUNDAY ));
+		weekDaysInterval_C3.push(EAI.createWeekDaysInterval( uint8(EAI.Day.SUNDAY), uint8(EAI.Day.SUNDAY) ));
 		
 		//---------------- Terms related to the respondToBerthingRequest clause (C4). ----------------
 		timeout_C4.push(EAI.createTimeout( 3600 ));

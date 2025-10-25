@@ -4,7 +4,7 @@
 package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm;
 import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
 import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
@@ -26,20 +26,20 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Conditional Expression</b></em>'.
+ * An implementation of the model object '<em><b>Conditional Term</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getExpressionTerm <em>Expression Term</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getComparisonOperator <em>Comparison Operator</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl#getLogicalOperator <em>Logical Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalTermImpl#getExpressionTerm <em>Expression Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalTermImpl#getComparisonOperator <em>Comparison Operator</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalTermImpl#getLogicalOperator <em>Logical Operator</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConditionalExpressionImpl extends ExpressionTermImpl implements ConditionalExpression
+public class ConditionalTermImpl extends TermImpl implements ConditionalTerm
 {
 	/**
 	 * The cached value of the '{@link #getExpressionTerm() <em>Expression Term</em>}' containment reference.
@@ -76,7 +76,7 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConditionalExpressionImpl()
+	protected ConditionalTermImpl()
 	{
 		super();
 	}
@@ -89,7 +89,7 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	@Override
 	protected EClass eStaticClass()
 	{
-		return JabutiPackage.Literals.CONDITIONAL_EXPRESSION;
+		return JabutiPackage.Literals.CONDITIONAL_TERM;
 	}
 
 	/**
@@ -114,7 +114,7 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 		expressionTerm = newExpressionTerm;
 		if (eNotificationRequired())
 		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM, oldExpressionTerm, newExpressionTerm);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM, oldExpressionTerm, newExpressionTerm);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -132,14 +132,14 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 		{
 			NotificationChain msgs = null;
 			if (expressionTerm != null)
-				msgs = ((InternalEObject)expressionTerm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM, null, msgs);
+				msgs = ((InternalEObject)expressionTerm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM, null, msgs);
 			if (newExpressionTerm != null)
-				msgs = ((InternalEObject)newExpressionTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM, null, msgs);
+				msgs = ((InternalEObject)newExpressionTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM, null, msgs);
 			msgs = basicSetExpressionTerm(newExpressionTerm, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM, newExpressionTerm, newExpressionTerm));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM, newExpressionTerm, newExpressionTerm));
 	}
 
 	/**
@@ -152,7 +152,7 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	{
 		if (comparisonOperator == null)
 		{
-			comparisonOperator = new EObjectContainmentEList<ComparisonOperator>(ComparisonOperator.class, this, JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR);
+			comparisonOperator = new EObjectContainmentEList<ComparisonOperator>(ComparisonOperator.class, this, JabutiPackage.CONDITIONAL_TERM__COMPARISON_OPERATOR);
 		}
 		return comparisonOperator;
 	}
@@ -167,7 +167,7 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	{
 		if (logicalOperator == null)
 		{
-			logicalOperator = new EObjectContainmentEList<LogicalOperator>(LogicalOperator.class, this, JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR);
+			logicalOperator = new EObjectContainmentEList<LogicalOperator>(LogicalOperator.class, this, JabutiPackage.CONDITIONAL_TERM__LOGICAL_OPERATOR);
 		}
 		return logicalOperator;
 	}
@@ -182,11 +182,11 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM:
+			case JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM:
 				return basicSetExpressionTerm(null, msgs);
-			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__COMPARISON_OPERATOR:
 				return ((InternalEList<?>)getComparisonOperator()).basicRemove(otherEnd, msgs);
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__LOGICAL_OPERATOR:
 				return ((InternalEList<?>)getLogicalOperator()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -202,11 +202,11 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM:
+			case JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM:
 				return getExpressionTerm();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__COMPARISON_OPERATOR:
 				return getComparisonOperator();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__LOGICAL_OPERATOR:
 				return getLogicalOperator();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -223,14 +223,14 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM:
+			case JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM:
 				setExpressionTerm((ExpressionTerm)newValue);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__COMPARISON_OPERATOR:
 				getComparisonOperator().clear();
 				getComparisonOperator().addAll((Collection<? extends ComparisonOperator>)newValue);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__LOGICAL_OPERATOR:
 				getLogicalOperator().clear();
 				getLogicalOperator().addAll((Collection<? extends LogicalOperator>)newValue);
 				return;
@@ -248,13 +248,13 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM:
+			case JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM:
 				setExpressionTerm((ExpressionTerm)null);
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__COMPARISON_OPERATOR:
 				getComparisonOperator().clear();
 				return;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__LOGICAL_OPERATOR:
 				getLogicalOperator().clear();
 				return;
 		}
@@ -271,14 +271,14 @@ public class ConditionalExpressionImpl extends ExpressionTermImpl implements Con
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.CONDITIONAL_EXPRESSION__EXPRESSION_TERM:
+			case JabutiPackage.CONDITIONAL_TERM__EXPRESSION_TERM:
 				return expressionTerm != null;
-			case JabutiPackage.CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__COMPARISON_OPERATOR:
 				return comparisonOperator != null && !comparisonOperator.isEmpty();
-			case JabutiPackage.CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR:
+			case JabutiPackage.CONDITIONAL_TERM__LOGICAL_OPERATOR:
 				return logicalOperator != null && !logicalOperator.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //ConditionalExpressionImpl
+} //ConditionalTermImpl

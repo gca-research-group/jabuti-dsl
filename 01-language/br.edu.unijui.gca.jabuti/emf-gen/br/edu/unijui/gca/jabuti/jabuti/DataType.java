@@ -31,14 +31,14 @@ public enum DataType implements Enumerator
 	TEXT(0, "TEXT", "TEXT"),
 
 	/**
-	 * The '<em><b>NUMERIC</b></em>' literal object.
+	 * The '<em><b>NUMBER</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NUMERIC_VALUE
+	 * @see #NUMBER_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	NUMERIC(1, "NUMERIC", "NUMERIC"),
+	NUMBER(1, "NUMBER", "NUMBER"),
 
 	/**
 	 * The '<em><b>BOOLEAN</b></em>' literal object.
@@ -62,15 +62,15 @@ public enum DataType implements Enumerator
 	public static final int TEXT_VALUE = 0;
 
 	/**
-	 * The '<em><b>NUMERIC</b></em>' literal value.
+	 * The '<em><b>NUMBER</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #NUMERIC
+	 * @see #NUMBER
 	 * @model
 	 * @generated
 	 * @ordered
 	 */
-	public static final int NUMERIC_VALUE = 1;
+	public static final int NUMBER_VALUE = 1;
 
 	/**
 	 * The '<em><b>BOOLEAN</b></em>' literal value.
@@ -93,7 +93,7 @@ public enum DataType implements Enumerator
 		new DataType[]
 		{
 			TEXT,
-			NUMERIC,
+			NUMBER,
 			BOOLEAN,
 		};
 
@@ -160,7 +160,7 @@ public enum DataType implements Enumerator
 		switch (value)
 		{
 			case TEXT_VALUE: return TEXT;
-			case NUMERIC_VALUE: return NUMERIC;
+			case NUMBER_VALUE: return NUMBER;
 			case BOOLEAN_VALUE: return BOOLEAN;
 		}
 		return null;

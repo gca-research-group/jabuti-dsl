@@ -8,7 +8,7 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
@@ -21,6 +21,7 @@ import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
 import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.NegationOperator;
 import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
@@ -36,7 +37,6 @@ import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
-import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval;
@@ -295,11 +295,12 @@ public class JabutiSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case JabutiPackage.CONDITIONAL_EXPRESSION:
+			case JabutiPackage.CONDITIONAL_TERM:
 			{
-				ConditionalExpression conditionalExpression = (ConditionalExpression)theEObject;
-				T result = caseConditionalExpression(conditionalExpression);
-				if (result == null) result = caseExpressionTerm(conditionalExpression);
+				ConditionalTerm conditionalTerm = (ConditionalTerm)theEObject;
+				T result = caseConditionalTerm(conditionalTerm);
+				if (result == null) result = caseTerm(conditionalTerm);
+				if (result == null) result = caseExpressionTerm(conditionalTerm);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -311,11 +312,11 @@ public class JabutiSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case JabutiPackage.UNARY_TERM_OPERATOR:
+			case JabutiPackage.NEGATION_OPERATOR:
 			{
-				UnaryTermOperator unaryTermOperator = (UnaryTermOperator)theEObject;
-				T result = caseUnaryTermOperator(unaryTermOperator);
-				if (result == null) result = caseExpressionTerm(unaryTermOperator);
+				NegationOperator negationOperator = (NegationOperator)theEObject;
+				T result = caseNegationOperator(negationOperator);
+				if (result == null) result = caseExpressionTerm(negationOperator);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -792,17 +793,17 @@ public class JabutiSwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Conditional Expression</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Conditional Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Conditional Expression</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Conditional Term</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConditionalExpression(ConditionalExpression object)
+	public T caseConditionalTerm(ConditionalTerm object)
 	{
 		return null;
 	}
@@ -824,17 +825,17 @@ public class JabutiSwitch<T> extends Switch<T>
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Unary Term Operator</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Negation Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Unary Term Operator</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Negation Operator</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUnaryTermOperator(UnaryTermOperator object)
+	public T caseNegationOperator(NegationOperator object)
 	{
 		return null;
 	}

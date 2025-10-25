@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class PartyImpl extends MinimalEObjectImpl.Container implements Party
+public abstract class PartyImpl extends MinimalEObjectImpl.Container implements Party
 {
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.

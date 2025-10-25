@@ -48,7 +48,7 @@ contract DeliveryHiring_O {
 		) public onlyApplication() returns(bool){
 		require(mapParty[msg.sender].isAware(), "The Application party should sign the contract before interact with it.");	   	 
 		if(
-			!timeout_C1[0].isTimeoutEnded(accessDateTime) &&
+			!timeout_C1[0].isTimeoutEnded(accessDateTime) ||
 			messageContent_Number_C1[0].evaluateNumberContent(messageContent_Number[0])
 			){
 			return true;

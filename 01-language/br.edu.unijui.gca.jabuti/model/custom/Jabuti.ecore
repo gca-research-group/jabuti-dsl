@@ -35,7 +35,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="onBreach" eType="#//OnBreach"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Party">
+  <eClassifiers xsi:type="ecore:EClass" name="Party" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Application" eSuperTypes="#//Party"/>
@@ -65,7 +65,7 @@
     <eLiterals name="MONTH" value="5"/>
     <eLiterals name="YEAR" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Expression" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumericValue" eSuperTypes="#//LiteralValue">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
@@ -81,7 +81,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LiteralValue" eSuperTypes="#//Expression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LiteralValue" abstract="true" eSuperTypes="#//Expression"/>
   <eClassifiers xsi:type="ecore:EClass" name="VariableValue" eSuperTypes="#//LiteralValue">
     <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//Variable"/>
   </eClassifiers>
@@ -99,7 +99,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="term" eType="#//Term" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EventLog">
+  <eClassifiers xsi:type="ecore:EClass" name="EventLog" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="message" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="OnBreach" eSuperTypes="#//EventLog"/>
@@ -112,7 +112,7 @@
     <eLiterals name="REQUEST" value="4"/>
     <eLiterals name="RESPONSE" value="5"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ExpressionTerm"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpressionTerm" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="LogicalOperator">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -124,17 +124,17 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="logicalOperator" upperBound="-1"
         eType="#//LogicalOperator" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Term" eSuperTypes="#//ExpressionTerm"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UnaryTermOperator" eSuperTypes="#//ExpressionTerm">
+  <eClassifiers xsi:type="ecore:EClass" name="Term" abstract="true" eSuperTypes="#//ExpressionTerm"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NegationOperator" eSuperTypes="#//ExpressionTerm">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" eType="#//ExpressionTerm"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expressionTerm" lowerBound="1"
+        eType="#//ExpressionTerm" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BinaryTermOperator" eSuperTypes="#//ExpressionTerm">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="symbol" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ExpressionTerm"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" lowerBound="1" eType="#//ExpressionTerm"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//ExpressionTerm"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="right" lowerBound="1" eType="#//ExpressionTerm"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SessionInterval" eSuperTypes="#//Term">
@@ -177,7 +177,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataType">
     <eLiterals name="TEXT"/>
-    <eLiterals name="NUMERIC" value="1"/>
+    <eLiterals name="NUMBER" value="1" literal="NUMBER"/>
     <eLiterals name="BOOLEAN" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TimeUnitSpec">
@@ -186,5 +186,28 @@
   <eClassifiers xsi:type="ecore:EClass" name="ParenthesizedExpression" eSuperTypes="#//Expression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//Expression"
         containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ComparisonOperatorType">
+    <eLiterals name="GREATER_THAN" value="2"/>
+    <eLiterals name="LESS_THAN" value="3"/>
+    <eLiterals name="GREATER_EQUAL" value="4"/>
+    <eLiterals name="LESS_EQUAL" value="5"/>
+    <eLiterals name="EQUAL" value="6"/>
+    <eLiterals name="NOT_EQUAL" value="5"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="UnaryOperatorType">
+    <eLiterals name="NOT"/>
+    <eLiterals name="MINUS" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="BinaryOperatorType">
+    <eLiterals name="PLUS"/>
+    <eLiterals name="MINUS" value="1"/>
+    <eLiterals name="MULTIPLY" value="2" literal="LITERAL2"/>
+    <eLiterals name="DIVIDE" value="3"/>
+    <eLiterals name="LITERAL4" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LogicalOperatorType">
+    <eLiterals name="AND"/>
+    <eLiterals name="OR" value="1"/>
   </eClassifiers>
 </ecore:EPackage>

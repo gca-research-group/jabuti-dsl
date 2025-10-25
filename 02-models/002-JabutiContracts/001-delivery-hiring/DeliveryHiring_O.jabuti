@@ -17,10 +17,10 @@ contract DeliveryHiring_O {
 			rolePlayer = application 
 			operation = response
 			terms {
-				Timeout(20),
-				MessageContent(numeric("//budget/deliveryTime/text()") < 15)	  		
+				Timeout(20)  	OR
+				MessageContent(number("//budget/deliveryTime/text()") < 15)	  		
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
 		}			
 	}
-}
+} 

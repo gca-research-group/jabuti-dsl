@@ -8,7 +8,7 @@ import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.EventLog;
 import br.edu.unijui.gca.jabuti.jabuti.Expression;
@@ -21,6 +21,7 @@ import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
 import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.NegationOperator;
 import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
@@ -36,7 +37,6 @@ import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
-import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 import br.edu.unijui.gca.jabuti.jabuti.WeekDaysInterval;
@@ -232,9 +232,9 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 				return createLogicalOperatorAdapter();
 			}
 			@Override
-			public Adapter caseConditionalExpression(ConditionalExpression object)
+			public Adapter caseConditionalTerm(ConditionalTerm object)
 			{
-				return createConditionalExpressionAdapter();
+				return createConditionalTermAdapter();
 			}
 			@Override
 			public Adapter caseTerm(Term object)
@@ -242,9 +242,9 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 				return createTermAdapter();
 			}
 			@Override
-			public Adapter caseUnaryTermOperator(UnaryTermOperator object)
+			public Adapter caseNegationOperator(NegationOperator object)
 			{
-				return createUnaryTermOperatorAdapter();
+				return createNegationOperatorAdapter();
 			}
 			@Override
 			public Adapter caseBinaryTermOperator(BinaryTermOperator object)
@@ -679,16 +679,16 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression <em>Conditional Expression</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm <em>Conditional Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm
 	 * @generated
 	 */
-	public Adapter createConditionalExpressionAdapter()
+	public Adapter createConditionalTermAdapter()
 	{
 		return null;
 	}
@@ -709,16 +709,16 @@ public class JabutiAdapterFactory extends AdapterFactoryImpl
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator <em>Unary Term Operator</em>}'.
+	 * Creates a new adapter for an object of class '{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator <em>Negation Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator
+	 * @see br.edu.unijui.gca.jabuti.jabuti.NegationOperator
 	 * @generated
 	 */
-	public Adapter createUnaryTermOperatorAdapter()
+	public Adapter createNegationOperatorAdapter()
 	{
 		return null;
 	}

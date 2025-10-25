@@ -1001,52 +1001,6 @@ public interface JabutiPackage extends EPackage
 	int LOGICAL_OPERATOR_FEATURE_COUNT = 1;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionalExpression()
-	 * @generated
-	 */
-	int CONDITIONAL_EXPRESSION = 24;
-
-	/**
-	 * The feature id for the '<em><b>Expression Term</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_EXPRESSION__EXPRESSION_TERM = EXPRESSION_TERM_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Comparison Operator</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = EXPRESSION_TERM_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Logical Operator</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = EXPRESSION_TERM_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>Conditional Expression</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONDITIONAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 3;
-
-	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl <em>Term</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1066,23 +1020,14 @@ public interface JabutiPackage extends EPackage
 	int TERM_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl <em>Unary Term Operator</em>}' class.
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalTermImpl <em>Conditional Term</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl
-	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getUnaryTermOperator()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalTermImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionalTerm()
 	 * @generated
 	 */
-	int UNARY_TERM_OPERATOR = 26;
-
-	/**
-	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNARY_TERM_OPERATOR__SYMBOL = EXPRESSION_TERM_FEATURE_COUNT + 0;
+	int CONDITIONAL_TERM = 24;
 
 	/**
 	 * The feature id for the '<em><b>Expression Term</b></em>' containment reference.
@@ -1091,16 +1036,71 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM_OPERATOR__EXPRESSION_TERM = EXPRESSION_TERM_FEATURE_COUNT + 1;
+	int CONDITIONAL_TERM__EXPRESSION_TERM = TERM_FEATURE_COUNT + 0;
 
 	/**
-	 * The number of structural features of the '<em>Unary Term Operator</em>' class.
+	 * The feature id for the '<em><b>Comparison Operator</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNARY_TERM_OPERATOR_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 2;
+	int CONDITIONAL_TERM__COMPARISON_OPERATOR = TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Logical Operator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_TERM__LOGICAL_OPERATOR = TERM_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Conditional Term</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONDITIONAL_TERM_FEATURE_COUNT = TERM_FEATURE_COUNT + 3;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.NegationOperatorImpl <em>Negation Operator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.NegationOperatorImpl
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getNegationOperator()
+	 * @generated
+	 */
+	int NEGATION_OPERATOR = 26;
+
+	/**
+	 * The feature id for the '<em><b>Symbol</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEGATION_OPERATOR__SYMBOL = EXPRESSION_TERM_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Expression Term</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEGATION_OPERATOR__EXPRESSION_TERM = EXPRESSION_TERM_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Negation Operator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NEGATION_OPERATOR_FEATURE_COUNT = EXPRESSION_TERM_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.BinaryTermOperatorImpl <em>Binary Term Operator</em>}' class.
@@ -1557,6 +1557,46 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	int DATA_TYPE = 41;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperatorType <em>Comparison Operator Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ComparisonOperatorType
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getComparisonOperatorType()
+	 * @generated
+	 */
+	int COMPARISON_OPERATOR_TYPE = 42;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryOperatorType <em>Unary Operator Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryOperatorType
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getUnaryOperatorType()
+	 * @generated
+	 */
+	int UNARY_OPERATOR_TYPE = 43;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperatorType <em>Binary Operator Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperatorType
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getBinaryOperatorType()
+	 * @generated
+	 */
+	int BINARY_OPERATOR_TYPE = 44;
+
+	/**
+	 * The meta object id for the '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperatorType <em>Logical Operator Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperatorType
+	 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getLogicalOperatorType()
+	 * @generated
+	 */
+	int LOGICAL_OPERATOR_TYPE = 45;
 
 
 	/**
@@ -2152,47 +2192,47 @@ public interface JabutiPackage extends EPackage
 	EAttribute getLogicalOperator_Symbol();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression <em>Conditional Expression</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm <em>Conditional Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Conditional Expression</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
+	 * @return the meta object for class '<em>Conditional Term</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm
 	 * @generated
 	 */
-	EClass getConditionalExpression();
+	EClass getConditionalTerm();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm <em>Expression Term</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Expression Term</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getExpressionTerm()
-	 * @see #getConditionalExpression()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getExpressionTerm()
+	 * @see #getConditionalTerm()
 	 * @generated
 	 */
-	EReference getConditionalExpression_ExpressionTerm();
+	EReference getConditionalTerm_ExpressionTerm();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator <em>Comparison Operator</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getComparisonOperator <em>Comparison Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Comparison Operator</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getComparisonOperator()
-	 * @see #getConditionalExpression()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getComparisonOperator()
+	 * @see #getConditionalTerm()
 	 * @generated
 	 */
-	EReference getConditionalExpression_ComparisonOperator();
+	EReference getConditionalTerm_ComparisonOperator();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator <em>Logical Operator</em>}'.
+	 * Returns the meta object for the containment reference list '{@link br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getLogicalOperator <em>Logical Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Logical Operator</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression#getLogicalOperator()
-	 * @see #getConditionalExpression()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm#getLogicalOperator()
+	 * @see #getConditionalTerm()
 	 * @generated
 	 */
-	EReference getConditionalExpression_LogicalOperator();
+	EReference getConditionalTerm_LogicalOperator();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.Term <em>Term</em>}'.
@@ -2205,36 +2245,36 @@ public interface JabutiPackage extends EPackage
 	EClass getTerm();
 
 	/**
-	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator <em>Unary Term Operator</em>}'.
+	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator <em>Negation Operator</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Unary Term Operator</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator
+	 * @return the meta object for class '<em>Negation Operator</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.NegationOperator
 	 * @generated
 	 */
-	EClass getUnaryTermOperator();
+	EClass getNegationOperator();
 
 	/**
-	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getSymbol <em>Symbol</em>}'.
+	 * Returns the meta object for the attribute '{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getSymbol <em>Symbol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Symbol</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getSymbol()
-	 * @see #getUnaryTermOperator()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getSymbol()
+	 * @see #getNegationOperator()
 	 * @generated
 	 */
-	EAttribute getUnaryTermOperator_Symbol();
+	EAttribute getNegationOperator_Symbol();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm <em>Expression Term</em>}'.
+	 * Returns the meta object for the containment reference '{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getExpressionTerm <em>Expression Term</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Expression Term</em>'.
-	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm()
-	 * @see #getUnaryTermOperator()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getExpressionTerm()
+	 * @see #getNegationOperator()
 	 * @generated
 	 */
-	EReference getUnaryTermOperator_ExpressionTerm();
+	EReference getNegationOperator_ExpressionTerm();
 
 	/**
 	 * Returns the meta object for class '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator <em>Binary Term Operator</em>}'.
@@ -2649,6 +2689,46 @@ public interface JabutiPackage extends EPackage
 	 * @generated
 	 */
 	EEnum getDataType();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperatorType <em>Comparison Operator Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Comparison Operator Type</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.ComparisonOperatorType
+	 * @generated
+	 */
+	EEnum getComparisonOperatorType();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryOperatorType <em>Unary Operator Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Unary Operator Type</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryOperatorType
+	 * @generated
+	 */
+	EEnum getUnaryOperatorType();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperatorType <em>Binary Operator Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Binary Operator Type</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperatorType
+	 * @generated
+	 */
+	EEnum getBinaryOperatorType();
+
+	/**
+	 * Returns the meta object for enum '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperatorType <em>Logical Operator Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Logical Operator Type</em>'.
+	 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperatorType
+	 * @generated
+	 */
+	EEnum getLogicalOperatorType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3170,14 +3250,14 @@ public interface JabutiPackage extends EPackage
 		EAttribute LOGICAL_OPERATOR__SYMBOL = eINSTANCE.getLogicalOperator_Symbol();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl <em>Conditional Expression</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalTermImpl <em>Conditional Term</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalExpressionImpl
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionalExpression()
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.ConditionalTermImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getConditionalTerm()
 		 * @generated
 		 */
-		EClass CONDITIONAL_EXPRESSION = eINSTANCE.getConditionalExpression();
+		EClass CONDITIONAL_TERM = eINSTANCE.getConditionalTerm();
 
 		/**
 		 * The meta object literal for the '<em><b>Expression Term</b></em>' containment reference feature.
@@ -3185,7 +3265,7 @@ public interface JabutiPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL_EXPRESSION__EXPRESSION_TERM = eINSTANCE.getConditionalExpression_ExpressionTerm();
+		EReference CONDITIONAL_TERM__EXPRESSION_TERM = eINSTANCE.getConditionalTerm_ExpressionTerm();
 
 		/**
 		 * The meta object literal for the '<em><b>Comparison Operator</b></em>' containment reference list feature.
@@ -3193,7 +3273,7 @@ public interface JabutiPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL_EXPRESSION__COMPARISON_OPERATOR = eINSTANCE.getConditionalExpression_ComparisonOperator();
+		EReference CONDITIONAL_TERM__COMPARISON_OPERATOR = eINSTANCE.getConditionalTerm_ComparisonOperator();
 
 		/**
 		 * The meta object literal for the '<em><b>Logical Operator</b></em>' containment reference list feature.
@@ -3201,7 +3281,7 @@ public interface JabutiPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONDITIONAL_EXPRESSION__LOGICAL_OPERATOR = eINSTANCE.getConditionalExpression_LogicalOperator();
+		EReference CONDITIONAL_TERM__LOGICAL_OPERATOR = eINSTANCE.getConditionalTerm_LogicalOperator();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.TermImpl <em>Term</em>}' class.
@@ -3214,14 +3294,14 @@ public interface JabutiPackage extends EPackage
 		EClass TERM = eINSTANCE.getTerm();
 
 		/**
-		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl <em>Unary Term Operator</em>}' class.
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.NegationOperatorImpl <em>Negation Operator</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl
-		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getUnaryTermOperator()
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.NegationOperatorImpl
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getNegationOperator()
 		 * @generated
 		 */
-		EClass UNARY_TERM_OPERATOR = eINSTANCE.getUnaryTermOperator();
+		EClass NEGATION_OPERATOR = eINSTANCE.getNegationOperator();
 
 		/**
 		 * The meta object literal for the '<em><b>Symbol</b></em>' attribute feature.
@@ -3229,7 +3309,7 @@ public interface JabutiPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute UNARY_TERM_OPERATOR__SYMBOL = eINSTANCE.getUnaryTermOperator_Symbol();
+		EAttribute NEGATION_OPERATOR__SYMBOL = eINSTANCE.getNegationOperator_Symbol();
 
 		/**
 		 * The meta object literal for the '<em><b>Expression Term</b></em>' containment reference feature.
@@ -3237,7 +3317,7 @@ public interface JabutiPackage extends EPackage
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UNARY_TERM_OPERATOR__EXPRESSION_TERM = eINSTANCE.getUnaryTermOperator_ExpressionTerm();
+		EReference NEGATION_OPERATOR__EXPRESSION_TERM = eINSTANCE.getNegationOperator_ExpressionTerm();
 
 		/**
 		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.impl.BinaryTermOperatorImpl <em>Binary Term Operator</em>}' class.
@@ -3580,6 +3660,46 @@ public interface JabutiPackage extends EPackage
 		 * @generated
 		 */
 		EEnum DATA_TYPE = eINSTANCE.getDataType();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.ComparisonOperatorType <em>Comparison Operator Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.ComparisonOperatorType
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getComparisonOperatorType()
+		 * @generated
+		 */
+		EEnum COMPARISON_OPERATOR_TYPE = eINSTANCE.getComparisonOperatorType();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryOperatorType <em>Unary Operator Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.UnaryOperatorType
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getUnaryOperatorType()
+		 * @generated
+		 */
+		EEnum UNARY_OPERATOR_TYPE = eINSTANCE.getUnaryOperatorType();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.BinaryOperatorType <em>Binary Operator Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.BinaryOperatorType
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getBinaryOperatorType()
+		 * @generated
+		 */
+		EEnum BINARY_OPERATOR_TYPE = eINSTANCE.getBinaryOperatorType();
+
+		/**
+		 * The meta object literal for the '{@link br.edu.unijui.gca.jabuti.jabuti.LogicalOperatorType <em>Logical Operator Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see br.edu.unijui.gca.jabuti.jabuti.LogicalOperatorType
+		 * @see br.edu.unijui.gca.jabuti.jabuti.impl.JabutiPackageImpl#getLogicalOperatorType()
+		 * @generated
+		 */
+		EEnum LOGICAL_OPERATOR_TYPE = eINSTANCE.getLogicalOperatorType();
 
 	}
 

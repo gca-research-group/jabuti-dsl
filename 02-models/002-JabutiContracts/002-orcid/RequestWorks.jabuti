@@ -12,13 +12,13 @@ contract OrcidUpdating{
     
     clauses{
     
-        right requestUpdate {
+        right requestUpdate { 
             rolePlayer = process
             operation = request
             terms {		
-                MaxNumberOfOperation (8 per Second),
-                MessageContent(boolean("//author/orcid/id/text()!=''")),
-				MessageContent(boolean("//article/title/text()!=''"))
+                MaxNumberOfOperation (8 per Second) AND 
+                MessageContent(boolean("//author/orcid/id/text()!=''")) AND
+				MessageContent(boolean("//article/title/text()!=''")) 
             }
             onBreach(log("Request operation did not meet all requirements"))
         }

@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getExpression()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Expression extends EObject

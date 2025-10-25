@@ -38,8 +38,31 @@
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//DataType">
       <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//DataType/TEXT"/>
-      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//DataType/NUMERIC"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//DataType/NUMBER"/>
       <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//DataType/BOOLEAN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//ComparisonOperatorType">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//ComparisonOperatorType/GREATER_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//ComparisonOperatorType/LESS_THAN"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//ComparisonOperatorType/GREATER_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//ComparisonOperatorType/LESS_EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//ComparisonOperatorType/EQUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//ComparisonOperatorType/NOT_EQUAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//UnaryOperatorType">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//UnaryOperatorType/NOT"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//UnaryOperatorType/MINUS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//BinaryOperatorType">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//BinaryOperatorType/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//BinaryOperatorType/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//BinaryOperatorType/MULTIPLY"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//BinaryOperatorType/DIVIDE"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//BinaryOperatorType/LITERAL4"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Jabuti.ecore#//LogicalOperatorType">
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//LogicalOperatorType/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="Jabuti.ecore#//LogicalOperatorType/OR"/>
     </genEnums>
     <genClasses ecoreClass="Jabuti.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//Model/imports"/>
@@ -117,9 +140,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//ConditionalTerm/logicalOperator"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//Term"/>
-    <genClasses ecoreClass="Jabuti.ecore#//UnaryTermOperator">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//UnaryTermOperator/symbol"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//UnaryTermOperator/expressionTerm"/>
+    <genClasses ecoreClass="Jabuti.ecore#//NegationOperator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//NegationOperator/symbol"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Jabuti.ecore#//NegationOperator/expressionTerm"/>
     </genClasses>
     <genClasses ecoreClass="Jabuti.ecore#//BinaryTermOperator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Jabuti.ecore#//BinaryTermOperator/symbol"/>

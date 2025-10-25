@@ -6,22 +6,22 @@ package br.edu.unijui.gca.jabuti.jabuti;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Unary Term Operator</b></em>'.
+ * A representation of the model object '<em><b>Negation Operator</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getSymbol <em>Symbol</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm <em>Expression Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getSymbol <em>Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getExpressionTerm <em>Expression Term</em>}</li>
  * </ul>
  *
- * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getUnaryTermOperator()
+ * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getNegationOperator()
  * @model
  * @generated
  */
-public interface UnaryTermOperator extends ExpressionTerm
+public interface NegationOperator extends ExpressionTerm
 {
 	/**
 	 * Returns the value of the '<em><b>Symbol</b></em>' attribute.
@@ -29,14 +29,14 @@ public interface UnaryTermOperator extends ExpressionTerm
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Symbol</em>' attribute.
 	 * @see #setSymbol(String)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getUnaryTermOperator_Symbol()
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getNegationOperator_Symbol()
 	 * @model
 	 * @generated
 	 */
 	String getSymbol();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getSymbol <em>Symbol</em>}' attribute.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getSymbol <em>Symbol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Symbol</em>' attribute.
@@ -51,14 +51,14 @@ public interface UnaryTermOperator extends ExpressionTerm
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression Term</em>' containment reference.
 	 * @see #setExpressionTerm(ExpressionTerm)
-	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getUnaryTermOperator_ExpressionTerm()
-	 * @model containment="true"
+	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getNegationOperator_ExpressionTerm()
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ExpressionTerm getExpressionTerm();
 
 	/**
-	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator#getExpressionTerm <em>Expression Term</em>}' containment reference.
+	 * Sets the value of the '{@link br.edu.unijui.gca.jabuti.jabuti.NegationOperator#getExpressionTerm <em>Expression Term</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Expression Term</em>' containment reference.
@@ -67,4 +67,4 @@ public interface UnaryTermOperator extends ExpressionTerm
 	 */
 	void setExpressionTerm(ExpressionTerm value);
 
-} // UnaryTermOperator
+} // NegationOperator

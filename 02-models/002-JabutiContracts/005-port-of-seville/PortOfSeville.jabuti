@@ -18,9 +18,9 @@ contract DockRequest {
 			rolePlayer = process
 			operation = request
 			terms{
-				MessageContent(text('//arriveData != ""')),
-				MessageContent(text("//departureData") != ""),
-				MessageContent(text('//MMSI != ""')),
+				MessageContent(text('//arriveData != ""')) AND
+				MessageContent(text("//departureData") != "") AND
+				MessageContent(text('//MMSI != ""')) AND
 				MessageContent(text('//IMO != ""')) 	
 			}
 			onBreach(log("Missing required data."))
@@ -32,8 +32,8 @@ contract DockRequest {
 			rolePlayer = application
 			operation = response
 			terms {			
-				Timeout(3600),
-				MessageContent(text("//proposalID")!=""),
+				Timeout(3600) AND
+				MessageContent(text("//proposalID")!="") AND
 				MessageContent(text("//portServices")!="")
 			}
 			onBreach(log("Timeout for replying has been exceeded"))
@@ -46,7 +46,7 @@ contract DockRequest {
 			operation = request
 			
 			terms{
-				TimeInterval("22:00:00" to "08:00:00"), 
+				TimeInterval("22:00:00" to "08:00:00") AND
 				WeekDaysInterval(Sunday to Sunday)					
 			}
 			onBreach(log("Request made outside the valid range"))

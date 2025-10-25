@@ -53,7 +53,7 @@ public interface BinaryTermOperator extends ExpressionTerm
 	 * @return the value of the '<em>Left</em>' containment reference.
 	 * @see #setLeft(ExpressionTerm)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getBinaryTermOperator_Left()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ExpressionTerm getLeft();
@@ -75,7 +75,7 @@ public interface BinaryTermOperator extends ExpressionTerm
 	 * @return the value of the '<em>Right</em>' containment reference.
 	 * @see #setRight(ExpressionTerm)
 	 * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getBinaryTermOperator_Right()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	ExpressionTerm getRight();

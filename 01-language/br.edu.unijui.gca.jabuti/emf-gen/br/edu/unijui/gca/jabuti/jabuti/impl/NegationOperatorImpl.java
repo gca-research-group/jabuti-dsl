@@ -5,7 +5,7 @@ package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
-import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
+import br.edu.unijui.gca.jabuti.jabuti.NegationOperator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -17,19 +17,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Unary Term Operator</b></em>'.
+ * An implementation of the model object '<em><b>Negation Operator</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl#getSymbol <em>Symbol</em>}</li>
- *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.UnaryTermOperatorImpl#getExpressionTerm <em>Expression Term</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.NegationOperatorImpl#getSymbol <em>Symbol</em>}</li>
+ *   <li>{@link br.edu.unijui.gca.jabuti.jabuti.impl.NegationOperatorImpl#getExpressionTerm <em>Expression Term</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTermOperator
+public class NegationOperatorImpl extends ExpressionTermImpl implements NegationOperator
 {
 	/**
 	 * The default value of the '{@link #getSymbol() <em>Symbol</em>}' attribute.
@@ -66,7 +66,7 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected UnaryTermOperatorImpl()
+	protected NegationOperatorImpl()
 	{
 		super();
 	}
@@ -79,7 +79,7 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 	@Override
 	protected EClass eStaticClass()
 	{
-		return JabutiPackage.Literals.UNARY_TERM_OPERATOR;
+		return JabutiPackage.Literals.NEGATION_OPERATOR;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 		String oldSymbol = symbol;
 		symbol = newSymbol;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL, oldSymbol, symbol));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.NEGATION_OPERATOR__SYMBOL, oldSymbol, symbol));
 	}
 
 	/**
@@ -129,7 +129,7 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 		expressionTerm = newExpressionTerm;
 		if (eNotificationRequired())
 		{
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, oldExpressionTerm, newExpressionTerm);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM, oldExpressionTerm, newExpressionTerm);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -147,14 +147,14 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 		{
 			NotificationChain msgs = null;
 			if (expressionTerm != null)
-				msgs = ((InternalEObject)expressionTerm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, null, msgs);
+				msgs = ((InternalEObject)expressionTerm).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM, null, msgs);
 			if (newExpressionTerm != null)
-				msgs = ((InternalEObject)newExpressionTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, null, msgs);
+				msgs = ((InternalEObject)newExpressionTerm).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM, null, msgs);
 			msgs = basicSetExpressionTerm(newExpressionTerm, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM, newExpressionTerm, newExpressionTerm));
+			eNotify(new ENotificationImpl(this, Notification.SET, JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM, newExpressionTerm, newExpressionTerm));
 	}
 
 	/**
@@ -167,7 +167,7 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+			case JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM:
 				return basicSetExpressionTerm(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -183,9 +183,9 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
+			case JabutiPackage.NEGATION_OPERATOR__SYMBOL:
 				return getSymbol();
-			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+			case JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM:
 				return getExpressionTerm();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -201,10 +201,10 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
+			case JabutiPackage.NEGATION_OPERATOR__SYMBOL:
 				setSymbol((String)newValue);
 				return;
-			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+			case JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM:
 				setExpressionTerm((ExpressionTerm)newValue);
 				return;
 		}
@@ -221,10 +221,10 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
+			case JabutiPackage.NEGATION_OPERATOR__SYMBOL:
 				setSymbol(SYMBOL_EDEFAULT);
 				return;
-			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+			case JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM:
 				setExpressionTerm((ExpressionTerm)null);
 				return;
 		}
@@ -241,9 +241,9 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 	{
 		switch (featureID)
 		{
-			case JabutiPackage.UNARY_TERM_OPERATOR__SYMBOL:
+			case JabutiPackage.NEGATION_OPERATOR__SYMBOL:
 				return SYMBOL_EDEFAULT == null ? symbol != null : !SYMBOL_EDEFAULT.equals(symbol);
-			case JabutiPackage.UNARY_TERM_OPERATOR__EXPRESSION_TERM:
+			case JabutiPackage.NEGATION_OPERATOR__EXPRESSION_TERM:
 				return expressionTerm != null;
 		}
 		return super.eIsSet(featureID);
@@ -266,4 +266,4 @@ public class UnaryTermOperatorImpl extends ExpressionTermImpl implements UnaryTe
 		return result.toString();
 	}
 
-} //UnaryTermOperatorImpl
+} //NegationOperatorImpl

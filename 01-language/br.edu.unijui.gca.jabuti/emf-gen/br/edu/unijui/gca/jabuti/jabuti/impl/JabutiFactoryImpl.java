@@ -5,43 +5,41 @@ package br.edu.unijui.gca.jabuti.jabuti.impl;
 
 import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
+import br.edu.unijui.gca.jabuti.jabuti.BinaryOperatorType;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.Clause;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression;
+import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperatorType;
+import br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.DataType;
-import br.edu.unijui.gca.jabuti.jabuti.EventLog;
-import br.edu.unijui.gca.jabuti.jabuti.Expression;
-import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiFactory;
 import br.edu.unijui.gca.jabuti.jabuti.JabutiPackage;
-import br.edu.unijui.gca.jabuti.jabuti.LiteralValue;
 import br.edu.unijui.gca.jabuti.jabuti.LogicalOperator;
+import br.edu.unijui.gca.jabuti.jabuti.LogicalOperatorType;
 import br.edu.unijui.gca.jabuti.jabuti.MaxNumberOfOperation;
 import br.edu.unijui.gca.jabuti.jabuti.MessageContent;
 import br.edu.unijui.gca.jabuti.jabuti.Model;
+import br.edu.unijui.gca.jabuti.jabuti.NegationOperator;
 import br.edu.unijui.gca.jabuti.jabuti.NumericValue;
 import br.edu.unijui.gca.jabuti.jabuti.Obligation;
 import br.edu.unijui.gca.jabuti.jabuti.OnBreach;
 import br.edu.unijui.gca.jabuti.jabuti.OnSuccess;
 import br.edu.unijui.gca.jabuti.jabuti.Operation;
 import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression;
-import br.edu.unijui.gca.jabuti.jabuti.Party;
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition;
 import br.edu.unijui.gca.jabuti.jabuti.Right;
 import br.edu.unijui.gca.jabuti.jabuti.RolePlayer;
 import br.edu.unijui.gca.jabuti.jabuti.SessionInterval;
 import br.edu.unijui.gca.jabuti.jabuti.StringValue;
-import br.edu.unijui.gca.jabuti.jabuti.Term;
 import br.edu.unijui.gca.jabuti.jabuti.TimeInterval;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnit;
 import br.edu.unijui.gca.jabuti.jabuti.TimeUnitSpec;
 import br.edu.unijui.gca.jabuti.jabuti.Timeout;
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator;
-import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator;
+import br.edu.unijui.gca.jabuti.jabuti.UnaryOperatorType;
 import br.edu.unijui.gca.jabuti.jabuti.Variable;
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue;
 import br.edu.unijui.gca.jabuti.jabuti.WeekDay;
@@ -112,29 +110,23 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 			case JabutiPackage.IMPORT: return createImport();
 			case JabutiPackage.CONTRACT: return createContract();
 			case JabutiPackage.CLAUSE: return createClause();
-			case JabutiPackage.PARTY: return createParty();
 			case JabutiPackage.APPLICATION: return createApplication();
 			case JabutiPackage.PROCESS: return createProcess();
 			case JabutiPackage.RIGHT: return createRight();
 			case JabutiPackage.OBLIGATION: return createObligation();
 			case JabutiPackage.PROHIBITION: return createProhibition();
-			case JabutiPackage.EXPRESSION: return createExpression();
 			case JabutiPackage.NUMERIC_VALUE: return createNumericValue();
 			case JabutiPackage.UNARY_OPERATOR: return createUnaryOperator();
 			case JabutiPackage.BINARY_OPERATOR: return createBinaryOperator();
-			case JabutiPackage.LITERAL_VALUE: return createLiteralValue();
 			case JabutiPackage.VARIABLE_VALUE: return createVariableValue();
 			case JabutiPackage.STRING_VALUE: return createStringValue();
 			case JabutiPackage.FUNCTION_CALL: return createFunctionCall();
 			case JabutiPackage.VARIABLE: return createVariable();
-			case JabutiPackage.EVENT_LOG: return createEventLog();
 			case JabutiPackage.ON_BREACH: return createOnBreach();
 			case JabutiPackage.ON_SUCCESS: return createOnSuccess();
-			case JabutiPackage.EXPRESSION_TERM: return createExpressionTerm();
 			case JabutiPackage.LOGICAL_OPERATOR: return createLogicalOperator();
-			case JabutiPackage.CONDITIONAL_EXPRESSION: return createConditionalExpression();
-			case JabutiPackage.TERM: return createTerm();
-			case JabutiPackage.UNARY_TERM_OPERATOR: return createUnaryTermOperator();
+			case JabutiPackage.CONDITIONAL_TERM: return createConditionalTerm();
+			case JabutiPackage.NEGATION_OPERATOR: return createNegationOperator();
 			case JabutiPackage.BINARY_TERM_OPERATOR: return createBinaryTermOperator();
 			case JabutiPackage.SESSION_INTERVAL: return createSessionInterval();
 			case JabutiPackage.WEEK_DAYS_INTERVAL: return createWeekDaysInterval();
@@ -170,6 +162,14 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 				return createOperationFromString(eDataType, initialValue);
 			case JabutiPackage.DATA_TYPE:
 				return createDataTypeFromString(eDataType, initialValue);
+			case JabutiPackage.COMPARISON_OPERATOR_TYPE:
+				return createComparisonOperatorTypeFromString(eDataType, initialValue);
+			case JabutiPackage.UNARY_OPERATOR_TYPE:
+				return createUnaryOperatorTypeFromString(eDataType, initialValue);
+			case JabutiPackage.BINARY_OPERATOR_TYPE:
+				return createBinaryOperatorTypeFromString(eDataType, initialValue);
+			case JabutiPackage.LOGICAL_OPERATOR_TYPE:
+				return createLogicalOperatorTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -195,6 +195,14 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 				return convertOperationToString(eDataType, instanceValue);
 			case JabutiPackage.DATA_TYPE:
 				return convertDataTypeToString(eDataType, instanceValue);
+			case JabutiPackage.COMPARISON_OPERATOR_TYPE:
+				return convertComparisonOperatorTypeToString(eDataType, instanceValue);
+			case JabutiPackage.UNARY_OPERATOR_TYPE:
+				return convertUnaryOperatorTypeToString(eDataType, instanceValue);
+			case JabutiPackage.BINARY_OPERATOR_TYPE:
+				return convertBinaryOperatorTypeToString(eDataType, instanceValue);
+			case JabutiPackage.LOGICAL_OPERATOR_TYPE:
+				return convertLogicalOperatorTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -246,18 +254,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	{
 		ClauseImpl clause = new ClauseImpl();
 		return clause;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Party createParty()
-	{
-		PartyImpl party = new PartyImpl();
-		return party;
 	}
 
 	/**
@@ -326,18 +322,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public Expression createExpression()
-	{
-		ExpressionImpl expression = new ExpressionImpl();
-		return expression;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NumericValue createNumericValue()
 	{
 		NumericValueImpl numericValue = new NumericValueImpl();
@@ -366,18 +350,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	{
 		BinaryOperatorImpl binaryOperator = new BinaryOperatorImpl();
 		return binaryOperator;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public LiteralValue createLiteralValue()
-	{
-		LiteralValueImpl literalValue = new LiteralValueImpl();
-		return literalValue;
 	}
 
 	/**
@@ -434,18 +406,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public EventLog createEventLog()
-	{
-		EventLogImpl eventLog = new EventLogImpl();
-		return eventLog;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public OnBreach createOnBreach()
 	{
 		OnBreachImpl onBreach = new OnBreachImpl();
@@ -470,18 +430,6 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public ExpressionTerm createExpressionTerm()
-	{
-		ExpressionTermImpl expressionTerm = new ExpressionTermImpl();
-		return expressionTerm;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public LogicalOperator createLogicalOperator()
 	{
 		LogicalOperatorImpl logicalOperator = new LogicalOperatorImpl();
@@ -494,10 +442,10 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public ConditionalExpression createConditionalExpression()
+	public ConditionalTerm createConditionalTerm()
 	{
-		ConditionalExpressionImpl conditionalExpression = new ConditionalExpressionImpl();
-		return conditionalExpression;
+		ConditionalTermImpl conditionalTerm = new ConditionalTermImpl();
+		return conditionalTerm;
 	}
 
 	/**
@@ -506,22 +454,10 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	@Override
-	public Term createTerm()
+	public NegationOperator createNegationOperator()
 	{
-		TermImpl term = new TermImpl();
-		return term;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public UnaryTermOperator createUnaryTermOperator()
-	{
-		UnaryTermOperatorImpl unaryTermOperator = new UnaryTermOperatorImpl();
-		return unaryTermOperator;
+		NegationOperatorImpl negationOperator = new NegationOperatorImpl();
+		return negationOperator;
 	}
 
 	/**
@@ -750,6 +686,94 @@ public class JabutiFactoryImpl extends EFactoryImpl implements JabutiFactory
 	 * @generated
 	 */
 	public String convertDataTypeToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComparisonOperatorType createComparisonOperatorTypeFromString(EDataType eDataType, String initialValue)
+	{
+		ComparisonOperatorType result = ComparisonOperatorType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertComparisonOperatorTypeToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public UnaryOperatorType createUnaryOperatorTypeFromString(EDataType eDataType, String initialValue)
+	{
+		UnaryOperatorType result = UnaryOperatorType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertUnaryOperatorTypeToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BinaryOperatorType createBinaryOperatorTypeFromString(EDataType eDataType, String initialValue)
+	{
+		BinaryOperatorType result = BinaryOperatorType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertBinaryOperatorTypeToString(EDataType eDataType, Object instanceValue)
+	{
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public LogicalOperatorType createLogicalOperatorTypeFromString(EDataType eDataType, String initialValue)
+	{
+		LogicalOperatorType result = LogicalOperatorType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLogicalOperatorTypeToString(EDataType eDataType, Object instanceValue)
 	{
 		return instanceValue == null ? null : instanceValue.toString();
 	}

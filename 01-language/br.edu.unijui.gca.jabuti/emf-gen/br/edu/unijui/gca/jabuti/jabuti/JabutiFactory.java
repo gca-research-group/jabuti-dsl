@@ -60,15 +60,6 @@ public interface JabutiFactory extends EFactory
 	Clause createClause();
 
 	/**
-	 * Returns a new object of class '<em>Party</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Party</em>'.
-	 * @generated
-	 */
-	Party createParty();
-
-	/**
 	 * Returns a new object of class '<em>Application</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -114,15 +105,6 @@ public interface JabutiFactory extends EFactory
 	Prohibition createProhibition();
 
 	/**
-	 * Returns a new object of class '<em>Expression</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Expression</em>'.
-	 * @generated
-	 */
-	Expression createExpression();
-
-	/**
 	 * Returns a new object of class '<em>Numeric Value</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,15 +130,6 @@ public interface JabutiFactory extends EFactory
 	 * @generated
 	 */
 	BinaryOperator createBinaryOperator();
-
-	/**
-	 * Returns a new object of class '<em>Literal Value</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Literal Value</em>'.
-	 * @generated
-	 */
-	LiteralValue createLiteralValue();
 
 	/**
 	 * Returns a new object of class '<em>Variable Value</em>'.
@@ -195,15 +168,6 @@ public interface JabutiFactory extends EFactory
 	Variable createVariable();
 
 	/**
-	 * Returns a new object of class '<em>Event Log</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Event Log</em>'.
-	 * @generated
-	 */
-	EventLog createEventLog();
-
-	/**
 	 * Returns a new object of class '<em>On Breach</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -222,15 +186,6 @@ public interface JabutiFactory extends EFactory
 	OnSuccess createOnSuccess();
 
 	/**
-	 * Returns a new object of class '<em>Expression Term</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Expression Term</em>'.
-	 * @generated
-	 */
-	ExpressionTerm createExpressionTerm();
-
-	/**
 	 * Returns a new object of class '<em>Logical Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -240,31 +195,22 @@ public interface JabutiFactory extends EFactory
 	LogicalOperator createLogicalOperator();
 
 	/**
-	 * Returns a new object of class '<em>Conditional Expression</em>'.
+	 * Returns a new object of class '<em>Conditional Term</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Conditional Expression</em>'.
+	 * @return a new object of class '<em>Conditional Term</em>'.
 	 * @generated
 	 */
-	ConditionalExpression createConditionalExpression();
+	ConditionalTerm createConditionalTerm();
 
 	/**
-	 * Returns a new object of class '<em>Term</em>'.
+	 * Returns a new object of class '<em>Negation Operator</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Term</em>'.
+	 * @return a new object of class '<em>Negation Operator</em>'.
 	 * @generated
 	 */
-	Term createTerm();
-
-	/**
-	 * Returns a new object of class '<em>Unary Term Operator</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unary Term Operator</em>'.
-	 * @generated
-	 */
-	UnaryTermOperator createUnaryTermOperator();
+	NegationOperator createNegationOperator();
 
 	/**
 	 * Returns a new object of class '<em>Binary Term Operator</em>'.

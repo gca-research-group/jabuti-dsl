@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see br.edu.unijui.gca.jabuti.jabuti.JabutiPackage#getEventLog()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface EventLog extends EObject

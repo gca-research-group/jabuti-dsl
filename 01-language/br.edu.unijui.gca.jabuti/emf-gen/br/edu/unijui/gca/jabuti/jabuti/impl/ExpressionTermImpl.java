@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class ExpressionTermImpl extends MinimalEObjectImpl.Container implements ExpressionTerm
+public abstract class ExpressionTermImpl extends MinimalEObjectImpl.Container implements ExpressionTerm
 {
 	/**
 	 * <!-- begin-user-doc -->

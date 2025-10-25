@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class EventLogImpl extends MinimalEObjectImpl.Container implements EventLog
+public abstract class EventLogImpl extends MinimalEObjectImpl.Container implements EventLog
 {
 	/**
 	 * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.

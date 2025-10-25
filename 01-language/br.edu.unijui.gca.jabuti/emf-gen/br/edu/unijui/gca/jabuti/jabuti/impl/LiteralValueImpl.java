@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EClass;
  *
  * @generated
  */
-public class LiteralValueImpl extends ExpressionImpl implements LiteralValue
+public abstract class LiteralValueImpl extends ExpressionImpl implements LiteralValue
 {
 	/**
 	 * <!-- begin-user-doc -->

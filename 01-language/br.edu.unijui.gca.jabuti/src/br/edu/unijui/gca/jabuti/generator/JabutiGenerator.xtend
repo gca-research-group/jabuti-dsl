@@ -23,9 +23,7 @@ import br.edu.unijui.gca.jabuti.generator.entities.terms.Timeout_S
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator
 import br.edu.unijui.gca.jabuti.jabuti.Clause
-import br.edu.unijui.gca.jabuti.jabuti.ConditionalExpression
 import br.edu.unijui.gca.jabuti.jabuti.Contract
-import br.edu.unijui.gca.jabuti.jabuti.DataType
 import br.edu.unijui.gca.jabuti.jabuti.Expression
 import br.edu.unijui.gca.jabuti.jabuti.ExpressionTerm
 import br.edu.unijui.gca.jabuti.jabuti.LiteralValue
@@ -36,7 +34,6 @@ import br.edu.unijui.gca.jabuti.jabuti.ParenthesizedExpression
 import br.edu.unijui.gca.jabuti.jabuti.StringValue
 import br.edu.unijui.gca.jabuti.jabuti.Term
 import br.edu.unijui.gca.jabuti.jabuti.UnaryOperator
-import br.edu.unijui.gca.jabuti.jabuti.UnaryTermOperator
 import br.edu.unijui.gca.jabuti.jabuti.VariableValue
 //imports from Java
 import java.text.SimpleDateFormat
@@ -60,10 +57,11 @@ import br.edu.unijui.gca.jabuti.generator.entities.terms.WeekDaysInterval_S
 import br.edu.unijui.gca.jabuti.jabuti.Right
 import br.edu.unijui.gca.jabuti.jabuti.Obligation
 import br.edu.unijui.gca.jabuti.jabuti.Prohibition
-import java.util.Set
 import java.util.HashMap
 import br.edu.unijui.gca.jabuti.jabuti.Variable
 import org.eclipse.emf.common.util.EList
+import br.edu.unijui.gca.jabuti.jabuti.DataType
+import br.edu.unijui.gca.jabuti.jabuti.NegationOperator
 
 /**
  * Generates code from your model files on save.
@@ -94,11 +92,29 @@ class JabutiGenerator extends AbstractGenerator {
 	ArrayList<String> termsTypesInUse;
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		for (c : resource.allContents.filter(Contract).toIterable) {
-			fsa.generateFile(c.name + '.sol', generateSolCode(c))
-		}
+		val c = resource.allContents.filter(Contract).head
+		fsa.generateFile(c.name + '.sol', generateSolCode(c))
+// If a file can contain more than one contract, you need to iterate over the resource.	
+//		for (c : resource.allContents.filter(Contract).toIterable) {
+//			fsa.generateFile(c.name + '.sol', generateSolCode(c))
+//		}
 
 	}
+
+//	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
+//		fsa.generateFile(resource.className + ".sol", generateSolCode(resource.contents.head as Contract))
+//	      }
+//	     
+//	def className(Resource res){
+//	      var name = res.URI.lastSegment //Cogemos el último segmento de la URI
+//	      var contract = res.contents.head as Contract 
+//	      System.out.println(contract.name);
+//	      return name.substring(0, name.indexOf('.' )) //Devolvemos la parte que
+//	            // va justo antes del punto. Por ejemplo, si tenemos sample.wrld, el  
+//	            //resultado será sample.tx}
+//	}
+
+
 
 	def generateSolCode(Contract ct) {
 
@@ -640,7 +656,7 @@ contract «ct.name» {
 				return " " + term.amount + " "
 			}
 			MaxNumberOfOperationByTime_S: {
-				return " " + term.amout + ", EAI." + term.timeUnit + " "
+				return " " + term.amout + ", uint8(EAI.TimeUnit." + term.timeUnit + ") "
 			}
 			MessageContent_Boolean_S: {
 				var String xpath = term.xpath.addDoubleQuotesToXpath
@@ -648,7 +664,7 @@ contract «ct.name» {
 			}
 			MessageContent_Number_PerTime_S: {
 				var String xpath = term.xpath.addDoubleQuotesToXpath
-				return " " + xpath + ", \"" + term.op + "\", " + term.amount + ", EAI." + term.timeUnit + " "
+				return " " + xpath + ", \"" + term.op + "\", " + term.amount + ", uint8(EAI.TimeUnit." + term.timeUnit + ") "
 			}
 			MessageContent_Number_S: {
 				var String xpath = term.xpath.addDoubleQuotesToXpath
@@ -671,7 +687,7 @@ contract «ct.name» {
 				return " " + xpath + ", \"" + term.op + "\", " + term.content + " "
 			}
 			SessionInterval_S: {
-				return " " + term.duration + ", EAI." + term.timeUnit + " "
+				return " " + term.duration + ", uint8(EAI.TimeUnit." + term.timeUnit + ") "
 			}
 			TimeInterval_S: {
 				return " " + term.start + ", " + term.end + " "
@@ -680,7 +696,7 @@ contract «ct.name» {
 				return " " + term.amountTime + " "
 			}
 			WeekDaysInterval_S: {
-				return " EAI." + term.start + ", EAI." + term.end + " "
+				return " uint8(EAI.Day." + term.start + "), uint8(EAI.Day." + term.end + ") "
 			}
 			default: {
 				return "unknown: " + term.class.simpleName
@@ -717,21 +733,24 @@ contract «ct.name» {
 				clauses.get(counter).addLogicalOperator(getLogicalOperator(exprTerm.symbol))
 				addTermsIntoTheClauseMap(exprTerm.right)
 			}
-			UnaryTermOperator: {
+			NegationOperator: {
 				// clauses.get(counter).addLogicalOperator(exprTerm.symbol)
 				clauses.get(counter).addLogicalOperator(getLogicalOperator(exprTerm.symbol))
-				var unary = exprTerm as UnaryTermOperator
+				var unary = exprTerm as NegationOperator
 				addTermsIntoTheClauseMap(unary.expressionTerm)
 			}
 			Term: {
 				var term = exprTerm as Term
 				var type = term.getTermType
 				var TermStruct term_S = buildTheTermStruct_S(type, term)
-
+				
+				if(type.equalsIgnoreCase("ConditionalTerm")){
+					println("ConditionalExpression") // fazer o tratamento para a conditional expression
+				}else{
+	
 				clauses.get(counter).addTerm(term_S)
-			}
-			ConditionalExpression: {
-				println("ConditionalExpression") // fazer o tratamento para a conditional expression
+				}
+				
 			}
 			default: {
 				println("Unknown term type: " + exprTerm)
@@ -859,7 +878,7 @@ contract «ct.name» {
 				// if (messageContent.content !== null) {
 				if (messageContent.returnType === DataType.TEXT) {
 					return termType + "_onlyXPath_String_S" // MessageContent_onlyXPath_String
-				} else if (messageContent.returnType === DataType.NUMERIC) {
+				} else if (messageContent.returnType === DataType.NUMBER) {
 					return termType + "_onlyXPath_Number_S" // MessageContent_onlyXPath_Number
 				} else if (messageContent.returnType === DataType.BOOLEAN) {
 					return termType + "_onlyXPath_Boolean_S" // MessageContent_onlyXPath_Boolean
@@ -867,13 +886,13 @@ contract «ct.name» {
 			} else if (messageContent.perTime === null) {
 				if (messageContent.returnType === DataType.TEXT) {
 					return termType + "_String_S" // MessageContent_String
-				} else if (messageContent.returnType === DataType.NUMERIC) {
+				} else if (messageContent.returnType === DataType.NUMBER) {
 					return termType + "_Number_S" // MessageContent_Number
 				} else if (messageContent.returnType === DataType.BOOLEAN) {
 					return termType + "_Boolean_S" // MessageContent_Boolean
 				}
 			} else {
-				if (messageContent.returnType === DataType.NUMERIC) {
+				if (messageContent.returnType === DataType.NUMBER) {
 					return termType + "_Number_PerTime_S" // MessageContent_Number_PerTime
 				} else {
 					return "//MessageContent_Number_PerTime is used only to numeric type"

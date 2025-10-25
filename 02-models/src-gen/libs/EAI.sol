@@ -16,22 +16,42 @@ library EAI{
 
     // weekdays
 
-    uint8 constant SUNDAY=0;
-    uint8 constant MONDAY=1;
-    uint8 constant TUESDAY=2;
-    uint8 constant WEDNESDAY=3;
-    uint8 constant THURSDAY=4;
-    uint8 constant FRIDAY=5;
-    uint8 constant SATURDAY=6;
+//    uint8 constant SUNDAY=0;
+//    uint8 constant MONDAY=1;
+//    uint8 constant TUESDAY=2;
+//    uint8 constant WEDNESDAY=3;
+//    uint8 constant THURSDAY=4;
+//    uint8 constant FRIDAY=5;
+//    uint8 constant SATURDAY=6;
+    
+    enum Day {
+	    SUNDAY,
+	    MONDAY,
+	    TUESDAY,
+	    WEDNESDAY,
+	    THURSDAY,
+	    FRIDAY,
+	    SATURDAY
+	}
 
     // time
-    uint8 constant SECOND = 0;
-    uint8 constant MINUTE = 1;
-    uint8 constant HOUR= 2;
-    uint8 constant DAY= 3;
-    uint8 constant WEEK= 4;
-    uint8 constant MONTH= 5;
-    uint8 constant YEAR= 6;
+//    uint8 constant SECOND = 0;
+//    uint8 constant MINUTE = 1;
+//    uint8 constant HOUR= 2;
+//    uint8 constant DAY= 3;
+//    uint8 constant WEEK= 4;
+//    uint8 constant MONTH= 5;
+//    uint8 constant YEAR= 6;
+    
+    enum TimeUnit {
+	    SECOND,
+	    MINUTE,
+	    HOUR,
+	    DAY,
+	    WEEK,
+	    MONTH,
+	    YEAR
+	}
 
     // Interval in seconds between the min and max hour 
     // allowed to use in a contract(0 to 23:59:59)
@@ -148,13 +168,13 @@ library EAI{
 
    /* ---------------------- modifiers from the weekDaysInterval ----------- */ 
     modifier onlyValidDays(uint8 _startDay, uint8 _endDay) {
-        require( _startDay >= SUNDAY && _startDay <= SATURDAY, "The _startDay not represents a valid day");
-        require(_endDay >= SUNDAY && _endDay <= SATURDAY,  "The _endDay not represents a valid day");
+        require( _startDay >= uint8(Day.SUNDAY) && _startDay <= uint8(Day.SATURDAY), "The _startDay not represents a valid day");
+        require(_endDay >= uint8(Day.SUNDAY) && _endDay <= uint8(Day.SATURDAY),  "The _endDay not represents a valid day");
         _;
     }
     
     modifier onlyValidDay(uint8 _day) {
-        require((_day >= SUNDAY && _day <= SATURDAY), "The given number/day not represents a valid day");
+        require((_day >= uint8(Day.SUNDAY) && _day <= uint8(Day.SATURDAY)), "The given number/day not represents a valid day");
         _;
     }
 
@@ -317,7 +337,7 @@ library EAI{
 
         uint32 auxByTime;
 
-        if(_timeUnit <= WEEK){
+        if(_timeUnit <= uint8(TimeUnit.WEEK)){
             // for value equal a week or less, will be used the time in seconds to increase the endTime 
             auxByTime= getTimeInSeconds(_timeUnit);
         }else{
@@ -548,7 +568,7 @@ library EAI{
 
         uint32 auxByTime;
 
-        if(_timeUnit <= WEEK){
+        if(_timeUnit <= uint8(TimeUnit.WEEK)){
             // for value equal a week or less, will be used the time in seconds to increase the endTime 
             auxByTime= getTimeInSeconds(_timeUnit);
         }else{
@@ -623,7 +643,7 @@ library EAI{
 /* ========================================================================== */
     // the session interval accept only from SECOND to WEEK timeUnit
     struct SessionInterval{
-        uint8 duration;
+        //uint8 duration;
         uint8 timeUnit;   
         uint32 durationInSeconds;// durantionInSeconds is used only for timeUnit: second, minute, hour, day and week. For timeUnit month and year, this variable will be 0 (not used)
         string xpath;
@@ -632,16 +652,12 @@ library EAI{
 
     function createSessionInteval(uint8 _duration, uint8 _timeUnit, string memory _xpath)internal pure returns (SessionInterval memory){
         uint32 _durationInSeconds = 0;
-        if(_timeUnit <= WEEK){
+        if(_timeUnit <= uint8(TimeUnit.WEEK)){
             _durationInSeconds = getIntervalInSeconds(_duration, _timeUnit);
         }
-        return SessionInterval(_duration, _timeUnit, _durationInSeconds, _xpath, 0);
+        return SessionInterval(_timeUnit, _durationInSeconds, _xpath, 0);
+        // return SessionInterval(_duration, _timeUnit, _durationInSeconds, _xpath, 0);
     }
-
-
-    // function createSessionInterval_Copy(SessionInterval memory _session) internal pure returns(SessionInterval memory){
-    //     return SessionInterval(_session.duration, _session.timeUnit, _session.durationInSeconds, _session.endTime);
-    // }
 
 
     function sessionStatus(SessionInterval memory _session, uint32 _accessDateTime) internal  pure returns(uint){        
@@ -675,9 +691,9 @@ library EAI{
         ) internal pure returns(bool) {
         
         uint8 timeUnit = _timeUnit;
-        if(timeUnit <= WEEK){
+        if(timeUnit <= uint8(TimeUnit.WEEK)){
             return _accessDateTime >= _endTime;
-        } else if(timeUnit == MONTH) {            
+        } else if(timeUnit == uint8(TimeUnit.MONTH)) {            
             (,uint32 month,) = timeStampToDate(_accessDateTime);    
             if((_endTime == 13) && (month==1)){
                 return true;
@@ -695,12 +711,12 @@ library EAI{
         uint32 _accessDateTime
         ) private pure returns(uint32){
         
-        if (_timeUnit <= WEEK) {
+        if (_timeUnit <= uint8(TimeUnit.WEEK)) {
             return calcNextEndTimeForSecMinHrDayOrWeek(
                 _timeUnit, 
                 _accessDateTime, 
                 _timeInterval);
-        }else if(_timeUnit == MONTH){
+        }else if(_timeUnit == uint8(TimeUnit.MONTH)){
             (,uint currentMonth,) = timeStampToDate(_accessDateTime); 
              return uint32(currentMonth+1);
         }else{      
@@ -718,7 +734,7 @@ library EAI{
         uint32 mod =  uint32(_accessDateTime % _timeInterval);
         uint32 timeToNextEndTime  = _timeInterval - mod;            
         
-        if(_timeUnit == WEEK){
+        if(_timeUnit == uint8(TimeUnit.WEEK)){
             return _accessDateTime + timeToNextEndTime + OFFSETWEEK;
         }
 
@@ -728,18 +744,18 @@ library EAI{
     
     function getTimeInSeconds(uint8 timeUnit) private pure returns(uint32){
         // seconds, // minute // hour // day // week
-        require(timeUnit <= WEEK, "The method getTimeInSeconds doesn't work for MONTH and YEAR");
+        require(timeUnit <= uint8(TimeUnit.WEEK), "The method getTimeInSeconds doesn't work for MONTH and YEAR");
 
-        if(timeUnit == SECOND){
+        if(timeUnit == uint8(TimeUnit.SECOND)){
             return 1;
-        }else if(timeUnit == MINUTE){
+        }else if(timeUnit == uint8(TimeUnit.MINUTE)){
             return 60;
-        }else if(timeUnit == HOUR ){
-            return 60*60;
-        }else if(timeUnit == DAY){
-            return 60*60*24;
+        }else if(timeUnit == uint8(TimeUnit.HOUR) ){
+            return 3600; //60*60;
+        }else if(timeUnit == uint8(TimeUnit.DAY)){
+            return 86400; //60*60*24;
         }else {
-           return 60*60*24*7; //WEEK
+           return 604800; //60*60*24*7; //WEEK
         }
     }
         

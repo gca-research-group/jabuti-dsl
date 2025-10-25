@@ -21,9 +21,9 @@ contract DeliveryHiring {
             operation = request
             
             terms {			
-                MaxNumberOfOperation(3 per Minute),
-                MessageContent(numeric(numberOfAddresses) == 1), 
-                MessageContent(numeric(weight) == 100)                
+                MaxNumberOfOperation(3 per Minute)AND
+                MessageContent(number(numberOfAddresses) == 1)AND 
+                MessageContent(number(weight) == 100)                
             }
                         
             onBreach(log("Request operation did not meet all requirements"))
@@ -34,8 +34,8 @@ contract DeliveryHiring {
             operation = response			
             
             terms {
-                Timeout(20),
-                MessageContent(numeric('//budget/deliveryTime/text()') < 15)	 		
+                Timeout(20) AND
+                MessageContent(number('//budget/deliveryTime/text()') < 15)	 		
             }
           
             onBreach(log("response performed outside of time limit or delivery time too long"))			
