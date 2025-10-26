@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+     id="br.edu.unijui.gca.jabuti.feature"
+      label="Jabuti DSL Feature"
+      version="1.0.0.qualifier"
+      provider-name="UNIJUI">
+   <description>
+      DSL Jabuti para geração de contratos Solidity
+   </description>
+
+
+   <plugin
+         id="br.edu.unijui.gca.jabuti"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="br.edu.unijui.gca.jabuti.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="br.edu.unijui.gca.jabuti.ide"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
