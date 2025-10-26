@@ -1,26 +1,26 @@
 contract DeliveryHiring_O {   
 	dates{
-		beginDate = "2023-01-01 08:30:00"   
-		dueDate =  "2024-01-01 08:30:00"   			  	 
+		beginDate = "2023-01-01 08:30:00"     
+		dueDate =  "2023-01-01 08:30:01"     			  	 
 	}	
   
   	parties{
 		application = "deliverySystem" 
-		process  	= "integrationProcess" 
+		process  	=  "integrationProcess" 
 	}
 
 	variables{ 
-		teste = "teset"  
+		teste = "teste"  
 	}
 	clauses{
 		obligation responseOrder {
-			rolePlayer = application 
-			operation = response
+			rolePlayer = application
+			operation = push
 			terms {
-				Timeout(20)  	OR
-				MessageContent(number("//budget/deliveryTime/text()") < 15)	  		
+				Timeout(20)AND
+				MessageContent(number("//budget/deliveryTime/text()") < 15)	
 			}
-			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))			
+			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))
 		}			
 	}
 } 
