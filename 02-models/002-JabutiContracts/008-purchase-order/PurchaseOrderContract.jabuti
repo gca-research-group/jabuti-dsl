@@ -17,13 +17,11 @@ contract PurchaseOrderProvider {
 			operation = write		
 			
 			terms{
-				WeekDaysInterval(Monday to Friday),
-				
-				MessageContent(numeric("//Tshirt/totalItems/text()")>30),
-				MessageContent(numeric("//Tshirt/totalItems/text()")<50), 
-				
-				MessageContent(numeric(" //purchaseOrder/orderValue/text()") >  2000),   
-				MessageContent(numeric(" //purchaseOrder/orderValue/text()") <  5000)    
+				WeekDaysInterval(Monday to Friday)AND			
+				MessageContent(number("//Tshirt/totalItems/text()")>30)AND
+				MessageContent(number("//Tshirt/totalItems/text()")<50)AND			
+				MessageContent(number(" //purchaseOrder/orderValue/text()") >  2000)AND   
+				MessageContent(number(" //purchaseOrder/orderValue/text()") <  5000)    
 			}			
 			onBreach (log("orderValue or items is outside the allowed range"))	
 		}

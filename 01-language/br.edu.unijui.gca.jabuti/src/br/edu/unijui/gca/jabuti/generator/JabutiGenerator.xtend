@@ -70,13 +70,6 @@ import br.edu.unijui.gca.jabuti.jabuti.NegationOperator
  */
 class JabutiGenerator extends AbstractGenerator {
 
-//	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-////		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-////			resource.allContents
-////				.filter(Greeting)
-////				.map[name]
-////				.join(', '))
-//	}
 	static var comparison_symbols = newArrayList
 	static var logical_symbols = newArrayList
 	static var math_symbols = newArrayList
@@ -100,20 +93,6 @@ class JabutiGenerator extends AbstractGenerator {
 //		}
 
 	}
-
-//	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile(resource.className + ".sol", generateSolCode(resource.contents.head as Contract))
-//	      }
-//	     
-//	def className(Resource res){
-//	      var name = res.URI.lastSegment //Cogemos el último segmento de la URI
-//	      var contract = res.contents.head as Contract 
-//	      System.out.println(contract.name);
-//	      return name.substring(0, name.indexOf('.' )) //Devolvemos la parte que
-//	            // va justo antes del punto. Por ejemplo, si tenemos sample.wrld, el  
-//	            //resultado será sample.tx}
-//	}
-
 
 
 	def generateSolCode(Contract ct) {
@@ -530,9 +509,9 @@ contract «ct.name» {
 	}
 
 	def buildCode_ParametersOfThe_IfStatement_BasedInTheTermsOfTheClause(String termType, int id) {
-		// msgContent_number_C1[0].evaluateNumberContent(_resultFromXpath_nc[0]) &&
+		
 		var ifParameter = "";
-		// println(termType + "- n:" + id)
+
 		switch termType {
 			case "MaxNumberOfOperation_S": {
 				ifParameter = "maxNumberOfOperation_C" + (counter + 1) + "[" + id + "].hasAvailableOperations()"
@@ -589,29 +568,6 @@ contract «ct.name» {
 
 	}
 
-//	def buildCode_ParametersOfThe_Functions_BasedInTheTermsOfTheClause(String termType_s, boolean isLastTerm) {
-//
-//		var termType = "\t" + termType_s.removeTermSuffix + "[] memory " + termType_s.toFirstLower.removeTermSuffix
-//
-//		if (termType_s == "MaxNumberOfOperationByTime_S" || termType_s == "MessageContent_Number_PerTime_S" ||
-//			termType_s == "Timeout_S") {
-//			termType = "\tuint32 accessDateTime"
-//		} else if (termType_s == "TimeInterval_S") {
-//			termType = "\tuint32 accessTime"
-//		}
-//
-//		if (!isLastTerm) {
-//			'''
-//			«termType»,
-//				«««»»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»,
-//			'''
-//		} else {
-//			'''
-//			«termType»
-//			«««»«"\t"»«termType_s.removeTermSuffix»[] memory «termType_s.toFirstLower.removeTermSuffix»
-//			'''
-//		}
-//	}
 	def String buildFunctionName(Clause clause) {
 		switch (clause) {
 			Right: {
@@ -744,12 +700,7 @@ contract «ct.name» {
 				var type = term.getTermType
 				var TermStruct term_S = buildTheTermStruct_S(type, term)
 				
-				if(type.equalsIgnoreCase("ConditionalTerm")){
-					println("ConditionalExpression") // fazer o tratamento para a conditional expression
-				}else{
-	
 				clauses.get(counter).addTerm(term_S)
-				}
 				
 			}
 			default: {
@@ -1130,78 +1081,4 @@ contract «ct.name» {
 
 	}
 
-//	def static String subTypeTer(Term tm){
-//		val subTypeTermName=""
-//		
-//		// MessageContent
-//		// SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent
-//		return subTypeTermName
-//		
-//	}
 }
-//				Party «ct.application.name»;
-//				Party «ct.process.name»;
-//				«getTerms(ct.clauses.get(0).terms)»
-//				
-//				
-//				event «ct.clauses.get(0).name+"event"»(string _logMessage);
-//				
-//				constructor(address _applicationWallet, address _processWallet){
-//			    	«ct.application.name» = Party("«ct.process.name» ", _applicationWallet);
-//				    «ct.process.name» = Party("«ct.process.name»", _processWallet);
-//				}
-//				
-//				function «ct.clauses.get(0).name»(uint32 _accessDateTime, string memory _xPathContent, bool _xPathResult, address _performer) public returns(bool){
-//								
-//					
-//					bool isBreached=false;
-//					
-//					if(«getConditionals(ct.clauses.get(0).terms)») {
-//						operationLimit.requestsPerformed+=1;
-//			        	return true;	
-//					}
-//					
-//					emit «ct.clauses.get(0).name+"event"» ("Request made outside of allowed hours or distance limit exceeded");
-//					return false;
-//				}
-//			}
-//		'''
-//	}
-//
-//	def getTS(String date){
-//		return (Timestamp.valueOf(date).getTime()/1000);
-//	}
-//	
-//	def getTerms(Terms term){
-//		'''
-//			«FOR c: term.eAllContents.toIterable»
-//				«IF(c instanceof Timeout)»
-//					Timeout public timeout = Timeout(«c.seconds», 0);
-//				«ELSEIF(c instanceof WeekDaysInterval)»
-//					WeekDaysInterval public weekDaysInterval = WeekDaysInterval(«c.start», «c.end»);
-//				«ELSEIF(c instanceof TimeInterval)»
-//					TimeInterval public timeInterval = TimeInterval(«c.start», «c.end»);
-//				«ELSEIF(c instanceof MaxNumberOfOperation)»
-//					MaxNumberOfOperation public maxNumberOfOperation = MaxNumberOfOperation(«c.operationsNumber», «c.timeUnit», 0, 0);
-//				«ELSEIF(c instanceof MessageContent)»
-//					MessageContent public messageContent = MessageContent("«c.content»");
-//				«ENDIF»
-//			«ENDFOR»
-//		'''
-//	}
-//	
-//	def getConditionals(Terms terms){
-//		'''	
-//		«FOR c: terms.eAllContents.toIterable»
-//			«IF(c instanceof Timeout)»
-//				!isTimeout(_accessDateTime, timeout.endTime) &&
-//			«ELSEIF(c instanceof WeekDaysInterval)»
-//				isBusinessDay(_accessDateTime, businessDay) &&
-//			«ELSEIF(c instanceof TimeInterval)»
-//				isIntoTimeInterval(_accessDateTime, timeInterval) &&
-//			«ELSEIF(c instanceof MaxNumberOfOperation)»
-//				!isOperationLimitReached(_accessDateTime, operationLimit) &&
-//			«ENDIF»
-//		«ENDFOR»
-//		'''
-//}

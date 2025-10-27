@@ -1987,287 +1987,58 @@ ruleTerm returns [EObject current=null]
 		)
 		    |
 		{
-			newCompositeNode(grammarAccess.getTermAccess().getConditionalTermParserRuleCall_1());
+			newCompositeNode(grammarAccess.getTermAccess().getSessionIntervalParserRuleCall_1());
 		}
-		this_ConditionalTerm_3=ruleConditionalTerm
+		this_SessionInterval_3=ruleSessionInterval
 		{
-			$current = $this_ConditionalTerm_3.current;
+			$current = $this_SessionInterval_3.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTermAccess().getSessionIntervalParserRuleCall_2());
+			newCompositeNode(grammarAccess.getTermAccess().getWeekDaysIntervalParserRuleCall_2());
 		}
-		this_SessionInterval_4=ruleSessionInterval
+		this_WeekDaysInterval_4=ruleWeekDaysInterval
 		{
-			$current = $this_SessionInterval_4.current;
+			$current = $this_WeekDaysInterval_4.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTermAccess().getWeekDaysIntervalParserRuleCall_3());
+			newCompositeNode(grammarAccess.getTermAccess().getTimeIntervalParserRuleCall_3());
 		}
-		this_WeekDaysInterval_5=ruleWeekDaysInterval
+		this_TimeInterval_5=ruleTimeInterval
 		{
-			$current = $this_WeekDaysInterval_5.current;
+			$current = $this_TimeInterval_5.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTermAccess().getTimeIntervalParserRuleCall_4());
+			newCompositeNode(grammarAccess.getTermAccess().getTimeoutParserRuleCall_4());
 		}
-		this_TimeInterval_6=ruleTimeInterval
+		this_Timeout_6=ruleTimeout
 		{
-			$current = $this_TimeInterval_6.current;
+			$current = $this_Timeout_6.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTermAccess().getTimeoutParserRuleCall_5());
+			newCompositeNode(grammarAccess.getTermAccess().getMaxNumberOfOperationParserRuleCall_5());
 		}
-		this_Timeout_7=ruleTimeout
+		this_MaxNumberOfOperation_7=ruleMaxNumberOfOperation
 		{
-			$current = $this_Timeout_7.current;
+			$current = $this_MaxNumberOfOperation_7.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getTermAccess().getMaxNumberOfOperationParserRuleCall_6());
+			newCompositeNode(grammarAccess.getTermAccess().getMessageContentParserRuleCall_6());
 		}
-		this_MaxNumberOfOperation_8=ruleMaxNumberOfOperation
+		this_MessageContent_8=ruleMessageContent
 		{
-			$current = $this_MaxNumberOfOperation_8.current;
+			$current = $this_MessageContent_8.current;
 			afterParserOrEnumRuleCall();
 		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getTermAccess().getMessageContentParserRuleCall_7());
-		}
-		this_MessageContent_9=ruleMessageContent
-		{
-			$current = $this_MessageContent_9.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleConditionalTerm
-entryRuleConditionalTerm returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getConditionalTermRule()); }
-	iv_ruleConditionalTerm=ruleConditionalTerm
-	{ $current=$iv_ruleConditionalTerm.current; }
-	EOF;
-
-// Rule ConditionalTerm
-ruleConditionalTerm returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='when'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getConditionalTermAccess().getWhenKeyword_0());
-		}
-		otherlv_1='('
-		{
-			newLeafNode(otherlv_1, grammarAccess.getConditionalTermAccess().getLeftParenthesisKeyword_1());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConditionalTermAccess().getQualifiedNameParserRuleCall_2_0_0());
-				}
-				ruleQualifiedName
-				{
-					afterParserOrEnumRuleCall();
-				}
-				    |
-				this_STRING_3=RULE_STRING
-				{
-					newLeafNode(this_STRING_3, grammarAccess.getConditionalTermAccess().getSTRINGTerminalRuleCall_2_0_1());
-				}
-			)
-			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getConditionalTermAccess().getComparisonOperatorComparisonOperatorParserRuleCall_2_1_0_0());
-						}
-						lv_comparisonOperator_4_0=ruleComparisonOperator
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getConditionalTermRule());
-							}
-							add(
-								$current,
-								"comparisonOperator",
-								lv_comparisonOperator_4_0,
-								"br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalTermAccess().getQualifiedNameParserRuleCall_2_1_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					this_STRING_6=RULE_STRING
-					{
-						newLeafNode(this_STRING_6, grammarAccess.getConditionalTermAccess().getSTRINGTerminalRuleCall_2_1_1_1());
-					}
-				)
-			)?
-		)
-		(
-			(
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalTermAccess().getLogicalOperatorLogicalOperatorParserRuleCall_3_0_0());
-					}
-					lv_logicalOperator_7_0=ruleLogicalOperator
-					{
-						if ($current==null) {
-							$current = createModelElementForParent(grammarAccess.getConditionalTermRule());
-						}
-						add(
-							$current,
-							"logicalOperator",
-							lv_logicalOperator_7_0,
-							"br.edu.unijui.gca.jabuti.Jabuti.LogicalOperator");
-						afterParserOrEnumRuleCall();
-					}
-				)
-			)
-			{
-				newCompositeNode(grammarAccess.getConditionalTermAccess().getQualifiedNameParserRuleCall_3_1());
-			}
-			ruleQualifiedName
-			{
-				afterParserOrEnumRuleCall();
-			}
-			(
-				(
-					(
-						{
-							newCompositeNode(grammarAccess.getConditionalTermAccess().getComparisonOperatorComparisonOperatorParserRuleCall_3_2_0_0());
-						}
-						lv_comparisonOperator_9_0=ruleComparisonOperator
-						{
-							if ($current==null) {
-								$current = createModelElementForParent(grammarAccess.getConditionalTermRule());
-							}
-							add(
-								$current,
-								"comparisonOperator",
-								lv_comparisonOperator_9_0,
-								"br.edu.unijui.gca.jabuti.Jabuti.ComparisonOperator");
-							afterParserOrEnumRuleCall();
-						}
-					)
-				)
-				(
-					{
-						newCompositeNode(grammarAccess.getConditionalTermAccess().getQualifiedNameParserRuleCall_3_2_1_0());
-					}
-					ruleQualifiedName
-					{
-						afterParserOrEnumRuleCall();
-					}
-					    |
-					this_STRING_11=RULE_STRING
-					{
-						newLeafNode(this_STRING_11, grammarAccess.getConditionalTermAccess().getSTRINGTerminalRuleCall_3_2_1_1());
-					}
-				)
-			)?
-		)*
-		otherlv_12=')'
-		{
-			newLeafNode(otherlv_12, grammarAccess.getConditionalTermAccess().getRightParenthesisKeyword_4());
-		}
-		otherlv_13='check'
-		{
-			newLeafNode(otherlv_13, grammarAccess.getConditionalTermAccess().getCheckKeyword_5());
-		}
-		otherlv_14='{'
-		{
-			newLeafNode(otherlv_14, grammarAccess.getConditionalTermAccess().getLeftCurlyBracketKeyword_6());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getConditionalTermAccess().getExpressionTermExpressionTermParserRuleCall_7_0());
-				}
-				lv_expressionTerm_15_0=ruleExpressionTerm
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConditionalTermRule());
-					}
-					set(
-						$current,
-						"expressionTerm",
-						lv_expressionTerm_15_0,
-						"br.edu.unijui.gca.jabuti.Jabuti.ExpressionTerm");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_16='}'
-		{
-			newLeafNode(otherlv_16, grammarAccess.getConditionalTermAccess().getRightCurlyBracketKeyword_8());
-		}
-	)
-;
-
-// Entry rule entryRuleLogicalOperator
-entryRuleLogicalOperator returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getLogicalOperatorRule()); }
-	iv_ruleLogicalOperator=ruleLogicalOperator
-	{ $current=$iv_ruleLogicalOperator.current; }
-	EOF;
-
-// Rule LogicalOperator
-ruleLogicalOperator returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			(
-				lv_symbol_0_1='AND'
-				{
-					newLeafNode(lv_symbol_0_1, grammarAccess.getLogicalOperatorAccess().getSymbolANDKeyword_0_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLogicalOperatorRule());
-					}
-					setWithLastConsumed($current, "symbol", lv_symbol_0_1, null);
-				}
-				    |
-				lv_symbol_0_2='OR'
-				{
-					newLeafNode(lv_symbol_0_2, grammarAccess.getLogicalOperatorAccess().getSymbolORKeyword_0_1());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getLogicalOperatorRule());
-					}
-					setWithLastConsumed($current, "symbol", lv_symbol_0_2, null);
-				}
-			)
-		)
 	)
 ;
 

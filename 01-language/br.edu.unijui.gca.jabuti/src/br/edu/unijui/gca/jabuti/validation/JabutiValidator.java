@@ -68,23 +68,23 @@ public class JabutiValidator extends AbstractJabutiValidator {
         }
     }
 
-
-    @Check
-    public void checkTimeInterval(TimeInterval t) {
-        if (t.getStart() == null || t.getEnd() == null) return;
-        try {
-            LocalTime start = LocalTime.parse(t.getStart());
-            LocalTime end = LocalTime.parse(t.getEnd());
-            if (start.isAfter(end)) {
-                error("Start time must be before end time.",
-                		JabutiPackage.Literals.TIME_INTERVAL__START);
-            }
-        } catch (Exception e) {
-            warning("Invalid time format. Expected format: HH:MM",
-            		JabutiPackage.Literals.TIME_INTERVAL__START);
-        }
-    }
-    
+	@Check
+	public void checkFormatInTimeInterval(TimeInterval time) {				
+		String startTime = time.getStart();
+		String endTime =  time.getEnd();
+		
+		if (startTime != null) {
+			if(!startTime.matches("\\d{2}:\\d{2}:\\d{2}")) {
+					error("Time format invalid. Provide the format: HH:mm:ss", JabutiPackage.Literals.TIME_INTERVAL__START); 
+			}	
+		}
+		if(endTime != null) {
+			if(!endTime.matches("\\d{2}:\\d{2}:\\d{2}")) {
+				error("Time format invalid. Provide the format: HH:mm:ss", JabutiPackage.Literals.TIME_INTERVAL__END); 
+			}
+		}
+	}
+	    
 	@Check
 	public void checkClauseNameIsUnique(Clause clause) {
 		if (clause != null) {
@@ -101,22 +101,7 @@ public class JabutiValidator extends AbstractJabutiValidator {
 		}
 	}
 	
-	@Check
-	public void checkTimeInTimeInterval(TimeInterval time) {				
-		String startTime = time.getStart();
-		String endTime =  time.getEnd();
-		
-		if (startTime != null) {
-			if(!startTime.matches("\\d{2}:\\d{2}:\\d{2}")) {
-					error("Time format invalid. Provide the format: HH:mm:ss", JabutiPackage.Literals.TIME_INTERVAL__START); 
-			}	
-		}
-		if(endTime != null) {
-			if(!endTime.matches("\\d{2}:\\d{2}:\\d{2}")) {
-				error("Time format invalid. Provide the format: HH:mm:ss", JabutiPackage.Literals.TIME_INTERVAL__END); 
-			}
-		}
-	}
+
 	
 	
 	@Check

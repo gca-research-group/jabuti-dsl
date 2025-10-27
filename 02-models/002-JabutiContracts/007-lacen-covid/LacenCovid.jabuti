@@ -16,9 +16,9 @@ contract Citizen_RS {
 			operation = request	
 		
 			terms {
-					( TimeInterval ("00:00:00" to "05:59:59"),
+					( TimeInterval ("00:00:00" to "05:59:59")AND
 						MaxNumberOfOperation(700 per Minute)
-					) OR ( TimeInterval("06:00:00" to "23:59:59"),
+					) OR ( TimeInterval("06:00:00" to "23:59:59")AND
 						MaxNumberOfOperation(400 per Minute)
 					)			
 			}
@@ -42,8 +42,8 @@ contract Citizen_RS {
 			operation = response
 			
 			terms {
-				WeekDaysInterval(Sunday to Saturday),
-				TimeInterval("00:00:00" to"23:59:59"),
+				WeekDaysInterval(Sunday to Saturday)AND
+				TimeInterval("00:00:00" to"23:59:59")AND
 				Timeout(1)	// verificar a questão de gargalo.		
 			}
 			onBreach (log("Server not available error"))		

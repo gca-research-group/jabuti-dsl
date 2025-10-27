@@ -34,22 +34,16 @@ contract DeliveryHiring_RO {
 			rolePlayer = process
 			operation = request
 			
-			terms {	
-				
-				TimeInterval("07:00:00" to "18:00:00"),
-				
-				SessionInterval(30 Minute per MessageContent(numeric("//clientID/text()"))),
-				
-				Timeout(30),	
-				
-				MaxNumberOfOperation(50000),	
-				MaxNumberOfOperation(10 per Minute),
-				
-				WeekDaysInterval(Monday to Friday),
-				
-				MessageContent(boolean("count(//item)<=10")), 
-				MessageContent(numeric("count(//item)") <= 10), 
-				MessageContent(numeric("count(//item)") <= 1000 per Month) 
+			terms {					
+				TimeInterval("07:00:00" to "18:00:00")AND
+				SessionInterval(30 Minute per MessageContent(number("//clientID/text()")))AND				
+				Timeout(30)AND	
+				MaxNumberOfOperation(50000)AND	
+				MaxNumberOfOperation(10 per Minute)AND				
+				WeekDaysInterval(Monday to Friday)AND				
+				MessageContent(boolean("count(//item)<=10"))AND 
+				MessageContent(number("count(//item)") <= 10)AND 
+				MessageContent(number("count(//item)") <= 1000 per Month) 
 			}
 						
 			onBreach(log("Request operation did not meet all requirements"))			

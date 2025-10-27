@@ -1,12 +1,8 @@
-//@version -  0.1.0   
-
-contract SendMessageWhatsapp { 
- 
-
-	dates{ 
-		beginDate = "2023-01-01 08:00:00" 
-		dueDate = "2023-12-31 18:00:00" 
-	}
+contract SendMessageWhatsapp {   
+	dates{
+		beginDate = "2023-01-01 08:30:00"     
+		dueDate =  "2023-01-01 08:30:01"     			  	 
+	}	
 	
 	parties{
 		application = "Whatsapp" 
@@ -25,11 +21,8 @@ contract SendMessageWhatsapp {
 			rolePlayer = process
 			operation = write		
 			terms{
-				WeekDaysInterval(Monday to Friday),		 			 	
-				when( conversationStarter == "Business-initiated" ) check {				
-					 	MaxNumberOfOperation(10000 per Month)		
-				}	 		 	 
-			}				
+				WeekDaysInterval(Monday to Friday)	 		 	 
+			}		
 			onBreach(log("Request operation performed outside of allowed hours or limit operation exceeded"))
 		}
 	}	

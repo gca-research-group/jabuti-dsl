@@ -7,4 +7,16 @@
 			class = "br.edu.unijui.gca.jabuti.jabuti.JabutiPackage"
 			genModel = "model/custom/Jabuti.genmodel" />
 	</extension>
+ <extension
+       id="product"
+       point="org.eclipse.core.runtime.products">
+    <product
+          application="org.eclipse.ui.ide.workbench"
+          name="Jabuti DSL">
+       <property
+             name="appName"
+             value="Jabuti DSL">
+       </property>
+    </product>
+ </extension>
 </plugin>

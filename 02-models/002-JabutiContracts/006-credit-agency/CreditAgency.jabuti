@@ -17,8 +17,8 @@ contract CreditAgency {
 			rolePlayer = process 
 			operation = request 
 			terms {
-				MaxNumberOfOperation (1000 per Second ), 
-				MessageContent (numeric("count(//CPF)") == 1)
+				MaxNumberOfOperation (1000 per Second )AND 
+				MessageContent (number("count(//CPF)") == 1)
 			}
 			onBreach ( log("Request limit by day exceeded or inconsistent message content") )
 		}

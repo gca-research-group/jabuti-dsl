@@ -152,17 +152,9 @@ NegationTerm returns ExpressionTerm:
 	Term | {NegationOperator} symbol='NOT' expressionTerm=Term;
 		
 Term returns ExpressionTerm:
-	'(' ExpressionTerm ')' | ConditionalTerm | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent	
+	'(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent	
 ;
 
-ConditionalTerm :
-	'when' '(' ((QualifiedName | STRING ) 
-				(comparisonOperator+=ComparisonOperator (QualifiedName | STRING ))?) 
-				(logicalOperator+=LogicalOperator QualifiedName  
-					(comparisonOperator+=ComparisonOperator (QualifiedName | STRING))?)* ')' 'check' '{'
-					expressionTerm=ExpressionTerm
-	'}'
-;
 
 //  ----------------- end new version proposal  -----------------
 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="Jabuti DSL" uid="br.edu.unijui.gca.jabuti.product" id="br.edu.unijui.gca.jabuti.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" type="bundles" includeLaunchers="true" includeJRE="true" autoIncludeRequirements="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <launcher name="Jabuti">
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+      <linux include="true">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21</linux>
+   </vm>
+
+   <plugins>
+      <plugin id="br.edu.unijui.gca.jabuti"/>
+      <plugin id="br.edu.unijui.gca.jabuti.ide"/>
+      <plugin id="br.edu.unijui.gca.jabuti.ui"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.platform"/>
+      <plugin id="org.eclipse.rcp"/>
+   </plugins>
+
+   <configurations>
+      <property name="Jabuti" value="" os="linux" arch="x86_64" />
+   </configurations>
+
+</product>

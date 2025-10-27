@@ -15,8 +15,8 @@ contract ContractExample{
             rolePlayer = process
             operation = request
             terms {
-                 MaxNumberOfOperation(2 per Second), 
-                 MessageContent(numeric("count(//body/document)") <= 100)	 
+                 MaxNumberOfOperation(2 per Second)AND 
+                 MessageContent(number("count(//body/document)") <= 100)	 
             }
             onBreach(log("Exceded number of documents"))
         }	        

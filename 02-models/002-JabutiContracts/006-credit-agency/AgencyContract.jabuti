@@ -24,16 +24,13 @@ contract DeliveryHiring_O {
 			operation = request	
  	
 			terms {
-				(WeekDaysInterval(Monday to Wednesday) OR WeekDaysInterval(Friday to Saturday)),
-				MaxNumberOfOperation( 2 per Hour ),
-				TimeInterval("08:00:00" to "12:00:00"),
-				when(sessionInterval) check {
-					MessageContent( text("Content" ))	
-				},
+				(WeekDaysInterval(Monday to Wednesday) OR WeekDaysInterval(Friday to Saturday))AND
+				MaxNumberOfOperation( 2 per Hour )AND
+				TimeInterval("08:00:00" to "12:00:00")AND
 				TimeInterval("08:00:00" to "12:00:00")
 			}			
 			
-			onBreach (log(" resgistrar falha...."))
+			onBreach(log(" resgistrar falha...."))
 			
 		}
 	}

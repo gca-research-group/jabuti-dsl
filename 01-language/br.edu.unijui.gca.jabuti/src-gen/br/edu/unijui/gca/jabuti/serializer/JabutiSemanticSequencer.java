@@ -7,7 +7,6 @@ import br.edu.unijui.gca.jabuti.jabuti.Application;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryOperator;
 import br.edu.unijui.gca.jabuti.jabuti.BinaryTermOperator;
 import br.edu.unijui.gca.jabuti.jabuti.ComparisonOperator;
-import br.edu.unijui.gca.jabuti.jabuti.ConditionalTerm;
 import br.edu.unijui.gca.jabuti.jabuti.Contract;
 import br.edu.unijui.gca.jabuti.jabuti.FunctionCall;
 import br.edu.unijui.gca.jabuti.jabuti.Import;
@@ -91,9 +90,6 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 				return; 
 			case JabutiPackage.COMPARISON_OPERATOR:
 				sequence_ComparisonOperator(context, (ComparisonOperator) semanticObject); 
-				return; 
-			case JabutiPackage.CONDITIONAL_TERM:
-				sequence_ConditionalTerm(context, (ConditionalTerm) semanticObject); 
 				return; 
 			case JabutiPackage.CONTRACT:
 				sequence_Contract(context, (Contract) semanticObject); 
@@ -374,28 +370,6 @@ public class JabutiSemanticSequencer extends AbstractDelegatingSemanticSequencer
 	 * </pre>
 	 */
 	protected void sequence_Comparison_Factor_Plus(ISerializationContext context, BinaryOperator semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * <pre>
-	 * Contexts:
-	 *     ExpressionTerm returns ConditionalTerm
-	 *     ExpressionTerm.BinaryTermOperator_1_0 returns ConditionalTerm
-	 *     NegationTerm returns ConditionalTerm
-	 *     Term returns ConditionalTerm
-	 *     ConditionalTerm returns ConditionalTerm
-	 *
-	 * Constraint:
-	 *     (
-	 *         comparisonOperator+=ComparisonOperator? 
-	 *         (logicalOperator+=LogicalOperator comparisonOperator+=ComparisonOperator?)* 
-	 *         expressionTerm=ExpressionTerm
-	 *     )
-	 * </pre>
-	 */
-	protected void sequence_ConditionalTerm(ISerializationContext context, ConditionalTerm semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

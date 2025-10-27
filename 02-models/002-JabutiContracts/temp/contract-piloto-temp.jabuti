@@ -71,18 +71,18 @@ contract Temp {
 			rolePlayer = process
 			operation = request	   
 			terms {	 	  	      				  
-				MaxNumberOfOperation(10),  
-				MaxNumberOfOperation(4 per Minute),  
-				MessageContent( boolean("//body/boolValue") == "true" ), 
-				MessageContent( numeric("//body/addres") == 1 per Hour ),  
-				MessageContent( numeric("//body/package")<=20),	  
-				MessageContent(boolean("a==b")),    
-				MessageContent( numeric("125")),   
-				MessageContent( text("//cpf")),	
-				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
-				SessionInterval(10 Hour), 
-				TimeInterval("08:00:00" to "18:00:00"),
-				Timeout(3), 
+				MaxNumberOfOperation(10)AND
+				MaxNumberOfOperation(4 per Minute)AND  
+				MessageContent( boolean("//body/boolValue") == "true" )AND
+				MessageContent( number("//body/addres") == 1 per Hour )AND 
+				MessageContent( number("//body/package")<=20)AND	  
+				MessageContent(boolean("a==b"))AND    
+				MessageContent( number("125"))AND   
+				MessageContent( text("//cpf"))AND	
+				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" )AND
+				SessionInterval(10 Hour)AND
+				TimeInterval("08:00:00" to "18:00:00")AND
+				Timeout(3)AND
 				WeekDaysInterval(Monday to Friday)  
 		 	}           
 			// the onSuccess is optional 
@@ -94,18 +94,18 @@ contract Temp {
 			rolePlayer = process  
 			operation = request	    
 			terms {	 	  	    
-				MaxNumberOfOperation(10), 
-				MaxNumberOfOperation(4 per Minute),  
-				MessageContent( boolean("//body/boolValue") == "true" ), 
-				MessageContent( numeric("//body/addres") == 1 per Hour ),  
-				MessageContent( numeric("//body/package")<=20),	  
-				MessageContent(boolean("a==b")),  
-				MessageContent( numeric("125")),
-				MessageContent( text("//cpf")),	
-				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" ),
-				SessionInterval(10 Hour), 
-				TimeInterval("08:00:00" to "18:00:00"),
-				Timeout(3),
+				MaxNumberOfOperation(10)AND
+				MaxNumberOfOperation(4 per Minute)AND  
+				MessageContent( boolean("//body/boolValue") == "true" )AND 
+				MessageContent( number("//body/addres") == 1 per Hour )AND  
+				MessageContent( number("//body/package")<=20)AND 
+				MessageContent(boolean("a==b"))AND 
+				MessageContent( number("125"))AND
+				MessageContent( text("//cpf"))AND	
+				MessageContent( text("//body/perosonalInformation/address/cep") == "98700000" )AND
+				SessionInterval(10 Hour)AND 
+				TimeInterval("08:00:00" to "18:00:00")AND
+				Timeout(3)AND
 				WeekDaysInterval(Monday to Friday)  			 	
 			}      
 			// the onSuccess is optional
