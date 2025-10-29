@@ -10,14 +10,15 @@ contract DeliveryHiring_O {
 	}
 
 	variables{ 
-		teste = "teste"  
+		teste = "teste" 
+		test = "teste" 
 	}
 	clauses{
 		obligation responseOrder {
 			rolePlayer = application
 			operation = push
 			terms {
-				Timeout(20)AND
+				Timeout(10)AND
 				MessageContent(number("//budget/deliveryTime/text()") < 15)	
 			}
 			onBreach(log("Request made outside of allowed hours or distance limit exceeded"))

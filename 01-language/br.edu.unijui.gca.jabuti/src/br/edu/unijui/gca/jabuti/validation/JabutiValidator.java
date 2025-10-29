@@ -12,6 +12,8 @@ import br.edu.unijui.gca.jabuti.jabuti.*;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.HashSet;
+import java.util.Set;
 
 public class JabutiValidator extends AbstractJabutiValidator {
 
@@ -101,8 +103,6 @@ public class JabutiValidator extends AbstractJabutiValidator {
 		}
 	}
 	
-
-	
 	
 	@Check
 	public void checkOperationByRole(Clause c) {
@@ -158,6 +158,41 @@ public class JabutiValidator extends AbstractJabutiValidator {
 	            "Log message should not be empty",
 	            JabutiPackage.Literals.EVENT_LOG__MESSAGE
 	        );
+	    }
+	}
+	
+	@Check
+	public void checkVariableNameConvention(Variable variable) {
+	    String name = variable.getName();
+	    if (name != null && !name.isEmpty()) {
+	        char firstChar = name.charAt(0);
+	        if (Character.isUpperCase(firstChar)) {
+	            warning("It is recommended that variable names start with a lowercase letter", 
+	                    variable, 
+	                    JabutiPackage.Literals.VARIABLE__NAME);
+	        }
+	    }
+	}
+	
+	@Check
+    public void checkUniqueVariableNames(Contract contract) {
+        if (contract.getVariables() == null) return;
+
+        Set<String> names = new HashSet<>();
+        for (Variable var : contract.getVariables()) {
+            if (!names.add(var.getName())) {
+                error("Duplicate variable name: '" + var.getName() + "'", var, 
+                      JabutiPackage.Literals.VARIABLE__NAME);
+            }
+        }
+    }
+	
+	@Check
+	public void checkTimeoutValue(Timeout timeout) {
+	    int seconds = timeout.getSeconds();
+	    if (seconds <= 0) {
+	        error("Timeout value must be greater than zero", 
+	              JabutiPackage.Literals.TIMEOUT__SECONDS);
 	    }
 	}
 
