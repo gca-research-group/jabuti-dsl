@@ -1,7 +1,7 @@
 contract DeliveryHiring_O {   
 	dates{
 		beginDate = "2023-01-01 08:30:00"     
-		dueDate =  "2023-01-01 08:30:01"     			  	 
+		dueDate =  "2023-01-01 08:30:01"     			  	
 	}	
   
   	parties{

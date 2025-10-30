@@ -10,7 +10,6 @@ import com.google.common.base.Objects;
 import br.edu.unijui.gca.jabuti.jabuti.*;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
 import java.util.Set;

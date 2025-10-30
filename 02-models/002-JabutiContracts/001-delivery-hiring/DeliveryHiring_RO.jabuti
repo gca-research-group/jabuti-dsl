@@ -1,5 +1,5 @@
 contract DeliveryHiring {  
-	
+	 
     dates{
 		beginDate = "2022-01-01 08:00:00" 
 		dueDate = "2022-12-31 18:00:00" 
@@ -22,7 +22,7 @@ contract DeliveryHiring {
             
             terms {			
                 MaxNumberOfOperation(3 per Minute)AND
-                MessageContent(number(numberOfAddresses) == 1)AND 
+                MessageContent(number(numberOfAddresses) == 1)AND  
                 MessageContent(number(weight) == 100)                
             }
                         

@@ -152,7 +152,7 @@ NegationTerm returns ExpressionTerm:
 	Term | {NegationOperator} symbol='NOT' expressionTerm=Term;
 		
 Term returns ExpressionTerm:
-	'(' ExpressionTerm ')' | SessionInterval | WeekDaysInterval | TimeInterval | Timeout | MaxNumberOfOperation | MessageContent	
+	'(' ExpressionTerm ')' |  WeekDaysInterval | Timeout | TimeInterval | MessageContent | MaxNumberOfOperation |SessionInterval
 ;
 
 
@@ -162,57 +162,38 @@ LogicalOperator:
 	symbol=('AND'| 'OR')
 ;
 
+WeekDaysInterval:
+	'WeekDaysInterval' '(' start=WeekDay 'to' end=WeekDay ')'
+;
+
+Timeout:
+	'Timeout' '(' seconds=INT ')'
+;
+
 TimeInterval: 
 	'TimeInterval' '(' start=STRING 'to' end=STRING')'
 ; 
 
-SessionInterval: 
-	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | variable=[Variable] ) )? ')'
-; 
-
-Timeout:
-	'Timeout' '(' seconds=INT ')'
+MessageContent:
+	'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
+	(comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')' 	
 ;
 
 MaxNumberOfOperation:
 	'MaxNumberOfOperation' '(' operationsNumber=INT (perTime=TimeUnitSpec)?  ')'
 ;
 
-WeekDaysInterval:
-	'WeekDaysInterval' '(' start=WeekDay 'to' end=WeekDay ')'
-;
+SessionInterval: 
+	'SessionInterval' '('frequency=INT timeUnit=TimeUnit ('per' ( messageContent = MessageContent | value=STRING | variable=[Variable] ) )? ')'
+; 
 
-
-MessageContent:
-	'MessageContent' '(' returnType=DataType "("(content=STRING | variable=[Variable])")"
-	(comparisonOperator=ComparisonOperator expression=Expression (perTime=TimeUnitSpec)?)?  ')' 	
-	;
 	
 TimeUnitSpec:
     'per' timeUnit=TimeUnit
-    ;	
-
+;	
 
 ComparisonOperator:
 	symbol='<=' | symbol='>=' | symbol='>' | symbol='<' | symbol='!='	| symbol='==' 
-;
-
-//############################################
-//por que utilizar um qualifiedName e como ID ?
-QualifiedName:
-	ID ('.' ID)*;
-	
-QualifiedNameWithWildcard:
-	QualifiedName '.*'; 
-	
-// #################### ENUM SECTION ####################
-
-enum RolePlayer:
-	APPLICATION='application' | PROCESS='process'
-;
-
-enum Operation:
-    PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
 ;
 
 enum WeekDay:
@@ -222,6 +203,25 @@ enum WeekDay:
 enum TimeUnit:
     SECOND='Second' |  MINUTE='Minute' | HOUR = 'Hour' |  DAY='Day' | WEEK='Week' | MONTH='Month' | YEAR='Year'
 ;
+
+
+//############################################
+//por que utilizar um qualifiedName e como ID ?
+QualifiedName:
+	ID ('.' ID)*;
+	
+QualifiedNameWithWildcard:
+	QualifiedName '.*'; 
+	
+
+enum RolePlayer:
+	APPLICATION='application' | PROCESS='process'
+;
+
+enum Operation:
+    PUSH='push' | POLL='poll' | WRITE='write' | READ = 'read' | REQUEST='request' | RESPONSE='response' 
+;
+
 
 enum DataType:
 	TEXT='text' |

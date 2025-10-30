@@ -11,7 +11,7 @@ contract OrcidUpdating{
     }
     
     clauses{
-    
+     
         right requestUpdate { 
             rolePlayer = process
             operation = request
@@ -27,7 +27,7 @@ contract OrcidUpdating{
             rolePlayer = application
             operation = response
             terms {
-                Timeout(5)
+                Timeout(5) 
             }
             onBreach(log("response performed outside of time limit"))
         }
